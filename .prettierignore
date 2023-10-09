@@ -1,0 +1,8 @@
+.babelrc
+.eslintrc.json
+.gitignore
+.prettierrc
+tsconfig.json
+next-env.d.ts
+package.json
+next.config.js
