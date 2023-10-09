@@ -5,3 +5,12 @@ package.json
 package-lock.json
 next-env.d.ts
 yarn.lock
+
+**/*.test.js
+**/*.spec.js
+**/*.test.ts
+**/*.spec.ts
+**/*.test.jsx
+**/*.spec.jsx
+**/*.test.tsx
+**/*.spec.tsx

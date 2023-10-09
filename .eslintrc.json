@@ -50,5 +50,10 @@
 				}
 			}
 		]
+	},
+	"settings": {
+		"react": {
+			"version": "latest"
+		}
 	}
 }
