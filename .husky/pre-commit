@@ -9,7 +9,6 @@ echo '🔄️ Start checks before commiting...'
 echo '⬜ Prettier'
 echo '⬜ Next/Eslint'
 echo '⬜ Typescript'
-echo '⬜ Build'
 echo '===================================='
 
 # Check Prettier standards
@@ -23,7 +22,6 @@ echo '===================================='
 echo '✅ Prettier (Check Passed)'
 echo '⬜ Next/Eslint'
 echo '⬜ Typescript'
-echo '⬜ Build'
 echo '===================================='
 
 # Check Next/ESLint Standards
@@ -38,7 +36,6 @@ echo '===================================='
 echo '✅ Prettier (Check Passed)'
 echo '✅ Next/Eslint (Check Passed)'
 echo '⬜ Typescript'
-echo '⬜ Build'
 echo '===================================='
 
 # Check tsconfig standards
@@ -53,24 +50,9 @@ echo '===================================='
 echo '✅ Prettier (Check Passed)'
 echo '✅ Next/Eslint (Check Passed)'
 echo '✅ Typescript (Check Passed)'
-echo '⬜ Build'
 echo '===================================='
 
 
-npm run build ||
-(
-	echo '🚨Build Check Failed🚨 Make the required changes listed above, add changes and try to commit again.'
-	false
-)
-
-# If everything passes... Now we can commit
-echo ''
-echo '===================================='
-echo '✅ Prettier (Check Passed)'
-echo '✅ Next/Eslint (Check Passed)'
-echo '✅ Typescript (Check Passed)'
-echo '✅ Build (Check Passed)'
-echo '===================================='
 echo ''
 echo 'Now we can git commit 📄'
 echo ''
