@@ -6,6 +6,10 @@ package-lock.json
 next-env.d.ts
 yarn.lock
 
+jest.config.js
+.babelrc
+.lintstagedrc
+
 **/*.test.js
 **/*.spec.js
 **/*.test.ts
