@@ -40,4 +40,4 @@ npm run build ||
 )
 
 # If everything passes... Now we can commit
-echo '✅ Build Check Passed'
+echo '✅ Build Check Passed, now we can git commit 📄'
