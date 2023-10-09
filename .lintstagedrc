@@ -1,3 +1,8 @@
 {
-	"*.{js,jsx,ts,tsx}": ["eslint", "prettier --write"]
+	"*.{js,jsx,ts,tsx}": [
+		"tsc --pretty --noEmit",
+		"prettier --check",
+		"eslint . --ext .js,.jsx,.ts,.tsx",
+		"prettier --write"
+	]
 }
