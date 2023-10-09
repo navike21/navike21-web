@@ -3,41 +3,74 @@
 
 # echo "Running lint-staged..."
 # npx lint-staged
-
-echo '🏗️👷 Styling, testing and building your project before committing'
+echo ''
+echo '===================================='
+echo '🔄️ Start checks before commiting...'
+echo '⬜ Prettier'
+echo '⬜ Next/Eslint'
+echo '⬜ Typescript'
+echo '⬜ Build'
+echo '===================================='
 
 # Check Prettier standards
 npm run check-format || (
 	echo '🚨Prettier Check Failed🚨 Make the required changes listed above, add changes and try to commit again.'
-  false;
+  false
 )
 
-echo '✅ Prettier Check Passed'
+echo ''
+echo '===================================='
+echo '✅ Prettier (Check Passed)'
+echo '⬜ Next/Eslint'
+echo '⬜ Typescript'
+echo '⬜ Build'
+echo '===================================='
 
-# Check ESLint Standards
-npm run check-lint ||
+# Check Next/ESLint Standards
+npm run lint ||
 (
 	echo '🚨Eslint Check Failed🚨 Make the required changes listed above, add changes and try to commit again.'
-	false;
+	false
 )
 
-echo '✅ Eslint Check Passed'
+echo ''
+echo '===================================='
+echo '✅ Prettier (Check Passed)'
+echo '✅ Next/Eslint (Check Passed)'
+echo '⬜ Typescript'
+echo '⬜ Build'
+echo '===================================='
 
 # Check tsconfig standards
 npm run check-types ||
 (
 	echo '🚨Typescript Check Failed🚨 Make the required changes listed above, add changes and try to commit again.'
-	false;
+	false
 )
 
-echo '✅ Typescript Check Passed'
+echo ''
+echo '===================================='
+echo '✅ Prettier (Check Passed)'
+echo '✅ Next/Eslint (Check Passed)'
+echo '✅ Typescript (Check Passed)'
+echo '⬜ Build'
+echo '===================================='
 
 
 npm run build ||
 (
 	echo '🚨Build Check Failed🚨 Make the required changes listed above, add changes and try to commit again.'
-	false;
+	false
 )
 
 # If everything passes... Now we can commit
-echo '✅ Build Check Passed, now we can git commit 📄'
+echo ''
+echo '===================================='
+echo '✅ Prettier (Check Passed)'
+echo '✅ Next/Eslint (Check Passed)'
+echo '✅ Typescript (Check Passed)'
+echo '✅ Build (Check Passed)'
+echo '===================================='
+echo ''
+echo 'Now we can git commit 📄'
+echo ''
