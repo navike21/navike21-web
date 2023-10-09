@@ -1,4 +1,10 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run test
+echo 'Before pushing, we are going to run tests 🧪'
+npm run test || (
+	echo '🚨Tests Failed🚨 Make the required changes listed above, add changes and try to commit again.'
+	false;
+)
+
+echo '✅ Tests Passed, now we can push 🚀'
