@@ -1,3 +1,59 @@
 {
-  "extends": "next/core-web-vitals"
+	"extends": ["next/core-web-vitals"],
+	"plugins": ["@typescript-eslint"],
+	"rules": {
+		"indent": ["error", "tab"],
+		"linebreak-style": ["error", "unix"],
+		"semi": ["warn", "never"],
+		"comma-dangle": ["warn", "never"],
+		"@typescript-eslint/space-before-function-paren": ["error", "never"],
+		"@typescript-eslint/naming-convention": [
+			"warn",
+			{
+				"selector": "default",
+				"format": ["PascalCase"],
+				"leadingUnderscore": "allow"
+			},
+			{
+				"selector": "variable",
+				"format": ["PascalCase", "camelCase"],
+				"leadingUnderscore": "allow"
+			},
+			{
+				"selector": "parameter",
+				"format": ["camelCase"],
+				"leadingUnderscore": "allow"
+			},
+			{
+				"selector": "property",
+				"format": null,
+				"leadingUnderscore": "allow"
+			},
+			{
+				"selector": "typeLike",
+				"format": ["PascalCase"]
+			},
+			{
+				"selector": "interface",
+				"format": ["PascalCase"],
+				"custom": {
+					"regex": "^I[A-Z]",
+					"match": true
+				}
+			},
+			{
+				"selector": "typeAlias",
+				"format": ["PascalCase"],
+				"custom": {
+					"regex": "^T[A-Z]",
+					"match": true
+				}
+			}
+		]
+	},
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	}
 }
