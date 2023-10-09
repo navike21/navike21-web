@@ -5,6 +5,7 @@ package.json
 package-lock.json
 next-env.d.ts
 yarn.lock
+babel.config.js
 
 jest.config.js
 .babelrc
