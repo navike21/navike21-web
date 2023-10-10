@@ -13,6 +13,9 @@ jest.setup.js
 .babelrc
 .lintstagedrc
 .prettierrc
+postcss.config.js
+tsconfig.json
+tailwind.config.js
 
 **/*.test.js
 **/*.spec.js
