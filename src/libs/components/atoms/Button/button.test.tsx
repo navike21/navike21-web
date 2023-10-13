@@ -4,6 +4,6 @@ import { render } from '@testing-library/react'
 import { Button } from './Button'
 test('renders button text', () => {
 	const { getByText } = render(<Button>Hi i'm button</Button>)
-	const buttonElement = getByText('Button')
+	const buttonElement = getByText(/Hi i'm button/i)
 	expect(buttonElement).toBeTruthy()
 })
