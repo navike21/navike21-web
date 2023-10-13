@@ -19,6 +19,7 @@
 		"git-push": "git push"
 	},
 	"dependencies": {
+		"clsx": "^2.0.0",
 		"next": "latest",
 		"react": "latest",
 		"react-dom": "latest"

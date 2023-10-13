@@ -10,14 +10,13 @@
 		"@typescript-eslint/naming-convention": [
 			"warn",
 			{
-				"selector": "default",
-				"format": ["PascalCase"],
+				"selector": "typeParameter",
+				"format": ["camelCase"],
 				"leadingUnderscore": "allow"
 			},
 			{
-				"selector": "variable",
-				"format": ["PascalCase", "camelCase"],
-				"leadingUnderscore": "allow"
+				"selector": "function",
+				"format": ["PascalCase"]
 			},
 			{
 				"selector": "parameter",
