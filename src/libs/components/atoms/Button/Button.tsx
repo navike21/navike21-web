@@ -1,33 +1,59 @@
-import React, { ReactNode } from 'react'
+import React, { ButtonHTMLAttributes, ReactNode } from 'react'
 import clsx from 'clsx'
+import { EXTRA_LARGE, LARGE, MEDIUM, SMALL } from '@Constants/shared'
 
-type TSizeButton = 'small' | 'medium' | 'large'
-
-type TButtonProps = {
-	children: ReactNode
-	className?: string
-	size?: TSizeButton
-	outline?: boolean
-}
+type TSizeButton =
+	| typeof SMALL
+	| typeof MEDIUM
+	| typeof LARGE
+	| typeof EXTRA_LARGE
 
 type TSiseClass = {
 	[key in TSizeButton]: string
 }
 
-const SizeClass: TSiseClass = {
-	small: 'px-2 py-1 text-xs',
-	medium: 'px-4 py-2 text-sm',
-	large: 'px-6 py-3 text-base'
+interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+	children: ReactNode
+	className?: string
+	size?: TSizeButton
+	outline?: boolean
+	disabled?: boolean
 }
+
+const SizeClass: TSiseClass = {
+	[SMALL]: 'px-4 py-2 text-xs',
+	[MEDIUM]: 'px-5 py-3 text-sm',
+	[LARGE]: 'px-6 py-3 text-base',
+	[EXTRA_LARGE]: 'px-8 py-4 text-lg'
+}
+
+const classDefault =
+	'active:scale-95 text-grey-800 transition duration-150 ease-in-out'
 
 export const Button = ({
 	children,
 	className,
-	size = 'medium',
+	size = MEDIUM,
 	outline = false,
+	disabled = false,
 	...props
-}: TButtonProps) => (
-	<button className={clsx('rounded-lg', SizeClass[size], className)} {...props}>
+}: IButtonProps) => (
+	<button
+		className={clsx(
+			'rounded-lg relative font-medium focus:outline-none',
+			SizeClass[size],
+			((disabled && outline) || (disabled && !outline)) &&
+				'bg-grey-300 cursor-not-allowed text-grey-600 hover:animate-shake hover:animate-duration-150 hover:animate-twice',
+			!disabled &&
+				outline &&
+				`${classDefault} bg-transparent ring-inset ring-[0.15rem] ring-primary hover:bg-primary`,
+			!disabled &&
+				!outline &&
+				`${classDefault} bg-primary hover:bg-primary-dark`,
+			className
+		)}
+		{...props}
+	>
 		{children}
 	</button>
 )
