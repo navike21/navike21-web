@@ -3,11 +3,23 @@
 const {
 	yellow,
 	grey,
-	greyTransparent,
+	transparentGrey,
 	black,
-	blackTransparent,
+	transparentBlack,
 	white,
-	whiteTransparent
+	transparentWhite,
+	info,
+	transparentInfo,
+	gradientInfo,
+	success,
+	transparentSuccess,
+	successGradient,
+	warning,
+	transparentWarning,
+	gradientWarning,
+	error,
+	transparentError,
+	gradientError
 } = require('config/colors')
 
 module.exports = {
@@ -16,11 +28,23 @@ module.exports = {
 		colors: {
 			primary: yellow,
 			grey,
-			'grey-transparent': greyTransparent,
+			'transparent-grey': transparentGrey,
 			black,
-			'black-transparent': blackTransparent,
+			'transparent-black': transparentBlack,
 			white,
-			'white-transparent': whiteTransparent
+			'transparent-white': transparentWhite,
+			info,
+			'transparent-info': transparentInfo,
+			'gradient-info': gradientInfo,
+			success,
+			'transparent-success': transparentSuccess,
+			'gradient-success': successGradient,
+			warning,
+			'transparent-warning': transparentWarning,
+			'gradient-warning': gradientWarning,
+			error,
+			'transparent-error': transparentError,
+			'gradient-error': gradientError
 		},
 		extend: {},
 		screens: {
