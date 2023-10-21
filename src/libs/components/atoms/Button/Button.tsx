@@ -1,6 +1,7 @@
 import React, { ButtonHTMLAttributes, ReactNode } from 'react'
 import clsx from 'clsx'
 import { EXTRA_LARGE, LARGE, MEDIUM, SMALL } from '@Constants/shared'
+import styles from './button.module.scss'
 
 type TSizeButton =
 	| typeof SMALL
@@ -27,8 +28,7 @@ const SizeClass: TSiseClass = {
 	[EXTRA_LARGE]: 'px-8 py-4 text-lg'
 }
 
-const classDefault =
-	'active:scale-95 text-grey-800 transition duration-150 ease-in-out'
+const classDefault = `active:scale-95 text-grey-800 transition-all duration-200 ease-in-out outline-none`
 
 export const Button = ({
 	children,
@@ -43,13 +43,14 @@ export const Button = ({
 			'rounded-lg relative font-medium focus:outline-none',
 			SizeClass[size],
 			((disabled && outline) || (disabled && !outline)) &&
-				'bg-grey-300 cursor-not-allowed text-grey-600 hover:animate-shake hover:animate-duration-200 hover:animate-twice',
+				'bg-grey-300 cursor-not-allowed text-grey-600 hover:animate-pulse hover:animate-duration-200 hover:animate-twice',
 			!disabled &&
 				outline &&
 				`${classDefault} bg-transparent ring-inset ring-[0.15rem] ring-primary hover:bg-primary`,
 			!disabled &&
 				!outline &&
 				`${classDefault} bg-primary hover:bg-primary-dark`,
+			styles['i'],
 			className
 		)}
 		{...props}

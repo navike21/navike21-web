@@ -23,37 +23,37 @@ export const grey: TColorConfig = {
 }
 
 export const transparentGrey: TColorConfig = {
-	'transparent-grey-8': 'rgba(145, 158, 171, 0.08)',
-	'transparent-grey-12': 'rgba(145, 158, 171, 0.12)',
-	'transparent-grey-16': 'rgba(145, 158, 171, 0.16)',
-	'transparent-grey-24': 'rgba(145, 158, 171, 0.24)',
-	'transparent-grey-32': 'rgba(145, 158, 171, 0.32)',
-	'transparent-grey-48': 'rgba(145, 158, 171, 0.48)',
-	'transparent-grey-56': 'rgba(145, 158, 171, 0.56)'
+	'8': 'rgba(145, 158, 171, 0.08)',
+	'12': 'rgba(145, 158, 171, 0.12)',
+	'16': 'rgba(145, 158, 171, 0.16)',
+	'24': 'rgba(145, 158, 171, 0.24)',
+	'32': 'rgba(145, 158, 171, 0.32)',
+	'48': 'rgba(145, 158, 171, 0.48)',
+	'56': 'rgba(145, 158, 171, 0.56)'
 }
 
 export const black = '#000000'
 
 export const transparentBlack: TColorConfig = {
-	'transparent-black-08': 'rgba(0, 0, 0, 0.08)',
-	'transparent-black-12': 'rgba(0, 0, 0, 0.12)',
-	'transparent-black-16': 'rgba(0, 0, 0, 0.16)',
-	'transparent-black-24': 'rgba(0, 0, 0, 0.24)',
-	'transparent-black-32': 'rgba(0, 0, 0, 0.32)',
-	'transparent-black-48': 'rgba(0, 0, 0, 0.48)',
-	'transparent-black-56': 'rgba(0, 0, 0, 0.56)'
+	'08': 'rgba(0, 0, 0, 0.08)',
+	'12': 'rgba(0, 0, 0, 0.12)',
+	'16': 'rgba(0, 0, 0, 0.16)',
+	'24': 'rgba(0, 0, 0, 0.24)',
+	'32': 'rgba(0, 0, 0, 0.32)',
+	'48': 'rgba(0, 0, 0, 0.48)',
+	'56': 'rgba(0, 0, 0, 0.56)'
 }
 
 export const white = '#FFFFFF'
 
 export const transparentWhite: TColorConfig = {
-	'transparent-white-08': 'rgba(255, 255, 255, 0.08)',
-	'transparent-white-12': 'rgba(255, 255, 255, 0.12)',
-	'transparent-white-16': 'rgba(255, 255, 255, 0.16)',
-	'transparent-white-24': 'rgba(255, 255, 255, 0.24)',
-	'transparent-white-32': 'rgba(255, 255, 255, 0.32)',
-	'transparent-white-48': 'rgba(255, 255, 255, 0.48)',
-	'transparent-white-56': 'rgba(255, 255, 255, 0.56)'
+	'8': 'rgba(255, 255, 255, 0.08)',
+	'12': 'rgba(255, 255, 255, 0.12)',
+	'16': 'rgba(255, 255, 255, 0.16)',
+	'24': 'rgba(255, 255, 255, 0.24)',
+	'32': 'rgba(255, 255, 255, 0.32)',
+	'48': 'rgba(255, 255, 255, 0.48)',
+	'56': 'rgba(255, 255, 255, 0.56)'
 }
 
 export const info: TColorConfig = {
@@ -65,13 +65,13 @@ export const info: TColorConfig = {
 }
 
 export const transparentInfo: TColorConfig = {
-	'transparent-info-8': 'rgba(0, 184, 217, 0.08)',
-	'transparent-info-12': 'rgba(0, 184, 217, 0.12)',
-	'transparent-info-16': 'rgba(0, 184, 217, 0.16)',
-	'transparent-info-24': 'rgba(0, 184, 217, 0.24)',
-	'transparent-info-32': 'rgba(0, 184, 217, 0.32)',
-	'transparent-info-48': 'rgba(0, 184, 217, 0.48)',
-	'transparent-info-56': 'rgba(0, 184, 217, 0.56)'
+	'8': 'rgba(0, 184, 217, 0.08)',
+	'12': 'rgba(0, 184, 217, 0.12)',
+	'16': 'rgba(0, 184, 217, 0.16)',
+	'24': 'rgba(0, 184, 217, 0.24)',
+	'32': 'rgba(0, 184, 217, 0.32)',
+	'48': 'rgba(0, 184, 217, 0.48)',
+	'56': 'rgba(0, 184, 217, 0.56)'
 }
 
 export const gradientInfo = 'linear-gradient(135deg, #61F3F3 0%, #00B8D9 100%)'
@@ -85,13 +85,13 @@ export const success: TColorConfig = {
 }
 
 export const transparentSuccess: TColorConfig = {
-	'transparent-success-8': 'rgba(54, 179, 126, 0.08)',
-	'transparent-success-12': 'rgba(54, 179, 126, 0.12)',
-	'transparent-success-16': 'rgba(54, 179, 126, 0.16)',
-	'transparent-success-24': 'rgba(54, 179, 126, 0.24)',
-	'transparent-success-32': 'rgba(54, 179, 126, 0.32)',
-	'transparent-success-48': 'rgba(54, 179, 126, 0.48)',
-	'transparent-success-56': 'rgba(54, 179, 126, 0.56)'
+	'8': 'rgba(54, 179, 126, 0.08)',
+	'12': 'rgba(54, 179, 126, 0.12)',
+	'16': 'rgba(54, 179, 126, 0.16)',
+	'24': 'rgba(54, 179, 126, 0.24)',
+	'32': 'rgba(54, 179, 126, 0.32)',
+	'48': 'rgba(54, 179, 126, 0.48)',
+	'56': 'rgba(54, 179, 126, 0.56)'
 }
 
 export const successGradient =
@@ -106,13 +106,13 @@ export const warning: TColorConfig = {
 }
 
 export const transparentWarning: TColorConfig = {
-	'transparent-warning-8': 'rgba(255, 171, 0, 0.08)',
-	'transparent-warning-12': 'rgba(255, 171, 0, 0.12)',
-	'transparent-warning-16': 'rgba(255, 171, 0, 0.16)',
-	'transparent-warning-24': 'rgba(255, 171, 0, 0.24)',
-	'transparent-warning-32': 'rgba(255, 171, 0, 0.32)',
-	'transparent-warning-48': 'rgba(255, 171, 0, 0.48)',
-	'transparent-warning-56': 'rgba(255, 171, 0, 0.56)'
+	'8': 'rgba(255, 171, 0, 0.08)',
+	'12': 'rgba(255, 171, 0, 0.12)',
+	'16': 'rgba(255, 171, 0, 0.16)',
+	'24': 'rgba(255, 171, 0, 0.24)',
+	'32': 'rgba(255, 171, 0, 0.32)',
+	'48': 'rgba(255, 171, 0, 0.48)',
+	'56': 'rgba(255, 171, 0, 0.56)'
 }
 
 export const gradientWarning =
@@ -127,13 +127,13 @@ export const error: TColorConfig = {
 }
 
 export const transparentError: TColorConfig = {
-	'transparent-error-8': 'rgba(255, 54, 50, 0.08)',
-	'transparent-error-12': 'rgba(255, 54, 50, 0.12)',
-	'transparent-error-16': 'rgba(255, 54, 50, 0.16)',
-	'transparent-error-24': 'rgba(255, 54, 50, 0.24)',
-	'transparent-error-32': 'rgba(255, 54, 50, 0.32)',
-	'transparent-error-48': 'rgba(255, 54, 50, 0.48)',
-	'transparent-error-56': 'rgba(255, 54, 50, 0.56)'
+	'8': 'rgba(255, 54, 50, 0.08)',
+	'12': 'rgba(255, 54, 50, 0.12)',
+	'16': 'rgba(255, 54, 50, 0.16)',
+	'24': 'rgba(255, 54, 50, 0.24)',
+	'32': 'rgba(255, 54, 50, 0.32)',
+	'48': 'rgba(255, 54, 50, 0.48)',
+	'56': 'rgba(255, 54, 50, 0.56)'
 }
 
 export const gradientError = 'linear-gradient(135deg, #FF9B83 0%, #FF3632 100%)'
