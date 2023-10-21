@@ -43,7 +43,7 @@ export const Button = ({
 			'rounded-lg relative font-medium focus:outline-none',
 			SizeClass[size],
 			((disabled && outline) || (disabled && !outline)) &&
-				'bg-grey-300 cursor-not-allowed text-grey-600 hover:animate-pulse hover:animate-duration-150 hover:animate-twice',
+				'bg-grey-300 cursor-not-allowed text-grey-600 hover:animate-shake hover:animate-duration-200 hover:animate-twice',
 			!disabled &&
 				outline &&
 				`${classDefault} bg-transparent ring-inset ring-[0.15rem] ring-primary hover:bg-primary`,
