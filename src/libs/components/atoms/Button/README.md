@@ -1,5 +1,7 @@
 # Button Component
 
+![image](https://github.com/navike21/navike21-web/assets/613163/de57b03b-61b0-44cd-a62f-973bcbf368eb)
+
 The `Button` component is a reusable button component in React that can be customized to suit your needs. You can use it in your applications to create buttons with different sizes, styles, and functionality.
 
 ## Usage
