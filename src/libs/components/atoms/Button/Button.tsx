@@ -28,7 +28,7 @@ const SizeClass: TSiseClass = {
 	[EXTRA_LARGE]: 'px-8 py-4 text-lg'
 }
 
-const classDefault = `active:scale-95 text-grey-800 transition-all duration-200 ease-in-out outline-none`
+const classDefault = `active:scale-95 text-grey-800 transition-all duration-200 ease-in-out outline-none overflow-hidden`
 
 export const Button = ({
 	children,
