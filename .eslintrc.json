@@ -1,58 +1,58 @@
 {
-	"extends": ["next/core-web-vitals", "plugin:storybook/recommended"],
-	"plugins": ["@typescript-eslint"],
-	"rules": {
-		"indent": ["error", "tab"],
-		"linebreak-style": ["error", "unix"],
-		"semi": ["warn", "never"],
-		"comma-dangle": ["warn", "never"],
-		"@typescript-eslint/space-before-function-paren": ["error", "never"],
-		"@typescript-eslint/naming-convention": [
-			"warn",
-			{
-				"selector": "typeParameter",
-				"format": ["camelCase"],
-				"leadingUnderscore": "allow"
-			},
-			{
-				"selector": "function",
-				"format": ["PascalCase"]
-			},
-			{
-				"selector": "parameter",
-				"format": ["camelCase"],
-				"leadingUnderscore": "allow"
-			},
-			{
-				"selector": "property",
-				"format": null,
-				"leadingUnderscore": "allow"
-			},
-			{
-				"selector": "typeLike",
-				"format": ["PascalCase"]
-			},
-			{
-				"selector": "interface",
-				"format": ["PascalCase"],
-				"custom": {
-					"regex": "^I[A-Z]",
-					"match": true
-				}
-			},
-			{
-				"selector": "typeAlias",
-				"format": ["PascalCase"],
-				"custom": {
-					"regex": "^T[A-Z]",
-					"match": true
-				}
-			}
-		]
-	},
-	"settings": {
-		"react": {
-			"version": "detect"
-		}
-	}
+  "extends": ["next/core-web-vitals", "plugin:storybook/recommended"],
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "unix"],
+    "semi": ["warn", "never"],
+    "comma-dangle": ["warn", "never"],
+    "@typescript-eslint/space-before-function-paren": ["error", "never"],
+    "@typescript-eslint/naming-convention": [
+      "warn",
+      {
+        "selector": "typeParameter",
+        "format": ["camelCase"],
+        "leadingUnderscore": "allow"
+      },
+      {
+        "selector": "function",
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": "parameter",
+        "format": ["camelCase"],
+        "leadingUnderscore": "allow"
+      },
+      {
+        "selector": "property",
+        "format": null,
+        "leadingUnderscore": "allow"
+      },
+      {
+        "selector": "typeLike",
+        "format": ["PascalCase"]
+      },
+      {
+        "selector": "interface",
+        "format": ["PascalCase"],
+        "custom": {
+          "regex": "^I[A-Z]",
+          "match": true
+        }
+      },
+      {
+        "selector": "typeAlias",
+        "format": ["PascalCase"],
+        "custom": {
+          "regex": "^T[A-Z]",
+          "match": true
+        }
+      }
+    ]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

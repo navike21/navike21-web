@@ -13,16 +13,16 @@ import React from 'react'
 import Button from '@Components/Button' // Make sure to import the Button component from the correct location
 
 function App() {
-	return (
-		<div>
-			<Button>Default Button</Button>
-			<Button size="small">Small Button</Button>
-			<Button size="large" outline>
-				Large Outline Button
-			</Button>
-			<Button disabled>Disabled Button</Button>
-		</div>
-	)
+  return (
+    <div>
+      <Button>Default Button</Button>
+      <Button size="small">Small Button</Button>
+      <Button size="large" outline>
+        Large Outline Button
+      </Button>
+      <Button disabled>Disabled Button</Button>
+    </div>
+  )
 }
 
 export default App
