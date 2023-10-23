@@ -10,6 +10,24 @@ export const yellow: TColorConfig = {
   darker: '#FA0'
 }
 
+export const green: TColorConfig = {
+  lighter: '#C8FAD6',
+  light: '#5BE49B',
+  DEFAULT: '#00A76F',
+  dark: '#007867',
+  darker: '#004B50'
+}
+
+export const transparentGreen: TColorConfig = {
+  '8': 'rgba(0, 167, 111, 0.08)',
+  '12': 'rgba(0, 167, 111, 0.12)',
+  '16': 'rgba(0, 167, 111, 0.16)',
+  '24': 'rgba(0, 167, 111, 0.24)',
+  '32': 'rgba(0, 167, 111, 0.32)',
+  '48': 'rgba(0, 167, 111, 0.48)',
+  '56': 'rgba(0, 167, 111, 0.56)'
+}
+
 export const grey: TColorConfig = {
   '900': '#161C24',
   '800': '#212B36',
@@ -35,7 +53,7 @@ export const transparentGrey: TColorConfig = {
 export const black = '#000000'
 
 export const transparentBlack: TColorConfig = {
-  '08': 'rgba(0, 0, 0, 0.08)',
+  '8': 'rgba(0, 0, 0, 0.08)',
   '12': 'rgba(0, 0, 0, 0.12)',
   '16': 'rgba(0, 0, 0, 0.16)',
   '24': 'rgba(0, 0, 0, 0.24)',

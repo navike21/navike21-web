@@ -16,7 +16,8 @@ export const ButtonComponent: TStory = {
     children: "Hi i'm button",
     size: 'medium',
     outline: false,
-    disabled: false
+    disabled: false,
+    color: 'primary'
   },
   render: args => <Button {...args} />
 }

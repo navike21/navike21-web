@@ -1,6 +1,17 @@
 import React, { ButtonHTMLAttributes, ReactNode } from 'react'
 import clsx from 'clsx'
-import { EXTRA_LARGE, LARGE, MEDIUM, SMALL } from '@Constants/shared'
+import {
+  ERROR,
+  EXTRA_LARGE,
+  INFO,
+  LARGE,
+  MEDIUM,
+  PRIMARY,
+  SECONDARY,
+  SMALL,
+  SUCCESS,
+  WARNING
+} from '@Constants/shared'
 import styles from './button.module.scss'
 
 type TSizeButton =
@@ -9,8 +20,27 @@ type TSizeButton =
   | typeof LARGE
   | typeof EXTRA_LARGE
 
+type TColorButton =
+  | typeof PRIMARY
+  | typeof SECONDARY
+  | typeof INFO
+  | typeof SUCCESS
+  | typeof WARNING
+  | typeof ERROR
+
 type TSiseClass = {
   [key in TSizeButton]: string
+}
+
+type TColorClass = {
+  [key in TColorButton]: {
+    background: string
+    backgroundHover: string
+    backgroundHoverOutline: string
+    textColorDefault: string
+    textColorOutline: string
+    ringColor: string
+  }
 }
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -19,6 +49,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: TSizeButton
   outline?: boolean
   disabled?: boolean
+  color?: TColorButton
 }
 
 const SizeClass: TSiseClass = {
@@ -28,11 +59,63 @@ const SizeClass: TSiseClass = {
   [EXTRA_LARGE]: 'px-8 py-4 text-lg'
 }
 
-const classDefault = `active:scale-95 text-grey-800 transition-all duration-200 ease-in-out outline-none overflow-hidden`
+const ColorClass: TColorClass = {
+  [PRIMARY]: {
+    background: 'bg-primary',
+    backgroundHover: 'hover:bg-primary-dark',
+    backgroundHoverOutline: 'hover:bg-transparent__primary-8',
+    textColorDefault: 'text-white',
+    textColorOutline: 'text-primary',
+    ringColor: 'ring-primary'
+  },
+  [SECONDARY]: {
+    background: 'bg-secondary',
+    backgroundHover: 'hover:bg-secondary-dark',
+    backgroundHoverOutline: 'hover:bg-transparent__secondary-8',
+    textColorDefault: 'text-white',
+    textColorOutline: 'text-secondary',
+    ringColor: 'ring-secondary'
+  },
+  [INFO]: {
+    background: 'bg-info',
+    backgroundHover: 'hover:bg-info-dark',
+    backgroundHoverOutline: 'hover:bg-transparent__info-8',
+    textColorDefault: 'text-white',
+    textColorOutline: 'text-info',
+    ringColor: 'ring-info'
+  },
+  [SUCCESS]: {
+    background: 'bg-success',
+    backgroundHover: 'hover:bg-success-dark',
+    backgroundHoverOutline: 'hover:bg-transparent__success-8',
+    textColorDefault: 'text-white',
+    textColorOutline: 'text-success',
+    ringColor: 'ring-success'
+  },
+  [WARNING]: {
+    background: 'bg-warning',
+    backgroundHover: 'hover:bg-warning-dark',
+    backgroundHoverOutline: 'hover:bg-transparent__warning-8',
+    textColorDefault: 'text-white',
+    textColorOutline: 'text-warning',
+    ringColor: 'ring-warning'
+  },
+  [ERROR]: {
+    background: 'bg-error',
+    backgroundHover: 'hover:bg-error-dark',
+    backgroundHoverOutline: 'hover:bg-transparent__error-8',
+    textColorDefault: 'text-white',
+    textColorOutline: 'text-error',
+    ringColor: 'ring-error'
+  }
+}
+
+const classDefault = `active:scale-95 transition-all duration-200 ease-in-out`
 
 export const Button = ({
   children,
   className,
+  color = PRIMARY,
   size = MEDIUM,
   outline = false,
   disabled = false,
@@ -40,16 +123,16 @@ export const Button = ({
 }: IButtonProps) => (
   <button
     className={clsx(
-      'rounded-lg relative font-medium focus:outline-none',
+      'rounded-lg relative font-medium outline-none overflow-hidden focus:outline-none',
       SizeClass[size],
       ((disabled && outline) || (disabled && !outline)) &&
         'bg-grey-300 cursor-not-allowed text-grey-600 hover:animate-pulse hover:animate-duration-200 hover:animate-twice',
       !disabled &&
         outline &&
-        `${classDefault} bg-transparent ring-inset ring-[0.15rem] ring-primary hover:bg-primary`,
+        `${classDefault} bg-transparent ring-inset ring-[0.1rem] ${ColorClass[color].ringColor} ${ColorClass[color].textColorOutline} hover:${ColorClass[color].textColorDefault} ${ColorClass[color].backgroundHoverOutline}`,
       !disabled &&
         !outline &&
-        `${classDefault} bg-primary hover:bg-primary-dark`,
+        `${classDefault} ${ColorClass[color].background} ${ColorClass[color].backgroundHover} text-white`,
       styles['i'],
       className
     )}

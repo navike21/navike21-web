@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 
 const {
-  yellow,
+  green,
+  transparentGreen,
   grey,
   transparentGrey,
   black,
@@ -26,9 +27,10 @@ module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     colors: {
-      primary: yellow,
+      primary: green,
+      transparent__primary: transparentGreen,
       grey,
-      'transparent-grey': transparentGrey,
+      transparent__grey: transparentGrey,
       black,
       transparent__black: transparentBlack,
       white,
