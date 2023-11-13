@@ -3,6 +3,7 @@
 const {
   green,
   transparentGreen,
+  gradientGreen,
   grey,
   transparentGrey,
   black,
@@ -20,7 +21,10 @@ const {
   gradientWarning,
   error,
   transparentError,
-  gradientError
+  gradientError,
+  purple,
+  transparentPurple,
+  gradientPurple
 } = require('config/colors')
 
 module.exports = {
@@ -29,6 +33,10 @@ module.exports = {
     colors: {
       primary: green,
       transparent__primary: transparentGreen,
+      gradient__primary: gradientGreen,
+      secondary: purple,
+      transparent__secondary: transparentPurple,
+      gradient__secondary: gradientPurple,
       grey,
       transparent__grey: transparentGrey,
       black,

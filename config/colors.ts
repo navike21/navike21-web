@@ -28,6 +28,29 @@ export const transparentGreen: TColorConfig = {
   '56': 'rgba(0, 167, 111, 0.56)'
 }
 
+export const gradientGreen = 'linear-gradient(135deg, #5BE49B 0%, #00A76F 100%)'
+
+export const purple: TColorConfig = {
+  lighter: '#EFD6FF',
+  light: '#C684FF',
+  DEFAULT: '#8E33FF',
+  dark: '#5119B7',
+  darker: '#27097A'
+}
+
+export const transparentPurple: TColorConfig = {
+  '8': 'rgba(142, 51, 255, 0.08)',
+  '12': 'rgba(142, 51, 255, 0.12)',
+  '16': 'rgba(142, 51, 255, 0.16)',
+  '24': 'rgba(142, 51, 255, 0.24)',
+  '32': 'rgba(142, 51, 255, 0.32)',
+  '48': 'rgba(142, 51, 255, 0.48)',
+  '56': 'rgba(142, 51, 255, 0.56)'
+}
+
+export const gradientPurple =
+  'linear-gradient(135deg, #C684FF 0%, #8E33FF 100%)'
+
 export const grey: TColorConfig = {
   '900': '#161C24',
   '800': '#212B36',
