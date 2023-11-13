@@ -1,6 +1,7 @@
 import React, { ButtonHTMLAttributes, ReactNode } from 'react'
 import clsx from 'clsx'
 import {
+  BUTTON,
   ERROR,
   EXTRA_LARGE,
   INFO,
@@ -13,27 +14,14 @@ import {
   WARNING
 } from '@Constants/shared'
 import styles from './button.module.scss'
+import { TButton, TColor, TSize } from '@Types/shared'
 
-type TSizeButton =
-  | typeof SMALL
-  | typeof MEDIUM
-  | typeof LARGE
-  | typeof EXTRA_LARGE
-
-type TColorButton =
-  | typeof PRIMARY
-  | typeof SECONDARY
-  | typeof INFO
-  | typeof SUCCESS
-  | typeof WARNING
-  | typeof ERROR
-
-type TSiseClass = {
-  [key in TSizeButton]: string
+type TSizeClass = {
+  [key in TSize]: string
 }
 
 type TColorClass = {
-  [key in TColorButton]: {
+  [key in TColor]: {
     background: string
     backgroundHover: string
     backgroundHoverOutline: string
@@ -46,13 +34,14 @@ type TColorClass = {
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
   className?: string
-  size?: TSizeButton
+  size?: TSize
   outline?: boolean
   disabled?: boolean
-  color?: TColorButton
+  color?: TColor
+  type?: TButton
 }
 
-const SizeClass: TSiseClass = {
+const SizeClass: TSizeClass = {
   [SMALL]: 'px-4 py-2 text-xs',
   [MEDIUM]: 'px-5 py-3 text-sm',
   [LARGE]: 'px-6 py-3 text-base',
@@ -119,9 +108,11 @@ export const Button = ({
   size = MEDIUM,
   outline = false,
   disabled = false,
+  type = BUTTON,
   ...props
 }: IButtonProps) => (
   <button
+    type={type}
     className={clsx(
       'rounded-lg relative font-medium outline-none overflow-hidden focus:outline-none',
       SizeClass[size],

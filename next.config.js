@@ -14,7 +14,8 @@ const nextConfig = {
 		config.resolve.alias['@Components'] = path.join(__dirname, 'src/components');
     config.resolve.alias['@Constants'] = path.join(__dirname, 'src/libs/constants');
 		config.resolve.alias['@Helpers'] = path.join(__dirname, 'src/libs/helpers');
-		config.resolve.alias['@Hooks'] = path.join(__dirname, 'src/hooks');
+		config.resolve.alias['@Hooks'] = path.join(__dirname, 'src/libs/hooks');
+    config.resolve.alias['@Types'] = path.join(__dirname, 'src/libs/types');
 
     return config;
   },

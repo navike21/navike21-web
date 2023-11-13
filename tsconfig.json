@@ -26,7 +26,8 @@
 			"@Components/*": ["src/libs/components/*"],
 			"@Constants/*": ["src/libs/constants/*"],
 			"@Helpers/*": ["src/libs/helpers/*"],
-			"@Hooks/*": ["src/libs/hooks/*"]
+			"@Hooks/*": ["src/libs/hooks/*"],
+      "@Types/*": ["src/libs/types/*"],
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "jest.config.js", "tailwind.config.js"],
