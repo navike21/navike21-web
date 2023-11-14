@@ -4,6 +4,7 @@ import {
   BUTTON,
   ERROR,
   EXTRA_LARGE,
+  EXTRA_SMALL,
   INFO,
   LARGE,
   MEDIUM,
@@ -13,7 +14,7 @@ import {
   SUCCESS,
   WARNING
 } from '@Constants/shared'
-import styles from './button.module.scss'
+import styles from '@Styles/button.module.scss'
 import { TButton, TColor, TSize } from '@Types/shared'
 
 type TSizeClass = {
@@ -21,7 +22,7 @@ type TSizeClass = {
 }
 
 type TColorClass = {
-  [key in TColor]: {
+  [key in TColor]?: {
     background: string
     backgroundHover: string
     backgroundHoverOutline: string
@@ -42,6 +43,7 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const SizeClass: TSizeClass = {
+  [EXTRA_SMALL]: 'px-3 py-1 text-xs',
   [SMALL]: 'px-4 py-2 text-xs',
   [MEDIUM]: 'px-5 py-3 text-sm',
   [LARGE]: 'px-6 py-3 text-base',
@@ -110,25 +112,36 @@ export const Button = ({
   disabled = false,
   type = BUTTON,
   ...props
-}: IButtonProps) => (
-  <button
-    type={type}
-    className={clsx(
-      'rounded-lg relative font-medium outline-none overflow-hidden focus:outline-none',
-      SizeClass[size],
-      ((disabled && outline) || (disabled && !outline)) &&
-        'bg-grey-300 cursor-not-allowed text-grey-600 hover:animate-pulse hover:animate-duration-200 hover:animate-twice',
-      !disabled &&
-        outline &&
-        `${classDefault} bg-transparent ring-inset ring-[0.1rem] ${ColorClass[color].ringColor} ${ColorClass[color].textColorOutline} hover:${ColorClass[color].textColorDefault} ${ColorClass[color].backgroundHoverOutline}`,
-      !disabled &&
-        !outline &&
-        `${classDefault} ${ColorClass[color].background} ${ColorClass[color].backgroundHover} text-white`,
-      styles['i'],
-      className
-    )}
-    {...props}
-  >
-    {children}
-  </button>
-)
+}: IButtonProps) => {
+  const {
+    ringColor,
+    textColorOutline,
+    textColorDefault,
+    backgroundHoverOutline,
+    background,
+    backgroundHover
+  } = ColorClass[color] ?? {}
+
+  return (
+    <button
+      type={type}
+      className={clsx(
+        'rounded-lg relative font-medium outline-none overflow-hidden focus:outline-none',
+        SizeClass[size],
+        ((disabled && outline) || (disabled && !outline)) &&
+          'bg-grey-300 cursor-not-allowed text-grey-600 hover:animate-pulse hover:animate-duration-200 hover:animate-twice',
+        !disabled &&
+          outline &&
+          `${classDefault} bg-transparent ring-inset ring-[0.1rem] ${ringColor} ${textColorOutline} hover:${textColorDefault} ${backgroundHoverOutline}`,
+        !disabled &&
+          !outline &&
+          `${classDefault} ${background} ${backgroundHover} text-white`,
+        styles['i'],
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </button>
+  )
+}

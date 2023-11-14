@@ -44,7 +44,7 @@ describe('Button Component', () => {
   })
 
   it('should render button with text and size extra large', () => {
-    const { getByText } = render(<Button size="extra-large">Button</Button>)
+    const { getByText } = render(<Button size="extraLarge">Button</Button>)
     expect(getByText('Button')).toBeTruthy()
   })
 
@@ -77,7 +77,7 @@ describe('Button Component', () => {
 
   it('should render button with text, size extra large and outline', () => {
     const { getByText } = render(
-      <Button size="extra-large" outline>
+      <Button size="extraLarge" outline>
         Button
       </Button>
     )

@@ -21,10 +21,12 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@types/react-icons": "^3.0.0",
     "clsx": "^2.0.0",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-icons": "^4.11.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.22.20",
