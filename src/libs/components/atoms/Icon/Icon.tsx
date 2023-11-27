@@ -28,6 +28,7 @@ import {
   SUCCESS,
   WARNING
 } from '@Constants/shared'
+import { useMemo } from 'react'
 
 type TIconNameFA6 = keyof typeof IconFA6
 type TIconNameFA = keyof typeof IconFA
@@ -90,6 +91,9 @@ const ColorClass: TColorClass = {
   },
   white: {
     fill: 'fill-white'
+  },
+  black: {
+    fill: 'fill-black'
   }
 }
 export const Icon = ({
@@ -116,15 +120,16 @@ export const Icon = ({
 
   const { fill } = ColorClass[color] ?? {}
 
+  const iconContextValue = useMemo(
+    () => ({
+      className: clsx(SizeClass[size], fill, className)
+    }),
+    [className, fill, size]
+  )
+
   return (
-    <IconContext.Provider
-      value={{
-        className: clsx(SizeClass[size], fill, className)
-      }}
-    >
-      <>
-        <IconComponent />
-      </>
+    <IconContext.Provider value={iconContextValue}>
+      <IconComponent />
     </IconContext.Provider>
   )
 }

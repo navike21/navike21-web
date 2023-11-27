@@ -15,3 +15,4 @@ export type TColor =
   | typeof WARNING
   | typeof ERROR
   | 'white'
+  | 'black'
