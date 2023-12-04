@@ -1,5 +1,12 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Icon } from './Icon'
+import { ERROR, LARGE, PRIMARY, SMALL } from '@Constants/shared'
+import {
+  BOOSTRAP,
+  FONT_AWESOME,
+  HERO_ICONS,
+  MATERIAL_DESIGN
+} from '@Constants/shared/iconLibrary'
 
 const meta = {
   title: 'Components/Atoms/Icon',
@@ -16,9 +23,9 @@ export const IconComponent: TStory = {
     iconName: {
       materialDesign: 'MdSignalWifiOff'
     },
-    library: 'materialDesign',
-    color: 'primary',
-    size: 'small'
+    library: MATERIAL_DESIGN,
+    color: PRIMARY,
+    size: SMALL
   },
   render: args => <Icon {...args} />
 }
@@ -28,9 +35,9 @@ export const FontAwesome: TStory = {
     iconName: {
       fontAwesome: 'FaWifi'
     },
-    library: 'fontAwesome',
-    color: 'primary',
-    size: 'small'
+    library: FONT_AWESOME,
+    color: PRIMARY,
+    size: SMALL
   },
   render: args => <Icon {...args} />
 }
@@ -40,9 +47,9 @@ export const HeroIcons: TStory = {
     iconName: {
       heroIcons: 'HiWifi'
     },
-    library: 'heroIcons',
-    color: 'primary',
-    size: 'small'
+    library: HERO_ICONS,
+    color: PRIMARY,
+    size: SMALL
   },
   render: args => <Icon {...args} />
 }
@@ -52,9 +59,9 @@ export const Bootstrap: TStory = {
     iconName: {
       bootstrap: 'BsWifi'
     },
-    library: 'bootstrap',
-    color: 'primary',
-    size: 'small'
+    library: BOOSTRAP,
+    color: PRIMARY,
+    size: SMALL
   },
   render: args => <Icon {...args} />
 }
@@ -64,9 +71,9 @@ export const Size: TStory = {
     iconName: {
       materialDesign: 'MdSignalWifiOff'
     },
-    library: 'materialDesign',
-    color: 'primary',
-    size: 'large'
+    library: MATERIAL_DESIGN,
+    color: PRIMARY,
+    size: LARGE
   },
   render: args => <Icon {...args} />
 }
@@ -76,9 +83,9 @@ export const Color: TStory = {
     iconName: {
       materialDesign: 'MdSignalWifiOff'
     },
-    library: 'materialDesign',
-    color: 'error',
-    size: 'large'
+    library: MATERIAL_DESIGN,
+    color: ERROR,
+    size: LARGE
   },
   render: args => <Icon {...args} />
 }
@@ -88,9 +95,9 @@ export const White: TStory = {
     iconName: {
       materialDesign: 'MdSignalWifiOff'
     },
-    library: 'materialDesign',
+    library: MATERIAL_DESIGN,
     color: 'white',
-    size: 'large'
+    size: LARGE
   },
   render: args => <Icon {...args} />
 }

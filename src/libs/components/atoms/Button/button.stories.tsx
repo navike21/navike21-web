@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Button } from './Button'
+import { MEDIUM, PRIMARY } from '@Constants/shared'
 
 const meta = {
   title: 'Components/Atoms/Button',
@@ -14,10 +15,10 @@ type TStory = StoryObj<typeof meta>
 export const ButtonComponent: TStory = {
   args: {
     children: "Hi i'm button",
-    size: 'medium',
+    size: MEDIUM,
     outline: false,
     disabled: false,
-    color: 'primary'
+    color: PRIMARY
   },
   render: args => <Button {...args} />
 }
@@ -25,7 +26,7 @@ export const ButtonComponent: TStory = {
 export const Outline: TStory = {
   args: {
     children: "Hi i'm button",
-    size: 'medium',
+    size: MEDIUM,
     outline: true,
     disabled: false
   },
@@ -35,7 +36,7 @@ export const Outline: TStory = {
 export const Disabled: TStory = {
   args: {
     children: "Hi i'm button",
-    size: 'medium',
+    size: MEDIUM,
     outline: false,
     disabled: true
   },

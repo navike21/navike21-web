@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import { Icon } from './Icon'
+import { LARGE } from '@Constants/shared'
 
 describe('Icon Component', () => {
   test('renders Icon component with default props', () => {
@@ -53,7 +54,7 @@ describe('Icon Component', () => {
       <Icon
         iconName={{ fontAwesome: 'FaAngleDoubleRight' }}
         library="fontAwesome"
-        size="large"
+        size={LARGE}
       />
     )
     expect(container).toMatchSnapshot()
