@@ -1,9 +1,9 @@
-import clsx from 'clsx'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import { ReactNode } from 'react'
-import { ThemeProvider } from 'next-themes'
+import { Providers } from './Providers'
+import clsx from 'clsx'
 
 const poppins = Poppins({
   subsets: ['latin-ext'],
@@ -19,12 +19,10 @@ export default function RootLayout({
   children
 }: Readonly<{ children: ReactNode }>) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}>
-      <html lang="en">
-        <body className={clsx(poppins.className, 'bg-white dark:bg-gray-900')}>
-          {children}
-        </body>
-      </html>
-    </ThemeProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body className={clsx(poppins.className, 'dark:bg-gray-900')}>
+        <Providers>{children}</Providers>
+      </body>
+    </html>
   )
 }

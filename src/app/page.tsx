@@ -1,3 +1,9 @@
+import { Input } from '@Components/atoms/Input'
+
 export default function Home() {
-  return <main className="xxxl:mt-2">Hola mundo</main>
+  return (
+    <main className="p-20">
+      <Input label="User" disabled />
+    </main>
+  )
 }

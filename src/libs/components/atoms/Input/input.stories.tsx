@@ -12,7 +12,8 @@ type TStory = StoryObj<typeof meta>
 
 export const InputComponent: TStory = {
   args: {
-    label: 'User'
+    label: 'User',
+    disabled: false
   },
   render: args => <Input {...args} />
 }
