@@ -10,8 +10,7 @@ import {
 
 const meta = {
   title: 'Components/Atoms/Icon',
-  component: Icon,
-  tags: ['autodocs']
+  component: Icon
 } as Meta<typeof Icon>
 
 export default meta

@@ -4,8 +4,7 @@ import { MEDIUM, PRIMARY } from '@Constants/shared'
 
 const meta = {
   title: 'Components/Atoms/Button',
-  component: Button,
-  tags: ['autodocs']
+  component: Button
 } as Meta<typeof Button>
 
 export default meta

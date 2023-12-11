@@ -8,13 +8,8 @@ import * as IconHI2 from 'react-icons/hi2'
 import * as IconBoostrap from 'react-icons/bs'
 import * as IconMaterialDesign from 'react-icons/md'
 
-import { TColor, TLibrary, TSize } from '@Types/shared'
-import {
-  BOOSTRAP,
-  FONT_AWESOME,
-  HERO_ICONS,
-  MATERIAL_DESIGN
-} from '@Constants/shared/iconLibrary'
+import { IIconProps, TColor, TSize } from '@Types/shared'
+import { FONT_AWESOME } from '@Constants/shared/iconLibrary'
 import {
   ERROR,
   EXTRA_LARGE,
@@ -29,28 +24,6 @@ import {
   WARNING
 } from '@Constants/shared'
 import { useMemo } from 'react'
-
-type TIconNameFA6 = keyof typeof IconFA6
-type TIconNameFA = keyof typeof IconFA
-type TIconNameHI = keyof typeof IconHI
-type TIconNameHI2 = keyof typeof IconHI2
-type TIconNameBS = keyof typeof IconBoostrap
-type TIconNameMD = keyof typeof IconMaterialDesign
-
-type TIconName = {
-  [FONT_AWESOME]?: TIconNameFA6 | TIconNameFA
-  [HERO_ICONS]?: TIconNameHI | TIconNameHI2
-  [BOOSTRAP]?: TIconNameBS
-  [MATERIAL_DESIGN]?: TIconNameMD
-}
-
-interface IIconProps {
-  iconName: TIconName
-  className?: string
-  library: TLibrary
-  size?: TSize
-  color?: TColor
-}
 
 type TSizeClass = {
   [key in TSize]: string
@@ -94,6 +67,33 @@ const ColorClass: TColorClass = {
   },
   black: {
     fill: 'fill-black'
+  },
+  gray_100: {
+    fill: 'fill-gray-100'
+  },
+  gray_200: {
+    fill: 'fill-gray-200'
+  },
+  gray_300: {
+    fill: 'fill-gray-300'
+  },
+  gray_400: {
+    fill: 'fill-gray-400'
+  },
+  gray_500: {
+    fill: 'fill-gray-500'
+  },
+  gray_600: {
+    fill: 'fill-gray-600'
+  },
+  gray_700: {
+    fill: 'fill-gray-700'
+  },
+  gray_800: {
+    fill: 'fill-gray-800'
+  },
+  gray_900: {
+    fill: 'fill-gray-900'
   }
 }
 export const Icon = ({
