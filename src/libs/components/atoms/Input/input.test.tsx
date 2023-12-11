@@ -23,7 +23,7 @@ describe('Input Component', () => {
 
   test('should render input component with label and value', () => {
     const { getByDisplayValue, getByLabelText } = render(
-      <Input label="Label" value="Value" />
+      <Input label="Label" defaultValue="Value" />
     )
     expect(getByDisplayValue('Value')).toBeTruthy()
     expect(getByLabelText('Label')).toBeTruthy()
@@ -35,9 +35,7 @@ describe('Input Component', () => {
   })
 
   test('should render input component with label and disabled', () => {
-    const { getByLabelText, getByPlaceholderText } = render(
-      <Input label="Label" disabled />
-    )
+    const { getByLabelText } = render(<Input label="Label" disabled />)
     expect(getByLabelText('Label')).toBeTruthy()
   })
 })
