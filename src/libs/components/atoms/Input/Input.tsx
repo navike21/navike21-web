@@ -14,10 +14,13 @@ export const Input = forwardRef<HTMLInputElement, IInputProps>(
       <label
         htmlFor={idInput}
         className={clsx(
-          'relative rounded-lg ring-gray-600 dark:ring-white ring-inset ring-1 pt-6 pb-3 px-4 focus-within:ring-2 transition-all duration-500 ease-in-out flex',
+          'relative rounded-lg  dark:ring-white ring-inset ring-1 pt-6 pb-3 px-4 transition-all duration-400 ease-in-out flex',
           {
-            'bg-gray-200 dark:bg-transparent__gray-8 cursor-not-allowed dark:ring-gray-500':
+            'bg-gray-100 ring-gray-400 dark:bg-transparent__gray-8 cursor-not-allowed dark:ring-gray-500':
               disabled
+          },
+          {
+            'ring-gray-600': !disabled
           }
         )}
       >
@@ -26,7 +29,7 @@ export const Input = forwardRef<HTMLInputElement, IInputProps>(
           type="text"
           id={idInput}
           className={clsx(
-            'peer border-none bg-transparent__white-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 text-md dark:text-white w-full disabled:bg-transparent__white-0 disabled:cursor-not-allowed disabled:dark:text-gray-500'
+            'outline-none peer border-none bg-transparent__white-0 placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 text-md dark:text-white w-full disabled:bg-transparent__white-0 disabled:cursor-not-allowed disabled:dark:text-gray-500 disabled:text-gray-400 transition-all duration-400'
           )}
           placeholder=""
           ref={ref}
@@ -36,9 +39,12 @@ export const Input = forwardRef<HTMLInputElement, IInputProps>(
         {label && (
           <span
             className={clsx(
-              'pointer-events-none absolute start-2.5 top-4 -translate-y-1/2  px-1.5 text-xs text-gray-700 dark:text-white transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-4 peer-focus:text-xs',
+              'pointer-events-none absolute start-2.5 top-4 -translate-y-1/2  px-1.5 text-xs  dark:text-white peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-4 peer-focus:text-xs transition-all duration-400',
               {
-                'cursor-not-allowed text-gray-500 dark:text-gray-500 ': disabled
+                'cursor-not-allowed text-gray-400 dark:text-gray-500 ': disabled
+              },
+              {
+                'text-gray-700': !disabled
               }
             )}
           >
