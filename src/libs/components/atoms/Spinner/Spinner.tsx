@@ -1,6 +1,7 @@
-import { TColor, TSize } from '@Types/shared'
 import clsx from 'clsx'
+import { TColor, TSize } from '@Types/shared'
 import styles from './spinner.module.scss'
+import { SMALL } from '@Constants/shared'
 
 type TSpinner = {
   className?: string
@@ -18,7 +19,7 @@ type TSizeVariation = {
 
 export const Spinner = ({
   className,
-  size = 'sm',
+  size = SMALL,
   color = 'white'
 }: TSpinner) => {
   const colorVariation: TColorVariation = {
