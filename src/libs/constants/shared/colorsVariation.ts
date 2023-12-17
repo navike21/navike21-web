@@ -1,0 +1,6 @@
+export const PRIMARY = 'primary'
+export const SECONDARY = 'secondary'
+export const INFO = 'info'
+export const SUCCESS = 'success'
+export const WARNING = 'warning'
+export const ERROR = 'error'

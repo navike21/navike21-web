@@ -1,9 +1,9 @@
-import { Button } from '@Components/atoms/Button'
+import { Button } from '@Components/molecules'
 
 export default function About() {
-	return (
-		<div>
-			About <Button />
-		</div>
-	)
+  return (
+    <div>
+      About <Button>Hola soy un botón</Button>
+    </div>
+  )
 }

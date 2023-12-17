@@ -1,0 +1,5 @@
+export const EXTRA_SMALL = 'xs'
+export const SMALL = 'sm'
+export const MEDIUM = 'md'
+export const LARGE = 'lg'
+export const EXTRA_LARGE = 'xl'
