@@ -16,13 +16,31 @@ import {
 } from '@Constants/shared'
 import styles from '@Styles/button.module.scss'
 import { TButton, TColor, TSize } from '@Types/shared'
+import { Spinner } from '@Components/atoms'
 
 type TSizeClass = {
   [key in TSize]: string
 }
 
+type TExcludeColors<tCode extends string | number | symbol> = tCode extends
+  | 'black'
+  | 'white'
+  | 'gray_100'
+  | 'gray_200'
+  | 'gray_300'
+  | 'gray_400'
+  | 'gray_500'
+  | 'gray_600'
+  | 'gray_700'
+  | 'gray_800'
+  | 'gray_900'
+  ? never
+  : tCode
+
+type TColorsExcluded = TExcludeColors<TColor>
+
 type TColorClass = {
-  [key in TColor]?: {
+  [key in TColorsExcluded]: {
     background: string
     backgroundHover: string
     backgroundHoverOutline: string
@@ -38,8 +56,9 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   size?: TSize
   outline?: boolean
   disabled?: boolean
-  color?: TColor
+  color?: TColorsExcluded
   type?: TButton
+  loading?: boolean
 }
 
 const SizeClass: TSizeClass = {
@@ -111,6 +130,7 @@ export const Button = ({
   outline = false,
   disabled = false,
   type = BUTTON,
+  loading = false,
   ...props
 }: IButtonProps) => {
   const {
@@ -126,22 +146,49 @@ export const Button = ({
     <button
       type={type}
       className={clsx(
-        'rounded-lg relative font-medium outline-none overflow-hidden focus:outline-none',
+        'rounded-lg relative font-medium outline-none overflow-hidden focus:outline-none transition-all duration-300',
         SizeClass[size],
-        ((disabled && outline) || (disabled && !outline)) &&
-          'bg-gray-300 cursor-not-allowed text-gray-600 hover:animate-duration-200',
-        !disabled &&
-          outline &&
-          `${classDefault} bg-transparent ring-inset ring-[0.1rem] ${ringColor} ${textColorOutline} hover:${textColorDefault} ${backgroundHoverOutline}`,
-        !disabled &&
-          !outline &&
-          `${classDefault} ${background} ${backgroundHover} text-white`,
         styles['i'],
+        {
+          'bg-gray-300 cursor-not-allowed text-gray-600':
+            (disabled && outline) || (disabled && !outline)
+        },
+        {
+          [`${classDefault} bg-transparent ring-inset ring-[0.1rem] ${ringColor} ${textColorOutline} hover:${textColorDefault} ${backgroundHoverOutline}`]:
+            !disabled && outline
+        },
+        {
+          [`${classDefault} ${background} ${backgroundHover} text-white`]:
+            !disabled && !outline
+        },
+        {
+          'pointer-events-none': loading
+        },
         className
       )}
       {...props}
     >
-      {children}
+      {loading && (
+        <div
+          className={clsx(
+            'absolute left-0 top-0 bottom-0 right-0 flex items-center justify-center'
+          )}
+        >
+          <Spinner
+            color={
+              (outline && loading && !disabled && color) ||
+              (disabled && 'gray_500') ||
+              'white'
+            }
+            size={size}
+          />
+        </div>
+      )}
+      <div
+        className={clsx({ 'opacity-0 transition-all duration-300': loading })}
+      >
+        {children}
+      </div>
     </button>
   )
 }

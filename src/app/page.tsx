@@ -1,4 +1,4 @@
-import { Input } from '@Components/atoms/Input'
+import { Input } from '@Components/molecules'
 
 export default function Home() {
   return (

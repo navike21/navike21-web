@@ -1,9 +1,8 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Input } from './Input'
-import { Icon } from '../Icon'
 
 const meta = {
-  title: 'Components/Atoms/Input',
+  title: 'Components/Molecules/Input',
   component: Input
 } as Meta<typeof Input>
 

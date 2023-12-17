@@ -3,7 +3,7 @@ import { Button } from './Button'
 import { MEDIUM, PRIMARY } from '@Constants/shared'
 
 const meta = {
-  title: 'Components/Atoms/Button',
+  title: 'Components/Molecules/Button',
   component: Button
 } as Meta<typeof Button>
 
@@ -14,10 +14,11 @@ type TStory = StoryObj<typeof meta>
 export const ButtonComponent: TStory = {
   args: {
     children: "Hi i'm button",
-    size: MEDIUM,
-    outline: false,
+    color: PRIMARY,
     disabled: false,
-    color: PRIMARY
+    loading: false,
+    outline: false,
+    size: MEDIUM
   },
   render: args => <Button {...args} />
 }
@@ -25,9 +26,9 @@ export const ButtonComponent: TStory = {
 export const Outline: TStory = {
   args: {
     children: "Hi i'm button",
-    size: MEDIUM,
+    disabled: false,
     outline: true,
-    disabled: false
+    size: MEDIUM
   },
   render: args => <Button {...args} />
 }

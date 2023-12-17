@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import { useId, InputHTMLAttributes, forwardRef, ReactNode } from 'react'
-import { Icon } from '../Icon'
+import { Icon } from '../../atoms/Icon'
 import { IIconProps } from '@Types/shared'
 import { MEDIUM } from '@Constants/shared'
 

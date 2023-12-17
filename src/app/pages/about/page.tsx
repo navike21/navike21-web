@@ -1,4 +1,4 @@
-import { Button } from '@Components/atoms/Button'
+import { Button } from '@Components/molecules'
 
 export default function About() {
   return (
