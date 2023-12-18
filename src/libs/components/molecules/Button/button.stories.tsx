@@ -17,8 +17,8 @@ export const ButtonComponent: TStory = {
     color: PRIMARY,
     disabled: false,
     loading: false,
-    outline: false,
-    size: MEDIUM
+    outline: false
+    // size: MEDIUM
   },
   render: args => <Button {...args} />
 }
@@ -27,8 +27,8 @@ export const Outline: TStory = {
   args: {
     children: "Hi i'm button",
     disabled: false,
-    outline: true,
-    size: MEDIUM
+    outline: true
+    // size: MEDIUM
   },
   render: args => <Button {...args} />
 }
@@ -36,7 +36,7 @@ export const Outline: TStory = {
 export const Disabled: TStory = {
   args: {
     children: "Hi i'm button",
-    size: MEDIUM,
+    // size: MEDIUM,
     outline: false,
     disabled: true
   },

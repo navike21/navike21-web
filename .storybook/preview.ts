@@ -1,28 +1,18 @@
-import type { Preview } from '@storybook/react'
+import { CssBaseline } from '@mui/material'
+import { withThemeFromJSXProvider } from '@storybook/addon-themes'
+import { lightTheme, darkTheme } from '../src/libs/themes/config/'
+import { MuiThemeProvider } from '../src/libs/themes/components/'
 
-const preview: Preview = {
-  parameters: {
-    actions: { argTypesRegex: '^on[A-Z].*' },
-    backgrounds: {
-      default: 'light',
-      values: [
-        {
-          name: 'light',
-          value: '#ffffff'
-        },
-        {
-          name: 'dark',
-          value: '#000000'
-        }
-      ]
+/* snipped for brevity */
+
+export const decorators = [
+  withThemeFromJSXProvider({
+    themes: {
+      light: lightTheme,
+      dark: darkTheme
     },
-    controls: {
-      matchers: {
-        color: /(background|color)$/i,
-        date: /Date$/i
-      }
-    }
-  }
-}
-
-export default preview
+    defaultTheme: 'light',
+    Provider: MuiThemeProvider,
+    GlobalStyles: CssBaseline
+  })
+]

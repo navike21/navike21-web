@@ -40,7 +40,7 @@ export const transparentSecondaryColor: TTransparentConfig = {
 export const gradientSecondaryColor =
   'linear-gradient(135deg, #C684FF 0%, #8E33FF 100%)'
 
-export const gray: TGrayConfig = {
+export const grayColor: TGrayConfig = {
   '900': '#161C24',
   '800': '#212B36',
   '700': '#454F5B',
@@ -62,7 +62,7 @@ export const transparentGray: TTransparentConfig = {
   '56': 'rgba(145, 158, 171, 0.56)'
 }
 
-export const black = '#000000'
+export const blackColor = '#000000'
 
 export const transparentBlack: TTransparentConfig = {
   '8': 'rgba(0, 0, 0, 0.08)',
@@ -74,7 +74,7 @@ export const transparentBlack: TTransparentConfig = {
   '56': 'rgba(0, 0, 0, 0.56)'
 }
 
-export const white = '#FFFFFF'
+export const whiteColor = '#FFFFFF'
 
 export const transparentWhite: TTransparentConfig = {
   '8': 'rgba(255, 255, 255, 0.08)',

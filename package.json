@@ -23,6 +23,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
+    "@mui/lab": "^5.0.0-alpha.156",
     "@mui/material": "^5.15.0",
     "@types/react-icons": "^3.0.0",
     "clsx": "^2.0.0",
@@ -39,6 +40,7 @@
     "@storybook/addon-links": "7.6.4",
     "@storybook/addon-mdx-gfm": "^7.6.4",
     "@storybook/addon-onboarding": "1.0.10",
+    "@storybook/addon-themes": "^7.6.4",
     "@storybook/blocks": "7.6.4",
     "@storybook/nextjs": "7.6.4",
     "@storybook/react": "7.6.4",
