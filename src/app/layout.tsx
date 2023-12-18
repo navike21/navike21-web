@@ -1,9 +1,8 @@
-import './globals.css'
+import { ReactNode } from 'react'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
-import { ReactNode } from 'react'
-import { Providers } from './Providers'
 import clsx from 'clsx'
+import { MuiThemeProvider } from '@Themes/components'
 
 const poppins = Poppins({
   subsets: ['latin-ext'],
@@ -19,9 +18,9 @@ export default function RootLayout({
   children
 }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={clsx(poppins.className, 'dark:bg-gray-900')}>
-        <Providers>{children}</Providers>
+    <html lang="en">
+      <body className={clsx(poppins.className)}>
+        <MuiThemeProvider>{children}</MuiThemeProvider>
       </body>
     </html>
   )

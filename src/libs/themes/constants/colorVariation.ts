@@ -1,0 +1,6 @@
+export const PRIMARY_COLOR = 'primaryColor'
+export const SECONDARY_COLOR = 'secondaryColor'
+export const SUCCESS_COLOR = 'successColor'
+export const WARNING_COLOR = 'warningColor'
+export const ERROR_COLOR = 'errorColor'
+export const INFO_COLOR = 'infoColor'
