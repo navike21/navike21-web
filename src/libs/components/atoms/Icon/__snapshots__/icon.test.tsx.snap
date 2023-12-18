@@ -3,13 +3,13 @@
 exports[`Icon Component renders Icon component with bootstrap library 1`] = `
 <div>
   <svg
-    class="w-4 h-4 fill-primary"
     fill="currentColor"
-    height="1em"
+    height="1rem"
     stroke="currentColor"
     stroke-width="0"
+    style="color: rgb(0, 167, 111);"
     viewBox="0 0 16 16"
-    width="1em"
+    width="1rem"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -25,13 +25,14 @@ exports[`Icon Component renders Icon component with bootstrap library 1`] = `
 exports[`Icon Component renders Icon component with className 1`] = `
 <div>
   <svg
-    class="w-4 h-4 fill-primary text-primary"
+    class="text-primary"
     fill="currentColor"
-    height="1em"
+    height="1rem"
     stroke="currentColor"
     stroke-width="0"
+    style="color: rgb(0, 167, 111);"
     viewBox="0 0 448 512"
-    width="1em"
+    width="1rem"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -44,13 +45,13 @@ exports[`Icon Component renders Icon component with className 1`] = `
 exports[`Icon Component renders Icon component with color 1`] = `
 <div>
   <svg
-    class="w-4 h-4 fill-primary"
     fill="currentColor"
-    height="1em"
+    height="1rem"
     stroke="currentColor"
     stroke-width="0"
+    style="color: rgb(0, 167, 111);"
     viewBox="0 0 448 512"
-    width="1em"
+    width="1rem"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -63,13 +64,13 @@ exports[`Icon Component renders Icon component with color 1`] = `
 exports[`Icon Component renders Icon component with custom props 1`] = `
 <div>
   <svg
-    class="w-4 h-4 fill-primary"
     fill="currentColor"
-    height="1em"
+    height="1rem"
     stroke="currentColor"
     stroke-width="0"
+    style="color: rgb(0, 167, 111);"
     viewBox="0 0 448 512"
-    width="1em"
+    width="1rem"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -82,13 +83,13 @@ exports[`Icon Component renders Icon component with custom props 1`] = `
 exports[`Icon Component renders Icon component with default props 1`] = `
 <div>
   <svg
-    class="w-4 h-4 fill-primary"
     fill="currentColor"
-    height="1em"
+    height="1rem"
     stroke="currentColor"
     stroke-width="0"
+    style="color: rgb(0, 167, 111);"
     viewBox="0 0 448 512"
-    width="1em"
+    width="1rem"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -102,13 +103,13 @@ exports[`Icon Component renders Icon component with heroIcons library 1`] = `
 <div>
   <svg
     aria-hidden="true"
-    class="w-4 h-4 fill-primary"
     fill="currentColor"
-    height="1em"
+    height="1rem"
     stroke="currentColor"
     stroke-width="0"
+    style="color: rgb(0, 167, 111);"
     viewBox="0 0 20 20"
-    width="1em"
+    width="1rem"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -123,13 +124,13 @@ exports[`Icon Component renders Icon component with heroIcons library 1`] = `
 exports[`Icon Component renders Icon component with materialDesign library 1`] = `
 <div>
   <svg
-    class="w-4 h-4 fill-primary"
     fill="currentColor"
-    height="1em"
+    height="1rem"
     stroke="currentColor"
     stroke-width="0"
+    style="color: rgb(0, 167, 111);"
     viewBox="0 0 24 24"
-    width="1em"
+    width="1rem"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -146,13 +147,13 @@ exports[`Icon Component renders Icon component with materialDesign library 1`] =
 exports[`Icon Component renders Icon component with size 1`] = `
 <div>
   <svg
-    class="w-8 h-8 fill-primary"
     fill="currentColor"
-    height="1em"
+    height="2rem"
     stroke="currentColor"
     stroke-width="0"
+    style="color: rgb(0, 167, 111);"
     viewBox="0 0 448 512"
-    width="1em"
+    width="2rem"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
