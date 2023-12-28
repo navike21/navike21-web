@@ -12,3 +12,11 @@ export type TSize =
   | typeof MEDIUM
   | typeof LARGE
   | typeof EXTRA_LARGE
+
+type TExcludeSizes<tCode extends string | number | symbol> = tCode extends
+  | typeof EXTRA_SMALL
+  | typeof EXTRA_LARGE
+  ? never
+  : tCode
+
+export type TSizesMUI = TExcludeSizes<TSize>

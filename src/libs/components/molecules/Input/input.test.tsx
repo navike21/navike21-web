@@ -15,7 +15,7 @@ describe('Input Component', () => {
 
   test('should render input component with label and placeholder', () => {
     const { getByPlaceholderText, getByLabelText } = render(
-      <Input label="Label" placeholder="Placeholder" />
+      <Input label="Label" />
     )
     expect(getByPlaceholderText('Placeholder')).toBeTruthy()
     expect(getByLabelText('Label')).toBeTruthy()

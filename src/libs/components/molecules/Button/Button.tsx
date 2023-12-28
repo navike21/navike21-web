@@ -1,9 +1,11 @@
 'use client'
 
 import React, { ButtonHTMLAttributes, ReactNode } from 'react'
-import LoadingButton from '@mui/lab/LoadingButton'
-import { BUTTON, MEDIUM, PRIMARY } from '@Constants/shared'
-import { TButton, TColor, TSize } from '@Types/shared'
+import { BUTTON, LARGE, PRIMARY } from '@Constants/shared'
+import { TButton, TColor, TSize, TSizesMUI } from '@Types/shared'
+import { Button as ButtonMaterial, ButtonProps } from '@mui/material'
+import styled from '@emotion/styled'
+import { Spinner } from '@Components/atoms'
 
 type TExcludeColors<tCode extends string | number | symbol> = tCode extends
   | 'black'
@@ -28,11 +30,45 @@ interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   disabled?: boolean
   color?: TColorsExcluded
   type?: TButton
-  loading?: boolean
+  loading?: 'true' | 'false'
   startIcon?: ReactNode
   endIcon?: ReactNode
+  size?: TSizesMUI
 }
 
+interface IBoostrapButton extends ButtonProps {
+  loading: 'true' | 'false'
+}
+
+type TLoadingState = {
+  loading: 'true' | 'false'
+}
+
+const BoostrapButton = styled(ButtonMaterial)<IBoostrapButton>(
+  ({ loading }) => ({
+    textTransform: 'none',
+    pointerEvents: loading === 'true' ? 'none' : 'auto'
+  })
+)
+
+const ChildrenButton = styled('div')<TLoadingState>(({ loading }) => ({
+  opacity: loading === 'true' ? 0 : 1,
+  alignItems: 'center',
+  position: 'relative',
+  zIndex: 1
+}))
+
+const LoadingContent = styled('div')({
+  position: 'absolute',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  height: '100%',
+  width: '100%',
+  left: 0,
+  top: 0,
+  zIndex: 2
+})
 export const Button = ({
   children,
   outline,
@@ -41,20 +77,27 @@ export const Button = ({
   endIcon,
   color = PRIMARY,
   type = BUTTON,
-  loading = false,
+  loading = 'false',
+  size = LARGE,
   ...props
 }: IButtonProps) => (
-  <LoadingButton
+  <BoostrapButton
     variant={outline ? 'outlined' : 'contained'}
-    loading={loading}
     color={color}
     type={type}
-    size="large"
+    size={size}
     disabled={disabled}
     startIcon={startIcon}
     endIcon={endIcon}
+    loading={loading}
+    disableElevation
     {...props}
   >
-    {children}
-  </LoadingButton>
+    {loading === 'true' && (
+      <LoadingContent>
+        <Spinner color={outline ? color : 'white'} />
+      </LoadingContent>
+    )}
+    <ChildrenButton loading={loading}>{children}</ChildrenButton>
+  </BoostrapButton>
 )

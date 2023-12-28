@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 import { Button } from './Button'
-import { MEDIUM, PRIMARY } from '@Constants/shared'
+import { LARGE, PRIMARY } from '@Constants/shared'
 
 const meta = {
   title: 'Components/Molecules/Button',
@@ -16,9 +16,9 @@ export const ButtonComponent: TStory = {
     children: "Hi i'm button",
     color: PRIMARY,
     disabled: false,
-    loading: false,
-    outline: false
-    // size: MEDIUM
+    loading: 'false',
+    outline: false,
+    size: LARGE
   },
   render: args => <Button {...args} />
 }
@@ -27,8 +27,8 @@ export const Outline: TStory = {
   args: {
     children: "Hi i'm button",
     disabled: false,
-    outline: true
-    // size: MEDIUM
+    outline: true,
+    size: LARGE
   },
   render: args => <Button {...args} />
 }
@@ -36,9 +36,19 @@ export const Outline: TStory = {
 export const Disabled: TStory = {
   args: {
     children: "Hi i'm button",
-    // size: MEDIUM,
+    size: LARGE,
     outline: false,
     disabled: true
+  },
+  render: args => <Button {...args} />
+}
+
+export const Loading: TStory = {
+  args: {
+    children: "Hi i'm button",
+    size: LARGE,
+    outline: false,
+    loading: 'true'
   },
   render: args => <Button {...args} />
 }

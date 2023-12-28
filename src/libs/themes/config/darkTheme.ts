@@ -8,5 +8,12 @@ export const darkTheme = (color: TColorVariant): Object => ({
   palette: {
     mode: DARK as PaletteMode,
     primary: getPrincipalColor(color)
+  },
+  shape: {
+    borderRadius: 8
+  },
+  typography: {
+    fontSize: 12,
+    fontFamily: 'inherit'
   }
 })

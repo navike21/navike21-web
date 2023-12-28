@@ -34,6 +34,7 @@ import {
   warningColor,
   whiteColor
 } from '@Themes/constants'
+import { useMemo } from 'react'
 
 type TSizeClass = {
   [key in TSize]: string
@@ -92,14 +93,17 @@ export const Icon = ({
   }
   const IconComponent = libraryIcon[library]
 
+  const valueProps = useMemo(
+    () => ({
+      size: SizeClass[size],
+      color: ColorClass[color],
+      className: clsx(className)
+    }),
+    [size, color, className]
+  )
+
   return (
-    <IconContext.Provider
-      value={{
-        size: SizeClass[size],
-        color: ColorClass[color],
-        className: clsx(className)
-      }}
-    >
+    <IconContext.Provider value={valueProps}>
       <IconComponent />
     </IconContext.Provider>
   )

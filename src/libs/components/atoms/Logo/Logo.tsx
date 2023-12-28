@@ -1,5 +1,12 @@
 import clsx from 'clsx'
-import { MEDIUM, PRIMARY } from '@Constants/shared'
+import {
+  EXTRA_LARGE,
+  EXTRA_SMALL,
+  LARGE,
+  MEDIUM,
+  PRIMARY,
+  SMALL
+} from '@Constants/shared'
 import { TColor, TSize } from '@Types/shared'
 import styled from '@emotion/styled'
 import {
@@ -65,22 +72,22 @@ const colorVariation: TColorVariation = {
 }
 
 const sizeVariation: TSizeVariation = {
-  xs: '1.25rem',
-  sm: '2.5rem',
-  md: '3.5rem',
-  lg: '5rem',
-  xl: '8rem'
+  [EXTRA_SMALL]: '1.25rem',
+  [SMALL]: '2.5rem',
+  [MEDIUM]: '3.5rem',
+  [LARGE]: '5rem',
+  [EXTRA_LARGE]: '8rem'
 }
 export const Logo = ({ color = PRIMARY, size = MEDIUM, className }: TLogo) => {
-  const SVG = styled('svg')(() => ({
+  const Svg = styled('svg')({
     width: sizeVariation[size],
     height: sizeVariation[size],
     transition: 'all 0.2s ease-in-out',
     fill: 'none'
-  }))
+  })
 
   return (
-    <SVG
+    <Svg
       className={clsx(className)}
       viewBox="0 0 224 224"
       xmlns="http://www.w3.org/2000/svg"
@@ -102,6 +109,6 @@ export const Logo = ({ color = PRIMARY, size = MEDIUM, className }: TLogo) => {
           <stop offset="1" stopColor={colorVariation[color].to} />
         </linearGradient>
       </defs>
-    </SVG>
+    </Svg>
   )
 }
