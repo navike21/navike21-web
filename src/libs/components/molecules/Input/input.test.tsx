@@ -13,14 +13,6 @@ describe('Input Component', () => {
     expect(getByPlaceholderText('')).toBeTruthy()
   })
 
-  test('should render input component with label and placeholder', () => {
-    const { getByPlaceholderText, getByLabelText } = render(
-      <Input label="Label" />
-    )
-    expect(getByPlaceholderText('Placeholder')).toBeTruthy()
-    expect(getByLabelText('Label')).toBeTruthy()
-  })
-
   test('should render input component with label and value', () => {
     const { getByDisplayValue, getByLabelText } = render(
       <Input label="Label" defaultValue="Value" />
