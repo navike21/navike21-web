@@ -29,8 +29,10 @@
 			"@Hooks/*": ["src/libs/hooks/*"],
       "@Types/*": ["src/libs/types/*"],
       "@Styles/*": ["src/libs/styles/*"],
+      "@Themes/*": ["src/libs/themes/*"],
 		}
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "**/*.scss", "jest.config.js", "tailwind.config.js"],
+	// "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "**/*.scss", "jest.config.js", "tailwind.config.js"],
+	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "**/*.scss", "jest.config.js"],
 	"exclude": ["node_modules"]
 }

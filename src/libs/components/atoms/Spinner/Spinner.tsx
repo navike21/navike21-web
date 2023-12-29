@@ -1,64 +1,83 @@
-import clsx from 'clsx'
 import { TColor, TSize } from '@Types/shared'
-import styles from './spinner.module.scss'
-import { SMALL } from '@Constants/shared'
+import {
+  BLACK,
+  ERROR,
+  EXTRA_LARGE,
+  EXTRA_SMALL,
+  INFO,
+  LARGE,
+  MEDIUM,
+  PRIMARY,
+  SECONDARY,
+  SMALL,
+  SUCCESS,
+  WARNING,
+  WHITE
+} from '@Constants/shared'
+import {
+  blackColor,
+  errorColor,
+  infoColor,
+  primaryColor,
+  secondaryColor,
+  successColor,
+  warningColor,
+  whiteColor
+} from '@Themes/constants'
+import { CircularProgress } from '@mui/material'
 
-type TSpinner = {
-  className?: string
-  color?: TColor
-  size?: TSize
-}
+type TExcludeColors<tCode extends string | number | symbol> = tCode extends
+  | 'gray_100'
+  | 'gray_200'
+  | 'gray_300'
+  | 'gray_400'
+  | 'gray_500'
+  | 'gray_600'
+  | 'gray_700'
+  | 'gray_800'
+  | 'gray_900'
+  ? never
+  : tCode
+
+type TColorsExcluded = TExcludeColors<TColor>
 
 type TColorVariation = {
-  [key in TColor]: string
+  [key in TColorsExcluded]: string
 }
 
 type TSizeVariation = {
-  [key in TSize]: string
+  [key in TSize]: number
 }
 
-export const Spinner = ({
-  className,
-  size = SMALL,
-  color = 'white'
-}: TSpinner) => {
-  const colorVariation: TColorVariation = {
-    primary: 'stroke-primary',
-    secondary: 'stroke-secondary',
-    success: 'stroke-success',
-    warning: 'stroke-warning',
-    error: 'stroke-error',
-    info: 'stroke-info',
-    white: 'stroke-white',
-    black: 'stroke-black',
-    gray_100: 'stroke-gray-100',
-    gray_200: 'stroke-gray-200',
-    gray_300: 'stroke-gray-300',
-    gray_400: 'stroke-gray-400',
-    gray_500: 'stroke-gray-500',
-    gray_600: 'stroke-gray-600',
-    gray_700: 'stroke-gray-700',
-    gray_800: 'stroke-gray-800',
-    gray_900: 'stroke-gray-900'
-  }
-
-  const sizeVariation: TSizeVariation = {
-    xs: 'w-3 h-3',
-    sm: 'w-4 h-4',
-    md: 'w-5 h-5',
-    lg: 'w-6 h-6',
-    xl: 'w-7 h-7'
-  }
-
-  return (
-    <svg
-      className={clsx(colorVariation[color], sizeVariation[size], className)}
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <g className={clsx(styles['spinner'])}>
-        <circle cx="12" cy="12" r="9.5" fill="none" strokeWidth="3"></circle>
-      </g>
-    </svg>
-  )
+type TSpinner = {
+  color?: TColorsExcluded
+  size?: TSize
 }
+
+const sizeVariation: TSizeVariation = {
+  [EXTRA_SMALL]: 14,
+  [SMALL]: 18,
+  [MEDIUM]: 24,
+  [LARGE]: 30,
+  [EXTRA_LARGE]: 40
+}
+
+const colorVariation: TColorVariation = {
+  [PRIMARY]: primaryColor.main,
+  [SECONDARY]: secondaryColor.main,
+  [SUCCESS]: successColor.main,
+  [ERROR]: errorColor.main,
+  [WARNING]: warningColor.main,
+  [INFO]: infoColor.main,
+  [BLACK]: blackColor,
+  [WHITE]: whiteColor
+}
+
+export const Spinner = ({ color = PRIMARY, size = SMALL }: TSpinner) => (
+  <CircularProgress
+    sx={{
+      color: colorVariation[color]
+    }}
+    size={sizeVariation[size]}
+  />
+)

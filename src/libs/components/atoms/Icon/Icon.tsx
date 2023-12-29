@@ -23,6 +23,17 @@ import {
   SUCCESS,
   WARNING
 } from '@Constants/shared'
+import {
+  blackColor,
+  errorColor,
+  grayColor,
+  infoColor,
+  primaryColor,
+  secondaryColor,
+  successColor,
+  warningColor,
+  whiteColor
+} from '@Themes/constants'
 import { useMemo } from 'react'
 
 type TSizeClass = {
@@ -30,71 +41,35 @@ type TSizeClass = {
 }
 
 type TColorClass = {
-  [key in TColor]?: {
-    fill: string
-  }
+  [key in TColor]?: string
 }
 
 const SizeClass: TSizeClass = {
-  [EXTRA_SMALL]: 'w-3.5 h-3.5',
-  [SMALL]: 'w-4 h-4',
-  [MEDIUM]: 'w-6 h-6',
-  [LARGE]: 'w-8 h-8',
-  [EXTRA_LARGE]: 'w-10 h-10'
+  [EXTRA_SMALL]: '0.875rem',
+  [SMALL]: '1rem',
+  [MEDIUM]: '1.5rem',
+  [LARGE]: '2rem',
+  [EXTRA_LARGE]: '2.5rem'
 }
 
 const ColorClass: TColorClass = {
-  [PRIMARY]: {
-    fill: 'fill-primary'
-  },
-  [SECONDARY]: {
-    fill: 'fill-secondary'
-  },
-  [INFO]: {
-    fill: 'fill-info'
-  },
-  [SUCCESS]: {
-    fill: 'fill-success'
-  },
-  [WARNING]: {
-    fill: 'fill-warning'
-  },
-  [ERROR]: {
-    fill: 'fill-error'
-  },
-  white: {
-    fill: 'fill-white'
-  },
-  black: {
-    fill: 'fill-black'
-  },
-  gray_100: {
-    fill: 'fill-gray-100'
-  },
-  gray_200: {
-    fill: 'fill-gray-200'
-  },
-  gray_300: {
-    fill: 'fill-gray-300'
-  },
-  gray_400: {
-    fill: 'fill-gray-400'
-  },
-  gray_500: {
-    fill: 'fill-gray-500'
-  },
-  gray_600: {
-    fill: 'fill-gray-600'
-  },
-  gray_700: {
-    fill: 'fill-gray-700'
-  },
-  gray_800: {
-    fill: 'fill-gray-800'
-  },
-  gray_900: {
-    fill: 'fill-gray-900'
-  }
+  [PRIMARY]: primaryColor.main,
+  [SECONDARY]: secondaryColor.main,
+  [SUCCESS]: successColor.main,
+  [INFO]: infoColor.main,
+  [WARNING]: warningColor.main,
+  [ERROR]: errorColor.main,
+  white: whiteColor,
+  black: blackColor,
+  gray_100: grayColor[100],
+  gray_200: grayColor[200],
+  gray_300: grayColor[300],
+  gray_400: grayColor[400],
+  gray_500: grayColor[500],
+  gray_600: grayColor[600],
+  gray_700: grayColor[700],
+  gray_800: grayColor[800],
+  gray_900: grayColor[900]
 }
 export const Icon = ({
   className,
@@ -118,17 +93,17 @@ export const Icon = ({
   }
   const IconComponent = libraryIcon[library]
 
-  const { fill } = ColorClass[color] ?? {}
-
-  const iconContextValue = useMemo(
+  const valueProps = useMemo(
     () => ({
-      className: clsx(SizeClass[size], fill, className)
+      size: SizeClass[size],
+      color: ColorClass[color],
+      className: clsx(className)
     }),
-    [className, fill, size]
+    [size, color, className]
   )
 
   return (
-    <IconContext.Provider value={iconContextValue}>
+    <IconContext.Provider value={valueProps}>
       <IconComponent />
     </IconContext.Provider>
   )

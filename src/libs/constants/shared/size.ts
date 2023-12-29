@@ -1,5 +1,6 @@
-export const EXTRA_SMALL = 'xs'
-export const SMALL = 'sm'
-export const MEDIUM = 'md'
-export const LARGE = 'lg'
-export const EXTRA_LARGE = 'xl'
+export const EXTRA_SMALL = 'xtra-small'
+export const SMALL = 'small'
+export const MEDIUM = 'medium'
+export const LARGE = 'large'
+export const EXTRA_LARGE = 'xtra-large'
+export const MAX_WIDTH = 1152
