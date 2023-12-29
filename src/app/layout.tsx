@@ -1,8 +1,9 @@
-import { ReactNode } from 'react'
+import { Fragment, ReactNode } from 'react'
 import type { Metadata } from 'next'
 import { Poppins } from 'next/font/google'
 import clsx from 'clsx'
 import { MuiThemeProvider } from '@Themes/components'
+import { Header } from '@Components/organisms'
 
 const poppins = Poppins({
   subsets: ['latin-ext'],
@@ -20,7 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={clsx(poppins.className)}>
-        <MuiThemeProvider>{children}</MuiThemeProvider>
+        <MuiThemeProvider>
+          <Header />
+          <Fragment>{children}</Fragment>
+        </MuiThemeProvider>
       </body>
     </html>
   )

@@ -46,7 +46,6 @@ type TLoadingState = {
 
 const BoostrapButton = styled(ButtonMaterial)<IBoostrapButton>(
   ({ loading }) => ({
-    textTransform: 'none',
     pointerEvents: loading === 'true' ? 'none' : 'auto'
   })
 )

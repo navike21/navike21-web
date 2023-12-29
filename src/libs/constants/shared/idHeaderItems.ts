@@ -1,0 +1,5 @@
+export const ID_HOME = 'home'
+export const ID_ABOUT = 'about'
+export const ID_PROJECTS = 'projects'
+export const ID_SERVICES = 'services'
+export const ID_CONTACT = 'contact'
