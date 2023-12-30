@@ -25,14 +25,14 @@
 		"paths": {
 			"@Components/*": ["src/libs/components/*"],
 			"@Constants/*": ["src/libs/constants/*"],
-			"@Helpers/*": ["src/libs/helpers/*"],
+			"@Utils/*": ["src/libs/utils/*"],
 			"@Hooks/*": ["src/libs/hooks/*"],
       "@Types/*": ["src/libs/types/*"],
       "@Styles/*": ["src/libs/styles/*"],
       "@Themes/*": ["src/libs/themes/*"],
+      "@Store/*": ["src/store/*"],
 		}
 	},
-	// "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "**/*.scss", "jest.config.js", "tailwind.config.js"],
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "**/*.scss", "jest.config.js"],
 	"exclude": ["node_modules"]
 }

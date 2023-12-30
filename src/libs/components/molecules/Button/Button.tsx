@@ -2,7 +2,7 @@
 
 import React, { ButtonHTMLAttributes, ReactNode } from 'react'
 import { BUTTON, LARGE, PRIMARY } from '@Constants/shared'
-import { TButton, TColor, TSize, TSizesMUI } from '@Types/shared'
+import { TButton, TColor, TSizesMUI } from '@Types/shared'
 import { Button as ButtonMaterial, ButtonProps } from '@mui/material'
 import styled from '@emotion/styled'
 import { Spinner } from '@Components/atoms'
