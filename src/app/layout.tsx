@@ -20,15 +20,15 @@ export default function RootLayout({
   children
 }: Readonly<{ children: ReactNode }>) {
   return (
-    <StoreProvider>
-      <html lang="es">
-        <body className={clsx(poppins.className)}>
+    <html lang="es">
+      <body className={clsx(poppins.className)}>
+        <StoreProvider>
           <MuiThemeProvider>
             <Header />
             <Fragment>{children}</Fragment>
           </MuiThemeProvider>
-        </body>
-      </html>
-    </StoreProvider>
+        </StoreProvider>
+      </body>
+    </html>
   )
 }
