@@ -9,7 +9,7 @@ export const useConfigStateTheme = () => {
   const colorMode = useColorMode()
 
   //* If themeMode is LIGHT, then return lightTheme, else return darkTheme
-  return (colorMode || themeMode) === LIGHT
+  return (themeMode || colorMode) === LIGHT
     ? lightTheme(primaryColor)
     : darkTheme(primaryColor)
 }
