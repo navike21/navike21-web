@@ -4,6 +4,8 @@ import { Poppins } from 'next/font/google'
 import clsx from 'clsx'
 import { MuiThemeProvider } from '@Themes/components'
 import { Header } from '@Components/organisms'
+import { StoreProvider } from '@Store/StoreProvider'
+import { EN } from '@Constants/shared'
 
 const poppins = Poppins({
   subsets: ['latin-ext'],
@@ -19,12 +21,14 @@ export default function RootLayout({
   children
 }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang={EN}>
       <body className={clsx(poppins.className)}>
-        <MuiThemeProvider>
-          <Header />
-          <Fragment>{children}</Fragment>
-        </MuiThemeProvider>
+        <StoreProvider>
+          <MuiThemeProvider>
+            <Header />
+            <Fragment>{children}</Fragment>
+          </MuiThemeProvider>
+        </StoreProvider>
       </body>
     </html>
   )

@@ -1,11 +1,11 @@
-import { DEU, ENG, ESP, FRA, ITA, KOR, POR, RUS } from '@Constants/shared'
+import { DE, EN, ES, FR, IT, KR, PT, RU } from '@Constants/shared'
 
 export type TLangSupported =
-  | typeof ESP
-  | typeof ENG
-  | typeof DEU
-  | typeof FRA
-  | typeof ITA
-  | typeof POR
-  | typeof RUS
-  | typeof KOR
+  | typeof ES
+  | typeof EN
+  | typeof DE
+  | typeof FR
+  | typeof IT
+  | typeof PT
+  | typeof RU
+  | typeof KR

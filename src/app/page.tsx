@@ -1,9 +1,10 @@
-import { Button, Input } from '@Components/molecules'
+import { Button } from '@Components/molecules'
 
 export default function Home() {
   return (
-    <main className="p-20">
+    <main>
       <Button>Hola mundo</Button>
+      Hola
     </main>
   )
 }

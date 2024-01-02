@@ -4,23 +4,17 @@ import React, { FC, ReactNode } from 'react'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { CssBaseline } from '@mui/material'
 import StyledEngineProvider from '@mui/material/StyledEngineProvider'
-import { LIGHT } from '@Constants/shared'
-import { darkTheme, lightTheme } from '@Themes/config'
-import { PRIMARY_COLOR } from '@Themes/constants'
+import { useConfigStateTheme } from './hooks'
 
-type TProps = {
+type TMuiThemeProviderProps = {
   children: ReactNode
 }
 
-export const MuiThemeProvider: FC<TProps> = ({ children }) => {
-  const themeMode = LIGHT
-  const importTheme =
-    themeMode === LIGHT ? lightTheme(PRIMARY_COLOR) : darkTheme(PRIMARY_COLOR)
-
-  const theme = createTheme(importTheme)
+export const MuiThemeProvider: FC<TMuiThemeProviderProps> = ({ children }) => {
+  const theme = createTheme(useConfigStateTheme())
 
   return (
-    <StyledEngineProvider>
+    <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         {children}

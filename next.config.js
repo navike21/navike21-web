@@ -11,9 +11,10 @@ const nextConfig = {
 		];
 	},
 	webpack(config) {
-		config.resolve.alias['@Components'] = path.join(__dirname, 'src/components');
+    config.resolve.alias["@Store"] = path.join(__dirname, "src/store");
+		config.resolve.alias['@Components'] = path.join(__dirname, 'src/libs/components');
     config.resolve.alias['@Constants'] = path.join(__dirname, 'src/libs/constants');
-		config.resolve.alias['@Helpers'] = path.join(__dirname, 'src/libs/helpers');
+		config.resolve.alias['@Utils'] = path.join(__dirname, 'src/libs/utils');
 		config.resolve.alias['@Hooks'] = path.join(__dirname, 'src/libs/hooks');
     config.resolve.alias['@Types'] = path.join(__dirname, 'src/libs/types');
     config.resolve.alias["@Styles"] = path.join(__dirname, "src/libs/styles");
