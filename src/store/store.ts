@@ -1,11 +1,9 @@
-import { configReducer } from '@Themes/config'
 import { configureStore } from '@reduxjs/toolkit'
+import { rootReducers } from './reducers'
 
 export const makeStore = () => {
   return configureStore({
-    reducer: {
-      config: configReducer
-    }
+    reducer: rootReducers
   })
 }
 

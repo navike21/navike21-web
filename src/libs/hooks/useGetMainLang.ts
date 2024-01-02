@@ -1,4 +1,4 @@
-import { useAppSelector } from './useAppSelector'
+import { useAppSelector } from '@Store/hooks'
 
 export const useGetMainLang = () => {
   const { language } = useAppSelector(state => state.config)

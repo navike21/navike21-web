@@ -2,7 +2,6 @@
 
 import { Container, Logo } from '@Components/atoms'
 import { SMALL } from '@Constants/shared'
-import { useAppSelector } from '@Hooks/useAppSelector'
 import { AppBar } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2/Grid2'
 

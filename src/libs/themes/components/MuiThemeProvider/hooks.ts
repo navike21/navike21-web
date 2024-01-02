@@ -1,5 +1,5 @@
 import { LIGHT } from '@Constants/shared'
-import { useAppSelector } from '@Hooks/useAppSelector'
+import { useAppSelector } from '@Store/hooks'
 import { darkTheme, lightTheme } from '@Themes/config'
 
 export const useConfigStateTheme = () => {
