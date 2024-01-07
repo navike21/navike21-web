@@ -1,5 +1,5 @@
 import { DE, EN, ES, FR, IT, KR, PT, RU } from '@Constants/shared'
-import { TDataHeader } from '@Types/shared'
+import { TMenuHeader } from '@Types/shared'
 import {
   menuDeu,
   menuEng,
@@ -11,7 +11,7 @@ import {
 } from './lang'
 import { menuKor } from './lang/menuKor'
 
-export const dataHeader: TDataHeader = {
+export const dataMenuHeader: TMenuHeader = {
   [ES]: menuEsp,
   [EN]: menuEng,
   [DE]: menuDeu,

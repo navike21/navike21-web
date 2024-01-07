@@ -5,9 +5,9 @@ import {
   ID_SERVICES,
   ID_CONTACT
 } from '@Constants/shared'
-import { TDataHeaderItem } from '@Types/shared'
+import { TMenuHeaderItem } from '@Types/shared'
 
-export const menuDeu: TDataHeaderItem[] = [
+export const menuDeu: TMenuHeaderItem[] = [
   {
     id: ID_HOME,
     text: 'Startseite',

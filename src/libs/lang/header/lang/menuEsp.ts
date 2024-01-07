@@ -5,9 +5,9 @@ import {
   ID_SERVICES,
   ID_CONTACT
 } from '@Constants/shared'
-import { TDataHeaderItem } from '@Types/shared'
+import { TMenuHeaderItem } from '@Types/shared'
 
-export const menuEsp: TDataHeaderItem[] = [
+export const menuEsp: TMenuHeaderItem[] = [
   {
     id: ID_HOME,
     text: 'Inicio',

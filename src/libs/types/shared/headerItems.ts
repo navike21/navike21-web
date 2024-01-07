@@ -1,11 +1,11 @@
 import { TLangSupported } from './lang'
 
-export type TDataHeaderItem = {
+export type TMenuHeaderItem = {
   id: string
   text: string
   path: string
 }
 
-export type TDataHeader = {
-  [key in TLangSupported]: TDataHeaderItem[]
+export type TMenuHeader = {
+  [key in TLangSupported]: TMenuHeaderItem[]
 }

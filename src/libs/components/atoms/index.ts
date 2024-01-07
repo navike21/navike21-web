@@ -1,4 +1,5 @@
-export * from './Icon'
-export * from './Spinner'
 export * from './Container'
+export * from './Icon'
+export * from './LinkTag'
 export * from './Logo'
+export * from './Spinner'
