@@ -15,7 +15,7 @@ export const menuEsp: TMenuHeaderItem[] = [
   },
   {
     id: ID_ABOUT,
-    text: 'Acerca de',
+    text: 'Nosotros',
     path: '/nosotros'
   },
   {

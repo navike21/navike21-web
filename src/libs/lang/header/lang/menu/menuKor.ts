@@ -16,7 +16,7 @@ export const menuKor: TMenuHeaderItem[] = [
   {
     id: ID_ABOUT,
     text: '회사 소개',
-    path: '/about'
+    path: '/about-us'
   },
   {
     id: ID_PROJECTS,

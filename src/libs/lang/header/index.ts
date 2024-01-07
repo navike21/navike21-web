@@ -7,9 +7,9 @@ import {
   menuFra,
   menuIta,
   menuPor,
-  menuRus
-} from './lang'
-import { menuKor } from './lang/menuKor'
+  menuRus,
+  menuKor
+} from './lang/'
 
 export const dataMenuHeader: TMenuHeader = {
   [ES]: menuEsp,
