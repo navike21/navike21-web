@@ -1,0 +1,4 @@
+export * from './useMainLang'
+export * from './useMainPrimaryColor'
+export * from './useSizeScreen'
+export * from './useThemeMode'

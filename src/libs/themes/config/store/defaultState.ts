@@ -1,9 +1,9 @@
-import { EN } from '@Constants/shared'
 import { TConfig } from './types'
 import { PRIMARY_COLOR } from '@Themes/constants'
+import { getLangBrowser, getThemeModeBrowser } from '@Utils/shared'
 
 export const defaultStateConfig: TConfig = {
-  language: EN,
+  language: getLangBrowser(),
   primaryColor: PRIMARY_COLOR,
-  themeMode: null
+  themeMode: getThemeModeBrowser()
 }

@@ -1,8 +1,8 @@
 'use client'
 
 import { LinkTag } from '@Components/atoms'
-import { useMainLang } from '@Hooks/useMainLang'
-import { useMainPrimaryColor } from '@Hooks/useMainPrimaryColor'
+import { useMainLang } from '@Hooks/shared/useMainLang'
+import { useMainPrimaryColor } from '@Hooks/shared/useMainPrimaryColor'
 import { dataMenuHeader } from '@Lang/header'
 import { usePathname } from 'next/navigation'
 import Grid from '@mui/material/Unstable_Grid2/Grid2'
@@ -41,12 +41,15 @@ export const MenuHeader = () => {
   const handleRemoveTextColorString = (color: string): TColorsExcluded =>
     color.replace(/Color/g, '') as TColorsExcluded
 
-  const handleActiveLink = (path: string): TColorsExcluded =>
-    path === pathname
-      ? handleRemoveTextColorString(primaryColor)
-      : themeMode === LIGHT
-        ? BLACK
-        : WHITE
+  const handleActiveLink = (path: string): TColorsExcluded => {
+    if (path === pathname) {
+      return handleRemoveTextColorString(primaryColor)
+    }
+    if (themeMode === LIGHT) {
+      return BLACK
+    }
+    return WHITE
+  }
 
   return (
     <Grid component="ul" container spacing={5} sx={stylesHeader}>

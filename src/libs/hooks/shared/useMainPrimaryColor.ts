@@ -1,6 +1,6 @@
 import { useAppSelector } from '@Store/hooks'
 
 export const useMainPrimaryColor = () => {
-  const { primaryColor } = useAppSelector(state => state.config)
+  const { primaryColor } = useAppSelector(({ config }) => config)
   return primaryColor
 }

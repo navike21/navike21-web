@@ -1,14 +1,22 @@
 'use client'
 
 import { Icon } from '@Components/atoms'
-import { useMainLang } from '@Hooks/useMainLang'
 import { dataActions } from '@Lang/shared'
-import { Drawer, IconButton, Typography } from '@mui/material'
+import {
+  Drawer,
+  Button,
+  IconButton,
+  Typography,
+  ToggleButton,
+  ToggleButtonGroup
+} from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2/Grid2'
-import React from 'react'
+import React, { MouseEvent } from 'react'
 import { SectionMenu } from './SectionMenu'
-import { useChangeThemeMode } from '@Hooks/useChangeThemeMode'
 import { DARK, LIGHT } from '@Constants/shared'
+import { useMainLang, useThemeMode } from '@Hooks/shared'
+import { useChangeThemeMode } from '@Hooks/shared/useChangeThemeMode'
+import { TThemeMode } from '@Types/shared'
 
 type TMenuConfig = {
   open: boolean
@@ -25,14 +33,28 @@ const stylesDrawer = {
 
 const subTitle = {
   fontSize: 12,
-  opacity: 0.5
+  opacity: 0.8
+}
+
+const stylesButton = {
+  padding: 2
+  // borderRadius: 0
+}
+const stylesButtonWrapp = {
+  // borderRadius: 0
 }
 
 export const MenuConfig = ({ open, onClose }: TMenuConfig) => {
+  const changeThemeMode = useChangeThemeMode()
+  const themeMode = useThemeMode()
   const lang = useMainLang()
+
   const { settings: settingsText, themeMode: themeModeText } = dataActions[lang]
 
-  const { changeThemeModeAction } = useChangeThemeMode()
+  const handleAlignment = (
+    event: MouseEvent<HTMLElement>,
+    newThemeMode: TThemeMode
+  ) => changeThemeMode(newThemeMode)
 
   return (
     <Drawer anchor="right" open={open} onClose={onClose} sx={stylesDrawer}>
@@ -52,20 +74,31 @@ export const MenuConfig = ({ open, onClose }: TMenuConfig) => {
             {themeModeText}
           </Typography>
           <Grid width="100%">
-            <IconButton onClick={() => changeThemeModeAction(LIGHT)}>
-              <Icon
-                library="fontAwesome"
-                iconName={{ fontAwesome: 'FaSun' }}
-                size="medium"
-              />
-            </IconButton>
-            <IconButton onClick={() => changeThemeModeAction(DARK)}>
-              <Icon
-                library="fontAwesome"
-                iconName={{ fontAwesome: 'FaMoon' }}
-                size="medium"
-              />
-            </IconButton>
+            <ToggleButtonGroup
+              sx={stylesButtonWrapp}
+              value={themeMode}
+              exclusive
+              onChange={handleAlignment}
+              size="small"
+              color="primary"
+            >
+              <ToggleButton value="light" sx={stylesButton}>
+                <Icon
+                  library="fontAwesome"
+                  iconName={{ fontAwesome: 'FaSun' }}
+                  size="medium"
+                  color={(themeMode === DARK && 'white') || 'primary'}
+                />
+              </ToggleButton>
+              <ToggleButton value="dark" sx={stylesButton}>
+                <Icon
+                  library="fontAwesome"
+                  iconName={{ fontAwesome: 'FaMoon' }}
+                  size="medium"
+                  color={(themeMode === DARK && 'white') || 'primary'}
+                />
+              </ToggleButton>
+            </ToggleButtonGroup>
           </Grid>
         </SectionMenu>
       </Grid>

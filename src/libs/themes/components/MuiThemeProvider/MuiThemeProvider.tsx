@@ -11,7 +11,6 @@ type TMuiThemeProviderProps = {
 }
 
 export const MuiThemeProvider: FC<TMuiThemeProviderProps> = ({ children }) => {
-  console.log('MuiThemeProvider', useConfigStateTheme())
   const theme = createTheme(useConfigStateTheme())
 
   return (

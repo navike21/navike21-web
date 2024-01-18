@@ -2,6 +2,6 @@ import { TActions } from '@Types/shared'
 
 export const actionsFra: TActions = {
   settings: 'Paramètres',
-  themeMode: 'Mode thème',
+  themeMode: 'Mode',
   language: 'Langue'
 }

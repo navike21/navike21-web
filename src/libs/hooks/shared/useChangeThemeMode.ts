@@ -8,5 +8,5 @@ export const useChangeThemeMode = () => {
     dispatch(changeThemeMode(color))
   }
 
-  return { changeThemeModeAction }
+  return changeThemeModeAction
 }

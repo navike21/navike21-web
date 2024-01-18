@@ -1,7 +1,7 @@
 import { useAppSelector } from '@Store/hooks'
 
 export const useMainLang = () => {
-  const { language } = useAppSelector(state => state.config)
+  const { language } = useAppSelector(({ config }) => config)
 
   return language
 }
