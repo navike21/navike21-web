@@ -1,3 +1,5 @@
+'use client'
+
 import { LinkTag } from '@Components/atoms'
 import { useMainLang } from '@Hooks/useMainLang'
 import { useMainPrimaryColor } from '@Hooks/useMainPrimaryColor'
@@ -5,6 +7,8 @@ import { dataMenuHeader } from '@Lang/header'
 import { usePathname } from 'next/navigation'
 import Grid from '@mui/material/Unstable_Grid2/Grid2'
 import { TColor } from '@Types/shared'
+import { useAppSelector } from '@Store/hooks'
+import { BLACK, LIGHT, WHITE } from '@Constants/shared'
 
 type TExcludeColors<tCode extends string | number | symbol> = tCode extends
   | 'gray_100'
@@ -32,11 +36,17 @@ export const MenuHeader = () => {
   const pathname = usePathname()
   const mainMenu = dataMenuHeader[lang]
 
+  const { themeMode } = useAppSelector(state => state.config)
+
   const handleRemoveTextColorString = (color: string): TColorsExcluded =>
     color.replace(/Color/g, '') as TColorsExcluded
 
   const handleActiveLink = (path: string): TColorsExcluded =>
-    path === pathname ? handleRemoveTextColorString(primaryColor) : 'white'
+    path === pathname
+      ? handleRemoveTextColorString(primaryColor)
+      : themeMode === LIGHT
+        ? BLACK
+        : WHITE
 
   return (
     <Grid component="ul" container spacing={5} sx={stylesHeader}>

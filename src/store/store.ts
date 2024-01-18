@@ -15,27 +15,21 @@ import { rootReducers } from './reducers'
 const persistConfig = {
   key: 'root',
   version: 1,
-  storage,
-  whitelist: ['config'],
-  blacklist: []
+  storage
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducers)
 
-export const makeStore = () => {
-  return configureStore({
-    reducer: persistedReducer,
-    middleware: getDefaultMiddleware =>
-      getDefaultMiddleware({
-        serializableCheck: {
-          ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
-        }
-      })
-  })
-}
+export const store = configureStore({
+  reducer: persistedReducer,
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER]
+      }
+    })
+})
 
-export let persistor = persistStore(makeStore())
-
-export type TAppStore = ReturnType<typeof makeStore>
-export type TRootState = ReturnType<TAppStore['getState']>
-export type TAppDispatch = TAppStore['dispatch']
+export let persistor = persistStore(store)
+export type TRootState = ReturnType<typeof store.getState>
+export type TAppDispatch = typeof store.dispatch

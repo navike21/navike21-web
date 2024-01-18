@@ -8,6 +8,8 @@ import { MenuHeader } from '../MenuHeader'
 import { useSizeScreen } from '@Hooks/useSizeScreen'
 import { useMainLang } from '@Hooks/useMainLang'
 import { dataActions } from '@Lang/shared'
+import { Fragment, useState } from 'react'
+import { MenuConfig } from '../MenuConfig'
 
 const stylesHeader = {
   height: 80
@@ -16,45 +18,58 @@ export const Header = () => {
   const { width: widthScreen } = useSizeScreen()
   const lang = useMainLang()
 
+  const [modalStates, setModalStates] = useState({
+    settings: false
+  })
+
+  const handleOpenSettings = () =>
+    setModalStates({ ...modalStates, settings: true })
+
+  const handleCloseSettings = () =>
+    setModalStates({ ...modalStates, settings: false })
+
   const { settings: settingsText } = dataActions[lang]
 
   return (
-    <AppBar position="sticky" color="transparent" elevation={0}>
-      <Container>
-        <Grid
-          container
-          sx={stylesHeader}
-          direction="row"
-          justifyContent="space-between"
-          alignItems="center"
-        >
-          <Grid>
-            <LinkTag href="/" color="white">
-              <Logo size={SMALL} />
-            </LinkTag>
-          </Grid>
-          <Grid>
-            <Grid
-              component="nav"
-              container
-              direction="row"
-              justifyContent="space-between"
-              alignItems="center"
-            >
-              {widthScreen > BREAKPOINTS_MD && <MenuHeader />}
-              <Tooltip title={settingsText}>
-                <IconButton>
-                  <Icon
-                    library="materialDesign"
-                    iconName={{ materialDesign: 'MdSettings' }}
-                    size="medium"
-                  />
-                </IconButton>
-              </Tooltip>
+    <Fragment>
+      <AppBar position="sticky" color="transparent" elevation={0}>
+        <Container>
+          <Grid
+            container
+            sx={stylesHeader}
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Grid>
+              <LinkTag href="/" color="white">
+                <Logo size={SMALL} />
+              </LinkTag>
+            </Grid>
+            <Grid>
+              <Grid
+                component="nav"
+                container
+                direction="row"
+                justifyContent="space-between"
+                alignItems="center"
+              >
+                {widthScreen > BREAKPOINTS_MD && <MenuHeader />}
+                <Tooltip title={settingsText}>
+                  <IconButton onClick={handleOpenSettings}>
+                    <Icon
+                      library="materialDesign"
+                      iconName={{ materialDesign: 'MdSettings' }}
+                      size="medium"
+                    />
+                  </IconButton>
+                </Tooltip>
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
-      </Container>
-    </AppBar>
+        </Container>
+      </AppBar>
+      <MenuConfig open={modalStates.settings} onClose={handleCloseSettings} />
+    </Fragment>
   )
 }

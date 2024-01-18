@@ -1,5 +1,7 @@
 import { TActions } from '@Types/shared'
 
 export const actionsEng: TActions = {
-  settings: 'Settings'
+  settings: 'Settings',
+  themeMode: 'Theme mode',
+  language: 'Language'
 }
