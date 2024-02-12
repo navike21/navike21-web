@@ -49,7 +49,7 @@ type TColorVariation = {
 
 const LinkStyled = styled(Link)<TLinkStyledProps>(({ color }) => ({
   textDecoration: 'none',
-  color: color || 'inherit',
+  color: color ?? 'inherit',
   transition: 'all 0.3s ease-in-out',
   fontSize: 14,
   '&:hover': {
