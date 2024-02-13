@@ -20,6 +20,7 @@ const nextConfig = {
     config.resolve.alias["@Styles"] = path.join(__dirname, "src/libs/styles");
     config.resolve.alias["@Themes"] = path.join(__dirname, "src/libs/themes");
     config.resolve.alias["@Lang"] = path.join(__dirname, "src/libs/lang");
+    config.resolve.alias["@Public"] = path.join(__dirname, "public");
     return config;
   },
 };

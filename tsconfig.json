@@ -32,6 +32,7 @@
       "@Themes/*": ["src/libs/themes/*"],
       "@Store/*": ["src/store/*"],
       "@Lang/*": ["src/libs/lang/*"],
+      "@Public/*": ["public/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "**/*.scss", "jest.config.js"],
