@@ -3,7 +3,12 @@ import {
   ID_ABOUT,
   ID_PROJECTS,
   ID_SERVICES,
-  ID_CONTACT
+  ID_CONTACT,
+  HOME_PATH,
+  ABOUT_PATH,
+  PROJECTS_PATH,
+  SERVICES_PATH,
+  CONTACT_PATH
 } from '@Constants/shared'
 import { TMenuHeaderItem } from '@Types/shared'
 
@@ -11,26 +16,26 @@ export const menuFra: TMenuHeaderItem[] = [
   {
     id: ID_HOME,
     text: 'Accueil',
-    path: '/'
+    path: HOME_PATH
   },
   {
     id: ID_ABOUT,
     text: 'À propos',
-    path: '/a-propos'
+    path: ABOUT_PATH
   },
   {
     id: ID_PROJECTS,
     text: 'Nos projets',
-    path: '/projets'
+    path: PROJECTS_PATH
   },
   {
     id: ID_SERVICES,
     text: 'Services',
-    path: '/services'
+    path: SERVICES_PATH
   },
   {
     id: ID_CONTACT,
     text: 'Contactez-nous',
-    path: '/contact'
+    path: CONTACT_PATH
   }
 ]

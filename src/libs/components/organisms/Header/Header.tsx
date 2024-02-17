@@ -40,7 +40,6 @@ export const Header = () => {
               gap={1}
             >
               {widthScreen > BREAKPOINTS_MD && <MenuHeader />}
-
               <ThemeMode />
               <Lang />
             </Grid>

@@ -1,4 +1,14 @@
-import { DE, EN, ES, FR, IT, KR, PT, RU } from '@Constants/shared'
+import {
+  DE,
+  EN,
+  ES,
+  FR,
+  IT,
+  KR,
+  PT,
+  RU,
+  langSupported
+} from '@Constants/shared'
 import { TMenuHeader } from '@Types/shared'
 import {
   menuDeu,
@@ -11,7 +21,7 @@ import {
   menuKor
 } from './lang/'
 
-export const dataMenuHeader: TMenuHeader = {
+const handleReturnLangMenu = {
   [ES]: menuEsp,
   [EN]: menuEng,
   [DE]: menuDeu,
@@ -21,3 +31,7 @@ export const dataMenuHeader: TMenuHeader = {
   [RU]: menuRus,
   [KR]: menuKor
 }
+
+export const dataMenuHeader = langSupported
+  .map(({ code }) => ({ [code]: handleReturnLangMenu[code] }))
+  .reduce((acc, cur) => ({ ...acc, ...cur }), {}) as TMenuHeader
