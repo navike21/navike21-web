@@ -52,7 +52,7 @@ export const MenuHeader = () => {
   }
 
   return (
-    <Grid component="ul" container spacing={5} sx={stylesHeader}>
+    <Grid component="ul" container spacing={3} sx={stylesHeader}>
       {mainMenu.map(({ id, path, text }) => (
         <Grid component="li" key={id}>
           <LinkTag href={path} color={handleActiveLink(path)}>
