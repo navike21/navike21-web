@@ -4,6 +4,7 @@ export type TActions = {
   settings: string
   themeMode: string
   language: string
+  mainMenu: string
 }
 
 export type TActionsLang = {

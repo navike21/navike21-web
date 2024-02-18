@@ -8,6 +8,7 @@ import { MenuHeader } from '../MenuHeader'
 import { useSizeScreen } from '@Hooks/shared/useSizeScreen'
 import { ThemeMode } from '../ThemeMode'
 import { Lang } from '../Lang'
+import { MenuResponsive } from '../MenuResponsive'
 
 const stylesHeader = {
   height: 80
@@ -42,6 +43,7 @@ export const Header = () => {
               {widthScreen > BREAKPOINTS_MD && <MenuHeader />}
               <ThemeMode />
               <Lang />
+              <MenuResponsive />
             </Grid>
           </Grid>
         </Grid>

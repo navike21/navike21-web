@@ -37,6 +37,7 @@ type TLinkProps = {
   href: THrefStructureNext | string
   children: ReactNode | string
   color?: TColorsExcluded
+  onClick?: () => void
 }
 
 type TLinkStyledProps = {
@@ -71,10 +72,16 @@ const colorsVariation: TColorVariation = {
 export const LinkTag = ({
   href,
   children,
+  onClick,
   color = 'white',
   ...props
 }: TLinkProps) => (
-  <LinkStyled href={href} color={colorsVariation[color]} {...props}>
+  <LinkStyled
+    href={href}
+    color={colorsVariation[color]}
+    onClick={onClick}
+    {...props}
+  >
     {children}
   </LinkStyled>
 )

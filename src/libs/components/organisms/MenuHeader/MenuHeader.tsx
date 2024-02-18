@@ -9,6 +9,7 @@ import Grid from '@mui/material/Unstable_Grid2/Grid2'
 import { TColor } from '@Types/shared'
 import { useAppSelector } from '@Store/hooks'
 import { BLACK, LIGHT, WHITE } from '@Constants/shared'
+import { useHandleMenuResponsive } from '@Hooks/shared'
 
 type TExcludeColors<tCode extends string | number | symbol> = tCode extends
   | 'gray_100'
@@ -25,18 +26,24 @@ type TExcludeColors<tCode extends string | number | symbol> = tCode extends
 
 type TColorsExcluded = TExcludeColors<TColor>
 
-const stylesHeader = {
-  listStyle: 'none',
-  margin: 0
+type TMenuHeaderProps = {
+  isResponsive?: boolean
 }
 
-export const MenuHeader = () => {
+const stylesHeader = {
+  listStyle: 'none',
+  margin: 0,
+  padding: 0
+}
+
+export const MenuHeader = ({ isResponsive = false }: TMenuHeaderProps) => {
   const lang = useMainLang()
   const primaryColor = useMainPrimaryColor()
   const pathname = usePathname()
-  const mainMenu = dataMenuHeader[lang]
-
+  const { handleCloseMenu } = useHandleMenuResponsive()
   const { themeMode } = useAppSelector(state => state.config)
+
+  const mainMenu = dataMenuHeader[lang]
 
   const handleRemoveTextColorString = (color: string): TColorsExcluded =>
     color.replace(/Color/g, '') as TColorsExcluded
@@ -52,10 +59,20 @@ export const MenuHeader = () => {
   }
 
   return (
-    <Grid component="ul" container spacing={3} sx={stylesHeader}>
+    <Grid
+      component="ul"
+      container
+      gap={isResponsive ? 1 : 3}
+      sx={stylesHeader}
+      direction={isResponsive ? 'column' : 'row'}
+    >
       {mainMenu.map(({ id, path, text }) => (
         <Grid component="li" key={id}>
-          <LinkTag href={path} color={handleActiveLink(path)}>
+          <LinkTag
+            href={path}
+            color={handleActiveLink(path)}
+            onClick={handleCloseMenu}
+          >
             {text}
           </LinkTag>
         </Grid>

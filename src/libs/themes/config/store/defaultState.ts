@@ -5,5 +5,6 @@ import { getLangBrowser, getThemeModeBrowser } from '@Utils/shared'
 export const defaultStateConfig: TConfig = {
   language: getLangBrowser(),
   primaryColor: PRIMARY_COLOR,
-  themeMode: getThemeModeBrowser()
+  themeMode: getThemeModeBrowser(),
+  menuResponsive: false
 }

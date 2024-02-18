@@ -21,9 +21,9 @@ export const ThemeMode = () => {
   return (
     <Tooltip title={themeModeText}>
       <IconButton
-        onClick={() => {
+        onClick={() =>
           handleChangeThemeMode(themeMode === LIGHT ? DARK : LIGHT)
-        }}
+        }
       >
         <Icon
           library="materialDesign"
