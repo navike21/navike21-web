@@ -9,7 +9,7 @@ import {
   RU,
   langSupported
 } from '@Constants/shared'
-import { TMenuHeader } from '@Types/shared'
+import { TLangSupported, TMenuHeader, TMenuHeaderItem } from '@Types/shared'
 import {
   menuDeu,
   menuEng,
@@ -21,7 +21,11 @@ import {
   menuKor
 } from './lang/'
 
-const handleReturnLangMenu = {
+type THandleReturnLangMenu = {
+  [key in TLangSupported]: TMenuHeaderItem[]
+}
+
+const handleReturnLangMenu: THandleReturnLangMenu = {
   [ES]: menuEsp,
   [EN]: menuEng,
   [DE]: menuDeu,
