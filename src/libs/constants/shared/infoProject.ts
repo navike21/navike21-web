@@ -16,4 +16,4 @@ export const COMPANY_GITHUB = 'https://github.com/navike21'
 export const KEYWORDS =
   'desarrollo web, landing pages, emailing, UX/UI, aplicaciones móviles, software personalizado, Navike21'
 
-export const COVER_IMAGE = coverImage.src
+export const COVER_IMAGE = `${COMPANY_URL}${coverImage.src}`
