@@ -1,6 +1,5 @@
 import { Metadata } from 'next'
-import { COMPANY_NAME } from '@Constants/shared'
-import coverImage from '@Public/images/banner-home/website.jpg'
+import { COMPANY_NAME, COVER_IMAGE } from '@Constants/shared'
 
 const TITLE = `${COMPANY_NAME} | Desarrollo web, aplicaciones móviles, software personalizado`
 const DESCRIPTION =
@@ -17,7 +16,7 @@ export const dataSeoHomeEsp: Metadata = {
     description: TITLE,
     images: [
       {
-        url: coverImage.src,
+        url: COVER_IMAGE,
         width: 800,
         height: 600,
         alt: 'navike21'

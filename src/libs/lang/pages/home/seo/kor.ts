@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { COMPANY_NAME } from '@Constants/shared'
+import { COMPANY_NAME, COVER_IMAGE } from '@Constants/shared'
 
 const TITLE = `${COMPANY_NAME} | 웹 개발, 모바일 애플리케이션, 맞춤형 소프트웨어`
 const DESCRIPTION =
@@ -16,7 +16,7 @@ export const dataSeoHomeKor: Metadata = {
     description: TITLE,
     images: [
       {
-        url: '/cover.png',
+        url: COVER_IMAGE,
         width: 800,
         height: 600,
         alt: 'navike21'
