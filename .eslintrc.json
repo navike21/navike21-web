@@ -6,7 +6,6 @@
     "linebreak-style": ["error", "unix"],
     "semi": ["warn", "never"],
     "comma-dangle": ["warn", "never"],
-    "@typescript-eslint/space-before-function-paren": ["error", "never"],
     "@typescript-eslint/naming-convention": [
       "warn",
       {
