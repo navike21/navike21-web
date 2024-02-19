@@ -9,3 +9,9 @@ export const COMPANY_TWITTER = 'https://twitter.com/navike21'
 export const COMPANY_INSTAGRAM = 'https://www.instagram.com/navike21/'
 export const COMPANY_LINKEDIN = 'https://www.linkedin.com/company/navike21'
 export const COMPANY_GITHUB = 'https://github.com/navike21'
+
+// SEO
+export const KEYWORDS =
+  'desarrollo web, landing pages, emailing, UX/UI, aplicaciones móviles, software personalizado, Navike21'
+
+export const COVER_IMAGE = '/cover.png'

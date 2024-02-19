@@ -16,10 +16,10 @@ import Image from 'next/image'
 import { MouseEvent, useState } from 'react'
 
 export const Lang = () => {
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
-
   const lang = useMainLang()
   const changeLangAction = useChangeLang()
+
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
   const openLang = Boolean(anchorEl)
   const { language: languageText } = dataActions[lang]
