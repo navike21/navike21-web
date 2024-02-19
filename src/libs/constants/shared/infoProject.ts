@@ -1,7 +1,7 @@
 import coverImage from '@Public/images/banner-home/website.jpg'
 
 export const COMPANY_NAME = 'navike21'
-export const COMPANY_URL = 'https://navike21.com'
+export const COMPANY_URL = 'https://navike21.vercel.app/'
 export const COMPANY_EMAIL = ['contacto@navike21.com']
 export const COMPANY_PHONE = ['+51 989 505 027', '+51 989 505 023']
 
