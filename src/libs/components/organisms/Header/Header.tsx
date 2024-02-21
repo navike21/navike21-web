@@ -1,7 +1,7 @@
 'use client'
 
 import { Container, LinkTag, Logo } from '@Components/atoms'
-import { BREAKPOINTS_MD, SMALL } from '@Constants/shared'
+import { BREAKPOINTS_MD, MAX_HEIGHT_HEADER, SMALL } from '@Constants/shared'
 import { AppBar } from '@mui/material'
 import Grid from '@mui/material/Unstable_Grid2/Grid2'
 import { MenuHeader } from '../MenuHeader'
@@ -11,13 +11,13 @@ import { Lang } from '../Lang'
 import { MenuResponsive } from '../MenuResponsive'
 
 const stylesHeader = {
-  height: 80
+  height: MAX_HEIGHT_HEADER
 }
 export const Header = () => {
   const { width: widthScreen } = useSizeScreen()
 
   return (
-    <AppBar position="sticky" color="transparent" elevation={0}>
+    <AppBar position="fixed" color="transparent" elevation={0}>
       <Container>
         <Grid
           container

@@ -1,10 +1,12 @@
 import { Fragment, ReactNode } from 'react'
-import { Poppins } from 'next/font/google'
 import clsx from 'clsx'
+import { Poppins } from 'next/font/google'
 import { MuiThemeProvider } from '@Themes/components'
 import { Header } from '@Components/organisms'
 import { StoreProvider } from '@Store/StoreProvider'
 import { EN } from '@Constants/shared'
+
+import '@splidejs/react-splide/css/core'
 
 const poppins = Poppins({
   subsets: ['latin-ext'],

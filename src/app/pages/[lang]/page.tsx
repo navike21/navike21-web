@@ -5,6 +5,8 @@ import { langSupported } from '@Constants/shared'
 import { TLangSupported } from '@Types/shared'
 import { Metadata } from 'next'
 import { seoPages } from '@Lang/pages'
+import Grid from '@mui/material/Unstable_Grid2/Grid2'
+import { SlideHome } from './components'
 
 type TPageProps = {
   params: {
@@ -24,5 +26,9 @@ export default async function Page({ params }: Readonly<TPageProps>) {
     notFound()
   }
 
-  return <div>My Post: {langParams}</div>
+  return (
+    <Grid>
+      <SlideHome />
+    </Grid>
+  )
 }

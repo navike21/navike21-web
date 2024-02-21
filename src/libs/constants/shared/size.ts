@@ -4,3 +4,4 @@ export const MEDIUM = 'medium'
 export const LARGE = 'large'
 export const EXTRA_LARGE = 'xtra-large'
 export const MAX_WIDTH = 1152
+export const MAX_HEIGHT_HEADER = 80
