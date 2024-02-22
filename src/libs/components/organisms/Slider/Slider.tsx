@@ -5,7 +5,7 @@ import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
 import Grid from '@mui/material/Unstable_Grid2/Grid2'
 import { Icon } from '@Components/atoms'
 import { LIGHT, MEDIUM, PRIMARY, WHITE } from '@Constants/shared'
-import { useThemeMode } from '@Hooks/shared'
+import { useId, useThemeMode } from '@Hooks/shared'
 import { IconButton } from '@mui/material'
 import { TSliderProps } from '@Types/shared'
 import {
@@ -18,6 +18,7 @@ import {
 
 export const Slider = ({ options = {}, slides }: TSliderProps) => {
   const themeMode = useThemeMode()
+  const { generateId } = useId('slide')
 
   const colorsButton = themeMode === LIGHT ? PRIMARY : WHITE
   const colorButton = PRIMARY
@@ -100,8 +101,8 @@ export const Slider = ({ options = {}, slides }: TSliderProps) => {
         </Grid>
 
         <SplideTrack>
-          {slides.map(({ slide }, index) => (
-            <SplideSlide key={index}>{slide}</SplideSlide>
+          {slides.map(({ slide }) => (
+            <SplideSlide key={generateId()}>{slide}</SplideSlide>
           ))}
         </SplideTrack>
       </Grid>

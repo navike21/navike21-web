@@ -1,3 +1,5 @@
+import { BREAKPOINTS_LG } from '@Constants/shared'
+
 export const stylesWrapperSlider = {
   position: 'relative',
   height: 'fit-content'
@@ -10,13 +12,14 @@ export const styleWrapperArrowsSlider = {
   position: 'absolute',
   right: 0,
   top: 0,
-  width: '85%'
+  width: '85%',
+  maxWidth: BREAKPOINTS_LG
 }
 
 export const styleArrowsSlider = {
   position: 'absolute',
-  top: '50%',
-  transform: 'translateY(-50%)',
+  bottom: '10%',
+  // transform: 'translateY(-50%)',
   zIndex: 2
 }
 
@@ -27,7 +30,7 @@ export const styleArrowLeftSlider = {
 
 export const styleArrowRightSlider = {
   ...styleArrowsSlider,
-  right: 0
+  left: 50
 }
 export const stylePlayAndPauseSlider = {
   position: 'absolute',

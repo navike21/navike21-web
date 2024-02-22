@@ -30,6 +30,21 @@ export const configTheme: ThemeOptions = {
     },
     body1: {
       letterSpacing: 0.4
+    },
+    body2: {
+      letterSpacing: 0.4
+    },
+    h2: {
+      fontWeight: 600
+    },
+    h3: {
+      fontWeight: 600
+    },
+    h4: {
+      fontWeight: 600
+    },
+    h5: {
+      fontWeight: 600
     }
   }
 }
