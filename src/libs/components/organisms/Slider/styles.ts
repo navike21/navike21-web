@@ -18,23 +18,22 @@ export const styleWrapperArrowsSlider = {
 
 export const styleArrowsSlider = {
   position: 'absolute',
-  bottom: '10%',
-  // transform: 'translateY(-50%)',
+  bottom: '5%',
   zIndex: 2
 }
 
 export const styleArrowLeftSlider = {
   ...styleArrowsSlider,
-  left: 0
+  right: 70
 }
 
 export const styleArrowRightSlider = {
   ...styleArrowsSlider,
-  left: 50
+  right: 0
 }
 export const stylePlayAndPauseSlider = {
   position: 'absolute',
-  bottom: '10%',
-  right: '10%',
+  bottom: '5%',
+  left: '10%',
   zIndex: 2
 }

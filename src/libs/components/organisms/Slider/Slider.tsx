@@ -4,7 +4,7 @@ import clsx from 'clsx'
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
 import Grid from '@mui/material/Unstable_Grid2/Grid2'
 import { Icon } from '@Components/atoms'
-import { LIGHT, MEDIUM, PRIMARY, WHITE } from '@Constants/shared'
+import { LARGE, LIGHT, MEDIUM, PRIMARY, WHITE } from '@Constants/shared'
 import { useId, useThemeMode } from '@Hooks/shared'
 import { IconButton } from '@mui/material'
 import { TSliderProps } from '@Types/shared'
@@ -22,7 +22,7 @@ export const Slider = ({ options = {}, slides }: TSliderProps) => {
 
   const colorsButton = themeMode === LIGHT ? PRIMARY : WHITE
   const colorButton = PRIMARY
-  const sizeElements = MEDIUM
+  const sizeElements = LARGE
 
   return (
     <Splide

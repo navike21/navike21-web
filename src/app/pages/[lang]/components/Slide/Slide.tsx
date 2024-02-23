@@ -72,7 +72,7 @@ export const Slide = ({
       />
       <ContainerSlide>
         <Grid container>
-          <Typography variant="h5" sx={stylesTitle}>
+          <Typography variant="h5" sx={stylesTitle} color="white">
             {title}
           </Typography>
         </Grid>
