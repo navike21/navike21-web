@@ -1,3 +1,5 @@
+'use client'
+
 import { useAppSelector } from '@Store/hooks'
 
 export const useMainLang = () => {
