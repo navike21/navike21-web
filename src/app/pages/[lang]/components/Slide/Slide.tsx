@@ -40,9 +40,11 @@ export const Slide = ({
       <WrapperImage />
       <ImageSlide
         src={image}
-        alt="slide"
+        alt="image"
+        loading="lazy"
+        fill
         objectFit="cover"
-        objectPosition="center"
+        placeholder="blur"
       />
       <ContainerSlide>
         <Grid container>
