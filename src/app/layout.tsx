@@ -21,7 +21,9 @@ export default function RootLayout({
       <body className={clsx(poppins.className)}>
         <StoreProvider>
           <MuiThemeProvider>
-            <Header />
+            <Header>
+              <></>
+            </Header>
             <Fragment>{children}</Fragment>
           </MuiThemeProvider>
         </StoreProvider>

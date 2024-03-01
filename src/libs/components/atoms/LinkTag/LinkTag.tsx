@@ -38,7 +38,7 @@ type TColorsExcluded = TExcludeColors<TColor>
 type TLinkProps = {
   href: THrefStructureNext | string
   children: ReactNode | string
-  color?: TColorsExcluded
+  color?: string
   onClick?: () => void
 }
 

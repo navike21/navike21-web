@@ -1,10 +1,10 @@
 import { TColorConfig, TGrayConfig, TTransparentConfig } from '@Themes/types'
 
 export const primaryColor: TColorConfig = {
-  light: '#5BE49B',
-  main: '#00A76F',
-  dark: '#007867',
-  contrastText: '#FFFFFF'
+  light: '#f4dc66',
+  main: '#FFD000',
+  dark: '#c6aa22',
+  contrastText: '#000000'
 }
 
 export const transparentPrimaryColor: TTransparentConfig = {

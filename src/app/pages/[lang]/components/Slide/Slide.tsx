@@ -41,7 +41,6 @@ export const Slide = ({
       <ImageSlide
         src={image}
         alt="slide"
-        layout="fill"
         objectFit="cover"
         objectPosition="center"
       />
