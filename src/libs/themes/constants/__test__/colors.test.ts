@@ -68,10 +68,10 @@ describe('colors', () => {
       contrastText: '#FFFFFF'
     })
     expect(primaryColor).toEqual({
-      light: '#5BE49B',
-      main: '#00A76F',
-      dark: '#007867',
-      contrastText: '#FFFFFF'
+      light: '#f4dc66',
+      main: '#FFD000',
+      dark: '#c6aa22',
+      contrastText: '#000000'
     })
     expect(secondaryColor).toEqual({
       light: '#C684FF',
