@@ -1,6 +1,0 @@
-export const EXTRA_SMALL = 'xtra-small'
-export const SMALL = 'small'
-export const MEDIUM = 'medium'
-export const LARGE = 'large'
-export const EXTRA_LARGE = 'xtra-large'
-export const MAX_WIDTH = 1152
