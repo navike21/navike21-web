@@ -3,6 +3,7 @@ import "./globals.css";
 import { ELanguage } from "@Enums/languages";
 import { MUIProvider } from "@Providers/MUIProvider";
 import { questrial } from "@Config/fonts";
+import { Header } from "@Components/Header/Header";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +18,10 @@ export default function RootLayout({
   return (
     <html lang={ELanguage.EN}>
       <body className={questrial.variable}>
-        <MUIProvider>{children}</MUIProvider>
+        <MUIProvider>
+          <Header />
+          {children}
+        </MUIProvider>
       </body>
     </html>
   );

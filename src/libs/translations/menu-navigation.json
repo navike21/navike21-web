@@ -1,0 +1,322 @@
+{
+  "de": [
+    {
+      "id": "Home",
+      "name": "Startseite",
+      "slug": "/"
+    },
+    {
+      "id": "About us",
+      "name": "Über uns",
+      "slug": "uber-uns"
+    },
+    {
+      "id": "Services",
+      "name": "Dienstleistungen",
+      "slug": "dienstleistungen"
+    },
+    {
+      "id": "Projects",
+      "name": "Projekte",
+      "slug": "projekte"
+    },
+    {
+      "id": "Blog",
+      "name": "Blog",
+      "slug": "blog"
+    },
+    {
+      "id": "Contact",
+      "name": "Kontakt",
+      "slug": "kontakt"
+    }
+  ],
+  "en": [
+    {
+      "id": "Home",
+      "name": "Home",
+      "slug": "/"
+    },
+    {
+      "id": "About us",
+      "name": "About us",
+      "slug": "about-us"
+    },
+    {
+      "id": "Services",
+      "name": "Services",
+      "slug": "services"
+    },
+    {
+      "id": "Projects",
+      "name": "Projects",
+      "slug": "projects"
+    },
+    {
+      "id": "Blog",
+      "name": "Blog",
+      "slug": "blog"
+    },
+    {
+      "id": "Contact",
+      "name": "Contact",
+      "slug": "contact"
+    }
+  ],
+  "es": [
+    {
+      "id": "Home",
+      "name": "Inicio",
+      "slug": "/"
+    },
+    {
+      "id": "About us",
+      "name": "Nosotros",
+      "slug": "nosotros"
+    },
+    {
+      "id": "Services",
+      "name": "Servicios",
+      "slug": "servicios"
+    },
+    {
+      "id": "Projects",
+      "name": "Proyectos",
+      "slug": "proyectos"
+    },
+    {
+      "id": "Blog",
+      "name": "Blog",
+      "slug": "blog"
+    },
+    {
+      "id": "Contact",
+      "name": "Contacto",
+      "slug": "contacto"
+    }
+  ],
+  "fr": [
+    {
+      "id": "Home",
+      "name": "Accueil",
+      "slug": "/"
+    },
+    {
+      "id": "About us",
+      "name": "À propos de nous",
+      "slug": "a-propos-de-nous"
+    },
+    {
+      "id": "Services",
+      "name": "Services",
+      "slug": "services"
+    },
+    {
+      "id": "Projects",
+      "name": "Projets",
+      "slug": "projets"
+    },
+    {
+      "id": "Blog",
+      "name": "Blog",
+      "slug": "blog"
+    },
+    {
+      "id": "Contact",
+      "name": "Contact",
+      "slug": "contact"
+    }
+  ],
+  "it": [
+    {
+      "id": "Home",
+      "name": "Home",
+      "slug": "/"
+    },
+    {
+      "id": "About us",
+      "name": "Chi siamo",
+      "slug": "chi-siamo"
+    },
+    {
+      "id": "Services",
+      "name": "Servizi",
+      "slug": "servizi"
+    },
+    {
+      "id": "Projects",
+      "name": "Progetti",
+      "slug": "progetti"
+    },
+    {
+      "id": "Blog",
+      "name": "Blog",
+      "slug": "blog"
+    },
+    {
+      "id": "Contact",
+      "name": "Contatto",
+      "slug": "contatto"
+    }
+  ],
+  "ja": [
+    {
+      "id": "Home",
+      "name": "ホーム",
+      "slug": "/"
+    },
+    {
+      "id": "About us",
+      "name": "私たちについて",
+      "slug": "watashitachi-ni-tsuite"
+    },
+    {
+      "id": "Services",
+      "name": "サービス",
+      "slug": "sābisu"
+    },
+    {
+      "id": "Projects",
+      "name": "プロジェクト",
+      "slug": "purojekuto"
+    },
+    {
+      "id": "Blog",
+      "name": "ブログ",
+      "slug": "burogu"
+    },
+    {
+      "id": "Contact",
+      "name": "お問い合わせ",
+      "slug": "otoiawase"
+    }
+  ],
+  "ko": [
+    {
+      "id": "Home",
+      "name": "홈",
+      "slug": "/"
+    },
+    {
+      "id": "About us",
+      "name": "회사 소개",
+      "slug": "hoesa-sogae"
+    },
+    {
+      "id": "Services",
+      "name": "서비스",
+      "slug": "seobiseu"
+    },
+    {
+      "id": "Projects",
+      "name": "프로젝트",
+      "slug": "peurojekteu"
+    },
+    {
+      "id": "Blog",
+      "name": "블로그",
+      "slug": "beulrogeu"
+    },
+    {
+      "id": "Contact",
+      "name": "연락처",
+      "slug": "yeollakcheo"
+    }
+  ],
+  "pt": [
+    {
+      "id": "Home",
+      "name": "Início",
+      "slug": "/"
+    },
+    {
+      "id": "About us",
+      "name": "Sobre nós",
+      "slug": "sobre-nos"
+    },
+    {
+      "id": "Services",
+      "name": "Serviços",
+      "slug": "servicos"
+    },
+    {
+      "id": "Projects",
+      "name": "Projetos",
+      "slug": "projetos"
+    },
+    {
+      "id": "Blog",
+      "name": "Blog",
+      "slug": "blog"
+    },
+    {
+      "id": "Contact",
+      "name": "Contato",
+      "slug": "contato"
+    }
+  ],
+  "ru": [
+    {
+      "id": "Home",
+      "name": "Главная",
+      "slug": "/"
+    },
+    {
+      "id": "About us",
+      "name": "О нас",
+      "slug": "o-nas"
+    },
+    {
+      "id": "Services",
+      "name": "Услуги",
+      "slug": "uslugi"
+    },
+    {
+      "id": "Projects",
+      "name": "Проекты",
+      "slug": "proekty"
+    },
+    {
+      "id": "Blog",
+      "name": "Блог",
+      "slug": "blog"
+    },
+    {
+      "id": "Contact",
+      "name": "Контакты",
+      "slug": "kontakty"
+    }
+  ],
+  "zh": [
+    {
+      "id": "Home",
+      "name": "首页",
+      "slug": "/"
+    },
+    {
+      "id": "About us",
+      "name": "关于我们",
+      "slug": "guanyu-women"
+    },
+    {
+      "id": "Services",
+      "name": "服务",
+      "slug": "fuwu"
+    },
+    {
+      "id": "Projects",
+      "name": "项目",
+      "slug": "xiangmu"
+    },
+    {
+      "id": "Blog",
+      "name": "博客",
+      "slug": "boke"
+    },
+    {
+      "id": "Contact",
+      "name": "联系我们",
+      "slug": "lianxi-women"
+    }
+  ]
+}

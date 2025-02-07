@@ -1,13 +1,24 @@
 "use client";
 
-import { createTheme } from "@mui/material";
+import { colors } from "@Config/color";
+import { EThemeMode } from "@Enums/optionsTheme";
+import { createTheme, Theme } from "@mui/material";
 
-export const navikeTheme = () => {
-  const baseTheme = createTheme({
+export interface INavikeThemeProps {
+  themeMode: EThemeMode;
+}
+
+export const navikeTheme = ({ themeMode }: INavikeThemeProps): Theme =>
+  createTheme({
+    palette: {
+      mode: themeMode,
+      primary: colors.primary,
+      secondary: colors.secondary,
+    },
     typography: {
       fontFamily: "var(--font-questrial)",
     },
+    shape: {
+      borderRadius: 0,
+    },
   });
-
-  return baseTheme;
-};

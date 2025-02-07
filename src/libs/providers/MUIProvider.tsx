@@ -1,12 +1,11 @@
 "use client";
 
-import {
-  CssBaseline,
-  StyledEngineProvider,
-  ThemeProvider,
-} from "@mui/material";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
+import { EThemeMode } from "@Enums/optionsTheme";
+import { CssBaseline } from "@mui/material";
 import { navikeTheme } from "@Theme/navikeTheme";
+
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
+import { ThemeProvider } from "@mui/system";
 import { ReactNode } from "react";
 
 type TMUIProviderProps = {
@@ -14,16 +13,16 @@ type TMUIProviderProps = {
 };
 
 export const MUIProvider = ({ children }: TMUIProviderProps) => {
-  const materialTheme = navikeTheme();
+  const materialTheme = navikeTheme({
+    themeMode: EThemeMode.DARK,
+  });
 
   return (
-    <AppRouterCacheProvider>
-      <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={materialTheme}>
-          <CssBaseline />
-          {children}
-        </ThemeProvider>
-      </StyledEngineProvider>
+    <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+      <ThemeProvider theme={materialTheme}>
+        <CssBaseline />
+        {children}
+      </ThemeProvider>
     </AppRouterCacheProvider>
   );
 };
