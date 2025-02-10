@@ -1,320 +1,320 @@
 {
   "de": [
     {
-      "id": "Home",
+      "id": "home",
       "name": "Startseite",
       "slug": "/"
     },
     {
-      "id": "About us",
+      "id": "about-us",
       "name": "Über uns",
       "slug": "uber-uns"
     },
     {
-      "id": "Services",
+      "id": "services",
       "name": "Dienstleistungen",
       "slug": "dienstleistungen"
     },
     {
-      "id": "Projects",
+      "id": "projects",
       "name": "Projekte",
       "slug": "projekte"
     },
     {
-      "id": "Blog",
+      "id": "blog",
       "name": "Blog",
       "slug": "blog"
     },
     {
-      "id": "Contact",
+      "id": "contact",
       "name": "Kontakt",
       "slug": "kontakt"
     }
   ],
   "en": [
     {
-      "id": "Home",
+      "id": "home",
       "name": "Home",
       "slug": "/"
     },
     {
-      "id": "About us",
+      "id": "about-us",
       "name": "About us",
       "slug": "about-us"
     },
     {
-      "id": "Services",
+      "id": "services",
       "name": "Services",
       "slug": "services"
     },
     {
-      "id": "Projects",
+      "id": "projects",
       "name": "Projects",
       "slug": "projects"
     },
     {
-      "id": "Blog",
+      "id": "blog",
       "name": "Blog",
       "slug": "blog"
     },
     {
-      "id": "Contact",
+      "id": "contact",
       "name": "Contact",
       "slug": "contact"
     }
   ],
   "es": [
     {
-      "id": "Home",
+      "id": "home",
       "name": "Inicio",
       "slug": "/"
     },
     {
-      "id": "About us",
+      "id": "about-us",
       "name": "Nosotros",
       "slug": "nosotros"
     },
     {
-      "id": "Services",
+      "id": "services",
       "name": "Servicios",
       "slug": "servicios"
     },
     {
-      "id": "Projects",
+      "id": "projects",
       "name": "Proyectos",
       "slug": "proyectos"
     },
     {
-      "id": "Blog",
+      "id": "blog",
       "name": "Blog",
       "slug": "blog"
     },
     {
-      "id": "Contact",
+      "id": "contact",
       "name": "Contacto",
       "slug": "contacto"
     }
   ],
   "fr": [
     {
-      "id": "Home",
+      "id": "home",
       "name": "Accueil",
       "slug": "/"
     },
     {
-      "id": "About us",
+      "id": "about-us",
       "name": "À propos de nous",
       "slug": "a-propos-de-nous"
     },
     {
-      "id": "Services",
+      "id": "services",
       "name": "Services",
       "slug": "services"
     },
     {
-      "id": "Projects",
+      "id": "projects",
       "name": "Projets",
       "slug": "projets"
     },
     {
-      "id": "Blog",
+      "id": "blog",
       "name": "Blog",
       "slug": "blog"
     },
     {
-      "id": "Contact",
+      "id": "contact",
       "name": "Contact",
       "slug": "contact"
     }
   ],
   "it": [
     {
-      "id": "Home",
+      "id": "home",
       "name": "Home",
       "slug": "/"
     },
     {
-      "id": "About us",
+      "id": "about-us",
       "name": "Chi siamo",
       "slug": "chi-siamo"
     },
     {
-      "id": "Services",
+      "id": "services",
       "name": "Servizi",
       "slug": "servizi"
     },
     {
-      "id": "Projects",
+      "id": "projects",
       "name": "Progetti",
       "slug": "progetti"
     },
     {
-      "id": "Blog",
+      "id": "blog",
       "name": "Blog",
       "slug": "blog"
     },
     {
-      "id": "Contact",
+      "id": "contact",
       "name": "Contatto",
       "slug": "contatto"
     }
   ],
   "ja": [
     {
-      "id": "Home",
+      "id": "home",
       "name": "ホーム",
       "slug": "/"
     },
     {
-      "id": "About us",
+      "id": "about-us",
       "name": "私たちについて",
       "slug": "watashitachi-ni-tsuite"
     },
     {
-      "id": "Services",
+      "id": "services",
       "name": "サービス",
       "slug": "sābisu"
     },
     {
-      "id": "Projects",
+      "id": "projects",
       "name": "プロジェクト",
       "slug": "purojekuto"
     },
     {
-      "id": "Blog",
+      "id": "blog",
       "name": "ブログ",
       "slug": "burogu"
     },
     {
-      "id": "Contact",
+      "id": "contact",
       "name": "お問い合わせ",
       "slug": "otoiawase"
     }
   ],
   "ko": [
     {
-      "id": "Home",
+      "id": "home",
       "name": "홈",
       "slug": "/"
     },
     {
-      "id": "About us",
+      "id": "about-us",
       "name": "회사 소개",
       "slug": "hoesa-sogae"
     },
     {
-      "id": "Services",
+      "id": "services",
       "name": "서비스",
       "slug": "seobiseu"
     },
     {
-      "id": "Projects",
+      "id": "projects",
       "name": "프로젝트",
       "slug": "peurojekteu"
     },
     {
-      "id": "Blog",
+      "id": "blog",
       "name": "블로그",
       "slug": "beulrogeu"
     },
     {
-      "id": "Contact",
+      "id": "contact",
       "name": "연락처",
       "slug": "yeollakcheo"
     }
   ],
   "pt": [
     {
-      "id": "Home",
+      "id": "home",
       "name": "Início",
       "slug": "/"
     },
     {
-      "id": "About us",
+      "id": "about-us",
       "name": "Sobre nós",
       "slug": "sobre-nos"
     },
     {
-      "id": "Services",
+      "id": "services",
       "name": "Serviços",
       "slug": "servicos"
     },
     {
-      "id": "Projects",
+      "id": "projects",
       "name": "Projetos",
       "slug": "projetos"
     },
     {
-      "id": "Blog",
+      "id": "blog",
       "name": "Blog",
       "slug": "blog"
     },
     {
-      "id": "Contact",
+      "id": "contact",
       "name": "Contato",
       "slug": "contato"
     }
   ],
   "ru": [
     {
-      "id": "Home",
+      "id": "home",
       "name": "Главная",
       "slug": "/"
     },
     {
-      "id": "About us",
+      "id": "about-us",
       "name": "О нас",
       "slug": "o-nas"
     },
     {
-      "id": "Services",
+      "id": "services",
       "name": "Услуги",
       "slug": "uslugi"
     },
     {
-      "id": "Projects",
+      "id": "projects",
       "name": "Проекты",
       "slug": "proekty"
     },
     {
-      "id": "Blog",
+      "id": "blog",
       "name": "Блог",
       "slug": "blog"
     },
     {
-      "id": "Contact",
+      "id": "contact",
       "name": "Контакты",
       "slug": "kontakty"
     }
   ],
   "zh": [
     {
-      "id": "Home",
+      "id": "home",
       "name": "首页",
       "slug": "/"
     },
     {
-      "id": "About us",
+      "id": "about-us",
       "name": "关于我们",
       "slug": "guanyu-women"
     },
     {
-      "id": "Services",
+      "id": "services",
       "name": "服务",
       "slug": "fuwu"
     },
     {
-      "id": "Projects",
+      "id": "projects",
       "name": "项目",
       "slug": "xiangmu"
     },
     {
-      "id": "Blog",
+      "id": "blog",
       "name": "博客",
       "slug": "boke"
     },
     {
-      "id": "Contact",
+      "id": "contact",
       "name": "联系我们",
       "slug": "lianxi-women"
     }

@@ -1,0 +1,46 @@
+import { styled } from "@mui/material";
+import Link from "next/link";
+
+export const LinkButtonElement = styled(Link)(({ theme }) => ({
+  position: "relative",
+  display: "flex",
+  padding: theme.spacing(1.4, 3),
+  backgroundImage: "var(--background-gradient-hover)",
+  color: theme.palette.primary.contrastText,
+  borderRadius: theme.shape.borderRadius,
+  overflow: "hidden",
+  cursor: "pointer",
+  gap: theme.spacing(1.5),
+  transition: "background 0.6s ease, transform 0.3s ease",
+  backgroundSize: "200%",
+  backgroundPosition: "center",
+  width: "fit-content",
+
+  "&:hover": {
+    backgroundPosition: "8%",
+  },
+
+  "& .ripple": {
+    position: "absolute",
+    borderRadius: "50%",
+    transform: "scale(0)",
+    background: "rgba(255, 255, 255, 0.5)",
+    animation: "ripple 600ms ease-out",
+    pointerEvents: "none",
+    zIndex: 1,
+  },
+
+  "@keyframes ripple": {
+    to: {
+      transform: "scale(4)",
+      opacity: 0,
+    },
+  },
+}));
+
+export const TextLinkButton = styled("span")(({ theme }) => ({
+  position: "relative",
+  zIndex: 2,
+  fontWeight: theme.typography.fontWeightBold,
+  letterSpacing: 1,
+}));

@@ -1,8 +1,8 @@
-import { PaletteColorOptions } from "@mui/material";
+import { SimplePaletteColorOptions } from "@mui/material";
 
 export interface IColor {
-  primary: PaletteColorOptions;
-  secondary: PaletteColorOptions;
+  primary: SimplePaletteColorOptions;
+  secondary: SimplePaletteColorOptions;
 }
 
 export const colors: IColor = {

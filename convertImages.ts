@@ -1,7 +1,7 @@
 import sharp from "sharp";
 import { glob } from "glob";
 import path from "path";
-import fs from "fs";
+// import fs from "fs";
 
 // Ruta de la carpeta pública
 const publicFolder = "./public";
@@ -21,11 +21,11 @@ const convertImages = async () => {
       const fileName = path.basename(file, path.extname(file)); // Nombre del archivo sin extensión
       const outputPath = path.join(fileDir, `${fileName}.webp`); // Ruta de salida en la misma carpeta
 
-      // Verificar si el archivo .webp ya existe
-      if (fs.existsSync(outputPath)) {
-        console.log(`Skipped ${file}, ${outputPath} already exists`);
-        continue; // Saltar esta imagen
-      }
+      // // Verificar si el archivo .webp ya existe
+      // if (fs.existsSync(outputPath)) {
+      //   console.log(`Skipped ${file}, ${outputPath} already exists`);
+      //   continue; // Saltar esta imagen
+      // }
 
       // Convertir la imagen a .webp con la calidad especificada
       await sharp(file)

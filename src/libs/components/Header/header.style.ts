@@ -6,20 +6,36 @@ export const HeaderContent = styled("header")(({ theme }) => ({
   [theme.breakpoints.up("xs")]: {
     alignItems: "center",
     display: "flex",
-    height: theme.typography.pxToRem(100),
+    gap: theme.spacing(2),
+    height: theme.typography.pxToRem(82),
     justifyContent: "space-between",
     left: 0,
     margin: "0 auto",
     maxWidth: theme.breakpoints.values.sm,
-    padding: theme.spacing(0, 2),
+    padding: theme.spacing(2),
     position: "fixed",
     right: 0,
     top: theme.typography.pxToRem(10),
     width: "90%",
     zIndex: 999,
+
+    "&::before": {
+      content: "''",
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
+      bottom: 0,
+      background: "var(--black-opacity-400)",
+      backdropFilter: "blur(10px)",
+      zIndex: -1,
+    },
   },
   [theme.breakpoints.up("md")]: {
     maxWidth: theme.breakpoints.values.md,
+  },
+  [theme.breakpoints.up("lg")]: {
+    maxWidth: theme.breakpoints.values.lg,
   },
 }));
 
@@ -28,20 +44,42 @@ export const LogoContent = styled(Link)(({ theme }) => ({
     alignItems: "center",
     display: "flex",
     justifyContent: "center",
+    gap: theme.spacing(1),
+    width: "fit-content",
   },
 }));
 
 export const IsoLogo = styled(Image)(({ theme }) => ({
   [theme.breakpoints.up("xs")]: {
-    height: theme.typography.pxToRem(60),
-    width: theme.typography.pxToRem(60),
+    height: theme.typography.pxToRem(50),
+    width: theme.typography.pxToRem(50),
+  },
+  [theme.breakpoints.up("lg")]: {
+    height: theme.typography.pxToRem(40),
+    width: theme.typography.pxToRem(40),
+  },
+}));
+
+export const CompanyName = styled("span")(({ theme }) => ({
+  [theme.breakpoints.up("xs")]: {
+    color: theme.palette.text.primary,
+    display: "none",
+    fontSize: theme.typography.pxToRem(20),
+    fontWeight: "bold",
+    fontFamily: "var(--font-syne)",
+  },
+  [theme.breakpoints.up("sm")]: {
+    display: "flex",
+  },
+  [theme.breakpoints.up("lg")]: {
+    fontSize: theme.typography.pxToRem(24),
   },
 }));
 
 export const MenuContent = styled("nav")(({ theme }) => ({
-  [theme.breakpoints.up("xs")]: {
+  [theme.breakpoints.up("md")]: {
     display: "flex",
-    gap: theme.spacing(2),
+    gap: theme.spacing(1.5),
   },
 }));
 
@@ -52,6 +90,7 @@ export const ItemMenu = styled(Link)(({ theme }) => ({
     justifyContent: "center",
     textDecoration: "none",
     color: theme.palette.text.primary,
+    padding: theme.spacing(1, 1),
     transition: theme.transitions.create(["color"], {
       duration: theme.transitions.duration.shortest,
       easing: theme.transitions.easing.easeInOut,
@@ -59,5 +98,26 @@ export const ItemMenu = styled(Link)(({ theme }) => ({
     "&:hover": {
       color: theme.palette.secondary.main,
     },
+  },
+}));
+
+export const ItemContactMenu = styled(Link)(({ theme }) => ({
+  ...theme.typography.button,
+  backgroundColor: theme.palette.primary.main,
+  color: theme.palette.primary.contrastText,
+  padding: theme.spacing(0.8, 1.8),
+  border: "none",
+  borderRadius: theme.shape.borderRadius,
+  cursor: "pointer",
+  transition: "background-color 0.3s",
+
+  "&:hover": {
+    backgroundColor: theme.palette.primary.dark,
+  },
+
+  "&:disabled": {
+    backgroundColor: theme.palette.action.disabledBackground,
+    color: theme.palette.action.disabled,
+    cursor: "not-allowed",
   },
 }));

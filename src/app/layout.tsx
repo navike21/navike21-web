@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { ELanguage } from "@Enums/languages";
 import { MUIProvider } from "@Providers/MUIProvider";
-import { questrial } from "@Config/fonts";
+import { quicksand, syne } from "@Config/fonts";
 import { Header } from "@Components/Header/Header";
+import { useOptionsBrowserStore } from "src/libs/store/optionBrowser/optionBrowser.hook";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,9 +15,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { language } = useOptionsBrowserStore.getState();
   return (
-    <html lang={ELanguage.EN}>
-      <body className={questrial.variable}>
+    <html lang={language}>
+      <body className={`font-sans ${syne.variable} ${quicksand.variable}`}>
         <MUIProvider>
           <Header />
           {children}

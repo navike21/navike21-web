@@ -6,7 +6,7 @@ import { ELanguage } from "@Enums/languages";
 export const useOptionsBrowserStore = createStore<IOptionsBrowserState>(
   (set) => ({
     themeOption: EThemeMode.DARK,
-    language: ELanguage.EN,
+    language: ELanguage.ES,
     processName: "",
     setThemeOption: (themeOption) =>
       set((state) => ({ ...state, themeOption })),

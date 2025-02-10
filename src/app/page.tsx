@@ -1,7 +1,9 @@
 "use client";
 
 import { permanentRedirect } from "next/navigation";
+import { useOptionsBrowserStore } from "src/libs/store/optionBrowser/optionBrowser.hook";
 
 export default function Home() {
-  permanentRedirect(`/en`);
+  const { language } = useOptionsBrowserStore();
+  permanentRedirect(`/${language}`);
 }

@@ -10,15 +10,88 @@ export interface INavikeThemeProps {
 
 export const navikeTheme = ({ themeMode }: INavikeThemeProps): Theme =>
   createTheme({
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 630,
+        md: 760,
+        lg: 1000,
+        xl: 1600,
+      },
+    },
     palette: {
       mode: themeMode,
       primary: colors.primary,
       secondary: colors.secondary,
     },
     typography: {
-      fontFamily: "var(--font-questrial)",
+      fontFamily: "var(--font-quicksand)",
+      fontWeightLight: 400,
+      fontWeightRegular: 500,
+      fontWeightMedium: 600,
+      fontWeightBold: 700,
+      body1: {
+        letterSpacing: 1,
+        fontSize: 16,
+      },
+      button: {
+        textTransform: "none",
+        letterSpacing: 1,
+      },
     },
     shape: {
-      borderRadius: 0,
+      borderRadius: 4,
+    },
+    components: {
+      MuiCssBaseline: {
+        styleOverrides: {
+          ":root": {
+            "--font-quicksand": "'Quicksand', sans-serif",
+            "--font-syne": "'Syne', sans-serif",
+            "--background-gradient": `linear-gradient(90deg, ${colors.primary.main} 0%, ${colors.secondary.main} 100%)`,
+            "--background-gradient-hover": `linear-gradient(90deg, ${colors.primary.main} 20%, ${colors.secondary.main} 80%)`,
+            "--text-gradient": `linear-gradient(90deg, ${colors.primary.contrastText} 0%, ${colors.secondary.contrastText} 100%)`,
+            "--black-opacity-0": "rgba(21, 21, 21, 0.0)",
+            "--black-opacity-100": "rgba(21, 21, 21, 0.1)",
+            "--black-opacity-200": "rgba(21, 21, 21, 0.2)",
+            "--black-opacity-300": "rgba(21, 21, 21, 0.3)",
+            "--black-opacity-400": "rgba(21, 21, 21, 0.4)",
+            "--black-opacity-500": "rgba(21, 21, 21, 0.5)",
+            "--black-opacity-600": "rgba(21, 21, 21, 0.6)",
+            "--black-opacity-700": "rgba(21, 21, 21, 0.7)",
+            "--black-opacity-800": "rgba(21, 21, 21, 0.8)",
+            "--black-opacity-900": "rgba(21, 21, 21, 0.9)",
+            "--black-opacity-1000": "rgba(21, 21, 21, 1)",
+          },
+        },
+      },
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            position: "relative",
+            padding: "12px 24px",
+            backgroundImage: "var(--background-gradient)",
+            color: colors.primary.contrastText,
+            borderRadius: "4px",
+            overflow: "hidden",
+            transition: "background 0.6s ease, transform 0.3s ease",
+            backgroundSize: "200%",
+            backgroundPosition: "center",
+            textTransform: "none",
+            fontWeight: "bold",
+            letterSpacing: "1px",
+
+            "&:hover": {
+              backgroundImage: "var(--background-gradient-hover)",
+              backgroundPosition: "8%",
+              transform: "translateY(-2px)",
+            },
+
+            "&:active": {
+              transform: "translateY(0)",
+            },
+          },
+        },
+      },
     },
   });

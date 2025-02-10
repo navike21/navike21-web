@@ -21,9 +21,11 @@
     "baseUrl": ".",
     "paths": {
       "@Public/*": ["./public/*"],
+      "@Assets/*": ["./src/libs/assets/*"],
       "@Components/*": ["./src/libs/components/*"],
       "@Config/*": ["./src/libs/config/*"],
       "@Enums/*": ["./src/libs/enums/*"],
+      "@Hooks/*": ["./src/libs/hooks/*"],
       "@Providers/*": ["./src/libs/providers/*"],
       "@Theme/*": ["./src/libs/theme/*"],
       "@Translations/*": ["./src/libs/translations/*"],
