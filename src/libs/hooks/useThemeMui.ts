@@ -2,7 +2,7 @@ import { ESizes } from "@Enums/size";
 import { useMediaQuery, useTheme } from "@mui/material";
 
 export const useThemeMui = () => {
-  const { breakpoints } = useTheme();
+  const { breakpoints, palette } = useTheme();
 
   return {
     breakpoints: {
@@ -12,5 +12,6 @@ export const useThemeMui = () => {
       [ESizes.LG]: useMediaQuery(breakpoints.up(ESizes.LG)),
       [ESizes.XL]: useMediaQuery(breakpoints.up(ESizes.XL)),
     },
+    palette,
   };
 };

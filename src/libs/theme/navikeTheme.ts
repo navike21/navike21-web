@@ -13,7 +13,7 @@ export const navikeTheme = ({ themeMode }: INavikeThemeProps): Theme =>
     breakpoints: {
       values: {
         xs: 0,
-        sm: 630,
+        sm: 560,
         md: 760,
         lg: 1000,
         xl: 1600,

@@ -1,5 +1,5 @@
 import { TEAM_WORK_BACKGROUND } from "@Assets/images";
-import { styled, Typography } from "@mui/material";
+import { Paper, styled, Typography } from "@mui/material";
 
 export const HeroContent = styled("div")(({ theme }) => ({
   [theme.breakpoints.up("xs")]: {
@@ -65,6 +65,9 @@ export const HeroTextContentInfo = styled("div")(({ theme }) => ({
     gap: theme.spacing(2),
   },
   [theme.breakpoints.up("lg")]: {
+    gap: theme.spacing(3),
+  },
+  [theme.breakpoints.up("xl")]: {
     gap: theme.spacing(4),
   },
 }));
@@ -113,14 +116,44 @@ export const HeroDescription = styled(Typography)(({ theme }) => ({
   },
 }));
 
-export const HeroExperience = styled("div")(({ theme }) => ({
+export const HeroExperience = styled(Paper)(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
     backgroundImage: "var(--background-gradient)",
-    width: theme.typography.pxToRem(350),
-    padding: theme.spacing(2),
+    width: theme.typography.pxToRem(320),
+    padding: theme.spacing(3),
     color: theme.palette.primary.contrastText,
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
+    flexDirection: "column",
+  },
+}));
+
+export const ContentIcon = styled("div")(({ theme }) => ({
+  [theme.breakpoints.up("md")]: {
+    display: "flex",
+    backgroundColor: "var(--black-opacity-1000)",
+    borderRadius: "50%",
+    padding: theme.spacing(1.5),
+  },
+}));
+
+export const YearExperience = styled(Typography)(({ theme }) => ({
+  [theme.breakpoints.up("md")]: {
+    fontWeight: theme.typography.fontWeightBold,
+    fontSize: theme.typography.pxToRem(50),
+    letterSpacing: 1,
+    fontFamily: "var(--font-syne)",
+    margin: 0,
+  },
+}));
+
+export const YearExperienceText = styled("span")(({ theme }) => ({
+  [theme.breakpoints.up("md")]: {
+    color: theme.palette.primary.contrastText,
+    fontSize: theme.typography.pxToRem(20),
+    fontWeight: theme.typography.fontWeightBold,
+    textAlign: "center",
+    lineHeight: 1.2,
   },
 }));

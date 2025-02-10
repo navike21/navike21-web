@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  ContentIcon,
   HeroContent,
   HeroDescription,
   HeroExperience,
@@ -7,13 +8,16 @@ import {
   HeroTextContent,
   HeroTextContentInfo,
   HeroTitle,
+  YearExperience,
+  YearExperienceText,
 } from "./heroSection.style";
 import { useThemeMui } from "@Hooks/useThemeMui";
 import { LinkButton } from "@Components/LinkButton/LinkButton";
 import { useHeader } from "@Components/Header/header.hook";
+import { CgArrowTopRight } from "react-icons/cg";
 
 export const HeroSection = () => {
-  const { breakpoints } = useThemeMui();
+  const { breakpoints, palette } = useThemeMui();
   const { menuContact, language } = useHeader();
 
   return (
@@ -33,7 +37,17 @@ export const HeroSection = () => {
             Hablemos
           </LinkButton>
         </HeroTextContentInfo>
-        {breakpoints.lg && <HeroExperience>Holi</HeroExperience>}
+        {breakpoints.lg && (
+          <HeroExperience elevation={8}>
+            <ContentIcon>
+              <CgArrowTopRight color={palette.common.white} size={40} />
+            </ContentIcon>
+            <YearExperience>
+              05<span>+</span>
+            </YearExperience>
+            <YearExperienceText>Años de experiencia</YearExperienceText>
+          </HeroExperience>
+        )}
       </HeroTextContent>
     </HeroContent>
   );
