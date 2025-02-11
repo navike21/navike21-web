@@ -5,12 +5,16 @@ export const TitleMui = styled(Typography)<ITitleProps>(
   ({ theme, color, type, textAlign }) => ({
     [theme.breakpoints.up("xs")]: {
       ...(type === "subtitle" && {
-        fontSize: theme.typography.pxToRem(16),
+        fontSize: theme.typography.pxToRem(14),
         textTransform: "uppercase",
       }),
       ...(type === "title" && {
         fontFamily: "var(--font-syne)",
         fontSize: theme.typography.pxToRem(30),
+      }),
+      ...(type === "title2" && {
+        fontFamily: "var(--font-syne)",
+        fontSize: theme.typography.pxToRem(20),
       }),
       fontWeight: theme.typography.fontWeightBold,
       color:
@@ -23,7 +27,11 @@ export const TitleMui = styled(Typography)<ITitleProps>(
     },
     [theme.breakpoints.up("sm")]: {
       ...(type === "subtitle" && {
-        fontSize: theme.typography.pxToRem(18),
+        fontSize: theme.typography.pxToRem(16),
+      }),
+      ...(type === "title2" && {
+        fontFamily: "var(--font-syne)",
+        fontSize: theme.typography.pxToRem(22),
       }),
     },
     [theme.breakpoints.up("md")]: {
@@ -34,6 +42,10 @@ export const TitleMui = styled(Typography)<ITitleProps>(
     [theme.breakpoints.up("lg")]: {
       ...(type === "title" && {
         fontSize: theme.typography.pxToRem(45),
+      }),
+      ...(type === "title2" && {
+        fontFamily: "var(--font-syne)",
+        fontSize: theme.typography.pxToRem(26),
       }),
     },
   })

@@ -2,19 +2,6 @@ import { styled } from "@mui/material";
 import Image from "next/image";
 import { ImgHTMLAttributes } from "react";
 
-export const MainClients = styled("div")(({ theme }) => ({
-  [theme.breakpoints.up("xs")]: {
-    padding: theme.spacing(6, 0),
-    width: "100%",
-    display: "flex",
-    gap: theme.spacing(6),
-    flexDirection: "column",
-  },
-  [theme.breakpoints.up("md")]: {
-    gap: theme.spacing(4),
-  },
-}));
-
 export const ContentClientLogo = styled("div")(({ theme }) => ({
   [theme.breakpoints.up("xs")]: {
     display: "flex",

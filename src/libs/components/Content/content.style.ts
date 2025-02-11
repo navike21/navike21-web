@@ -1,4 +1,4 @@
-import { styled } from "@mui/material";
+import { Grid2, styled } from "@mui/material";
 import { WrapProps } from "./Content";
 
 export const Wrap = styled("section")<WrapProps>(
@@ -36,5 +36,18 @@ export const Container = styled("div")(({ theme }) => ({
     gap: theme.spacing(8),
     width: "100%",
     padding: theme.spacing(0, 6),
+  },
+}));
+
+export const MainContainer = styled(Grid2)(({ theme }) => ({
+  [theme.breakpoints.up("xs")]: {
+    padding: theme.spacing(6, 0),
+    width: "100%",
+    display: "flex",
+    gap: theme.spacing(6),
+    flexDirection: "column",
+  },
+  [theme.breakpoints.up("md")]: {
+    gap: theme.spacing(4),
   },
 }));

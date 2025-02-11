@@ -2,7 +2,7 @@ import { TypographyProps } from "@mui/material";
 import { TitleMui } from "./title.style";
 
 export interface ITitleProps extends TypographyProps {
-  type: "subtitle" | "title";
+  type: "subtitle" | "title" | "title2";
   variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   textAlign?: "left" | "center" | "right";
   color?: "primary" | "white";
@@ -14,11 +14,8 @@ export const Title = ({
   textAlign = "left",
   color = "white",
   ...props
-}: ITitleProps) => {
-  console.log("color", color);
-  return (
-    <TitleMui {...props} variant={variant} textAlign={textAlign} color={color}>
-      {children}
-    </TitleMui>
-  );
-};
+}: ITitleProps) => (
+  <TitleMui {...props} variant={variant} textAlign={textAlign} color={color}>
+    {children}
+  </TitleMui>
+);

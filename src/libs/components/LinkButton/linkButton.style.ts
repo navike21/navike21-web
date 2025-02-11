@@ -4,7 +4,7 @@ import Link from "next/link";
 export const LinkButtonElement = styled(Link)(({ theme }) => ({
   position: "relative",
   display: "flex",
-  padding: theme.spacing(1.4, 3),
+  padding: theme.spacing(1.1, 3.5),
   backgroundImage: "var(--background-gradient-hover)",
   color: theme.palette.primary.contrastText,
   borderRadius: theme.shape.borderRadius,

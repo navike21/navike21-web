@@ -1,15 +1,16 @@
 import { Content } from "@Components/Content/Content";
 import { useThemeMui } from "@Hooks/useThemeMui";
 import React from "react";
-import { ClientLogo, ContentClientLogo, MainClients } from "./clients.style";
+import { ClientLogo, ContentClientLogo } from "./clients.style";
 import { clients } from "@Utils/clients";
 import { Title } from "@Components/Title/Title";
+import { MainContent } from "@Components/Content/MainContent";
 
 export const Clients = () => {
   const { palette } = useThemeMui();
   return (
     <Content backgroundColor={palette.grey[900]}>
-      <MainClients>
+      <MainContent>
         <Title type="subtitle" textAlign="center" variant="h4">
           Ellos confían en nosotros
         </Title>
@@ -25,7 +26,7 @@ export const Clients = () => {
             />
           ))}
         </ContentClientLogo>
-      </MainClients>
+      </MainContent>
     </Content>
   );
 };
