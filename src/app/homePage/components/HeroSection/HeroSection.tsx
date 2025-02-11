@@ -5,7 +5,6 @@ import {
   HeroDescription,
   HeroExperience,
   HeroSubtitle,
-  HeroTextContent,
   HeroTextContentInfo,
   HeroTitle,
   YearExperience,
@@ -15,6 +14,7 @@ import { useThemeMui } from "@Hooks/useThemeMui";
 import { LinkButton } from "@Components/LinkButton/LinkButton";
 import { useHeader } from "@Components/Header/header.hook";
 import { CgArrowTopRight } from "react-icons/cg";
+import { Container } from "@Components/Content/content.style";
 
 export const HeroSection = () => {
   const { breakpoints, palette } = useThemeMui();
@@ -22,7 +22,7 @@ export const HeroSection = () => {
 
   return (
     <HeroContent>
-      <HeroTextContent>
+      <Container>
         <HeroTextContentInfo>
           <HeroTitle variant="h4">Diseñamos el cambio.</HeroTitle>
           <HeroSubtitle variant="h2">
@@ -48,7 +48,7 @@ export const HeroSection = () => {
             <YearExperienceText>Años de experiencia</YearExperienceText>
           </HeroExperience>
         )}
-      </HeroTextContent>
+      </Container>
     </HeroContent>
   );
 };

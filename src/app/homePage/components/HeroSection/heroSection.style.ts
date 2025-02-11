@@ -1,4 +1,4 @@
-import { TEAM_WORK_BACKGROUND } from "@Assets/images";
+import { TEAM_WORK_BACKGROUND } from "@Assets/images/images";
 import { Paper, styled, Typography } from "@mui/material";
 
 export const HeroContent = styled("div")(({ theme }) => ({
@@ -35,26 +35,6 @@ export const HeroContent = styled("div")(({ theme }) => ({
   },
   [theme.breakpoints.up("xl")]: {
     minHeight: "80dvh",
-  },
-}));
-
-export const HeroTextContent = styled("section")(({ theme }) => ({
-  [theme.breakpoints.up("xs")]: {
-    zIndex: 1,
-    display: "flex",
-    flexDirection: "row",
-    width: "95%",
-    maxWidth: theme.breakpoints.values.sm,
-    gap: theme.spacing(4),
-  },
-  [theme.breakpoints.up("sm")]: {
-    width: "85%",
-  },
-  [theme.breakpoints.up("lg")]: {
-    maxWidth: theme.breakpoints.values.lg,
-    gap: theme.spacing(8),
-    width: "100%",
-    padding: theme.spacing(0, 8),
   },
 }));
 
