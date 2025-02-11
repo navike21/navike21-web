@@ -14,13 +14,14 @@ export const Clients = () => {
           Ellos confían en nosotros
         </Title>
         <ContentClientLogo>
-          {clients.map(({ icon, name }) => (
+          {clients.map(({ icon, name, mode = "sqare" }) => (
             <ClientLogo
               key={name}
               src={icon}
               alt="Client logo"
               width={200}
               height={100}
+              mode={mode}
             />
           ))}
         </ContentClientLogo>

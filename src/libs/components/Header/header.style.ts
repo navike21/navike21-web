@@ -35,7 +35,7 @@ export const HeaderContent = styled("header")(({ theme }) => ({
     maxWidth: theme.breakpoints.values.md,
   },
   [theme.breakpoints.up("lg")]: {
-    maxWidth: theme.breakpoints.values.lg,
+    maxWidth: theme.typography.pxToRem(1100),
   },
 }));
 

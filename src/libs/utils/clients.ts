@@ -12,37 +12,46 @@ export const clients = [
   {
     name: "Tentaciones Gourmet",
     icon: tentaciones,
+    mode: "square",
   },
   {
     name: "Colegio La Unión",
     icon: colegioLaUnion,
-  },
-  {
-    name: "Circurela",
-    icon: circurela,
-  },
-  {
-    name: "Carbyne",
-    icon: carbyne,
-  },
-  {
-    name: "Almazen",
-    icon: almazen,
-  },
-  {
-    name: "Eurogourmet",
-    icon: eurogourmet,
-  },
-  {
-    name: "Anker",
-    icon: anker,
+    mode: "horizontal",
   },
   {
     name: "Beats",
     icon: beats,
+    mode: "vertical",
+  },
+  {
+    name: "Circurela",
+    icon: circurela,
+    mode: "horizontal",
   },
   {
     name: "Hammer Blocs",
     icon: hammerBlocs,
+    mode: "semi-square",
+  },
+  {
+    name: "Almazen",
+    icon: almazen,
+    mode: "semi-square",
+  },
+  {
+    name: "Eurogourmet",
+    icon: eurogourmet,
+    mode: "semi-square",
+  },
+  {
+    name: "Carbyne",
+    icon: carbyne,
+    mode: "horizontal-xl",
+  },
+  {
+    name: "Anker",
+    icon: anker,
+    mode: "semi-square",
   },
 ];

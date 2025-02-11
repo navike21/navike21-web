@@ -1,9 +1,10 @@
 import { styled } from "@mui/material";
 import Image from "next/image";
+import { ImgHTMLAttributes } from "react";
 
 export const MainClients = styled("div")(({ theme }) => ({
   [theme.breakpoints.up("xs")]: {
-    padding: theme.spacing(4, 0),
+    padding: theme.spacing(6, 0),
     width: "100%",
     display: "flex",
     gap: theme.spacing(6),
@@ -18,31 +19,50 @@ export const ContentClientLogo = styled("div")(({ theme }) => ({
   [theme.breakpoints.up("xs")]: {
     display: "flex",
     flexWrap: "wrap",
-    gap: theme.spacing(4),
+    gap: theme.spacing(2.5),
     alignItems: "center",
     justifyContent: "center",
   },
   [theme.breakpoints.up("md")]: {
-    gap: theme.spacing(2.4),
+    gap: theme.spacing(3),
   },
-  [theme.breakpoints.up("lg")]: {
-    gap: theme.spacing(0),
+  [theme.breakpoints.up("xl")]: {
+    gap: theme.spacing(2),
     justifyContent: "space-between",
   },
 }));
 
-export const ClientLogo = styled(Image)(({ theme }) => ({
+interface IImageProps extends ImgHTMLAttributes<HTMLImageElement> {
+  mode: string;
+}
+
+export const ClientLogo = styled(Image)<IImageProps>(({ theme, mode }) => ({
   [theme.breakpoints.up("xs")]: {
-    width: theme.typography.pxToRem(58),
-    height: theme.typography.pxToRem(58),
+    width: "auto",
+    height: "100%",
     objectFit: "contain",
+    maxHeight:
+      (mode === "vertical" && theme.typography.pxToRem(85)) ||
+      (mode === "square" && theme.typography.pxToRem(60)) ||
+      (mode === "semi-square" && theme.typography.pxToRem(38)) ||
+      (mode === "horizontal" && theme.typography.pxToRem(30)) ||
+      (mode === "horizontal-xl" && theme.typography.pxToRem(25)),
+    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
   },
   [theme.breakpoints.up("md")]: {
-    width: theme.typography.pxToRem(45),
-    height: theme.typography.pxToRem(45),
+    maxHeight:
+      (mode === "vertical" && theme.typography.pxToRem(70)) ||
+      (mode === "square" && theme.typography.pxToRem(50)) ||
+      (mode === "semi-square" && theme.typography.pxToRem(32)) ||
+      (mode === "horizontal" && theme.typography.pxToRem(22)) ||
+      (mode === "horizontal-xl" && theme.typography.pxToRem(18)),
   },
-  [theme.breakpoints.up("lg")]: {
-    width: theme.typography.pxToRem(70),
-    height: theme.typography.pxToRem(70),
+  [theme.breakpoints.up("xl")]: {
+    maxHeight:
+      (mode === "vertical" && theme.typography.pxToRem(100)) ||
+      (mode === "square" && theme.typography.pxToRem(60)) ||
+      (mode === "horizontal" && theme.typography.pxToRem(26)) ||
+      (mode === "semi-square" && theme.typography.pxToRem(32)) ||
+      (mode === "horizontal-xl" && theme.typography.pxToRem(20)),
   },
 }));

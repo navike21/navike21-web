@@ -35,6 +35,6 @@ export const Container = styled("div")(({ theme }) => ({
     maxWidth: theme.breakpoints.values.lg,
     gap: theme.spacing(8),
     width: "100%",
-    padding: theme.spacing(0, 8),
+    padding: theme.spacing(0, 6),
   },
 }));
