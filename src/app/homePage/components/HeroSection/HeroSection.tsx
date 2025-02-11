@@ -4,9 +4,7 @@ import {
   HeroContent,
   HeroDescription,
   HeroExperience,
-  HeroSubtitle,
   HeroTextContentInfo,
-  HeroTitle,
   YearExperience,
   YearExperienceText,
 } from "./heroSection.style";
@@ -15,6 +13,7 @@ import { LinkButton } from "@Components/LinkButton/LinkButton";
 import { useHeader } from "@Components/Header/header.hook";
 import { CgArrowTopRight } from "react-icons/cg";
 import { Container } from "@Components/Content/content.style";
+import { Title } from "@Components/Title/Title";
 
 export const HeroSection = () => {
   const { breakpoints, palette } = useThemeMui();
@@ -24,10 +23,12 @@ export const HeroSection = () => {
     <HeroContent>
       <Container>
         <HeroTextContentInfo>
-          <HeroTitle variant="h4">Diseñamos el cambio.</HeroTitle>
-          <HeroSubtitle variant="h2">
+          <Title type="subtitle" variant="h4" color="primary">
+            Diseñamos el cambio.
+          </Title>
+          <Title type="title" variant="h2">
             Impulsamos tu visión digital.
-          </HeroSubtitle>
+          </Title>
           <HeroDescription variant="body1">
             Software a medida, páginas web, diseño UX/UI y eCommerce que
             impulsan tu negocio.

@@ -52,37 +52,6 @@ export const HeroTextContentInfo = styled("div")(({ theme }) => ({
   },
 }));
 
-export const HeroTitle = styled(Typography)(({ theme }) => ({
-  [theme.breakpoints.up("xs")]: {
-    color: theme.palette.primary.main,
-    fontWeight: theme.typography.fontWeightBold,
-    letterSpacing: 1,
-    fontSize: theme.typography.pxToRem(16),
-    textTransform: "uppercase",
-    margin: 0,
-  },
-  [theme.breakpoints.up("sm")]: {
-    fontSize: theme.typography.pxToRem(18),
-  },
-}));
-
-export const HeroSubtitle = styled(Typography)(({ theme }) => ({
-  [theme.breakpoints.up("xs")]: {
-    color: theme.palette.common.white,
-    fontWeight: theme.typography.fontWeightBold,
-    fontFamily: "var(--font-syne)",
-    letterSpacing: 1,
-    fontSize: theme.typography.pxToRem(30),
-    margin: 0,
-  },
-  [theme.breakpoints.up("md")]: {
-    fontSize: theme.typography.pxToRem(40),
-  },
-  [theme.breakpoints.up("lg")]: {
-    fontSize: theme.typography.pxToRem(45),
-  },
-}));
-
 export const HeroDescription = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.up("xs")]: {
     color: theme.palette.common.white,

@@ -1,4 +1,4 @@
-import { styled, Typography } from "@mui/material";
+import { styled } from "@mui/material";
 import Image from "next/image";
 
 export const MainClients = styled("div")(({ theme }) => ({
@@ -11,21 +11,6 @@ export const MainClients = styled("div")(({ theme }) => ({
   },
   [theme.breakpoints.up("md")]: {
     gap: theme.spacing(4),
-  },
-}));
-
-export const ClientTitle = styled(Typography)(({ theme }) => ({
-  [theme.breakpoints.up("xs")]: {
-    color: theme.palette.common.white,
-    fontWeight: theme.typography.fontWeightBold,
-    letterSpacing: 1,
-    fontSize: theme.typography.pxToRem(16),
-    textTransform: "uppercase",
-    margin: 0,
-    textAlign: "center",
-  },
-  [theme.breakpoints.up("sm")]: {
-    fontSize: theme.typography.pxToRem(18),
   },
 }));
 

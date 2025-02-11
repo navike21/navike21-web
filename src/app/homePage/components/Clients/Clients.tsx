@@ -1,20 +1,18 @@
 import { Content } from "@Components/Content/Content";
 import { useThemeMui } from "@Hooks/useThemeMui";
 import React from "react";
-import {
-  ClientLogo,
-  ClientTitle,
-  ContentClientLogo,
-  MainClients,
-} from "./clients.style";
+import { ClientLogo, ContentClientLogo, MainClients } from "./clients.style";
 import { clients } from "@Utils/clients";
+import { Title } from "@Components/Title/Title";
 
 export const Clients = () => {
   const { palette } = useThemeMui();
   return (
     <Content backgroundColor={palette.grey[900]}>
       <MainClients>
-        <ClientTitle>Ellos confían en nosotros</ClientTitle>
+        <Title type="subtitle" textAlign="center" variant="h4">
+          Ellos confían en nosotros
+        </Title>
         <ContentClientLogo>
           {clients.map(({ icon, name }) => (
             <ClientLogo
