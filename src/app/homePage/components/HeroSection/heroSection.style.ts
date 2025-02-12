@@ -7,14 +7,14 @@ export const HeroContent = styled("div")(({ theme }) => ({
     width: "100%",
     minHeight: "100dvh",
     backgroundSize: "cover",
-    backgroundPosition: "center",
+    backgroundPosition: "center 0",
+    willChange: "transform",
     position: "relative",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    padding: theme.spacing(4),
-    transition: "all 0.3s ease-in-out",
+    padding: theme.spacing(4, 0),
 
     "&::before": {
       content: "''",
@@ -92,7 +92,7 @@ export const ContentIcon = styled("div")(({ theme }) => ({
 export const YearExperience = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
     fontWeight: theme.typography.fontWeightBold,
-    fontSize: theme.typography.pxToRem(40),
+    fontSize: theme.typography.pxToRem(50),
     letterSpacing: 1,
     fontFamily: "var(--font-syne)",
     margin: 0,

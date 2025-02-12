@@ -39,7 +39,7 @@ export const Header = () => {
         <CompanyName>navike21</CompanyName>
       </LogoContent>
       {breakpoints.lg && <MenuContent>{menuNav}</MenuContent>}
-      {breakpoints.sm && !breakpoints.lg && menuContact && (
+      {breakpoints.md && !breakpoints.lg && menuContact && (
         <LinkButton href={`${menuContact.slug}`}>{menuContact.name}</LinkButton>
       )}
     </HeaderContent>

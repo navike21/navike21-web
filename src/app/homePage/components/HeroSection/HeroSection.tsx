@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import {
   ContentIcon,
   HeroContent,
@@ -19,8 +19,24 @@ export const HeroSection = () => {
   const { breakpoints, palette } = useThemeMui();
   const { menuContact } = useHeader();
 
+  const parallaxRef = useRef<HTMLDivElement>(null);
+
+  const handleScroll = () => {
+    const offsetY = window.scrollY;
+    if (parallaxRef.current) {
+      parallaxRef.current.style.backgroundPosition = `center ${
+        offsetY * 0.5
+      }px`;
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <HeroContent>
+    <HeroContent ref={parallaxRef}>
       <Content>
         <HeroTextContentInfo>
           <Title type="subtitle" variant="h4" color="primary">

@@ -20,7 +20,6 @@ export const AboutUs = () => {
           quality={100}
           width={700}
           height={700}
-          lazyBoundary={ABOUT_US_BACKGROUND.blurDataURL}
         />
         <AboutUsInfo>
           <Title variant="h4" type="subtitle" color="primary">

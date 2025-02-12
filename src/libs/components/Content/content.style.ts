@@ -45,13 +45,14 @@ export const Container = styled("div")(({ theme }) => ({
 
 export const MainContainer = styled(Grid2)(({ theme }) => ({
   [theme.breakpoints.up("xs")]: {
-    padding: theme.spacing(6, 0),
+    padding: theme.spacing(8, 0),
     width: "100%",
     display: "flex",
     gap: theme.spacing(6),
     flexDirection: "column",
   },
   [theme.breakpoints.up("md")]: {
+    padding: theme.spacing(10, 0),
     gap: theme.spacing(4),
   },
 }));
