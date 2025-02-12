@@ -1,30 +1,15 @@
-import { TEAM_WORK_BACKGROUND } from "@Assets/images/images";
+import { BackgroundParallax } from "@Components/BackgroundParallax/BackgroundParallax";
 import { Paper, styled, Typography } from "@mui/material";
 
-export const HeroContent = styled("div")(({ theme }) => ({
+export const HeroContent = styled(BackgroundParallax)(({ theme }) => ({
   [theme.breakpoints.up("xs")]: {
-    backgroundImage: `url(${TEAM_WORK_BACKGROUND.src})`,
     width: "100%",
     minHeight: "100dvh",
-    backgroundSize: "cover",
-    backgroundPosition: "center 0",
-    willChange: "transform",
-    position: "relative",
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
     padding: theme.spacing(4, 0),
-
-    "&::before": {
-      content: "''",
-      backgroundColor: "var(--black-opacity-700)",
-      position: "absolute",
-      top: 0,
-      bottom: 0,
-      left: 0,
-      right: 0,
-    },
   },
   [theme.breakpoints.up("sm")]: {
     padding: theme.spacing(8),

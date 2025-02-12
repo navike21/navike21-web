@@ -1,4 +1,3 @@
-import React, { useEffect, useRef } from "react";
 import {
   ContentIcon,
   HeroContent,
@@ -14,29 +13,14 @@ import { useHeader } from "@Components/Header/header.hook";
 import { CgArrowTopRight } from "react-icons/cg";
 import { Title } from "@Components/Title/Title";
 import { Content } from "@Components/Content/Content";
+import { TEAM_WORK_BACKGROUND } from "@Assets/images/images";
 
 export const HeroSection = () => {
   const { breakpoints, palette } = useThemeMui();
   const { menuContact } = useHeader();
 
-  const parallaxRef = useRef<HTMLDivElement>(null);
-
-  const handleScroll = () => {
-    const offsetY = window.scrollY;
-    if (parallaxRef.current) {
-      parallaxRef.current.style.backgroundPosition = `center ${
-        offsetY * 0.5
-      }px`;
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <HeroContent ref={parallaxRef}>
+    <HeroContent backgroundImage={TEAM_WORK_BACKGROUND.src} overlay>
       <Content>
         <HeroTextContentInfo>
           <Title type="subtitle" variant="h4" color="primary">
