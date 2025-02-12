@@ -50,7 +50,7 @@ export const AboutUsInfo = styled("div")(({ theme }) => ({
 
 export const AboutUsContent = styled("p")(({ theme }) => ({
   [theme.breakpoints.up("xs")]: {
-    fontSize: theme.typography.pxToRem(14),
+    fontSize: theme.typography.pxToRem(16),
     color: theme.palette.text.primary,
     margin: 0,
   },

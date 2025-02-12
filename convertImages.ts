@@ -1,38 +1,40 @@
 import sharp from "sharp";
 import { glob } from "glob";
 import path from "path";
-// import fs from "fs";
 
-// Ruta de la carpeta pública
 const publicFolder = "./public";
+const quality = 100;
 
-// Calidad de la imagen (0-100)
-const quality = 80;
-
-// Función para convertir imágenes
 const convertImages = async () => {
   try {
-    // Buscar archivos en la carpeta pública (recursivamente)
     const files = glob.sync(`${publicFolder}/**/*.{jpg,png,jpeg}`);
 
-    // Convertir cada imagen a .webp
     for (const file of files) {
-      const fileDir = path.dirname(file); // Carpeta de la imagen original
-      const fileName = path.basename(file, path.extname(file)); // Nombre del archivo sin extensión
-      const outputPath = path.join(fileDir, `${fileName}.webp`); // Ruta de salida en la misma carpeta
+      const fileDir = path.dirname(file);
+      const fileName = path.basename(file, path.extname(file));
+      const fileExt = path.extname(file).toLowerCase().replace(".", "");
+      const outputWebP = path.join(fileDir, `${fileName}.webp`);
+      const thumbName = `${fileName}-700-thumb`;
+      const outputThumb = path.join(fileDir, `${thumbName}.${fileExt}`);
+      const outputThumbWebP = path.join(fileDir, `${thumbName}.webp`);
 
-      // // Verificar si el archivo .webp ya existe
-      // if (fs.existsSync(outputPath)) {
-      //   console.log(`Skipped ${file}, ${outputPath} already exists`);
-      //   continue; // Saltar esta imagen
-      // }
+      // Convertir a WebP (versión original)
+      await sharp(file).toFormat("webp", { quality }).toFile(outputWebP);
 
-      // Convertir la imagen a .webp con la calidad especificada
+      // Generar miniatura de 700px de ancho en el mismo formato original
       await sharp(file)
-        .toFormat("webp", { quality }) // Ajustar la calidad aquí
-        .toFile(outputPath);
+        .resize({ width: 700 })
+        .toFormat(fileExt as keyof sharp.FormatEnum, { quality })
+        .toFile(outputThumb);
 
-      console.log(`Converted ${file} to ${outputPath}`);
+      // Generar miniatura de 700px de ancho en WebP
+      await sharp(file)
+        .resize({ width: 700 })
+        .toFormat("webp", { quality })
+        .toFile(outputThumbWebP);
+
+      console.log(`Converted ${file} to ${outputWebP}`);
+      console.log(`Generated thumb: ${outputThumb} & ${outputThumbWebP}`);
     }
 
     console.log("✅ All images converted successfully!");
@@ -41,5 +43,4 @@ const convertImages = async () => {
   }
 };
 
-// Ejecutar la función
 convertImages();

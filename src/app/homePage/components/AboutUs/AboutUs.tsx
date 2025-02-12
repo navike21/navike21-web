@@ -16,10 +16,11 @@ export const AboutUs = () => {
       <MainContentAbout>
         <ImageAboutUs
           src={ABOUT_US_BACKGROUND}
-          width={100}
-          height={100}
           alt="image-about-us"
           quality={100}
+          width={700}
+          height={700}
+          lazyBoundary={ABOUT_US_BACKGROUND.blurDataURL}
         />
         <AboutUsInfo>
           <Title variant="h4" type="subtitle" color="primary">
