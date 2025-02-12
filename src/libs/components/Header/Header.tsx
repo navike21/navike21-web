@@ -15,7 +15,7 @@ import { useHeader } from "./header.hook";
 import { LinkButton } from "@Components/LinkButton/LinkButton";
 
 export const Header = () => {
-  const { menuContact, principalMenu, language, breakpoints } = useHeader();
+  const { contactMenu, principalMenu, language, breakpoints } = useHeader();
 
   const menuNav = principalMenu.map(({ id, name, slug }) => {
     if (id === "contact") {
@@ -39,8 +39,8 @@ export const Header = () => {
         <CompanyName>navike21</CompanyName>
       </LogoContent>
       {breakpoints.lg && <MenuContent>{menuNav}</MenuContent>}
-      {breakpoints.md && !breakpoints.lg && menuContact && (
-        <LinkButton href={`${menuContact.slug}`}>{menuContact.name}</LinkButton>
+      {breakpoints.md && !breakpoints.lg && contactMenu && (
+        <LinkButton href={`${contactMenu.slug}`}>{contactMenu.name}</LinkButton>
       )}
     </HeaderContent>
   );

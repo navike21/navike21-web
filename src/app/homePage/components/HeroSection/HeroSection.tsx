@@ -17,7 +17,7 @@ import { TEAM_WORK_BACKGROUND } from "@Assets/images/images";
 
 export const HeroSection = () => {
   const { breakpoints, palette } = useThemeMui();
-  const { menuContact } = useHeader();
+  const { contactMenu } = useHeader();
 
   return (
     <HeroContent backgroundImage={TEAM_WORK_BACKGROUND.src} overlay>
@@ -34,7 +34,7 @@ export const HeroSection = () => {
             impulsan tu negocio.
           </HeroDescription>
           {breakpoints.xs && !breakpoints.lg && <span />}
-          <LinkButton href={`${menuContact?.slug}`}>Hablemos</LinkButton>
+          <LinkButton href={`${contactMenu?.slug}`}>Hablemos</LinkButton>
         </HeroTextContentInfo>
         {breakpoints.lg && (
           <HeroExperience elevation={8}>

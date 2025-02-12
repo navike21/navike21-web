@@ -6,13 +6,23 @@ export const useNavigation = () => {
 
   const principalMenu = menuNavigation[language];
 
-  const menuContact = principalMenu.find(({ id }) => id === "contact");
+  const contactMenu = principalMenu.find(({ id }) => id === "contact");
+  const aboutMenu = principalMenu.find(({ id }) => id === "about-us");
+  const servicesMenu = principalMenu.find(({ id }) => id === "services");
 
   return {
+    aboutMenu: {
+      ...aboutMenu,
+      slug: `/${language}/${aboutMenu?.slug}`,
+    },
     language,
-    menuContact: {
-      ...menuContact,
-      slug: `/${language}/${menuContact?.slug}`,
+    contactMenu: {
+      ...contactMenu,
+      slug: `/${language}/${contactMenu?.slug}`,
+    },
+    servicesMenu: {
+      ...servicesMenu,
+      slug: `/${language}/${servicesMenu?.slug}`,
     },
     principalMenu,
   };

@@ -9,8 +9,10 @@ import {
 import { ABOUT_US_BACKGROUND } from "@Assets/images/images";
 import { Title } from "@Components/Title/Title";
 import { LinkButton } from "@Components/LinkButton/LinkButton";
+import { useNavigation } from "@Hooks/useNavigation";
 
 export const AboutUs = () => {
+  const { aboutMenu } = useNavigation();
   return (
     <Content>
       <MainContentAbout>
@@ -32,7 +34,7 @@ export const AboutUs = () => {
             En navike21 combinamos creatividad y tecnología para transformar
             ideas en resultados.
           </AboutUsContent>
-          <LinkButton href="/about-us" color="primary">
+          <LinkButton href={aboutMenu.slug} color="primary">
             Leer más
           </LinkButton>
         </AboutUsInfo>

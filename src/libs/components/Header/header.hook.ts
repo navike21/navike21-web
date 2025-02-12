@@ -8,12 +8,12 @@ export const useHeader = () => {
   const [openMenuNavigation, setOpenMenuNavigation] = useState<boolean>(false);
   const { breakpoints } = useThemeMui();
 
-  const { menuContact, principalMenu } = useNavigation();
+  const { contactMenu, principalMenu } = useNavigation();
 
   return {
     breakpoints,
     language,
-    menuContact,
+    contactMenu,
     principalMenu,
     openMenuNavigation,
     setOpenMenuNavigation,
