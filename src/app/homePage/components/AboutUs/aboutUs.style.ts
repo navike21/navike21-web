@@ -28,7 +28,7 @@ export const ImageAboutUs = styled(Image)(({ theme }) => ({
     height: "auto",
   },
   [theme.breakpoints.up("lg")]: {
-    width: "55%",
+    width: "45%",
   },
 }));
 

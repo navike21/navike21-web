@@ -40,9 +40,7 @@ export const Header = () => {
       </LogoContent>
       {breakpoints.lg && <MenuContent>{menuNav}</MenuContent>}
       {breakpoints.sm && !breakpoints.lg && menuContact && (
-        <LinkButton href={`/${language}/${menuContact.slug}`}>
-          {menuContact.name}
-        </LinkButton>
+        <LinkButton href={`${menuContact.slug}`}>{menuContact.name}</LinkButton>
       )}
     </HeaderContent>
   );

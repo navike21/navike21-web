@@ -13,7 +13,7 @@ export const ContentClientLogo = styled("div")(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
     gap: theme.spacing(3),
   },
-  [theme.breakpoints.up("xl")]: {
+  [theme.breakpoints.up("lg")]: {
     gap: theme.spacing(2),
     justifyContent: "space-between",
   },

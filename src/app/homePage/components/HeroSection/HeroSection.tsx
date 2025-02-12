@@ -12,16 +12,16 @@ import { useThemeMui } from "@Hooks/useThemeMui";
 import { LinkButton } from "@Components/LinkButton/LinkButton";
 import { useHeader } from "@Components/Header/header.hook";
 import { CgArrowTopRight } from "react-icons/cg";
-import { Container } from "@Components/Content/content.style";
 import { Title } from "@Components/Title/Title";
+import { Content } from "@Components/Content/Content";
 
 export const HeroSection = () => {
   const { breakpoints, palette } = useThemeMui();
-  const { menuContact, language } = useHeader();
+  const { menuContact } = useHeader();
 
   return (
     <HeroContent>
-      <Container>
+      <Content>
         <HeroTextContentInfo>
           <Title type="subtitle" variant="h4" color="primary">
             Diseñamos el cambio.
@@ -34,9 +34,7 @@ export const HeroSection = () => {
             impulsan tu negocio.
           </HeroDescription>
           {breakpoints.xs && !breakpoints.lg && <span />}
-          <LinkButton href={`/${language}/${menuContact?.slug}`}>
-            Hablemos
-          </LinkButton>
+          <LinkButton href={`${menuContact?.slug}`}>Hablemos</LinkButton>
         </HeroTextContentInfo>
         {breakpoints.lg && (
           <HeroExperience elevation={8}>
@@ -44,12 +42,12 @@ export const HeroSection = () => {
               <CgArrowTopRight color={palette.common.white} size={40} />
             </ContentIcon>
             <YearExperience>
-              05<span>+</span>
+              06<span>+</span>
             </YearExperience>
             <YearExperienceText>Años de experiencia</YearExperienceText>
           </HeroExperience>
         )}
-      </Container>
+      </Content>
     </HeroContent>
   );
 };

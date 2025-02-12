@@ -16,7 +16,7 @@ export const navikeTheme = ({ themeMode }: INavikeThemeProps): Theme =>
         sm: 560,
         md: 760,
         lg: 1000,
-        xl: 1600,
+        xl: 1400,
       },
     },
     palette: {

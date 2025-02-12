@@ -11,6 +11,7 @@ export const Wrap = styled("section")<WrapProps>(
       }),
       ...(backgroundColor && { backgroundColor }),
       padding: theme.spacing(0, 4),
+      zIndex: 1,
     },
     [theme.breakpoints.up("sm")]: {
       padding: theme.spacing(0, 2),
@@ -30,12 +31,15 @@ export const Container = styled("div")(({ theme }) => ({
   },
   [theme.breakpoints.up("sm")]: {
     width: "100%",
+    justifyContent: "space-between",
   },
   [theme.breakpoints.up("lg")]: {
-    maxWidth: theme.breakpoints.values.lg,
+    maxWidth: theme.typography.pxToRem(1100),
     gap: theme.spacing(8),
-    width: "100%",
     padding: theme.spacing(0, 6),
+  },
+  [theme.breakpoints.up("xl")]: {
+    maxWidth: theme.typography.pxToRem(1150),
   },
 }));
 

@@ -31,10 +31,10 @@ export const HeroContent = styled("div")(({ theme }) => ({
     paddingTop: theme.typography.pxToRem(120),
   },
   [theme.breakpoints.up("lg")]: {
-    padding: theme.spacing(8),
+    padding: theme.spacing(8, 2),
   },
   [theme.breakpoints.up("xl")]: {
-    minHeight: "80dvh",
+    minHeight: "75dvh",
   },
 }));
 
@@ -46,9 +46,11 @@ export const HeroTextContentInfo = styled("div")(({ theme }) => ({
   },
   [theme.breakpoints.up("lg")]: {
     gap: theme.spacing(3),
+    width: "60%",
   },
   [theme.breakpoints.up("xl")]: {
     gap: theme.spacing(4),
+    width: "55%",
   },
 }));
 
@@ -68,8 +70,8 @@ export const HeroDescription = styled(Typography)(({ theme }) => ({
 export const HeroExperience = styled(Paper)(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
     backgroundImage: "var(--background-gradient)",
-    width: theme.typography.pxToRem(320),
-    padding: theme.spacing(3),
+    width: theme.typography.pxToRem(250),
+    padding: theme.spacing(5),
     color: theme.palette.primary.contrastText,
     display: "flex",
     alignItems: "center",
@@ -90,7 +92,7 @@ export const ContentIcon = styled("div")(({ theme }) => ({
 export const YearExperience = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
     fontWeight: theme.typography.fontWeightBold,
-    fontSize: theme.typography.pxToRem(50),
+    fontSize: theme.typography.pxToRem(40),
     letterSpacing: 1,
     fontFamily: "var(--font-syne)",
     margin: 0,
