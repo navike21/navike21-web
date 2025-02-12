@@ -6,7 +6,7 @@ export const Background = styled("div")<IBackgroundParallaxProps>(
     [theme.breakpoints.up("xs")]: {
       backgroundImage: `url(${backgroundImage})`,
       backgroundSize: "cover",
-      backgroundPosition: "center 0",
+      backgroundPosition: "center",
       willChange: "transform",
       position: "relative",
 

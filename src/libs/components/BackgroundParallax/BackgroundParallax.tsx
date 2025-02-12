@@ -14,13 +14,14 @@ export const BackgroundParallax = ({
   ...props
 }: IBackgroundParallaxProps) => {
   const parallaxRef = useRef<HTMLDivElement>(null);
+  const parallaxSpeed = 0.3;
 
   const handleScroll = () => {
     const offsetY = window.scrollY;
     if (parallaxRef.current) {
-      parallaxRef.current.style.backgroundPosition = `center ${
-        offsetY * 0.5
-      }px`;
+      parallaxRef.current.style.backgroundPosition = `center calc(50% + ${
+        offsetY * parallaxSpeed
+      }px)`;
     }
   };
 
