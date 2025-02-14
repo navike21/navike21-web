@@ -15,7 +15,7 @@ export const Title = ({
   color = "white",
   ...props
 }: ITitleProps) => (
-  <TitleMui {...props} variant={variant} textAlign={textAlign} color={color}>
+  <TitleMui variant={variant} textAlign={textAlign} color={color} {...props}>
     {children}
   </TitleMui>
 );

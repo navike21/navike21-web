@@ -27,6 +27,7 @@
       "@Enums/*": ["./src/libs/enums/*"],
       "@Hooks/*": ["./src/libs/hooks/*"],
       "@Providers/*": ["./src/libs/providers/*"],
+      "@Store/*": ["./src/libs/store/*"],
       "@Theme/*": ["./src/libs/theme/*"],
       "@Translations/*": ["./src/libs/translations/*"],
       "@Types/*": ["./src/libs/types/*"],

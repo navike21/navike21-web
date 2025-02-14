@@ -31,7 +31,6 @@ export const navikeTheme = ({ themeMode }: INavikeThemeProps): Theme =>
       fontWeightMedium: 600,
       fontWeightBold: 700,
       body1: {
-        letterSpacing: 1,
         fontSize: 16,
       },
       button: {

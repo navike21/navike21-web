@@ -3,7 +3,7 @@ import "./globals.css";
 import { MUIProvider } from "@Providers/MUIProvider";
 import { quicksand, syne } from "@Config/fonts";
 import { Header } from "@Components/Header/Header";
-import { useOptionsBrowserStore } from "src/libs/store/optionBrowser/optionBrowser.hook";
+import { useOptionsBrowserStore } from "@Store/optionBrowser/optionBrowser.hook";
 
 export const metadata: Metadata = {
   title: "Create Next App",

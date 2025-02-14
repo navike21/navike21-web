@@ -1,0 +1,502 @@
+{
+  "es": [
+    {
+      "id": "web-development",
+      "name": "Desarrollo Web",
+      "slug": "desarrollo-web",
+      "description": "Creamos sitios web rápidos, seguros y adaptativos, diseñados para destacar y ofrecer la mejor experiencia en cualquier dispositivo."
+    },
+    {
+      "id": "custom-software",
+      "name": "Software a Medida",
+      "slug": "software-a-medida",
+      "description": "Desarrollamos soluciones tecnológicas personalizadas que optimizan procesos, automatizan tareas y mejoran la productividad de tu negocio."
+    },
+    {
+      "id": "email-marketing",
+      "name": "Email Marketing",
+      "slug": "email-marketing",
+      "description": "Diseñamos campañas estratégicas de email marketing que fideliza clientes, potencian conversiones y refuerzan tu presencia digital"
+    },
+    {
+      "id": "ux-ui-design",
+      "name": "Diseño UX/UI",
+      "slug": "diseno-ux-ui",
+      "description": "Creamos interfaces intuitivas y atractivas que garantizan una experiencia de usuario fluida, optimizando la interacción con tu marca."
+    },
+    {
+      "id": "ecommerce-solutions",
+      "name": "Soluciones E-commerce",
+      "slug": "soluciones-ecommerce",
+      "description": "Desarrollamos tiendas online personalizadas, optimizadas para maximizar ventas y brindar una experiencia de compra eficiente."
+    },
+    {
+      "id": "seo",
+      "name": "SEO y Posicionamiento Web",
+      "slug": "seo-posicionamiento-web",
+      "description": "Implementamos estrategias SEO para mejorar la visibilidad de tu negocio, aumentar el tráfico y posicionarte en los primeros lugares de búsqueda."
+    },
+    {
+      "id": "digital-marketing",
+      "name": "Marketing Digital",
+      "slug": "marketing-digital",
+      "description": "Potenciamos tu marca con estrategias digitales efectivas, publicidad online y contenido de alto impacto que atrae a tu audiencia ideal."
+    },
+    {
+      "id": "mobile-apps",
+      "name": "Desarrollo de Apps Móviles",
+      "slug": "desarrollo-apps-moviles",
+      "description": "Creamos aplicaciones innovadoras para iOS y Android, diseñadas para alto rendimiento, escalabilidad y una experiencia de usuario excepcional."
+    }
+  ],
+  "de": [
+    {
+      "id": "web-development",
+      "name": "Webentwicklung",
+      "slug": "webentwicklung",
+      "description": "Wir erstellen schnelle, sichere und adaptive Websites, die darauf ausgelegt sind, herauszustechen und die beste Erfahrung auf jedem Gerät zu bieten."
+    },
+    {
+      "id": "custom-software",
+      "name": "Maßgeschneiderte Software",
+      "slug": "massgeschneiderte-software",
+      "description": "Wir entwickeln maßgeschneiderte technologische Lösungen, die Prozesse optimieren, Aufgaben automatisieren und die Produktivität Ihres Unternehmens steigern."
+    },
+    {
+      "id": "email-marketing",
+      "name": "E-Mail-Marketing",
+      "slug": "email-marketing",
+      "description": "Wir entwerfen strategische E-Mail-Marketing-Kampagnen, die Kunden binden, Konversionen steigern und Ihre digitale Präsenz stärken."
+    },
+    {
+      "id": "ux-ui-design",
+      "name": "UX/UI-Design",
+      "slug": "ux-ui-design",
+      "description": "Wir erstellen intuitive und ansprechende Benutzeroberflächen, die eine nahtlose Benutzererfahrung garantieren und die Interaktion mit Ihrer Marke optimieren."
+    },
+    {
+      "id": "ecommerce-solutions",
+      "name": "E-Commerce-Lösungen",
+      "slug": "ecommerce-loesungen",
+      "description": "Wir entwickeln personalisierte Online-Shops, die optimiert sind, um den Umsatz zu maximieren und ein effizientes Einkaufserlebnis zu bieten."
+    },
+    {
+      "id": "seo",
+      "name": "SEO und Webpositionierung",
+      "slug": "seo-webpositionierung",
+      "description": "Wir implementieren SEO-Strategien, um die Sichtbarkeit Ihres Unternehmens zu verbessern, den Traffic zu erhöhen und Sie in den Top-Suchergebnissen zu platzieren."
+    },
+    {
+      "id": "digital-marketing",
+      "name": "Digitales Marketing",
+      "slug": "digitales-marketing",
+      "description": "Wir stärken Ihre Marke mit effektiven digitalen Strategien, Online-Werbung und hochwirksamen Inhalten, die Ihre Zielgruppe anziehen."
+    },
+    {
+      "id": "mobile-apps",
+      "name": "Mobile App-Entwicklung",
+      "slug": "mobile-app-entwicklung",
+      "description": "Wir entwickeln innovative Apps für iOS und Android, die für hohe Leistung, Skalierbarkeit und eine außergewöhnliche Benutzererfahrung konzipiert sind."
+    }
+  ],
+  "en": [
+    {
+      "id": "web-development",
+      "name": "Web Development",
+      "slug": "web-development",
+      "description": "We create fast, secure, and adaptive websites designed to stand out and deliver the best experience on any device."
+    },
+    {
+      "id": "custom-software",
+      "name": "Custom Software",
+      "slug": "custom-software",
+      "description": "We develop personalized technological solutions that optimize processes, automate tasks, and improve your business's productivity."
+    },
+    {
+      "id": "email-marketing",
+      "name": "Email Marketing",
+      "slug": "email-marketing",
+      "description": "We design strategic email marketing campaigns that retain customers, boost conversions, and reinforce your digital presence."
+    },
+    {
+      "id": "ux-ui-design",
+      "name": "UX/UI Design",
+      "slug": "ux-ui-design",
+      "description": "We create intuitive and attractive interfaces that guarantee a smooth user experience, optimizing interaction with your brand."
+    },
+    {
+      "id": "ecommerce-solutions",
+      "name": "E-commerce Solutions",
+      "slug": "ecommerce-solutions",
+      "description": "We develop personalized online stores optimized to maximize sales and provide an efficient shopping experience."
+    },
+    {
+      "id": "seo",
+      "name": "SEO and Web Positioning",
+      "slug": "seo-web-positioning",
+      "description": "We implement SEO strategies to improve your business's visibility, increase traffic, and position you in the top search results."
+    },
+    {
+      "id": "digital-marketing",
+      "name": "Digital Marketing",
+      "slug": "digital-marketing",
+      "description": "We boost your brand with effective digital strategies, online advertising, and high-impact content that attracts your ideal audience."
+    },
+    {
+      "id": "mobile-apps",
+      "name": "Mobile App Development",
+      "slug": "mobile-app-development",
+      "description": "We create innovative apps for iOS and Android, designed for high performance, scalability, and an exceptional user experience."
+    }
+  ],
+  "fr": [
+    {
+      "id": "web-development",
+      "name": "Développement Web",
+      "slug": "developpement-web",
+      "description": "Nous créons des sites web rapides, sécurisés et adaptatifs, conçus pour se démarquer et offrir la meilleure expérience sur tous les appareils."
+    },
+    {
+      "id": "custom-software",
+      "name": "Logiciel Sur Mesure",
+      "slug": "logiciel-sur-mesure",
+      "description": "Nous développons des solutions technologiques personnalisées qui optimisent les processus, automatisent les tâches et améliorent la productivité de votre entreprise."
+    },
+    {
+      "id": "email-marketing",
+      "name": "Email Marketing",
+      "slug": "email-marketing",
+      "description": "Nous concevons des campagnes d'email marketing stratégiques qui fidélisent les clients, boostent les conversions et renforcent votre présence numérique."
+    },
+    {
+      "id": "ux-ui-design",
+      "name": "Conception UX/UI",
+      "slug": "conception-ux-ui",
+      "description": "Nous créons des interfaces intuitives et attrayantes qui garantissent une expérience utilisateur fluide, optimisant l'interaction avec votre marque."
+    },
+    {
+      "id": "ecommerce-solutions",
+      "name": "Solutions E-commerce",
+      "slug": "solutions-ecommerce",
+      "description": "Nous développons des boutiques en ligne personnalisées, optimisées pour maximiser les ventes et offrir une expérience d'achat efficace."
+    },
+    {
+      "id": "seo",
+      "name": "SEO et Positionnement Web",
+      "slug": "seo-positionnement-web",
+      "description": "Nous mettons en œuvre des stratégies SEO pour améliorer la visibilité de votre entreprise, augmenter le trafic et vous positionner en tête des résultats de recherche."
+    },
+    {
+      "id": "digital-marketing",
+      "name": "Marketing Digital",
+      "slug": "marketing-digital",
+      "description": "Nous renforçons votre marque avec des stratégies numériques efficaces, de la publicité en ligne et du contenu à fort impact qui attire votre audience idéale."
+    },
+    {
+      "id": "mobile-apps",
+      "name": "Développement d'Applications Mobiles",
+      "slug": "developpement-applications-mobiles",
+      "description": "Nous créons des applications innovantes pour iOS et Android, conçues pour des performances élevées, une scalabilité et une expérience utilisateur exceptionnelle."
+    }
+  ],
+  "it": [
+    {
+      "id": "web-development",
+      "name": "Sviluppo Web",
+      "slug": "sviluppo-web",
+      "description": "Creiamo siti web veloci, sicuri e adattivi, progettati per distinguersi e offrire la migliore esperienza su qualsiasi dispositivo."
+    },
+    {
+      "id": "custom-software",
+      "name": "Software Personalizzato",
+      "slug": "software-personalizzato",
+      "description": "Sviluppiamo soluzioni tecnologiche personalizzate che ottimizzano i processi, automatizzano le attività e migliorano la produttività della tua azienda."
+    },
+    {
+      "id": "email-marketing",
+      "name": "Email Marketing",
+      "slug": "email-marketing",
+      "description": "Progettiamo campagne di email marketing strategiche che fidelizzano i clienti, aumentano le conversioni e rafforzano la tua presenza digitale."
+    },
+    {
+      "id": "ux-ui-design",
+      "name": "Design UX/UI",
+      "slug": "design-ux-ui",
+      "description": "Creiamo interfacce intuitive e accattivanti che garantiscono un'esperienza utente fluida, ottimizzando l'interazione con il tuo brand."
+    },
+    {
+      "id": "ecommerce-solutions",
+      "name": "Soluzioni E-commerce",
+      "slug": "soluzioni-ecommerce",
+      "description": "Sviluppiamo negozi online personalizzati, ottimizzati per massimizzare le vendite e offrire un'esperienza di acquisto efficiente."
+    },
+    {
+      "id": "seo",
+      "name": "SEO e Posizionamento Web",
+      "slug": "seo-posizionamento-web",
+      "description": "Implementiamo strategie SEO per migliorare la visibilità della tua azienda, aumentare il traffico e posizionarti nei primi risultati di ricerca."
+    },
+    {
+      "id": "digital-marketing",
+      "name": "Marketing Digitale",
+      "slug": "marketing-digitale",
+      "description": "Potenziamo il tuo brand con strategie digitali efficaci, pubblicità online e contenuti di alto impatto che attirano il tuo pubblico ideale."
+    },
+    {
+      "id": "mobile-apps",
+      "name": "Sviluppo di App Mobili",
+      "slug": "sviluppo-app-mobili",
+      "description": "Creiamo app innovative per iOS e Android, progettate per alte prestazioni, scalabilità e un'esperienza utente eccezionale."
+    }
+  ],
+  "ja": [
+    {
+      "id": "web-development",
+      "name": "ウェブ開発",
+      "slug": "ウェブ開発",
+      "description": "私たちは、高速で安全かつ適応性の高いウェブサイトを作成し、どのデバイスでも最高の体験を提供するように設計されています。"
+    },
+    {
+      "id": "custom-software",
+      "name": "カスタムソフトウェア",
+      "slug": "カスタムソフトウェア",
+      "description": "プロセスを最適化し、タスクを自動化し、ビジネスの生産性を向上させるためのパーソナライズされた技術ソリューションを開発します。"
+    },
+    {
+      "id": "email-marketing",
+      "name": "メールマーケティング",
+      "slug": "メールマーケティング",
+      "description": "顧客を維持し、コンバージョンを促進し、デジタルプレゼンスを強化する戦略的なメールマーケティングキャンペーンを設計します。"
+    },
+    {
+      "id": "ux-ui-design",
+      "name": "UX/UIデザイン",
+      "slug": "ux-uiデザイン",
+      "description": "直感的で魅力的なインターフェースを作成し、ブランドとのインタラクションを最適化するスムーズなユーザーエクスペリエンスを保証します。"
+    },
+    {
+      "id": "ecommerce-solutions",
+      "name": "Eコマースソリューション",
+      "slug": "eコマースソリューション",
+      "description": "販売を最大化し、効率的なショッピング体験を提供するために最適化されたパーソナライズされたオンラインストアを開発します。"
+    },
+    {
+      "id": "seo",
+      "name": "SEOとウェブポジショニング",
+      "slug": "seo-ウェブポジショニング",
+      "description": "ビジネスの可視性を向上させ、トラフィックを増やし、検索結果のトップに位置付けるためのSEO戦略を実施します。"
+    },
+    {
+      "id": "digital-marketing",
+      "name": "デジタルマーケティング",
+      "slug": "デジタルマーケティング",
+      "description": "効果的なデジタル戦略、オンライン広告、そして理想的なオーディエンスを引き付けるハイインパクトなコンテンツでブランドを強化します。"
+    },
+    {
+      "id": "mobile-apps",
+      "name": "モバイルアプリ開発",
+      "slug": "モバイルアプリ開発",
+      "description": "高性能、スケーラビリティ、そして卓越したユーザーエクスペリエンスを実現するために設計されたiOSおよびAndroid向けの革新的なアプリを作成します。"
+    }
+  ],
+  "ko": [
+    {
+      "id": "web-development",
+      "name": "웹 개발",
+      "slug": "웹-개발",
+      "description": "우리는 빠르고 안전하며 적응형 웹사이트를 만들어 어떤 기기에서도 최고의 경험을 제공하도록 설계합니다."
+    },
+    {
+      "id": "custom-software",
+      "name": "맞춤형 소프트웨어",
+      "slug": "맞춤형-소프트웨어",
+      "description": "우리는 프로세스를 최적화하고 작업을 자동화하며 비즈니스의 생산성을 향상시키는 맞춤형 기술 솔루션을 개발합니다."
+    },
+    {
+      "id": "email-marketing",
+      "name": "이메일 마케팅",
+      "slug": "이메일-마케팅",
+      "description": "우리는 고객을 유지하고 전환율을 높이며 디지털 존재감을 강화하는 전략적인 이메일 마케팅 캠페인을 설계합니다."
+    },
+    {
+      "id": "ux-ui-design",
+      "name": "UX/UI 디자인",
+      "slug": "ux-ui-디자인",
+      "description": "우리는 직관적이고 매력적인 인터페이스를 만들어 원활한 사용자 경험을 보장하며 브랜드와의 상호 작용을 최적화합니다."
+    },
+    {
+      "id": "ecommerce-solutions",
+      "name": "이커머스 솔루션",
+      "slug": "이커머스-솔루션",
+      "description": "우리는 판매를 극대화하고 효율적인 쇼핑 경험을 제공하기 위해 최적화된 맞춤형 온라인 스토어를 개발합니다."
+    },
+    {
+      "id": "seo",
+      "name": "SEO 및 웹 포지셔닝",
+      "slug": "seo-웹-포지셔닝",
+      "description": "우리는 비즈니스의 가시성을 높이고 트래픽을 증가시키며 검색 결과 상위에 위치시키기 위한 SEO 전략을 구현합니다."
+    },
+    {
+      "id": "digital-marketing",
+      "name": "디지털 마케팅",
+      "slug": "디지털-마케팅",
+      "description": "우리는 효과적인 디지털 전략, 온라인 광고 및 이상적인 청중을 끌어들이는 강력한 콘텐츠로 브랜드를 강화합니다."
+    },
+    {
+      "id": "mobile-apps",
+      "name": "모바일 앱 개발",
+      "slug": "모바일-앱-개발",
+      "description": "우리는 고성능, 확장성 및 탁월한 사용자 경험을 위해 설계된 iOS 및 Android용 혁신적인 앱을 만듭니다."
+    }
+  ],
+  "pt": [
+    {
+      "id": "web-development",
+      "name": "Desenvolvimento Web",
+      "slug": "desenvolvimento-web",
+      "description": "Criamos sites rápidos, seguros e adaptativos, projetados para se destacar e oferecer a melhor experiência em qualquer dispositivo."
+    },
+    {
+      "id": "custom-software",
+      "name": "Software Personalizado",
+      "slug": "software-personalizado",
+      "description": "Desenvolvemos soluções tecnológicas personalizadas que otimizam processos, automatizam tarefas e melhoram a produtividade do seu negócio."
+    },
+    {
+      "id": "email-marketing",
+      "name": "Email Marketing",
+      "slug": "email-marketing",
+      "description": "Criamos campanhas estratégicas de email marketing que fidelizam clientes, impulsionam conversões e reforçam sua presença digital."
+    },
+    {
+      "id": "ux-ui-design",
+      "name": "Design UX/UI",
+      "slug": "design-ux-ui",
+      "description": "Criamos interfaces intuitivas e atraentes que garantem uma experiência de usuário fluida, otimizando a interação com sua marca."
+    },
+    {
+      "id": "ecommerce-solutions",
+      "name": "Soluções E-commerce",
+      "slug": "solucoes-ecommerce",
+      "description": "Desenvolvemos lojas online personalizadas, otimizadas para maximizar vendas e oferecer uma experiência de compra eficiente."
+    },
+    {
+      "id": "seo",
+      "name": "SEO e Posicionamento Web",
+      "slug": "seo-posicionamento-web",
+      "description": "Implementamos estratégias de SEO para melhorar a visibilidade do seu negócio, aumentar o tráfego e posicioná-lo nos primeiros resultados de busca."
+    },
+    {
+      "id": "digital-marketing",
+      "name": "Marketing Digital",
+      "slug": "marketing-digital",
+      "description": "Potencializamos sua marca com estratégias digitais eficazes, publicidade online e conteúdo de alto impacto que atrai seu público ideal."
+    },
+    {
+      "id": "mobile-apps",
+      "name": "Desenvolvimento de Apps Móveis",
+      "slug": "desenvolvimento-apps-moveis",
+      "description": "Criamos aplicativos inovadores para iOS e Android, projetados para alta performance, escalabilidade e uma excepcional experiência do usuário."
+    }
+  ],
+  "ru": [
+    {
+      "id": "web-development",
+      "name": "Веб-разработка",
+      "slug": "веб-разработка",
+      "description": "Мы создаем быстрые, безопасные и адаптивные веб-сайты, разработанные для выделения и обеспечения лучшего опыта на любом устройстве."
+    },
+    {
+      "id": "custom-software",
+      "name": "Индивидуальное ПО",
+      "slug": "индивидуальное-по",
+      "description": "Мы разрабатываем индивидуальные технологические решения, которые оптимизируют процессы, автоматизируют задачи и повышают производительность вашего бизнеса."
+    },
+    {
+      "id": "email-marketing",
+      "name": "Email Маркетинг",
+      "slug": "email-маркетинг",
+      "description": "Мы разрабатываем стратегические кампании email маркетинга, которые удерживают клиентов, повышают конверсию и укрепляют ваше цифровое присутствие."
+    },
+    {
+      "id": "ux-ui-design",
+      "name": "UX/UI Дизайн",
+      "slug": "ux-ui-дизайн",
+      "description": "Мы создаем интуитивно понятные и привлекательные интерфейсы, которые гарантируют плавный пользовательский опыт, оптимизируя взаимодействие с вашим брендом."
+    },
+    {
+      "id": "ecommerce-solutions",
+      "name": "Решения для E-commerce",
+      "slug": "решения-для-ecommerce",
+      "description": "Мы разрабатываем индивидуальные интернет-магазины, оптимизированные для максимизации продаж и обеспечения эффективного опыта покупок."
+    },
+    {
+      "id": "seo",
+      "name": "SEO и Позиционирование",
+      "slug": "seo-позиционирование",
+      "description": "Мы внедряем стратегии SEO для улучшения видимости вашего бизнеса, увеличения трафика и позиционирования в топе результатов поиска."
+    },
+    {
+      "id": "digital-marketing",
+      "name": "Цифровой Маркетинг",
+      "slug": "цифровой-маркетинг",
+      "description": "Мы усиливаем ваш бренд с помощью эффективных цифровых стратегий, онлайн-рекламы и высокоэффективного контента, который привлекает вашу целевую аудиторию."
+    },
+    {
+      "id": "mobile-apps",
+      "name": "Разработка Мобильных Приложений",
+      "slug": "разработка-мобильных-приложений",
+      "description": "Мы создаем инновационные приложения для iOS и Android, разработанные для высокой производительности, масштабируемости и исключительного пользовательского опыта."
+    }
+  ],
+  "zh": [
+    {
+      "id": "web-development",
+      "name": "网站开发",
+      "slug": "网站开发",
+      "description": "我们创建快速、安全且自适应的网站，旨在脱颖而出并在任何设备上提供最佳体验。"
+    },
+    {
+      "id": "custom-software",
+      "name": "定制软件",
+      "slug": "定制软件",
+      "description": "我们开发个性化的技术解决方案，优化流程，自动化任务并提高您业务的生产力。"
+    },
+    {
+      "id": "email-marketing",
+      "name": "电子邮件营销",
+      "slug": "电子邮件营销",
+      "description": "我们设计战略性的电子邮件营销活动，以留住客户，提高转化率并增强您的数字存在感。"
+    },
+    {
+      "id": "ux-ui-design",
+      "name": "UX/UI设计",
+      "slug": "ux-ui设计",
+      "description": "我们创建直观且吸引人的界面，确保流畅的用户体验，优化与您品牌的互动。"
+    },
+    {
+      "id": "ecommerce-solutions",
+      "name": "电子商务解决方案",
+      "slug": "电子商务解决方案",
+      "description": "我们开发个性化的在线商店，优化以最大化销售并提供高效的购物体验。"
+    },
+    {
+      "id": "seo",
+      "name": "SEO与网站定位",
+      "slug": "seo-网站定位",
+      "description": "我们实施SEO策略，以提高您业务的可见性，增加流量并将您定位在搜索结果的顶部。"
+    },
+    {
+      "id": "digital-marketing",
+      "name": "数字营销",
+      "slug": "数字营销",
+      "description": "我们通过有效的数字策略、在线广告和吸引您理想受众的高影响力内容来增强您的品牌。"
+    },
+    {
+      "id": "mobile-apps",
+      "name": "移动应用开发",
+      "slug": "移动应用开发",
+      "description": "我们为iOS和Android创建创新的应用程序，设计用于高性能、可扩展性和卓越的用户体验。"
+    }
+  ]
+}
