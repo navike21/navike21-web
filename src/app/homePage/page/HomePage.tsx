@@ -1,10 +1,13 @@
 "use client";
 
 import React from "react";
-import { HeroSection } from "../components/HeroSection/HeroSection";
-import { Clients } from "../components/Clients/Clients";
-import { AboutUs } from "../components/AboutUs/AboutUs";
-import { Services } from "../components/Services/Services";
+import {
+  AboutUs,
+  Clients,
+  Contact,
+  HeroSection,
+  Services,
+} from "../components";
 
 export const HomePage = () => {
   return (
@@ -13,6 +16,7 @@ export const HomePage = () => {
       <Clients />
       <AboutUs />
       <Services />
+      <Contact />
     </>
   );
 };
