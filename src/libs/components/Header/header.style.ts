@@ -1,3 +1,5 @@
+import { EBlackOpacity, EPaletteText, ESecondary } from "@Enums/color";
+import { ETypography } from "@Enums/typography";
 import { styled } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,7 +28,7 @@ export const HeaderContent = styled("header")(({ theme }) => ({
       left: 0,
       right: 0,
       bottom: 0,
-      background: "var(--black-opacity-400)",
+      background: EBlackOpacity._400,
       backdropFilter: "blur(10px)",
       zIndex: -1,
     },
@@ -62,11 +64,11 @@ export const IsoLogo = styled(Image)(({ theme }) => ({
 
 export const CompanyName = styled("span")(({ theme }) => ({
   [theme.breakpoints.up("xs")]: {
-    color: "var(--mui-palette-text-primary)",
+    color: EPaletteText.PRIMARY,
     display: "none",
     fontSize: theme.typography.pxToRem(20),
     fontWeight: "bold",
-    fontFamily: "var(--font-syne)",
+    fontFamily: ETypography.TITLE,
   },
   [theme.breakpoints.up("sm")]: {
     display: "flex",
@@ -89,12 +91,12 @@ export const ItemMenu = styled(Link)(({ theme }) => ({
     display: "flex",
     justifyContent: "center",
     textDecoration: "none",
-    color: "var(--mui-palette-text-primary)",
+    color: EPaletteText.PRIMARY,
     padding: theme.spacing(1, 1),
     transition: "all ease 0.3s",
     "&:hover": {
       transition: "all ease 0.3s",
-      color: "var(--mui-palette-secondary-main)",
+      color: ESecondary.MAIN,
     },
   },
 }));

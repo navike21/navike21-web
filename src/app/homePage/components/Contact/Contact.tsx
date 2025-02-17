@@ -1,21 +1,22 @@
 import { Content } from "@Components/Content/Content";
-import { MainContent } from "@Components/Content/MainContent";
-import { Title } from "@Components/Title/Title";
-import { useThemeMui } from "@Hooks/useThemeMui";
+import { EGrey } from "@Enums/color";
 import React from "react";
 
 export const Contact = () => {
-  const { palette } = useThemeMui();
   return (
-    <Content backgroundColor={palette.grey[900]}>
-      <MainContent>
-        <Title type="subtitle" variant="h4" color="primary">
-          ¿Por qué contactarnos?
-        </Title>
-        <Title type="title2" variant="h3">
-          Apoyamos tu crecimiento y desarrollo de manera creativa y profesional.
-        </Title>
-      </MainContent>
+    <Content
+      backgroundColor={EGrey._900}
+      subtitle={{
+        text: "¿Por qué contactarnos?",
+        textAlign: "left",
+        color: "primary",
+      }}
+      title={{
+        text: "Apoyamos tu crecimiento y desarrollo de manera creativa y profesional.",
+        textAlign: "left",
+      }}
+    >
+      Holi
     </Content>
   );
 };

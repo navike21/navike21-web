@@ -1,3 +1,4 @@
+import { EPrimary } from "@Enums/color";
 import { styled } from "@mui/material";
 import Link from "next/link";
 
@@ -6,7 +7,7 @@ export const LinkButtonElement = styled(Link)(({ theme }) => ({
   display: "flex",
   padding: theme.spacing(1.1, 3.5),
   backgroundImage: "var(--background-gradient-hover)",
-  color: "var(--mui-palette-primary-contrastText)",
+  color: EPrimary.CONTRAST_TEXT,
   borderRadius: "var(--mui-shape-borderRadius)",
   overflow: "hidden",
   cursor: "pointer",

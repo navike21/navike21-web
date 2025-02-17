@@ -1,5 +1,6 @@
 import { styled } from "@mui/material";
 import { IBackgroundParallaxProps } from "./BackgroundParallax";
+import { EBlackOpacity } from "@Enums/color";
 
 export const Background = styled("div")<IBackgroundParallaxProps>(
   ({ theme, backgroundImage, overlay }) => ({
@@ -13,7 +14,7 @@ export const Background = styled("div")<IBackgroundParallaxProps>(
       ...(overlay && {
         "&::before": {
           content: "''",
-          backgroundColor: "var(--black-opacity-700)",
+          backgroundColor: EBlackOpacity._700,
           position: "absolute",
           top: 0,
           bottom: 0,

@@ -1,5 +1,7 @@
 import { styled, Typography } from "@mui/material";
 import { ITitleProps } from "./Title";
+import { EColor, EPrimary } from "@Enums/color";
+import { ETypography } from "@Enums/typography";
 
 export const TitleMui = styled(Typography)<ITitleProps>(
   ({ theme, color, type, textAlign }) => ({
@@ -9,18 +11,15 @@ export const TitleMui = styled(Typography)<ITitleProps>(
         textTransform: "uppercase",
       }),
       ...(type === "title" && {
-        fontFamily: "var(--font-syne)",
+        fontFamily: ETypography.TITLE,
         fontSize: theme.typography.pxToRem(30),
       }),
       ...(type === "title2" && {
-        fontFamily: "var(--font-syne)",
+        fontFamily: ETypography.TITLE,
         fontSize: theme.typography.pxToRem(20),
       }),
       fontWeight: theme.typography.fontWeightBold,
-      color:
-        color === "white"
-          ? "var(--mui-palette-common-white)"
-          : "var(--mui-palette-primary-main)",
+      color: color === "white" ? EColor.WHITE : EPrimary.MAIN,
       letterSpacing: 1,
       margin: 0,
       textAlign,
@@ -30,7 +29,7 @@ export const TitleMui = styled(Typography)<ITitleProps>(
         fontSize: theme.typography.pxToRem(16),
       }),
       ...(type === "title2" && {
-        fontFamily: "var(--font-syne)",
+        fontFamily: ETypography.TITLE,
         fontSize: theme.typography.pxToRem(22),
       }),
     },
@@ -44,7 +43,7 @@ export const TitleMui = styled(Typography)<ITitleProps>(
         fontSize: theme.typography.pxToRem(45),
       }),
       ...(type === "title2" && {
-        fontFamily: "var(--font-syne)",
+        fontFamily: ETypography.TITLE,
         fontSize: theme.typography.pxToRem(26),
       }),
     },

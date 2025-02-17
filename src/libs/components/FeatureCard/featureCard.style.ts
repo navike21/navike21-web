@@ -1,4 +1,5 @@
 import { Title } from "@Components/Title/Title";
+import { EColor, EPrimary } from "@Enums/color";
 import { styled, Typography } from "@mui/material";
 
 export const FeatureCardWrapper = styled("article")(({ theme }) => ({
@@ -17,7 +18,7 @@ export const FeatureCardWrapper = styled("article")(({ theme }) => ({
       width: "100%",
       height: "100%",
       borderWidth: theme.typography.pxToRem(0.5),
-      borderColor: "var(--mui-palette-common-white)",
+      borderColor: EColor.WHITE,
       borderStyle: "solid",
       zIndex: -1,
       opacity: 0.2,
@@ -47,7 +48,7 @@ export const IconWrapper = styled("div")(({ theme }) => ({
     width: theme.typography.pxToRem(50),
     height: theme.typography.pxToRem(50),
     borderRadius: "50%",
-    color: "var(--mui-palette-common-white)",
+    color: EColor.WHITE,
     fontSize: theme.typography.pxToRem(25),
     margin: 0,
     position: "relative",
@@ -57,13 +58,13 @@ export const IconWrapper = styled("div")(({ theme }) => ({
       width: "100%",
       height: "100%",
       borderRadius: "50%",
-      backgroundColor: "var(--mui-palette-primary-main)",
+      backgroundColor: EPrimary.MAIN,
       zIndex: -1,
       opacity: 0.2,
     },
 
     svg: {
-      fill: "var(--mui-palette-primary-main)",
+      fill: EPrimary.MAIN,
     },
   },
 }));

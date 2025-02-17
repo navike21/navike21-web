@@ -1,9 +1,9 @@
-import { MainContent } from "@Components/Content/MainContent";
 import { styled } from "@mui/material";
 import Image from "next/image";
 
-export const MainContentAbout = styled(MainContent)(({ theme }) => ({
+export const MainContentAbout = styled("div")(({ theme }) => ({
   [theme.breakpoints.up("xs")]: {
+    display: "flex",
     flexDirection: "column",
   },
   [theme.breakpoints.up("sm")]: {
