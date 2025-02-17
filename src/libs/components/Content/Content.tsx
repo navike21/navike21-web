@@ -13,30 +13,28 @@ export interface ITitleProps {
   color?: "primary" | "white";
 }
 
-export interface ITitle extends ITitleProps {
+export interface ITitleAndSubtitle extends ITitleProps {
   text: string;
 }
 
-export interface ISubtitle extends ITitleProps {
-  text: string;
-}
-
-interface ContentProps extends IWrapProps {
+export interface ContentProps extends IWrapProps {
   children: ReactNode;
-  title?: ITitle;
-  subtitle?: ISubtitle;
+  title?: ITitleAndSubtitle;
+  subtitle?: ITitleAndSubtitle;
+  contentDirection?: "row" | "column";
 }
 
 export const Content = ({
   backgroundImage,
   backgroundColor,
   children,
+  contentDirection = "column",
   subtitle,
   title,
 }: ContentProps) => (
   <Wrap backgroundColor={backgroundColor} backgroundImage={backgroundImage}>
     <Container>
-      <MainContent>
+      <MainContent contentDirection={contentDirection}>
         {(title || subtitle) && (
           <ContentTitle>
             {subtitle && (

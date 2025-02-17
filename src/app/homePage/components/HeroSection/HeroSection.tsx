@@ -21,7 +21,7 @@ export const HeroSection = () => {
 
   return (
     <HeroContent backgroundImage={TEAM_WORK_BACKGROUND.src} overlay>
-      <Content>
+      <Content contentDirection="row">
         <HeroTextContentInfo>
           <Title type="subtitle" variant="h4" color="primary">
             Diseñamos el cambio.

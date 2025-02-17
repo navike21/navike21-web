@@ -1,5 +1,6 @@
 import { Grid2, styled } from "@mui/material";
 import { IWrapProps } from "./Content";
+import { IMainContentProps } from "./MainContent";
 
 export const Wrap = styled("section")<IWrapProps>(
   ({ theme, backgroundImage, backgroundColor }) => ({
@@ -43,19 +44,23 @@ export const Container = styled("div")(({ theme }) => ({
   },
 }));
 
-export const MainContainer = styled(Grid2)(({ theme }) => ({
-  [theme.breakpoints.up("xs")]: {
-    padding: theme.spacing(8, 0),
-    width: "100%",
-    display: "flex",
-    gap: theme.spacing(6),
-    flexDirection: "column",
-  },
-  [theme.breakpoints.up("md")]: {
-    padding: theme.spacing(10, 0),
-    gap: theme.spacing(4),
-  },
-}));
+export const MainContainer = styled(Grid2)<IMainContentProps>(
+  ({ theme, contentDirection }) => ({
+    [theme.breakpoints.up("xs")]: {
+      padding: theme.spacing(8, 0),
+      width: "100%",
+      display: "flex",
+      gap: theme.spacing(6),
+      flexDirection: "column",
+      justifyContent: "space-between",
+    },
+    [theme.breakpoints.up("md")]: {
+      padding: theme.spacing(10, 0),
+      gap: theme.spacing(4),
+      flexDirection: contentDirection,
+    },
+  })
+);
 
 export const ContentTitle = styled("div")(({ theme }) => ({
   [theme.breakpoints.up("xs")]: {
@@ -65,8 +70,6 @@ export const ContentTitle = styled("div")(({ theme }) => ({
     width: "100%",
   },
   [theme.breakpoints.up("md")]: {
-    // width: theme.typography.pxToRem(400),
-    width: "100%",
     margin: "0 auto",
   },
 }));

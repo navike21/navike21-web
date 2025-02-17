@@ -2,10 +2,17 @@ import React, { ReactNode } from "react";
 import { MainContainer } from "./content.style";
 import { Grid2Props } from "@mui/material";
 
-interface IMainContentProps extends Grid2Props {
+export interface IMainContentProps extends Grid2Props {
   children: ReactNode;
+  contentDirection: "row" | "column";
 }
 
-export const MainContent = ({ children, ...props }: IMainContentProps) => (
-  <MainContainer {...props}>{children}</MainContainer>
+export const MainContent = ({
+  children,
+  contentDirection,
+  ...props
+}: IMainContentProps) => (
+  <MainContainer contentDirection={contentDirection} {...props}>
+    {children}
+  </MainContainer>
 );
