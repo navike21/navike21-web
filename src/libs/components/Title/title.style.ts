@@ -19,8 +19,8 @@ export const TitleMui = styled(Typography)<ITitleProps>(
       fontWeight: theme.typography.fontWeightBold,
       color:
         color === "white"
-          ? theme.palette.common.white
-          : theme.palette.primary.main,
+          ? "var(--mui-palette-common-white)"
+          : "var(--mui-palette-primary-main)",
       letterSpacing: 1,
       margin: 0,
       textAlign,

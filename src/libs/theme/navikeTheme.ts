@@ -10,6 +10,7 @@ export interface INavikeThemeProps {
 
 export const navikeTheme = ({ themeMode }: INavikeThemeProps): Theme =>
   createTheme({
+    cssVariables: { disableCssColorScheme: true },
     breakpoints: {
       values: {
         xs: 0,
@@ -47,9 +48,9 @@ export const navikeTheme = ({ themeMode }: INavikeThemeProps): Theme =>
           ":root": {
             "--font-quicksand": "'Quicksand', sans-serif",
             "--font-syne": "'Syne', sans-serif",
-            "--background-gradient": `linear-gradient(90deg, ${colors.primary.main} 0%, ${colors.secondary.main} 100%)`,
-            "--background-gradient-hover": `linear-gradient(90deg, ${colors.primary.main} 20%, ${colors.secondary.main} 80%)`,
-            "--text-gradient": `linear-gradient(90deg, ${colors.primary.contrastText} 0%, ${colors.secondary.contrastText} 100%)`,
+            "--background-gradient": `linear-gradient(90deg, var(--mui-palette-primary-main) 0%, var(--mui-palette-secondary-main) 100%)`,
+            "--background-gradient-hover": `linear-gradient(90deg, var(--mui-palette-primary-main) 20%, var(--mui-palette-secondary-main) 80%)`,
+            "--text-gradient": `linear-gradient(90deg, var(--mui-palette-primary-contrastText) 0%, var(--mui-palette-secondary-contrastText) 100%)`,
             "--black-opacity-0": "rgba(21, 21, 21, 0.0)",
             "--black-opacity-100": "rgba(21, 21, 21, 0.1)",
             "--black-opacity-200": "rgba(21, 21, 21, 0.2)",

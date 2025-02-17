@@ -41,7 +41,7 @@ export const HeroTextContentInfo = styled("div")(({ theme }) => ({
 
 export const HeroDescription = styled(Typography)(({ theme }) => ({
   [theme.breakpoints.up("xs")]: {
-    color: theme.palette.common.white,
+    color: "var(--mui-palette-common-white)",
     fontWeight: theme.typography.fontWeightRegular,
     letterSpacing: 1,
     fontSize: theme.typography.pxToRem(16),
@@ -57,7 +57,7 @@ export const HeroExperience = styled(Paper)(({ theme }) => ({
     backgroundImage: "var(--background-gradient)",
     width: theme.typography.pxToRem(250),
     padding: theme.spacing(5),
-    color: theme.palette.primary.contrastText,
+    color: "var(--mui-palette-primary-contrastText)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -86,7 +86,7 @@ export const YearExperience = styled(Typography)(({ theme }) => ({
 
 export const YearExperienceText = styled("span")(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
-    color: theme.palette.primary.contrastText,
+    color: "var(--mui-palette-primary-contrastText)",
     fontSize: theme.typography.pxToRem(20),
     fontWeight: theme.typography.fontWeightBold,
     textAlign: "center",

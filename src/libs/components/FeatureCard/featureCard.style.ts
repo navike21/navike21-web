@@ -17,7 +17,7 @@ export const FeatureCardWrapper = styled("article")(({ theme }) => ({
       width: "100%",
       height: "100%",
       borderWidth: theme.typography.pxToRem(0.5),
-      borderColor: theme.palette.common.white,
+      borderColor: "var(--mui-palette-common-white)",
       borderStyle: "solid",
       zIndex: -1,
       opacity: 0.2,
@@ -47,7 +47,7 @@ export const IconWrapper = styled("div")(({ theme }) => ({
     width: theme.typography.pxToRem(50),
     height: theme.typography.pxToRem(50),
     borderRadius: "50%",
-    color: theme.palette.common.white,
+    color: "var(--mui-palette-common-white)",
     fontSize: theme.typography.pxToRem(25),
     margin: 0,
     position: "relative",
@@ -57,13 +57,13 @@ export const IconWrapper = styled("div")(({ theme }) => ({
       width: "100%",
       height: "100%",
       borderRadius: "50%",
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: "var(--mui-palette-primary-main)",
       zIndex: -1,
       opacity: 0.2,
     },
 
     svg: {
-      fill: theme.palette.primary.main,
+      fill: "var(--mui-palette-primary-main)",
     },
   },
 }));

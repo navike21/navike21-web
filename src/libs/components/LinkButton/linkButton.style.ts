@@ -6,8 +6,8 @@ export const LinkButtonElement = styled(Link)(({ theme }) => ({
   display: "flex",
   padding: theme.spacing(1.1, 3.5),
   backgroundImage: "var(--background-gradient-hover)",
-  color: theme.palette.primary.contrastText,
-  borderRadius: theme.shape.borderRadius,
+  color: "var(--mui-palette-primary-contrastText)",
+  borderRadius: "var(--mui-shape-borderRadius)",
   overflow: "hidden",
   cursor: "pointer",
   gap: theme.spacing(1.5),
@@ -38,9 +38,8 @@ export const LinkButtonElement = styled(Link)(({ theme }) => ({
   },
 }));
 
-export const TextLinkButton = styled("span")(({ theme }) => ({
+export const TextLinkButton = styled("span")(() => ({
   position: "relative",
   zIndex: 2,
-  fontWeight: theme.typography.fontWeightBold,
-  letterSpacing: 1,
+  fontWeight: 600,
 }));

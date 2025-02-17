@@ -62,7 +62,7 @@ export const IsoLogo = styled(Image)(({ theme }) => ({
 
 export const CompanyName = styled("span")(({ theme }) => ({
   [theme.breakpoints.up("xs")]: {
-    color: theme.palette.text.primary,
+    color: "var(--mui-palette-text-primary)",
     display: "none",
     fontSize: theme.typography.pxToRem(20),
     fontWeight: "bold",
@@ -89,35 +89,12 @@ export const ItemMenu = styled(Link)(({ theme }) => ({
     display: "flex",
     justifyContent: "center",
     textDecoration: "none",
-    color: theme.palette.text.primary,
+    color: "var(--mui-palette-text-primary)",
     padding: theme.spacing(1, 1),
-    transition: theme.transitions.create(["color"], {
-      duration: theme.transitions.duration.shortest,
-      easing: theme.transitions.easing.easeInOut,
-    }),
+    transition: "all ease 0.3s",
     "&:hover": {
-      color: theme.palette.secondary.main,
+      transition: "all ease 0.3s",
+      color: "var(--mui-palette-secondary-main)",
     },
-  },
-}));
-
-export const ItemContactMenu = styled(Link)(({ theme }) => ({
-  ...theme.typography.button,
-  backgroundColor: theme.palette.primary.main,
-  color: theme.palette.primary.contrastText,
-  padding: theme.spacing(0.8, 1.8),
-  border: "none",
-  borderRadius: theme.shape.borderRadius,
-  cursor: "pointer",
-  transition: "background-color 0.3s",
-
-  "&:hover": {
-    backgroundColor: theme.palette.primary.dark,
-  },
-
-  "&:disabled": {
-    backgroundColor: theme.palette.action.disabledBackground,
-    color: theme.palette.action.disabled,
-    cursor: "not-allowed",
   },
 }));
