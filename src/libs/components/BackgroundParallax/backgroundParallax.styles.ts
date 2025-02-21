@@ -1,15 +1,22 @@
 import { styled } from "@mui/material";
 import { IBackgroundParallaxProps } from "./BackgroundParallax";
 import { EBlackOpacity } from "@Enums/color";
+import { motion } from "framer-motion";
 
-export const Background = styled("div")<IBackgroundParallaxProps>(
+export const Background = styled(motion.div)<IBackgroundParallaxProps>(
   ({ theme, backgroundImage, overlay }) => ({
     [theme.breakpoints.up("xs")]: {
       backgroundImage: `url(${backgroundImage})`,
       backgroundSize: "cover",
-      backgroundPosition: "center",
-      willChange: "transform",
+      backgroundPosition: "center 50%",
+      backgroundRepeat: "no-repeat",
+      willChange: "background-position",
       position: "relative",
+      height: "100%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      overflow: "hidden",
 
       ...(overlay && {
         "&::before": {

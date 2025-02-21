@@ -40,7 +40,7 @@ export const navikeTheme = ({ themeMode }: INavikeThemeProps): Theme =>
       },
     },
     shape: {
-      borderRadius: 4,
+      borderRadius: 6,
     },
     components: {
       MuiCssBaseline: {

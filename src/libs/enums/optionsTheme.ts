@@ -4,7 +4,7 @@ export enum EThemeMode {
 }
 
 export enum EMaxWidth {
-  DESKTOP = 12080,
-  TABLET = 768,
-  MOBILE = 300,
+  DESKTOP = 1000,
+  TABLET = 760,
+  MOBILE = 560,
 }

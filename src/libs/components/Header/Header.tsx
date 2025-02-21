@@ -1,9 +1,7 @@
 "use client";
 
-import React from "react";
-
 import {
-  HeaderContent,
+  MotionHeaderContent,
   LogoContent,
   IsoLogo,
   MenuContent,
@@ -15,7 +13,14 @@ import { useHeader } from "./header.hook";
 import { LinkButton } from "@Components/LinkButton/LinkButton";
 
 export const Header = () => {
-  const { contactMenu, principalMenu, language, breakpoints } = useHeader();
+  const {
+    animate,
+    contactMenu,
+    principalMenu,
+    language,
+    breakpoints,
+    initialAnimation,
+  } = useHeader();
 
   const menuNav = principalMenu.map(({ id, name, slug }) => {
     if (id === "contact") {
@@ -33,15 +38,22 @@ export const Header = () => {
   });
 
   return (
-    <HeaderContent>
+    <MotionHeaderContent
+      initial={initialAnimation}
+      animate={animate}
+      transition={{
+        duration: 0.3,
+        ease: "easeInOut",
+      }}
+    >
       <LogoContent href={`/${language}`} replace>
-        <IsoLogo src={logo} alt={"logo"} width={10} height={10} priority />
+        <IsoLogo src={logo} alt={"logo"} width={10} height={10} />
         <CompanyName>navike21</CompanyName>
       </LogoContent>
       {breakpoints.lg && <MenuContent>{menuNav}</MenuContent>}
       {breakpoints.md && !breakpoints.lg && contactMenu && (
         <LinkButton href={`${contactMenu.slug}`}>{contactMenu.name}</LinkButton>
       )}
-    </HeaderContent>
+    </MotionHeaderContent>
   );
 };

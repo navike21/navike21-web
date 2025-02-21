@@ -1,10 +1,11 @@
-import React, { ReactNode, useEffect, useRef } from "react";
+import React, { ReactNode, useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { Background } from "./backgroundParallax.styles";
 
 export interface IBackgroundParallaxProps {
   backgroundImage: string;
   overlay?: boolean;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export const BackgroundParallax = ({
@@ -13,16 +14,10 @@ export const BackgroundParallax = ({
   children,
   ...props
 }: IBackgroundParallaxProps) => {
-  const parallaxRef = useRef<HTMLDivElement>(null);
-  const parallaxSpeed = 0.3;
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   const handleScroll = () => {
-    const offsetY = window.scrollY;
-    if (parallaxRef.current) {
-      parallaxRef.current.style.backgroundPosition = `center calc(50% + ${
-        offsetY * parallaxSpeed
-      }px)`;
-    }
+    setScrollPosition(window.scrollY);
   };
 
   useEffect(() => {
@@ -30,12 +25,18 @@ export const BackgroundParallax = ({
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const parallaxSpeed = 0.2;
+  const backgroundPositionY = `${scrollPosition * parallaxSpeed}px`;
+
   return (
     <Background
+      as={motion.div}
       backgroundImage={backgroundImage}
       overlay={overlay}
       {...props}
-      ref={parallaxRef}
+      style={{
+        backgroundPosition: `center ${backgroundPositionY}`,
+      }}
     >
       {children}
     </Background>

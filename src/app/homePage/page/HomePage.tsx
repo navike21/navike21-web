@@ -1,22 +1,15 @@
 "use client";
 
-import React from "react";
-import {
-  AboutUs,
-  Clients,
-  Contact,
-  HeroSection,
-  Services,
-} from "../components";
+import { BackgroundParallax } from "@Components/BackgroundParallax/BackgroundParallax";
+import heroImage from "@Public/backgrounds/team-work-bg.webp";
 
 export const HomePage = () => {
   return (
     <>
-      <HeroSection />
-      <Clients />
-      <AboutUs />
-      <Services />
-      <Contact />
+      <div style={{ height: "100vh" }}>
+        <BackgroundParallax backgroundImage={heroImage.src} overlay />
+      </div>
+      <div style={{ height: "100vh" }}>Holi</div>
     </>
   );
 };

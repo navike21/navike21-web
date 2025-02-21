@@ -4,6 +4,7 @@ import { MUIProvider } from "@Providers/MUIProvider";
 import { quicksand, syne } from "@Config/fonts";
 import { Header } from "@Components/Header/Header";
 import { useOptionsBrowserStore } from "@Store/optionBrowser/optionBrowser.hook";
+import { SmoothScroll } from "@Components/SmoothScroll/SmoothScroll";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,10 +20,12 @@ export default function RootLayout({
   return (
     <html lang={language}>
       <body className={`font-sans ${syne.variable} ${quicksand.variable}`}>
-        <MUIProvider>
-          <Header />
-          {children}
-        </MUIProvider>
+        <SmoothScroll>
+          <MUIProvider>
+            <Header />
+            {children}
+          </MUIProvider>
+        </SmoothScroll>
       </body>
     </html>
   );
