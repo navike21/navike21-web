@@ -5,7 +5,6 @@ import { quicksand, syne } from "@Config/fonts";
 import { Header } from "@Components/Header/Header";
 import { useOptionsBrowserStore } from "@Store/optionBrowser/optionBrowser.hook";
 import { SmoothScroll } from "@Components/SmoothScroll/SmoothScroll";
-import { CustomCursor } from "@Components/CustomCursor/CustomCursor";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,7 +22,6 @@ export default function RootLayout({
       <body className={`font-sans ${syne.variable} ${quicksand.variable}`}>
         <SmoothScroll>
           <MUIProvider>
-            <CustomCursor />
             <Header />
             {children}
           </MUIProvider>

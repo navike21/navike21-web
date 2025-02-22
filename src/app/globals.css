@@ -1,8 +1,4 @@
 a {
   text-decoration: none;
-  cursor: none;
-}
-
-body {
-  cursor: none;
+  cursor: pointer;
 }
