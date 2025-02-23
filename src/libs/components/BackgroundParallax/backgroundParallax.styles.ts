@@ -1,7 +1,7 @@
 import { styled } from "@mui/material";
-import { IBackgroundParallaxProps } from "./BackgroundParallax";
 import { EBlackOpacity } from "@Enums/color";
 import { motion } from "framer-motion";
+import { IBackgroundParallaxProps } from "./backgroundParallax.types";
 
 export const Background = styled(motion.div)<IBackgroundParallaxProps>(
   ({ theme, backgroundImage, overlay }) => ({
