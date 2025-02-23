@@ -1,34 +1,29 @@
 import { ENavigation } from "@Enums/navigation";
 import { useOptionsBrowserStore } from "../store/optionBrowser/optionBrowser.hook";
 import menuNavigation from "@Translations/menu-navigation.json";
+import { IItemMenu } from "@Types/menu";
 
 export const useNavigation = () => {
   const { language } = useOptionsBrowserStore();
 
-  const principalMenu = menuNavigation[language];
+  const principalMenu: IItemMenu[] = menuNavigation[language].map(
+    ({ id, name, slug }) => ({
+      id,
+      name,
+      slug: `/${language}/${slug}`,
+    })
+  );
 
-  const contactMenu = principalMenu.find(
-    ({ id }) => id === ENavigation.CONTACT
-  );
-  const aboutMenu = principalMenu.find(({ id }) => id === ENavigation.ABOUT_US);
-  const servicesMenu = principalMenu.find(
-    ({ id }) => id === ENavigation.SERVICES
-  );
+  const handleGetDataItemMenu = (idMenu: ENavigation): IItemMenu =>
+    principalMenu.find(({ id: idItem }) => idMenu === idItem) as IItemMenu;
 
   return {
-    aboutMenu: {
-      ...aboutMenu,
-      slug: `/${language}/${aboutMenu?.slug}`,
-    },
-    language,
-    contactMenu: {
-      ...contactMenu,
-      slug: `/${language}/${contactMenu?.slug}`,
-    },
-    servicesMenu: {
-      ...servicesMenu,
-      slug: `/${language}/${servicesMenu?.slug}`,
-    },
+    aboutMenu: handleGetDataItemMenu(ENavigation.ABOUT_US),
+    blogMenu: handleGetDataItemMenu(ENavigation.BLOG),
+    contactMenu: handleGetDataItemMenu(ENavigation.CONTACT),
+    homeMenu: handleGetDataItemMenu(ENavigation.HOME),
     principalMenu,
+    projectsMenu: handleGetDataItemMenu(ENavigation.PROJECTS),
+    servicesMenu: handleGetDataItemMenu(ENavigation.SERVICES),
   };
 };

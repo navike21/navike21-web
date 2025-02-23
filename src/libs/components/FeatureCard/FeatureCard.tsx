@@ -1,4 +1,3 @@
-import { ReactNode } from "react";
 import {
   ContentInfoCard,
   Description,
@@ -7,14 +6,7 @@ import {
   TitleCard,
 } from "./featureCard.style";
 import { LinkButton } from "@Components/LinkButton/LinkButton";
-
-interface IFeatureCardProps {
-  icon: ReactNode;
-  title: string;
-  description: string;
-  ctaText?: string;
-  ctaLink?: string;
-}
+import { IFeatureCardProps } from "./featureCard.types";
 
 export const FeatureCard = ({
   icon,
@@ -22,17 +14,15 @@ export const FeatureCard = ({
   description,
   ctaText,
   ctaLink,
-}: IFeatureCardProps) => {
-  return (
-    <FeatureCardWrapper>
-      <ContentInfoCard>
-        <IconWrapper>{icon}</IconWrapper>
-        <TitleCard type="subtitle" variant="h3">
-          {title}
-        </TitleCard>
-        <Description>{description}</Description>
-      </ContentInfoCard>
-      {ctaText && ctaLink && <LinkButton href={ctaLink}>{ctaText}</LinkButton>}
-    </FeatureCardWrapper>
-  );
-};
+}: IFeatureCardProps) => (
+  <FeatureCardWrapper>
+    <ContentInfoCard>
+      <IconWrapper>{icon}</IconWrapper>
+      <TitleCard type="subtitle" variant="h3">
+        {title}
+      </TitleCard>
+      <Description>{description}</Description>
+    </ContentInfoCard>
+    {ctaText && ctaLink && <LinkButton href={ctaLink}>{ctaText}</LinkButton>}
+  </FeatureCardWrapper>
+);

@@ -1,28 +1,7 @@
-import React, { ReactNode } from "react";
 import { Container, ContentTitle, Wrap } from "./content.style";
+import { ContentProps } from "./content.types";
 import { MainContent } from "./MainContent";
 import { Title } from "@Components/Title/Title";
-
-export interface IWrapProps {
-  backgroundImage?: string;
-  backgroundColor?: string;
-}
-
-export interface ITitleProps {
-  textAlign?: "left" | "center" | "right";
-  color?: "primary" | "white";
-}
-
-export interface ITitleAndSubtitle extends ITitleProps {
-  text: string;
-}
-
-export interface ContentProps extends IWrapProps {
-  children: ReactNode;
-  title?: ITitleAndSubtitle;
-  subtitle?: ITitleAndSubtitle;
-  contentDirection?: "row" | "column";
-}
 
 export const Content = ({
   backgroundImage,

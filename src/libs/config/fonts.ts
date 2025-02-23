@@ -3,7 +3,7 @@
 import { Quicksand, Syne } from "next/font/google";
 
 export const syne = Syne({
-  variable: "--font-syne",
+  variable: "--font-title",
   subsets: ["latin", "latin-ext"],
   weight: ["700"],
   preload: false,
@@ -11,7 +11,7 @@ export const syne = Syne({
 
 export const quicksand = Quicksand({
   weight: ["400", "500", "600", "700"],
-  variable: "--font-quicksand",
+  variable: "--font-body",
   subsets: ["latin-ext"],
 
   preload: false,

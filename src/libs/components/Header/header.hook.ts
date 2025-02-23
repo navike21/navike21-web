@@ -1,32 +1,42 @@
-import { useNavigation } from "@Hooks/useNavigation";
-import { useThemeMui } from "@Hooks/useThemeMui";
+import { TBreakpointsTheme, useThemeMui } from "@Hooks/useThemeMui";
 import { useState } from "react";
-import { useOptionsBrowserStore } from "@Store/optionBrowser/optionBrowser.hook";
 import { useScrollTrigger } from "@Hooks/useScrollTrigger";
 import { EMaxWidth } from "@Enums/optionsTheme";
+import { EBlackOpacity } from "@Enums/color";
+import { TargetAndTransition, Transition } from "motion/react";
 
-export const useHeader = () => {
-  const { language } = useOptionsBrowserStore();
+interface IHeaderHook {
+  properties: {
+    animate: TargetAndTransition;
+    breakpoints: TBreakpointsTheme;
+    initialAnimation: TargetAndTransition;
+    openMenuNavigation: boolean;
+    transition: Transition;
+  };
+  methods: {
+    setOpenMenuNavigation: (value: boolean) => void;
+  };
+}
+
+export const useHeader = (): IHeaderHook => {
   const [openMenuNavigation, setOpenMenuNavigation] = useState<boolean>(false);
   const { breakpoints, pxToRem } = useThemeMui();
   const { isScrolled } = useScrollTrigger(30);
 
-  const { contactMenu, principalMenu } = useNavigation();
-
   const initialAnimation = {
-    background: "var(--black-opacity-0)",
+    background: EBlackOpacity._0,
+    backdropFilter: "blur(0px)",
+    borderRadius: 0,
     maxWidth:
       (breakpoints.xs && !breakpoints.md && !breakpoints.lg && pxToRem(580)) ||
       (!breakpoints.xs && breakpoints.md && !breakpoints.lg && pxToRem(780)) ||
       pxToRem(1050),
-    borderRadius: 0,
   };
 
   const animate = {
-    background: isScrolled
-      ? "var(--black-opacity-700)"
-      : "var(--black-opacity-0)",
+    background: isScrolled ? EBlackOpacity._700 : EBlackOpacity._0,
     backdropFilter: isScrolled ? "blur(10px)" : "blur(0px)",
+    borderRadius: isScrolled ? pxToRem(15) : 0,
     maxWidth:
       (breakpoints.xs &&
         !breakpoints.md &&
@@ -37,17 +47,23 @@ export const useHeader = () => {
         !breakpoints.lg &&
         (isScrolled ? pxToRem(EMaxWidth.TABLET) : pxToRem(780))) ||
       (isScrolled ? pxToRem(EMaxWidth.DESKTOP) : pxToRem(1050)),
-    borderRadius: isScrolled ? pxToRem(15) : 0,
+  };
+
+  const transition = {
+    duration: 0.3,
+    ease: "easeInOut",
   };
 
   return {
-    animate,
-    breakpoints,
-    contactMenu,
-    initialAnimation,
-    language,
-    openMenuNavigation,
-    principalMenu,
-    setOpenMenuNavigation,
+    properties: {
+      animate,
+      breakpoints,
+      initialAnimation,
+      openMenuNavigation,
+      transition,
+    },
+    methods: {
+      setOpenMenuNavigation,
+    },
   };
 };

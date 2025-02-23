@@ -1,12 +1,7 @@
-import React, { ReactNode, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Background } from "./backgroundParallax.styles";
-
-export interface IBackgroundParallaxProps {
-  backgroundImage: string;
-  overlay?: boolean;
-  children?: ReactNode;
-}
+import { useBackgroundParallax } from "./backgroundParallax.hook";
+import { IBackgroundParallaxProps } from "./backgroundParallax.types";
 
 export const BackgroundParallax = ({
   backgroundImage,
@@ -14,19 +9,7 @@ export const BackgroundParallax = ({
   children,
   ...props
 }: IBackgroundParallaxProps) => {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  const handleScroll = () => {
-    setScrollPosition(window.scrollY);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const parallaxSpeed = 0.2;
-  const backgroundPositionY = `${scrollPosition * parallaxSpeed}px`;
+  const { backgroundPositionY } = useBackgroundParallax();
 
   return (
     <Background

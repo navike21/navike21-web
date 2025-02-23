@@ -11,42 +11,35 @@ import {
 import logo from "@Public/iso-logo.svg";
 import { useHeader } from "./header.hook";
 import { LinkButton } from "@Components/LinkButton/LinkButton";
+import { ENavigation } from "@Enums/navigation";
+import { useNavigation } from "@Hooks/useNavigation";
 
 export const Header = () => {
   const {
-    animate,
-    contactMenu,
-    principalMenu,
-    language,
-    breakpoints,
-    initialAnimation,
+    properties: { animate, breakpoints, initialAnimation, transition },
   } = useHeader();
 
-  const menuNav = principalMenu.map(({ id, name, slug }) => {
-    if (id === "contact") {
-      return (
-        <LinkButton key={slug} href={`/${language}/${slug}`}>
-          {name}
-        </LinkButton>
-      );
-    }
-    return (
-      <ItemMenu key={slug} href={`/${language}/${slug}`}>
+  const { contactMenu, principalMenu, homeMenu } = useNavigation();
+
+  const menuNav = principalMenu.map(({ id, name, slug }) =>
+    id === ENavigation.CONTACT ? (
+      <LinkButton key={slug} href={slug}>
+        {name}
+      </LinkButton>
+    ) : (
+      <ItemMenu key={slug} href={slug}>
         {name}
       </ItemMenu>
-    );
-  });
+    )
+  );
 
   return (
     <MotionHeaderContent
       initial={initialAnimation}
       animate={animate}
-      transition={{
-        duration: 0.3,
-        ease: "easeInOut",
-      }}
+      transition={transition}
     >
-      <LogoContent href={`/${language}`} replace>
+      <LogoContent href={homeMenu.slug} replace>
         <IsoLogo src={logo} alt={"logo"} width={10} height={10} />
         <CompanyName>navike21</CompanyName>
       </LogoContent>

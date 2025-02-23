@@ -1,9 +1,10 @@
 import { Title } from "@Components/Title/Title";
 import { EColor, EPrimary } from "@Enums/color";
+import { ESizes } from "@Enums/size";
 import { styled, Typography } from "@mui/material";
 
 export const FeatureCardWrapper = styled("article")(({ theme }) => ({
-  [theme.breakpoints.up("xs")]: {
+  [theme.breakpoints.up(ESizes.XS)]: {
     display: "flex",
     flexDirection: "column",
     gap: theme.spacing(4),
@@ -33,7 +34,7 @@ export const FeatureCardWrapper = styled("article")(({ theme }) => ({
 }));
 
 export const ContentInfoCard = styled("div")(({ theme }) => ({
-  [theme.breakpoints.up("xs")]: {
+  [theme.breakpoints.up(ESizes.XS)]: {
     display: "flex",
     flexDirection: "column",
     gap: theme.spacing(2.5),
@@ -41,7 +42,7 @@ export const ContentInfoCard = styled("div")(({ theme }) => ({
 }));
 
 export const IconWrapper = styled("div")(({ theme }) => ({
-  [theme.breakpoints.up("xs")]: {
+  [theme.breakpoints.up(ESizes.XS)]: {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -70,14 +71,14 @@ export const IconWrapper = styled("div")(({ theme }) => ({
 }));
 
 export const TitleCard = styled(Title)(({ theme }) => ({
-  [theme.breakpoints.up("xs")]: {
+  [theme.breakpoints.up(ESizes.XS)]: {
     textTransform: "initial",
     fontSize: theme.typography.pxToRem(18),
   },
 }));
 
 export const Description = styled(Typography)(({ theme }) => ({
-  [theme.breakpoints.up("xs")]: {
+  [theme.breakpoints.up(ESizes.XS)]: {
     fontSize: theme.typography.pxToRem(16),
     opacity: 0.8,
   },

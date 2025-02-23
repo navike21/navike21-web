@@ -1,7 +1,19 @@
 import { ESizes } from "@Enums/size";
-import { useMediaQuery, useTheme } from "@mui/material";
+import { Palette, useMediaQuery, useTheme } from "@mui/material";
 
-export const useThemeMui = () => {
+type TBreakpoints = {
+  [key in ESizes]: boolean;
+};
+
+export type TBreakpointsTheme = Omit<TBreakpoints, ESizes.XXL | ESizes.XXXL>;
+
+interface IUserThemeMui {
+  breakpoints: TBreakpointsTheme;
+  palette: Palette;
+  pxToRem: (value: number) => string;
+}
+
+export const useThemeMui = (): IUserThemeMui => {
   const { breakpoints, palette, typography } = useTheme();
 
   return {

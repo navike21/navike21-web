@@ -1,7 +1,9 @@
 "use client";
 
 import { colors } from "@Config/color";
+import { EPrimary, ESecondary } from "@Enums/color";
 import { EThemeMode } from "@Enums/optionsTheme";
+import { ETypography } from "@Enums/typography";
 import { createTheme, Theme } from "@mui/material";
 
 export interface INavikeThemeProps {
@@ -26,7 +28,7 @@ export const navikeTheme = ({ themeMode }: INavikeThemeProps): Theme =>
       secondary: colors.secondary,
     },
     typography: {
-      fontFamily: "var(--font-quicksand)",
+      fontFamily: ETypography.BODY,
       fontWeightLight: 400,
       fontWeightRegular: 500,
       fontWeightMedium: 600,
@@ -46,11 +48,11 @@ export const navikeTheme = ({ themeMode }: INavikeThemeProps): Theme =>
       MuiCssBaseline: {
         styleOverrides: {
           ":root": {
-            "--font-quicksand": "'Quicksand', sans-serif",
-            "--font-syne": "'Syne', sans-serif",
-            "--background-gradient": `linear-gradient(90deg, var(--mui-palette-primary-main) 0%, var(--mui-palette-secondary-main) 100%)`,
-            "--background-gradient-hover": `linear-gradient(90deg, var(--mui-palette-primary-main) 20%, var(--mui-palette-secondary-main) 80%)`,
-            "--text-gradient": `linear-gradient(90deg, var(--mui-palette-primary-contrastText) 0%, var(--mui-palette-secondary-contrastText) 100%)`,
+            "--font-body": ETypography.FONT_BODY,
+            "--font-title": ETypography.FONT_TITLE,
+            "--background-gradient": `linear-gradient(90deg, ${EPrimary.MAIN} 0%, ${ESecondary.MAIN} 100%)`,
+            "--background-gradient-hover": `linear-gradient(90deg, ${EPrimary.MAIN} 20%, ${ESecondary.MAIN} 80%)`,
+            "--text-gradient": `linear-gradient(90deg, ${EPrimary.CONTRAST_TEXT} 0%, ${ESecondary.CONTRAST_TEXT} 100%)`,
             "--black-opacity-0": "rgba(21, 21, 21, 0.0)",
             "--black-opacity-100": "rgba(21, 21, 21, 0.1)",
             "--black-opacity-200": "rgba(21, 21, 21, 0.2)",
@@ -71,7 +73,7 @@ export const navikeTheme = ({ themeMode }: INavikeThemeProps): Theme =>
             position: "relative",
             padding: "12px 24px",
             backgroundImage: "var(--background-gradient)",
-            color: colors.primary.contrastText,
+            color: EPrimary.CONTRAST_TEXT,
             borderRadius: "4px",
             overflow: "hidden",
             transition: "background 0.6s ease, transform 0.3s ease",
