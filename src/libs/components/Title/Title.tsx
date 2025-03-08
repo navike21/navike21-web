@@ -1,11 +1,13 @@
 import { TypographyProps } from "@mui/material";
 import { TitleMui } from "./title.style";
 
+export type TTitleVariation = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+export type TTitleColor = "primary" | "white";
 export interface ITitleProps extends TypographyProps {
   type: "subtitle" | "title" | "title2";
-  variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  variant?: TTitleVariation;
   textAlign?: "left" | "center" | "right";
-  color?: "primary" | "white";
+  color?: TTitleColor;
 }
 
 export const Title = ({
