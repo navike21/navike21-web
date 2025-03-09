@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ReactNode } from "react";
+import { useOptionsBrowserStore } from "@Store/optionBrowser/optionBrowser.hook";
 
 export const metadata: Metadata = {
   title: "navike21",
@@ -12,8 +13,9 @@ export default function RootLayout({
 }: Readonly<{
   children: ReactNode;
 }>) {
+  const { language } = useOptionsBrowserStore.getState();
   return (
-    <html lang="en">
+    <html lang={language}>
       <body>{children}</body>
     </html>
   );
