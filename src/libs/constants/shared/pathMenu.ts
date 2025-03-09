@@ -1,6 +1,0 @@
-export const HOME_PATH = '/'
-export const ABOUT_PATH = '/about'
-export const CONTACT_PATH = '/contact'
-export const BLOG_PATH = '/blog'
-export const SERVICES_PATH = '/services'
-export const PROJECTS_PATH = '/projects'

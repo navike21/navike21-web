@@ -1,7 +1,0 @@
-export * from './Header'
-export * from './MenuResponsive'
-export * from './MenuHeader'
-export * from './ThemeMode'
-export * from './Lang'
-export * from './MenuResponsive'
-export * from './Slider'
