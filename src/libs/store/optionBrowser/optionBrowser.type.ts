@@ -1,5 +1,5 @@
-import { ELanguage } from '@Enums/languages'
-import { EThemeMode } from '@Enums/optionsTheme'
+import { ELanguage } from 'src/libs/typed/enums/languages'
+import { EThemeMode } from 'src/libs/typed/enums/optionsTheme'
 
 export interface IOptionsBrowserState {
   themeOption: EThemeMode

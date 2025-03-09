@@ -24,13 +24,13 @@
       "@Assets/*": ["./src/libs/assets/*"],
       "@Components/*": ["./src/libs/components/*"],
       "@Config/*": ["./src/libs/config/*"],
-      "@Enums/*": ["./src/libs/enums/*"],
+      "@Enums/*": ["src/libs/typed/enums/*"],
       "@Hooks/*": ["./src/libs/hooks/*"],
       "@Providers/*": ["./src/libs/providers/*"],
       "@Store/*": ["./src/libs/store/*"],
       "@Theme/*": ["./src/libs/theme/*"],
       "@Translations/*": ["./src/libs/translations/*"],
-      "@Types/*": ["./src/libs/types/*"],
+      "@Types/*": ["src/libs/typed/*"],
       "@Utils/*": ["./src/libs/utils/*"]
     }
   },

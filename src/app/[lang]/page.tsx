@@ -1,4 +1,4 @@
-import { HomePage } from '../homePage/page/HomePage'
+import { HomePage } from '../homePage/page'
 
 export default async function Page() {
   return <HomePage />
