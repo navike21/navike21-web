@@ -1,5 +1,5 @@
-"use client";
+'use client'
 
 export const HomePage = () => {
-  return <div style={{ height: "100vh" }}>Holi</div>;
-};
+  return <div style={{ height: '100vh' }}>Holi</div>
+}

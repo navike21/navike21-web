@@ -7,7 +7,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint:scan": "next lint",
+    "lint:fix": "next lint --fix",
     "images": "ts-node convertImages.ts"
   },
   "dependencies": {
@@ -28,6 +29,9 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.1.6",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "prettier": "^3.5.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   }
