@@ -1,9 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { MUIProvider } from "@Providers/MUIProvider";
-import { quicksand, syne } from "@Config/fonts";
-import { useOptionsBrowserStore } from "@Store/optionBrowser/optionBrowser.hook";
-import { SmoothScroll } from "@Components/SmoothScroll/SmoothScroll";
 import { ReactNode } from "react";
 
 export const metadata: Metadata = {
@@ -16,14 +12,9 @@ export default function RootLayout({
 }: Readonly<{
   children: ReactNode;
 }>) {
-  const { language } = useOptionsBrowserStore.getState();
   return (
-    <html lang={language}>
-      <body className={`font-sans ${syne.variable} ${quicksand.variable}`}>
-        <SmoothScroll>
-          <MUIProvider>{children}</MUIProvider>
-        </SmoothScroll>
-      </body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   );
 }
