@@ -1,0 +1,93 @@
+@mixin flex-center($gap) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+  color: var(--mui-palette-common-white);
+}
+
+@mixin text-styles(
+  $h6-size,
+  $p-size,
+  $h6-spacing: 0.08rem,
+  $p-spacing: 0.05rem
+) {
+  display: flex;
+  flex-direction: column;
+
+  h6 {
+    font-size: $h6-size;
+    line-height: 1.1;
+    letter-spacing: $h6-spacing;
+    font-weight: 600;
+  }
+  p {
+    font-size: $p-size;
+    line-height: 1;
+    letter-spacing: $p-spacing;
+    font-weight: 200;
+  }
+}
+
+@mixin logo-size($size) {
+  width: $size;
+  height: $size;
+}
+
+.logoContentXs {
+  @include flex-center(0.4rem);
+}
+.logoContentSm {
+  @include flex-center(0.45rem);
+}
+.logoContentMd {
+  @include flex-center(0.5rem);
+}
+.logoContentLg {
+  @include flex-center(0.6rem);
+}
+.logoContentXl {
+  @include flex-center(0.7rem);
+}
+
+.logoTextXs {
+  @include text-styles(0.95rem, 0.35rem, 0.05rem);
+}
+.logoTextSm {
+  @include text-styles(1.1rem, 0.42rem, 0.05rem);
+}
+.logoTextMd {
+  @include text-styles(1.5rem, 0.6rem);
+}
+.logoTextLg {
+  @include text-styles(1.7rem, 0.69rem);
+}
+.logoTextXl {
+  @include text-styles(1.8rem, 0.73rem);
+}
+
+.logoWhite {
+  fill: var(--mui-palette-common-white);
+}
+.logoPrimary {
+  fill: var(--mui-palette-primary-main);
+}
+.logoBlack {
+  fill: var(--mui-palette-common-black);
+}
+
+.logoXs {
+  @include logo-size(1.5rem);
+}
+.logoSm {
+  @include logo-size(2rem);
+}
+.logoMd {
+  @include logo-size(2.5rem);
+}
+.logoLg {
+  @include logo-size(3rem);
+}
+.logoXl {
+  @include logo-size(3.5rem);
+}

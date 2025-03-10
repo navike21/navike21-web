@@ -5,6 +5,7 @@ import { fontTitle, fontBody } from '@Config/fonts'
 import { IComponentProps } from '@Types/interfaces/common'
 import { MUIProvider } from '@Providers/MUIProvider'
 import { SmoothScroll } from '@Components/atoms/SmoothScroll'
+import { Header } from '@Components/molecules/Header'
 
 export const metadata: Metadata = {
   title: 'navike21',
@@ -17,7 +18,10 @@ export default function RootLayout({ children }: Readonly<IComponentProps>) {
     <html lang={language}>
       <body className={`font-sans ${fontTitle.variable} ${fontBody.variable}`}>
         <SmoothScroll>
-          <MUIProvider>{children}</MUIProvider>
+          <MUIProvider>
+            <Header />
+            {children}
+          </MUIProvider>
         </SmoothScroll>
       </body>
     </html>

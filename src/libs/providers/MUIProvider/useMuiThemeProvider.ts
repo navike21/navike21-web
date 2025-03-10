@@ -42,6 +42,25 @@ export const useMuiThemeProvider = (): Theme => {
         fontSize: pxToRem(18),
         fontWeight: 700
       }
+    },
+    components: {
+      MuiCssBaseline: {
+        styleOverrides: {
+          ':root': {
+            '--max-width': '1200px',
+            '--black-color-900': 'rgba(16, 26, 36, 0.9)',
+            '--black-color-800': 'rgba(16, 26, 36, 0.8)',
+            '--black-color-700': 'rgba(16, 26, 36, 0.7)',
+            '--black-color-600': 'rgba(16, 26, 36, 0.6)',
+            '--black-color-500': 'rgba(16, 26, 36, 0.5)',
+            '--black-color-400': 'rgba(16, 26, 36, 0.4)',
+            '--black-color-300': 'rgba(16, 26, 36, 0.3)',
+            '--black-color-200': 'rgba(16, 26, 36, 0.2)',
+            '--black-color-100': 'rgba(16, 26, 36, 0.1)',
+            '--black-color-50': 'rgba(16, 26, 36, 0.05)'
+          }
+        }
+      }
     }
   })
 }
