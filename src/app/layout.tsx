@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { useOptionsBrowserStore } from '@Store/optionBrowser/optionBrowser.hook'
-import { quicksand, syne } from '@Config/fonts'
+import { fontTitle, fontBody } from '@Config/fonts'
 import { IComponentProps } from '@Types/interfaces/common'
+import { MUIProvider } from '@Providers/MUIProvider'
 
 export const metadata: Metadata = {
   title: 'navike21',
@@ -13,8 +14,8 @@ export default function RootLayout({ children }: Readonly<IComponentProps>) {
   const { language } = useOptionsBrowserStore.getState()
   return (
     <html lang={language}>
-      <body className={`font-sans ${syne.variable} ${quicksand.variable}`}>
-        {children}
+      <body className={`font-sans ${fontTitle.variable} ${fontBody.variable}`}>
+        <MUIProvider>{children}</MUIProvider>
       </body>
     </html>
   )
