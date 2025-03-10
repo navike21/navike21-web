@@ -1,6 +1,8 @@
 import { ReactNode } from 'react'
 
-export interface IComponentProps {
+export interface IComponentPropsBase {
   children: ReactNode
+}
+export interface IComponentProps extends IComponentPropsBase {
   className?: string
 }
