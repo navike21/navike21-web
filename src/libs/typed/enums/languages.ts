@@ -4,7 +4,7 @@ export enum ELanguage {
   ES = 'es', // Español
   FR = 'fr', // Francés
   IT = 'it', // Italiano
-  JA = 'ja', // Japonés
+  JP = 'jp', // Japonés
   KO = 'ko', // Coreano
   PT = 'pt', // Portugués
   RU = 'ru', // Ruso

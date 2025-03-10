@@ -28,6 +28,7 @@
       "@Hooks/*": ["./src/libs/hooks/*"],
       "@Providers/*": ["./src/libs/providers/*"],
       "@Store/*": ["./src/libs/store/*"],
+      "@Translations/*": ["./src/libs/translations/*"],
       "@Types/*": ["src/libs/typed/*"],
       "@Utils/*": ["./src/libs/utils/*"]
     }
