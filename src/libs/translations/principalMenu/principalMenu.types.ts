@@ -1,7 +1,8 @@
 import { ELanguage } from '@Enums/languages'
+import { EPrincipalMenuKey } from '@Enums/principalMenuKey'
 
 export type TMenuItem = {
-  key: string
+  key: EPrincipalMenuKey
   label: string
   path: string
   slug: string
