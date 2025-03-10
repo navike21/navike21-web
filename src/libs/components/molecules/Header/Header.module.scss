@@ -1,6 +1,7 @@
 .header {
   background-color: var(--black-color-800);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   display: flex;
   left: 0;
   height: 4.625rem;
