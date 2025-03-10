@@ -1,3 +1,5 @@
+'use client'
+
 import clsx from 'clsx'
 import { TSizes } from '@Types/types/common'
 import styles from './Logo.module.scss'
