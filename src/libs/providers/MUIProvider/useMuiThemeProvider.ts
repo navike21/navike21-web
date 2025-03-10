@@ -1,8 +1,8 @@
-import { useThemeMui } from '@Hooks/useThemeMui'
+import { useMuiTheme } from '@Hooks/useMuiTheme'
 import { createTheme, Theme } from '@mui/material'
 
-export const muiTheme = (): Theme => {
-  const { pxToRem } = useThemeMui()
+export const useMuiThemeProvider = (): Theme => {
+  const { pxToRem } = useMuiTheme()
 
   return createTheme({
     cssVariables: true,

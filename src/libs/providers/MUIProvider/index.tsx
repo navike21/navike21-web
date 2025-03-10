@@ -4,10 +4,10 @@ import React from 'react'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter'
 import { IComponentProps } from '@Types/interfaces/common'
 import { CssBaseline, ThemeProvider } from '@mui/material'
-import { muiTheme } from './muiTheme'
+import { useMuiThemeProvider } from './useMuiThemeProvider'
 
 export const MUIProvider = ({ children }: IComponentProps) => {
-  const theme = muiTheme()
+  const theme = useMuiThemeProvider()
   return (
     <AppRouterCacheProvider options={{ enableCssLayer: true }}>
       <ThemeProvider theme={theme}>

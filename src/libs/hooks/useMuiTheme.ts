@@ -11,7 +11,7 @@ interface IUserThemeMui {
   pxToRem: (value: number) => string
 }
 
-export const useThemeMui = (): IUserThemeMui => {
+export const useMuiTheme = (): IUserThemeMui => {
   const { breakpoints, palette, typography } = useTheme()
 
   return {
