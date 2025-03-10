@@ -30,7 +30,11 @@ const eslintConfig = [
       ],
       'linebreak-style': 'off',
       semi: ['error', 'never'],
-      quotes: ['error', 'single'],
+      quotes: [
+        'error',
+        'single',
+        { avoidEscape: true, allowTemplateLiterals: true }
+      ],
       'no-unused-vars': ['error'],
       '@typescript-eslint/naming-convention': [
         'error',

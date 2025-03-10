@@ -1,5 +1,5 @@
 import { IComponentProps } from '@Types/interfaces/common'
-import styles from './Content.module.scss'
+import styles from './content.module.scss'
 import clsx from 'clsx'
 
 export const Content = ({ children, className }: IComponentProps) => {
