@@ -6,6 +6,9 @@ export const useMuiThemeProvider = (): Theme => {
 
   return createTheme({
     cssVariables: true,
+    palette: {
+      mode: 'dark'
+    },
     typography: {
       fontFamily: 'var(--font-body)',
       fontWeightLight: 300,

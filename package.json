@@ -17,6 +17,7 @@
     "@emotion/styled": "^11.14.0",
     "@mui/material": "^6.4.7",
     "@mui/material-nextjs": "^6.4.3",
+    "@splidejs/react-splide": "^0.7.12",
     "clsx": "^2.1.1",
     "glob": "^11.0.1",
     "lenis": "^1.1.20",
