@@ -1,11 +1,11 @@
 'use client'
 
 import clsx from 'clsx'
-import { TSizes } from '@Types/types/common'
-import styles from './logo.module.scss'
-import { Paragraph } from '../Paragraph'
 import { useOptionsBrowserStore } from '@Store/optionBrowser/optionBrowser.hook'
+import { TSizes } from '@Types/types/common'
+import { Paragraph } from '../Paragraph'
 import { sloganTranslate } from './logo.translations'
+import styles from './Logo.module.scss'
 
 interface ILogoProps {
   variation?: 'primary' | 'white' | 'black'
