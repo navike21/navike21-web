@@ -4,6 +4,7 @@ import { useOptionsBrowserStore } from '@Store/optionBrowser/optionBrowser.hook'
 import { fontTitle, fontBody } from '@Config/fonts'
 import { IComponentProps } from '@Types/interfaces/common'
 import { MUIProvider } from '@Providers/MUIProvider'
+import { SmoothScroll } from '@Components/atoms/SmoothScroll'
 
 export const metadata: Metadata = {
   title: 'navike21',
@@ -15,7 +16,9 @@ export default function RootLayout({ children }: Readonly<IComponentProps>) {
   return (
     <html lang={language}>
       <body className={`font-sans ${fontTitle.variable} ${fontBody.variable}`}>
-        <MUIProvider>{children}</MUIProvider>
+        <SmoothScroll>
+          <MUIProvider>{children}</MUIProvider>
+        </SmoothScroll>
       </body>
     </html>
   )
