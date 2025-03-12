@@ -60,7 +60,12 @@ export const useMuiThemeProvider = (): Theme => {
             '--black-color-300': 'rgba(16, 26, 36, 0.3)',
             '--black-color-200': 'rgba(16, 26, 36, 0.2)',
             '--black-color-100': 'rgba(16, 26, 36, 0.1)',
-            '--black-color-50': 'rgba(16, 26, 36, 0.05)'
+            '--black-color-50': 'rgba(16, 26, 36, 0.05)',
+            '--break-point-xs': '0',
+            '--break-point-sm': '600',
+            '--break-point-md': '960',
+            '--break-point-lg': '1280',
+            '--break-point-xl': '1920'
           }
         }
       }
