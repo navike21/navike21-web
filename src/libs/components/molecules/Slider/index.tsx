@@ -3,23 +3,36 @@
 import { AnimatePresence, motion } from 'motion/react'
 import React, { CSSProperties, useState } from 'react'
 
-interface ISliderProps {
-  slides: React.ReactNode[]
+interface ISliderOptions {
   orientation?: 'horizontal' | 'vertical'
-  animationType?: 'slide' | 'fade'
+  type?: 'slide' | 'fade' // Cambiamos animationType a type
   showControls?: boolean
   slidesPerView?: number
 }
 
+interface ISliderProps {
+  slides: React.ReactNode[]
+  options?: ISliderOptions // Objeto de opciones
+}
+
 export const Slider = ({
   slides,
-  orientation = 'horizontal',
-  animationType = 'slide',
-  showControls = true,
-  slidesPerView = 1
+  options = {
+    orientation: 'horizontal',
+    type: 'slide',
+    showControls: true,
+    slidesPerView: 1
+  }
 }: ISliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [direction, setDirection] = useState(1) // 1 para adelante, -1 para atrás
+
+  const {
+    orientation = 'horizontal',
+    type = 'slide',
+    showControls = true,
+    slidesPerView = 1
+  } = options
 
   const goToNextSlide = () => {
     setDirection(1)
@@ -73,7 +86,7 @@ export const Slider = ({
 
   // Selecciona las animaciones según el tipo
   const animationVariants =
-    animationType === 'slide' ? slideAnimationVariants : fadeAnimationVariants
+    type === 'slide' ? slideAnimationVariants : fadeAnimationVariants
 
   // Calcula el número de dots de paginación
   const totalDots = Math.ceil(slides.length / slidesPerView)
