@@ -4,6 +4,7 @@ import path from 'path'
 
 const publicFolder = './public'
 const quality = 100
+const maxSize = 2000
 
 const convertImages = async () => {
   try {
@@ -18,8 +19,31 @@ const convertImages = async () => {
       const outputThumb = path.join(fileDir, `${thumbName}.${fileExt}`)
       const outputThumbWebP = path.join(fileDir, `${thumbName}.webp`)
 
-      // Convertir a WebP (versión original)
-      await sharp(file).toFormat('webp', { quality }).toFile(outputWebP)
+      // Obtener metadatos de la imagen
+      const metadata = await sharp(file).metadata()
+      let width: number = metadata.width ?? 0
+      let height: number = metadata.height ?? 0
+
+      // Si la imagen es más grande que maxSize, redimensionarla proporcionalmente
+      if (width > maxSize || height > maxSize) {
+        const aspectRatio = width / height
+        if (width > height) {
+          width = maxSize
+          height = Math.round(maxSize / aspectRatio)
+        } else {
+          height = maxSize
+          width = Math.round(maxSize * aspectRatio)
+        }
+      } else {
+        width = metadata.width ?? 0
+        height = metadata.height ?? 0
+      }
+
+      // Convertir a WebP (versión original, redimensionada si es necesario)
+      await sharp(file)
+        .resize(width > 0 ? width : undefined, height > 0 ? height : undefined) // Se evita asignar undefined
+        .toFormat('webp', { quality })
+        .toFile(outputWebP)
 
       // Generar miniatura de 700px de ancho en el mismo formato original
       await sharp(file)

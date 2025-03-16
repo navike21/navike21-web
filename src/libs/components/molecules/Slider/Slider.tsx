@@ -4,10 +4,10 @@ import styles from './Slider.module.scss'
 import { generateUUID } from '@Utils/uuid'
 import clsx from 'clsx'
 import { useSlider } from './useSlider'
-import { IconButton } from '@Components/atoms/IconButton'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6'
 import { ISliderOptions, ISliderProps } from './Slider.typed'
 import { Content } from '@Components/atoms/Content'
+import { IconButton } from '@Components/atoms/IconButton'
 
 export const Slider = ({ slides, options }: ISliderProps) => {
   const {
