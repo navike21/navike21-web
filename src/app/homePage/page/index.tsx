@@ -14,30 +14,6 @@ export const HomePage = () => {
       }}
     >
       Slide 1
-    </div>,
-    <div
-      key="slide2"
-      style={{
-        background: 'blue',
-        height: '100dvh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}
-    >
-      Slide 2
-    </div>,
-    <div
-      key="slide3"
-      style={{
-        background: 'green',
-        height: '100dvh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}
-    >
-      Slide 3
     </div>
   ]
 

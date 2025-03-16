@@ -7,7 +7,6 @@ export interface ISliderOptions extends EmblaOptionsType {
   slidesPerView?: number
   autoplay?: boolean
   autoplayDelay?: number
-  showArrows?: boolean
   showDots?: boolean
   autoHeight?: boolean
 }

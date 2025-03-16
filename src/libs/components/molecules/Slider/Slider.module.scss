@@ -6,28 +6,38 @@
   overflow: hidden;
 }
 .embla__container {
+  align-items: flex-start;
   display: flex;
   touch-action: pan-y pinch-zoom;
-  align-items: flex-start;
 }
 .embla__container_falseLoop {
   transition: transform 0.3s;
 }
 
 .embla__slide {
-  transform: translate3d(0, 0, 0);
   min-width: 0;
+  transform: translate3d(0, 0, 0);
+}
+
+.embla__content_arrow {
+  bottom: 0;
+  height: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 4;
 }
 
 .embla__arrows {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  cursor: pointer;
-
-  padding: 0;
-  background: none;
-  border: none;
   transition: color 0.3s;
   z-index: 3;
 }
@@ -47,26 +57,11 @@
   cursor: default;
 }
 .embla__dots {
-  position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
   display: flex;
   justify-content: center;
+  left: 0;
   margin-bottom: 1em;
-}
-.embla__dot {
-  cursor: pointer;
-  padding: 0;
-  background: none;
-  border: none;
-  font-size: 1em;
-  color: #fff;
-  transition: color 0.3s;
-}
-.embla__dot:hover {
-  color: #000;
-}
-.embla__dot--is-active {
-  color: #000;
+  position: absolute;
+  right: 0;
 }

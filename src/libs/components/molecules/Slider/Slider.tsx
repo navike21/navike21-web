@@ -7,10 +7,11 @@ import { useSlider } from './useSlider'
 import { IconButton } from '@Components/atoms/IconButton'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6'
 import { ISliderOptions, ISliderProps } from './Slider.typed'
+import { Content } from '@Components/atoms/Content'
 
 export const Slider = ({ slides, options }: ISliderProps) => {
   const {
-    showArrows = true,
+    showControls = true,
     loop = false,
     animationType = 'slide'
   } = options as ISliderOptions
@@ -46,8 +47,8 @@ export const Slider = ({ slides, options }: ISliderProps) => {
           ))}
         </div>
       </div>
-      {showArrows && (
-        <>
+      {showControls && (
+        <Content className={clsx(styles.embla__content_arrow)}>
           <div className={clsx(styles.embla__arrows, styles.embla__arrow_left)}>
             <IconButton
               type="button"
@@ -68,7 +69,7 @@ export const Slider = ({ slides, options }: ISliderProps) => {
               <FaAngleRight />
             </IconButton>
           </div>
-        </>
+        </Content>
       )}
     </div>
   )
