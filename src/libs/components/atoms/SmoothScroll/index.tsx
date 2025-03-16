@@ -25,7 +25,7 @@ export const SmoothScroll = ({ children }: IComponentProps) => {
       root
       options={{
         autoRaf: false,
-        duration: 3,
+        duration: 1.5,
         smoothWheel: true,
         easing: (t: number) => 1 - Math.pow(1 - t, 3)
       }}
