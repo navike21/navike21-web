@@ -1,0 +1,72 @@
+.embla {
+  margin: auto;
+  position: relative;
+}
+.embla__viewport {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  align-items: flex-start;
+}
+.embla__container_falseLoop {
+  transition: transform 0.3s;
+}
+
+.embla__slide {
+  transform: translate3d(0, 0, 0);
+  min-width: 0;
+}
+
+.embla__arrows {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  padding: 0;
+  background: none;
+  border: none;
+  transition: color 0.3s;
+  z-index: 3;
+}
+
+.embla__arrow_left {
+  left: 0;
+}
+.embla__arrow_right {
+  right: 0;
+}
+
+.embla__arrow:hover {
+  color: #000;
+}
+.embla__arrow--disabled {
+  color: #ccc;
+  cursor: default;
+}
+.embla__dots {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+}
+.embla__dot {
+  cursor: pointer;
+  padding: 0;
+  background: none;
+  border: none;
+  font-size: 1em;
+  color: #fff;
+  transition: color 0.3s;
+}
+.embla__dot:hover {
+  color: #000;
+}
+.embla__dot--is-active {
+  color: #000;
+}
