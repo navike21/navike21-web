@@ -5,6 +5,10 @@ interface ITitleProps extends TypographyProps {
   variant?: THeading
 }
 
-export const Title = ({ children, variant }: ITitleProps) => {
-  return <Typography variant={variant}>{children}</Typography>
+export const Title = ({ children, variant = 'h2', ...props }: ITitleProps) => {
+  return (
+    <Typography variant={variant} {...props}>
+      {children}
+    </Typography>
+  )
 }

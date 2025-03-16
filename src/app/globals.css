@@ -2,3 +2,7 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+
+html {
+  font-size: 62.5%;
+}

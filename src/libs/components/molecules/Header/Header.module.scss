@@ -1,12 +1,12 @@
 @use '@Styles/breakpoints.scss' as *;
 
 .header {
-  background-color: var(--black-color-800);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background-color: var(--black-color-400);
+  backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1rem);
   display: flex;
   left: 0;
-  height: 4.625rem;
+  height: 7rem;
   justify-content: center;
   position: fixed;
   right: 0;
@@ -17,7 +17,7 @@
 
 .headerContent {
   align-items: center;
-  padding: 1rem 1.5rem;
+  padding: 1rem 0;
   display: flex;
   justify-content: space-between;
   position: relative;
@@ -29,8 +29,8 @@
 }
 
 .menuIcon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2.7rem;
+  height: 2.7rem;
   margin: 0.2rem;
   path {
     stroke: var(--mui-palette-common-white);
@@ -38,24 +38,30 @@
 }
 
 .menuContainer {
-  align-items: center;
-  background-color: var(--black-color-900);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  left: 0;
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 999;
+  @include breakPoints(xs) {
+    align-items: center;
+    background-color: var(--black-color-900);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 7rem 0;
+    z-index: 999;
+  }
 }
 
 .menuContent {
   @include breakPoints(xs) {
-    padding: 1rem 1.5rem;
+    padding: 4rem 1.5rem 4rem;
     display: flex;
+    align-items: center;
+    height: calc(100dvh - 7rem);
+    overflow-y: auto;
   }
 }
 
@@ -70,9 +76,9 @@
 
   span {
     @include breakPoints(xs) {
-      font-size: 1.6rem;
+      font-size: 2.2rem;
       font-weight: 600;
-      padding: 0.5rem;
+      padding: 1rem;
       transition: all cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
     }
 

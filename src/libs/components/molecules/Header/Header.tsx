@@ -17,7 +17,7 @@ export const Header = () => {
       <motion.header className={styles.header}>
         <Content className={styles.headerContent}>
           <Link href={homeMenu.path} className={styles.headerLogo}>
-            <Logo showSlogan variation="white" />
+            <Logo showSlogan variation="white" size="sm" />
           </Link>
           <motion.div initial={false} animate={isOpen ? 'open' : 'closed'}>
             <MenuToggle toggle={() => setIsOpen(prev => !prev)} />
