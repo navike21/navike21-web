@@ -47,7 +47,7 @@ export const HomePage = () => {
         <Slider
           slides={slides}
           options={{
-            animationType: 'fade',
+            animationType: 'slide',
             showControls: true,
             slidesPerView: 1,
             slidesToScroll: 'auto',

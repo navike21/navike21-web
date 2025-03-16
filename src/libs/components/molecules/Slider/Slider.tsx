@@ -1,7 +1,5 @@
 'use client'
 
-import useEmblaCarousel from 'embla-carousel-react'
-import Autoplay from 'embla-carousel-autoplay'
 import styles from './Slider.module.scss'
 import { generateUUID } from '@Utils/uuid'
 import clsx from 'clsx'
@@ -9,42 +7,22 @@ import { useSlider } from './useSlider'
 import { IconButton } from '@Components/atoms/IconButton'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6'
 import { ISliderOptions, ISliderProps } from './Slider.typed'
-import Fade from 'embla-carousel-fade'
-import AutoHeight from 'embla-carousel-auto-height'
 
 export const Slider = ({ slides, options }: ISliderProps) => {
   const {
-    autoplay = false,
-    autoplayDelay = 5000,
-    slidesPerView = 1,
     showArrows = true,
     loop = false,
-    animationType = 'slide',
-    autoHeight = false
+    animationType = 'slide'
   } = options as ISliderOptions
-
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    {
-      ...options,
-      loop: animationType === 'fade' || loop
-    },
-    [
-      Autoplay({ delay: autoplayDelay, active: autoplay }),
-      Fade({
-        active: animationType === 'fade'
-      }),
-      AutoHeight({
-        active: autoHeight
-      })
-    ]
-  )
 
   const {
     prevBtnDisabled,
     nextBtnDisabled,
+    styleToItemsPerView,
+    emblaRef,
     handleOnPrevButtonClick,
     handleOnNextButtonClick
-  } = useSlider({ emblaApi })
+  } = useSlider({ options })
 
   return (
     <div className={clsx(styles.embla)}>
@@ -59,7 +37,7 @@ export const Slider = ({ slides, options }: ISliderProps) => {
             <div
               className={styles.embla__slide}
               style={{
-                flex: `0 0 ${100 / slidesPerView}%`
+                flex: `0 0 ${styleToItemsPerView}%`
               }}
               key={generateUUID()}
             >
