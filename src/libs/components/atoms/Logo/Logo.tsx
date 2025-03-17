@@ -1,60 +1,31 @@
 'use client'
 
-import clsx from 'clsx'
 import { useOptionsBrowserStore } from '@Store/optionBrowser/optionBrowser.hook'
-import { TSizes } from '@Types/types/common'
 import { Paragraph } from '../Paragraph'
 import { sloganTranslate } from './logo.translations'
-import styles from './Logo.module.scss'
-
-interface ILogoProps {
-  variation?: 'primary' | 'white' | 'black'
-  size?: TSizes
-  showSlogan?: boolean
-  isIsoLogo?: boolean
-}
+import { IsoLogoElement, LogoElement, LogoSVG, LogoText } from './Logo.styles'
+import { ILogoProps } from './Logo.typed'
 
 export const Logo = ({
-  variation = 'primary',
-  size = 'md',
+  variation,
+  size,
   showSlogan,
   isIsoLogo
 }: ILogoProps) => {
   const { language } = useOptionsBrowserStore()
   return (
-    <div
-      className={clsx({
-        [styles.logoContentXs]: size === 'xs',
-        [styles.logoContentSm]: size === 'sm',
-        [styles.logoContentMd]: size === 'md',
-        [styles.logoContentLg]: size === 'lg',
-        [styles.logoContentXl]: size === 'xl'
-      })}
-    >
-      <svg
+    <LogoElement>
+      <LogoSVG
+        size={size}
         viewBox={!isIsoLogo ? '0 0 166 40' : '0 0 40 40'}
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className={clsx({
-          [styles.logoWhite]: variation === 'white',
-          [styles.logoPrimary]: variation === 'primary',
-          [styles.logoBlack]: variation === 'black',
-          [styles.logoXs]: size === 'xs',
-          [styles.logoSm]: size === 'sm',
-          [styles.logoMd]: size === 'md',
-          [styles.logoLg]: size === 'lg',
-          [styles.logoXl]: size === 'xl'
-        })}
       >
-        <path
+        <IsoLogoElement
           fillRule="evenodd"
           clipRule="evenodd"
           d="M20 40C31.0457 40 40 31.0457 40 20C40 8.9543 31.0457 0 20 0C8.9543 0 0 8.9543 0 20C0 31.0457 8.9543 40 20 40ZM29 19.3187V17.5976C29 15.4701 28.2288 13.8446 26.6863 12.7211C25.1438 11.5737 22.9608 11 20.1373 11C18.5686 11 17.1307 11.1793 15.8235 11.5378C14.5163 11.8725 13.4444 12.3028 12.6078 12.8287C12.085 13.1394 11.6797 13.498 11.3922 13.9044C11.1307 14.2869 11 14.7769 11 15.3745V19.3187V20.9681V26.5259C11 27.4582 11.2484 28.1036 11.7451 28.4622C12.268 28.8207 13.0784 29 14.1765 29C14.7255 29 15.2353 28.9641 15.7059 28.8924C16.1765 28.8446 16.5425 28.7849 16.8039 28.7131V20.9681V19.3187V15.9841C17.2484 15.7689 17.7451 15.5896 18.2941 15.4462C18.8431 15.2789 19.4444 15.1952 20.098 15.1952C21.0131 15.1952 21.7451 15.4104 22.2941 15.8406C22.8693 16.247 23.1569 16.8924 23.1569 17.7769V19.3187V20.9681V26.5259C23.1569 27.4582 23.4183 28.1036 23.9412 28.4622C24.4641 28.8207 25.2745 29 26.3726 29C26.9216 29 27.4314 28.9641 27.902 28.8924C28.3725 28.8446 28.7386 28.7849 29 28.7131V20.9681V19.3187Z"
-          className={clsx({
-            [styles.logoWhite]: variation === 'white',
-            [styles.logoPrimary]: variation === 'primary',
-            [styles.logoBlack]: variation === 'black'
-          })}
+          variation={variation}
         />
         {!isIsoLogo && (
           <path
@@ -62,20 +33,20 @@ export const Logo = ({
             fill="white"
           />
         )}
-      </svg>
+      </LogoSVG>
       {showSlogan && (
-        <div
-          className={clsx({
-            [styles.logoTextXs]: size === 'xs',
-            [styles.logoTextSm]: size === 'sm',
-            [styles.logoTextMd]: size === 'md',
-            [styles.logoTextLg]: size === 'lg',
-            [styles.logoTextXl]: size === 'xl'
-          })}
+        <LogoText
+        // className={clsx({
+        //   [styles.logoTextXs]: size === 'xs',
+        //   [styles.logoTextSm]: size === 'sm',
+        //   [styles.logoTextMd]: size === 'md',
+        //   [styles.logoTextLg]: size === 'lg',
+        //   [styles.logoTextXl]: size === 'xl'
+        // })}
         >
           <Paragraph variant="body1">{sloganTranslate[language]}</Paragraph>
-        </div>
+        </LogoText>
       )}
-    </div>
+    </LogoElement>
   )
 }

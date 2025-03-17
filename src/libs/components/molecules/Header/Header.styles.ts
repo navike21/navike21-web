@@ -1,15 +1,17 @@
 import { Content } from '@Components/atoms/Content'
 import { Paragraph } from '@Components/atoms/Paragraph'
-import { styled } from '@mui/material'
+import { styled, Theme } from '@mui/material'
 import { motion } from 'motion/react'
 import Link from 'next/link'
+
+const heightHeader = (theme: Theme) => theme.typography.pxToRem(85)
 
 export const HeaderElement = styled(motion.header)(({ theme }) => ({
   backgroundColor: 'var(--black-color-500)',
   backdropFilter: 'blur(1rem)',
   display: 'flex',
   left: 0,
-  height: theme.typography.pxToRem(70),
+  height: heightHeader(theme),
   justifyContent: 'center',
   position: 'fixed',
   right: 0,
@@ -71,7 +73,7 @@ export const MenuContainer = styled(motion.div)(({ theme }) => ({
 
 export const MenuContent = styled(Content)(({ theme }) => ({
   padding: theme.spacing(1.5, 0),
-  margin: `${theme.typography.pxToRem(70)} 0`
+  margin: `${heightHeader(theme)} 0`
 }))
 
 export const MotionDiv = styled(motion.div)(() => ({}))

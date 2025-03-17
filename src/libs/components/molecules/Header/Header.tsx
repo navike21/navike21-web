@@ -23,7 +23,7 @@ export const Header = () => {
       <HeaderElement>
         <HeaderContent>
           <HeaderLogo href={homeMenu.path}>
-            <Logo showSlogan variation="white" size="xs" />
+            <Logo showSlogan />
           </HeaderLogo>
           <MotionDiv initial={false} animate={isOpen ? 'open' : 'closed'}>
             <MenuToggle toggle={() => setIsOpen(prev => !prev)} />
