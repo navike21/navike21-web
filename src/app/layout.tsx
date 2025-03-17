@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import './globals.css'
 import { useOptionsBrowserStore } from '@Store/optionBrowser/optionBrowser.hook'
 import { fontTitle, fontBody } from '@Config/fonts'
 import { IComponentPropsBase } from '@Types/interfaces/common'
