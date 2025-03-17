@@ -2,7 +2,7 @@
 
 import { useOptionsBrowserStore } from '@Store/optionBrowser/optionBrowser.hook'
 import { Paragraph } from '../Paragraph'
-import { sloganTranslate } from './logo.translations'
+import { sloganTranslate } from './Logo.translations'
 import { IsoLogoElement, LogoElement, LogoSVG, LogoText } from './Logo.styles'
 import { ILogoProps } from './Logo.typed'
 
@@ -35,15 +35,7 @@ export const Logo = ({
         )}
       </LogoSVG>
       {showSlogan && (
-        <LogoText
-        // className={clsx({
-        //   [styles.logoTextXs]: size === 'xs',
-        //   [styles.logoTextSm]: size === 'sm',
-        //   [styles.logoTextMd]: size === 'md',
-        //   [styles.logoTextLg]: size === 'lg',
-        //   [styles.logoTextXl]: size === 'xl'
-        // })}
-        >
+        <LogoText>
           <Paragraph variant="body1">{sloganTranslate[language]}</Paragraph>
         </LogoText>
       )}

@@ -14,14 +14,12 @@ export const SlideHero = styled(BackgroundParallax)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     paddingBottom: theme.typography.pxToRem(80),
     '@media all and (orientation: landscape)': {
-      // paddingBottom: theme.typography.pxToRem(50),
       minHeight: '150dvh'
     }
   },
   [theme.breakpoints.down('sm')]: {
     paddingBottom: theme.typography.pxToRem(60),
     '@media all and (orientation: landscape)': {
-      // paddingBottom: theme.typography.pxToRem(25),
       minHeight: '160dvh'
     }
   },
@@ -37,6 +35,7 @@ export const SlideHeroContent = styled(Content)(({ theme }) => ({
   flexDirection: 'column',
   justifyContent: 'flex-end',
   padding: `0 ${theme.typography.pxToRem(35)}`,
+  transition: 'all 0.5s ease-in-out',
   textAlign: 'center'
 }))
 
