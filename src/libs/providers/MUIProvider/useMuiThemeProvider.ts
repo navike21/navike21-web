@@ -2,13 +2,13 @@ import { useMuiTheme } from '@Hooks/useMuiTheme'
 import { createTheme, Theme } from '@mui/material'
 
 export const useMuiThemeProvider = (): Theme => {
-  const { pxToRem } = useMuiTheme()
+  const { pxToRem, spacing } = useMuiTheme()
 
   return createTheme({
     breakpoints: {
       values: {
         xs: 0,
-        sm: 600,
+        sm: 680,
         md: 960,
         lg: 1280,
         xl: 1920
@@ -53,7 +53,16 @@ export const useMuiThemeProvider = (): Theme => {
         fontFamily: 'var(--font-title)',
         fontSize: pxToRem(18),
         fontWeight: 700
+      },
+      button: {
+        fontFamily: 'var(--font-body)',
+        fontSize: pxToRem(16),
+        textTransform: 'none',
+        fontWeight: 500
       }
+    },
+    shape: {
+      borderRadius: 0
     },
     components: {
       MuiCssBaseline: {
@@ -75,6 +84,13 @@ export const useMuiThemeProvider = (): Theme => {
             '--break-point-md': '960',
             '--break-point-lg': '1280',
             '--break-point-xl': '1920'
+          }
+        }
+      },
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            padding: spacing(1.5, 3.5)
           }
         }
       }

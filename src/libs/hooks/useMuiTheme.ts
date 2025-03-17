@@ -1,4 +1,10 @@
-import { Palette, useMediaQuery, useTheme } from '@mui/material'
+import {
+  Breakpoints,
+  Palette,
+  Theme,
+  useMediaQuery,
+  useTheme
+} from '@mui/material'
 import { TSizes } from '@Types/types/common'
 
 type TBreakpoints = {
@@ -6,16 +12,19 @@ type TBreakpoints = {
 }
 
 interface IUserThemeMui {
-  breakpoints: TBreakpoints
+  breakpoints: Breakpoints
+  mediaQuery: TBreakpoints
   palette: Palette
+  spacing: Theme['spacing']
   pxToRem: (value: number) => string
 }
 
 export const useMuiTheme = (): IUserThemeMui => {
-  const { breakpoints, palette, typography } = useTheme()
+  const { breakpoints, palette, typography, spacing } = useTheme()
 
   return {
-    breakpoints: {
+    breakpoints,
+    mediaQuery: {
       ['xs']: useMediaQuery(breakpoints.up('xs')),
       ['sm']: useMediaQuery(breakpoints.up('sm')),
       ['md']: useMediaQuery(breakpoints.up('md')),
@@ -23,6 +32,7 @@ export const useMuiTheme = (): IUserThemeMui => {
       ['xl']: useMediaQuery(breakpoints.up('xl'))
     },
     palette,
-    pxToRem: typography.pxToRem
+    pxToRem: typography.pxToRem,
+    spacing
   }
 }

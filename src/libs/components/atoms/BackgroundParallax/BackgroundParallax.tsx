@@ -10,12 +10,14 @@ export const BackgroundParallax = ({
   children,
   className,
   overlay = false,
-  startPosition = 'top'
+  startPosition = 'top',
+  ...props
 }: IBackgroundParallaxProps) => {
   const { initialPosition, parallaxRef } = useBackgroundParallax(startPosition)
 
   return (
     <BackgroundContent
+      {...props}
       backgroundImage={backgroundImage}
       backgroundPosition={initialPosition}
       overlay={overlay}
