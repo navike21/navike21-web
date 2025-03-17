@@ -1,7 +1,14 @@
 import { BackgroundParallax } from '@Components/atoms/BackgroundParallax'
 import { Content } from '@Components/atoms/Content'
+import { Paragraph } from '@Components/atoms/Paragraph'
 import { Title } from '@Components/atoms/Title'
 import { styled } from '@mui/material'
+
+export const SlideHeroMain = styled('div')(({ theme }) => ({
+  [theme.breakpoints.up('xs')]: {
+    backgroundColor: 'var(--black-color)'
+  }
+}))
 
 export const SlideHero = styled(BackgroundParallax)(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
@@ -14,7 +21,7 @@ export const SlideHero = styled(BackgroundParallax)(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     paddingBottom: theme.typography.pxToRem(80),
     '@media all and (orientation: landscape)': {
-      minHeight: '150dvh'
+      minHeight: '180dvh'
     }
   },
   [theme.breakpoints.down('sm')]: {
@@ -63,8 +70,15 @@ export const SlideHeroTitle = styled(Title)(({ theme }) => ({
     fontSize: theme.typography.pxToRem(28)
   },
   [theme.breakpoints.up('xs')]: {
+    color: 'var(--mui-palette-common-white)',
     '& span': {
       color: 'var(--mui-palette-primary-main)'
     }
+  }
+}))
+
+export const SlideHeroParagraph = styled(Paragraph)(({ theme }) => ({
+  [theme.breakpoints.up('xs')]: {
+    color: 'var(--mui-palette-common-white)'
   }
 }))

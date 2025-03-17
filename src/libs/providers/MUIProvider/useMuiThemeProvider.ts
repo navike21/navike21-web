@@ -16,7 +16,7 @@ export const useMuiThemeProvider = (): Theme => {
     },
     cssVariables: true,
     palette: {
-      mode: 'dark'
+      mode: 'light'
     },
     typography: {
       fontFamily: 'var(--font-body)',
@@ -69,6 +69,7 @@ export const useMuiThemeProvider = (): Theme => {
         styleOverrides: {
           ':root': {
             '--max-width': '1200px',
+            '--black-color': 'rgb(16, 26, 36)',
             '--black-color-900': 'rgba(16, 26, 36, 0.9)',
             '--black-color-800': 'rgba(16, 26, 36, 0.8)',
             '--black-color-700': 'rgba(16, 26, 36, 0.7)',
