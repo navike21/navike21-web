@@ -1,13 +1,19 @@
 'use client'
 
-import styles from './Slider.module.scss'
 import { generateUUID } from '@Utils/uuid'
-import clsx from 'clsx'
 import { useSlider } from './useSlider'
 import { FaAngleLeft, FaAngleRight } from 'react-icons/fa6'
 import { ISliderOptions, ISliderProps } from './Slider.typed'
-import { Content } from '@Components/atoms/Content'
 import { IconButton } from '@Components/atoms/IconButton'
+import {
+  Embla,
+  EmblaArrowLeft,
+  EmblaArrowRight,
+  EmblaContainer,
+  EmblaContentArrows,
+  EmblaSlide,
+  EmblaViewport
+} from './Slider.styles'
 
 export const Slider = ({ slides, options }: ISliderProps) => {
   const {
@@ -26,30 +32,22 @@ export const Slider = ({ slides, options }: ISliderProps) => {
   } = useSlider({ options })
 
   return (
-    <div className={clsx(styles.embla)}>
-      <div className={clsx(styles.embla__viewport)} ref={emblaRef}>
-        <div
-          className={clsx(styles.embla__container, {
-            [styles.embla__container_falseLoop]:
-              !loop && animationType === 'slide'
-          })}
-        >
+    <Embla>
+      <EmblaViewport ref={emblaRef}>
+        <EmblaContainer loop={loop} animationType={animationType}>
           {slides.map(slide => (
-            <div
-              className={styles.embla__slide}
-              style={{
-                flex: `0 0 ${styleToItemsPerView}%`
-              }}
+            <EmblaSlide
+              styleToItemsPerView={styleToItemsPerView}
               key={generateUUID()}
             >
               {slide}
-            </div>
+            </EmblaSlide>
           ))}
-        </div>
-      </div>
+        </EmblaContainer>
+      </EmblaViewport>
       {showControls && (
-        <Content className={clsx(styles.embla__content_arrow)}>
-          <div className={clsx(styles.embla__arrows, styles.embla__arrow_left)}>
+        <EmblaContentArrows>
+          <EmblaArrowLeft>
             <IconButton
               type="button"
               onClick={handleOnPrevButtonClick}
@@ -57,10 +55,8 @@ export const Slider = ({ slides, options }: ISliderProps) => {
             >
               <FaAngleLeft />
             </IconButton>
-          </div>
-          <div
-            className={clsx(styles.embla__arrows, styles.embla__arrow_right)}
-          >
+          </EmblaArrowLeft>
+          <EmblaArrowRight>
             <IconButton
               type="button"
               onClick={handleOnNextButtonClick}
@@ -68,9 +64,9 @@ export const Slider = ({ slides, options }: ISliderProps) => {
             >
               <FaAngleRight />
             </IconButton>
-          </div>
-        </Content>
+          </EmblaArrowRight>
+        </EmblaContentArrows>
       )}
-    </div>
+    </Embla>
   )
 }
