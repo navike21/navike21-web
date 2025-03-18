@@ -2,7 +2,7 @@
 
 import { useOptionsBrowserStore } from '@Store/optionBrowser/optionBrowser.hook'
 import { Paragraph } from '../Paragraph'
-import { sloganTranslate } from './Logo.translations'
+import { sloganTranslate } from './Logo.translate'
 import { IsoLogoElement, LogoElement, LogoSVG, LogoText } from './Logo.styles'
 import { ILogoProps } from './Logo.typed'
 

@@ -13,7 +13,7 @@ import {
 } from './HeroSection.styles'
 import { useMuiTheme } from '@Hooks/useMuiTheme'
 import { useOptionsBrowserStore } from '@Store/optionBrowser/optionBrowser.hook'
-import { heroSectionTranslate } from './HeroSection.translations'
+import { heroSectionTranslate } from './HeroSection.translate'
 import { Fragment } from 'react'
 import { generateUUID } from '@Utils/uuid'
 
