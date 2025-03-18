@@ -20,10 +20,14 @@ export const useMuiThemeProvider = (): Theme => {
     },
     typography: {
       fontFamily: 'var(--font-body)',
-      fontWeightLight: 300,
-      fontWeightRegular: 400,
-      fontWeightMedium: 500,
-      fontWeightBold: 700,
+      fontWeightLight: 200,
+      fontWeightRegular: 300,
+      fontWeightMedium: 400,
+      fontWeightBold: 500,
+      body1: {
+        letterSpacing: pxToRem(0.5),
+        lineHeight: 1.4
+      },
       h1: {
         fontFamily: 'var(--font-title)',
         fontSize: pxToRem(40),

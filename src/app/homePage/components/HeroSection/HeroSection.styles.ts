@@ -79,6 +79,10 @@ export const SlideHeroTitle = styled(Title)(({ theme }) => ({
 
 export const SlideHeroParagraph = styled(Paragraph)(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
-    color: 'var(--mui-palette-common-white)'
+    color: 'var(--mui-palette-common-white)',
+    '& span': {
+      fontWeight: 700
+      // fontStyle: 'italic'
+    }
   }
 }))

@@ -52,7 +52,9 @@ export const HeroSection = () => {
             <SlideHeroTitle variant={mediaQuery.sm ? 'h2' : 'h3'} align="left">
               {formatTextToElements(title)}
             </SlideHeroTitle>
-            <SlideHeroParagraph align="left">{description}</SlideHeroParagraph>
+            <SlideHeroParagraph align="left">
+              {formatTextToElements(description)}
+            </SlideHeroParagraph>
             <Button variant="contained" size="large">
               {controlAction}
             </Button>
