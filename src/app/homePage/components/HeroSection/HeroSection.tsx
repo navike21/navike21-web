@@ -1,6 +1,5 @@
 'use client'
 
-import { HERO_SLIDER_1 } from '@Assets/images'
 import { Slider } from '@Components/molecules/Slider'
 import { Button } from '@Components/atoms/Button'
 import {
@@ -12,35 +11,14 @@ import {
   SlideHeroTitle
 } from './HeroSection.styles'
 import { useMuiTheme } from '@Hooks/useMuiTheme'
-import { useOptionsBrowserStore } from '@Store/optionBrowser/optionBrowser.hook'
-import { heroSectionTranslate } from './HeroSection.translate'
-import { Fragment } from 'react'
-import { generateUUID } from '@Utils/uuid'
+import { formatTextToElements } from '@Utils/formatTextToElements'
+import { useHeroSection } from './HeroSection.hook'
 
 export const HeroSection = () => {
   const { mediaQuery } = useMuiTheme()
-  const { language } = useOptionsBrowserStore()
+  const { backgroundImages, slidesContent } = useHeroSection()
 
-  const formatTextToElements = (text: string) => {
-    const parts = text.split(/(\*\*.*?\*\*)/g)
-
-    return parts.map(part => {
-      if (part.startsWith('**') && part.endsWith('**')) {
-        return <span key={generateUUID()}>{part.slice(2, -2)}</span>
-      }
-      return <Fragment key={generateUUID()}>{part}</Fragment>
-    })
-  }
-
-  type TBackgroundImages = {
-    [key: string]: string
-  }
-
-  const backgroundImages: TBackgroundImages = {
-    'custom-software': HERO_SLIDER_1.src
-  }
-
-  const slides = heroSectionTranslate[language].map(
+  const slides = slidesContent.map(
     ({ controlAction, description, title, id }, index) => (
       <SlideHero
         key={`slide${index + 1}`}
