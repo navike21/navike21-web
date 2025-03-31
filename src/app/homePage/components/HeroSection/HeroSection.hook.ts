@@ -1,4 +1,4 @@
-import { HERO_SLIDER_1 } from '@Assets/images'
+import { MAN_WORKING_NIGHT } from '@Assets/images'
 import { useOptionsBrowserStore } from '@Store/optionBrowser/optionBrowser.hook'
 import { heroSectionTranslate } from './HeroSection.translate'
 
@@ -10,7 +10,7 @@ export const useHeroSection = () => {
   const { language } = useOptionsBrowserStore()
 
   const backgroundImages: TBackgroundImages = {
-    'custom-software': HERO_SLIDER_1.src
+    'custom-software': MAN_WORKING_NIGHT.webp.src
   }
 
   return { backgroundImages, slidesContent: heroSectionTranslate[language] }

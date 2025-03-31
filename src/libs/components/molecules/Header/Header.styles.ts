@@ -7,7 +7,7 @@ import Link from 'next/link'
 const heightHeader = (theme: Theme) => theme.typography.pxToRem(85)
 
 export const HeaderElement = styled(motion.header)(({ theme }) => ({
-  backgroundColor: 'var(--black-color-500)',
+  backgroundColor: 'var(--black-color-800)',
   backdropFilter: 'blur(1rem)',
   display: 'flex',
   left: 0,

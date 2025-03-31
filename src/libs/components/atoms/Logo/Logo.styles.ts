@@ -38,3 +38,7 @@ export const LogoText = styled('div')<ILogoSizeProps>(({ size, theme }) => ({
     fontSize: logoTextSize(theme)[size ?? DEFAULT_SIZE]
   }
 }))
+
+export const LogoBackCircle = styled('circle')(() => ({
+  fill: 'var(--mui-palette-common-white)'
+}))

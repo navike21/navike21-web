@@ -1,3 +1,7 @@
+'use client'
+
+import { AboutSectionMain } from './AboutSection.style'
+
 export const AboutSection = () => {
-  return <div>AboutSection</div>
+  return <AboutSectionMain>AboutSection</AboutSectionMain>
 }

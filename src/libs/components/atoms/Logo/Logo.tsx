@@ -3,7 +3,13 @@
 import { useOptionsBrowserStore } from '@Store/optionBrowser/optionBrowser.hook'
 import { Paragraph } from '../Paragraph'
 import { sloganTranslate } from './Logo.translate'
-import { IsoLogoElement, LogoElement, LogoSVG, LogoText } from './Logo.styles'
+import {
+  IsoLogoElement,
+  LogoBackCircle,
+  LogoElement,
+  LogoSVG,
+  LogoText
+} from './Logo.styles'
 import { ILogoProps } from './Logo.typed'
 
 export const Logo = ({
@@ -21,6 +27,7 @@ export const Logo = ({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
+        <LogoBackCircle cx="20" cy="20" r="18" />
         <IsoLogoElement
           fillRule="evenodd"
           clipRule="evenodd"
