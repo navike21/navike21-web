@@ -52,11 +52,13 @@ export const SlideHeroContentInner = styled('div')(({ theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     gap: theme.typography.pxToRem(15),
+    marginTop: theme.typography.pxToRem(280),
     width: '100%'
   },
   [theme.breakpoints.up('sm')]: {
-    width: '60%',
-    minWidth: theme.typography.pxToRem(415)
+    minWidth: theme.typography.pxToRem(415),
+    marginTop: theme.typography.pxToRem(200),
+    width: '60%'
   },
   [theme.breakpoints.up('md')]: {
     width: '40%',
@@ -80,9 +82,9 @@ export const SlideHeroTitle = styled(Title)(({ theme }) => ({
 export const SlideHeroParagraph = styled(Paragraph)(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
     color: 'var(--mui-palette-common-white)',
+    fontSize: theme.typography.pxToRem(16),
     '& span': {
       fontWeight: 700
-      // fontStyle: 'italic'
     }
   }
 }))

@@ -26,7 +26,8 @@ export const useMuiThemeProvider = (): Theme => {
       fontWeightBold: 500,
       body1: {
         letterSpacing: pxToRem(0.5),
-        lineHeight: 1.4
+        lineHeight: 1.4,
+        fontSize: pxToRem(14)
       },
       h1: {
         fontFamily: 'var(--font-title)',

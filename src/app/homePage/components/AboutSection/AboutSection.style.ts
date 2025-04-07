@@ -1,10 +1,188 @@
+import { Content } from '@Components/atoms/Content'
 import { styled } from '@mui/material'
+import Image from 'next/image'
 
 export const AboutSectionMain = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
+    alignItems: 'center',
     backgroundColor: 'var(--mui-palette-common-white)',
-    minHeight: '100vh',
     display: 'flex',
+    justifyContent: 'center',
+    minHeight: '100vh',
+    width: '100%'
+  }
+}))
+
+export const AboutSectionContent = styled(Content)(({ theme }) => ({
+  [theme.breakpoints.up('xs')]: {
+    textAlign: 'center',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: theme.typography.pxToRem(40),
+    padding: `${theme.typography.pxToRem(100)} ${theme.typography.pxToRem(35)}`
+  },
+  [theme.breakpoints.up('sm')]: {
+    flexDirection: 'row',
+    gap: theme.typography.pxToRem(50),
+    alignItems: 'center'
+  },
+  [theme.breakpoints.up('md')]: {
+    padding: `${theme.typography.pxToRem(80)} ${theme.typography.pxToRem(35)} 0`,
+    gap: theme.typography.pxToRem(60),
     justifyContent: 'center'
+  }
+}))
+
+export const ImageAboutSection = styled('section')(({ theme }) => ({
+  [theme.breakpoints.up('xs')]: {
+    alignItems: 'center',
+    display: 'flex',
+    height: theme.typography.pxToRem(180),
+    justifyContent: 'center',
+    width: '100%',
+    position: 'relative',
+    '&::before': {
+      backgroundColor: 'var(--black-color-500)',
+      content: '""',
+      height: '40%',
+      left: `-${theme.typography.pxToRem(8)}`,
+      position: 'absolute',
+      top: `-${theme.typography.pxToRem(8)}`,
+      width: '50%'
+    },
+    '&::after': {
+      backgroundColor: 'var(--black-color-500)',
+      content: '""',
+      height: '40%',
+      right: `-${theme.typography.pxToRem(8)}`,
+      position: 'absolute',
+      bottom: `-${theme.typography.pxToRem(8)}`,
+      width: '50%'
+    }
+  },
+  [theme.breakpoints.up('sm')]: {
+    height: '65dvh',
+    minWidth: theme.typography.pxToRem(220),
+    maxHeight: theme.typography.pxToRem(500),
+    maxWidth: theme.typography.pxToRem(400)
+  }
+}))
+
+export const ImageAbout = styled(Image)(({ theme }) => ({
+  [theme.breakpoints.up('xs')]: {
+    height: '100%',
+    width: '100%',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    objectFit: 'cover',
+    zIndex: 2
+  }
+}))
+
+export const ImageYears = styled('div')(({ theme }) => ({
+  [theme.breakpoints.up('xs')]: {
+    backgroundColor: 'var(--mui-palette-common-white)',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    gap: theme.typography.pxToRem(5),
+    zIndex: 3,
+    bottom: theme.typography.pxToRem(8),
+    right: theme.typography.pxToRem(8),
+    padding: theme.typography.pxToRem(15),
+    width: theme.typography.pxToRem(110),
+    height: theme.typography.pxToRem(110),
+    h2: {
+      fontSize: theme.typography.pxToRem(28),
+      textAlign: 'center',
+      margin: 0
+    },
+    p: {
+      fontSize: theme.typography.pxToRem(11),
+      textAlign: 'center',
+      margin: 0,
+      fontWeight: 600,
+      lineHeight: 1,
+      textTransform: 'uppercase'
+    }
+  },
+  [theme.breakpoints.up('sm')]: {
+    width: theme.typography.pxToRem(150),
+    height: theme.typography.pxToRem(150),
+    padding: theme.typography.pxToRem(45),
+    h2: {
+      fontSize: theme.typography.pxToRem(40)
+    },
+    p: {
+      fontSize: theme.typography.pxToRem(14)
+    }
+  }
+}))
+
+export const InfoAboutSection = styled('section')(({ theme }) => ({
+  [theme.breakpoints.up('xs')]: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: theme.typography.pxToRem(30),
+    textAlign: 'center',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    h6: {
+      color: 'var(--black-color-500)',
+      textAlign: 'left'
+    },
+    h4: {
+      textAlign: 'left'
+    },
+    h3: {
+      textAlign: 'left'
+    },
+    p: {
+      textAlign: 'left'
+    }
+  },
+  [theme.breakpoints.up('lg')]: {
+    maxWidth: theme.typography.pxToRem(400)
+  }
+}))
+
+export const InfoAboutSectionText = styled('div')(({ theme }) => ({
+  [theme.breakpoints.up('xs')]: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: theme.typography.pxToRem(14)
+  }
+}))
+
+export const InfoAboutNavike21 = styled('div')(({ theme }) => ({
+  [theme.breakpoints.up('xs')]: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    margin: 'auto',
+    gap: theme.typography.pxToRem(10),
+    maxWidth: theme.typography.pxToRem(290)
+  }
+}))
+
+export const InfoAboutNavike21Item = styled('section')(({ theme }) => ({
+  [theme.breakpoints.up('xs')]: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: theme.typography.pxToRem(5),
+    width: '45%',
+    textAlign: 'center',
+    h2: {
+      span: {
+        color: 'var(--mui-palette-primary-main)'
+      }
+    },
+    p: {
+      textAlign: 'center',
+      fontSize: theme.typography.pxToRem(12)
+    }
   }
 }))
