@@ -7,7 +7,6 @@ export const useOptionsBrowserStore = createStore<IOptionsBrowserState>(
   set => ({
     themeOption: EThemeMode.DARK,
     language: ELanguage.ES,
-    processName: '',
     setThemeOption: themeOption => set(state => ({ ...state, themeOption })),
     setLanguage: language => set(state => ({ ...state, language }))
   }),

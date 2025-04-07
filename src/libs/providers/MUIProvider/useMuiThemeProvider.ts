@@ -16,7 +16,10 @@ export const useMuiThemeProvider = (): Theme => {
     },
     cssVariables: true,
     palette: {
-      mode: 'light'
+      mode: 'light',
+      background: {
+        default: 'rgb(16, 26, 36)'
+      }
     },
     typography: {
       fontFamily: 'var(--font-body)',

@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { devtools, persist } from 'zustand/middleware'
+import { devtools } from 'zustand/middleware'
 
 type TStoreInitializer<T extends object> = (
   set: (partial: T | ((state: T) => T)) => void,
@@ -11,10 +11,8 @@ export function createStore<T extends object>(
   storageKey: string
 ) {
   return create<T>()(
-    devtools(
-      persist(initializer, {
-        name: storageKey
-      })
-    )
+    devtools(initializer, {
+      name: storageKey
+    })
   )
 }
