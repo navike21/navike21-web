@@ -43,7 +43,7 @@ export const Header = () => {
               <nav>
                 {menu.map(({ label, path, key }) => (
                   <MotionDiv key={key} variants={itemMenu}>
-                    <MenuItem href={path}>
+                    <MenuItem href={path} onClick={() => setIsOpen(false)}>
                       <MenuItemText
                         variantMapping={{ body1: 'span' }}
                         variant="body1"

@@ -33,7 +33,7 @@ export const LogoText = styled('div')<ILogoSizeProps>(({ size, theme }) => ({
   position: 'absolute',
   bottom: logoTextBottom(theme)[size ?? DEFAULT_SIZE],
   left: '29%',
-  width: '100%',
+  width: '140%',
   '& p': {
     fontSize: logoTextSize(theme)[size ?? DEFAULT_SIZE]
   }

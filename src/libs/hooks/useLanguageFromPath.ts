@@ -2,7 +2,7 @@
 
 import { ELanguage } from '@Enums/languages'
 import { useOptionsBrowserStore } from '@Store/optionBrowser/optionBrowser.hook'
-import { usePathname, useRouter } from 'next/navigation'
+import { notFound, usePathname, useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 
 export function useLanguageFromPath() {
@@ -20,8 +20,7 @@ export function useLanguageFromPath() {
     )
 
     if (!isSupported) {
-      router.replace('/404')
-      return
+      notFound()
     }
 
     setLanguage(pathSegment as ELanguage)
