@@ -16,9 +16,12 @@ export const useMuiThemeProvider = (): Theme => {
     },
     cssVariables: true,
     palette: {
-      mode: 'light',
-      background: {
-        default: 'rgb(16, 26, 36)'
+      mode: 'dark',
+      primary: {
+        main: '#FFD000',
+        light: '#FFDE49',
+        dark: '#FFC300',
+        contrastText: '#0C0F16'
       }
     },
     typography: {
@@ -77,17 +80,17 @@ export const useMuiThemeProvider = (): Theme => {
         styleOverrides: {
           ':root': {
             '--max-width': '1200px',
-            '--black-color': 'rgb(16, 26, 36)',
-            '--black-color-900': 'rgba(16, 26, 36, 0.9)',
-            '--black-color-800': 'rgba(16, 26, 36, 0.8)',
-            '--black-color-700': 'rgba(16, 26, 36, 0.7)',
-            '--black-color-600': 'rgba(16, 26, 36, 0.6)',
-            '--black-color-500': 'rgba(16, 26, 36, 0.5)',
-            '--black-color-400': 'rgba(16, 26, 36, 0.4)',
-            '--black-color-300': 'rgba(16, 26, 36, 0.3)',
-            '--black-color-200': 'rgba(16, 26, 36, 0.2)',
-            '--black-color-100': 'rgba(16, 26, 36, 0.1)',
-            '--black-color-50': 'rgba(16, 26, 36, 0.05)',
+            '--black-color': 'rgb(12, 15, 22)',
+            '--black-color-900': 'rgba(12, 15, 22, 0.9)',
+            '--black-color-800': 'rgba(12, 15, 22, 0.8)',
+            '--black-color-700': 'rgba(12, 15, 22, 0.7)',
+            '--black-color-600': 'rgba(12, 15, 22, 0.6)',
+            '--black-color-500': 'rgba(12, 15, 22, 0.5)',
+            '--black-color-400': 'rgba(12, 15, 22, 0.4)',
+            '--black-color-300': 'rgba(12, 15, 22, 0.3)',
+            '--black-color-200': 'rgba(12, 15, 22, 0.2)',
+            '--black-color-100': 'rgba(12, 15, 22, 0.1)',
+            '--black-color-50': 'rgba(12, 15, 22, 0.05)',
             '--break-point-xs': '0',
             '--break-point-sm': '600',
             '--break-point-md': '960',

@@ -40,5 +40,5 @@ export const LogoText = styled('div')<ILogoSizeProps>(({ size, theme }) => ({
 }))
 
 export const LogoBackCircle = styled('circle')(() => ({
-  fill: 'var(--mui-palette-common-white)'
+  fill: 'var(--black-color)'
 }))

@@ -1,5 +1,3 @@
-'use client'
-
 import { AnimatePresence } from 'motion/react'
 import { Logo } from '@Components/atoms/Logo'
 import { MenuToggle } from './MenuToggle'

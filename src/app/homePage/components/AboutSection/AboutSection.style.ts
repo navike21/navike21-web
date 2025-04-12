@@ -5,7 +5,7 @@ import Image from 'next/image'
 export const AboutSectionMain = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
     alignItems: 'center',
-    backgroundColor: 'var(--mui-palette-common-white)',
+    // backgroundColor: 'var(--mui-palette-common-white)',
     display: 'flex',
     justifyContent: 'center',
     minHeight: '100vh',
@@ -36,28 +36,34 @@ export const AboutSectionContent = styled(Content)(({ theme }) => ({
 export const ImageAboutSection = styled('section')(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
     alignItems: 'center',
+    border: theme.typography.pxToRem(1),
+    borderColor: 'var(--mui-palette-background-default)',
+    borderStyle: 'solid',
+    borderWidth: theme.typography.pxToRem(8),
     display: 'flex',
     height: theme.typography.pxToRem(180),
     justifyContent: 'center',
     width: '100%',
     position: 'relative',
     '&::before': {
-      backgroundColor: 'var(--black-color-500)',
+      backgroundColor: 'var(--mui-palette-primary-main)',
       content: '""',
       height: '40%',
-      left: `-${theme.typography.pxToRem(8)}`,
+      left: `-${theme.typography.pxToRem(10)}`,
       position: 'absolute',
-      top: `-${theme.typography.pxToRem(8)}`,
-      width: '50%'
+      top: `-${theme.typography.pxToRem(10)}`,
+      width: '50%',
+      zIndex: -1
     },
     '&::after': {
-      backgroundColor: 'var(--black-color-500)',
+      backgroundColor: 'var(--mui-palette-primary-main)',
       content: '""',
       height: '40%',
-      right: `-${theme.typography.pxToRem(8)}`,
+      right: `-${theme.typography.pxToRem(10)}`,
       position: 'absolute',
-      bottom: `-${theme.typography.pxToRem(8)}`,
-      width: '50%'
+      bottom: `-${theme.typography.pxToRem(10)}`,
+      width: '50%',
+      zIndex: -1
     }
   },
   [theme.breakpoints.up('sm')]: {
@@ -84,6 +90,7 @@ export const ImageYears = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
     backgroundColor: 'var(--mui-palette-common-white)',
     display: 'flex',
+    color: 'var(--black-color)',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
@@ -98,7 +105,8 @@ export const ImageYears = styled('div')(({ theme }) => ({
     h2: {
       fontSize: theme.typography.pxToRem(28),
       textAlign: 'center',
-      margin: 0
+      margin: 0,
+      textIndent: theme.typography.pxToRem(24)
     },
     p: {
       fontSize: theme.typography.pxToRem(11),
@@ -110,8 +118,8 @@ export const ImageYears = styled('div')(({ theme }) => ({
     }
   },
   [theme.breakpoints.up('sm')]: {
-    width: theme.typography.pxToRem(150),
-    height: theme.typography.pxToRem(150),
+    width: theme.typography.pxToRem(170),
+    height: theme.typography.pxToRem(170),
     padding: theme.typography.pxToRem(45),
     h2: {
       fontSize: theme.typography.pxToRem(40)
@@ -131,8 +139,8 @@ export const InfoAboutSection = styled('section')(({ theme }) => ({
     alignItems: 'flex-start',
     justifyContent: 'center',
     h6: {
-      color: 'var(--black-color-500)',
-      textAlign: 'left'
+      textAlign: 'left',
+      color: 'var(--mui-palette-grey-400)'
     },
     h4: {
       textAlign: 'left'
@@ -176,6 +184,7 @@ export const InfoAboutNavike21Item = styled('section')(({ theme }) => ({
     width: '45%',
     textAlign: 'center',
     h2: {
+      textIndent: theme.typography.pxToRem(22),
       span: {
         color: 'var(--mui-palette-primary-main)'
       }
