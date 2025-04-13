@@ -8,7 +8,7 @@ import { useEffect } from 'react'
 export function useLanguageFromPath() {
   const pathname = usePathname()
   const router = useRouter()
-  const setLanguage = useOptionsBrowserStore(state => state.setLanguage)
+  const { setLanguage } = useOptionsBrowserStore()
 
   useEffect(() => {
     if (!pathname) return
