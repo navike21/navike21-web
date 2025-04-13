@@ -1,6 +1,6 @@
 'use client'
 
-import { useOptionsBrowserStore } from '@Store/optionBrowser/optionBrowser.hook'
+import { useOptionsBrowserStore } from '@Store/optionBrowser'
 import { Paragraph } from '../Paragraph'
 import { sloganTranslate } from './Logo.translate'
 import {

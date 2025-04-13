@@ -1,4 +1,4 @@
-import { useOptionsBrowserStore } from '@Store/optionBrowser/optionBrowser.hook'
+import { useOptionsBrowserStore } from '@Store/optionBrowser'
 import { aboutSectionTranslate } from '@Translations/homePage'
 
 export const useAboutSection = () => {

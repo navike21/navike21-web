@@ -1,7 +1,7 @@
 'use client'
 
 import { ELanguage } from '@Enums/languages'
-import { useOptionsBrowserStore } from '@Store/optionBrowser/optionBrowser.hook'
+import { useOptionsBrowserStore } from '@Store/optionBrowser'
 import { notFound, usePathname, useRouter } from 'next/navigation'
 import { useEffect } from 'react'
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { useOptionsBrowserStore } from '@Store/optionBrowser/optionBrowser.hook'
+import { useOptionsBrowserStore } from '@Store/optionBrowser'
 import { principalMenuTranslations } from '@Translations/principalMenu'
 import { notFound, usePathname } from 'next/navigation'
 import { useEffect } from 'react'

@@ -1,5 +1,5 @@
 import { WOMAN_WORKING_IN_PLACE } from '@Assets/images'
-import { useOptionsBrowserStore } from '@Store/optionBrowser/optionBrowser.hook'
+import { useOptionsBrowserStore } from '@Store/optionBrowser'
 import { heroSectionTranslate } from '@Translations/homePage'
 
 type TBackgroundImages = {

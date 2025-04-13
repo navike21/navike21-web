@@ -1,7 +1,9 @@
 import { EPrincipalMenuKey } from '@Enums/principalMenuKey'
 import { useOptionsBrowserStore } from '@Store/optionBrowser/optionBrowser.hook'
-import { principalMenuTranslations } from '@Translations/principalMenu'
-import { TMenuItem } from '@Translations/principalMenu/principalMenu.types'
+import {
+  principalMenuTranslations,
+  TMenuItem
+} from '@Translations/principalMenu'
 
 type TUsePrincipalMenu = {
   menu: TMenuItem[]

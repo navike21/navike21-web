@@ -1,7 +1,7 @@
-import { IOptionsBrowserState } from './optionBrowser.type'
 import { EThemeMode } from 'src/libs/typed/enums/optionsTheme'
 import { ELanguage } from 'src/libs/typed/enums/languages'
 import { createStore } from '@Utils/createStore'
+import { IOptionsBrowserState } from './optionBrowser.types'
 
 export const useOptionsBrowserStore = createStore<IOptionsBrowserState>(
   set => ({

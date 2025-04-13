@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
-import { useOptionsBrowserStore } from '@Store/optionBrowser/optionBrowser.hook'
 import { fontTitle, fontBody } from '@Config/fonts'
 import { IComponentPropsBase } from '@Types/interfaces/common'
 import { MUIProvider } from '@Providers/MUIProvider'
 import { SmoothScroll } from '@Components/atoms/SmoothScroll'
+import { useOptionsBrowserStore } from '@Store/optionBrowser'
 // import { Header } from '@Components/molecules/Header'
 
 export const metadata: Metadata = {
