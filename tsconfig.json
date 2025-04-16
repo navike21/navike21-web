@@ -23,6 +23,7 @@
       "@Public/*": ["./public/*"],
       "@Assets/*": ["./src/libs/assets/*"],
       "@Components/*": ["./src/libs/components/*"],
+      "@Constants/*": ["./src/libs/constants/*"],
       "@Config/*": ["./src/libs/config/*"],
       "@Enums/*": ["src/libs/typed/enums/*"],
       "@Hooks/*": ["./src/libs/hooks/*"],
