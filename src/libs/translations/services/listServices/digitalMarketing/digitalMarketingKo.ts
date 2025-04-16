@@ -3,99 +3,99 @@ import { EService } from '@Enums/services'
 import { TMenuItem } from '@Translations/principalMenu'
 import { TServiceTranslation } from '@Translations/services/servicesTranslations.types'
 
-export const digitalMarketingJp = (
+export const digitalMarketingKo = (
   servicesMenu: TMenuItem,
   coverImage: string
 ): TServiceTranslation => ({
   key: EService.DIGITAL_MARKETING,
-  title: 'デジタルマーケティング',
+  title: '디지털 마케팅',
   descriptionLite:
-    'カスタマイズされた戦略、効果的な広告、強力なソーシャルメディアで、デジタル環境であなたのブランドを成長させます。',
-  path: `${servicesMenu.path}/dejitaru-maketingu`,
-  slug: 'dejitaru-maketingu',
+    '맞춤형 전략, 효과적인 광고, 강력한 소셜 미디어를 통해 디지털 환경에서 브랜드를 성장시킵니다.',
+  path: `${servicesMenu.path}/dijiteol-maketing`,
+  slug: 'dijiteol-maketing',
   pageSections: {
     metaTag: {
-      title: `デジタルマーケティング | 戦略とオンライン広告 | ${COMPANY_NAME}`,
+      title: `디지털 마케팅 | 전략 및 온라인 광고 | ${COMPANY_NAME}`,
       description:
-        'デジタルマーケティング戦略、支払い広告、ソーシャルメディア、最適化されたコンテンツであなたのブランドを強化します。navike21で測定可能な結果を。',
-      ogTitle: `デジタルマーケティング | 戦略とオンライン広告 | ${COMPANY_NAME}`,
+        '디지털 마케팅 전략, 유료 광고, 소셜 미디어 및 최적화된 콘텐츠로 브랜드를 강화하세요. navike21과 함께 측정 가능한 결과를 확인하세요.',
+      ogTitle: `디지털 마케팅 | 전략 및 온라인 광고 | ${COMPANY_NAME}`,
       ogDescription:
-        'カスタマイズされたキャンペーン、ソーシャルメディア、効果的な広告でオンラインプレゼンスを強化します。navike21で実際の結果を。',
+        '맞춤형 캠페인, 소셜 미디어, 효과적인 광고로 온라인 존재감을 강화하세요. navike21에서 실제 결과를 확인하세요.',
       ogImage: coverImage,
-      twitterTitle: `デジタルマーケティング | オンライン戦略 | ${COMPANY_NAME}`,
+      twitterTitle: `디지털 마케팅 | 온라인 전략 | ${COMPANY_NAME}`,
       twitterDescription:
-        'デジタルキャンペーン、ソーシャルメディア、オンライン広告で結果を生み出します。navike21があなたのブランドにできることを発見してください。',
+        '디지털 캠페인, 소셜 미디어, 온라인 광고로 결과를 창출하세요. navike21이 당신의 브랜드를 위해 할 수 있는 일을 확인하세요.',
       twitterImage: coverImage
     },
     hero: {
-      title: '結果を生み出すデジタル戦略',
+      title: '결과를 창출하는 디지털 전략',
       description:
-        'ビジネスの目標に合わせたデジタルキャンペーンを設計・実行し、オンラインでの視認性を最適化し、正しい顧客を引き寄せます。'
+        '비즈니스 목표에 맞춘 디지털 캠페인을 설계하고 실행하여 온라인 가시성을 최적화하고 적합한 고객을 유치합니다.'
     },
     description: {
-      title: 'あなたのビジネスに合わせたマーケティング',
+      title: '비즈니스에 맞춘 마케팅',
       description:
-        '現在の状況を分析し、あなたの目標、予算、ターゲットに合ったデジタルマーケティング戦略を立てます。実際の影響を生み出し、測定可能な結果を目指します。',
+        '현재 상황을 분석하고 목표, 예산, 타겟에 맞춘 디지털 마케팅 전략을 세웁니다. 실질적이고 측정 가능한 결과를 창출하는 데 집중합니다.',
       description2:
-        'デジタル成長のパートナーとして、キャンペーンを常に監視し、投資収益率（ROI）を最大化するために必要な調整を行います。'
+        '디지털 성장을 위한 파트너로서 캠페인을 지속적으로 모니터링하고 투자 수익률(ROI)을 극대화하기 위해 필요한 조정을 합니다.'
     },
     features: {
-      title: '私たちのサービスには何が含まれていますか？',
+      title: '우리 서비스에는 무엇이 포함됩니까?',
       items: [
         {
-          title: 'デジタルプラットフォームでの広告',
+          title: '디지털 플랫폼 광고',
           description:
-            'Google Ads、Meta Ads、TikTok Adsなどで有料キャンペーンを管理し、質の高いトラフィックを引き寄せ、コンバージョンを生成します。'
+            'Google Ads, Meta Ads, TikTok Ads 등에서 유료 캠페인을 관리하여 질 높은 트래픽을 유도하고 전환을 창출합니다.'
         },
         {
-          title: 'ソーシャルメディア管理',
+          title: '소셜 미디어 관리',
           description:
-            'コンテンツ戦略を作成し、アカウントを管理して忠実なコミュニティを築き、デジタルプレゼンスを強化します。'
+            '콘텐츠 전략을 작성하고 계정을 관리하여 충성도 높은 커뮤니티를 구축하고 디지털 존재감을 강화합니다.'
         },
         {
-          title: 'コンテンツ作成',
+          title: '콘텐츠 제작',
           description:
-            'グラフィックデザインと説得力のあるテキストを作成し、ファネルの各段階でターゲットオーディエンスとつながります。'
+            '그래픽 디자인 및 설득력 있는 텍스트를 작성하여 퍼널의 각 단계에서 타겟 오디언스와 연결합니다.'
         },
         {
-          title: 'ピクセルと測定ツールの設定',
+          title: '픽셀 및 측정 도구 설정',
           description:
-            'Facebook、TikTok、Google Ads、Adobeの追跡ピクセルを設定し、キャンペーンパフォーマンスを正確に測定します。'
+            'Facebook, TikTok, Google Ads, Adobe의 추적 픽셀을 설정하여 캠페인 성과를 정확하게 측정합니다.'
         }
       ]
     },
     flowWork: [
       {
-        title: '診断と目標設定',
+        title: '진단 및 목표 설정',
         description:
-          '現在のオンラインプレゼンスを評価し、ビジネスに基づいた明確なデジタルマーケティング目標を設定します。'
+          '현재 온라인 존재감을 평가하고 비즈니스에 기반한 명확한 디지털 마케팅 목표를 설정합니다.'
       },
       {
-        title: '戦略的計画',
+        title: '전략적 계획',
         description:
-          '使用するプラットフォーム、コンテンツの種類、投資額、キャンペーンのスケジュールを定義した詳細なアクションプランを作成します。'
+          '사용할 플랫폼, 콘텐츠 유형, 투자 금액 및 캠페인 일정을 정의한 상세한 실행 계획을 만듭니다.'
       },
       {
-        title: 'キャンペーン実行',
+        title: '캠페인 실행',
         description:
-          'プロフェッショナルな実行でキャンペーンを立ち上げ、適切なセグメンテーションと適応したクリエイティブを保証します。'
+          '전문적인 실행으로 캠페인을 시작하고 적절한 세분화와 창의성을 보장합니다.'
       },
       {
-        title: '測定と最適化',
+        title: '측정 및 최적화',
         description:
-          '結果を監視し、リアルタイムで調整を行い、パフォーマンスを最大化し、設定された目標を達成します。'
+          '결과를 모니터링하고 실시간으로 조정하여 성과를 극대화하고 설정된 목표를 달성합니다.'
       }
     ],
     recentWorks: {
-      title: '違いを生むキャンペーン',
+      title: '차이를 만드는 캠페인',
       description:
-        'さまざまな業界で、私たちのデジタル戦略がブランドのオンラインプレゼンスを強化したケースを紹介します。'
+        '다양한 산업 분야에서 우리의 디지털 전략이 브랜드의 온라인 존재감을 강화한 사례를 확인하세요.'
     },
     callToAction: {
-      title: 'あなたのブランドを強化する準備はできましたか？',
+      title: '브랜드를 강화할 준비가 되셨나요?',
       description:
-        'あなたの目標について話し合い、一緒にデジタルマーケティング戦略を作成して、あなたの成果を強化しましょう。',
-      textButton: 'マーケティングを改善したい'
+        '당신의 목표에 대해 이야기하고 함께 디지털 마케팅 전략을 만들어 결과를 강화하세요.',
+      textButton: '마케팅을 개선하고 싶어요'
     }
   }
 })
