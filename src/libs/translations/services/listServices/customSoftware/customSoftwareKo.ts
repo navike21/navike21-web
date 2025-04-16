@@ -3,144 +3,99 @@ import { EService } from '@Enums/services'
 import { TMenuItem } from '@Translations/principalMenu'
 import { TServiceTranslation } from '@Translations/services/servicesTranslations.types'
 
-export const customSoftwareServiceKo = (
+export const digitalMarketingKo = (
   servicesMenu: TMenuItem,
   coverImage: string
 ): TServiceTranslation => ({
-  key: EService.CUSTOM_SOFTWARE,
-  title: '맞춤형 소프트웨어',
+  key: EService.DIGITAL_MARKETING,
+  title: '디지털 마케팅',
   descriptionLite:
-    '귀사의 고유한 비즈니스 요구사항에 완벽히 맞는 맞춤형 소프트웨어 솔루션을 개발하여 효율성과 경쟁력을 향상시킵니다.',
-  path: `${servicesMenu.path}/mateumhyeong-sopeuteuweeo`,
-  slug: 'mateumhyeong-sopeuteuweeo',
+    '맞춤형 전략, 효과적인 광고, 강력한 소셜 미디어를 통해 디지털 환경에서 브랜드를 성장시킵니다.',
+  path: `${servicesMenu.path}/dijiteol-maketing`,
+  slug: 'dijiteol-maketing',
   pageSections: {
     metaTag: {
-      title: `맞춤형 소프트웨어 개발 | ${COMPANY_NAME}`,
+      title: `디지털 마케팅 | 전략 및 온라인 광고 | ${COMPANY_NAME}`,
       description:
-        '귀사에 딱 맞는 소프트웨어를 개발하여 프로세스를 최적화하고 확장성과 경쟁력을 높입니다.',
-      keywords: [
-        '맞춤형 소프트웨어',
-        '맞춤 개발',
-        '기업 솔루션',
-        '전용 애플리케이션',
-        '비즈니스 소프트웨어',
-        '소프트웨어 개발',
-        '커스텀 시스템',
-        '맞춤형 개발'
-      ],
-      ogTitle: `맞춤형 소프트웨어 개발 | ${COMPANY_NAME}`,
+        '디지털 마케팅 전략, 유료 광고, 소셜 미디어 및 최적화된 콘텐츠로 브랜드를 강화하세요. navike21과 함께 측정 가능한 결과를 확인하세요.',
+      ogTitle: `디지털 마케팅 | 전략 및 온라인 광고 | ${COMPANY_NAME}`,
       ogDescription:
-        '귀사의 요구에 맞게 설계된 소프트웨어로 효율적인 운영과 확장 가능한 솔루션을 제공합니다.',
+        '맞춤형 캠페인, 소셜 미디어, 효과적인 광고로 온라인 존재감을 강화하세요. navike21에서 실제 결과를 확인하세요.',
       ogImage: coverImage,
-      twitterTitle: `기업을 위한 맞춤형 소프트웨어 | ${COMPANY_NAME}`,
+      twitterTitle: `디지털 마케팅 | 온라인 전략 | ${COMPANY_NAME}`,
       twitterDescription:
-        '귀사만을 위한 효율적이고 확장 가능한 맞춤형 기술 솔루션.',
+        '디지털 캠페인, 소셜 미디어, 온라인 광고로 결과를 창출하세요. navike21이 당신의 브랜드를 위해 할 수 있는 일을 확인하세요.',
       twitterImage: coverImage
     },
     hero: {
-      title: '맞춤형 소프트웨어 솔루션',
+      title: '결과를 창출하는 디지털 전략',
       description:
-        '기업의 고유한 요구사항에 맞게 최적화된 소프트웨어를 개발하여 효율적이고 안전한 시스템을 제공합니다.'
+        '비즈니스 목표에 맞춘 디지털 캠페인을 설계하고 실행하여 온라인 가시성을 최적화하고 적합한 고객을 유치합니다.'
     },
     description: {
-      title: '귀사를 위한 맞춤형 소프트웨어',
+      title: '비즈니스에 맞춘 마케팅',
       description:
-        '데스크탑, 모바일 또는 통합 시스템 등 다양한 형태의 맞춤형 소프트웨어를 제공하여 비즈니스 운영을 최적화하고 가치를 극대화합니다.',
+        '현재 상황을 분석하고 목표, 예산, 타겟에 맞춘 디지털 마케팅 전략을 세웁니다. 실질적이고 측정 가능한 결과를 창출하는 데 집중합니다.',
       description2:
-        '유연하고 민첩한 접근 방식을 통해 유지 관리가 쉬운 고품질 소프트웨어를 신속히 제공합니다.'
+        '디지털 성장을 위한 파트너로서 캠페인을 지속적으로 모니터링하고 투자 수익률(ROI)을 극대화하기 위해 필요한 조정을 합니다.'
     },
     features: {
-      title: '서비스에 포함되는 기능',
+      title: '우리 서비스에는 무엇이 포함됩니까?',
       items: [
         {
-          title: '맞춤형 아키텍처 설계',
+          title: '디지털 플랫폼 광고',
           description:
-            '비즈니스 요구에 따라 보안, 확장성 및 성능을 고려한 아키텍처를 설계합니다.'
+            'Google Ads, Meta Ads, TikTok Ads 등에서 유료 캠페인을 관리하여 질 높은 트래픽을 유도하고 전환을 창출합니다.'
         },
         {
-          title: '풀스택 개발',
+          title: '소셜 미디어 관리',
           description:
-            '프론트엔드, 백엔드 및 모바일 개발에 특화된 팀이 React, Node.js, .NET, Java, Python 등 다양한 기술을 사용하여 완전한 솔루션을 제공합니다.'
+            '콘텐츠 전략을 작성하고 계정을 관리하여 충성도 높은 커뮤니티를 구축하고 디지털 존재감을 강화합니다.'
         },
         {
-          title: 'API 및 시스템 통합',
+          title: '콘텐츠 제작',
           description:
-            '다른 시스템 및 서비스와의 연동을 위한 강력한 API를 구현하여 유기적인 상호작용을 가능하게 합니다.'
+            '그래픽 디자인 및 설득력 있는 텍스트를 작성하여 퍼널의 각 단계에서 타겟 오디언스와 연결합니다.'
         },
         {
-          title: '테스트 및 QA',
+          title: '픽셀 및 측정 도구 설정',
           description:
-            '기능, 성능, 보안에 대한 철저한 테스트를 통해 최고의 품질을 보장합니다.'
-        },
-        {
-          title: '클라우드 기술',
-          description:
-            'AWS, Azure, Google Cloud 등 클라우드 플랫폼을 활용하여 안정적이고 확장 가능한 환경을 제공합니다.'
-        },
-        {
-          title: '애자일 방법론',
-          description:
-            'Scrum 등 애자일 방법론을 적용하여 유연한 개발과 지속적인 가치 제공을 실현합니다.'
-        },
-        {
-          title: '맞춤형 교육',
-          description:
-            '소프트웨어 사용 및 유지 관리를 위한 고객 맞춤형 교육을 제공합니다.'
-        },
-        {
-          title: '프로젝트 후 지원 (추가 서비스)',
-          description:
-            '출시 이후의 지속적인 지원 및 유지보수는 추가 서비스로 제공되며, 필요에 따라 기술적 지원, 업데이트 및 최적화를 포함합니다.'
+            'Facebook, TikTok, Google Ads, Adobe의 추적 픽셀을 설정하여 캠페인 성과를 정확하게 측정합니다.'
         }
       ]
     },
     flowWork: [
       {
-        title: '요구사항 정의',
+        title: '진단 및 목표 설정',
         description:
-          '비즈니스의 요구를 명확히 이해하고 소프트웨어 목표를 함께 정의합니다.'
+          '현재 온라인 존재감을 평가하고 비즈니스에 기반한 명확한 디지털 마케팅 목표를 설정합니다.'
       },
       {
-        title: '시스템 설계 및 아키텍처',
+        title: '전략적 계획',
         description:
-          '기술 아키텍트를 통해 보안과 성능을 고려한 최적의 기술 구조를 설계합니다.'
+          '사용할 플랫폼, 콘텐츠 유형, 투자 금액 및 캠페인 일정을 정의한 상세한 실행 계획을 만듭니다.'
       },
       {
-        title: '프론트엔드 및 백엔드 개발',
+        title: '캠페인 실행',
         description:
-          '사용자 친화적인 UI와 강력한 서버 기능을 갖춘 시스템을 통합적으로 개발합니다.'
+          '전문적인 실행으로 캠페인을 시작하고 적절한 세분화와 창의성을 보장합니다.'
       },
       {
-        title: '지속적인 테스트 및 통합',
+        title: '측정 및 최적화',
         description:
-          'CI/CD 및 자동화된 테스트를 통해 시스템 품질을 유지하고 오류를 사전에 방지합니다.'
-      },
-      {
-        title: '배포 및 모니터링',
-        description:
-          '클라우드 환경에 배포하고 성능과 안정성을 위한 지속적인 모니터링을 수행합니다.'
-      },
-      {
-        title: '교육 및 지식 이전',
-        description:
-          '운영팀이 소프트웨어를 효과적으로 사용할 수 있도록 교육 및 문서를 제공합니다.'
-      },
-      {
-        title: '지속적인 유지보수 (추가 서비스)',
-        description:
-          '버그 수정, 성능 개선, 기능 확장 등 고객 요구에 따른 유지보수 서비스를 별도로 제공합니다.'
+          '결과를 모니터링하고 실시간으로 조정하여 성과를 극대화하고 설정된 목표를 달성합니다.'
       }
     ],
     recentWorks: {
-      title: '최근 프로젝트',
+      title: '차이를 만드는 캠페인',
       description:
-        '다양한 산업 분야에서 진행한 소프트웨어 프로젝트를 통해 우리 기술력을 확인해 보세요.'
+        '다양한 산업 분야에서 우리의 디지털 전략이 브랜드의 온라인 존재감을 강화한 사례를 확인하세요.'
     },
     callToAction: {
-      title: '맞춤형 소프트웨어가 필요하신가요?',
+      title: '브랜드를 강화할 준비가 되셨나요?',
       description:
-        '귀사만의 요구사항에 완벽히 부합하는 소프트웨어 솔루션을 함께 만들어보세요!',
-      textButton: '상담 신청하기'
+        '당신의 목표에 대해 이야기하고 함께 디지털 마케팅 전략을 만들어 결과를 강화하세요.',
+      textButton: '마케팅을 개선하고 싶어요'
     }
   }
 })
