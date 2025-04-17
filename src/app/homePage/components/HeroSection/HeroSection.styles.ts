@@ -41,7 +41,7 @@ export const SlideHeroContent = styled(Content)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'flex-end',
-  padding: `0 ${theme.typography.pxToRem(35)}`,
+  padding: `0 ${theme.typography.pxToRem(50)}`,
   transition: 'all 0.5s ease-in-out',
   textAlign: 'center'
 }))

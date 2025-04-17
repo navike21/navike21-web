@@ -2,7 +2,6 @@
 
 import { PROGRAMMER_WRITES_CODE_LAPTOP } from '@Assets/images'
 import {
-  AboutSectionContent,
   AboutSectionMain,
   ImageAbout,
   ImageAboutSection,
@@ -17,6 +16,7 @@ import { Paragraph } from '@Components/atoms/Paragraph'
 import { useAboutSection } from './AboutSection.hook'
 import { useMuiTheme } from '@Hooks/useMuiTheme'
 import { Button } from '@Components/atoms/Button'
+import { SectionContent } from '@Styles/SectionContent'
 
 export const AboutSection = () => {
   const {
@@ -36,7 +36,7 @@ export const AboutSection = () => {
 
   return (
     <AboutSectionMain>
-      <AboutSectionContent>
+      <SectionContent>
         <ImageAboutSection>
           <ImageAbout
             src={PROGRAMMER_WRITES_CODE_LAPTOP.thumb.src}
@@ -77,7 +77,7 @@ export const AboutSection = () => {
             </InfoAboutNavike21Item>
           </InfoAboutNavike21>
         </InfoAboutSection>
-      </AboutSectionContent>
+      </SectionContent>
     </AboutSectionMain>
   )
 }
