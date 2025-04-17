@@ -3,7 +3,7 @@ import { EService } from '@Enums/services'
 import { TMenuItem } from '@Translations/principalMenu'
 import { TServiceTranslation } from '@Translations/services/servicesTranslations.types'
 
-export const uxUiJa = (
+export const uxUiJp = (
   servicesMenu: TMenuItem,
   coverImage: string
 ): TServiceTranslation => ({
