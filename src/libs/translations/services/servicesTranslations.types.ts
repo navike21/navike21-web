@@ -60,5 +60,11 @@ export type TServiceTranslation = {
 }
 
 export type TServicesTranslations = {
-  [key in EService]: TServiceTranslation
+  pages: {
+    [key in EService]: TServiceTranslation
+  }
+  homePage: {
+    title: string
+    description: string
+  }
 }
