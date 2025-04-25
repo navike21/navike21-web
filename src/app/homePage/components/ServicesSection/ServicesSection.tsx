@@ -7,51 +7,13 @@ import {
   ServicesSectionContent,
   ServicesSectionMain
 } from './ServicesSection.style'
-import { useOptionsBrowserStore } from '@Store/optionBrowser'
-import { servicesTranslations } from '@Translations/services'
-import { usePrincipalMenu } from '@Hooks/usePrincipalMenu'
 import { Title } from '@Components/atoms/Title'
 import { Paragraph } from '@Components/atoms/Paragraph'
-import { useMuiTheme } from '@Hooks/useMuiTheme'
-import { EService } from '@Enums/services'
-import { ReactNode } from 'react'
-import { MdOutlineCode } from 'react-icons/md'
-import { BsMegaphone } from 'react-icons/bs'
-import {
-  PiDeviceMobileCameraLight,
-  PiDevices,
-  PiPaintBrush,
-  PiShoppingCart
-} from 'react-icons/pi'
-import { IoMailOutline } from 'react-icons/io5'
-import { TbSearch } from 'react-icons/tb'
+import { iconServices } from '@Constants/iconServices'
+import { useServicesSection } from './ServicesSection.hook'
 
 export const ServicesSection = () => {
-  const { language } = useOptionsBrowserStore()
-  const servicesTranslationsInfo = servicesTranslations[language]
-  const { servicesMenu } = usePrincipalMenu()
-
-  const {
-    homePage: { description, title },
-    pages
-  } = servicesTranslationsInfo(servicesMenu, 'image')
-
-  const { mediaQuery } = useMuiTheme()
-
-  type TIconServices = {
-    [key in EService]: ReactNode
-  }
-
-  const iconServices: TIconServices = {
-    [EService.WEB_DEVELOPMENT]: <PiDevices />,
-    [EService.CUSTOM_SOFTWARE]: <MdOutlineCode />,
-    [EService.DIGITAL_MARKETING]: <BsMegaphone />,
-    [EService.UX_UI]: <PiPaintBrush />,
-    [EService.ECOMMERCE]: <PiShoppingCart />,
-    [EService.MOBILE_APP]: <PiDeviceMobileCameraLight />,
-    [EService.EMAIL_MARKETING]: <IoMailOutline />,
-    [EService.SEO]: <TbSearch />
-  }
+  const { description, mediaQuery, pages, title } = useServicesSection()
 
   return (
     <ServicesSectionMain>
