@@ -1,9 +1,9 @@
-import { styled } from '@mui/material'
+import { Paper, styled } from '@mui/material'
 import Link from 'next/link'
 
 export const ServicesSectionMain = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
-    // backgroundColor: 'var(--mui-palette-grey-900)',
+    backgroundColor: 'var(--mui-palette-background-paper)',
     alignItems: 'center',
     display: 'flex',
     justifyContent: 'center',
@@ -54,15 +54,8 @@ export const InformationServicesSection = styled('div')(({ theme }) => ({
   }
 }))
 
-export const ItemServicesSection = styled(Link)(({ theme }) => ({
+export const ItemServicesSection = styled(Paper)(({ theme }) => ({
   [theme.breakpoints.up('xs')]: {
-    color: 'var(--mui-palette-common-white)',
-    textDecoration: 'none',
-    backgroundColor: 'var(--mui-palette-grey-900)',
-    padding: theme.typography.pxToRem(35),
-    display: 'flex',
-    flexDirection: 'column',
-    gap: theme.typography.pxToRem(14),
     svg: {
       fontSize: theme.typography.pxToRem(35),
       color: 'var(--mui-palette-primary-main)'
@@ -73,5 +66,16 @@ export const ItemServicesSection = styled(Link)(({ theme }) => ({
     p: {
       textAlign: 'left'
     }
+  }
+}))
+
+export const LinkServicesSection = styled(Link)(({ theme }) => ({
+  [theme.breakpoints.up('xs')]: {
+    color: 'var(--mui-palette-text-primary)',
+    textDecoration: 'none',
+    padding: theme.typography.pxToRem(35),
+    display: 'flex',
+    flexDirection: 'column',
+    gap: theme.typography.pxToRem(14)
   }
 }))

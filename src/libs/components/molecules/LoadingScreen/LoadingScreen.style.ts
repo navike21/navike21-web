@@ -34,7 +34,7 @@ export const Container = styled('div')(() => ({
   justifyContent: 'center',
   alignItems: 'center',
   height: '100vh',
-  backgroundColor: 'var(--black-color-800)',
+  backgroundColor: 'var(--mui-palette-background-paper)',
   color: 'var(--mui-palette-primary-contrastText)'
 }))
 

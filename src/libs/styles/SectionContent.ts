@@ -7,7 +7,7 @@ export const SectionContent = styled(Content)(({ theme }) => ({
     display: 'flex',
     flexDirection: 'column',
     gap: theme.typography.pxToRem(40),
-    padding: `${theme.typography.pxToRem(100)} ${theme.typography.pxToRem(35)}`
+    padding: `${theme.typography.pxToRem(100)} ${theme.typography.pxToRem(20)}`
   },
   [theme.breakpoints.up('sm')]: {
     flexDirection: 'row',

@@ -1,3 +1,4 @@
+import { primaryColor } from '@Config/color'
 import { useMuiTheme } from '@Hooks/useMuiTheme'
 import { createTheme, Theme } from '@mui/material'
 
@@ -17,12 +18,7 @@ export const useMuiThemeProvider = (): Theme => {
     cssVariables: true,
     palette: {
       mode: 'dark',
-      primary: {
-        main: '#FFD000',
-        light: '#FFDE49',
-        dark: '#FFC300',
-        contrastText: '#0C0F16'
-      }
+      primary: primaryColor
     },
     typography: {
       fontFamily: 'var(--font-body)',

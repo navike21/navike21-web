@@ -4,6 +4,7 @@ import { SectionContent } from '@Styles/SectionContent'
 import {
   InformationServicesSection,
   ItemServicesSection,
+  LinkServicesSection,
   ServicesSectionContent,
   ServicesSectionMain
 } from './ServicesSection.style'
@@ -24,10 +25,12 @@ export const ServicesSection = () => {
             <Paragraph>{description}</Paragraph>
           </InformationServicesSection>
           {Object.values(pages).map(({ descriptionLite, title, key, path }) => (
-            <ItemServicesSection key={key} href={path}>
-              {iconServices[key]}
-              <Title variant="h6">{title}</Title>
-              <Paragraph>{descriptionLite}</Paragraph>
+            <ItemServicesSection key={key} elevation={1}>
+              <LinkServicesSection href={path}>
+                {iconServices[key]}
+                <Title variant="h6">{title}</Title>
+                <Paragraph>{descriptionLite}</Paragraph>
+              </LinkServicesSection>
             </ItemServicesSection>
           ))}
         </ServicesSectionContent>

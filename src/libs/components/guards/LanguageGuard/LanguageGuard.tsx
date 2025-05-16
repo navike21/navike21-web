@@ -1,5 +1,6 @@
 'use client'
 
+import { Footer } from '@Components/molecules/Footer'
 import { Header } from '@Components/molecules/Header'
 import { LoadingScreen } from '@Components/molecules/LoadingScreen/LoadingScreen'
 import { useLanguageFromPath } from '@Hooks/useLanguageFromPath'
@@ -21,6 +22,7 @@ export function LanguageGuard({ children }: Readonly<{ children: ReactNode }>) {
     <>
       <Header />
       {children}
+      <Footer />
     </>
   )
 }

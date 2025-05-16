@@ -4,7 +4,6 @@ import { IComponentPropsBase } from '@Types/interfaces/common'
 import { MUIProvider } from '@Providers/MUIProvider'
 import { SmoothScroll } from '@Components/atoms/SmoothScroll'
 import { useOptionsBrowserStore } from '@Store/optionBrowser'
-// import { Header } from '@Components/molecules/Header'
 
 export const metadata: Metadata = {
   title: 'navike21',
@@ -19,10 +18,7 @@ export default function RootLayout({
     <html lang={language}>
       <body className={`font-sans ${fontTitle.variable} ${fontBody.variable}`}>
         <SmoothScroll>
-          <MUIProvider>
-            {/* <Header /> */}
-            {children}
-          </MUIProvider>
+          <MUIProvider>{children}</MUIProvider>
         </SmoothScroll>
       </body>
     </html>

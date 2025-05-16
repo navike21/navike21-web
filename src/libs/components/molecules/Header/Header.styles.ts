@@ -73,7 +73,8 @@ export const MenuContainer = styled(motion.div)(({ theme }) => ({
 
 export const MenuContent = styled(Content)(({ theme }) => ({
   padding: theme.spacing(1.5, 0),
-  margin: `${heightHeader(theme)} 0`
+  margin: `${heightHeader(theme)} 0`,
+  width: '80%'
 }))
 
 export const MotionDiv = styled(motion.div)(() => ({}))
