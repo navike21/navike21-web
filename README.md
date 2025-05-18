@@ -1,133 +1,48 @@
-# Navike21 Web
+# Astro Starter Kit: Basics
 
-A modern multilingual web application built with Next.js 15.1.6 and TypeScript.
-
-## 🚀 Features
-
-- Next.js 15.1.6 with TypeScript support
-- Multi-language routing support with language subdirectories
-- Dark/Light theme implementation using Zustand
-- Custom fonts: Quicksand and Syne from Google Fonts
-- Image optimization utilities for WebP conversion
-- ESLint + Prettier configuration for code quality
-- Type-safe development with strict TypeScript rules
-
-## 🛠️ Tech Stack
-
-- Next.js 15.1.6
-- TypeScript
-- React 19
-- Zustand (State Management)
-- Sharp (Image Processing)
-- ESLint & Prettier
-
-## 📦 Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/your-username/navike21-web.git
-
-# Install dependencies
-npm install
+```sh
+pnpm create astro@latest -- --template basics
 ```
 
-## 🔧 Available Scripts
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
 
-```bash
-# Development server
-npm run dev
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-# Production build
-npm run build
+![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
 
-# Start production server
-npm run start
+## 🚀 Project Structure
 
-# Lint code
-npm run lint:scan
+Inside of your Astro project, you'll see the following folders and files:
 
-# Fix linting issues
-npm run lint:fix
-
-# Convert images to WebP
-npm run images
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
 ```
 
-## 🌐 Environment Setup
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
-The project uses the following port by default:
+## 🧞 Commands
 
-- Development: http://localhost:3000
+All commands are run from the root of the project, from a terminal:
 
-## 📁 Project Structure
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `pnpm install`             | Installs dependencies                            |
+| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
+| `pnpm build`           | Build your production site to `./dist/`          |
+| `pnpm preview`         | Preview your build locally, before deploying     |
+| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `pnpm astro -- --help` | Get help using the Astro CLI                     |
 
-```
-src/
-├── app/          # Next.js app directory
-├── libs/         # Project libraries
-│   ├── config/   # Configuration files
-│   ├── store/    # Zustand stores
-│   ├── typed/    # TypeScript types/interfaces
-│   └── utils/    # Utility functions
-```
+## 👀 Want to learn more?
 
-## 🎨 Image Processing
-
-The project includes a custom image conversion utility that:
-
-- Converts images to WebP format
-- Creates thumbnails (700px width)
-- Maintains high quality (100%)
-
-To convert images, run:
-
-```bash
-npm run images
-```
-
-## 🔒 Strict Type Checking
-
-The project enforces strict TypeScript conventions:
-
-- Type aliases must start with 'T'
-- Enums must start with 'E'
-- Interfaces must start with 'I'
-
-## 📝 License
-
-Private repository - All rights reserved
-
-## 🤝 Contributing
-
-This is a private project. Contact the repository owner for contribution guidelines.
-
-## 📝 Release Notes
-
-### v1.0.0 - Initial Release
-
-#### Features
-
-- Next.js 15.1.6 application with TypeScript support
-- Multi-language support with language routing (`[lang]`)
-- Dark/Light theme implementation using Zustand store
-- Custom fonts configuration with Google Fonts (Quicksand and Syne)
-- Optimized image conversion utilities for WebP format
-- Custom ESLint configuration with Prettier integration
-- Type-safe development with strict TypeScript configuration
-- Responsive layout foundation
-
-#### Tech Stack
-
-- Next.js
-- TypeScript
-- Zustand for state management
-- Sharp for image optimization
-- React 19
-- ESLint & Prettier for code quality
-
-#### Setup
-
-- Development: `npm run dev`
-- Build: `npm run build`
-- Start: `npm run start`
-- Lint: `npm run lint:fix`
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
