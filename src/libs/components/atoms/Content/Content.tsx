@@ -6,6 +6,6 @@ interface IContentProps {
   className?: string
 }
 
-export const Content = ({ children, className }: IContentProps) => {
-  return <div className={clsx('max-content', className)}>{children}</div>
-}
+export const Content = ({ children, className }: IContentProps) => (
+  <div className={clsx('max-content', className)}>{children}</div>
+)

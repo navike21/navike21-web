@@ -66,6 +66,8 @@
 @theme {
   --font-sans: 'Poppins', sans-serif;
   --breakpoint-xs: 24rem;
+  --font-weight-normal: 300;
+  --font-weight-medium: 400;
 }
 
 @utility max-content {
@@ -77,57 +79,68 @@
 
   @apply xs:px-10;
   @apply sm:px-15;
-  @apply lg:px-10;
+  @apply lg:px-9;
   @apply xl:px-3;
 }
 
 @utility title-xs {
   @apply text-lg;
   @apply font-medium;
+  @apply tracking-wider;
 }
 
 @utility title-sm {
   @apply text-xl;
   @apply font-medium;
+  @apply tracking-wider;
 }
 
 @utility title-md {
   @apply text-2xl;
   @apply font-medium;
+  @apply tracking-wider;
 }
 
 @utility title-lg {
   @apply text-3xl;
   @apply font-medium;
+  @apply tracking-wider;
 }
 
 @utility title-xl {
   @apply text-4xl;
   @apply font-medium;
+  @apply tracking-wider;
 }
 
 @utility title-2xl {
   @apply text-5xl;
   @apply font-medium;
+  @apply tracking-wider;
 }
 
 @utility paragraph-xs {
   @apply text-sm;
   @apply font-normal;
+  @apply tracking-wide;
 }
 @utility paragraph-sm {
   @apply text-base;
   @apply font-normal;
+  @apply tracking-wide;
 }
 @utility paragraph-md {
   @apply text-lg;
   @apply font-normal;
+  @apply tracking-wide;
 }
 @utility paragraph-lg {
   @apply text-xl;
   @apply font-normal;
+  @apply tracking-wide;
 }
 @utility paragraph-xl {
   @apply text-2xl;
   @apply font-normal;
+  @apply tracking-wide;
 }
