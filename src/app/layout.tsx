@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Footer } from '@Components/molecules'
+import { Footer, Header } from '@Components/molecules'
 import '@Styles/globals.css'
 
 export const metadata: Metadata = {
@@ -16,7 +16,8 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body>
-        {children}
+        <Header />
+        <main className="pt-16">{children}</main>
         <Footer />
       </body>
     </html>

@@ -1,17 +1,8 @@
 @import 'tailwindcss';
-@custom-variant dark (&:where(.dark, .dark *));
-@custom-variant light (&:where(.light, .light *));
 
 @layer base {
-  @layer utilities {
-    .dark {
-      background-color: var(--color-gray-950);
-      color: var(--color-white);
-    }
-    .light {
-      background-color: var(--color-white);
-      color: var(--color-gray-950);
-    }
+  body {
+    @apply bg-white text-gray-950 dark:bg-gray-950 dark:text-white;
   }
 }
 

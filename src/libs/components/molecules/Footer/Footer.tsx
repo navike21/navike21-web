@@ -1,11 +1,16 @@
-import { Content } from '@Components/atoms/Content'
-import { Logo } from '@Components/atoms'
-import { Facebook, Instagram, WhatsApp, X } from '@Components/atoms/Icon'
+import {
+  Facebook,
+  Instagram,
+  WhatsApp,
+  X,
+  Logo,
+  Content
+} from '@Components/atoms'
 import { clsx } from 'clsx'
 
 export const Footer = () => (
   <>
-    <div className={clsx('bg-gray-900 py-12 relative text-white z-50')}>
+    <div className={clsx('bg-gray-900 py-12 relative text-white z-40')}>
       <Content
         className={clsx(
           'gap-10 grid grid-cols-1 items-start',
