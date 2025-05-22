@@ -19,10 +19,10 @@ export const Header = () => {
     >
       <Content
         className={clsx(
-          'flex justify-between items-start transition-all ease-in-out duration-300 py-2',
+          'flex justify-between items-start transition-all ease-in-out duration-300 py-3',
           {
             'h-dvh': pressed,
-            'h-16': !pressed
+            'h-[68px]': !pressed
           }
         )}
       >
