@@ -7,13 +7,16 @@
     "build": "next build",
     "start": "next start",
     "lint:scan": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "next lint --fix",
+    "convert-images": "tsx scripts/convertImages.ts"
   },
   "dependencies": {
     "clsx": "^2.1.1",
+    "motion": "^12.12.1",
     "next": "15.3.2",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "uuid": "^11.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
@@ -26,7 +29,9 @@
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.4.0",
     "prettier": "^3.5.3",
+    "sharp": "^0.34.2",
     "tailwindcss": "^4",
+    "tsx": "^4.19.4",
     "typescript": "^5"
   }
 }

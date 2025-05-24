@@ -1,19 +1,18 @@
 import clsx from 'clsx'
-import React, { Dispatch, SetStateAction } from 'react'
+import { ButtonHTMLAttributes } from 'react'
 
-interface IHamburgerProps {
+interface IHamburgerProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   pressed: boolean
-  setPressed: Dispatch<SetStateAction<boolean>>
 }
 
-export const Hamburger = ({ pressed, setPressed }: IHamburgerProps) => (
+export const Hamburger = ({ pressed, ...props }: IHamburgerProps) => (
   <button
     className={clsx(
       'group flex w-10 h-10 text-slate-900 text-center items-center justify-center rounded transition',
-      'dark:text-slate-50'
+      'dark:text-slate-50 cursor-pointer'
     )}
     aria-pressed={pressed}
-    onClick={() => setPressed(!pressed)}
+    {...props}
   >
     <svg
       className="w-7 h-7 fill-current pointer-events-none"
