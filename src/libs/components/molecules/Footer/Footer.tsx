@@ -1,11 +1,5 @@
-import {
-  Facebook,
-  Instagram,
-  WhatsApp,
-  X,
-  Logo,
-  Content
-} from '@Components/atoms'
+import { Logo, Content } from '@Components/atoms'
+import { SOCIAL_MEDIA } from '@Constants/socialMedia'
 import { clsx } from 'clsx'
 
 export const Footer = () => (
@@ -111,12 +105,23 @@ export const Footer = () => (
         )}
       >
         <aside className="flex gap-4 items-center justify-center">
-          <Facebook className="h-6" />
-          <Instagram className="h-6" />
-          <X className="h-6" />
-          <WhatsApp className="h-6" />
+          {Object.values(SOCIAL_MEDIA)
+            .filter(({ active }) => active)
+            .map(({ name, url, icon }) => (
+              <a
+                key={name}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:opacity-80 transition-all duration-300"
+              >
+                {icon({
+                  className: 'w-6 h-6'
+                })}
+              </a>
+            ))}
         </aside>
-        <div className="paragraph-xs text-center">
+        <div className="paragraph-xs text-center text-white">
           © 2025 navike21 | Todos los derechos reservados.
         </div>
       </Content>

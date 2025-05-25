@@ -19,10 +19,10 @@ export const Header = () => {
       <motion.header
         className={clsx(
           'fixed overflow-hidden top-0 w-full',
-          'before:bg-white before:[content:""] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:transition-all',
-          'before:dark:bg-gray-900',
+          'before:[content:""] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:transition-all',
           {
-            'z-50 before:bg-transparent before:dark:bg-transparent': isOpen
+            'z-50 before:bg-transparent': isOpen,
+            'before:bg-white before:dark:bg-gray-900': !isOpen
           }
         )}
       >
@@ -65,7 +65,11 @@ export const Header = () => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ duration: 0.4, ease: EASING }}
-              className={clsx('bg-gray-900 h-full w-2/3', 'md:w-1/2')}
+              className={clsx(
+                'bg-white h-full w-2/3',
+                'dark:bg-gray-900',
+                'md:w-1/2'
+              )}
             />
           </motion.div>
         )}
