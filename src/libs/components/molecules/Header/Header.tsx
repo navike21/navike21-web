@@ -5,10 +5,10 @@ import { AnimatePresence, motion } from 'framer-motion'
 import menuImage from '@Assets/images/converted/inside-modern-office-design-thumb.webp'
 import Link from 'next/link'
 import clsx from 'clsx'
-import { uuidV7 } from '../../../utils'
 import Image from 'next/image'
 import { EASING, ITEMS_VARIANTS } from './Header.constants'
 import { useHeader } from './Header.hooks'
+import { uuidV7 } from '@Utils/generateKeys'
 
 export const Header = () => {
   const { isOpen, showImageAndBackground, showMenuItems, handleToggle } =
