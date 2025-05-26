@@ -22,7 +22,7 @@ export const Header = () => {
           'before:[content:""] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:transition-all',
           {
             'before:bg-transparent z-50': isOpen,
-            'before:bg-white before:dark:bg-gray-900': !isOpen
+            'before:bg-white before:dark:bg-gray-900 z-20': !isOpen
           }
         )}
       >
