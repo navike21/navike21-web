@@ -19,12 +19,12 @@ interface ISliderProps {
 }
 
 export const Slider = ({
-  children,
+  animationType = EAnimationType.SLIDE,
   autoPlay = false,
+  children,
   interval = 3000,
   showDots = true,
-  showArrows = true,
-  animationType = EAnimationType.SLIDE
+  showArrows = true
 }: ISliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [direction, setDirection] = useState(0)
