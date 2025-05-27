@@ -43,3 +43,5 @@ next-env.d.ts
 package-lock.json
 /.idea/
 yarn.lock
+pnpm-lock.yaml
+pnpm-workspace.yaml

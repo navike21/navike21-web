@@ -1,7 +1,7 @@
 'use client'
 
 import { Content, Hamburger, Logo } from '@Components/atoms'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'motion/react'
 import Link from 'next/link'
 import clsx from 'clsx'
 import Image from 'next/image'

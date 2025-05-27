@@ -1,7 +1,7 @@
 'use client'
 
 import { uuidV7 } from '@Utils/generateKeys'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'motion/react'
 import { useState, useEffect, useRef, ReactNode } from 'react'
 
 enum EAnimationType {
