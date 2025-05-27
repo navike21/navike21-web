@@ -19,7 +19,7 @@ interface ISliderProps {
 }
 
 export const Slider = ({
-  animationType = EAnimationType.SLIDE,
+  animationType = EAnimationType.FADE,
   autoPlay = false,
   children,
   interval = 3000,
@@ -46,36 +46,33 @@ export const Slider = ({
     return () => clearInterval(timer)
   }, [autoPlay, children.length, interval, isTransitioning])
 
-  // Resize observer para altura dinámica en modo fade
+  // Medir altura del slide actual (modo slide y fade)
   useEffect(() => {
-    if (animationType !== EAnimationType.SLIDE) return
-
     const updateHeight = () => {
       if (currentSlideRef.current) {
-        setHeight(currentSlideRef.current.offsetHeight)
+        const measuredHeight = currentSlideRef.current.offsetHeight
+        setHeight(measuredHeight)
       }
     }
 
-    const observer = new ResizeObserver(updateHeight)
+    updateHeight()
 
+    const resizeObserver = new ResizeObserver(updateHeight)
     if (currentSlideRef.current) {
-      observer.observe(currentSlideRef.current)
-      updateHeight()
+      resizeObserver.observe(currentSlideRef.current)
     }
 
-    return () => {
-      observer.disconnect()
-    }
-  }, [animationType, currentIndex])
+    return () => resizeObserver.disconnect()
+  }, [currentIndex])
 
-  const slideWidth = 100 // en %
+  const slideWidth = 100
 
   return (
     <motion.div
       ref={containerRef}
       className="container-slider relative overflow-hidden w-full"
       animate={{ height: height ?? 'auto' }}
-      transition={{ duration: 0.3, ease: 'linear' }}
+      transition={{ duration: 0.3, ease: 'easeInOut' }}
     >
       {animationType === EAnimationType.SLIDE ? (
         <motion.div
@@ -105,6 +102,16 @@ export const Slider = ({
             <div ref={currentSlideRef}>{children[currentIndex]}</div>
           </motion.div>
         </AnimatePresence>
+      )}
+
+      {/* Medidor de altura (modo slide) */}
+      {animationType === EAnimationType.SLIDE && (
+        <div
+          className="absolute w-full opacity-0 pointer-events-none z-[-1]"
+          ref={currentSlideRef}
+        >
+          {children[currentIndex]}
+        </div>
       )}
 
       {showArrows && (
