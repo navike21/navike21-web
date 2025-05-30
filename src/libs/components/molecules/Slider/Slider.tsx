@@ -19,7 +19,7 @@ interface ISliderProps {
 }
 
 export const Slider = ({
-  animationType = EAnimationType.FADE,
+  animationType = EAnimationType.SLIDE,
   autoPlay = false,
   children,
   interval = 3000,
