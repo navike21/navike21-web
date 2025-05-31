@@ -1,3 +1,4 @@
+export * from './BackgroundParallax'
 export * from './Content'
 export * from './Hamburger'
 export * from './Icon'
