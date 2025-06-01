@@ -96,19 +96,19 @@
 
 @utility title-xs {
   @apply text-lg;
-  @apply font-medium;
+  @apply font-semibold;
   @apply tracking-wider;
 }
 
 @utility title-sm {
   @apply text-xl;
-  @apply font-medium;
+  @apply font-semibold;
   @apply tracking-wider;
 }
 
 @utility title-md {
   @apply text-2xl;
-  @apply font-medium;
+  @apply font-semibold;
   @apply tracking-wider;
 }
 
@@ -120,13 +120,13 @@
 
 @utility title-xl {
   @apply text-4xl;
-  @apply font-medium;
+  @apply font-semibold;
   @apply tracking-wider;
 }
 
 @utility title-2xl {
   @apply text-5xl;
-  @apply font-medium;
+  @apply font-semibold;
   @apply tracking-wider;
 }
 

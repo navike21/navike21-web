@@ -11,8 +11,20 @@ export const HeroSection = () => {
         backgroundImage={youngAttractiveWoman.src}
         overlay
       >
-        <Content className="h-full flex items-end-safe">
-          <div className="px-5 py-14">
+        <Content
+          className={clsx('h-full flex items-end-safe', 'xs:items-center')}
+        >
+          <div
+            className={clsx(
+              'flex flex-col gap-4 px-5 py-16',
+              'xs:gap-3  xs:w-3/4',
+              'md:w-1/2'
+            )}
+          >
+            <h2 className={clsx('flex flex-col title-md ', 'xs:text-3xl')}>
+              Software a medida,{' '}
+              <span className="text-primary-500">diseñado para el éxito.</span>
+            </h2>
             <p>
               Creamos soluciones digitales que impulsan tu negocio, con
               tecnología de vanguardia
