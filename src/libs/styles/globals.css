@@ -2,7 +2,7 @@
 
 @layer base {
   body {
-    @apply bg-gray-50 text-gray-950 dark:bg-gray-950 dark:text-gray-50;
+    @apply bg-gray-50 text-gray-950 dark:bg-gray-950 dark:text-white;
   }
 }
 
@@ -67,6 +67,18 @@
   --breakpoint-xs: 24rem;
   --font-weight-normal: 300;
   --font-weight-medium: 400;
+
+  --color-primary-50: #fffae5;
+  --color-primary-100: #fff6cc;
+  --color-primary-200: #ffec99;
+  --color-primary-300: #ffe366;
+  --color-primary-400: #ffd933;
+  --color-primary-500: #ffd000;
+  --color-primary-600: #e6b800;
+  --color-primary-700: #cc9900;
+  --color-primary-800: #b38f00;
+  --color-primary-900: #997600;
+  --color-primary-950: #665200;
 }
 
 @utility max-content {

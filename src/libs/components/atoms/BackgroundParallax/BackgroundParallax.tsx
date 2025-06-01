@@ -26,7 +26,7 @@ export const BackgroundParallax = ({
           'bg-[position:bottom_center]': initialPosition === 'bottom'
         },
         {
-          'before:bg-gray-800 before:absolute before:top-0 before:bottom-0 before:left-0 before:right-0 before:-z-10 before:opacity-30':
+          'before:bg-gray-950 before:absolute before:top-0 before:bottom-0 before:left-0 before:right-0 before:-z-10 before:opacity-50':
             overlay
         }
       )}
