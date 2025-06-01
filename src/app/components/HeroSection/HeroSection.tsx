@@ -21,7 +21,14 @@ export const HeroSection = () => {
               'md:w-1/2'
             )}
           >
-            <h2 className={clsx('flex flex-col title-md ', 'xs:text-3xl')}>
+            <h2
+              className={clsx(
+                'flex flex-col title-md ',
+                'xs:title-lg',
+                'md:title-xl',
+                '2xl:title-2xl'
+              )}
+            >
               Software a medida,{' '}
               <span className="text-primary-500">diseñado para el éxito.</span>
             </h2>

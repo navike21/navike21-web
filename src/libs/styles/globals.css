@@ -130,6 +130,12 @@
   @apply tracking-wider;
 }
 
+@utility title-3xl {
+  @apply text-6xl;
+  @apply font-semibold;
+  @apply tracking-wider;
+}
+
 @utility paragraph-xs {
   @apply text-sm;
   @apply font-normal;
