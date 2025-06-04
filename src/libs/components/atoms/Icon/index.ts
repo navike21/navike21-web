@@ -1,3 +1,5 @@
+export * from './ArrowLeft'
+export * from './ArrowRight'
 export * from './Facebook'
 export * from './GitHub'
 export * from './Instagram'

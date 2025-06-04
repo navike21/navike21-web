@@ -46,7 +46,11 @@ export const Header = () => {
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-900 hover:opacity-80 transition-all duration-300"
+                    className={clsx(
+                      'text-gray-900 transition-all duration-300',
+                      'hover:opacity-80',
+                      'dark:text-gray-100 dark:hover:opacity-80'
+                    )}
                   >
                     {icon({
                       className: 'w-5 h-5'
@@ -82,7 +86,8 @@ export const Header = () => {
                 className="h-full object-cover object-center pointer-events-none w-full"
                 width={insideModernOfficeDesign.width}
                 height={insideModernOfficeDesign.height}
-                priority
+                loading="lazy"
+                // priority
                 quality={100}
               />
             </motion.div>

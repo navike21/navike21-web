@@ -1,47 +1,51 @@
 import { BackgroundParallax, Content } from '@Components/atoms'
-import { EAnimationType, Slider } from '@Components/molecules'
-import { youngAttractiveWoman } from '@Constants/images'
+import { uuidV7 } from '@Utils/generateKeys'
 import clsx from 'clsx'
+import Slider from 'react-slick'
+import { useHeroSection } from './HeroSection.hooks'
 
 export const HeroSection = () => {
+  const { infoSlider, settingsSlider } = useHeroSection()
+
   return (
-    <Slider animationType={EAnimationType.FADE}>
-      <BackgroundParallax
-        className={clsx('h-[calc(100dvh-68px)] w-full')}
-        backgroundImage={youngAttractiveWoman.src}
-        overlay
-      >
-        <Content
-          className={clsx('h-full flex items-end-safe', 'xs:items-center')}
-        >
-          <div
-            className={clsx(
-              'flex flex-col gap-4 px-5 py-16',
-              'xs:gap-3  xs:w-3/4',
-              'md:w-1/2'
-            )}
+    <div className="w-full">
+      <Slider {...settingsSlider}>
+        {infoSlider.map(slide => (
+          <BackgroundParallax
+            backgroundImage={slide.image}
+            className={clsx('h-[calc(100dvh-68px)] w-full')}
+            key={uuidV7()}
+            overlay
           >
-            <h2
-              className={clsx(
-                'flex flex-col title-md ',
-                'xs:title-lg',
-                'md:title-xl',
-                '2xl:title-2xl'
-              )}
+            <Content
+              className={clsx('h-full flex items-end-safe', 'xs:items-center')}
             >
-              Software a medida,{' '}
-              <span className="text-primary-500">diseñado para el éxito.</span>
-            </h2>
-            <p>
-              Creamos soluciones digitales que impulsan tu negocio, con
-              tecnología de vanguardia
-            </p>
-          </div>
-        </Content>
-      </BackgroundParallax>
-      <div className="h-[calc(100dvh-68px)] w-full">
-        <div>mensaje</div>
-      </div>
-    </Slider>
+              <div
+                className={clsx(
+                  'flex flex-col gap-4 px-5 py-16',
+                  'xs:gap-3  xs:w-3/4',
+                  'md:w-1/2'
+                )}
+              >
+                <h2
+                  className={clsx(
+                    'flex flex-col title-md ',
+                    'xs:title-lg',
+                    'md:title-xl',
+                    '2xl:title-2xl'
+                  )}
+                >
+                  {slide.title.split('**')[0]}
+                  <span className="text-primary-500">
+                    {slide.title.split('**')[1]}
+                  </span>
+                </h2>
+                <p>{slide.description}</p>
+              </div>
+            </Content>
+          </BackgroundParallax>
+        ))}
+      </Slider>
+    </div>
   )
 }

@@ -116,7 +116,7 @@ export const Footer = () => (
                 className="text-white hover:opacity-80 transition-all duration-300"
               >
                 {icon({
-                  className: 'w-6 h-6'
+                  className: 'w-5 h-5'
                 })}
               </a>
             ))}
