@@ -13,7 +13,7 @@ export const HeroSection = () => {
         {infoSlider.map(slide => (
           <BackgroundParallax
             backgroundImage={slide.image}
-            className={clsx('h-[calc(100dvh-68px)] w-full')}
+            className={clsx('h-dvh w-full')}
             key={uuidV7()}
             overlay
           >
@@ -29,7 +29,7 @@ export const HeroSection = () => {
               >
                 <h2
                   className={clsx(
-                    'flex flex-col title-md ',
+                    'flex flex-col title-md text-white',
                     'xs:title-lg',
                     'md:title-xl',
                     '2xl:title-2xl'
@@ -40,7 +40,7 @@ export const HeroSection = () => {
                     {slide.title.split('**')[1]}
                   </span>
                 </h2>
-                <p>{slide.description}</p>
+                <p className="text-white">{slide.description}</p>
               </div>
             </Content>
           </BackgroundParallax>

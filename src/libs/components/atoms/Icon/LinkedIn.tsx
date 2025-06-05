@@ -1,4 +1,4 @@
-import { ISvgProps } from '@Types/icons'
+import { ISvgProps } from '@Types/svg'
 
 export const LinkedIn = ({ isColor, ...props }: ISvgProps) => (
   <svg

@@ -14,55 +14,55 @@ import { ESocialMedia, TSocialMediaList } from '@Types/socialMedia'
 export const SOCIAL_MEDIA: TSocialMediaList = {
   [ESocialMedia.FACEBOOK]: {
     active: true,
-    icon: ({ ...props }) => <Facebook {...props} />,
+    icon: Facebook,
     name: 'Facebook',
     url: 'https://www.facebook.com/navike21'
   },
   [ESocialMedia.INSTAGRAM]: {
     active: true,
-    icon: ({ ...props }) => <Instagram {...props} />,
+    icon: Instagram,
     name: 'Instagram',
     url: 'https://www.instagram.com/navike21'
   },
   [ESocialMedia.LINKEDIN]: {
     active: false,
-    icon: ({ ...props }) => <LinkedIn {...props} />,
+    icon: LinkedIn,
     name: 'LinkedIn',
     url: 'https://www.linkedin.com/company/navike21'
   },
   [ESocialMedia.X]: {
     active: true,
-    icon: ({ ...props }) => <X {...props} />,
+    icon: X,
     name: 'X',
     url: 'https://x.com/navike21'
   },
   [ESocialMedia.WHATSAPP]: {
     active: true,
-    icon: ({ ...props }) => <WhatsApp {...props} />,
+    icon: WhatsApp,
     name: 'WhatsApp',
     url: 'https://wa.me/51989505027'
   },
   [ESocialMedia.YOUTUBE]: {
     active: false,
-    icon: ({ ...props }) => <Youtube {...props} />,
+    icon: Youtube,
     name: 'YouTube',
     url: 'https://www.youtube.com/@navike21'
   },
   [ESocialMedia.TIKTOK]: {
     active: false,
-    icon: ({ ...props }) => <TikTok {...props} />,
+    icon: TikTok,
     name: 'TikTok',
     url: 'https://www.tiktok.com/@navike21'
   },
   [ESocialMedia.TELEGRAM]: {
     active: false,
-    icon: ({ ...props }) => <Telegram {...props} />,
+    icon: Telegram,
     name: 'Telegram',
     url: 'https://t.me/navike21'
   },
   [ESocialMedia.GITHUB]: {
     active: true,
-    icon: ({ ...props }) => <GitHub {...props} />,
+    icon: GitHub,
     name: 'GitHub',
     url: 'https://github.com/navike21'
   }

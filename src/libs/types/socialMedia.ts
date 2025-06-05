@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { ISvgProps } from './icons'
+import { ISvgProps } from './svg'
 
 export enum ESocialMedia {
   FACEBOOK = 'facebook',

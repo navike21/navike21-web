@@ -1,4 +1,4 @@
-import { ISvgProps } from '@Types/icons'
+import { ISvgProps } from '@Types/svg'
 
 export const TikTok = ({ isColor, ...props }: ISvgProps) => (
   <svg

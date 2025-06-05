@@ -1,5 +1,6 @@
 export * from './ArrowButton'
 export * from './BackgroundParallax'
+export * from './ClientsLogo'
 export * from './Content'
 export * from './Hamburger'
 export * from './Icon'

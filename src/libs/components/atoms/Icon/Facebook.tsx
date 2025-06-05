@@ -1,4 +1,4 @@
-import { ISvgProps } from '@Types/icons'
+import { ISvgProps } from '@Types/svg'
 import clsx from 'clsx'
 
 export const Facebook = ({ isColor, ...props }: ISvgProps) => (

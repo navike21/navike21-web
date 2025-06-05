@@ -8,7 +8,7 @@ import Image from 'next/image'
 import { EASING, ITEMS_VARIANTS } from './Header.constants'
 import { useHeader } from './Header.hooks'
 import { uuidV7 } from '@Utils/generateKeys'
-import { insideModernOfficeDesign } from '@Constants/images'
+import { insideModernOfficeDesign } from '@Constants/backgroundsImages'
 import { SOCIAL_MEDIA } from '@Constants/socialMedia'
 
 export const Header = () => {
@@ -18,16 +18,12 @@ export const Header = () => {
   return (
     <>
       <motion.header
-        className={clsx(
-          'fixed overflow-hidden top-0 w-full',
-          'before:[content:""] before:absolute before:top-0 before:left-0 before:w-full before:h-full before:transition-all',
-          {
-            'before:bg-transparent z-50': isOpen,
-            'before:bg-white before:dark:bg-gray-900 z-20': !isOpen
-          }
-        )}
+        className={clsx('fixed overflow-hidden top-0 w-full', {
+          'bg-transparent z-50 transition-all': isOpen,
+          'backdrop-blur-lg bg-white/80 dark:bg-gray-950/70 z-20': !isOpen
+        })}
       >
-        <Content className="flex justify-between items-center py-3 relative z-50">
+        <Content className="flex justify-between items-center py-4 relative z-50">
           <Link href="/">
             <Logo className="h-11" />
           </Link>

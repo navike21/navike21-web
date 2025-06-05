@@ -4,7 +4,8 @@ import {
   supermarketWorkerSupplyingFruitDepartmentWithFood,
   viewManWorkingDesk,
   youngAttractiveWoman
-} from '@Constants/images'
+} from '@Constants/backgroundsImages'
+import clsx from 'clsx'
 import { ButtonHTMLAttributes } from 'react'
 import { Settings } from 'react-slick'
 
@@ -42,7 +43,9 @@ export const useHeroSection = () => {
     return (
       <ArrowButton
         direction="right"
-        className="right-0 z-10 absolute top-0 bottom-0 m-auto"
+        className={clsx(
+          'right-0 z-10 absolute top-0 bottom-0 m-auto text-white'
+        )}
         onClick={onClick}
       />
     )
@@ -53,7 +56,9 @@ export const useHeroSection = () => {
     return (
       <ArrowButton
         direction="left"
-        className="left-0 z-10 absolute top-0 bottom-0 m-auto"
+        className={clsx(
+          'left-0 z-10 absolute top-0 bottom-0 m-auto text-white'
+        )}
         onClick={onClick}
       />
     )
