@@ -16,6 +16,7 @@ import { ReactNode } from 'react'
 interface IClient {
   id: string
   name: string
+  best?: boolean
   logo: (params: ISvgProps) => ReactNode
 }
 
@@ -23,6 +24,7 @@ export const clients: IClient[] = [
   {
     id: 'tentaciones-gourmet',
     name: 'Tentaciones Gourmet',
+    best: true,
     logo: TentacionesGourmet
   },
   {

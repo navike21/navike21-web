@@ -1,4 +1,4 @@
-import { Content } from '@Components/atoms'
+import { Content, Crown } from '@Components/atoms'
 import { clients } from '@Constants/clients'
 import { uuidV7 } from '@Utils/generateKeys'
 import clsx from 'clsx'
@@ -8,7 +8,7 @@ export const Clients = () => {
   return (
     <div className={clsx('dark:bg-gray-900')}>
       <Content
-        className={clsx('flex flex-col gap-12', 'py-16 md:px-10 lg:px-20')}
+        className={clsx('flex flex-col gap-16', 'py-16 md:px-10 lg:px-20')}
       >
         <div className="flex flex-col gap-2 items-center">
           <h2 className="title-md text-center text-primary-500">
@@ -21,19 +21,22 @@ export const Clients = () => {
         </div>
         <div
           className={clsx(
-            'grid grid-cols-3 gap-3',
+            'grid grid-cols-2 gap-3',
             'sm:grid-cols-4 sm:gap-6',
             'lg:grid-cols-6'
           )}
         >
-          {clients.map(({ logo, id }) => (
+          {clients.map(({ logo, id, best }) => (
             <div
               key={uuidV7()}
               className={clsx(
-                'flex items-center justify-center p-5 bg-white rounded-lg shadow-md aspect-square',
+                'flex items-center justify-center p-5 bg-white rounded-sm shadow-sm aspect-square relative',
                 'dark:bg-gray-800'
               )}
             >
+              {best && (
+                <Crown className="absolute top-1 right-1 w-4 h-auto text-amber-400 fill-amber-400" />
+              )}
               {logo({
                 className: clsx('w-full aspect-square', {
                   'text-[#003399] dark:text-white': id === 'eurogourmet',
