@@ -39,7 +39,7 @@ export const ThreeDMarquee = ({
           className={clsx(
             'relative grid size-full origin-center gap-8 -top-[40%] -right-[26%] scale-150',
             '[transform:rotateX(20deg)_rotateY(0deg)_rotateZ(20deg)] transform-3d',
-            'sm:grid-cols-2 sm:-right-[10%] sm:scale-125',
+            'grid-cols-2 -right-[10%] scale-125',
             'md:grid-cols-3 md:-right-[6%] md:-top-[10%] md:scale-150',
             {
               'lg:grid-cols-4 lg:-right-[2%]': columns >= 4,
