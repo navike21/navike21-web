@@ -4,7 +4,7 @@ import { clsx } from 'clsx'
 
 export const Footer = () => (
   <>
-    <div className={clsx('bg-gray-900 py-12 relative text-white z-30')}>
+    <div className={clsx('bg-gray-950 py-12 relative text-white z-30')}>
       <Content
         className={clsx(
           'gap-10 grid grid-cols-1 items-start',

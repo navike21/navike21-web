@@ -1,0 +1,92 @@
+'use client'
+
+import { cn } from '@Utils/cn'
+import clsx from 'clsx'
+import { motion } from 'motion/react'
+import { useMemo } from 'react'
+
+interface IThreeDMarqueeProps {
+  images: string[]
+  className?: string
+  columns?: number
+  hoverOpacity?: number
+}
+
+export const ThreeDMarquee = ({
+  images,
+  className,
+  columns = 4,
+  hoverOpacity = 0.8
+}: IThreeDMarqueeProps) => {
+  const chunkSize = Math.ceil(images.length / columns)
+
+  const chunks = useMemo(() => {
+    return Array.from({ length: columns }, (_, colIndex) => {
+      const start = colIndex * chunkSize
+      return images.slice(start, start + chunkSize)
+    })
+  }, [images, columns, chunkSize])
+
+  return (
+    <div
+      className={cn(
+        'mx-auto block overflow-hidden rounded-2xl h-full',
+        className
+      )}
+    >
+      <div className="flex size-full items-center justify-center h-[150%] overflow-hidden">
+        <div
+          className={clsx(
+            'relative grid size-full origin-center gap-8 -top-[40%] -right-[26%] scale-150',
+            '[transform:rotateX(20deg)_rotateY(0deg)_rotateZ(20deg)] transform-3d',
+            'sm:grid-cols-2 sm:-right-[10%] sm:scale-125',
+            'md:grid-cols-3 md:-right-[6%] md:-top-[10%] md:scale-150',
+            {
+              'lg:grid-cols-4 lg:-right-[2%]': columns >= 4,
+              'xl:grid-cols-5 xl:-right-[2%]': columns >= 5
+            }
+          )}
+        >
+          {chunks.map((subarray, colIndex) => (
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                ease: 'easeOut'
+              }}
+              key={subarray[0] ?? `col-${colIndex}`}
+            >
+              <motion.div
+                animate={{ y: colIndex % 2 === 0 ? 200 : -200 }}
+                transition={{
+                  duration: colIndex % 2 === 0 ? 20 : 45,
+                  repeat: Infinity,
+                  repeatType: 'reverse',
+                  ease: 'linear'
+                }}
+                className="flex flex-col items-start gap-8"
+              >
+                {subarray.map((image, imageIndex) => (
+                  <div
+                    className="relative w-full"
+                    key={`img-${colIndex}-${imageIndex}`}
+                  >
+                    <motion.img
+                      loading="lazy"
+                      whileHover={{ opacity: hoverOpacity }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      src={image}
+                      alt={`Imagen ${colIndex * chunkSize + imageIndex + 1}`}
+                      className="aspect-9/6 rounded-lg object-cover ring ring-gray-950/5 object-top w-full"
+                    />
+                  </div>
+                ))}
+              </motion.div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}

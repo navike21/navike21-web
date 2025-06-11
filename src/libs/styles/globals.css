@@ -92,8 +92,13 @@
 
   @apply xs:px-10;
   @apply sm:px-15;
-  @apply lg:px-9;
+  @apply lg:px-12;
   @apply xl:px-3;
+}
+
+@utility sectionContent {
+  @apply py-20;
+  @apply lg:px-20;
 }
 
 @utility title-xs {

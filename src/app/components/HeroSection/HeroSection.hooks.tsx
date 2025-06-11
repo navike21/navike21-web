@@ -44,7 +44,7 @@ export const useHeroSection = () => {
       <ArrowButton
         direction="right"
         className={clsx(
-          'right-0 z-10 absolute top-0 bottom-0 m-auto text-white'
+          'right-2 z-10 absolute top-0 bottom-0 m-auto text-white'
         )}
         onClick={onClick}
       />
@@ -57,7 +57,7 @@ export const useHeroSection = () => {
       <ArrowButton
         direction="left"
         className={clsx(
-          'left-0 z-10 absolute top-0 bottom-0 m-auto text-white'
+          'left-2 z-10 absolute top-0 bottom-0 m-auto text-white'
         )}
         onClick={onClick}
       />
@@ -65,7 +65,7 @@ export const useHeroSection = () => {
   }
 
   const settingsSlider: Settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,

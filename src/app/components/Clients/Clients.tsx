@@ -1,20 +1,18 @@
-import { Content, Crown } from '@Components/atoms'
+import { Content } from '@Components/atoms'
 import { clients } from '@Constants/clients'
 import { uuidV7 } from '@Utils/generateKeys'
 import clsx from 'clsx'
-import React from 'react'
+import { Crown } from 'lucide-react'
 
 export const Clients = () => {
   return (
-    <div className={clsx('dark:bg-gray-900')}>
-      <Content
-        className={clsx('flex flex-col gap-16', 'py-16 md:px-10 lg:px-20')}
-      >
+    <section className={clsx('dark:bg-gray-900')}>
+      <Content className="sectionContent flex-col flex gap-16">
         <div className="flex flex-col gap-2 items-center">
           <h2 className="title-md text-center text-primary-500">
             Ellos confían en nosotros
           </h2>
-          <p className="text-center paragraph-xs">
+          <p className={clsx('text-left paragraph-xs', 'md:text-center')}>
             Así como ellos, tú también puedes confiar en nosotros para llevar tu
             proyecto al siguiente nivel.
           </p>
@@ -23,7 +21,7 @@ export const Clients = () => {
           className={clsx(
             'grid grid-cols-2 gap-3',
             'sm:grid-cols-4 sm:gap-6',
-            'lg:grid-cols-6'
+            'lg:grid-cols-7'
           )}
         >
           {clients.map(({ logo, id, best }) => (
@@ -48,6 +46,6 @@ export const Clients = () => {
           ))}
         </div>
       </Content>
-    </div>
+    </section>
   )
 }

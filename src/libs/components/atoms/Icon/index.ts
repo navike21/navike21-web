@@ -1,6 +1,3 @@
-export * from './ArrowLeft'
-export * from './ArrowRight'
-export * from './Crown'
 export * from './Facebook'
 export * from './GitHub'
 export * from './Instagram'
