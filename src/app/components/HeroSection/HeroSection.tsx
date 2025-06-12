@@ -17,6 +17,8 @@ import rkPower from '@Assets/images/projects/rk-power/converted/home-thumb.webp'
 import rkPowerInfoDetail from '@Assets/images/projects/rk-power/converted/info-detail-thumb.webp'
 
 import { ThreeDMarquee } from '@Components/molecules'
+import { Content, FlipWords } from '@Components/atoms'
+import clsx from 'clsx'
 
 export const HeroSection = () => {
   const images = [
@@ -36,9 +38,27 @@ export const HeroSection = () => {
     circurelaMenu.src,
     tentacionesStoreLocales.src
   ]
+
+  const words = ['webs', 'apps', 'ecommerce', 'software', 'landing pages']
+
   return (
-    <div className="mx-auto w-full h-dvh bg-gray-950 opacity-50">
-      <ThreeDMarquee images={images} />
+    <div className="w-full h-dvh bg-gray-950 flex items-center justify-center relative overflow-hidden">
+      <Content className="relative flex items-center justify-start">
+        <h2
+          className={clsx(
+            'z-10 font-bold text-left relative title-xl text-white w-9/12',
+            'md:title-2xl',
+            'lg:title-3xl'
+          )}
+        >
+          Construimos <FlipWords words={words} className="text-primary-500" />a
+          la medida de tu negocio
+        </h2>
+      </Content>
+      <ThreeDMarquee
+        images={images}
+        className="opacity-30 absolute left-0 right-0 top-0"
+      />
     </div>
   )
 }

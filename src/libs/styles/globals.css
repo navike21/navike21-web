@@ -69,6 +69,8 @@
   --breakpoint-xs: 24rem;
   --font-weight-normal: 300;
   --font-weight-medium: 400;
+  --text-6xl--line-height: 1.2;
+  --text-5xl--line-height: 1.2;
 
   --color-primary-50: #fffae5;
   --color-primary-100: #fff6cc;
@@ -102,43 +104,43 @@
 }
 
 @utility title-xs {
-  @apply text-lg;
+  @apply text-sm;
   @apply font-semibold;
   @apply tracking-wider;
 }
 
 @utility title-sm {
-  @apply text-xl;
+  @apply text-lg;
   @apply font-semibold;
   @apply tracking-wider;
 }
 
 @utility title-md {
-  @apply text-2xl;
+  @apply text-xl;
   @apply font-semibold;
   @apply tracking-wider;
 }
 
 @utility title-lg {
-  @apply text-3xl;
+  @apply text-2xl;
   @apply font-semibold;
   @apply tracking-wider;
 }
 
 @utility title-xl {
-  @apply text-4xl;
+  @apply text-3xl;
   @apply font-semibold;
   @apply tracking-wider;
 }
 
 @utility title-2xl {
-  @apply text-5xl;
+  @apply text-4xl;
   @apply font-semibold;
   @apply tracking-wider;
 }
 
 @utility title-3xl {
-  @apply text-6xl;
+  @apply text-5xl;
   @apply font-semibold;
   @apply tracking-wider;
 }

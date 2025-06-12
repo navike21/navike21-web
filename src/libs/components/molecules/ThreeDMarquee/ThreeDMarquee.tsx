@@ -2,21 +2,21 @@
 
 import { cn } from '@Utils/cn'
 import clsx from 'clsx'
-import { motion } from 'motion/react'
-import { useMemo } from 'react'
+import { motion, useScroll, useTransform } from 'motion/react'
+import { useMemo, useRef } from 'react'
 
 interface IThreeDMarqueeProps {
   images: string[]
   className?: string
   columns?: number
-  hoverOpacity?: number
+  parallaxAmount?: number // nuevo
 }
 
 export const ThreeDMarquee = ({
   images,
   className,
   columns = 4,
-  hoverOpacity = 0.8
+  parallaxAmount = 300 // valor por defecto
 }: IThreeDMarqueeProps) => {
   const chunkSize = Math.ceil(images.length / columns)
 
@@ -27,20 +27,32 @@ export const ThreeDMarquee = ({
     })
   }, [images, columns, chunkSize])
 
+  const containerRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start end', 'end start']
+  })
+
+  const parallaxY = useTransform(scrollYProgress, [0, 1], [0, parallaxAmount])
+
   return (
-    <div
+    <motion.div
       className={cn(
         'mx-auto block overflow-hidden rounded-2xl h-full',
         className
       )}
     >
-      <div className="flex size-full items-center justify-center h-[150%] overflow-hidden">
+      <motion.div
+        className="flex size-full items-center justify-center h-[150%] overflow-hidden -top-[10%] relative"
+        ref={containerRef}
+        style={{ y: parallaxY }}
+      >
         <div
           className={clsx(
             'relative grid size-full origin-center gap-8 -top-[40%] -right-[26%] scale-150',
             '[transform:rotateX(20deg)_rotateY(0deg)_rotateZ(20deg)] transform-3d',
             'grid-cols-2 -right-[10%] scale-125',
-            'md:grid-cols-3 md:-right-[6%] md:-top-[10%] md:scale-150',
+            'md:grid-cols-3 md:-right-[6%] md:-top-[20%] md:scale-150',
             {
               'lg:grid-cols-4 lg:-right-[2%]': columns >= 4,
               'xl:grid-cols-5 xl:-right-[2%]': columns >= 5
@@ -74,8 +86,6 @@ export const ThreeDMarquee = ({
                   >
                     <motion.img
                       loading="lazy"
-                      whileHover={{ opacity: hoverOpacity }}
-                      transition={{ duration: 0.3, ease: 'easeInOut' }}
                       src={image}
                       alt={`Imagen ${colIndex * chunkSize + imageIndex + 1}`}
                       className="aspect-9/6 rounded-lg object-cover ring ring-gray-950/5 object-top w-full"
@@ -86,7 +96,7 @@ export const ThreeDMarquee = ({
             </motion.div>
           ))}
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   )
 }
