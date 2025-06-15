@@ -1,5 +1,5 @@
 import { Content } from '@Components/atoms'
-import { teamYoungBusinessPeopleGoingThroughPaperworkWhileWorkingTogetherOfficeFocusIsBusinessman } from '@Constants/backgroundsImages'
+import { teamPaperwork } from '@Constants/backgroundsImages'
 import clsx from 'clsx'
 import Image from 'next/image'
 
@@ -14,21 +14,15 @@ export const AboutSection = () => {
         )}
       >
         <Image
-          src={
-            teamYoungBusinessPeopleGoingThroughPaperworkWhileWorkingTogetherOfficeFocusIsBusinessman.src
-          }
-          width={
-            teamYoungBusinessPeopleGoingThroughPaperworkWhileWorkingTogetherOfficeFocusIsBusinessman.width
-          }
-          height={
-            teamYoungBusinessPeopleGoingThroughPaperworkWhileWorkingTogetherOfficeFocusIsBusinessman.height
-          }
+          src={teamPaperwork.src}
+          width={teamPaperwork.width}
+          height={teamPaperwork.height}
           alt="About Section Background"
           className={clsx(
-            'object-cover object-center aspect-4/2 rounded-lg shadow-lg col-span-2',
+            'object-cover object-center aspect-3/2 rounded-lg shadow-lg col-span-2',
             'sm:col-span-1 sm:aspect-2/4',
             'md:aspect-1/2 md:col-span-2 md:max-h-96',
-            'lg:col-span-3 lg:max-h-none lg:aspect-square'
+            'lg:col-span-3 lg:max-h-none lg:aspect-4/3'
           )}
           quality={100}
         />
@@ -48,7 +42,7 @@ export const AboutSection = () => {
             <h4 className={clsx('title-xs text-primary-500 text-center')}>
               Bienvenidos a navike21
             </h4>
-            <h2 className={clsx('title-md text-center', 'md:text-left')}>
+            <h2 className={clsx('title-lg text-center', 'md:text-left')}>
               Mas que software, creamos soluciones
             </h2>
           </div>

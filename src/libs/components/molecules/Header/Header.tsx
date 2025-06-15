@@ -8,7 +8,7 @@ import Image from 'next/image'
 import { EASING, ITEMS_VARIANTS } from './Header.constants'
 import { useHeader } from './Header.hooks'
 import { uuidV7 } from '@Utils/generateKeys'
-import { insideModernOfficeDesign } from '@Constants/backgroundsImages'
+import { modernOffice } from '@Constants/backgroundsImages'
 import { SOCIAL_MEDIA } from '@Constants/socialMedia'
 
 export const Header = () => {
@@ -77,11 +77,11 @@ export const Header = () => {
               className={clsx('h-full w-1/3', 'md:w-1/2')}
             >
               <Image
-                src={insideModernOfficeDesign.src}
+                src={modernOffice.src}
                 alt="Menu Image"
                 className="h-full object-cover object-center pointer-events-none w-full"
-                width={insideModernOfficeDesign.width}
-                height={insideModernOfficeDesign.height}
+                width={modernOffice.width}
+                height={modernOffice.height}
                 loading="lazy"
                 // priority
                 quality={100}

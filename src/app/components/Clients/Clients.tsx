@@ -9,7 +9,7 @@ export const Clients = () => {
     <section className={clsx('dark:bg-gray-900')}>
       <Content className="sectionContent flex-col flex gap-16">
         <div className="flex flex-col gap-2 items-center">
-          <h2 className="title-md text-center text-primary-500">
+          <h2 className="title-lg text-center text-primary-500">
             Ellos confían en nosotros
           </h2>
           <p className={clsx('text-left paragraph-xs', 'md:text-center')}>

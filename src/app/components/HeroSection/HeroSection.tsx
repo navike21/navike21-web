@@ -46,13 +46,15 @@ export const HeroSection = () => {
       <Content className="relative flex items-center justify-start">
         <h2
           className={clsx(
-            'z-10 font-bold text-left relative title-xl text-white w-9/12',
+            'z-10 font-bold text-left relative title-xl text-white w-6/12 transition-all',
             'md:title-2xl',
-            'lg:title-3xl'
+            'lg:title-2xl',
+            '2xl:title-3xl'
           )}
         >
-          Construimos <FlipWords words={words} className="text-primary-500" />a
-          la medida de tu negocio
+          Construimos {''}
+          <FlipWords words={words} className="text-primary-500" /> a la medida
+          de tu negocio<span className="text-primary-500">.</span>
         </h2>
       </Content>
       <ThreeDMarquee
