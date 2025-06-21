@@ -43,7 +43,11 @@ export const ThreeDMarquee = ({
       )}
     >
       <motion.div
-        className="flex size-full items-center justify-center h-[150%] overflow-hidden -top-[10%] relative"
+        className={clsx(
+          'flex size-full items-center justify-center h-[150%] overflow-hidden -top-[10%] relative',
+          'md:-top-[30%]',
+          'lg:-top-[11%]'
+        )}
         ref={containerRef}
         style={{ y: parallaxY }}
       >

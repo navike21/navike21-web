@@ -42,13 +42,20 @@ export const HeroSection = () => {
   const words = ['webs', 'apps', 'ecommerce', 'software', 'landing pages']
 
   return (
-    <div className="w-full h-dvh bg-gray-950 flex items-center justify-center relative overflow-hidden">
+    <div
+      className={clsx(
+        'w-full h-dvh bg-gray-950 flex items-center justify-center relative overflow-hidden max-h-dvh',
+        'md:aspect-4/3 md:h-auto',
+        'lg:aspect-4/2'
+      )}
+    >
       <Content className="relative flex items-center justify-start">
         <h2
           className={clsx(
-            'z-10 font-bold text-left relative title-xl text-white w-6/12 transition-all',
+            'z-10 font-bold text-left relative title-xl text-white transition-all',
+            'sm:w-8/12',
             'md:title-2xl',
-            'lg:title-2xl',
+            'lg:title-2xl lg:w-6/12',
             '2xl:title-3xl'
           )}
         >
