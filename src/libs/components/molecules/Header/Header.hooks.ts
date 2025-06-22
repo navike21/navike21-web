@@ -1,25 +1,16 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { EStage } from './Header.types'
 import { useMotionValueEvent, useScroll } from 'motion/react'
 
 export const useHeader = () => {
-  const ref = useRef<HTMLDivElement>(null)
-
   const [menuState, setMenuState] = useState(false)
   const [stage, setStage] = useState<EStage>(EStage.CLOSED)
   const [visible, setVisible] = useState<boolean>(false)
 
-  const { scrollY } = useScroll({
-    target: ref,
-    offset: ['start end', 'end start']
-  })
+  const { scrollY } = useScroll() // ✅ Observa el scroll global del viewport
 
   useMotionValueEvent(scrollY, 'change', latest => {
-    if (latest > 0) {
-      setVisible(true)
-    } else {
-      setVisible(false)
-    }
+    setVisible(latest > 0)
   })
 
   const handleToggle = () => {
@@ -57,7 +48,6 @@ export const useHeader = () => {
 
   return {
     isOpen,
-    ref,
     visible,
     showImageAndBackground,
     showMenuItems,

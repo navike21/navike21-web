@@ -16,7 +16,6 @@ export const Header = () => {
     isOpen,
     showImageAndBackground,
     showMenuItems,
-    ref,
     visible,
     handleToggle
   } = useHeader()
@@ -24,17 +23,16 @@ export const Header = () => {
   return (
     <>
       <header
-        ref={ref}
         className={clsx(
-          'fixed overflow-hidden top-0 w-full z-20 transition-all',
+          'fixed top-0 w-full z-20 overflow-hidden transition-all',
           {
-            'bg-transparent z-50 transition-all': isOpen,
+            'bg-transparent z-50': isOpen,
             'backdrop-blur-lg bg-white/80': !isOpen && visible,
             'dark:bg-gray-950/70': !isOpen && visible
           }
         )}
       >
-        <Content className="flex justify-between items-center py-4 relative z-50">
+        <Content className="flex justify-between items-center py-4 z-50">
           <Link href="/">
             <Logo className="h-11" />
           </Link>
@@ -94,7 +92,6 @@ export const Header = () => {
                 width={modernOffice.width}
                 height={modernOffice.height}
                 loading="lazy"
-                // priority
                 quality={100}
               />
             </motion.div>

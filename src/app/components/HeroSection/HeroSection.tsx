@@ -1,7 +1,7 @@
 'use client'
 
 import { BackgroundParallax, Content, TextRotate } from '@Components/atoms'
-import { modernBuild } from '@Constants/backgroundsImages'
+import { manWorkingNight } from '@Constants/backgroundsImages'
 import clsx from 'clsx'
 
 export const HeroSection = () => {
@@ -23,7 +23,7 @@ export const HeroSection = () => {
       )}
     >
       <BackgroundParallax
-        backgroundImage={modernBuild.src}
+        backgroundImage={manWorkingNight.src}
         className="absolute left-0 right-0 top-0 bottom-0"
         overlay
       />
