@@ -1,9 +1,11 @@
-'use client'
-
 import clsx from 'clsx'
-import { IComponentProps } from '@Types/interfaces/common'
-import { ContentElement } from './Content.styles'
+import { ReactNode } from 'react'
 
-export const Content = ({ children, className }: IComponentProps) => (
-  <ContentElement className={clsx(className)}>{children}</ContentElement>
+interface IContentProps {
+  children: ReactNode
+  className?: string
+}
+
+export const Content = ({ children, className }: IContentProps) => (
+  <div className={clsx('max-content', className)}>{children}</div>
 )

@@ -1,9 +1,13 @@
 'use client'
 
-import { usePrincipalMenu } from '@Hooks/usePrincipalMenu'
-import { permanentRedirect } from 'next/navigation'
+import { AboutSection, Clients, HeroSection } from './components'
 
 export default function Home() {
-  const { homeMenu } = usePrincipalMenu()
-  permanentRedirect(homeMenu.path)
+  return (
+    <>
+      <HeroSection />
+      <AboutSection />
+      <Clients />
+    </>
+  )
 }

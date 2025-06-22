@@ -1,0 +1,192 @@
+@import 'slick-carousel/slick/slick.css';
+@import 'slick-carousel/slick/slick-theme.css';
+@import 'tailwindcss';
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-950 dark:bg-gray-950 dark:text-slate-400;
+  }
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/poppins-thin.woff2') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/poppins-light.woff2') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/poppins-regular.woff2') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/poppins-medium.woff2') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/poppins-semiBold.woff2') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/poppins-bold.woff2') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/poppins-black.woff2') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: 'Poppins', sans-serif;
+  --breakpoint-xs: 24rem;
+  --font-weight-normal: 300;
+  --font-weight-medium: 400;
+  --text-6xl--line-height: 1.2;
+  --text-5xl--line-height: 1.2;
+
+  --color-primary-50: #e7fff8;
+  --color-primary-100: #c6ffeb;
+  --color-primary-200: #92ffde;
+  --color-primary-300: #4dffd2;
+  --color-primary-400: #00ffbe;
+  --color-primary-500: #00e8aa;
+  --color-primary-600: #00be8d;
+  --color-primary-700: #009876;
+  --color-primary-800: #00785e;
+  --color-primary-900: #00785e;
+  --color-primary-950: #00382e;
+}
+
+@utility max-content {
+  max-width: 75rem; /* 1200px = 75rem (assuming 1rem = 16px) */
+  @apply px-8;
+  @apply box-border;
+  @apply w-full;
+  @apply mx-auto;
+
+  @apply xs:px-10;
+  @apply sm:px-15;
+  @apply lg:px-12;
+  @apply xl:px-3;
+}
+
+@utility sectionContent {
+  @apply py-20;
+  @apply lg:px-20;
+}
+
+@utility title-xs {
+  @apply text-sm;
+  @apply font-semibold;
+  @apply tracking-wider;
+}
+
+@utility title-sm {
+  @apply text-lg;
+  @apply font-semibold;
+  @apply tracking-wider;
+}
+
+@utility title-md {
+  @apply text-xl;
+  @apply font-semibold;
+  @apply tracking-wider;
+}
+
+@utility title-lg {
+  @apply text-2xl;
+  @apply font-semibold;
+  @apply tracking-wider;
+}
+
+@utility title-xl {
+  @apply text-3xl;
+  @apply font-semibold;
+  @apply tracking-wider;
+}
+
+@utility title-2xl {
+  @apply text-4xl;
+  @apply font-semibold;
+  @apply tracking-wider;
+}
+
+@utility title-3xl {
+  @apply text-5xl;
+  @apply font-semibold;
+  @apply tracking-wider;
+}
+
+@utility title-4xl {
+  @apply text-6xl;
+  @apply font-semibold;
+  @apply tracking-wider;
+}
+
+@utility paragraph-xs {
+  @apply text-sm;
+  @apply font-normal;
+  @apply tracking-wide;
+}
+@utility paragraph-sm {
+  @apply text-base;
+  @apply font-normal;
+  @apply tracking-wide;
+}
+@utility paragraph-md {
+  @apply text-lg;
+  @apply font-normal;
+  @apply tracking-wide;
+}
+@utility paragraph-lg {
+  @apply text-xl;
+  @apply font-normal;
+  @apply tracking-wide;
+}
+@utility paragraph-xl {
+  @apply text-2xl;
+  @apply font-normal;
+  @apply tracking-wide;
+}
+
+@utility bg-gradient-primary {
+  @apply bg-gradient-to-r;
+  @apply from-sky-400;
+  @apply to-purple-700;
+}
+
+@utility text-gradient-primary {
+  @apply bg-clip-text;
+  @apply text-transparent;
+  @apply bg-gradient-to-r;
+  @apply from-sky-400;
+  @apply to-purple-700;
+}
