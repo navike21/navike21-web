@@ -4,12 +4,12 @@ import clsx from 'clsx'
 import { AnimatePresence, motion } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
 
-interface TextRotateProps {
+interface ITextRotateProps {
   words: string[]
   className?: string
 }
 
-export const TextRotate = ({ className, words }: TextRotateProps) => {
+export const TextRotate = ({ className, words }: ITextRotateProps) => {
   const [index, setIndex] = useState(0)
   const textRef = useRef<HTMLDivElement>(null)
 
