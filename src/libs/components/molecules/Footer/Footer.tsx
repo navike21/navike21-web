@@ -4,7 +4,7 @@ import { clsx } from 'clsx'
 
 export const Footer = () => (
   <>
-    <div className={clsx('bg-gray-950 py-12 relative text-white z-30')}>
+    <div className={clsx('bg-gray-950 py-12 relative  z-30')}>
       <Content
         className={clsx(
           'gap-10 grid grid-cols-1 items-start',
@@ -23,49 +23,43 @@ export const Footer = () => (
         >
           <div
             className={clsx(
-              'title-xs flex gap-3 items-center justify-start w-full',
+              'title-xs text-white flex gap-3 items-center justify-start w-full',
               'md:title-sm'
             )}
           >
             <Logo className="w-10" /> navike21
           </div>
-          <div className="paragraph-xs text-gray-400 w-full">
+          <div className="paragraph-xs w-full">
             Somos una empresa dedicada a la creación de software con un enfoque
             en la calidad.
           </div>
         </section>
 
         <section className="flex flex-col gap-4 items-center justify-center w-full">
-          <div className="title-xs w-full">Servicios</div>
+          <div className="title-xs w-full text-white">Servicios</div>
           <ul className="gap-2 grid grid-cols-1 w-full">
-            <li className="paragraph-xs text-gray-400">Desarrollo Web</li>
-            <li className="paragraph-xs text-gray-400">Desarrollo Móvil</li>
-            <li className="paragraph-xs text-gray-400">Consultoría</li>
+            <li className="paragraph-xs">Desarrollo Web</li>
+            <li className="paragraph-xs">Desarrollo Móvil</li>
+            <li className="paragraph-xs">Consultoría</li>
           </ul>
         </section>
 
         <section className="flex flex-col gap-4 items-center justify-center w-full">
-          <div className="title-xs w-full">Área legal</div>
+          <div className="title-xs w-full text-white">Área legal</div>
           <ul className="gap-2 grid grid-cols-1 w-full">
-            <li className="paragraph-xs text-gray-400">
-              Libro de reclamaciones
-            </li>
-            <li className="paragraph-xs text-gray-400">
-              Términos y condiciones
-            </li>
-            <li className="paragraph-xs text-gray-400">
-              Política de privacidad
-            </li>
+            <li className="paragraph-xs">Libro de reclamaciones</li>
+            <li className="paragraph-xs">Términos y condiciones</li>
+            <li className="paragraph-xs">Política de privacidad</li>
           </ul>
         </section>
 
         <section className="flex flex-col gap-4 items-center justify-center w-full">
-          <div className="title-xs w-full">Contacto</div>
+          <div className="title-xs w-full text-white">Contacto</div>
           <ul className="gap-2 grid grid-cols-1 w-full">
             <li className="paragraph-xs">
               <a
                 href="mailto:contacto@navike21.com"
-                className="text-gray-400 hover:text-white"
+                className="hover:text-white transition-all ease-in-out"
               >
                 contacto@navike21.com
               </a>
@@ -73,7 +67,7 @@ export const Footer = () => (
             <li className="paragraph-xs">
               <a
                 href="tel:+51989505027"
-                className="text-gray-400 hover:text-white"
+                className="hover:text-white transition-all ease-in-out"
               >
                 +51 989 505 027
               </a>
@@ -81,7 +75,7 @@ export const Footer = () => (
             <li className="paragraph-xs">
               <a
                 href="https://www.navike21.com"
-                className="text-gray-400 hover:text-white"
+                className="hover:text-white transition-all ease-in-out"
               >
                 www.navike21.com
               </a>
@@ -92,10 +86,7 @@ export const Footer = () => (
     </div>
 
     <div
-      className={clsx(
-        'border-t border-gray-700 bg-gray-950 py-10 text-gray-400',
-        'sm:py-6'
-      )}
+      className={clsx('border-t border-gray-700 bg-gray-950 py-10', 'sm:py-6')}
     >
       <Content
         className={clsx(

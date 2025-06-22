@@ -6,7 +6,7 @@ import Image from 'next/image'
 export const AboutSection = () => {
   return (
     <>
-      <section className={clsx('bg-gray-100', 'dark:bg-gray-950')}>
+      <section className={clsx('bg-gray-100', 'dark:bg-slate-900')}>
         <Content
           className={clsx(
             'sectionContent grid items-center gap-10',
@@ -40,11 +40,19 @@ export const AboutSection = () => {
                 'sm:items-start'
               )}
             >
-              <h4 className={clsx('title-xs text-primary-500 text-center')}>
+              <h4 className={clsx('title-xs text-center')}>
                 Bienvenidos a navike21
               </h4>
-              <h2 className={clsx('title-lg text-center', 'md:text-left')}>
-                Mas que software, creamos soluciones
+              <h2
+                className={clsx(
+                  'title-lg text-center text-white',
+                  'sm:text-left'
+                )}
+              >
+                Mas que software,{' '}
+                <span className="text-gradient-primary">
+                  creamos soluciones
+                </span>
               </h2>
             </div>
             <p className="paragraph-xs">

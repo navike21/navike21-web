@@ -1,6 +1,6 @@
-import { Variants } from 'motion/react'
+import { Easing, Variants } from 'motion/react'
 
-export const EASING: number[] = [0.77, 0, 0.175, 1]
+export const EASING: Easing[] = ['easeInOut', 'easeIn', 'easeOut', 'linear']
 
 export const ITEMS_VARIANTS: Variants = {
   open: {

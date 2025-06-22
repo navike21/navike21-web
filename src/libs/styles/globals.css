@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-gray-50 text-gray-950 dark:bg-gray-950 dark:text-white;
+    @apply bg-gray-50 text-gray-950 dark:bg-gray-950 dark:text-slate-400;
   }
 }
 
@@ -72,17 +72,17 @@
   --text-6xl--line-height: 1.2;
   --text-5xl--line-height: 1.2;
 
-  --color-primary-50: #fffae5;
-  --color-primary-100: #fff6cc;
-  --color-primary-200: #ffec99;
-  --color-primary-300: #ffe366;
-  --color-primary-400: #ffd933;
-  --color-primary-500: #ffd000;
-  --color-primary-600: #e6b800;
-  --color-primary-700: #cc9900;
-  --color-primary-800: #b38f00;
-  --color-primary-900: #997600;
-  --color-primary-950: #665200;
+  --color-primary-50: #e7fff8;
+  --color-primary-100: #c6ffeb;
+  --color-primary-200: #92ffde;
+  --color-primary-300: #4dffd2;
+  --color-primary-400: #00ffbe;
+  --color-primary-500: #00e8aa;
+  --color-primary-600: #00be8d;
+  --color-primary-700: #009876;
+  --color-primary-800: #00785e;
+  --color-primary-900: #00785e;
+  --color-primary-950: #00382e;
 }
 
 @utility max-content {
@@ -175,4 +175,18 @@
   @apply text-2xl;
   @apply font-normal;
   @apply tracking-wide;
+}
+
+@utility bg-gradient-primary {
+  @apply bg-gradient-to-r;
+  @apply from-sky-400;
+  @apply to-purple-700;
+}
+
+@utility text-gradient-primary {
+  @apply bg-clip-text;
+  @apply text-transparent;
+  @apply bg-gradient-to-r;
+  @apply from-sky-400;
+  @apply to-purple-700;
 }

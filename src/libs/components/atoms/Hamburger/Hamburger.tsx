@@ -9,7 +9,7 @@ export const Hamburger = ({ pressed, ...props }: IHamburgerProps) => (
   <button
     className={clsx(
       'group flex w-10 h-10 text-slate-900 text-center items-center justify-center rounded transition',
-      'dark:text-slate-50 cursor-pointer'
+      'dark:text-white cursor-pointer'
     )}
     aria-pressed={pressed}
     {...props}

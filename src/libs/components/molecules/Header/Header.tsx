@@ -20,7 +20,8 @@ export const Header = () => {
       <motion.header
         className={clsx('fixed overflow-hidden top-0 w-full', {
           'bg-transparent z-50 transition-all': isOpen,
-          'backdrop-blur-lg bg-white/80 dark:bg-gray-950/70 z-20': !isOpen
+          'backdrop-blur-lg bg-white/80 z-20': !isOpen,
+          'dark:bg-gray-950/70': !isOpen
         })}
       >
         <Content className="flex justify-between items-center py-4 relative z-50">
@@ -45,7 +46,7 @@ export const Header = () => {
                     className={clsx(
                       'text-gray-900 transition-all duration-300',
                       'hover:opacity-80',
-                      'dark:text-gray-100 dark:hover:opacity-80'
+                      'dark:text-white dark:hover:opacity-80'
                     )}
                   >
                     {icon({
@@ -95,7 +96,7 @@ export const Header = () => {
               transition={{ duration: 0.4, ease: EASING }}
               className={clsx(
                 'bg-white h-full w-2/3',
-                'dark:bg-gray-900',
+                'dark:bg-slate-900',
                 'md:w-1/2'
               )}
             />
@@ -137,12 +138,13 @@ export const Header = () => {
                     <Link
                       href="/"
                       className={clsx(
-                        'title-md transition-all duration-300 ease-in-out',
+                        'title-md transition-all duration-300 ease-in-out text-white',
                         'md:title-lg',
                         'hover:text-gray-300'
                       )}
                     >
                       {text}
+                      <span className="text-gradient-primary">.</span>
                     </Link>
                   </motion.li>
                 ))}

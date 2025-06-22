@@ -6,10 +6,10 @@ import { Crown } from 'lucide-react'
 
 export const Clients = () => {
   return (
-    <section className={clsx('dark:bg-gray-900')}>
+    <section className={clsx('dark:bg-slate-900')}>
       <Content className="sectionContent flex-col flex gap-16">
         <div className="flex flex-col gap-2 items-center">
-          <h2 className="title-lg text-center text-primary-500">
+          <h2 className="title-lg text-center text-gradient-primary">
             Ellos confían en nosotros
           </h2>
           <p className={clsx('text-left paragraph-xs', 'md:text-center')}>
@@ -20,7 +20,7 @@ export const Clients = () => {
         <div
           className={clsx(
             'grid grid-cols-2 gap-3',
-            'sm:grid-cols-4 sm:gap-6',
+            'sm:grid-cols-5 sm:gap-6',
             'lg:grid-cols-7'
           )}
         >
@@ -36,10 +36,10 @@ export const Clients = () => {
                 <Crown className="absolute top-1 right-1 w-4 h-auto text-amber-400 fill-amber-400" />
               )}
               {logo({
-                className: clsx('w-full aspect-square', {
-                  'text-[#003399] dark:text-white': id === 'eurogourmet',
-                  'text-[#FF5A00] dark:text-white': id === 'hammer-blocs',
-                  'text-[#5B3C39] dark:text-white': id === 'tentaciones-gourmet'
+                className: clsx('w-full aspect-square dark:text-white', {
+                  'text-[#003399]': id === 'eurogourmet',
+                  'text-[#FF5A00]': id === 'hammer-blocs',
+                  'text-[#5B3C39]': id === 'tentaciones-gourmet'
                 })
               })}
             </div>
