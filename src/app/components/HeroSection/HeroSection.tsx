@@ -1,6 +1,7 @@
 'use client'
 
-import { Content, TextRotate } from '@Components/atoms'
+import { BackgroundParallax, Content, TextRotate } from '@Components/atoms'
+import { modernBuild } from '@Constants/backgroundsImages'
 import clsx from 'clsx'
 
 export const HeroSection = () => {
@@ -21,6 +22,11 @@ export const HeroSection = () => {
         'lg:aspect-4/2 lg:h-auto'
       )}
     >
+      <BackgroundParallax
+        backgroundImage={modernBuild.src}
+        className="absolute left-0 right-0 top-0 bottom-0"
+        overlay
+      />
       <Content className="relative flex items-center justify-start">
         <h2
           className={clsx(
@@ -31,7 +37,7 @@ export const HeroSection = () => {
             '2xl:title-3xl'
           )}
         >
-          Transformamos ideas en
+          Transformamos ideas en {''}
           <TextRotate words={words} className="text-gradient-primary" />
         </h2>
       </Content>

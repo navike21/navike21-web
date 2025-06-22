@@ -10,6 +10,7 @@ import teamPaperwork from '@Assets/images/backgrounds/converted/team-young-busin
 import topDeskView from '@Assets/images/backgrounds/converted/top-view-man-working-desk-thumb.webp'
 import deskView from '@Assets/images/backgrounds/converted/view-man-working-desk-thumb.webp'
 import womanLectureLaptop from '@Assets/images/backgrounds/converted/young-attractive-woman-sitting-lecture-hall-working-laptop-thumb.webp'
+import modernBuild from '@Assets/images/backgrounds/converted/empty-floor-front-modern-building-thumb.webp'
 
 export {
   designerWithPhone,
@@ -18,6 +19,7 @@ export {
   laptopWorkplace,
   manEmailLaptop,
   manWorkingLate,
+  modernBuild,
   tinyWorkersLaptop,
   supermarketWorker,
   teamPaperwork,

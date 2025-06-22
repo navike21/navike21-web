@@ -12,17 +12,27 @@ import { modernOffice } from '@Constants/backgroundsImages'
 import { SOCIAL_MEDIA } from '@Constants/socialMedia'
 
 export const Header = () => {
-  const { isOpen, showImageAndBackground, showMenuItems, handleToggle } =
-    useHeader()
+  const {
+    isOpen,
+    showImageAndBackground,
+    showMenuItems,
+    ref,
+    visible,
+    handleToggle
+  } = useHeader()
 
   return (
     <>
-      <motion.header
-        className={clsx('fixed overflow-hidden top-0 w-full', {
-          'bg-transparent z-50 transition-all': isOpen,
-          'backdrop-blur-lg bg-white/80 z-20': !isOpen,
-          'dark:bg-gray-950/70': !isOpen
-        })}
+      <header
+        ref={ref}
+        className={clsx(
+          'fixed overflow-hidden top-0 w-full z-20 transition-all',
+          {
+            'bg-transparent z-50 transition-all': isOpen,
+            'backdrop-blur-lg bg-white/80': !isOpen && visible,
+            'dark:bg-gray-950/70': !isOpen && visible
+          }
+        )}
       >
         <Content className="flex justify-between items-center py-4 relative z-50">
           <Link href="/">
@@ -58,7 +68,7 @@ export const Header = () => {
             <Hamburger pressed={isOpen} onClick={handleToggle} />
           </div>
         </Content>
-      </motion.header>
+      </header>
 
       <AnimatePresence>
         {showImageAndBackground && (

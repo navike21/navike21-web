@@ -18,17 +18,17 @@ export const BackgroundParallax = ({
     <div
       {...props}
       className={clsx(
-        className,
-        'bg-cover bg-no-repeat will-change-transform relative bg-[position:top_center]',
+        'bg-cover bg-no-repeat will-change-transform bg-[position:top_center]',
         {
           'bg-[position:top_center]': initialPosition === 'top',
           'bg-center': initialPosition === 'center',
           'bg-[position:bottom_center]': initialPosition === 'bottom'
         },
         {
-          'before:bg-gray-950 before:absolute before:top-0 before:bottom-0 before:left-0 before:right-0 before:-z-10 before:opacity-50':
+          'before:bg-gray-950 before:absolute before:top-0 before:bottom-0 before:left-0 before:right-0 before:-z-10 before:opacity-70':
             overlay
-        }
+        },
+        className
       )}
       style={{ backgroundImage: `url(${backgroundImage})` }}
       data-testid="background-parallax"

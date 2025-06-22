@@ -1,14 +1,33 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { EStage } from './Header.types'
+import { useMotionValueEvent, useScroll } from 'motion/react'
 
 export const useHeader = () => {
+  const ref = useRef<HTMLDivElement>(null)
+
   const [menuState, setMenuState] = useState(false)
   const [stage, setStage] = useState<EStage>(EStage.CLOSED)
+  const [visible, setVisible] = useState<boolean>(false)
+
+  const { scrollY } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start']
+  })
+
+  useMotionValueEvent(scrollY, 'change', latest => {
+    if (latest > 0) {
+      setVisible(true)
+    } else {
+      setVisible(false)
+    }
+  })
 
   const handleToggle = () => {
     if (menuState) {
       setStage(EStage.CLOSING)
+      document.body.style.overflow = 'auto'
     } else {
+      document.body.style.overflow = 'hidden'
       setMenuState(true)
       setStage(EStage.IMAGE)
     }
@@ -38,6 +57,8 @@ export const useHeader = () => {
 
   return {
     isOpen,
+    ref,
+    visible,
     showImageAndBackground,
     showMenuItems,
     handleToggle

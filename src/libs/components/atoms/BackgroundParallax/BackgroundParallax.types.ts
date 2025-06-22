@@ -5,7 +5,7 @@ export type TPosition = 'top' | 'center' | 'bottom'
 export interface IBackgroundParallaxProps
   extends HTMLAttributes<HTMLDivElement> {
   backgroundImage: string
-  children: ReactNode
+  children?: ReactNode
   overlay?: boolean
   startPosition?: TPosition
 }

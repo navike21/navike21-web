@@ -19,7 +19,7 @@ export const Clients = () => {
         </div>
         <div
           className={clsx(
-            'grid grid-cols-2 gap-3',
+            'grid grid-cols-3 gap-3',
             'sm:grid-cols-5 sm:gap-6',
             'lg:grid-cols-7'
           )}

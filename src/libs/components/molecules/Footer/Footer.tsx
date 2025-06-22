@@ -39,8 +39,11 @@ export const Footer = () => (
           <div className="title-xs w-full text-white">Servicios</div>
           <ul className="gap-2 grid grid-cols-1 w-full">
             <li className="paragraph-xs">Desarrollo Web</li>
-            <li className="paragraph-xs">Desarrollo Móvil</li>
-            <li className="paragraph-xs">Consultoría</li>
+            <li className="paragraph-xs">Desarrollo de Apps Móviles</li>
+            <li className="paragraph-xs">Ecommerce</li>
+            <li className="paragraph-xs">Software a Medida</li>
+            <li className="paragraph-xs">Landing Pages</li>
+            <li className="paragraph-xs">UX/UI</li>
           </ul>
         </section>
 
