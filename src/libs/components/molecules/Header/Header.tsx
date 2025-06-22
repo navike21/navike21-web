@@ -138,7 +138,8 @@ export const Header = () => {
                     <Link
                       href="/"
                       className={clsx(
-                        'title-md transition-all duration-300 ease-in-out text-white',
+                        'title-md transition-all duration-300 ease-in-out',
+                        ':dark:text-white',
                         'md:title-lg',
                         'hover:text-gray-300'
                       )}

@@ -31,7 +31,7 @@ export const HeroSection = () => {
             '2xl:title-3xl'
           )}
         >
-          Transformamos ideas en {''}
+          Transformamos ideas en
           <TextRotate words={words} className="text-gradient-primary" />
         </h2>
       </Content>

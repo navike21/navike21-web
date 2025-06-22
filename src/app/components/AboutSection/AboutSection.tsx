@@ -45,7 +45,8 @@ export const AboutSection = () => {
               </h4>
               <h2
                 className={clsx(
-                  'title-lg text-center text-white',
+                  'title-lg text-center',
+                  'dark:text-white',
                   'sm:text-left'
                 )}
               >
