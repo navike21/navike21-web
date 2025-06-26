@@ -4,6 +4,7 @@ import { clsx } from 'clsx'
 
 export const Footer = () => (
   <>
+    <div className="bg-gradient-primary h-px" />
     <div className={clsx('bg-gray-950 py-12 relative z-30 text-slate-400')}>
       <Content
         className={clsx(

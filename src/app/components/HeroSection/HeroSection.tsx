@@ -1,6 +1,11 @@
 'use client'
 
-import { BackgroundParallax, Content, TextRotate } from '@Components/atoms'
+import {
+  BackgroundParallax,
+  LinkButton,
+  Content,
+  TextRotate
+} from '@Components/atoms'
 import { manWorkingNight } from '@Constants/backgroundsImages'
 import clsx from 'clsx'
 
@@ -27,10 +32,10 @@ export const HeroSection = () => {
         className="absolute left-0 right-0 top-0 bottom-0"
         overlay
       />
-      <Content className="relative flex items-center justify-start">
+      <Content className="relative flex items-start justify-start flex-col gap-5">
         <h2
           className={clsx(
-            'z-10 font-bold text-left relative title-xl text-white transition-all',
+            'z-10 text-left relative title-lg text-white transition-all',
             'sm:w-8/12',
             'md:title-2xl',
             'lg:title-2xl lg:w-6/12',
@@ -40,6 +45,11 @@ export const HeroSection = () => {
           Transformamos ideas en {''}
           <TextRotate words={words} className="text-gradient-primary" />
         </h2>
+        <p className={clsx('paragraph-xs', 'sm:w-8/12', 'lg:w-6/12')}>
+          Creamos soluciones digitales que impulsan tu negocio, con la
+          experiencia centrada en el usuario.
+        </p>
+        <LinkButton href="/contact">Conversemos</LinkButton>
       </Content>
     </div>
   )

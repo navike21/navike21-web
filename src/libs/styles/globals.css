@@ -5,6 +5,7 @@
 @layer base {
   body {
     @apply bg-gray-50 text-gray-950 dark:bg-gray-950 dark:text-slate-400;
+    @apply font-light;
   }
 }
 
@@ -12,6 +13,14 @@
   font-family: 'Poppins';
   src: url('../assets/fonts/poppins-thin.woff2') format('truetype');
   font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../assets/fonts/poppins-extraLight.woff2') format('truetype');
+  font-weight: 200;
   font-style: normal;
   font-display: swap;
 }
@@ -67,22 +76,39 @@
 @theme {
   --font-sans: 'Poppins', sans-serif;
   --breakpoint-xs: 24rem;
-  --font-weight-normal: 300;
-  --font-weight-medium: 400;
   --text-6xl--line-height: 1.2;
   --text-5xl--line-height: 1.2;
 
-  --color-primary-50: #e7fff8;
-  --color-primary-100: #c6ffeb;
-  --color-primary-200: #92ffde;
-  --color-primary-300: #4dffd2;
-  --color-primary-400: #00ffbe;
-  --color-primary-500: #00e8aa;
-  --color-primary-600: #00be8d;
-  --color-primary-700: #009876;
-  --color-primary-800: #00785e;
-  --color-primary-900: #00785e;
-  --color-primary-950: #00382e;
+  --color-primary-50: #effaff;
+  --color-primary-100: #def4ff;
+  --color-primary-200: #b6eaff;
+  --color-primary-300: #75ddff;
+  --color-primary-400: #2cccff;
+  --color-primary-500: #00bcff;
+  --color-primary-600: #0092d4;
+  --color-primary-700: #0074ab;
+  --color-primary-800: #00628d;
+  --color-primary-900: #065174;
+  --color-primary-950: #04334d;
+}
+
+@theme {
+  --animate-buttonHeartBeat: buttonHeartBeat 2s infinite ease-in-out;
+
+  @keyframes buttonHeartBeat {
+    0% {
+      box-shadow: 0 0 0 0 theme(colors.purple.500);
+      transform: scale(1);
+    }
+    50% {
+      box-shadow: 0 0 0 7px theme(colors.primary.500 / 0);
+      transform: scale(1.05);
+    }
+    100% {
+      box-shadow: 0 0 0 0 theme(colors.purple.500 / 0);
+      transform: scale(1);
+    }
+  }
 }
 
 @utility max-content {
@@ -153,27 +179,22 @@
 
 @utility paragraph-xs {
   @apply text-sm;
-  @apply font-normal;
   @apply tracking-wide;
 }
 @utility paragraph-sm {
   @apply text-base;
-  @apply font-normal;
   @apply tracking-wide;
 }
 @utility paragraph-md {
   @apply text-lg;
-  @apply font-normal;
   @apply tracking-wide;
 }
 @utility paragraph-lg {
   @apply text-xl;
-  @apply font-normal;
   @apply tracking-wide;
 }
 @utility paragraph-xl {
   @apply text-2xl;
-  @apply font-normal;
   @apply tracking-wide;
 }
 
@@ -189,4 +210,18 @@
   @apply bg-gradient-to-r;
   @apply from-sky-400;
   @apply to-purple-700;
+}
+
+@utility button-base {
+  @apply cursor-pointer;
+  @apply px-6;
+  @apply py-3;
+  @apply rounded-md;
+  @apply transition-all;
+  @apply tracking-wide;
+  @apply font-medium;
+  @apply relative;
+  @apply overflow-hidden;
+
+  @apply active:scale-95;
 }

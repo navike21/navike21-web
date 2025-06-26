@@ -152,7 +152,6 @@ export const Header = () => {
                       )}
                     >
                       {text}
-                      <span className="text-gradient-primary">.</span>
                     </Link>
                   </motion.li>
                 ))}
