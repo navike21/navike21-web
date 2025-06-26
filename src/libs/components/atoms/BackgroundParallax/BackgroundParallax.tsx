@@ -31,7 +31,6 @@ export const BackgroundParallax = ({
         className
       )}
       style={{ backgroundImage: `url(${backgroundImage})` }}
-      data-testid="background-parallax"
       ref={parallaxRef}
     >
       {children}

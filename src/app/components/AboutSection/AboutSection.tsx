@@ -1,4 +1,4 @@
-import { Content, Counter } from '@Components/atoms'
+import { Content, Counter, LinkButton } from '@Components/atoms'
 import { teamPaperwork } from '@Constants/backgroundsImages'
 import clsx from 'clsx'
 import Image from 'next/image'
@@ -67,6 +67,12 @@ export const AboutSection = () => {
               dedicados a crear soluciones innovadoras que mejoran la
               interacción en el mundo digital.
             </p>
+            <LinkButton
+              href="/nosotros"
+              className={clsx('mt-4 w-full', 'sm:w-fit')}
+            >
+              Conoce más
+            </LinkButton>
           </div>
         </Content>
       </section>

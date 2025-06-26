@@ -222,6 +222,10 @@
   @apply font-medium;
   @apply relative;
   @apply overflow-hidden;
+  @apply flex;
+  @apply items-center;
+  @apply justify-center;
+  @apply w-fit;
 
   @apply active:scale-95;
 }
