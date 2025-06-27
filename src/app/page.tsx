@@ -1,6 +1,6 @@
 'use client'
 
-import { AboutSection, Clients, HeroSection } from './components'
+import { AboutSection, Clients, HeroSection, Services } from './components'
 
 export default function Home() {
   return (
@@ -8,6 +8,7 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <Clients />
+      <Services />
     </>
   )
 }
