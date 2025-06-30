@@ -1,11 +1,18 @@
-'use client'
-
 import { useEffect, useMemo, useState } from 'react'
 import {
   IMasonryGridProps,
   IMasonryItem,
   IUseMasonryGrid
 } from './MasonryGrid.types'
+
+const getColumnCount = (
+  width: number,
+  config: IMasonryGridProps['columns']
+) => {
+  if (width >= 1025) return config.desktop
+  if (width >= 768) return config.tablet
+  return config.mobile
+}
 
 export const useMasonryGrid = ({
   items,
@@ -14,25 +21,12 @@ export const useMasonryGrid = ({
   controlledFilter,
   onFilterChange
 }: IUseMasonryGrid) => {
-  const getColumnCount = (
-    width: number,
-    config: IMasonryGridProps['columns']
-  ) => {
-    if (width >= 1024) return config.desktop
-    if (width >= 768) return config.tablet
-    return config.mobile
-  }
-
   const determineSpan = (
     maxAllowed: number,
     useRandomSpan: boolean
   ): number => {
     if (!useRandomSpan) return 1
-
-    if (maxAllowed >= 2) {
-      return Math.random() < 0.5 ? 2 : 1
-    }
-
+    if (maxAllowed >= 2) return Math.random() < 0.5 ? 2 : 1
     return 1
   }
 
@@ -40,14 +34,14 @@ export const useMasonryGrid = ({
     items: IMasonryItem[],
     columnCount: number,
     useRandomSpan: boolean
-  ): { item: IMasonryItem; col: number }[] => {
+  ) => {
     const result: { item: IMasonryItem; col: number }[] = []
     let currentRowSum = 0
 
     for (const item of items) {
       if (currentRowSum >= columnCount) currentRowSum = 0
 
-      const maxAllowed = columnCount - currentRowSum
+      const maxAllowed = Math.min(2, columnCount - currentRowSum) // max span=2
       let span = determineSpan(maxAllowed, useRandomSpan)
 
       if (currentRowSum + span > columnCount) span = 1
@@ -59,76 +53,61 @@ export const useMasonryGrid = ({
     return result
   }
 
-  const identifyLastRow = (
-    result: { item: IMasonryItem; col: number }[],
+  const adjustLastRow = (
+    items: { item: IMasonryItem; col: number }[],
     columnCount: number
-  ): { lastRowItems: { index: number; col: number }[]; total: number } => {
+  ) => {
     let total = 0
-    let lastRowItems: { index: number; col: number }[] = []
+    let lastRow: { index: number; col: number }[] = []
 
-    for (let i = result.length - 1; i >= 0; i -= 1) {
-      const col = result[i].col
-      total += col
-      lastRowItems.unshift({ index: i, col })
-
-      if (total === columnCount) break
-      if (total > columnCount) {
-        lastRowItems.shift()
-        break
-      }
+    for (let i = items.length - 1; i >= 0; i--) {
+      total += items[i].col
+      lastRow.unshift({ index: i, col: items[i].col })
+      if (total >= columnCount) break
     }
 
-    return { lastRowItems, total }
+    const remaining = columnCount - total
+
+    if (remaining === 1) {
+      // último item debe ser col-span-1
+      const lastItem = items[lastRow[lastRow.length - 1].index]
+      lastItem.col = 1
+    } else if (remaining === 3 && lastRow.length >= 2) {
+      // penúltimo col-span-2, último col-span-1
+      const penult = items[lastRow[lastRow.length - 2].index]
+      const last = items[lastRow[lastRow.length - 1].index]
+      penult.col = 2
+      last.col = 1
+    }
+
+    return items
   }
 
   const generateSmartColSpans = (
     items: IMasonryItem[],
     columnCount: number,
     useRandomSpan: boolean
-  ): { item: IMasonryItem; col: number }[] => {
-    const result = assignInitialSpans(items, columnCount, useRandomSpan)
-
-    const { lastRowItems, total } = identifyLastRow(result, columnCount)
-
-    let remaining = columnCount - total
-
-    for (let i = 0; i < lastRowItems.length && remaining > 0; i += 1) {
-      const item = result[lastRowItems[i].index]
-      if (item.col === 1 && remaining >= 1) {
-        item.col = 2
-        remaining -= 1
-      }
-    }
-
-    return result
+  ) => {
+    let initial = assignInitialSpans(items, columnCount, useRandomSpan)
+    return adjustLastRow(initial, columnCount)
   }
 
   const [filter, setFilter] = useState<string>('all')
-  const [columnCount, setColumnCount] = useState(() =>
-    getColumnCount(
-      typeof window !== 'undefined' ? window.innerWidth : 1024,
-      columns
-    )
-  )
-  const [hasMounted, setHasMounted] = useState(false)
+  const [columnCount, setColumnCount] = useState<number | null>(null)
+  const [itemsWithSpans, setItemsWithSpans] = useState<
+    { item: IMasonryItem; col: number }[]
+  >([])
 
   useEffect(() => {
-    setHasMounted(true)
-  }, [])
-
-  useEffect(() => {
-    const update = () => {
+    const update = () =>
       setColumnCount(getColumnCount(window.innerWidth, columns))
-    }
     update()
     window.addEventListener('resize', update)
     return () => window.removeEventListener('resize', update)
   }, [columns])
 
   useEffect(() => {
-    if (controlledFilter !== undefined) {
-      setFilter(controlledFilter)
-    }
+    if (controlledFilter !== undefined) setFilter(controlledFilter)
   }, [controlledFilter])
 
   const filteredItems = useMemo(() => {
@@ -136,12 +115,16 @@ export const useMasonryGrid = ({
     return items.filter(i => i.category === filter)
   }, [filter, items])
 
-  const itemsWithSpans = useMemo(() => {
-    if (!hasMounted) {
-      return filteredItems.map(item => ({ item, col: 1 }))
+  useEffect(() => {
+    if (columnCount !== null) {
+      const spans = generateSmartColSpans(
+        filteredItems,
+        columnCount,
+        useRandomSpan
+      )
+      setItemsWithSpans(spans)
     }
-    return generateSmartColSpans(filteredItems, columnCount, useRandomSpan)
-  }, [filteredItems, columnCount, hasMounted, useRandomSpan])
+  }, [filteredItems, columnCount, useRandomSpan])
 
   const handleFilterChange = (newFilter: string) => {
     if (controlledFilter === undefined) setFilter(newFilter)

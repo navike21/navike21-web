@@ -11,10 +11,12 @@ import modernBuild from '@Assets/images/backgrounds/converted/empty-floor-front-
 import womanTablet from '@Assets/images/backgrounds/converted/side-view-woman-home-using-headphones-tablet-thumb.webp'
 import programming from '@Assets/images/backgrounds/converted/programming-background-with-person-working-with-codes-computer-thumb.webp'
 import manWorkingNight from '@Assets/images/backgrounds/converted/man-working-night-thumb.webp'
+import homePageScreen from '@Assets/images/backgrounds/converted/homepage-seen-computer-screen-thumb.webp'
 
 export {
   designerWithPhone,
   htmlCssPerson,
+  homePageScreen,
   modernOffice,
   manEmailLaptop,
   manWorkingLate,

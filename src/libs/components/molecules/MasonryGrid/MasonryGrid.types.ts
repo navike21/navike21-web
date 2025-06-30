@@ -14,7 +14,6 @@ export interface IColumnsMasonry {
 
 export interface IMasonryGridProps extends IUseMasonryGrid {
   filters?: string[]
-  itemHeight?: string // eg: h-[200px]
   renderItem?: (item: IMasonryItem) => ReactNode
 }
 

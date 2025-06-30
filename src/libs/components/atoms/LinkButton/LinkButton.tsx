@@ -11,7 +11,7 @@ export const LinkButton = ({
   children,
   className,
   gradient,
-  size = 'small',
+  size = 'medium',
   ...props
 }: TLinkButtonProps) => {
   return (
@@ -21,9 +21,9 @@ export const LinkButton = ({
           appearance === 'default',
         'animate-buttonHeartBeat': appearance === 'pulse',
         'bg-gradient-primary text-white': gradient,
-        'text-xs': size === 'small',
-        'text-sm': size === 'medium',
-        'text-xl': size === 'large'
+        'button-small': size === 'small',
+        'button-medium': size === 'medium',
+        'button-large': size === 'large'
       })}
       {...props}
     >

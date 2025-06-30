@@ -1,26 +1,29 @@
+'use client'
+
 import clsx from 'clsx'
 import { motion, AnimatePresence } from 'motion/react'
 import { IMasonryGridProps } from './MasonryGrid.types'
 import { useMasonryGrid } from './MasonryGrid.hooks'
 
 export const MasonryGrid = ({
-  items,
-  filters = [],
   columns,
-  itemHeight = 'h-[200px]',
-  useRandomSpan = true,
-  renderItem,
   controlledFilter,
-  onFilterChange
+  filters = [],
+  items,
+  useRandomSpan = true,
+  onFilterChange,
+  renderItem
 }: IMasonryGridProps) => {
   const { handleFilterChange, itemsWithSpans, filter, columnCount } =
     useMasonryGrid({
-      items,
       columns,
-      useRandomSpan,
       controlledFilter,
+      items,
+      useRandomSpan,
       onFilterChange
     })
+
+  if (columnCount === null) return null
 
   return (
     <div className="space-y-6">
@@ -30,6 +33,7 @@ export const MasonryGrid = ({
             <button
               key={f}
               onClick={() => handleFilterChange(f)}
+              aria-pressed={filter === f}
               className={clsx(
                 'px-4 py-1 rounded-full border',
                 filter === f
@@ -46,12 +50,16 @@ export const MasonryGrid = ({
       <div
         className={clsx(
           'grid gap-4 grid-flow-dense transition-opacity duration-300',
-          columnCount === 1 && 'grid-cols-1',
-          columnCount === 2 && 'grid-cols-2',
-          columnCount === 3 && 'grid-cols-3',
-          columnCount === 4 && 'grid-cols-4',
-          columnCount === 5 && 'grid-cols-5',
-          columnCount === 6 && 'grid-cols-6'
+          {
+            'grid-cols-2': columnCount === 2,
+            'grid-cols-3': columnCount === 3,
+            'grid-cols-4': columnCount === 4,
+            'grid-cols-5': columnCount === 5,
+            'grid-cols-6': columnCount === 6,
+            'grid-cols-7': columnCount === 7,
+            'grid-cols-8': columnCount === 8,
+            'grid-cols-9': columnCount === 9
+          }
         )}
       >
         <AnimatePresence mode="popLayout">
@@ -65,8 +73,7 @@ export const MasonryGrid = ({
               transition={{ duration: 0.3 }}
               className={clsx(
                 `col-span-${Math.min(col, columnCount)}`,
-                itemHeight,
-                'overflow-hidden rounded-xl bg-sky-100 shadow-md p-4 flex items-center justify-center text-xl font-semibold'
+                'overflow-hidden'
               )}
             >
               {renderItem ? renderItem(item) : item.content}

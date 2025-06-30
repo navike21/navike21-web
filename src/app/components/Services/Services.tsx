@@ -1,13 +1,15 @@
 'use client'
 
-import { Content } from '@Components/atoms'
+import { Button, Content } from '@Components/atoms'
 import { MasonryGrid } from '@Components/molecules'
+import { homePageScreen } from '@Constants/backgroundsImages'
 import clsx from 'clsx'
+import Image from 'next/image'
 import React from 'react'
 
 export const Services = () => {
   return (
-    <section className={clsx('bg-gray-100', 'dark:bg-gradient-primary')}>
+    <section className={clsx('bg-gray-100', 'dark:bg-slate-900')}>
       <Content className="sectionContent flex-col flex gap-16">
         <div className="flex flex-col gap-2 items-center">
           <h4 className={clsx('title-xs text-center text-white')}>
@@ -18,91 +20,96 @@ export const Services = () => {
           </h2>
         </div>
         <MasonryGrid
-          filters={['frontend', 'backend', 'uiux', 'fullstack']}
+          // filters={['frontend', 'backend', 'uiux', 'fullstack']}
           items={[
             {
               id: '1',
               category: 'frontend',
-              content: <div>Holi</div>
+              content: (
+                <div className={clsx('relative z-10', 'h-60 w-full ')}>
+                  <Image
+                    src={homePageScreen.src}
+                    width={homePageScreen.width}
+                    height={homePageScreen.height}
+                    alt="Frontend Development"
+                    className="w-full h-full object-cover rounded-xl"
+                  />
+                  <div
+                    className={clsx(
+                      'bg-slate-900/50 rounded-xl',
+                      'flex flex-col items-stretch justify-between gap-4',
+                      'absolute inset-0 z-20 top-0 bottom-0 left-0 right-0'
+                    )}
+                  >
+                    <h2
+                      className={clsx(
+                        'text-white title-sm px-5 pt-4',
+                        'xs:title-md xs:w-3/4',
+                        'md:w-9/12'
+                      )}
+                    >
+                      Diseño y desarrollo de páginas web
+                    </h2>
+                    <div
+                      className={clsx(
+                        'rounded-b-xl backdrop-blur-xs bg-slate-900/60',
+                        'px-5 py-4 flex justify-between items-center gap-4'
+                      )}
+                    >
+                      <p className="text-white paragraph-xxs line-clamp-2">
+                        Sitios web modernos, rápidos y totalmente
+                        personalizados.
+                      </p>
+                      <Button size="small">Explorar</Button>
+                    </div>
+                  </div>
+                </div>
+              )
             },
             {
               id: '2',
-              category: 'backend',
-              content: <div>Holi2</div>
-            },
-            {
-              id: '3',
-              category: 'uiux',
-              content: <div>Holi3</div>
-            },
-            {
-              id: '4',
-              category: 'frontend',
-              content: <div>Holi4</div>
-            },
-            {
-              id: '5',
-              category: 'backend',
-              content: <div>Holi5</div>
-            },
-            {
-              id: '6',
-              category: 'uiux',
-              content: <div>Holi6</div>
-            },
-            {
-              id: '7',
-              category: 'frontend',
-              content: <div>Holi7</div>
-            },
-            {
-              id: '8',
-              category: 'fullstack',
-              content: <div>Holi8</div>
-            },
-            {
-              id: '9',
-              category: 'backend',
-              content: <div>Holi9</div>
-            },
-            {
-              id: '10',
-              category: 'backend',
-              content: <div>Holi10</div>
-            },
-            {
-              id: '11',
-              category: 'fullstack',
-              content: <div>Holi11</div>
-            },
-            {
-              id: '12',
-              category: 'fullstack',
-              content: <div>Holi12</div>
-            },
-            {
-              id: '13',
-              category: 'uiux',
-              content: <div>Holi13</div>
-            },
-            {
-              id: '14',
-              category: 'frontend',
-              content: <div>Holi14</div>
-            },
-            {
-              id: '15',
-              category: 'backend',
-              content: <div>Holi15</div>
-            },
-            {
-              id: '16',
-              category: 'uiux',
-              content: <div>Holi16</div>
+              category: 'Ecommerce',
+              content: (
+                <div className={clsx('relative z-10', 'h-60 w-full ')}>
+                  <Image
+                    src={homePageScreen.src}
+                    width={homePageScreen.width}
+                    height={homePageScreen.height}
+                    alt="Backend Development"
+                    className="w-full h-full object-cover rounded-xl"
+                  />
+                  <div
+                    className={clsx(
+                      'bg-slate-900/50 rounded-xl',
+                      'flex flex-col items-stretch justify-between gap-4',
+                      'absolute inset-0 z-20 top-0 bottom-0 left-0 right-0'
+                    )}
+                  >
+                    <h2
+                      className={clsx(
+                        'text-white title-sm px-5 pt-4',
+                        'sm:title-lg xs:w-3/4'
+                      )}
+                    >
+                      Ecommerce
+                    </h2>
+                    <div
+                      className={clsx(
+                        'rounded-b-xl backdrop-blur-xs',
+                        'px-5 py-4 flex justify-between items-center gap-4'
+                      )}
+                    >
+                      <p className="text-white paragraph-xxs line-clamp-2">
+                        Soluciones escalables y seguras para tu negocio.
+                      </p>
+                      <Button size="small">Explorar</Button>
+                    </div>
+                  </div>
+                </div>
+              )
             }
           ]}
-          columns={{ mobile: 2, tablet: 3, desktop: 4 }}
-          itemHeight="h-[220px]"
+          columns={{ mobile: 1, tablet: 3, desktop: 4 }}
         />
       </Content>
     </section>

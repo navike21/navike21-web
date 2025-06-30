@@ -177,6 +177,10 @@
   @apply tracking-wider;
 }
 
+@utility paragraph-xxs {
+  @apply text-xs;
+  @apply tracking-wide;
+}
 @utility paragraph-xs {
   @apply text-sm;
   @apply tracking-wide;
@@ -214,8 +218,6 @@
 
 @utility button-base {
   @apply cursor-pointer;
-  @apply px-6;
-  @apply py-3;
   @apply rounded-md;
   @apply transition-all;
   @apply tracking-wide;
@@ -228,4 +230,22 @@
   @apply w-fit;
 
   @apply active:scale-95;
+}
+
+@utility button-small {
+  @apply text-xs;
+  @apply px-6;
+  @apply py-2;
+}
+
+@utility button-medium {
+  @apply text-sm;
+  @apply px-6;
+  @apply py-2.5;
+}
+
+@utility button-large {
+  @apply text-xl;
+  @apply px-8;
+  @apply py-3;
 }
