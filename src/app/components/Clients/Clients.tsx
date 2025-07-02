@@ -1,4 +1,5 @@
 import { Content } from '@Components/atoms'
+import { Title } from '@Components/molecules'
 import { clients } from '@Constants/clients'
 import { uuidV7 } from '@Utils/generateKeys'
 import clsx from 'clsx'
@@ -14,21 +15,10 @@ export const Clients = () => {
         )}
       >
         <div className={clsx('flex flex-col gap-5 items-center', 'md:w-4/12')}>
-          <hgroup className="flex flex-col gap-3 items-center">
-            <h4 className={clsx('title-xs text-center w-full', 'sm:text-left')}>
-              ¿Te sumas?
-            </h4>
-            <h2
-              className={clsx(
-                'title-xl text-center',
-                'text-white',
-                'sm:text-left'
-              )}
-            >
-              Ellos{' '}
-              <span className="text-gradient-primary">confían en nosotros</span>
-            </h2>
-          </hgroup>
+          <Title
+            title="Así como ellos que **confían en nosotros**"
+            subtitle="¿Te sumas?"
+          />
           <p className={clsx('text-left paragraph-xs')}>
             Así como ellos, tú también puedes confiar en nosotros para llevar tu
             proyecto al siguiente nivel.

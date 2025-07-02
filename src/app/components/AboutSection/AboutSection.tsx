@@ -1,4 +1,5 @@
 import { Content, Counter, LinkButton } from '@Components/atoms'
+import { Title } from '@Components/molecules'
 import { teamPaperwork } from '@Constants/backgroundsImages'
 import clsx from 'clsx'
 import Image from 'next/image'
@@ -58,34 +59,16 @@ export const AboutSection = () => {
                 'sm:items-start'
               )}
             >
-              <hgroup className="flex flex-col gap-3 items-center">
-                <h4
-                  className={clsx(
-                    'title-xs text-center w-full',
-                    'sm:text-left'
-                  )}
-                >
-                  ¿Quiénes somos?
-                </h4>
-                <h2
-                  className={clsx(
-                    'title-xl text-center',
-                    'text-white',
-                    'sm:text-left'
-                  )}
-                >
-                  Mas que software,{' '}
-                  <span className="text-gradient-primary">
-                    creamos soluciones
-                  </span>
-                </h2>
-              </hgroup>
+              <Title
+                title="Mas que software, **creamos soluciones**"
+                subtitle="¿Quiénes somos?"
+              />
+              <p className="paragraph-xs">
+                Somos un equipo apasionado por la tecnología y el diseño,
+                dedicados a crear soluciones innovadoras que mejoran la
+                interacción en el mundo digital.
+              </p>
             </div>
-            <p className="paragraph-xs">
-              Somos un equipo apasionado por la tecnología y el diseño,
-              dedicados a crear soluciones innovadoras que mejoran la
-              interacción en el mundo digital.
-            </p>
             <LinkButton
               href="/nosotros"
               className={clsx('mt-4 w-full', 'sm:w-fit')}
