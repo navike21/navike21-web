@@ -4,9 +4,21 @@ import clsx from 'clsx'
 import Image from 'next/image'
 
 export const AboutSection = () => {
+  const counterMetrics = [
+    { value: 62, label: 'Proyectos completados', symbol: '+', key: 'projects' },
+    { value: 10, label: 'Clientes satisfechos', symbol: '+', key: 'clients' },
+    { value: 5, label: 'Años de experiencia', symbol: '+', key: 'experience' },
+    {
+      value: 100,
+      label: 'Compromiso con la calidad',
+      symbol: '%',
+      key: 'quality'
+    }
+  ]
+
   return (
     <>
-      <section className={clsx('bg-gray-100', 'dark:bg-slate-900')}>
+      <section className={clsx('bg-slate-900')}>
         <Content
           className={clsx(
             'sectionContent grid items-center gap-10',
@@ -42,25 +54,32 @@ export const AboutSection = () => {
           >
             <div
               className={clsx(
-                'flex flex-col gap-2 items-center',
+                'flex flex-col gap-5 items-center',
                 'sm:items-start'
               )}
             >
-              <h4 className={clsx('title-xs text-center')}>
-                Bienvenidos a navike21
-              </h4>
-              <h2
-                className={clsx(
-                  'title-lg text-center',
-                  'dark:text-white',
-                  'sm:text-left'
-                )}
-              >
-                Mas que software,{' '}
-                <span className="text-gradient-primary">
-                  creamos soluciones
-                </span>
-              </h2>
+              <hgroup className="flex flex-col gap-3 items-center">
+                <h4
+                  className={clsx(
+                    'title-xs text-center w-full',
+                    'sm:text-left'
+                  )}
+                >
+                  ¿Quiénes somos?
+                </h4>
+                <h2
+                  className={clsx(
+                    'title-xl text-center',
+                    'text-white',
+                    'sm:text-left'
+                  )}
+                >
+                  Mas que software,{' '}
+                  <span className="text-gradient-primary">
+                    creamos soluciones
+                  </span>
+                </h2>
+              </hgroup>
             </div>
             <p className="paragraph-xs">
               Somos un equipo apasionado por la tecnología y el diseño,
@@ -76,7 +95,7 @@ export const AboutSection = () => {
           </div>
         </Content>
       </section>
-      <section className={clsx('bg-gray-100', 'dark:bg-black')}>
+      <section className={clsx('bg-black')}>
         <Content
           className={clsx(
             'sectionContent grid items-center gap-7',
@@ -84,34 +103,18 @@ export const AboutSection = () => {
             'md:grid-cols-4'
           )}
         >
-          <div className="counter w-full flex items-center text-center flex-col gap-3">
-            <div className="flex justify-center items-start">
-              <Counter value={62} className="title-2xl text-white" />
-              <span className="text-gradient-primary title-xl">+</span>
+          {counterMetrics.map(({ value, label, symbol, key }) => (
+            <div
+              key={key}
+              className="counter w-full flex items-center text-center flex-col gap-3"
+            >
+              <div className="flex justify-center items-start">
+                <Counter value={value} className="title-2xl text-white" />
+                <span className="text-gradient-primary title-xl">{symbol}</span>
+              </div>
+              <p className="lg:px-6 xl:px-2">{label}</p>
             </div>
-            <p className="lg:px-6 xl:px-2">Proyectos completados</p>
-          </div>
-          <div className="counter w-full flex items-center text-center flex-col gap-3">
-            <div className="flex justify-center items-start">
-              <Counter value={10} className="title-2xl text-white" />
-              <span className="text-gradient-primary title-xl">+</span>
-            </div>
-            <p className="lg:px-6 xl:px-2">Clientes satisfechos</p>
-          </div>
-          <div className="counter w-full flex items-center text-center flex-col gap-3">
-            <div className="flex justify-center items-start">
-              <Counter value={5} className="title-2xl text-white" />
-              <span className="text-gradient-primary title-xl">+</span>
-            </div>
-            <p className="lg:px-6 xl:px-2">Años de experiencia</p>
-          </div>
-          <div className="counter w-full flex items-center text-center flex-col gap-3">
-            <div className="flex justify-center items-start">
-              <Counter value={100} className="title-2xl text-white" />
-              <span className="text-gradient-primary title-xl">%</span>
-            </div>
-            <p className="lg:px-6 xl:px-2">Compromiso con la calidad</p>
-          </div>
+          ))}
         </Content>
       </section>
     </>

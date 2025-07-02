@@ -8,8 +8,8 @@ interface IHamburgerProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export const Hamburger = ({ pressed, ...props }: IHamburgerProps) => (
   <button
     className={clsx(
-      'group flex w-10 h-10 text-slate-900 text-center items-center justify-center rounded transition',
-      'dark:text-white cursor-pointer'
+      'group flex w-10 h-10 text-center items-center justify-center rounded transition',
+      'text-white cursor-pointer'
     )}
     aria-pressed={pressed}
     {...props}

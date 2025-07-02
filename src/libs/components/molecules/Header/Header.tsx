@@ -27,8 +27,7 @@ export const Header = () => {
           'fixed top-0 w-full z-20 overflow-hidden transition-all',
           {
             'bg-transparent z-50': isOpen,
-            'backdrop-blur-lg bg-white/80': !isOpen && visible,
-            'dark:bg-gray-950/70': !isOpen && visible
+            'backdrop-blur-lg bg-gray-950/70': !isOpen && visible
           }
         )}
       >
@@ -52,9 +51,9 @@ export const Header = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={clsx(
-                      'text-gray-900 transition-all duration-300',
+                      'transition-all duration-300',
                       'hover:opacity-80',
-                      'dark:text-white dark:hover:opacity-80'
+                      'text-white hover:opacity-80'
                     )}
                   >
                     {icon({
@@ -101,11 +100,7 @@ export const Header = () => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ duration: 0.4, ease: EASING }}
-              className={clsx(
-                'bg-white h-full w-2/3',
-                'dark:bg-slate-900',
-                'md:w-1/2'
-              )}
+              className={clsx('h-full w-2/3 bg-slate-900', 'md:w-1/2')}
             />
           </motion.div>
         )}
@@ -146,7 +141,7 @@ export const Header = () => {
                       href="/"
                       className={clsx(
                         'title-md transition-all duration-300 ease-in-out',
-                        ':dark:text-white',
+                        'text-white',
                         'md:title-lg',
                         'hover:text-gray-300'
                       )}

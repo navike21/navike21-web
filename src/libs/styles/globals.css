@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-gray-50 text-gray-950 dark:bg-gray-950 dark:text-slate-400;
+    @apply bg-gray-950 text-slate-400;
     @apply font-light;
   }
 }
@@ -208,6 +208,12 @@
   @apply to-purple-700;
 }
 
+@utility bg-gradient-primary-vertical {
+  @apply bg-gradient-to-b;
+  @apply from-sky-400;
+  @apply to-purple-700;
+}
+
 @utility text-gradient-primary {
   @apply bg-clip-text;
   @apply text-transparent;
@@ -248,4 +254,26 @@
   @apply text-xl;
   @apply px-8;
   @apply py-3;
+}
+
+@layer utilities {
+  .mask-fade-vertical {
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 20%,
+      black 80%,
+      transparent 100%
+    );
+  }
+
+  .mask-fade-horizontal {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 20%,
+      black 80%,
+      transparent 100%
+    );
+  }
 }
