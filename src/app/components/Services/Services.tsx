@@ -12,9 +12,7 @@ export const Services = () => {
     <section>
       <Content className="sectionContent flex-col flex gap-16">
         <div className="flex flex-col gap-2 items-center">
-          <h4 className={clsx('title-xs text-center text-white')}>
-            Nuestros Servicios
-          </h4>
+          <h4 className={clsx('title-xs text-center ')}>Nuestros Servicios</h4>
           <h2 className="title-lg text-center text-white">
             De ideas a resultados confiables
           </h2>

@@ -58,7 +58,7 @@ export const useMasonryGrid = ({
     columnCount: number
   ) => {
     let total = 0
-    let lastRow: { index: number; col: number }[] = []
+    const lastRow: { index: number; col: number }[] = []
 
     for (let i = items.length - 1; i >= 0; i--) {
       total += items[i].col
@@ -88,7 +88,7 @@ export const useMasonryGrid = ({
     columnCount: number,
     useRandomSpan: boolean
   ) => {
-    let initial = assignInitialSpans(items, columnCount, useRandomSpan)
+    const initial = assignInitialSpans(items, columnCount, useRandomSpan)
     return adjustLastRow(initial, columnCount)
   }
 
