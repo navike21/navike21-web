@@ -6,7 +6,7 @@ import { Crown } from 'lucide-react'
 
 export const Clients = () => {
   return (
-    <section className={clsx('bg-slate-900')}>
+    <section>
       <Content
         className={clsx(
           'sectionContent flex-col flex gap-16',

@@ -18,7 +18,7 @@ export const AboutSection = () => {
 
   return (
     <>
-      <section className={clsx('bg-slate-900')}>
+      <section>
         <Content
           className={clsx(
             'sectionContent grid items-center gap-10',

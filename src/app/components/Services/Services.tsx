@@ -9,7 +9,7 @@ import React from 'react'
 
 export const Services = () => {
   return (
-    <section className={clsx('bg-slate-900')}>
+    <section>
       <Content className="sectionContent flex-col flex gap-16">
         <div className="flex flex-col gap-2 items-center">
           <h4 className={clsx('title-xs text-center text-white')}>
