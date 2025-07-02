@@ -27,7 +27,7 @@ export const Counter = ({
     if (isInView) {
       motionValue.set(direction === 'down' ? 0 : value)
     }
-  }, [isInView])
+  }, [isInView, motionValue, direction, value])
 
   useEffect(() => {
     return springValue.on('change', latest => {
