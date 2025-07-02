@@ -20,8 +20,8 @@ export const Clients = () => {
             subtitle="¿Te sumas?"
           />
           <p className={clsx('text-left paragraph-xs')}>
-            Así como ellos, tú también puedes confiar en nosotros para llevar tu
-            proyecto al siguiente nivel.
+            Tú también puedes confiar en nosotros para llevar tu proyecto al
+            siguiente nivel.
           </p>
         </div>
         <div
