@@ -49,7 +49,7 @@ export const useMasonryGrid = ({
 
       return result
     },
-    [useRandomSpan]
+    []
   )
 
   const adjustLastRow = useCallback(
