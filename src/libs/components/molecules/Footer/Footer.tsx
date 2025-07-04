@@ -3,7 +3,7 @@ import { SOCIAL_MEDIA } from '@Constants/socialMedia'
 import { clsx } from 'clsx'
 
 export const Footer = () => (
-  <>
+  <footer className="relative">
     <div className="bg-gradient-primary mask-fade-horizontal h-px" />
     <div className={clsx('bg-gray-950 py-12')}>
       <Content
@@ -121,5 +121,5 @@ export const Footer = () => (
         </div>
       </Content>
     </div>
-  </>
+  </footer>
 )

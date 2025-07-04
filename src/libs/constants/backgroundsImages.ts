@@ -12,6 +12,10 @@ import womanTablet from '@Assets/images/backgrounds/converted/side-view-woman-ho
 import programming from '@Assets/images/backgrounds/converted/programming-background-with-person-working-with-codes-computer-thumb.webp'
 import manWorkingNight from '@Assets/images/backgrounds/converted/man-working-night-thumb.webp'
 import homePageScreen from '@Assets/images/backgrounds/converted/homepage-seen-computer-screen-thumb.webp'
+import handHoldingCardLaptop from '@Assets/images/backgrounds/converted/hand-holding-card-laptop-mock-up-thumb.webp'
+import appMobile from '@Assets/images/backgrounds/converted/top-view-nutritional-counter-app-thumb.webp'
+import digitalMarketing from '@Assets/images/backgrounds/converted/business-person-looking-finance-graphs-thumb.webp'
+import seo from '@Assets/images/backgrounds/converted/homepage-concept-with-search-bar-thumb.webp'
 
 export {
   designerWithPhone,
@@ -27,5 +31,9 @@ export {
   topDeskView,
   womanTablet,
   programming,
-  manWorkingNight
+  manWorkingNight,
+  handHoldingCardLaptop,
+  appMobile,
+  digitalMarketing,
+  seo
 }

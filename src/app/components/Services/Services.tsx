@@ -1,34 +1,93 @@
-'use client'
-
 import { Content } from '@Components/atoms'
-import { Title } from '@Components/molecules'
-import { homePageScreen } from '@Constants/backgroundsImages'
-import Image from 'next/image'
+import { Card, Title } from '@Components/molecules'
+import {
+  homePageScreen,
+  handHoldingCardLaptop,
+  programming,
+  appMobile,
+  digitalMarketing,
+  seo,
+  designerWithPhone,
+  manEmailLaptop
+} from '@Constants/backgroundsImages'
+import clsx from 'clsx'
 
 export const Services = () => {
+  const services = [
+    {
+      id: 'web-design',
+      title: 'Desarrollo de páginas web',
+      description: 'Sitios web modernos, rápidos y personalizados.',
+      image: homePageScreen
+    },
+    {
+      id: 'eCommerce',
+      title: 'Ecommerce web/app',
+      description: 'Tiendas online seguras, escalables.',
+      image: handHoldingCardLaptop
+    },
+    {
+      id: 'software-development',
+      title: 'Desarrollo de Software',
+      description: 'Soluciones digitales adaptadas a tu negocio.',
+      image: programming
+    },
+    {
+      id: 'mobile-apps',
+      title: 'Aplicaciones móviles',
+      description: 'Apps funcionales, para iOS y Android.',
+      image: appMobile
+    },
+    {
+      id: 'marketing-digital',
+      title: 'Marketing Digital',
+      description: 'Estrategias que impulsan tu marca y ventas.',
+      image: digitalMarketing
+    },
+    {
+      id: 'seo',
+      title: 'SEO',
+      description: 'Posiciona tu negocio en los primeros resultados.',
+      image: seo
+    },
+    {
+      id: 'ux-ui-design',
+      title: 'Diseño UX/UI',
+      description: 'Experiencias digitales centradas en el usuario.',
+      image: designerWithPhone
+    },
+    {
+      id: 'email-marketing',
+      title: 'Email marketing',
+      description: 'Campañas que conectan con tus clientes.',
+      image: manEmailLaptop
+    }
+  ]
+
   return (
     <section className="relative">
-      <Content className="sectionContent flex-col flex gap-16">
+      <Content className={clsx('sectionContent flex-col flex gap-16')}>
         <Title
-          title="De ideas a resultados confiables"
+          title="De ideas a **resultados confiables**"
           subtitle="Nuestros Servicios"
         />
-        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          <div className="bg-gray-800 p-6 rounded-lg shadow-md aspect-2/3 flex flex-col justify-end gap-3 relative">
-            <Image
-              src={homePageScreen.src}
-              alt="Home Page Screen"
-              width={homePageScreen.width}
-              height={homePageScreen.height}
-              className="absolute inset-0 w-full h-full object-cover rounded-lg z-10"
+        <div
+          className={clsx(
+            'grid grid-cols-1 gap-5',
+            'sm:grid-cols-2',
+            'md:grid-cols-3 gap-6',
+            'xl:grid-cols-4'
+          )}
+        >
+          {services.map(({ id, title, description, image }) => (
+            <Card
+              key={id}
+              title={title}
+              description={description}
+              image={image}
+              isAspectRatio
             />
-            <h3 className="title-sm font-semibold text-white z-20">
-              Desarrollo Web
-            </h3>
-            <p className="paragraph-xs z-20">
-              Creamos sitios web personalizados y aplicaciones web escalables.
-            </p>
-          </div>
+          ))}
         </div>
       </Content>
     </section>
