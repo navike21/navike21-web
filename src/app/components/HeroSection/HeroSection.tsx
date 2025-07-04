@@ -22,7 +22,7 @@ export const HeroSection = () => {
   return (
     <div
       className={clsx(
-        'w-full h-dvh bg-gray-950 flex items-center justify-center relative overflow-hidden max-h-dvh',
+        'w-full h-dvh bg-gray-950 flex items-end justify-center relative overflow-hidden max-h-dvh',
         'md:aspect-4/3',
         'lg:aspect-4/2 lg:h-auto'
       )}
@@ -32,7 +32,14 @@ export const HeroSection = () => {
         className="absolute left-0 right-0 top-0 bottom-0"
         overlay
       />
-      <Content className="relative flex items-start justify-start flex-col gap-5">
+      <Content
+        className={clsx(
+          'relative flex items-start justify-start flex-col gap-5 pb-14',
+          'sm:pb-8',
+          'lg:pb-12',
+          'xl:pb-28'
+        )}
+      >
         <h2
           className={clsx(
             'z-10 text-left relative title-lg text-white transition-all',

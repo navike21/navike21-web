@@ -75,8 +75,9 @@ export const Services = () => {
           className={clsx(
             'grid grid-cols-1 gap-5',
             'sm:grid-cols-2',
-            'md:grid-cols-3 gap-6',
-            'xl:grid-cols-4'
+            'md:grid-cols-3',
+            'lg:gap-8',
+            'xl:grid-cols-4 xl:gap-5'
           )}
         >
           {services.map(({ id, title, description, image }) => (
@@ -85,7 +86,8 @@ export const Services = () => {
               title={title}
               description={description}
               image={image}
-              isAspectRatio
+              href="/services"
+              className={clsx('w-full h-80', 'lg:aspect-2/3 lg:h-auto')}
             />
           ))}
         </div>
