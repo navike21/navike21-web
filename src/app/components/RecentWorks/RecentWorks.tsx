@@ -38,13 +38,14 @@ export const RecentWorks = () => {
         <div
           className={clsx(
             'hidden',
-            'w-px h-52 bg-gradient-primary-vertical mask-fade-vertical',
+            'w-px h-52 bg-gradient-primary-vertical mask-fade-vertical relative z-10',
             'md:block'
           )}
         />
         <section
           className={clsx(
             'relative flex justify-center items-center',
+            'md:w-6/12',
             'before:inset-0 before:bg-[radial-gradient(circle,rgba(56,189,248,1)_0%,rgba(56,189,248,0)_80%)] before:rounded-3xl before:blur-3xl before:z-0',
             'before:absolute before:top-0 before:left-0 before:right-2/12 before:bottom-2/12',
             'after:inset-0 after:bg-[radial-gradient(circle,rgba(130,0,219,1)_0%,rgba(130,0,219,0)_80%)] after:rounded-3xl after:blur-3xl after:z-0',
