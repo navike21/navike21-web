@@ -109,6 +109,20 @@
       transform: scale(1);
     }
   }
+
+  --animate-gradient: gradient 5s ease-in-out infinite;
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 }
 
 @utility max-content {
@@ -254,6 +268,27 @@
   @apply text-xl;
   @apply px-8;
   @apply py-3;
+}
+
+@layer utilities {
+  .bg-size-300 {
+    background-size: 300% 100%;
+  }
+  .bg-size-200 {
+    background-size: 200% 100%;
+  }
+  .bg-size-150 {
+    background-size: 150% 100%;
+  }
+  .bg-size-100 {
+    background-size: 100% 100%;
+  }
+  .bg-size-50 {
+    background-size: 50% 100%;
+  }
+  .bg-size-25 {
+    background-size: 25% 100%;
+  }
 }
 
 @layer utilities {

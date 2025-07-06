@@ -3,6 +3,7 @@
 import clsx from 'clsx'
 import { AnimatePresence, motion } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
+import { GradientText } from '../GradientText'
 
 interface ITextRotateProps {
   words: string[]
@@ -32,7 +33,7 @@ export const TextRotate = ({ className, words }: ITextRotateProps) => {
           exit={{ y: -20, opacity: 0 }}
           transition={{ ease: 'easeInOut', duration: 0.4 }}
         >
-          {words[index]}
+          <GradientText>{words[index]}</GradientText>
         </motion.div>
       </AnimatePresence>
     </div>

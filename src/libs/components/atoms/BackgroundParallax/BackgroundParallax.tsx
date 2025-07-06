@@ -20,9 +20,9 @@ export const BackgroundParallax = ({
       className={clsx(
         'bg-cover bg-no-repeat will-change-transform bg-[position:top_center]',
         {
-          'bg-[position:top_center]': initialPosition === 'top',
-          'bg-center': initialPosition === 'center',
-          'bg-[position:bottom_center]': initialPosition === 'bottom'
+          'bg-[position:top_center]': initialPosition === '0%',
+          'bg-center': initialPosition === '50%',
+          'bg-[position:bottom_center]': initialPosition === '100%'
         },
         {
           'before:bg-gray-950 before:absolute before:top-0 before:bottom-0 before:left-0 before:right-0 before:-z-10 before:opacity-50':

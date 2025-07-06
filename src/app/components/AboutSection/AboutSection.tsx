@@ -1,4 +1,4 @@
-import { Content, Counter, LinkButton } from '@Components/atoms'
+import { Content, Counter, GradientText, LinkButton } from '@Components/atoms'
 import { Title } from '@Components/molecules'
 import { teamPaperwork } from '@Constants/backgroundsImages'
 import clsx from 'clsx'
@@ -78,7 +78,7 @@ export const AboutSection = () => {
           </div>
         </Content>
       </section>
-      <section className={clsx('bg-black')}>
+      <section className={clsx('bg-slate-950')}>
         <Content
           className={clsx(
             'sectionContent grid items-center gap-7',
@@ -93,7 +93,7 @@ export const AboutSection = () => {
             >
               <div className="flex justify-center items-start">
                 <Counter value={value} className="title-2xl text-white" />
-                <span className="text-gradient-primary title-xl">{symbol}</span>
+                <GradientText className="title-xl">{symbol}</GradientText>
               </div>
               <p className="lg:px-6 xl:px-2">{label}</p>
             </div>

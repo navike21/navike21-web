@@ -1,3 +1,4 @@
+import { GradientText } from '@Components/atoms'
 import { uuidV7 } from '@Utils/generateKeys'
 import clsx from 'clsx'
 import { Fragment } from 'react'
@@ -15,11 +16,7 @@ export const Title = ({ title, subtitle, align = 'left' }: ITitleProps) => {
       const regex = /^\*\*(.+)\*\*$/
       const match = regex.exec(part)
       if (match) {
-        return (
-          <span key={uuidV7()} className="text-gradient-primary">
-            {match[1]}
-          </span>
-        )
+        return <GradientText key={uuidV7()}>{match[1]}</GradientText>
       }
       return <Fragment key={uuidV7()}>{part}</Fragment>
     })

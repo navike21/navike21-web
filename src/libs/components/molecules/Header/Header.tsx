@@ -75,7 +75,7 @@ export const Header = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4, ease: EASING }}
-            className="fixed top-0 flex h-full left-0 bottom-0 right-0 z-40 overflow-x-hidden"
+            className="fixed top-0 flex h-dvh left-0 bottom-0 right-0 z-40 overflow-x-hidden"
           >
             <motion.div
               initial={{ x: '-100%' }}
@@ -100,7 +100,7 @@ export const Header = () => {
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ duration: 0.4, ease: EASING }}
-              className={clsx('h-full w-2/3 bg-slate-900', 'md:w-1/2')}
+              className={clsx('h-dvh w-2/3 bg-slate-900', 'md:w-1/2')}
             />
           </motion.div>
         )}
@@ -122,7 +122,7 @@ export const Header = () => {
               }
             }}
             className={clsx(
-              'fixed bg-transparent h-full p-3 right-0 top-0 w-2/3 z-40',
+              'fixed bg-transparent h-dvh p-3 right-0 top-0 w-2/3 z-40',
               'md:w-1/2 md:p-10',
               'lg:p-15'
             )}

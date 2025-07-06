@@ -14,7 +14,9 @@ export const Clients = () => {
           'md:flex-row md:items-center md:gap-0 md:justify-between'
         )}
       >
-        <div className={clsx('flex flex-col gap-5 items-center', 'md:w-4/12')}>
+        <section
+          className={clsx('flex flex-col gap-5 items-center', 'md:w-4/12')}
+        >
           <Title
             title="Así como ellos que **confían en nosotros**"
             subtitle="¿Te sumas?"
@@ -23,7 +25,7 @@ export const Clients = () => {
             Tú también puedes confiar en nosotros para llevar tu proyecto al
             siguiente nivel.
           </p>
-        </div>
+        </section>
         <div
           className={clsx(
             'hidden',
@@ -31,7 +33,7 @@ export const Clients = () => {
             'md:block'
           )}
         />
-        <div
+        <section
           className={clsx(
             'grid grid-cols-2 gap-3',
             'sm:grid-cols-4 sm:gap-6',
@@ -58,7 +60,7 @@ export const Clients = () => {
               })}
             </div>
           ))}
-        </div>
+        </section>
       </Content>
     </section>
   )
