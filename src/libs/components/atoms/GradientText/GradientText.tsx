@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import React, { ReactNode } from 'react'
 
-interface GradientTextProps {
+interface IGradientTextProps {
   children: ReactNode
   className?: string
   animationSpeed?: number
@@ -11,7 +11,7 @@ export const GradientText = ({
   children,
   className = '',
   animationSpeed = 75
-}: GradientTextProps) => {
+}: IGradientTextProps) => {
   return (
     <span
       className={clsx(
