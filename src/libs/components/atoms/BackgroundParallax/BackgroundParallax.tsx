@@ -18,7 +18,8 @@ export const BackgroundParallax = ({
     <div
       {...props}
       className={clsx(
-        'bg-cover bg-no-repeat will-change-transform bg-[position:top_center]',
+        'parallax-background bg-no-repeat will-change-transform bg-[position:top_center]',
+        'md:bg-cover',
         {
           'bg-[position:top_center]': initialPosition === '0%',
           'bg-center': initialPosition === '50%',

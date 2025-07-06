@@ -6,7 +6,7 @@ import { TPosition } from './BackgroundParallax.types'
 
 export const useBackgroundParallax = (startPosition: TPosition) => {
   const parallaxRef = useRef<HTMLDivElement>(null)
-  const parallaxSpeed = -0.5 // ajusta para más o menos efecto
+  const parallaxSpeed = -0.5
 
   const positions: Record<TPosition, string> = {
     top: '0%',
@@ -19,18 +19,27 @@ export const useBackgroundParallax = (startPosition: TPosition) => {
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger)
 
-    if (parallaxRef.current) {
-      gsap.to(parallaxRef.current, {
-        backgroundPosition: `center ${parseFloat(initialPosition) + parallaxSpeed * 100}%`,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: parallaxRef.current,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: true
-        }
-      })
-    }
+    const ctx = gsap.context(() => {
+      if (parallaxRef.current) {
+        gsap.to(parallaxRef.current, {
+          backgroundPosition: `center ${parseFloat(initialPosition) + parallaxSpeed * 100}%`,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: parallaxRef.current,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true,
+            // Añadimos esto:
+            invalidateOnRefresh: true,
+            anticipatePin: 1
+          }
+        })
+      }
+    }, parallaxRef)
+
+    ScrollTrigger.refresh()
+
+    return () => ctx.revert()
   }, [initialPosition, parallaxSpeed])
 
   return { parallaxRef, initialPosition }
