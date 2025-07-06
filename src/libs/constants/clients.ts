@@ -15,6 +15,10 @@ import { StaticImageData } from 'next/image'
 import { ReactNode } from 'react'
 
 import homeTentaciones from '@Assets/images/projects/tentaciones-gourmet/converted/home-mobile-thumb.webp'
+import homeEuroGourmet from '@Assets/images/projects/eurogourmet/converted/home-mobile-thumb.webp'
+import homeCarbyne from '@Assets/images/projects/carbyne-safety/converted/home-mobile-thumb.webp'
+import homeRKPower from '@Assets/images/projects/rk-power/converted/home-mobile-thumb.webp'
+import homeCircurela from '@Assets/images/projects/circurela/converted/home-mobile-thumb.webp'
 
 interface IClientImage {
   mobile: StaticImageData[]
@@ -40,6 +44,12 @@ export const clients: IClient[] = [
     }
   },
   {
+    id: 'colegio-la-union',
+    name: 'Colegio La Unión',
+    url: 'www.launion.edu.pe',
+    logo: ColegioLaUnion
+  },
+  {
     id: 'almazen',
     name: 'Almazen',
     url: 'almazen.com.pe',
@@ -48,7 +58,7 @@ export const clients: IClient[] = [
   {
     id: 'anker',
     name: 'Anker',
-    url: 'anker-paints.com',
+    url: 'ankerpaints.com',
     logo: Anker
   },
   {
@@ -61,25 +71,28 @@ export const clients: IClient[] = [
     id: 'carbyne',
     name: 'Carbyne',
     url: 'carbyne-safety.com',
-    logo: Carbyne
+    logo: Carbyne,
+    images: {
+      mobile: [homeCarbyne]
+    }
   },
   {
     id: 'circurela',
     name: 'Circurela',
     url: 'circurela.com',
-    logo: Circurela
-  },
-  {
-    id: 'colegio-la-union',
-    name: 'Colegio La Unión',
-    url: 'www.launion.edu.pe',
-    logo: ColegioLaUnion
+    logo: Circurela,
+    images: {
+      mobile: [homeCircurela]
+    }
   },
   {
     id: 'eurogourmet',
     name: 'Eurogourmet',
     url: 'eurogourmet.com.pe',
-    logo: EuroGourmet
+    logo: EuroGourmet,
+    images: {
+      mobile: [homeEuroGourmet]
+    }
   },
   {
     id: 'hammer-blocs',
@@ -91,6 +104,9 @@ export const clients: IClient[] = [
     id: 'rk-power',
     name: 'RK Power',
     url: 'rkpower.com',
-    logo: RkPower
+    logo: RkPower,
+    images: {
+      mobile: [homeRKPower]
+    }
   }
 ]

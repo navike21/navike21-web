@@ -1,13 +1,23 @@
 import { Content, LinkButton } from '@Components/atoms'
-import { Title } from '@Components/molecules'
+import {
+  IImageMobileDevice,
+  SliderMobileDevice,
+  Title
+} from '@Components/molecules'
 import clsx from 'clsx'
-
-import iphone from '@Assets/images/devices/iphone.svg'
-import Image from 'next/image'
 import { clients } from '@Constants/clients'
 
 export const RecentWorks = () => {
-  const { images: { mobile } = {} } = clients[0]
+  const imagesDeviceProject: IImageMobileDevice[] = clients
+    .filter(({ images: { mobile = [] } = {} }) => mobile.length > 0)
+    .slice(0, 4)
+    .map(({ images: { mobile = [] } = {}, id }) => {
+      return {
+        image: mobile[0],
+        alt: id
+      }
+    })
+
   return (
     <div className="bg-slate-950">
       <Content
@@ -52,7 +62,11 @@ export const RecentWorks = () => {
             'after:absolute after:top-2/12 after:left-2/12 after:right-0 after:bottom-0'
           )}
         >
-          <div className="w-8/12 relative z-10">
+          <SliderMobileDevice
+            className="w-7/12 z-10"
+            images={imagesDeviceProject}
+          />
+          {/* <div className="w-8/12 relative z-10">
             <Image
               src={iphone}
               alt="iPhone 12"
@@ -68,7 +82,7 @@ export const RecentWorks = () => {
                 quality={100}
               />
             </div>
-          </div>
+          </div> */}
         </section>
       </Content>
     </div>

@@ -6,8 +6,8 @@ import path from 'path'
 const IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png']
 const QUALITY_ORIGINAL_WEBP = 100
 const QUALITY_THUMB_WEBP = 90
-const THUMB_MAX_WIDTH = 1600
-const THUMB_MAX_HEIGHT = 1600
+const THUMB_MAX_WIDTH = 1300
+const THUMB_MAX_HEIGHT = 1300
 const ROOT_DIR = path.join(__dirname, '../src/libs/assets/images')
 
 // === FUNCIONES ===
