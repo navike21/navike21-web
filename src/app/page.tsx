@@ -11,9 +11,9 @@ export default function Home() {
     <>
       <HeroSection />
       <AboutSection />
+      <RecentWorks />
       <Clients />
       <Services />
-      <RecentWorks />
     </>
   )
 }

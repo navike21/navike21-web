@@ -23,7 +23,7 @@ export const RecentWorks = () => {
       <Content
         className={clsx(
           'sectionContent flex-col flex gap-16',
-          'md:flex-row md:items-center md:gap-0 md:justify-between'
+          'md:items-center md:gap-0 md:justify-between md:flex-row-reverse'
         )}
       >
         <section
@@ -66,23 +66,6 @@ export const RecentWorks = () => {
             className="w-7/12 z-10"
             images={imagesDeviceProject}
           />
-          {/* <div className="w-8/12 relative z-10">
-            <Image
-              src={iphone}
-              alt="iPhone 12"
-              className="w-full relative z-10"
-            />
-            <div className="absolute top-[1%] bottom-2 left-0 right-0 m-auto w-11/12 h-auto bg-white pt-[13%] rounded-3xl overflow-hidden">
-              <Image
-                src={mobile?.[0].src ?? ''}
-                width={mobile?.[0].width}
-                height={mobile?.[0].height}
-                alt="iPhone 12"
-                className="w-full h-full object-cover z-0 object-left-top"
-                quality={100}
-              />
-            </div>
-          </div> */}
         </section>
       </Content>
     </div>

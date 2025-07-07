@@ -34,7 +34,7 @@ export const SliderMobileDevice = ({
       <Image
         src={iphone}
         alt="mobile-mockup"
-        className="w-full relative z-10"
+        className="w-full relative z-10 pointer-events-none"
       />
       <div className="absolute top-[1%] bottom-2 left-0 right-0 m-auto w-11/12 h-auto bg-white pt-[13%] rounded-3xl overflow-hidden">
         <Slider {...settings}>

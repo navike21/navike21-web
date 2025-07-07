@@ -21,7 +21,7 @@ export const SmoothScroll = ({ children }: ISmoothScrollProps) => {
       smoother.current = ScrollSmoother.create({
         wrapper: main.current,
         content: main.current.querySelector('div') as HTMLElement,
-        smooth: 3,
+        smooth: 2,
         effects: true,
         smoothTouch: 0.2,
         ignoreMobileResize: true
