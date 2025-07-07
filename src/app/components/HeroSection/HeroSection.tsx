@@ -6,7 +6,8 @@ import {
   Content,
   TextRotate
 } from '@Components/atoms'
-import { manWorkingNight } from '@Constants/backgroundsImages'
+import { manWorkingNight } from '@Constants/backgroundImages'
+
 import clsx from 'clsx'
 
 export const HeroSection = () => {
@@ -28,7 +29,7 @@ export const HeroSection = () => {
       )}
     >
       <BackgroundParallax
-        backgroundImage={manWorkingNight.src}
+        backgroundImage={manWorkingNight.lg.src}
         className="absolute left-0 right-0 top-0 bottom-0"
         overlay
       />

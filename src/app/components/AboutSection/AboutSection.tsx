@@ -1,6 +1,6 @@
 import { Content, Counter, GradientText, LinkButton } from '@Components/atoms'
 import { Title } from '@Components/molecules'
-import { teamPaperwork } from '@Constants/backgroundsImages'
+import { teamYoungBusinessOfficeFocusIsBusinessman } from '@Constants/backgroundImages'
 import clsx from 'clsx'
 import Image from 'next/image'
 
@@ -36,9 +36,9 @@ export const AboutSection = () => {
             )}
           >
             <Image
-              src={teamPaperwork.src}
-              width={teamPaperwork.width}
-              height={teamPaperwork.height}
+              src={teamYoungBusinessOfficeFocusIsBusinessman.md.src}
+              width={teamYoungBusinessOfficeFocusIsBusinessman.md.width}
+              height={teamYoungBusinessOfficeFocusIsBusinessman.md.height}
               alt="About Section Background"
               className={clsx(
                 'w-full h-full object-cover object-center rounded-lg relative z-10'

@@ -1,15 +1,16 @@
 import { Content } from '@Components/atoms'
 import { Card, Title } from '@Components/molecules'
 import {
-  homePageScreen,
+  businessPersonLookingFinanceGraphs,
   handHoldingCardLaptop,
-  programming,
-  appMobile,
-  digitalMarketing,
-  seo,
-  designerWithPhone,
-  manEmailLaptop
-} from '@Constants/backgroundsImages'
+  homepageLaptop,
+  manCheckingHisEmailLaptop,
+  nutritionalCounterApp,
+  programmingWithPerson,
+  searchBar,
+  viewManWorkingDesk
+} from '@Constants/backgroundImages'
+
 import clsx from 'clsx'
 
 export const Services = () => {
@@ -18,49 +19,49 @@ export const Services = () => {
       id: 'web-design',
       title: 'Desarrollo de páginas web',
       description: 'Sitios web modernos, rápidos y personalizados.',
-      image: homePageScreen
+      image: homepageLaptop.sm
     },
     {
       id: 'eCommerce',
       title: 'Ecommerce web/app',
       description: 'Tiendas online seguras, escalables.',
-      image: handHoldingCardLaptop
+      image: handHoldingCardLaptop.sm
     },
     {
       id: 'software-development',
       title: 'Desarrollo de Software',
       description: 'Soluciones digitales adaptadas a tu negocio.',
-      image: programming
+      image: programmingWithPerson.sm
     },
     {
       id: 'mobile-apps',
       title: 'Aplicaciones móviles',
       description: 'Apps funcionales, para iOS y Android.',
-      image: appMobile
+      image: nutritionalCounterApp.sm
     },
     {
       id: 'marketing-digital',
       title: 'Marketing Digital',
       description: 'Estrategias que impulsan tu marca y ventas.',
-      image: digitalMarketing
+      image: businessPersonLookingFinanceGraphs.sm
     },
     {
       id: 'seo',
       title: 'SEO',
       description: 'Posiciona tu negocio en los primeros resultados.',
-      image: seo
+      image: searchBar.sm
     },
     {
       id: 'ux-ui-design',
       title: 'Diseño UX/UI',
       description: 'Experiencias digitales centradas en el usuario.',
-      image: designerWithPhone
+      image: viewManWorkingDesk.sm
     },
     {
       id: 'email-marketing',
       title: 'Email marketing',
       description: 'Campañas que conectan con tus clientes.',
-      image: manEmailLaptop
+      image: manCheckingHisEmailLaptop.sm
     }
   ]
 

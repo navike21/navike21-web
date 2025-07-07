@@ -13,12 +13,13 @@ import {
 import { ISvgProps } from '@Types/svg'
 import { StaticImageData } from 'next/image'
 import { ReactNode } from 'react'
-
-import homeTentaciones from '@Assets/images/projects/tentaciones-gourmet/converted/home-mobile-thumb.webp'
-import homeEuroGourmet from '@Assets/images/projects/eurogourmet/converted/home-mobile-thumb.webp'
-import homeCarbyne from '@Assets/images/projects/carbyne-safety/converted/home-mobile-thumb.webp'
-import homeRKPower from '@Assets/images/projects/rk-power/converted/home-mobile-thumb.webp'
-import homeCircurela from '@Assets/images/projects/circurela/converted/home-mobile-thumb.webp'
+import {
+  carbyneSafety,
+  circurela,
+  eurogourmet,
+  rkPower,
+  tentacionesGourmet
+} from './projectsImages'
 
 interface IClientImage {
   mobile: StaticImageData[]
@@ -40,7 +41,7 @@ export const clients: IClient[] = [
     url: 'tentaciones-gourmet.pe',
     logo: TentacionesGourmet,
     images: {
-      mobile: [homeTentaciones]
+      mobile: [tentacionesGourmet.tentacionesGourmetHomeMobile.sm]
     }
   },
   {
@@ -73,7 +74,7 @@ export const clients: IClient[] = [
     url: 'carbyne-safety.com',
     logo: Carbyne,
     images: {
-      mobile: [homeCarbyne]
+      mobile: [carbyneSafety.carbyneSafetyHomeMobile.sm]
     }
   },
   {
@@ -82,7 +83,7 @@ export const clients: IClient[] = [
     url: 'circurela.com',
     logo: Circurela,
     images: {
-      mobile: [homeCircurela]
+      mobile: [circurela.circurelaHomeMobile.sm]
     }
   },
   {
@@ -91,7 +92,7 @@ export const clients: IClient[] = [
     url: 'eurogourmet.com.pe',
     logo: EuroGourmet,
     images: {
-      mobile: [homeEuroGourmet]
+      mobile: [eurogourmet.eurogourmetHomeMobile.sm]
     }
   },
   {
@@ -106,7 +107,7 @@ export const clients: IClient[] = [
     url: 'rkpower.com',
     logo: RkPower,
     images: {
-      mobile: [homeRKPower]
+      mobile: [rkPower.rkPowerHomeMobile.sm]
     }
   }
 ]
