@@ -126,7 +126,7 @@
 }
 
 @utility max-content {
-  max-width: 75rem; /* 1200px = 75rem (assuming 1rem = 16px) */
+  max-width: 1230px;
   @apply px-8;
   @apply box-border;
   @apply w-full;

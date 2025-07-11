@@ -1,4 +1,5 @@
 export * from './backgroundImages'
 export * from './clients'
+export * from './languages'
 export * from './projectsImages'
 export * from './socialMedia'

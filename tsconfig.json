@@ -24,6 +24,7 @@
       "@Constants/*": ["./src/libs/constants/*"],
       "@Hooks/*": ["./src/libs/hooks/*"],
       "@Styles/*": ["./src/libs/styles/*"],
+      "@Translations/*": ["./src/libs/translations/*"],
       "@Types/*": ["./src/libs/types/*"],
       "@Utils/*": ["./src/libs/utils/*"]
     }

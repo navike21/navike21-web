@@ -81,7 +81,7 @@ export const Card = ({
 
       <p
         className={clsx(
-          'paragraph-xs text-white z-20 line-clamp-3 hidden',
+          'paragraph-xs text-white z-20 line-clamp-3 hidden min-h-10',
           'transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)]',
           'lg:-mb-16 lg:opacity-0 lg:block',
           'group-hover:-mb-0 group-hover:opacity-100'

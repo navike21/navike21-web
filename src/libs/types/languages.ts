@@ -1,12 +1,6 @@
-export const SUPPORTED_LANGUAGES = [
-  'es',
-  'en',
-  'de',
-  'zh',
-  'pt',
-  'it',
-  'fr',
-  'ja'
-] as const
+import { SUPPORTED_LANGUAGES } from '@Constants/languages'
 
-export type TLanguage = (typeof SUPPORTED_LANGUAGES)[number]
+export type TLanguage =
+  (typeof SUPPORTED_LANGUAGES)[keyof typeof SUPPORTED_LANGUAGES]
+
+export type TLanguageKey = keyof typeof SUPPORTED_LANGUAGES
