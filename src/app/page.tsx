@@ -1,19 +1,5 @@
-import {
-  AboutSection,
-  Clients,
-  HeroSection,
-  RecentWorks,
-  Services
-} from './components'
+import { redirect } from 'next/navigation'
 
-export default function Home() {
-  return (
-    <>
-      <HeroSection />
-      <AboutSection />
-      <RecentWorks />
-      <Clients />
-      <Services />
-    </>
-  )
+export default function RootPage() {
+  redirect('/es')
 }
