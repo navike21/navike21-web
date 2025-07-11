@@ -41,7 +41,7 @@ export const clients: IClient[] = [
     url: 'tentaciones-gourmet.pe',
     logo: TentacionesGourmet,
     images: {
-      mobile: [tentacionesGourmet.tentacionesGourmetHomeMobile.sm]
+      mobile: [tentacionesGourmet.tentacionesGourmetHomeMobile.md]
     }
   },
   {
@@ -74,7 +74,7 @@ export const clients: IClient[] = [
     url: 'carbyne-safety.com',
     logo: Carbyne,
     images: {
-      mobile: [carbyneSafety.carbyneSafetyHomeMobile.sm]
+      mobile: [carbyneSafety.carbyneSafetyHomeMobile.md]
     }
   },
   {
@@ -83,7 +83,7 @@ export const clients: IClient[] = [
     url: 'circurela.com',
     logo: Circurela,
     images: {
-      mobile: [circurela.circurelaHomeMobile.sm]
+      mobile: [circurela.circurelaHomeMobile.md]
     }
   },
   {
@@ -92,7 +92,7 @@ export const clients: IClient[] = [
     url: 'eurogourmet.com.pe',
     logo: EuroGourmet,
     images: {
-      mobile: [eurogourmet.eurogourmetHomeMobile.sm]
+      mobile: [eurogourmet.eurogourmetHomeMobile.md]
     }
   },
   {
@@ -107,7 +107,7 @@ export const clients: IClient[] = [
     url: 'rkpower.com',
     logo: RkPower,
     images: {
-      mobile: [rkPower.rkPowerHomeMobile.sm]
+      mobile: [rkPower.rkPowerHomeMobile.md]
     }
   }
 ]
