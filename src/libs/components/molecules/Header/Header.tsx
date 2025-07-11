@@ -7,13 +7,13 @@ import clsx from 'clsx'
 import Image from 'next/image'
 import { EASING, ITEMS_VARIANTS } from './Header.constants'
 import { useHeader } from './Header.hooks'
-import { uuidV7 } from '@Utils/generateKeys'
 import { SOCIAL_MEDIA } from '@Constants/socialMedia'
 import { insideModernOfficeDesign } from '@Constants/backgroundImages'
 
 export const Header = () => {
   const {
     isOpen,
+    pagesPrincipalMenu,
     showImageAndBackground,
     showMenuItems,
     visible,
@@ -129,16 +129,10 @@ export const Header = () => {
           >
             <Content className="flex flex-col h-full items-start justify-center">
               <motion.ul className={clsx('flex flex-col gap-3', 'md:gap-5')}>
-                {[
-                  'Inicio',
-                  'Nosotros',
-                  'Servicios',
-                  'Trabajos',
-                  'Contacto'
-                ].map(text => (
-                  <motion.li key={uuidV7()} variants={ITEMS_VARIANTS}>
+                {pagesPrincipalMenu.map(({ href, key, text }) => (
+                  <motion.li key={key} variants={ITEMS_VARIANTS}>
                     <Link
-                      href="/"
+                      href={href}
                       className={clsx(
                         'title-md transition-all duration-300 ease-in-out',
                         'text-white',

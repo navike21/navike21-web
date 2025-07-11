@@ -1,13 +1,18 @@
 import { useEffect, useState } from 'react'
 import { EStage } from './Header.types'
 import { useMotionValueEvent, useScroll } from 'motion/react'
+import { pages } from '@Translations/pages'
+import { ES } from '@Constants/languages'
+import { useGetCurrentLanguage } from '@Hooks/useGetCurrentLanguage'
 
 export const useHeader = () => {
   const [menuState, setMenuState] = useState(false)
   const [stage, setStage] = useState<EStage>(EStage.CLOSED)
   const [visible, setVisible] = useState<boolean>(false)
 
-  const { scrollY } = useScroll() // ✅ Observa el scroll global del viewport
+  const currentLang = useGetCurrentLanguage() ?? ES
+
+  const { scrollY } = useScroll()
 
   useMotionValueEvent(scrollY, 'change', latest => {
     setVisible(latest > 0)
@@ -46,8 +51,21 @@ export const useHeader = () => {
     stage === EStage.CLOSING
   const showMenuItems = stage === EStage.MENU_ITEMS
 
+  const pagesPrincipalMenu = pages
+    .filter(({ showPrincipal }) => showPrincipal)
+    .map(({ id, language }) => {
+      const { title, slug } = language[currentLang]
+
+      return {
+        text: title,
+        href: `/${currentLang}/${slug}`,
+        key: id
+      }
+    })
+
   return {
     isOpen,
+    pagesPrincipalMenu,
     visible,
     showImageAndBackground,
     showMenuItems,

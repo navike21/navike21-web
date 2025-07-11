@@ -67,14 +67,11 @@ export const useFooter = () => {
     ({ id }) => id === 'legal'
   ) as IPage
 
-  const {
-    title: legalTitle,
-    slug: slugLegalPage,
-    subPages: legalSubPages = []
-  } = legalLanguage[currentLang]
+  const { title: legalTitle, subPages: legalSubPages = [] } =
+    legalLanguage[currentLang]
   const itemsLegal = legalSubPages.map(({ title, slug }) => ({
     text: title,
-    href: `/${currentLang}/${slugLegalPage}/${slug}`
+    href: `/${currentLang}/${slug}`
   }))
 
   /**
