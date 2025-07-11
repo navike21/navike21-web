@@ -27,7 +27,7 @@ export const Header = () => {
           'fixed top-0 w-full z-40 overflow-hidden transition-all',
           {
             'bg-transparent z-50': isOpen,
-            'backdrop-blur-lg bg-gray-950/70': !isOpen && visible
+            'backdrop-blur-lg bg-gray-950/60': !isOpen && visible
           }
         )}
       >
