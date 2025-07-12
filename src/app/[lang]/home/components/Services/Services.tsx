@@ -5,11 +5,17 @@ import { Card, Title } from '@Components/molecules'
 import { ES } from '@Constants/languages'
 import { useGetCurrentLanguage } from '@Hooks/useGetCurrentLanguage'
 import { services } from '@Translations/pages'
+import { getInfoPage } from '@Utils/getInfoPage'
 
 import clsx from 'clsx'
 
 export const Services = () => {
   const currentLang = useGetCurrentLanguage() ?? ES
+  const { href } = getInfoPage({
+    lang: currentLang,
+    key: 'services'
+  })
+
   return (
     <section className="relative">
       <Content className={clsx('sectionContent flex-col flex gap-16')}>
@@ -32,7 +38,7 @@ export const Services = () => {
               title={language[currentLang].title}
               description={language[currentLang].description}
               image={image}
-              href="/services"
+              href={`.${href}/${language[currentLang].slug}`}
               className={clsx('w-full h-80', 'lg:aspect-2/3 lg:h-auto')}
             />
           ))}
