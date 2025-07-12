@@ -1,3 +1,5 @@
+'use client'
+
 import { ES } from '@Constants/languages'
 import { useGetCurrentLanguage } from '@Hooks/useGetCurrentLanguage'
 import {

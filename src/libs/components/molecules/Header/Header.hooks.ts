@@ -58,10 +58,18 @@ export const useHeader = () => {
 
       return {
         text: title,
-        href: `/${currentLang}/${slug}`,
+        href: id === 'home' ? `/${currentLang}/` : `/${currentLang}/${slug}`,
         key: id
       }
     })
+
+  const { href: hrefHome } = (pagesPrincipalMenu.find(
+    ({ key }) => key === 'home'
+  ) ?? {}) as {
+    text: string
+    href: string
+    key: string
+  }
 
   return {
     isOpen,
@@ -69,6 +77,7 @@ export const useHeader = () => {
     visible,
     showImageAndBackground,
     showMenuItems,
+    linkHome: hrefHome,
     handleToggle
   }
 }

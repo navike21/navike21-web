@@ -17,6 +17,7 @@ export const Header = () => {
     showImageAndBackground,
     showMenuItems,
     visible,
+    linkHome,
     handleToggle
   } = useHeader()
 
@@ -32,7 +33,7 @@ export const Header = () => {
         )}
       >
         <Content className="flex justify-between items-center py-4 z-50">
-          <Link href="/">
+          <Link href={linkHome}>
             <Logo className="h-11" />
           </Link>
           <div className="flex gap-10 items-center">
