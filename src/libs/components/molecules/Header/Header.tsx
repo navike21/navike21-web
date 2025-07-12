@@ -140,6 +140,7 @@ export const Header = () => {
                         'md:title-lg',
                         'hover:text-gray-300'
                       )}
+                      onClick={handleToggle}
                     >
                       {text}
                     </Link>
