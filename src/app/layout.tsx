@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import type { Metadata } from 'next'
 import { Footer, Header } from '@Components/molecules'
 import { SmoothScroll } from '@Components/atoms'
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children
 }: Readonly<{
-  children: React.ReactNode
+  children: ReactNode
 }>) {
   return (
     <html lang="es">

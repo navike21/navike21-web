@@ -1,17 +1,19 @@
 import { SUPPORTED_LANGUAGES } from '@Constants/languages'
-import { TLanguage } from '@Types/languages'
 import { notFound } from 'next/navigation'
 import { ReactNode } from 'react'
 
 interface ILangLayoutProps {
-  readonly children: ReactNode
-  readonly params: { readonly lang: TLanguage }
+  children: ReactNode
+  params: Promise<{ lang: string }>
 }
 
-export default function LangLayout({ children, params }: ILangLayoutProps) {
-  if (!SUPPORTED_LANGUAGES[params.lang]) {
+export default async function LangLayout({
+  children,
+  params
+}: Readonly<ILangLayoutProps>) {
+  const { lang } = await params
+  if (!Object.hasOwn(SUPPORTED_LANGUAGES, lang)) {
     notFound()
   }
-
   return <>{children}</>
 }
