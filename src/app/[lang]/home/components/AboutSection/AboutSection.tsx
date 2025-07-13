@@ -1,21 +1,21 @@
+'use client'
+
 import { Content, Counter, GradientText, LinkButton } from '@Components/atoms'
 import { Title } from '@Components/molecules'
-import { teamYoungBusinessOfficeFocusIsBusinessman } from '@Constants/backgroundImages'
 import clsx from 'clsx'
 import Image from 'next/image'
+import { useAboutSection } from './AboutSection.hooks'
 
 export const AboutSection = () => {
-  const counterMetrics = [
-    { value: 62, label: 'Proyectos completados', symbol: '+', key: 'projects' },
-    { value: 10, label: 'Clientes satisfechos', symbol: '+', key: 'clients' },
-    { value: 5, label: 'Años de experiencia', symbol: '+', key: 'experience' },
-    {
-      value: 100,
-      label: 'Compromiso con la calidad',
-      symbol: '%',
-      key: 'quality'
-    }
-  ]
+  const {
+    title,
+    subtitle,
+    description,
+    controlActionText,
+    controlActionLink,
+    metrics,
+    imageAbout
+  } = useAboutSection()
 
   return (
     <>
@@ -36,9 +36,9 @@ export const AboutSection = () => {
             )}
           >
             <Image
-              src={teamYoungBusinessOfficeFocusIsBusinessman.md.src}
-              width={teamYoungBusinessOfficeFocusIsBusinessman.md.width}
-              height={teamYoungBusinessOfficeFocusIsBusinessman.md.height}
+              src={imageAbout.src}
+              width={imageAbout.width}
+              height={imageAbout.height}
               alt="About Section Background"
               className={clsx(
                 'w-full h-full object-cover object-center rounded-lg relative z-10'
@@ -59,21 +59,14 @@ export const AboutSection = () => {
                 'sm:items-start'
               )}
             >
-              <Title
-                title="Mas que software, **creamos soluciones**"
-                subtitle="¿Quiénes somos?"
-              />
-              <p className="paragraph-xs">
-                Somos un equipo apasionado por la tecnología y el diseño,
-                dedicados a crear soluciones innovadoras que mejoran la
-                interacción en el mundo digital.
-              </p>
+              <Title title={title} subtitle={subtitle} />
+              <p className="paragraph-xs">{description}</p>
             </div>
             <LinkButton
-              href="/nosotros"
+              href={controlActionLink}
               className={clsx('mt-4 w-full', 'sm:w-fit')}
             >
-              Conoce más
+              {controlActionText}
             </LinkButton>
           </div>
         </Content>
@@ -86,7 +79,7 @@ export const AboutSection = () => {
             'md:grid-cols-4'
           )}
         >
-          {counterMetrics.map(({ value, label, symbol, key }) => (
+          {metrics.map(({ value, label, symbol, key }) => (
             <div
               key={key}
               className="counter w-full flex items-center text-center flex-col gap-3"
