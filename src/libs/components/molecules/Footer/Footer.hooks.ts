@@ -86,12 +86,12 @@ export const useFooter = () => {
       items: itemsServices
     },
     {
-      title: contactTitle,
-      items: itemsContact
-    },
-    {
       title: legalTitle,
       items: itemsLegal
+    },
+    {
+      title: contactTitle,
+      items: itemsContact
     }
   ]
 

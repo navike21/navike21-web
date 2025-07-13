@@ -110,13 +110,13 @@ export const services: IService[] = [
         slug: 'ecommerce'
       },
       [JA]: {
-        title: 'Ecommerce web',
-        description: '安全でスケーラブルなオンラインストア。',
+        title: 'ECサイト',
+        description: '安全で拡張可能なオンラインストア。',
         slug: 'ecommerce'
       },
       [KO]: {
-        title: 'Ecommerce web',
-        description: '안전하고 확장 가능한 온라인 상점.',
+        title: '이커머스',
+        description: '안전하고 확장 가능한 온라인 쇼핑몰.',
         slug: 'ecommerce'
       },
       [PT]: {
@@ -125,8 +125,8 @@ export const services: IService[] = [
         slug: 'ecommerce'
       },
       [ZH]: {
-        title: '电子商务网站',
-        description: '安全、可扩展的在线商店。',
+        title: '电商网站',
+        description: '安全、可扩展的电商网站。',
         slug: 'dianzi-shangwu'
       }
     }
@@ -334,7 +334,7 @@ export const services: IService[] = [
       [ZH]: {
         title: '搜索引擎优化',
         description: '将您的业务排名在搜索结果的前列。',
-        slug: 'sousuo-yingqing-youhua'
+        slug: 'sousuo-yinqing-youhua'
       }
     }
   },
