@@ -126,7 +126,7 @@
 }
 
 @utility max-content {
-  max-width: 1260px;
+  max-width: 1230px;
   @apply px-8;
   @apply box-border;
   @apply w-full;

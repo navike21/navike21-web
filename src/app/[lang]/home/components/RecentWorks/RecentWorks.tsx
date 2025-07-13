@@ -1,19 +1,22 @@
-'use client'
-
 import { Content, LinkButton } from '@Components/atoms'
-import { SliderMobileDevice, Title } from '@Components/molecules'
+import {
+  IImageMobileDevice,
+  SliderMobileDevice,
+  Title
+} from '@Components/molecules'
 import clsx from 'clsx'
-import { useRecentWorks } from './RecentWorks.hooks'
+import { clients } from '@Constants/clients'
 
 export const RecentWorks = () => {
-  const {
-    title,
-    description,
-    controlActionLink,
-    controlActionText,
-    subtitle,
-    imagesDeviceProject
-  } = useRecentWorks()
+  const imagesDeviceProject: IImageMobileDevice[] = clients
+    .filter(({ images: { mobile = [] } = {} }) => mobile.length > 0)
+    .slice(0, 4)
+    .map(({ images: { mobile = [] } = {}, id }) => {
+      return {
+        image: mobile[0],
+        alt: id
+      }
+    })
 
   return (
     <div className="bg-slate-950">
@@ -26,13 +29,20 @@ export const RecentWorks = () => {
         <section
           className={clsx('flex flex-col gap-5 items-start', 'md:w-5/12')}
         >
-          <Title subtitle={subtitle} title={title} />
-          <p className="paragraph-xs">{description}</p>
+          <Title
+            subtitle="Trabajos recientes"
+            title="Lo último en **nuestros proyectos**"
+          />
+          <p className="paragraph-xs">
+            Aquí puedes ver algunos de nuestros trabajos más recientes, donde
+            hemos aplicado nuestras habilidades y conocimientos para crear
+            soluciones efectivas y atractivas.
+          </p>
           <LinkButton
-            href={controlActionLink}
+            href="/nosotros"
             className={clsx('mt-4 w-full', 'sm:w-fit')}
           >
-            {controlActionText}
+            Ver más proyectos
           </LinkButton>
         </section>
         <div

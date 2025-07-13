@@ -41,7 +41,7 @@ export const pages: IPage[] = [
     showFooter: false,
     language: {
       [ES]: { title: 'Sobre nosotros', slug: 'sobre-nosotros' },
-      [EN]: { title: 'About us', slug: 'about-us' },
+      [EN]: { title: 'About Us', slug: 'about-us' },
       [DE]: { title: 'Über uns', slug: 'ueber-uns' },
       [FR]: { title: 'À propos de nous', slug: 'a-propos-de-nous' },
       [IT]: { title: 'Chi siamo', slug: 'chi-siamo' },
@@ -104,15 +104,15 @@ export const pages: IPage[] = [
     showPrincipal: true,
     showFooter: false,
     language: {
-      [ES]: { title: 'Conversemos', slug: 'contacto' },
-      [EN]: { title: "Let's talk", slug: 'contact' },
+      [ES]: { title: 'Contacto', slug: 'contacto' },
+      [EN]: { title: 'Contact', slug: 'contact' },
       [DE]: { title: 'Kontakt', slug: 'kontakt' },
       [FR]: { title: 'Contact', slug: 'contact' },
       [IT]: { title: 'Contatto', slug: 'contatto' },
       [JA]: { title: 'お問い合わせ', slug: 'otoiawase' },
-      [KO]: { title: '연락하기', slug: 'yeollak-hagi' },
-      [PT]: { title: 'Vamos conversar', slug: 'contato' },
-      [ZH]: { title: '联系我们', slug: 'lianxi' }
+      [KO]: { title: '연락처', slug: 'yeonrakcheo' },
+      [PT]: { title: 'Contato', slug: 'contato' },
+      [ZH]: { title: '联系', slug: 'lianxi' }
     }
   },
   {

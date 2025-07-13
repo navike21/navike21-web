@@ -1,21 +1,21 @@
-'use client'
-
 import { Content, Counter, GradientText, LinkButton } from '@Components/atoms'
 import { Title } from '@Components/molecules'
+import { teamYoungBusinessOfficeFocusIsBusinessman } from '@Constants/backgroundImages'
 import clsx from 'clsx'
 import Image from 'next/image'
-import { useAboutSection } from './AboutSection.hooks'
 
 export const AboutSection = () => {
-  const {
-    title,
-    subtitle,
-    description,
-    controlActionText,
-    controlActionLink,
-    metrics,
-    imageAbout
-  } = useAboutSection()
+  const counterMetrics = [
+    { value: 62, label: 'Proyectos completados', symbol: '+', key: 'projects' },
+    { value: 10, label: 'Clientes satisfechos', symbol: '+', key: 'clients' },
+    { value: 5, label: 'Años de experiencia', symbol: '+', key: 'experience' },
+    {
+      value: 100,
+      label: 'Compromiso con la calidad',
+      symbol: '%',
+      key: 'quality'
+    }
+  ]
 
   return (
     <>
@@ -36,9 +36,9 @@ export const AboutSection = () => {
             )}
           >
             <Image
-              src={imageAbout.src}
-              width={imageAbout.width}
-              height={imageAbout.height}
+              src={teamYoungBusinessOfficeFocusIsBusinessman.md.src}
+              width={teamYoungBusinessOfficeFocusIsBusinessman.md.width}
+              height={teamYoungBusinessOfficeFocusIsBusinessman.md.height}
               alt="About Section Background"
               className={clsx(
                 'w-full h-full object-cover object-center rounded-lg relative z-10'
@@ -59,14 +59,21 @@ export const AboutSection = () => {
                 'sm:items-start'
               )}
             >
-              <Title title={title} subtitle={subtitle} />
-              <p className="paragraph-xs">{description}</p>
+              <Title
+                title="Mas que software, **creamos soluciones**"
+                subtitle="¿Quiénes somos?"
+              />
+              <p className="paragraph-xs">
+                Somos un equipo apasionado por la tecnología y el diseño,
+                dedicados a crear soluciones innovadoras que mejoran la
+                interacción en el mundo digital.
+              </p>
             </div>
             <LinkButton
-              href={controlActionLink}
+              href="/nosotros"
               className={clsx('mt-4 w-full', 'sm:w-fit')}
             >
-              {controlActionText}
+              Conoce más
             </LinkButton>
           </div>
         </Content>
@@ -79,7 +86,7 @@ export const AboutSection = () => {
             'md:grid-cols-4'
           )}
         >
-          {metrics.map(({ value, label, symbol, key }) => (
+          {counterMetrics.map(({ value, label, symbol, key }) => (
             <div
               key={key}
               className="counter w-full flex items-center text-center flex-col gap-3"
