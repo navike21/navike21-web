@@ -9,16 +9,16 @@ import {
 import { manWorkingNight } from '@Constants/backgroundImages'
 
 import clsx from 'clsx'
+import { useHeroSection } from './HeroSection.hooks'
 
 export const HeroSection = () => {
-  const words = [
-    'webs',
-    'apps móviles',
-    'ecommerce',
-    'software a medida',
-    'landing pages',
-    'UX/UI'
-  ]
+  const {
+    rotateWords,
+    controlActionText,
+    controlActionLink,
+    description,
+    principalText
+  } = useHeroSection()
 
   return (
     <div
@@ -50,14 +50,13 @@ export const HeroSection = () => {
             '2xl:title-3xl'
           )}
         >
-          Transformamos ideas en {''}
-          <TextRotate words={words} className="text-gradient-primary" />
+          {principalText} {''}
+          <TextRotate words={rotateWords} className="text-gradient-primary" />
         </h2>
         <p className={clsx('paragraph-xs', 'sm:w-8/12', 'lg:w-6/12')}>
-          Creamos soluciones digitales que impulsan tu negocio, con la
-          experiencia centrada en el usuario.
+          {description}
         </p>
-        <LinkButton href="/contact">Conversemos</LinkButton>
+        <LinkButton href={controlActionLink}>{controlActionText}</LinkButton>
       </Content>
     </div>
   )
