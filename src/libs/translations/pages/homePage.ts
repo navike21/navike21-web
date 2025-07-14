@@ -12,7 +12,7 @@ export type THomeInfoStructure = {
   title: string
   subtitle: string
   description: string
-  controlActionText: string
+  controlActionText?: string
 }
 
 export type TCounterMetrics = {
@@ -356,5 +356,60 @@ export const recentWorks: THomeStructure = {
     description:
       '在这里，您可以看到我们最近的一些工作，我们运用我们的技能和知识，创造出有效且吸引人的解决方案。',
     controlActionText: '查看更多项目'
+  }
+}
+
+export const clientsSection: THomeStructure = {
+  [ES]: {
+    subtitle: '¿Te sumas?',
+    title: 'Así como ellos que **confían en nosotros**',
+    description:
+      'Tú también puedes confiar en nosotros para llevar tu proyecto al siguiente nivel.'
+  },
+  [EN]: {
+    subtitle: 'Will you join us?',
+    title: 'Just like them, who **trust us**',
+    description: 'You can also trust us to take your project to the next level.'
+  },
+  [FR]: {
+    subtitle: 'Vous nous rejoignez ?',
+    title: 'Comme eux, qui **nous font confiance**',
+    description:
+      'Vous pouvez vous aussi nous faire confiance pour porter votre projet plus loin.'
+  },
+  [IT]: {
+    subtitle: 'Ti unisci a noi?',
+    title: 'Come loro, che **si fidano di noi**',
+    description:
+      'Anche tu puoi contare su di noi per portare il tuo progetto al livello successivo.'
+  },
+  [DE]: {
+    subtitle: 'Möchten Sie sich uns anschließen?',
+    title: 'So wie sie, die **uns vertrauen**',
+    description:
+      'Auch Sie können uns vertrauen, um Ihr Projekt auf die nächste Stufe zu bringen.'
+  },
+  [JA]: {
+    subtitle: '私たちに参加しませんか？',
+    title: '彼らのように、**私たちを信頼する**',
+    description:
+      'あなたも私たちを信頼して、プロジェクトを次のレベルへ引き上げられます。'
+  },
+  [KO]: {
+    subtitle: '함께하시겠어요?',
+    title: '그들처럼, **우리를 신뢰하는**',
+    description:
+      '당신도 우리를 신뢰하고 프로젝트를 한 단계 더 발전시킬 수 있습니다.'
+  },
+  [PT]: {
+    subtitle: 'Você se junta a nós?',
+    title: 'Assim como eles, que **confiam em nós**',
+    description:
+      'Você também pode confiar em nós para levar seu projeto a um novo patamar.'
+  },
+  [ZH]: {
+    subtitle: '要加入我们吗？',
+    title: '就像他们一样，**信任我们**',
+    description: '您也可以信任我们，让您的项目更进一步。'
   }
 }

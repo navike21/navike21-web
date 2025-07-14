@@ -9,8 +9,6 @@ export function useGetCurrentLanguage(): TLanguage | null {
   const pathname = usePathname()
   const lang = params.lang
 
-  console.log('useGetCurrentLanguage', params)
-
   if (lang && SUPPORTED_LANGUAGES[lang as TLanguage]) {
     return lang as TLanguage
   } else {

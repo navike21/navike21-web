@@ -1,11 +1,16 @@
+'use client'
+
 import { Content } from '@Components/atoms'
 import { Title } from '@Components/molecules'
 import { clients } from '@Constants/clients'
 import { uuidV7 } from '@Utils/generateKeys'
 import clsx from 'clsx'
 import { Crown } from 'lucide-react'
+import { useClients } from './Clients.hooks'
 
 export const Clients = () => {
+  const { title, description, subtitle } = useClients()
+
   return (
     <section>
       <Content
@@ -17,14 +22,8 @@ export const Clients = () => {
         <section
           className={clsx('flex flex-col gap-5 items-center', 'md:w-4/12')}
         >
-          <Title
-            title="Así como ellos que **confían en nosotros**"
-            subtitle="¿Te sumas?"
-          />
-          <p className={clsx('text-left paragraph-xs')}>
-            Tú también puedes confiar en nosotros para llevar tu proyecto al
-            siguiente nivel.
-          </p>
+          <Title title={title} subtitle={subtitle} />
+          <p className={clsx('text-left paragraph-xs')}>{description}</p>
         </section>
         <div
           className={clsx(
