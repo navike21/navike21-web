@@ -1,9 +1,12 @@
+'use client'
+
 import { useEffect, useState } from 'react'
 import { EStage } from './Header.types'
 import { useMotionValueEvent, useScroll } from 'motion/react'
 import { pages } from '@Translations/pages'
 import { ES } from '@Constants/languages'
 import { useGetCurrentLanguage } from '@Hooks/useGetCurrentLanguage'
+import { getInfoPage } from '@Utils/getInfoPage'
 
 export const useHeader = () => {
   const [menuState, setMenuState] = useState(false)
@@ -63,13 +66,10 @@ export const useHeader = () => {
       }
     })
 
-  const { href: hrefHome } = (pagesPrincipalMenu.find(
-    ({ key }) => key === 'home'
-  ) ?? {}) as {
-    text: string
-    href: string
-    key: string
-  }
+  const linkHome = getInfoPage({
+    key: 'home',
+    lang: currentLang
+  }).href
 
   return {
     isOpen,
@@ -77,7 +77,7 @@ export const useHeader = () => {
     visible,
     showImageAndBackground,
     showMenuItems,
-    linkHome: hrefHome,
+    linkHome,
     handleToggle
   }
 }
