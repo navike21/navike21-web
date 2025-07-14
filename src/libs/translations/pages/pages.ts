@@ -1,4 +1,13 @@
 import { DE, EN, ES, FR, IT, JA, KO, PT, ZH } from '@Constants/languages'
+import {
+  ABOUT_US,
+  BLOG,
+  CONTACT,
+  HOME,
+  LEGAL,
+  PROJECTS,
+  SERVICES
+} from '@Constants/pages'
 import { TLanguageKey } from '@Types/languages'
 
 export type TLanguagePageValue = {
@@ -20,7 +29,7 @@ export interface IPage {
 
 export const pages: IPage[] = [
   {
-    id: 'home',
+    id: HOME,
     showPrincipal: true,
     showFooter: false,
     language: {
@@ -36,7 +45,7 @@ export const pages: IPage[] = [
     }
   },
   {
-    id: 'about-us',
+    id: ABOUT_US,
     showPrincipal: true,
     showFooter: false,
     language: {
@@ -52,7 +61,7 @@ export const pages: IPage[] = [
     }
   },
   {
-    id: 'services',
+    id: SERVICES,
     showPrincipal: true,
     showFooter: false,
     language: {
@@ -68,7 +77,7 @@ export const pages: IPage[] = [
     }
   },
   {
-    id: 'projects',
+    id: PROJECTS,
     showPrincipal: true,
     showFooter: false,
     language: {
@@ -84,7 +93,7 @@ export const pages: IPage[] = [
     }
   },
   {
-    id: 'blog',
+    id: BLOG,
     showPrincipal: true,
     showFooter: false,
     language: {
@@ -100,7 +109,7 @@ export const pages: IPage[] = [
     }
   },
   {
-    id: 'contact',
+    id: CONTACT,
     showPrincipal: true,
     showFooter: false,
     language: {
@@ -116,7 +125,7 @@ export const pages: IPage[] = [
     }
   },
   {
-    id: 'legal',
+    id: LEGAL,
     showPrincipal: false,
     showFooter: true,
     language: {

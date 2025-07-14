@@ -5,6 +5,7 @@ import { useGetCurrentLanguage } from '@Hooks/useGetCurrentLanguage'
 import { aboutSection, counterMetrics } from '@Translations/pages'
 import { teamYoungBusinessOfficeFocusIsBusinessman } from '@Constants/backgroundImages'
 import { getInfoPage } from '@Utils/getInfoPage'
+import { ABOUT_US } from '@Constants/pages'
 
 export const useAboutSection = () => {
   const currentLang = useGetCurrentLanguage() ?? ES
@@ -17,7 +18,7 @@ export const useAboutSection = () => {
   }))
 
   const controlActionLink = getInfoPage({
-    key: 'about-us',
+    key: ABOUT_US,
     lang: currentLang
   }).href
 

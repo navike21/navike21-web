@@ -1,6 +1,7 @@
 'use client'
 
 import { ES } from '@Constants/languages'
+import { SERVICES } from '@Constants/pages'
 import { useGetCurrentLanguage } from '@Hooks/useGetCurrentLanguage'
 import {
   allBeRightReserved,
@@ -20,7 +21,7 @@ export const useFooter = () => {
    */
 
   const { language: servicesLanguage } = pages.find(
-    ({ id }) => id === 'services'
+    ({ id }) => id === SERVICES
   ) as IPage
 
   const { slug: slugServicesPage, title: servicesTitle } =

@@ -1,0 +1,7 @@
+export const HOME = 'home'
+export const ABOUT_US = 'about-us'
+export const SERVICES = 'services'
+export const PROJECTS = 'projects'
+export const BLOG = 'blog'
+export const CONTACT = 'contact'
+export const LEGAL = 'legal'

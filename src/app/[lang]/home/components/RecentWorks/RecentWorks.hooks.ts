@@ -3,6 +3,7 @@
 import { IImageMobileDevice } from '@Components/molecules'
 import { clients } from '@Constants/clients'
 import { ES } from '@Constants/languages'
+import { PROJECTS } from '@Constants/pages'
 import { useGetCurrentLanguage } from '@Hooks/useGetCurrentLanguage'
 import { recentWorks } from '@Translations/pages'
 import { getInfoPage } from '@Utils/getInfoPage'
@@ -24,7 +25,7 @@ export const useRecentWorks = () => {
     })
 
   const controlActionLink = getInfoPage({
-    key: 'projects',
+    key: PROJECTS,
     lang: currentLang
   }).href
 

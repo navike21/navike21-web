@@ -4,12 +4,13 @@ import { ES } from '@Constants/languages'
 import { useGetCurrentLanguage } from '@Hooks/useGetCurrentLanguage'
 import { getInfoPage } from '@Utils/getInfoPage'
 import { services, servicesSection } from '@Translations/pages'
+import { SERVICES } from '@Constants/pages'
 
 export const useServices = () => {
   const currentLang = useGetCurrentLanguage() ?? ES
   const { href: hrefServices } = getInfoPage({
     lang: currentLang,
-    key: 'services'
+    key: SERVICES
   })
 
   const servicesData = services.map(service => ({
