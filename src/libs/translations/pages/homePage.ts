@@ -413,3 +413,60 @@ export const clientsSection: THomeStructure = {
     description: '您也可以信任我们，让您的项目更进一步。'
   }
 }
+
+export const servicesSection: THomeStructure = {
+  [ES]: {
+    subtitle: 'Nuestros Servicios',
+    title: 'De ideas a **resultados confiables**',
+    description:
+      'Ofrecemos una amplia gama de servicios digitales pensados para satisfacer las necesidades de tu negocio. Desde el desarrollo de software a medida hasta el diseño de experiencias de usuario, estamos aquí para ayudarte a lograr tus objetivos.'
+  },
+  [EN]: {
+    subtitle: 'Our Services',
+    title: 'From ideas to **reliable results**',
+    description:
+      'We offer a wide range of digital services crafted to meet your business needs. From custom software development to user experience design, we’re here to help you reach your goals.'
+  },
+  [FR]: {
+    subtitle: 'Nos Services',
+    title: 'Des idées aux **résultats fiables**',
+    description:
+      'Nous proposons une large gamme de services numériques conçus pour répondre aux besoins de votre entreprise. Du développement de logiciels sur mesure à la conception d’expériences utilisateur, nous sommes là pour vous aider à atteindre vos objectifs.'
+  },
+  [IT]: {
+    subtitle: 'I nostri Servizi',
+    title: 'Dalle idee ai **risultati affidabili**',
+    description:
+      'Offriamo una vasta gamma di servizi digitali pensati per soddisfare le esigenze della tua azienda. Dallo sviluppo di software su misura al design di esperienze utente, siamo qui per aiutarti a raggiungere i tuoi obiettivi.'
+  },
+  [DE]: {
+    subtitle: 'Unsere Dienstleistungen',
+    title: 'Von Ideen zu **zuverlässigen Ergebnissen**',
+    description:
+      'Wir bieten ein breites Spektrum digitaler Dienstleistungen an, die auf die Anforderungen Ihres Unternehmens zugeschnitten sind. Von maßgeschneiderter Softwareentwicklung bis hin zum Design von Benutzererlebnissen – wir helfen Ihnen, Ihre Ziele zu erreichen.'
+  },
+  [JA]: {
+    subtitle: '私たちのサービス',
+    title: 'アイデアから**信頼できる結果へ**',
+    description:
+      'ビジネスのニーズに応える幅広いデジタルサービスを提供しています。カスタムソフトウェア開発からユーザー体験の設計まで、目標達成をお手伝いします。'
+  },
+  [KO]: {
+    subtitle: '우리의 서비스',
+    title: '아이디어에서 **신뢰할 수 있는 결과**로',
+    description:
+      '비즈니스 요구를 충족시키기 위해 다양한 디지털 서비스를 제공합니다. 맞춤형 소프트웨어 개발부터 사용자 경험 디자인까지, 목표 달성을 도와드립니다.'
+  },
+  [PT]: {
+    subtitle: 'Nossos Serviços',
+    title: 'De ideias a **resultados confiáveis**',
+    description:
+      'Oferecemos uma ampla gama de serviços digitais criados para atender às necessidades do seu negócio. Do desenvolvimento de software personalizado ao design de experiências do usuário, estamos aqui para ajudar você a alcançar seus objetivos.'
+  },
+  [ZH]: {
+    subtitle: '我们的服务',
+    title: '从创意到**可靠的结果**',
+    description:
+      '我们提供广泛的数字服务，旨在满足您的业务需求。从定制软件开发到用户体验设计，我们在这里帮助您实现目标。'
+  }
+}

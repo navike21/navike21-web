@@ -2,27 +2,16 @@
 
 import { Content } from '@Components/atoms'
 import { Card, Title } from '@Components/molecules'
-import { ES } from '@Constants/languages'
-import { useGetCurrentLanguage } from '@Hooks/useGetCurrentLanguage'
-import { services } from '@Translations/pages'
-import { getInfoPage } from '@Utils/getInfoPage'
-
 import clsx from 'clsx'
+import { useServices } from './Services.hooks'
 
 export const Services = () => {
-  const currentLang = useGetCurrentLanguage() ?? ES
-  const { href } = getInfoPage({
-    lang: currentLang,
-    key: 'services'
-  })
+  const { currentLang, services, title, subtitle } = useServices()
 
   return (
     <section className="relative">
       <Content className={clsx('sectionContent flex-col flex gap-16')}>
-        <Title
-          title="De ideas a **resultados confiables**"
-          subtitle="Nuestros Servicios"
-        />
+        <Title title={title} subtitle={subtitle} />
         <div
           className={clsx(
             'grid grid-cols-1 gap-8',
@@ -38,7 +27,7 @@ export const Services = () => {
               title={language[currentLang].title}
               description={language[currentLang].description}
               image={image}
-              href={`.${href}/${language[currentLang].slug}`}
+              href={language[currentLang].slug}
               className={clsx('w-full h-80', 'lg:aspect-2/3 lg:h-auto')}
             />
           ))}
