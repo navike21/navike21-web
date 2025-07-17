@@ -1,9 +1,9 @@
 import { ReactNode } from 'react'
 
 interface IPageLayoutProps {
-  readonly children: ReactNode
+  children: ReactNode
 }
 
-export default function PagesLayout({ children }: IPageLayoutProps) {
+export default function PagesLayout({ children }: Readonly<IPageLayoutProps>) {
   return <>{children}</>
 }
