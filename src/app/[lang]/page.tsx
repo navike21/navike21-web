@@ -3,9 +3,13 @@ import HomePage from './home/HomePage'
 import { Metadata } from 'next'
 import { TLanguageKey } from '@Types/languages'
 
-type TProps = { params: Promise<{ lang: string }> }
+interface IMetadataProps {
+  params: Promise<{ lang: string }>
+}
 
-export async function generateMetadata({ params }: TProps): Promise<Metadata> {
+export async function generateMetadata({
+  params
+}: IMetadataProps): Promise<Metadata> {
   const { lang } = await params
   return buildMetadata({
     lang: lang as TLanguageKey,

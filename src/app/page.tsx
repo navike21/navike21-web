@@ -17,5 +17,5 @@ export default async function RootPage() {
     ? (browserLang as TLanguageKey)
     : ES
 
-  redirect(`/${langToUse}`)
+  redirect(`/${langToUse}/`)
 }
