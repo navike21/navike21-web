@@ -21,6 +21,7 @@ export default async function LangLayout({
 
   return (
     <html lang={lang}>
+      <head />
       <body>
         <Header />
         <SmoothScroll>
