@@ -26,7 +26,8 @@
       "@Styles/*": ["./src/libs/styles/*"],
       "@Translations/*": ["./src/libs/translations/*"],
       "@Types/*": ["./src/libs/types/*"],
-      "@Utils/*": ["./src/libs/utils/*"]
+      "@Utils/*": ["./src/libs/utils/*"],
+      "@Seo/*": ["./src/libs/seo/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

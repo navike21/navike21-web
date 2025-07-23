@@ -19,3 +19,15 @@ export const SUPPORTED_LANGUAGES = {
   pt: PT,
   zh: ZH
 } as const
+
+export const localeToLanguage = {
+  [ES]: 'es-PE',
+  [EN]: 'en-US',
+  [DE]: 'de-DE',
+  [FR]: 'fr-FR',
+  [IT]: 'it-IT',
+  [JA]: 'ja-JP',
+  [KO]: 'ko-KR',
+  [PT]: 'pt-BR',
+  [ZH]: 'zh-CN'
+} as const
