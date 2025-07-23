@@ -12,8 +12,10 @@ export default async function LangLayout({
   params
 }: Readonly<ILangLayoutProps>) {
   const { lang } = await params
+
   if (!Object.hasOwn(SUPPORTED_LANGUAGES, lang)) {
     notFound()
   }
+
   return <>{children}</>
 }
