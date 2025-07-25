@@ -1,10 +1,10 @@
 import { buildMetadata } from '@Seo/buildMetadata'
-import HomePage from './home/HomePage'
 import { Metadata } from 'next'
 import { TLanguageKey } from '@Types/languages'
 import { pages } from '@Translations/pages'
 import { HOME } from '@Constants/pages'
 import { IMetaData } from '@Types/metaData'
+import { HomePage } from '@Pages/home'
 
 interface IMetadataProps {
   params: Promise<{ lang: TLanguageKey }>
