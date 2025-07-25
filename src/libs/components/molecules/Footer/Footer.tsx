@@ -5,6 +5,7 @@ import { SOCIAL_MEDIA } from '@Constants/socialMedia'
 import { clsx } from 'clsx'
 import { useFooter } from './Footer.hooks'
 import Link from 'next/link'
+import { CURRENT_YEAR, SITE_NAME } from '@Constants/projectInformation'
 
 export const Footer = () => {
   const { footerMenuStructure, footerDescription, allBeRightReserved } =
@@ -35,7 +36,7 @@ export const Footer = () => {
                 'md:title-sm'
               )}
             >
-              <Logo className="w-10" /> navike21
+              <Logo className="w-10" /> {SITE_NAME}
             </div>
             <div className="paragraph-xs w-full">{footerDescription}</div>
           </section>
@@ -98,7 +99,7 @@ export const Footer = () => {
               ))}
           </aside>
           <div className="paragraph-xs text-center text-white">
-            © 2025 navike21 | {allBeRightReserved}
+            © {CURRENT_YEAR} {SITE_NAME} | {allBeRightReserved}
           </div>
         </Content>
       </div>
