@@ -2,11 +2,14 @@ import { DE, EN, ES, FR, IT, JA, KO, PT, ZH } from '@Constants/languages'
 import {
   ABOUT_US,
   BLOG,
+  COMPLAINTS_BOOK,
   CONTACT,
   HOME,
   LEGAL,
+  PRIVACY_POLICY,
   PROJECTS,
-  SERVICES
+  SERVICES,
+  TERMS_AND_CONDITIONS
 } from '@Constants/pages'
 import { TLanguageKey } from '@Types/languages'
 import { IMetaData } from '@Types/metaData'
@@ -14,7 +17,7 @@ import { IMetaData } from '@Types/metaData'
 export type TLanguagePageValue = {
   title: string
   slug: string
-  subPages?: { title: string; slug: string; metaData: IMetaData }[]
+  subPages?: { title: string; slug: string; metaData: IMetaData; id: string }[]
   metaData: IMetaData
 }
 
@@ -1241,6 +1244,7 @@ export const pages: IPage[] = [
         },
         subPages: [
           {
+            id: COMPLAINTS_BOOK,
             title: 'Libro de reclamaciones',
             slug: 'libro-de-reclamaciones',
             metaData: {
@@ -1262,6 +1266,7 @@ export const pages: IPage[] = [
             }
           },
           {
+            id: TERMS_AND_CONDITIONS,
             title: 'Términos y condiciones',
             slug: 'terminos-y-condiciones',
             metaData: {
@@ -1283,6 +1288,7 @@ export const pages: IPage[] = [
             }
           },
           {
+            id: PRIVACY_POLICY,
             title: 'Política de privacidad',
             slug: 'politica-de-privacidad',
             metaData: {
@@ -1327,6 +1333,7 @@ export const pages: IPage[] = [
         },
         subPages: [
           {
+            id: COMPLAINTS_BOOK,
             title: 'Complaints Book',
             slug: 'complaints-book',
             metaData: {
@@ -1348,6 +1355,7 @@ export const pages: IPage[] = [
             }
           },
           {
+            id: TERMS_AND_CONDITIONS,
             title: 'Terms and Conditions',
             slug: 'terms-and-conditions',
             metaData: {
@@ -1369,6 +1377,7 @@ export const pages: IPage[] = [
             }
           },
           {
+            id: PRIVACY_POLICY,
             title: 'Privacy Policy',
             slug: 'privacy-policy',
             metaData: {
@@ -1413,6 +1422,7 @@ export const pages: IPage[] = [
         },
         subPages: [
           {
+            id: COMPLAINTS_BOOK,
             title: 'Beschwerdebuch',
             slug: 'beschwerdebuch',
             metaData: {
@@ -1434,6 +1444,7 @@ export const pages: IPage[] = [
             }
           },
           {
+            id: TERMS_AND_CONDITIONS,
             title: 'Allgemeine Geschäftsbedingungen',
             slug: 'allgemeine-geschaeftsbedingungen',
             metaData: {
@@ -1455,6 +1466,7 @@ export const pages: IPage[] = [
             }
           },
           {
+            id: PRIVACY_POLICY,
             title: 'Datenschutzrichtlinie',
             slug: 'datenschutzrichtlinie',
             metaData: {
@@ -1499,6 +1511,7 @@ export const pages: IPage[] = [
         },
         subPages: [
           {
+            id: COMPLAINTS_BOOK,
             title: 'Livre de Réclamations',
             slug: 'livre-de-reclamations',
             metaData: {
@@ -1521,6 +1534,7 @@ export const pages: IPage[] = [
             }
           },
           {
+            id: TERMS_AND_CONDITIONS,
             title: 'Conditions Générales',
             slug: 'conditions-generales',
             metaData: {
@@ -1542,6 +1556,7 @@ export const pages: IPage[] = [
             }
           },
           {
+            id: PRIVACY_POLICY,
             title: 'Politique de Confidentialité',
             slug: 'politique-de-confidentialite',
             metaData: {
@@ -1586,6 +1601,7 @@ export const pages: IPage[] = [
         },
         subPages: [
           {
+            id: COMPLAINTS_BOOK,
             title: 'Libro dei Reclami',
             slug: 'libro-dei-reclami',
             metaData: {
@@ -1607,6 +1623,7 @@ export const pages: IPage[] = [
             }
           },
           {
+            id: TERMS_AND_CONDITIONS,
             title: 'Termini e Condizioni',
             slug: 'termini-e-condizioni',
             metaData: {
@@ -1629,6 +1646,7 @@ export const pages: IPage[] = [
             }
           },
           {
+            id: PRIVACY_POLICY,
             title: 'Politica sulla Privacy',
             slug: 'politica-sulla-privacy',
             metaData: {
@@ -1673,6 +1691,7 @@ export const pages: IPage[] = [
         },
         subPages: [
           {
+            id: COMPLAINTS_BOOK,
             title: '苦情帳',
             slug: 'kujou-chou',
             metaData: {
@@ -1694,6 +1713,7 @@ export const pages: IPage[] = [
             }
           },
           {
+            id: TERMS_AND_CONDITIONS,
             title: '利用規約',
             slug: 'riyou-kiyaku',
             metaData: {
@@ -1715,6 +1735,7 @@ export const pages: IPage[] = [
             }
           },
           {
+            id: PRIVACY_POLICY,
             title: 'プライバシーポリシー',
             slug: 'puraibashii-porishii',
             metaData: {
@@ -1759,6 +1780,7 @@ export const pages: IPage[] = [
         },
         subPages: [
           {
+            id: COMPLAINTS_BOOK,
             title: '불만 사항 책',
             slug: 'bulman-sahang-chaeg',
             metaData: {
@@ -1780,6 +1802,7 @@ export const pages: IPage[] = [
             }
           },
           {
+            id: TERMS_AND_CONDITIONS,
             title: '이용 약관',
             slug: 'iyong-yagwan',
             metaData: {
@@ -1801,6 +1824,7 @@ export const pages: IPage[] = [
             }
           },
           {
+            id: PRIVACY_POLICY,
             title: '개인정보 처리방침',
             slug: 'gaeinjeongbo-cheoribangsik',
             metaData: {
@@ -1845,6 +1869,7 @@ export const pages: IPage[] = [
         },
         subPages: [
           {
+            id: COMPLAINTS_BOOK,
             title: 'Livro de Reclamações',
             slug: 'livro-de-reclamacoes',
             metaData: {
@@ -1866,6 +1891,7 @@ export const pages: IPage[] = [
             }
           },
           {
+            id: TERMS_AND_CONDITIONS,
             title: 'Termos e Condições',
             slug: 'termos-e-condicoes',
             metaData: {
@@ -1887,6 +1913,7 @@ export const pages: IPage[] = [
             }
           },
           {
+            id: PRIVACY_POLICY,
             title: 'Política de Privacidade',
             slug: 'politica-de-privacidade',
             metaData: {
@@ -1931,6 +1958,7 @@ export const pages: IPage[] = [
         },
         subPages: [
           {
+            id: COMPLAINTS_BOOK,
             title: '投诉书',
             slug: 'toushu-shu',
             metaData: {
@@ -1952,6 +1980,7 @@ export const pages: IPage[] = [
             }
           },
           {
+            id: TERMS_AND_CONDITIONS,
             title: '条款和条件',
             slug: 'tiaokuan-he-tiaojian',
             metaData: {
@@ -1973,6 +2002,7 @@ export const pages: IPage[] = [
             }
           },
           {
+            id: PRIVACY_POLICY,
             title: '隐私政策',
             slug: 'yin-si-zhi-ce',
             metaData: {

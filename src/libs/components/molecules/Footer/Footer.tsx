@@ -4,6 +4,7 @@ import { Logo, Content } from '@Components/atoms'
 import { SOCIAL_MEDIA } from '@Constants/socialMedia'
 import { clsx } from 'clsx'
 import { useFooter } from './Footer.hooks'
+import Link from 'next/link'
 
 export const Footer = () => {
   const { footerMenuStructure, footerDescription, allBeRightReserved } =
@@ -51,12 +52,12 @@ export const Footer = () => {
                 <ul className="gap-2 grid grid-cols-1 w-full">
                   {items.map(({ text, href }) => (
                     <li className="paragraph-xs" key={text}>
-                      <a
+                      <Link
                         href={href}
                         className="hover:text-white transition-all ease-in-out"
                       >
                         {text}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
