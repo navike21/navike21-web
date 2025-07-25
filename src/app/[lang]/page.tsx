@@ -7,7 +7,7 @@ import { HOME } from '@Constants/pages'
 import { IMetaData } from '@Types/metaData'
 
 interface IMetadataProps {
-  params: Promise<{ lang: string }>
+  params: Promise<{ lang: TLanguageKey }>
 }
 
 export async function generateMetadata({
@@ -15,14 +15,12 @@ export async function generateMetadata({
 }: IMetadataProps): Promise<Metadata> {
   const { lang } = await params
 
-  const language = lang as TLanguageKey
-
   const page = pages.find(({ id }) => id === HOME)
-  const { metaData } = page?.language[language] ?? {}
+  const { metaData } = page?.language[lang] ?? {}
 
   return buildMetadata({
     ...(metaData as IMetaData),
-    lang: language
+    lang
   })
 }
 
