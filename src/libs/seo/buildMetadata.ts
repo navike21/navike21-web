@@ -1,25 +1,25 @@
-import { localeToLanguage } from '@Constants/languages'
-import { SITE_NAME, URL_BASE } from '@Constants/projectInformation'
-import { TLocale } from '@Types/languages'
 import { Metadata } from 'next'
+import { TLocale } from '@Types/languages'
+import { SITE_NAME, URL_BASE } from '@Constants/projectInformation'
+import { localeToLanguage } from '@Constants/languages'
+import { IMetaData } from '@Types/metaData'
 
-interface ISeoParams {
+interface ISeoParams extends IMetaData {
   lang: TLocale
-  title: string
-  description: string
 }
 
 export function buildMetadata({
   lang,
-  title,
-  description
+  seo,
+  openGraph,
+  twitter
 }: ISeoParams): Metadata {
   return {
-    title: title,
-    description: description,
+    title: seo.title,
+    description: seo.description,
     openGraph: {
-      title: title,
-      description: description,
+      title: openGraph.title,
+      description: openGraph.description,
       type: 'website',
       locale: localeToLanguage[lang],
       siteName: SITE_NAME,
@@ -27,8 +27,8 @@ export function buildMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      title: title,
-      description: description
+      title: twitter.title,
+      description: twitter.description
     }
   }
 }
