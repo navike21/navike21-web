@@ -1,4 +1,5 @@
 import { DE, EN, ES, FR, IT, JA, KO, PT, ZH } from '@Constants/languages'
+import { YEARS_EXPERIENCE } from '@Constants/projectInformation'
 import { TLanguageKey } from '@Types/languages'
 
 export type THeroSectionValue = {
@@ -262,7 +263,7 @@ export const counterMetrics: TCounterMetrics[] = [
   {
     key: 'experience',
     symbol: '+',
-    value: 5,
+    value: YEARS_EXPERIENCE,
     label: {
       [ES]: 'Años de experiencia',
       [EN]: 'Years of experience',
