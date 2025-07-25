@@ -5,42 +5,47 @@ import { useGSAP } from '@gsap/react'
 import { TPosition } from './BackgroundParallax.types'
 
 export const useBackgroundParallax = (startPosition: TPosition) => {
-  const parallaxRef = useRef<HTMLDivElement>(null)
-  const parallaxSpeed = -0.5
+  const imageRef = useRef<HTMLDivElement>(null)
+  const parallaxSpeed = 0.9
 
-  const positions: Record<TPosition, string> = {
-    top: '0%',
-    center: '50%',
-    bottom: '100%'
+  const verticalAlignments: Record<TPosition, string> = {
+    top: 'top',
+    center: 'center',
+    bottom: 'bottom'
   }
 
-  const initialPosition = positions[startPosition] || '50%'
+  const objectPosition = verticalAlignments[startPosition] || 'center'
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger)
 
     const ctx = gsap.context(() => {
-      if (parallaxRef.current) {
-        gsap.to(parallaxRef.current, {
-          backgroundPosition: `center ${parseFloat(initialPosition) + parallaxSpeed * 100}%`,
+      if (!imageRef.current) return
+
+      gsap.fromTo(
+        imageRef.current,
+        { y: -parallaxSpeed * 100 },
+        {
+          y: parallaxSpeed * 100,
           ease: 'none',
           scrollTrigger: {
-            trigger: parallaxRef.current,
+            trigger: imageRef.current,
             start: 'top bottom',
             end: 'bottom top',
             scrub: true,
-            // Añadimos esto:
-            invalidateOnRefresh: true,
-            anticipatePin: 1
+            invalidateOnRefresh: true
           }
-        })
-      }
-    }, parallaxRef)
+        }
+      )
+    }, imageRef)
 
     ScrollTrigger.refresh()
 
     return () => ctx.revert()
-  }, [initialPosition, parallaxSpeed])
+  }, [parallaxSpeed])
 
-  return { parallaxRef, initialPosition }
+  return {
+    imageRef,
+    objectPosition
+  }
 }

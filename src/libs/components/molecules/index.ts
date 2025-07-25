@@ -1,6 +1,7 @@
 export * from './Card'
 export * from './Footer'
 export * from './Header'
+export * from './HeroSectionSubPage'
 export * from './MasonryGrid'
 export * from './SliderMobileDevice'
 export * from './ThreeDMarquee'

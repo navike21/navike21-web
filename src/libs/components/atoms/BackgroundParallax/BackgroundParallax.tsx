@@ -1,40 +1,39 @@
 'use client'
 
-import clsx from 'clsx'
-import { IBackgroundParallaxProps } from './BackgroundParallax.types'
 import { useBackgroundParallax } from './BackgroundParallax.hooks'
+import { IBackgroundParallaxProps } from './BackgroundParallax.types'
+import clsx from 'clsx'
 
 export const BackgroundParallax = ({
   backgroundImage,
-  children,
   className,
-  overlay = false,
   startPosition = 'top',
+  overlay = false,
   ...props
 }: IBackgroundParallaxProps) => {
-  const { initialPosition, parallaxRef } = useBackgroundParallax(startPosition)
+  const { imageRef, objectPosition } = useBackgroundParallax(startPosition)
 
   return (
     <div
       {...props}
       className={clsx(
-        'parallax-background bg-no-repeat will-change-transform bg-[position:top_center]',
-        'md:bg-cover',
-        {
-          'bg-[position:top_center]': initialPosition === '0%',
-          'bg-center': initialPosition === '50%',
-          'bg-[position:bottom_center]': initialPosition === '100%'
-        },
-        {
-          'before:bg-gray-950 before:absolute before:top-0 before:bottom-0 before:left-0 before:right-0 before:-z-10 before:opacity-50':
-            overlay
-        },
+        'w-full h-full will-change-transform pointer-events-none',
+        'bg-no-repeat bg-cover overflow-hidden',
         className
       )}
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-      ref={parallaxRef}
     >
-      {children}
+      <div
+        ref={imageRef}
+        className={clsx(
+          'absolute inset-0 bg-center bg-cover will-change-transform -top-3/12',
+          'md:-top-1/12'
+        )}
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundPosition: `center ${objectPosition}`
+        }}
+      />
+      {overlay && <div className="absolute inset-0 bg-black opacity-40" />}
     </div>
   )
 }
