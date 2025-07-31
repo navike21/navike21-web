@@ -188,4 +188,26 @@ const womanSittingWorkingLaptop = {
   sm: womanSittingWorkingLaptopSm
 }
 
-export { authenticSmallYouthfulMarketingAgency, businessPersonLookingFinanceGraphs, designerHoldingSmartphone, handHoldingCardLaptop, historyNavike, homepageLaptop, insideModernOfficeDesign, laptopFlatLayWorkplaceConcept, manCheckingHisEmailLaptop, manWorkingDesk, manWorkingNight, mediumShotManWorkingLateNight, miniatureWorkmenRepairingLaptopKeyboard, nutritionalCounterApp, programmingWithPerson, searchBar, sideViewWomanHomeUsingHeadphonesTablet, supermarketWorkerWithFood, teamYoungBusinessOfficeFocusIsBusinessman, viewManWorkingDesk, womanSittingWorkingLaptop }
+export {
+  authenticSmallYouthfulMarketingAgency,
+  businessPersonLookingFinanceGraphs,
+  designerHoldingSmartphone,
+  handHoldingCardLaptop,
+  historyNavike,
+  homepageLaptop,
+  insideModernOfficeDesign,
+  laptopFlatLayWorkplaceConcept,
+  manCheckingHisEmailLaptop,
+  manWorkingDesk,
+  manWorkingNight,
+  mediumShotManWorkingLateNight,
+  miniatureWorkmenRepairingLaptopKeyboard,
+  nutritionalCounterApp,
+  programmingWithPerson,
+  searchBar,
+  sideViewWomanHomeUsingHeadphonesTablet,
+  supermarketWorkerWithFood,
+  teamYoungBusinessOfficeFocusIsBusinessman,
+  viewManWorkingDesk,
+  womanSittingWorkingLaptop
+}

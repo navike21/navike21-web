@@ -1,5 +1,6 @@
 import { ISvgProps } from '@Types/svg'
 import { uuidV7 } from '@Utils/generateKeys'
+import Image from 'next/image'
 import { ReactNode } from 'react'
 
 export interface IAnimatedLogo {
@@ -33,7 +34,7 @@ export const AnimatedLogoCloud = ({ logos }: IAnimatedLogoCloudProps) => (
               {logos.map(({ name, image }) => (
                 <div key={uuidV7()} className="flex-shrink-0">
                   {typeof image === 'string' ? (
-                    <img src={image} className="h-10 w-28" alt={name} />
+                    <Image src={image} className="h-10 w-28" alt={name} />
                   ) : (
                     image({
                       className: 'aspect-4/4 h-20 w-auto'
