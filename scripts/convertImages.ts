@@ -20,7 +20,6 @@ const TARGETS = [
     hasSubfolders: false
   },
   { folder: 'projects', output: 'projectsImages.ts', hasSubfolders: true }
-  // Podrías añadir { folder: 'services', output: 'servicesImages.ts', hasSubfolders: false } por ejemplo
 ]
 
 function isImageFile(file: string): boolean {
