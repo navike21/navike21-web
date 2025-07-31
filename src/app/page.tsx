@@ -1,9 +1,21 @@
-'use client'
+import { headers } from 'next/headers'
+import { redirect } from 'next/navigation'
+import { ES, SUPPORTED_LANGUAGES } from '@Constants/languages'
+import { TLanguageKey } from '@Types/languages'
 
-import { useOptionsBrowserStore } from '@Store/optionBrowser/optionBrowser.hook'
-import { permanentRedirect } from 'next/navigation'
+export default async function RootPage() {
+  const headersList = await headers()
+  const acceptLanguage = headersList.get('accept-language')
 
-export default function Home() {
-  const { language } = useOptionsBrowserStore()
-  permanentRedirect(`/${language}`)
+  const parseAcceptLanguage = (header: string | null): TLanguageKey => {
+    if (!header || typeof header !== 'string') return ES
+    const primaryLang = header.split(',')[0]?.split('-')[0]?.trim()
+    const supportedKeys = Object.keys(SUPPORTED_LANGUAGES) as TLanguageKey[]
+    return supportedKeys.includes(primaryLang as TLanguageKey)
+      ? (primaryLang as TLanguageKey)
+      : ES
+  }
+
+  const langToUse: TLanguageKey = parseAcceptLanguage(acceptLanguage)
+  redirect(`/${langToUse}/`)
 }

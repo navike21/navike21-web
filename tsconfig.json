@@ -18,20 +18,17 @@
         "name": "next"
       }
     ],
-    "baseUrl": ".",
     "paths": {
-      "@Public/*": ["./public/*"],
       "@Assets/*": ["./src/libs/assets/*"],
       "@Components/*": ["./src/libs/components/*"],
-      "@Config/*": ["./src/libs/config/*"],
-      "@Enums/*": ["src/libs/typed/enums/*"],
+      "@Constants/*": ["./src/libs/constants/*"],
       "@Hooks/*": ["./src/libs/hooks/*"],
-      "@Providers/*": ["./src/libs/providers/*"],
-      "@Store/*": ["./src/libs/store/*"],
-      "@Theme/*": ["./src/libs/theme/*"],
+      "@Styles/*": ["./src/libs/styles/*"],
       "@Translations/*": ["./src/libs/translations/*"],
-      "@Types/*": ["src/libs/typed/*"],
-      "@Utils/*": ["./src/libs/utils/*"]
+      "@Types/*": ["./src/libs/types/*"],
+      "@Utils/*": ["./src/libs/utils/*"],
+      "@Seo/*": ["./src/libs/seo/*"],
+      "@Pages/*": ["./src/libs/pages/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

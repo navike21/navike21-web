@@ -1,0 +1,473 @@
+import { DE, EN, ES, FR, IT, JA, KO, PT, ZH } from '@Constants/languages'
+import { YEARS_EXPERIENCE } from '@Constants/projectInformation'
+import { TLanguageKey } from '@Types/languages'
+
+export type THeroSectionValue = {
+  principalText: string
+  rotateWords: string[]
+  description: string
+  controlActionText: string
+}
+
+export type THomeInfoStructure = {
+  title: string
+  subtitle: string
+  description: string
+  controlActionText?: string
+}
+
+export type TCounterMetrics = {
+  key: string
+  symbol: string
+  value: number
+  label: {
+    [key in TLanguageKey]: string
+  }
+}
+
+export type THeroSection = {
+  [key in TLanguageKey]: THeroSectionValue
+}
+
+export type THomeStructure = {
+  [key in TLanguageKey]: THomeInfoStructure
+}
+
+export const heroSection: THeroSection = {
+  [ES]: {
+    principalText: 'Damos vida a tus ideas en ',
+    rotateWords: [
+      'sitios web',
+      'apps móviles',
+      'ecommerce',
+      'software a medida',
+      'landing pages',
+      'UX/UI'
+    ],
+    description:
+      'Creamos soluciones digitales pensadas para conectar con tus usuarios y hacer crecer tu negocio.',
+    controlActionText: 'Conversemos'
+  },
+  [EN]: {
+    principalText: 'We bring your ideas to life as ',
+    rotateWords: [
+      'websites',
+      'mobile apps',
+      'ecommerce',
+      'custom software',
+      'landing pages',
+      'UX/UI'
+    ],
+    description:
+      'We design digital solutions that connect with your users and help your business grow.',
+    controlActionText: 'Let’s talk'
+  },
+  [FR]: {
+    principalText: 'Nous donnons vie à vos idées en ',
+    rotateWords: [
+      'sites web',
+      'applications mobiles',
+      'ecommerce',
+      'logiciels sur mesure',
+      "pages d'atterrissage",
+      'UX/UI'
+    ],
+    description:
+      'Nous créons des solutions numériques pensées pour engager vos utilisateurs et développer votre activité.',
+    controlActionText: 'Discutons'
+  },
+  [IT]: {
+    principalText: 'Diamo vita alle tue idee in ',
+    rotateWords: [
+      'siti web',
+      'app mobili',
+      'ecommerce',
+      'software su misura',
+      'landing pages',
+      'UX/UI'
+    ],
+    description:
+      'Progettiamo soluzioni digitali per coinvolgere i tuoi utenti e far crescere il tuo business.',
+    controlActionText: 'Parliamone'
+  },
+  [DE]: {
+    principalText: 'Wir erwecken Ihre Ideen zum Leben als ',
+    rotateWords: [
+      'websites',
+      'mobile apps',
+      'ecommerce',
+      'maßgeschneiderte Software',
+      'landing pages',
+      'UX/UI'
+    ],
+    description:
+      'Wir entwickeln digitale Lösungen, die Ihre Nutzer ansprechen und Ihr Geschäft voranbringen.',
+    controlActionText: 'Lass uns sprechen'
+  },
+  [JA]: {
+    principalText: 'あなたのアイデアを形にする ',
+    rotateWords: [
+      'ウェブサイト',
+      'モバイルアプリ',
+      'ECサイト',
+      'カスタムソフトウェア',
+      'ランディングページ',
+      'UX/UI'
+    ],
+    description:
+      'ユーザーとのつながりを大切に、ビジネスを成長させるデジタルソリューションを提供します。',
+    controlActionText: '話しましょう'
+  },
+  [KO]: {
+    principalText: '아이디어를 현실로 만드는 ',
+    rotateWords: [
+      '웹사이트',
+      '모바일 앱',
+      '이커머스',
+      '맞춤형 소프트웨어',
+      '랜딩 페이지',
+      'UX/UI'
+    ],
+    description:
+      '사용자와의 연결을 중시하며 비즈니스를 성장시키는 디지털 솔루션을 만듭니다.',
+    controlActionText: '이야기해요'
+  },
+  [PT]: {
+    principalText: 'Damos vida às suas ideias em ',
+    rotateWords: [
+      'sites web',
+      'apps móveis',
+      'ecommerce',
+      'software personalizado',
+      'landing pages',
+      'UX/UI'
+    ],
+    description:
+      'Criamos soluções digitais pensadas para envolver os seus utilizadores e impulsionar o seu negócio.',
+    controlActionText: 'Vamos conversar'
+  },
+  [ZH]: {
+    principalText: '让您的创意成为现实：',
+    rotateWords: [
+      '网站',
+      '移动应用',
+      '电商平台',
+      '定制软件',
+      '落地页',
+      'UX/UI'
+    ],
+    description: '专注用户体验，助力业务增长的数字化解决方案。',
+    controlActionText: '聊一聊'
+  }
+}
+
+export const aboutSection: THomeStructure = {
+  [ES]: {
+    title: 'Mas que software, **creamos soluciones**',
+    subtitle: '¿Quiénes somos?',
+    description:
+      'Somos un equipo apasionado por la tecnología y el diseño, dedicados a crear soluciones innovadoras que mejoran la interacción en el mundo digital.',
+    controlActionText: 'Conoce más'
+  },
+  [EN]: {
+    title: 'More than software, **we build solutions**',
+    subtitle: 'Who are we?',
+    description:
+      'We are a team passionate about technology and design, dedicated to creating innovative solutions that enhance digital interaction.',
+    controlActionText: 'Learn more'
+  },
+  [FR]: {
+    title: 'Au-delà des logiciels, **nous concevons des solutions**',
+    subtitle: 'Qui sommes-nous ?',
+    description:
+      'Nous sommes une équipe passionnée par la technologie et le design, dédiée à créer des solutions innovantes qui améliorent l’interaction dans le monde numérique.',
+    controlActionText: 'En savoir plus'
+  },
+  [IT]: {
+    title: 'Oltre al software, **progettiamo soluzioni**',
+    subtitle: 'Chi siamo?',
+    description:
+      'Siamo un team appassionato di tecnologia e design, dedicato a creare soluzioni innovative che migliorano l’interazione nel mondo digitale.',
+    controlActionText: 'Scopri di più'
+  },
+  [DE]: {
+    title: 'Über Software hinaus, **entwickeln wir Lösungen**',
+    subtitle: 'Wer sind wir?',
+    description:
+      'Wir sind ein Team, das von Technologie und Design begeistert ist und innovative Lösungen entwickelt, die die Interaktion in der digitalen Welt verbessern.',
+    controlActionText: 'Mehr erfahren'
+  },
+  [JA]: {
+    title: 'ソフトウェアを超えて、**ソリューションを生み出します**',
+    subtitle: '私たちは誰ですか？',
+    description:
+      '私たちはテクノロジーとデザインに情熱を注ぐチームで、デジタル世界でのインタラクションを向上させる革新的なソリューションを提供しています。',
+    controlActionText: 'もっと知る'
+  },
+  [KO]: {
+    title: '소프트웨어를 넘어, **솔루션을 개발합니다**',
+    subtitle: '우리는 누구인가요?',
+    description:
+      '우리는 기술과 디자인에 열정을 가진 팀으로, 디지털 세계에서의 상호작용을 향상시키는 혁신적인 솔루션을 제공합니다.',
+    controlActionText: '자세히 알아보기'
+  },
+  [PT]: {
+    title: 'Para além do software, **desenvolvemos soluções**',
+    subtitle: 'Quem somos?',
+    description:
+      'Somos uma equipa apaixonada por tecnologia e design, dedicada a criar soluções inovadoras que melhoram a interação no mundo digital.',
+    controlActionText: 'Saiba mais'
+  },
+  [ZH]: {
+    title: '超越软件，**我们打造解决方案**',
+    subtitle: '我们是谁？',
+    description:
+      '我们是一个热爱技术和设计的团队，致力于创造创新解决方案，提升数字世界中的互动体验。',
+    controlActionText: '了解更多'
+  }
+}
+
+export const counterMetrics: TCounterMetrics[] = [
+  {
+    key: 'projects',
+    symbol: '+',
+    value: 62,
+    label: {
+      [ES]: 'Proyectos completados',
+      [EN]: 'Completed projects',
+      [FR]: 'Projets réalisés',
+      [IT]: 'Progetti realizzati',
+      [DE]: 'Abgeschlossene Projekte',
+      [JA]: '完了したプロジェクト',
+      [KO]: '완료된 프로젝트',
+      [PT]: 'Projetos concluídos',
+      [ZH]: '已完成项目'
+    }
+  },
+  {
+    key: 'clients',
+    symbol: '+',
+    value: 10,
+    label: {
+      [ES]: 'Clientes satisfechos',
+      [EN]: 'Satisfied clients',
+      [FR]: 'Clients satisfaits',
+      [IT]: 'Clienti soddisfatti',
+      [DE]: 'Zufriedene Kunden',
+      [JA]: '満足しているクライアント',
+      [KO]: '만족한 클라이언트',
+      [PT]: 'Clientes satisfeitos',
+      [ZH]: '满意客户'
+    }
+  },
+  {
+    key: 'experience',
+    symbol: '+',
+    value: YEARS_EXPERIENCE,
+    label: {
+      [ES]: 'Años de experiencia',
+      [EN]: 'Years of experience',
+      [FR]: 'Années d’expérience',
+      [IT]: 'Anni di esperienza',
+      [DE]: 'Jahre Erfahrung',
+      [JA]: '年の経験',
+      [KO]: '년 경력',
+      [PT]: 'Anos de experiência',
+      [ZH]: '年经验'
+    }
+  },
+  {
+    key: 'quality',
+    symbol: '%',
+    value: 100,
+    label: {
+      [ES]: 'Compromiso con la calidad',
+      [EN]: 'Commitment to quality',
+      [FR]: 'Engagement qualité',
+      [IT]: 'Impegno per la qualità',
+      [DE]: 'Engagement für Qualität',
+      [JA]: '品質へのこだわり',
+      [KO]: '품질에 대한 약속',
+      [PT]: 'Compromisso com a qualidade',
+      [ZH]: '品质承诺'
+    }
+  }
+]
+
+export const recentWorks: THomeStructure = {
+  [ES]: {
+    title: 'Lo último en **nuestros proyectos**',
+    subtitle: 'Trabajos recientes',
+    description:
+      'Aquí puedes ver algunos de nuestros trabajos más recientes, donde hemos aplicado nuestras habilidades y conocimientos para crear soluciones efectivas y atractivas.',
+    controlActionText: 'Ver más proyectos'
+  },
+  [EN]: {
+    title: 'The latest in **our projects**',
+    subtitle: 'Recent works',
+    description:
+      'Here you can see some of our most recent works, where we have applied our skills and knowledge to create effective and attractive solutions.',
+    controlActionText: 'See more projects'
+  },
+  [FR]: {
+    title: 'Les dernières nouveautés de **nos projets**',
+    subtitle: 'Travaux récents',
+    description:
+      'Vous pouvez découvrir ici quelques-uns de nos travaux les plus récents, où nous avons mis en œuvre nos compétences et connaissances pour créer des solutions efficaces et attrayantes.',
+    controlActionText: 'Voir plus de projets'
+  },
+  [IT]: {
+    title: 'Le ultime novità sui **nostri progetti**',
+    subtitle: 'Lavori recenti',
+    description:
+      'Qui puoi vedere alcuni dei nostri lavori più recenti, dove abbiamo applicato le nostre competenze e conoscenze per creare soluzioni efficaci e attraenti.',
+    controlActionText: 'Vedi altri progetti'
+  },
+  [DE]: {
+    title: 'Neuigkeiten aus **unseren Projekten**',
+    subtitle: 'Aktuelle Arbeiten',
+    description:
+      'Hier können Sie einige unserer neuesten Arbeiten sehen, in denen wir unsere Fähigkeiten und Kenntnisse eingesetzt haben, um effektive und ansprechende Lösungen zu schaffen.',
+    controlActionText: 'Weitere Projekte ansehen'
+  },
+  [JA]: {
+    title: '**私たちのプロジェクト**最新情報',
+    subtitle: '最近の作品',
+    description:
+      'ここでは、私たちの最近の作品の一部をご覧いただけます。効果的で魅力的なソリューションを作成するために、私たちのスキルと知識を活用しています。',
+    controlActionText: '他のプロジェクトを見る'
+  },
+  [KO]: {
+    title: '**우리 프로젝트** 최신 소식',
+    subtitle: '최근 작업',
+    description:
+      '여기에서 우리의 최근 작업 중 일부를 볼 수 있습니다. 우리는 효과적이고 매력적인 솔루션을 만들기 위해 우리의 기술과 지식을 적용했습니다.',
+    controlActionText: '더 많은 프로젝트 보기'
+  },
+  [PT]: {
+    title: 'Novidades recentes em **nossos projetos**',
+    subtitle: 'Trabalhos recentes',
+    description:
+      'Aqui você pode ver alguns dos nossos trabalhos mais recentes, onde aplicamos nossas habilidades e conhecimentos para criar soluções eficazes e atraentes.',
+    controlActionText: 'Ver mais projetos'
+  },
+  [ZH]: {
+    title: '**我们项目**最新动态',
+    subtitle: '最近的作品',
+    description:
+      '在这里，您可以看到我们最近的一些工作，我们运用我们的技能和知识，创造出有效且吸引人的解决方案。',
+    controlActionText: '查看更多项目'
+  }
+}
+
+export const clientsSection: THomeStructure = {
+  [ES]: {
+    subtitle: '¿Te sumas?',
+    title: 'Así como ellos que **confían en nosotros**',
+    description:
+      'Tú también puedes confiar en nosotros para llevar tu proyecto al siguiente nivel.'
+  },
+  [EN]: {
+    subtitle: 'Will you join us?',
+    title: 'Just like them, who **trust us**',
+    description: 'You can also trust us to take your project to the next level.'
+  },
+  [FR]: {
+    subtitle: 'Vous nous rejoignez ?',
+    title: 'Comme eux, qui **nous font confiance**',
+    description:
+      'Vous pouvez vous aussi nous faire confiance pour porter votre projet plus loin.'
+  },
+  [IT]: {
+    subtitle: 'Ti unisci a noi?',
+    title: 'Come loro, che **si fidano di noi**',
+    description:
+      'Anche tu puoi contare su di noi per portare il tuo progetto al livello successivo.'
+  },
+  [DE]: {
+    subtitle: 'Möchten Sie sich uns anschließen?',
+    title: 'So wie sie, die **uns vertrauen**',
+    description:
+      'Auch Sie können uns vertrauen, um Ihr Projekt auf die nächste Stufe zu bringen.'
+  },
+  [JA]: {
+    subtitle: '私たちに参加しませんか？',
+    title: '彼らのように、**私たちを信頼する**',
+    description:
+      'あなたも私たちを信頼して、プロジェクトを次のレベルへ引き上げられます。'
+  },
+  [KO]: {
+    subtitle: '함께하시겠어요?',
+    title: '그들처럼, **우리를 신뢰하는**',
+    description:
+      '당신도 우리를 신뢰하고 프로젝트를 한 단계 더 발전시킬 수 있습니다.'
+  },
+  [PT]: {
+    subtitle: 'Você se junta a nós?',
+    title: 'Assim como eles, que **confiam em nós**',
+    description:
+      'Você também pode confiar em nós para levar seu projeto a um novo patamar.'
+  },
+  [ZH]: {
+    subtitle: '要加入我们吗？',
+    title: '就像他们一样，**信任我们**',
+    description: '您也可以信任我们，让您的项目更进一步。'
+  }
+}
+
+export const servicesSection: THomeStructure = {
+  [ES]: {
+    subtitle: 'Nuestros Servicios',
+    title: 'De ideas a **resultados confiables**',
+    description:
+      'Ofrecemos una amplia gama de servicios digitales pensados para satisfacer las necesidades de tu negocio. Desde el desarrollo de software a medida hasta el diseño de experiencias de usuario, estamos aquí para ayudarte a lograr tus objetivos.'
+  },
+  [EN]: {
+    subtitle: 'Our Services',
+    title: 'From ideas to **reliable results**',
+    description:
+      'We offer a wide range of digital services crafted to meet your business needs. From custom software development to user experience design, we’re here to help you reach your goals.'
+  },
+  [FR]: {
+    subtitle: 'Nos Services',
+    title: 'Des idées aux **résultats fiables**',
+    description:
+      'Nous proposons une large gamme de services numériques conçus pour répondre aux besoins de votre entreprise. Du développement de logiciels sur mesure à la conception d’expériences utilisateur, nous sommes là pour vous aider à atteindre vos objectifs.'
+  },
+  [IT]: {
+    subtitle: 'I nostri Servizi',
+    title: 'Dalle idee ai **risultati affidabili**',
+    description:
+      'Offriamo una vasta gamma di servizi digitali pensati per soddisfare le esigenze della tua azienda. Dallo sviluppo di software su misura al design di esperienze utente, siamo qui per aiutarti a raggiungere i tuoi obiettivi.'
+  },
+  [DE]: {
+    subtitle: 'Unsere Dienstleistungen',
+    title: 'Von Ideen zu **zuverlässigen Ergebnissen**',
+    description:
+      'Wir bieten ein breites Spektrum digitaler Dienstleistungen an, die auf die Anforderungen Ihres Unternehmens zugeschnitten sind. Von maßgeschneiderter Softwareentwicklung bis hin zum Design von Benutzererlebnissen – wir helfen Ihnen, Ihre Ziele zu erreichen.'
+  },
+  [JA]: {
+    subtitle: '私たちのサービス',
+    title: 'アイデアから**信頼できる結果へ**',
+    description:
+      'ビジネスのニーズに応える幅広いデジタルサービスを提供しています。カスタムソフトウェア開発からユーザー体験の設計まで、目標達成をお手伝いします。'
+  },
+  [KO]: {
+    subtitle: '우리의 서비스',
+    title: '아이디어에서 **신뢰할 수 있는 결과**로',
+    description:
+      '비즈니스 요구를 충족시키기 위해 다양한 디지털 서비스를 제공합니다. 맞춤형 소프트웨어 개발부터 사용자 경험 디자인까지, 목표 달성을 도와드립니다.'
+  },
+  [PT]: {
+    subtitle: 'Nossos Serviços',
+    title: 'De ideias a **resultados confiáveis**',
+    description:
+      'Oferecemos uma ampla gama de serviços digitais criados para atender às necessidades do seu negócio. Do desenvolvimento de software personalizado ao design de experiências do usuário, estamos aqui para ajudar você a alcançar seus objetivos.'
+  },
+  [ZH]: {
+    subtitle: '我们的服务',
+    title: '从创意到**可靠的结果**',
+    description:
+      '我们提供广泛的数字服务，旨在满足您的业务需求。从定制软件开发到用户体验设计，我们在这里帮助您实现目标。'
+  }
+}

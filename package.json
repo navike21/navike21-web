@@ -1,38 +1,45 @@
 {
   "name": "navike21-web",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "private": true,
-  "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint:scan": "next lint",
     "lint:fix": "next lint --fix",
-    "images": "ts-node convertImages.ts"
+    "images": "tsx scripts/convertImages.ts"
   },
   "dependencies": {
-    "glob": "^11.0.1",
-    "lenis": "^1.1.20",
-    "motion": "^12.4.3",
-    "next": "15.1.6",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-icons": "^5.4.0",
-    "sharp": "^0.33.5",
-    "zustand": "^5.0.3"
+    "@gsap/react": "^2.1.2",
+    "clsx": "^2.1.1",
+    "gsap": "^3.13.0",
+    "lucide-react": "^0.525.0",
+    "motion": "^12.23.6",
+    "next": "15.4.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-slick": "^0.30.3",
+    "slick-carousel": "^1.8.1",
+    "tailwind-merge": "^3.3.1",
+    "uuid": "^11.1.0",
+    "zod": "^4.0.5"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@types/node": "^20.17.17",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.6",
-    "eslint-config-prettier": "^10.1.1",
-    "eslint-plugin-prettier": "^5.2.3",
-    "prettier": "^3.5.3",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.7.3"
+    "@eslint/eslintrc": "^3.3.1",
+    "@tailwindcss/postcss": "^4.1.11",
+    "@types/node": "^24.0.14",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@types/react-slick": "^0.23.13",
+    "eslint": "^9.31.0",
+    "eslint-config-next": "^15.4.1",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.5.1",
+    "prettier": "^3.6.2",
+    "sharp": "^0.34.3",
+    "tailwindcss": "^4.1.11",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
   }
 }
