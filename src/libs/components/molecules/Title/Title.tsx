@@ -1,27 +1,13 @@
-import { GradientText } from '@Components/atoms'
-import { uuidV7 } from '@Utils/generateKeys'
+import { parseTitleWithHighlight } from '@Utils/parseTitleWithHighlight'
 import clsx from 'clsx'
-import { Fragment } from 'react'
 
-interface ITitleProps {
+export interface ITitleProps {
   title: string
   subtitle?: string
   align?: 'left' | 'center' | 'right'
 }
 
 export const Title = ({ title, subtitle, align = 'left' }: ITitleProps) => {
-  function parseTitleWithHighlight(text: string) {
-    const parts = text.split(/(\*\*[^*]+\*\*)/g)
-    return parts.map(part => {
-      const regex = /^\*\*(.+)\*\*$/
-      const match = regex.exec(part)
-      if (match) {
-        return <GradientText key={uuidV7()}>{match[1]}</GradientText>
-      }
-      return <Fragment key={uuidV7()}>{part}</Fragment>
-    })
-  }
-
   return (
     <hgroup className="flex flex-col gap-3 items-center">
       {subtitle && (

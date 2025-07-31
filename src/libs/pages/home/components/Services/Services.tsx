@@ -9,7 +9,7 @@ export const Services = () => {
   const { currentLang, services, title, subtitle } = useServices()
 
   return (
-    <section className="relative">
+    <div className={clsx('bg-slate-950 relative')}>
       <Content className={clsx('sectionContent flex-col flex gap-16')}>
         <Title title={title} subtitle={subtitle} />
         <div
@@ -33,6 +33,6 @@ export const Services = () => {
           ))}
         </div>
       </Content>
-    </section>
+    </div>
   )
 }

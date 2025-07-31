@@ -1,3 +1,6 @@
+import authenticSmallYouthfulMarketingAgencyLg from '@Assets/images/backgrounds/converted/authentic-small-youthful-marketing-agency_large.webp'
+import authenticSmallYouthfulMarketingAgencyMd from '@Assets/images/backgrounds/converted/authentic-small-youthful-marketing-agency_medium.webp'
+import authenticSmallYouthfulMarketingAgencySm from '@Assets/images/backgrounds/converted/authentic-small-youthful-marketing-agency_small.webp'
 import businessPersonLookingFinanceGraphsLg from '@Assets/images/backgrounds/converted/business-person-looking-finance-graphs_large.webp'
 import businessPersonLookingFinanceGraphsMd from '@Assets/images/backgrounds/converted/business-person-looking-finance-graphs_medium.webp'
 import businessPersonLookingFinanceGraphsSm from '@Assets/images/backgrounds/converted/business-person-looking-finance-graphs_small.webp'
@@ -7,6 +10,9 @@ import designerHoldingSmartphoneSm from '@Assets/images/backgrounds/converted/de
 import handHoldingCardLaptopLg from '@Assets/images/backgrounds/converted/hand-holding-card-laptop_large.webp'
 import handHoldingCardLaptopMd from '@Assets/images/backgrounds/converted/hand-holding-card-laptop_medium.webp'
 import handHoldingCardLaptopSm from '@Assets/images/backgrounds/converted/hand-holding-card-laptop_small.webp'
+import historyNavikeLg from '@Assets/images/backgrounds/converted/history-navike_large.webp'
+import historyNavikeMd from '@Assets/images/backgrounds/converted/history-navike_medium.webp'
+import historyNavikeSm from '@Assets/images/backgrounds/converted/history-navike_small.webp'
 import homepageLaptopLg from '@Assets/images/backgrounds/converted/homepage-laptop_large.webp'
 import homepageLaptopMd from '@Assets/images/backgrounds/converted/homepage-laptop_medium.webp'
 import homepageLaptopSm from '@Assets/images/backgrounds/converted/homepage-laptop_small.webp'
@@ -56,6 +62,12 @@ import womanSittingWorkingLaptopLg from '@Assets/images/backgrounds/converted/wo
 import womanSittingWorkingLaptopMd from '@Assets/images/backgrounds/converted/woman-sitting-working-laptop_medium.webp'
 import womanSittingWorkingLaptopSm from '@Assets/images/backgrounds/converted/woman-sitting-working-laptop_small.webp'
 
+const authenticSmallYouthfulMarketingAgency = {
+  lg: authenticSmallYouthfulMarketingAgencyLg,
+  md: authenticSmallYouthfulMarketingAgencyMd,
+  sm: authenticSmallYouthfulMarketingAgencySm
+}
+
 const businessPersonLookingFinanceGraphs = {
   lg: businessPersonLookingFinanceGraphsLg,
   md: businessPersonLookingFinanceGraphsMd,
@@ -72,6 +84,12 @@ const handHoldingCardLaptop = {
   lg: handHoldingCardLaptopLg,
   md: handHoldingCardLaptopMd,
   sm: handHoldingCardLaptopSm
+}
+
+const historyNavike = {
+  lg: historyNavikeLg,
+  md: historyNavikeMd,
+  sm: historyNavikeSm
 }
 
 const homepageLaptop = {
@@ -170,24 +188,4 @@ const womanSittingWorkingLaptop = {
   sm: womanSittingWorkingLaptopSm
 }
 
-export {
-  businessPersonLookingFinanceGraphs,
-  designerHoldingSmartphone,
-  handHoldingCardLaptop,
-  homepageLaptop,
-  insideModernOfficeDesign,
-  laptopFlatLayWorkplaceConcept,
-  manCheckingHisEmailLaptop,
-  manWorkingDesk,
-  manWorkingNight,
-  mediumShotManWorkingLateNight,
-  miniatureWorkmenRepairingLaptopKeyboard,
-  nutritionalCounterApp,
-  programmingWithPerson,
-  searchBar,
-  sideViewWomanHomeUsingHeadphonesTablet,
-  supermarketWorkerWithFood,
-  teamYoungBusinessOfficeFocusIsBusinessman,
-  viewManWorkingDesk,
-  womanSittingWorkingLaptop
-}
+export { authenticSmallYouthfulMarketingAgency, businessPersonLookingFinanceGraphs, designerHoldingSmartphone, handHoldingCardLaptop, historyNavike, homepageLaptop, insideModernOfficeDesign, laptopFlatLayWorkplaceConcept, manCheckingHisEmailLaptop, manWorkingDesk, manWorkingNight, mediumShotManWorkingLateNight, miniatureWorkmenRepairingLaptopKeyboard, nutritionalCounterApp, programmingWithPerson, searchBar, sideViewWomanHomeUsingHeadphonesTablet, supermarketWorkerWithFood, teamYoungBusinessOfficeFocusIsBusinessman, viewManWorkingDesk, womanSittingWorkingLaptop }

@@ -1,5 +1,6 @@
+import { BackgroundParallax } from '@Components/atoms'
 import clsx from 'clsx'
-import Image, { StaticImageData } from 'next/image'
+import { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import { ReactNode } from 'react'
 
@@ -50,18 +51,14 @@ export const Card = ({
     >
       {image && (
         <>
-          <Image
-            src={image.src}
-            alt={title}
-            width={image.width}
-            height={image.height}
-            quality={100}
-            loading="lazy"
+          <BackgroundParallax
+            backgroundImage={image.src}
             className={clsx(
               'absolute inset-0 w-full h-full object-cover rounded-lg z-0',
               'transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)]',
               'group-hover:scale-110'
             )}
+            startPosition="center"
           />
           <div
             className={clsx(

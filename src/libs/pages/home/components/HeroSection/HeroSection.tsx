@@ -31,11 +31,12 @@ export const HeroSection = () => {
       <BackgroundParallax
         backgroundImage={manWorkingNight.lg.src}
         className="absolute left-0 right-0 top-0 bottom-0"
+        startPosition="top"
         overlay
       />
       <Content
         className={clsx(
-          'relative flex items-start justify-start flex-col gap-5 pb-14',
+          'relative flex items-start justify-start flex-col gap-5 pb-14 sectionContent',
           'sm:pb-8',
           'lg:pb-12',
           'xl:pb-28'
