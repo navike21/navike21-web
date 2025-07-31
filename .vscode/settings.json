@@ -18,6 +18,13 @@
     "rkpower",
     "TIKTOK",
     "vercel",
-    "WHATSAPP"
-  ]
+    "WHATSAPP",
+    "esnext",
+    "gsap",
+    "quicksand",
+    "Quicksand",
+    "TMUI"
+  ],
+  "IDX.aI.enableInlineCompletion": true,
+  "IDX.aI.enableCodebaseIndexing": true
 }
