@@ -70,7 +70,7 @@ async function convertImage(
         `${fileName}_${size.suffix}.webp`
       )
       await sharp(filePath)
-        .resize({ width: size.width, height: size.width, fit: 'inside' })
+        .resize({ width: size.width, height: undefined, fit: 'inside' })
         .webp({ quality: QUALITY_THUMB_WEBP })
         .toFile(thumbOutput)
       console.log(
