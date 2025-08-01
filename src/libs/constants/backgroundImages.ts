@@ -197,4 +197,27 @@ const womenWorkingWithPostItsSideView = {
   sm: womenWorkingWithPostItsSideViewSm
 }
 
-export { authenticSmallYouthfulMarketingAgency, businessPersonLookingFinanceGraphs, designerHoldingSmartphone, handHoldingCardLaptop, historyNavike, homepageLaptop, insideModernOfficeDesign, laptopFlatLayWorkplaceConcept, manCheckingHisEmailLaptop, manWorkingDesk, manWorkingNight, mediumShotManWorkingLateNight, miniatureWorkmenRepairingLaptopKeyboard, nutritionalCounterApp, programmingWithPerson, searchBar, sideViewWomanHomeUsingHeadphonesTablet, supermarketWorkerWithFood, teamYoungBusinessOfficeFocusIsBusinessman, viewManWorkingDesk, womanSittingWorkingLaptop, womenWorkingWithPostItsSideView }
+export {
+  authenticSmallYouthfulMarketingAgency,
+  businessPersonLookingFinanceGraphs,
+  designerHoldingSmartphone,
+  handHoldingCardLaptop,
+  historyNavike,
+  homepageLaptop,
+  insideModernOfficeDesign,
+  laptopFlatLayWorkplaceConcept,
+  manCheckingHisEmailLaptop,
+  manWorkingDesk,
+  manWorkingNight,
+  mediumShotManWorkingLateNight,
+  miniatureWorkmenRepairingLaptopKeyboard,
+  nutritionalCounterApp,
+  programmingWithPerson,
+  searchBar,
+  sideViewWomanHomeUsingHeadphonesTablet,
+  supermarketWorkerWithFood,
+  teamYoungBusinessOfficeFocusIsBusinessman,
+  viewManWorkingDesk,
+  womanSittingWorkingLaptop,
+  womenWorkingWithPostItsSideView
+}
