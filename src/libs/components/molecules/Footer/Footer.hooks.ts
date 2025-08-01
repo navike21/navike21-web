@@ -3,13 +3,8 @@
 import { ES } from '@Constants/languages'
 import { SERVICES } from '@Constants/pages'
 import { useGetCurrentLanguage } from '@Hooks/useGetCurrentLanguage'
-import {
-  allBeRightReserved,
-  footerDescription,
-  IPage,
-  pages,
-  services
-} from '@Translations/pages'
+import { allBeRightReserved, footerDescription } from '@Translations/common'
+import { IPage, pages, services } from '@Translations/pages'
 
 export const useFooter = () => {
   const currentLang = useGetCurrentLanguage() ?? ES
