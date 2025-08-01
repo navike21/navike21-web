@@ -61,6 +61,9 @@ import viewManWorkingDeskSm from '@Assets/images/backgrounds/converted/view-man-
 import womanSittingWorkingLaptopLg from '@Assets/images/backgrounds/converted/woman-sitting-working-laptop_large.webp'
 import womanSittingWorkingLaptopMd from '@Assets/images/backgrounds/converted/woman-sitting-working-laptop_medium.webp'
 import womanSittingWorkingLaptopSm from '@Assets/images/backgrounds/converted/woman-sitting-working-laptop_small.webp'
+import womenWorkingWithPostItsSideViewLg from '@Assets/images/backgrounds/converted/women-working-with-post-its-side-view_large.webp'
+import womenWorkingWithPostItsSideViewMd from '@Assets/images/backgrounds/converted/women-working-with-post-its-side-view_medium.webp'
+import womenWorkingWithPostItsSideViewSm from '@Assets/images/backgrounds/converted/women-working-with-post-its-side-view_small.webp'
 
 const authenticSmallYouthfulMarketingAgency = {
   lg: authenticSmallYouthfulMarketingAgencyLg,
@@ -188,26 +191,10 @@ const womanSittingWorkingLaptop = {
   sm: womanSittingWorkingLaptopSm
 }
 
-export {
-  authenticSmallYouthfulMarketingAgency,
-  businessPersonLookingFinanceGraphs,
-  designerHoldingSmartphone,
-  handHoldingCardLaptop,
-  historyNavike,
-  homepageLaptop,
-  insideModernOfficeDesign,
-  laptopFlatLayWorkplaceConcept,
-  manCheckingHisEmailLaptop,
-  manWorkingDesk,
-  manWorkingNight,
-  mediumShotManWorkingLateNight,
-  miniatureWorkmenRepairingLaptopKeyboard,
-  nutritionalCounterApp,
-  programmingWithPerson,
-  searchBar,
-  sideViewWomanHomeUsingHeadphonesTablet,
-  supermarketWorkerWithFood,
-  teamYoungBusinessOfficeFocusIsBusinessman,
-  viewManWorkingDesk,
-  womanSittingWorkingLaptop
+const womenWorkingWithPostItsSideView = {
+  lg: womenWorkingWithPostItsSideViewLg,
+  md: womenWorkingWithPostItsSideViewMd,
+  sm: womenWorkingWithPostItsSideViewSm
 }
+
+export { authenticSmallYouthfulMarketingAgency, businessPersonLookingFinanceGraphs, designerHoldingSmartphone, handHoldingCardLaptop, historyNavike, homepageLaptop, insideModernOfficeDesign, laptopFlatLayWorkplaceConcept, manCheckingHisEmailLaptop, manWorkingDesk, manWorkingNight, mediumShotManWorkingLateNight, miniatureWorkmenRepairingLaptopKeyboard, nutritionalCounterApp, programmingWithPerson, searchBar, sideViewWomanHomeUsingHeadphonesTablet, supermarketWorkerWithFood, teamYoungBusinessOfficeFocusIsBusinessman, viewManWorkingDesk, womanSittingWorkingLaptop, womenWorkingWithPostItsSideView }
