@@ -52,6 +52,9 @@ import sideViewWomanHomeUsingHeadphonesTabletSm from '@Assets/images/backgrounds
 import supermarketWorkerWithFoodLg from '@Assets/images/backgrounds/converted/supermarket-worker-with-food_large.webp'
 import supermarketWorkerWithFoodMd from '@Assets/images/backgrounds/converted/supermarket-worker-with-food_medium.webp'
 import supermarketWorkerWithFoodSm from '@Assets/images/backgrounds/converted/supermarket-worker-with-food_small.webp'
+import teamBusinessPeopleStackingHandsLg from '@Assets/images/backgrounds/converted/team-business-people-stacking-hands_large.webp'
+import teamBusinessPeopleStackingHandsMd from '@Assets/images/backgrounds/converted/team-business-people-stacking-hands_medium.webp'
+import teamBusinessPeopleStackingHandsSm from '@Assets/images/backgrounds/converted/team-business-people-stacking-hands_small.webp'
 import teamYoungBusinessOfficeFocusIsBusinessmanLg from '@Assets/images/backgrounds/converted/team-young-business-office-focus-is-businessman_large.webp'
 import teamYoungBusinessOfficeFocusIsBusinessmanMd from '@Assets/images/backgrounds/converted/team-young-business-office-focus-is-businessman_medium.webp'
 import teamYoungBusinessOfficeFocusIsBusinessmanSm from '@Assets/images/backgrounds/converted/team-young-business-office-focus-is-businessman_small.webp'
@@ -176,6 +179,12 @@ const supermarketWorkerWithFood = {
   sm: supermarketWorkerWithFoodSm
 }
 
+const teamBusinessPeopleStackingHands = {
+  lg: teamBusinessPeopleStackingHandsLg,
+  md: teamBusinessPeopleStackingHandsMd,
+  sm: teamBusinessPeopleStackingHandsSm
+}
+
 const teamYoungBusinessOfficeFocusIsBusinessman = {
   lg: teamYoungBusinessOfficeFocusIsBusinessmanLg,
   md: teamYoungBusinessOfficeFocusIsBusinessmanMd,
@@ -206,4 +215,4 @@ const youngManagerStandingUpRelieveBackPain = {
   sm: youngManagerStandingUpRelieveBackPainSm
 }
 
-export { authenticSmallYouthfulMarketingAgency, businessPersonLookingFinanceGraphs, designerHoldingSmartphone, handHoldingCardLaptop, historyNavike, homepageLaptop, insideModernOfficeDesign, laptopFlatLayWorkplaceConcept, manCheckingHisEmailLaptop, manWorkingDesk, manWorkingNight, mediumShotManWorkingLateNight, miniatureWorkmenRepairingLaptopKeyboard, nutritionalCounterApp, programmingWithPerson, searchBar, sideViewWomanHomeUsingHeadphonesTablet, supermarketWorkerWithFood, teamYoungBusinessOfficeFocusIsBusinessman, viewManWorkingDesk, womanSittingWorkingLaptop, womenWorkingWithPostItsSideView, youngManagerStandingUpRelieveBackPain }
+export { authenticSmallYouthfulMarketingAgency, businessPersonLookingFinanceGraphs, designerHoldingSmartphone, handHoldingCardLaptop, historyNavike, homepageLaptop, insideModernOfficeDesign, laptopFlatLayWorkplaceConcept, manCheckingHisEmailLaptop, manWorkingDesk, manWorkingNight, mediumShotManWorkingLateNight, miniatureWorkmenRepairingLaptopKeyboard, nutritionalCounterApp, programmingWithPerson, searchBar, sideViewWomanHomeUsingHeadphonesTablet, supermarketWorkerWithFood, teamBusinessPeopleStackingHands, teamYoungBusinessOfficeFocusIsBusinessman, viewManWorkingDesk, womanSittingWorkingLaptop, womenWorkingWithPostItsSideView, youngManagerStandingUpRelieveBackPain }

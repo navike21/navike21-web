@@ -5,7 +5,7 @@ import {
   youngManagerStandingUpRelieveBackPain
 } from '@Constants/backgroundImages'
 import { ES } from '@Constants/languages'
-import { SERVICES } from '@Constants/pages'
+import { CONTACT, SERVICES } from '@Constants/pages'
 import { useGetCurrentLanguage } from '@Hooks/useGetCurrentLanguage'
 import {
   contactUsServices,
@@ -39,7 +39,7 @@ export const useServices = () => {
     servicesList: servicesList[currentLang],
     currentLang,
     services: servicesData,
-    contactLink: getInfoPage({ lang: currentLang, key: 'contact' }),
+    contactLink: getInfoPage({ lang: currentLang, key: CONTACT }),
     contactUs: contactUsServices[currentLang],
     imageContact: youngManagerStandingUpRelieveBackPain.lg.src
   }
