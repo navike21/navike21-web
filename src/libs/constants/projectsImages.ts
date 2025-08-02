@@ -115,210 +115,217 @@ import tentacionesGourmetStoreSm from '@Assets/images/projects/tentaciones-gourm
 
 const carbyneSafety = {
   carbyneSafetyAboutUsMobile: {
-  lg: carbyneSafetyAboutUsMobileLg,
-  md: carbyneSafetyAboutUsMobileMd,
-  sm: carbyneSafetyAboutUsMobileSm
-},
+    lg: carbyneSafetyAboutUsMobileLg,
+    md: carbyneSafetyAboutUsMobileMd,
+    sm: carbyneSafetyAboutUsMobileSm
+  },
   carbyneSafetyAboutUs: {
-  lg: carbyneSafetyAboutUsLg,
-  md: carbyneSafetyAboutUsMd,
-  sm: carbyneSafetyAboutUsSm
-},
+    lg: carbyneSafetyAboutUsLg,
+    md: carbyneSafetyAboutUsMd,
+    sm: carbyneSafetyAboutUsSm
+  },
   carbyneSafetyContactUs: {
-  lg: carbyneSafetyContactUsLg,
-  md: carbyneSafetyContactUsMd,
-  sm: carbyneSafetyContactUsSm
-},
+    lg: carbyneSafetyContactUsLg,
+    md: carbyneSafetyContactUsMd,
+    sm: carbyneSafetyContactUsSm
+  },
   carbyneSafetyHomeMobile: {
-  lg: carbyneSafetyHomeMobileLg,
-  md: carbyneSafetyHomeMobileMd,
-  sm: carbyneSafetyHomeMobileSm
-},
+    lg: carbyneSafetyHomeMobileLg,
+    md: carbyneSafetyHomeMobileMd,
+    sm: carbyneSafetyHomeMobileSm
+  },
   carbyneSafetyHome: {
-  lg: carbyneSafetyHomeLg,
-  md: carbyneSafetyHomeMd,
-  sm: carbyneSafetyHomeSm
-},
+    lg: carbyneSafetyHomeLg,
+    md: carbyneSafetyHomeMd,
+    sm: carbyneSafetyHomeSm
+  },
   carbyneSafetyProductsMobile: {
-  lg: carbyneSafetyProductsMobileLg,
-  md: carbyneSafetyProductsMobileMd,
-  sm: carbyneSafetyProductsMobileSm
-},
+    lg: carbyneSafetyProductsMobileLg,
+    md: carbyneSafetyProductsMobileMd,
+    sm: carbyneSafetyProductsMobileSm
+  },
   carbyneSafetyProducts: {
-  lg: carbyneSafetyProductsLg,
-  md: carbyneSafetyProductsMd,
-  sm: carbyneSafetyProductsSm
-}
+    lg: carbyneSafetyProductsLg,
+    md: carbyneSafetyProductsMd,
+    sm: carbyneSafetyProductsSm
+  }
 }
 
 const circurela = {
   circurelaAboutUsMobile: {
-  lg: circurelaAboutUsMobileLg,
-  md: circurelaAboutUsMobileMd,
-  sm: circurelaAboutUsMobileSm
-},
+    lg: circurelaAboutUsMobileLg,
+    md: circurelaAboutUsMobileMd,
+    sm: circurelaAboutUsMobileSm
+  },
   circurelaAboutUs: {
-  lg: circurelaAboutUsLg,
-  md: circurelaAboutUsMd,
-  sm: circurelaAboutUsSm
-},
+    lg: circurelaAboutUsLg,
+    md: circurelaAboutUsMd,
+    sm: circurelaAboutUsSm
+  },
   circurelaEvents: {
-  lg: circurelaEventsLg,
-  md: circurelaEventsMd,
-  sm: circurelaEventsSm
-},
+    lg: circurelaEventsLg,
+    md: circurelaEventsMd,
+    sm: circurelaEventsSm
+  },
   circurelaHomeMobile: {
-  lg: circurelaHomeMobileLg,
-  md: circurelaHomeMobileMd,
-  sm: circurelaHomeMobileSm
-},
+    lg: circurelaHomeMobileLg,
+    md: circurelaHomeMobileMd,
+    sm: circurelaHomeMobileSm
+  },
   circurelaHome: {
-  lg: circurelaHomeLg,
-  md: circurelaHomeMd,
-  sm: circurelaHomeSm
-},
+    lg: circurelaHomeLg,
+    md: circurelaHomeMd,
+    sm: circurelaHomeSm
+  },
   circurelaInformation: {
-  lg: circurelaInformationLg,
-  md: circurelaInformationMd,
-  sm: circurelaInformationSm
-},
+    lg: circurelaInformationLg,
+    md: circurelaInformationMd,
+    sm: circurelaInformationSm
+  },
   circurelaMenuMobile: {
-  lg: circurelaMenuMobileLg,
-  md: circurelaMenuMobileMd,
-  sm: circurelaMenuMobileSm
-},
+    lg: circurelaMenuMobileLg,
+    md: circurelaMenuMobileMd,
+    sm: circurelaMenuMobileSm
+  },
   circurelaMenu: {
-  lg: circurelaMenuLg,
-  md: circurelaMenuMd,
-  sm: circurelaMenuSm
-},
+    lg: circurelaMenuLg,
+    md: circurelaMenuMd,
+    sm: circurelaMenuSm
+  },
   circurelaSocialMobile: {
-  lg: circurelaSocialMobileLg,
-  md: circurelaSocialMobileMd,
-  sm: circurelaSocialMobileSm
-}
+    lg: circurelaSocialMobileLg,
+    md: circurelaSocialMobileMd,
+    sm: circurelaSocialMobileSm
+  }
 }
 
 const colegioLaUnion = {
   colegioLaUnionAboutUs: {
-  lg: colegioLaUnionAboutUsLg,
-  md: colegioLaUnionAboutUsMd,
-  sm: colegioLaUnionAboutUsSm
-},
+    lg: colegioLaUnionAboutUsLg,
+    md: colegioLaUnionAboutUsMd,
+    sm: colegioLaUnionAboutUsSm
+  },
   colegioLaUnionDetailInfo: {
-  lg: colegioLaUnionDetailInfoLg,
-  md: colegioLaUnionDetailInfoMd,
-  sm: colegioLaUnionDetailInfoSm
-},
+    lg: colegioLaUnionDetailInfoLg,
+    md: colegioLaUnionDetailInfoMd,
+    sm: colegioLaUnionDetailInfoSm
+  },
   colegioLaUnionHome: {
-  lg: colegioLaUnionHomeLg,
-  md: colegioLaUnionHomeMd,
-  sm: colegioLaUnionHomeSm
-}
+    lg: colegioLaUnionHomeLg,
+    md: colegioLaUnionHomeMd,
+    sm: colegioLaUnionHomeSm
+  }
 }
 
 const eurogourmet = {
   eurogourmetAboutUsMobile: {
-  lg: eurogourmetAboutUsMobileLg,
-  md: eurogourmetAboutUsMobileMd,
-  sm: eurogourmetAboutUsMobileSm
-},
+    lg: eurogourmetAboutUsMobileLg,
+    md: eurogourmetAboutUsMobileMd,
+    sm: eurogourmetAboutUsMobileSm
+  },
   eurogourmetAboutUs: {
-  lg: eurogourmetAboutUsLg,
-  md: eurogourmetAboutUsMd,
-  sm: eurogourmetAboutUsSm
-},
+    lg: eurogourmetAboutUsLg,
+    md: eurogourmetAboutUsMd,
+    sm: eurogourmetAboutUsSm
+  },
   eurogourmetBlog: {
-  lg: eurogourmetBlogLg,
-  md: eurogourmetBlogMd,
-  sm: eurogourmetBlogSm
-},
+    lg: eurogourmetBlogLg,
+    md: eurogourmetBlogMd,
+    sm: eurogourmetBlogSm
+  },
   eurogourmetEcommerce: {
-  lg: eurogourmetEcommerceLg,
-  md: eurogourmetEcommerceMd,
-  sm: eurogourmetEcommerceSm
-},
+    lg: eurogourmetEcommerceLg,
+    md: eurogourmetEcommerceMd,
+    sm: eurogourmetEcommerceSm
+  },
   eurogourmetHomeMobile: {
-  lg: eurogourmetHomeMobileLg,
-  md: eurogourmetHomeMobileMd,
-  sm: eurogourmetHomeMobileSm
-},
+    lg: eurogourmetHomeMobileLg,
+    md: eurogourmetHomeMobileMd,
+    sm: eurogourmetHomeMobileSm
+  },
   eurogourmetHome: {
-  lg: eurogourmetHomeLg,
-  md: eurogourmetHomeMd,
-  sm: eurogourmetHomeSm
-},
+    lg: eurogourmetHomeLg,
+    md: eurogourmetHomeMd,
+    sm: eurogourmetHomeSm
+  },
   eurogourmetProductDetailMobile: {
-  lg: eurogourmetProductDetailMobileLg,
-  md: eurogourmetProductDetailMobileMd,
-  sm: eurogourmetProductDetailMobileSm
-},
+    lg: eurogourmetProductDetailMobileLg,
+    md: eurogourmetProductDetailMobileMd,
+    sm: eurogourmetProductDetailMobileSm
+  },
   eurogourmetProductPreview: {
-  lg: eurogourmetProductPreviewLg,
-  md: eurogourmetProductPreviewMd,
-  sm: eurogourmetProductPreviewSm
-}
+    lg: eurogourmetProductPreviewLg,
+    md: eurogourmetProductPreviewMd,
+    sm: eurogourmetProductPreviewSm
+  }
 }
 
 const rkPower = {
   rkPowerAboutUsMobile: {
-  lg: rkPowerAboutUsMobileLg,
-  md: rkPowerAboutUsMobileMd,
-  sm: rkPowerAboutUsMobileSm
-},
+    lg: rkPowerAboutUsMobileLg,
+    md: rkPowerAboutUsMobileMd,
+    sm: rkPowerAboutUsMobileSm
+  },
   rkPowerAboutUs: {
-  lg: rkPowerAboutUsLg,
-  md: rkPowerAboutUsMd,
-  sm: rkPowerAboutUsSm
-},
+    lg: rkPowerAboutUsLg,
+    md: rkPowerAboutUsMd,
+    sm: rkPowerAboutUsSm
+  },
   rkPowerContactUs: {
-  lg: rkPowerContactUsLg,
-  md: rkPowerContactUsMd,
-  sm: rkPowerContactUsSm
-},
+    lg: rkPowerContactUsLg,
+    md: rkPowerContactUsMd,
+    sm: rkPowerContactUsSm
+  },
   rkPowerHomeMobile: {
-  lg: rkPowerHomeMobileLg,
-  md: rkPowerHomeMobileMd,
-  sm: rkPowerHomeMobileSm
-},
+    lg: rkPowerHomeMobileLg,
+    md: rkPowerHomeMobileMd,
+    sm: rkPowerHomeMobileSm
+  },
   rkPowerHome: {
-  lg: rkPowerHomeLg,
-  md: rkPowerHomeMd,
-  sm: rkPowerHomeSm
-},
+    lg: rkPowerHomeLg,
+    md: rkPowerHomeMd,
+    sm: rkPowerHomeSm
+  },
   rkPowerInfoDetail: {
-  lg: rkPowerInfoDetailLg,
-  md: rkPowerInfoDetailMd,
-  sm: rkPowerInfoDetailSm
-}
+    lg: rkPowerInfoDetailLg,
+    md: rkPowerInfoDetailMd,
+    sm: rkPowerInfoDetailSm
+  }
 }
 
 const tentacionesGourmet = {
   tentacionesGourmetHomeMobile: {
-  lg: tentacionesGourmetHomeMobileLg,
-  md: tentacionesGourmetHomeMobileMd,
-  sm: tentacionesGourmetHomeMobileSm
-},
+    lg: tentacionesGourmetHomeMobileLg,
+    md: tentacionesGourmetHomeMobileMd,
+    sm: tentacionesGourmetHomeMobileSm
+  },
   tentacionesGourmetHome: {
-  lg: tentacionesGourmetHomeLg,
-  md: tentacionesGourmetHomeMd,
-  sm: tentacionesGourmetHomeSm
-},
+    lg: tentacionesGourmetHomeLg,
+    md: tentacionesGourmetHomeMd,
+    sm: tentacionesGourmetHomeSm
+  },
   tentacionesGourmetLocales: {
-  lg: tentacionesGourmetLocalesLg,
-  md: tentacionesGourmetLocalesMd,
-  sm: tentacionesGourmetLocalesSm
-},
+    lg: tentacionesGourmetLocalesLg,
+    md: tentacionesGourmetLocalesMd,
+    sm: tentacionesGourmetLocalesSm
+  },
   tentacionesGourmetProductDetail: {
-  lg: tentacionesGourmetProductDetailLg,
-  md: tentacionesGourmetProductDetailMd,
-  sm: tentacionesGourmetProductDetailSm
-},
+    lg: tentacionesGourmetProductDetailLg,
+    md: tentacionesGourmetProductDetailMd,
+    sm: tentacionesGourmetProductDetailSm
+  },
   tentacionesGourmetStore: {
-  lg: tentacionesGourmetStoreLg,
-  md: tentacionesGourmetStoreMd,
-  sm: tentacionesGourmetStoreSm
-}
+    lg: tentacionesGourmetStoreLg,
+    md: tentacionesGourmetStoreMd,
+    sm: tentacionesGourmetStoreSm
+  }
 }
 
-export { carbyneSafety, circurela, colegioLaUnion, eurogourmet, rkPower, tentacionesGourmet }
+export {
+  carbyneSafety,
+  circurela,
+  colegioLaUnion,
+  eurogourmet,
+  rkPower,
+  tentacionesGourmet
+}

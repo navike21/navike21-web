@@ -215,4 +215,29 @@ const youngManagerStandingUpRelieveBackPain = {
   sm: youngManagerStandingUpRelieveBackPainSm
 }
 
-export { authenticSmallYouthfulMarketingAgency, businessPersonLookingFinanceGraphs, designerHoldingSmartphone, handHoldingCardLaptop, historyNavike, homepageLaptop, insideModernOfficeDesign, laptopFlatLayWorkplaceConcept, manCheckingHisEmailLaptop, manWorkingDesk, manWorkingNight, mediumShotManWorkingLateNight, miniatureWorkmenRepairingLaptopKeyboard, nutritionalCounterApp, programmingWithPerson, searchBar, sideViewWomanHomeUsingHeadphonesTablet, supermarketWorkerWithFood, teamBusinessPeopleStackingHands, teamYoungBusinessOfficeFocusIsBusinessman, viewManWorkingDesk, womanSittingWorkingLaptop, womenWorkingWithPostItsSideView, youngManagerStandingUpRelieveBackPain }
+export {
+  authenticSmallYouthfulMarketingAgency,
+  businessPersonLookingFinanceGraphs,
+  designerHoldingSmartphone,
+  handHoldingCardLaptop,
+  historyNavike,
+  homepageLaptop,
+  insideModernOfficeDesign,
+  laptopFlatLayWorkplaceConcept,
+  manCheckingHisEmailLaptop,
+  manWorkingDesk,
+  manWorkingNight,
+  mediumShotManWorkingLateNight,
+  miniatureWorkmenRepairingLaptopKeyboard,
+  nutritionalCounterApp,
+  programmingWithPerson,
+  searchBar,
+  sideViewWomanHomeUsingHeadphonesTablet,
+  supermarketWorkerWithFood,
+  teamBusinessPeopleStackingHands,
+  teamYoungBusinessOfficeFocusIsBusinessman,
+  viewManWorkingDesk,
+  womanSittingWorkingLaptop,
+  womenWorkingWithPostItsSideView,
+  youngManagerStandingUpRelieveBackPain
+}
