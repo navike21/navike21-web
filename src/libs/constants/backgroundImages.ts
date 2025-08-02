@@ -64,6 +64,9 @@ import womanSittingWorkingLaptopSm from '@Assets/images/backgrounds/converted/wo
 import womenWorkingWithPostItsSideViewLg from '@Assets/images/backgrounds/converted/women-working-with-post-its-side-view_large.webp'
 import womenWorkingWithPostItsSideViewMd from '@Assets/images/backgrounds/converted/women-working-with-post-its-side-view_medium.webp'
 import womenWorkingWithPostItsSideViewSm from '@Assets/images/backgrounds/converted/women-working-with-post-its-side-view_small.webp'
+import youngManagerStandingUpRelieveBackPainLg from '@Assets/images/backgrounds/converted/young-manager-standing-up-relieve-back-pain_large.webp'
+import youngManagerStandingUpRelieveBackPainMd from '@Assets/images/backgrounds/converted/young-manager-standing-up-relieve-back-pain_medium.webp'
+import youngManagerStandingUpRelieveBackPainSm from '@Assets/images/backgrounds/converted/young-manager-standing-up-relieve-back-pain_small.webp'
 
 const authenticSmallYouthfulMarketingAgency = {
   lg: authenticSmallYouthfulMarketingAgencyLg,
@@ -197,27 +200,10 @@ const womenWorkingWithPostItsSideView = {
   sm: womenWorkingWithPostItsSideViewSm
 }
 
-export {
-  authenticSmallYouthfulMarketingAgency,
-  businessPersonLookingFinanceGraphs,
-  designerHoldingSmartphone,
-  handHoldingCardLaptop,
-  historyNavike,
-  homepageLaptop,
-  insideModernOfficeDesign,
-  laptopFlatLayWorkplaceConcept,
-  manCheckingHisEmailLaptop,
-  manWorkingDesk,
-  manWorkingNight,
-  mediumShotManWorkingLateNight,
-  miniatureWorkmenRepairingLaptopKeyboard,
-  nutritionalCounterApp,
-  programmingWithPerson,
-  searchBar,
-  sideViewWomanHomeUsingHeadphonesTablet,
-  supermarketWorkerWithFood,
-  teamYoungBusinessOfficeFocusIsBusinessman,
-  viewManWorkingDesk,
-  womanSittingWorkingLaptop,
-  womenWorkingWithPostItsSideView
+const youngManagerStandingUpRelieveBackPain = {
+  lg: youngManagerStandingUpRelieveBackPainLg,
+  md: youngManagerStandingUpRelieveBackPainMd,
+  sm: youngManagerStandingUpRelieveBackPainSm
 }
+
+export { authenticSmallYouthfulMarketingAgency, businessPersonLookingFinanceGraphs, designerHoldingSmartphone, handHoldingCardLaptop, historyNavike, homepageLaptop, insideModernOfficeDesign, laptopFlatLayWorkplaceConcept, manCheckingHisEmailLaptop, manWorkingDesk, manWorkingNight, mediumShotManWorkingLateNight, miniatureWorkmenRepairingLaptopKeyboard, nutritionalCounterApp, programmingWithPerson, searchBar, sideViewWomanHomeUsingHeadphonesTablet, supermarketWorkerWithFood, teamYoungBusinessOfficeFocusIsBusinessman, viewManWorkingDesk, womanSittingWorkingLaptop, womenWorkingWithPostItsSideView, youngManagerStandingUpRelieveBackPain }

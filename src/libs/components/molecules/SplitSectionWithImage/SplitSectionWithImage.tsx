@@ -47,7 +47,7 @@ export const SplitSectionWithImage = ({
       )}
     >
       <section
-        className={clsx('flex flex-col gap-5 items-center', {
+        className={clsx('flex flex-col gap-5 items-center bg-glow-effect', {
           'md:w-6/12': layoutRatio === '50-50',
           'md:w-5/12': layoutRatio === '40-60',
           'md:w-4/12': layoutRatio === '30-70'
@@ -56,7 +56,7 @@ export const SplitSectionWithImage = ({
         {typeof image === 'string' ? (
           <div
             className={clsx(
-              'aspect-3/2 rounded-lg shadow-lg w-full bg-glow-effect',
+              'aspect-3/2 rounded-lg shadow-lg w-full',
               'sm:items-start sm:aspect-2/4',
               'md:aspect-1/2 md:max-h-96',
               'lg:col-span-3 lg:max-h-none lg:aspect-4/3'

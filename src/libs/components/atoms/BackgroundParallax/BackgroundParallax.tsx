@@ -34,7 +34,9 @@ export const BackgroundParallax = ({
           backgroundPosition: `center ${objectPosition}`
         }}
       />
-      {overlay && <div className="absolute inset-0 bg-black opacity-50" />}
+      {overlay && (
+        <div className="absolute inset-0 bg-slate-950 opacity-50 top-0 -bottom-10" />
+      )}
     </div>
   )
 }
