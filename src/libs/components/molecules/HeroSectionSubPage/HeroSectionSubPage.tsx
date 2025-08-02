@@ -26,15 +26,21 @@ export const HeroSectionSubPage = ({
         '2xl:aspect-5/2 2xl:h-auto 2xl:max-h-[650px]'
       )}
     >
+      <div
+        className={clsx(
+          'absolute left-0 right-0 top-0 -bottom-7 z-10',
+          'bg-gradient-to-b from-slate-950/0 via-slate-950/0 to-slate-950'
+        )}
+      />
       <BackgroundParallax
         backgroundImage={backgroundImage}
-        className="absolute left-0 right-0 top-0 bottom-0"
+        className="absolute left-0 right-0 top-0 bottom-0 z-0"
         startPosition={startPositionImage}
         overlay
       />
       <Content
         className={clsx(
-          'relative flex items-start justify-start flex-col gap-5 pb-14 sectionContent',
+          'relative flex items-start justify-start flex-col gap-5 pb-14 sectionContent z-20',
           'sm:pb-8',
           'lg:pb-12'
         )}
