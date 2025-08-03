@@ -14,10 +14,19 @@ export const SmoothScroll = ({ children }: ISmoothScrollProps) => {
   const main = useRef<HTMLDivElement>(null)
   const smoother = useRef<ScrollSmoother | null>(null)
 
+  const isSafari = () => {
+    const ua = navigator.userAgent
+    return (
+      /Safari/.test(ua) &&
+      !/Chrome/.test(ua) &&
+      /iPad|iPhone|Macintosh|MacIntel/.test(ua)
+    )
+  }
+
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 
-    if (main.current) {
+    if (main.current && !isSafari()) {
       smoother.current = ScrollSmoother.create({
         wrapper: main.current,
         content: main.current.querySelector('div') as HTMLElement,
