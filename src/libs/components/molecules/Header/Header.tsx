@@ -25,7 +25,7 @@ export const Header = () => {
     <>
       <header
         className={clsx(
-          'fixed top-0 w-full z-40 overflow-hidden transition-all',
+          'fixed top-0 w-full z-40 overflow-hidden transition-all ease-in-out duration-500',
           {
             'bg-transparent z-50': isOpen,
             'backdrop-blur-lg bg-gray-950/60': !isOpen && visible
