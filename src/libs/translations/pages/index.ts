@@ -1,4 +1,5 @@
-export * from './footerDescription'
+export * from './aboutUsPage'
 export * from './homePage'
 export * from './pages'
 export * from './services'
+export * from './servicesPage'

@@ -1,29 +1,12 @@
 import { notFound, redirect } from 'next/navigation'
 import { pages } from '@Translations/pages'
-import { TLanguageKey } from '@Types/languages'
-import { ABOUT_US, HOME } from '@Constants/pages'
+import { ABOUT_US, HOME, SERVICES } from '@Constants/pages'
 import { Metadata } from 'next'
 import { buildMetadata } from '@Seo/buildMetadata'
 import { IMetaData } from '@Types/metaData'
 import { AboutUs } from '@Pages/aboutUs'
-import { ReactNode } from 'react'
-
-interface IParams {
-  params: Promise<{
-    lang: TLanguageKey
-    pages: string
-  }>
-}
-
-interface IMetadataProps {
-  params: Promise<{ lang: TLanguageKey; pages: string }>
-}
-
-type TPages = typeof ABOUT_US
-
-type TPageMap = {
-  [key in TPages]: ReactNode
-}
+import { IMetadataProps, IParams, TPageMap, TPages } from './types'
+import { Services } from '@Pages/services'
 
 export async function generateMetadata({
   params
@@ -57,7 +40,8 @@ export default async function Pages({ params }: Readonly<IParams>) {
   const { id } = matchedPage
 
   const pagesMap: TPageMap = {
-    [ABOUT_US]: <AboutUs />
+    [ABOUT_US]: <AboutUs />,
+    [SERVICES]: <Services />
   }
 
   return (

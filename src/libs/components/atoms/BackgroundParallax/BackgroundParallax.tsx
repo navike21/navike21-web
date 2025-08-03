@@ -17,7 +17,7 @@ export const BackgroundParallax = ({
     <div
       {...props}
       className={clsx(
-        'w-full h-full will-change-transform pointer-events-none',
+        'w-full h-[99%] will-change-transform pointer-events-none',
         'bg-no-repeat bg-cover overflow-hidden',
         className
       )}
@@ -34,7 +34,9 @@ export const BackgroundParallax = ({
           backgroundPosition: `center ${objectPosition}`
         }}
       />
-      {overlay && <div className="absolute inset-0 bg-black opacity-50" />}
+      {overlay && (
+        <div className="absolute inset-0 bg-slate-950 opacity-50 top-0 -bottom-10" />
+      )}
     </div>
   )
 }

@@ -5,11 +5,17 @@ export interface ITitleProps {
   title: string
   subtitle?: string
   align?: 'left' | 'center' | 'right'
+  className?: string
 }
 
-export const Title = ({ title, subtitle, align = 'left' }: ITitleProps) => {
+export const Title = ({
+  title,
+  subtitle,
+  align = 'left',
+  className
+}: ITitleProps) => {
   return (
-    <hgroup className="flex flex-col gap-3 items-center">
+    <hgroup className={clsx('flex flex-col gap-3 items-center', className)}>
       {subtitle && (
         <h4
           className={clsx('title-xs text-center w-full', {

@@ -8,7 +8,13 @@ import {
 import { clients } from '@Constants/clients'
 import { ES } from '@Constants/languages'
 import { useGetCurrentLanguage } from '@Hooks/useGetCurrentLanguage'
-import { counterMetrics } from '@Translations/pages'
+import {
+  counterMetrics,
+  heroSectionAbout,
+  historyNavike21,
+  pillarsAboutUs,
+  TPillar
+} from '@Translations/pages'
 import {
   ChartNoAxesCombined,
   Cpu,
@@ -19,52 +25,36 @@ import {
   Users
 } from 'lucide-react'
 
-interface IPillar {
+interface IPillar extends TPillar {
   icon: LucideIcon
+}
+
+interface IPillarsAboutUs {
   title: string
-  description: string
+  items: IPillar[]
 }
 
 export const useAboutUs = () => {
   const currentLang = useGetCurrentLanguage() ?? ES
-  const pillars: IPillar[] = [
-    {
-      icon: Cpu,
-      title: 'Tecnología con propósito',
-      description:
-        'No desarrollamos por moda, sino para resolver problemas reales y mejorar la vida de las personas.'
-    },
-    {
-      icon: Users,
-      title: 'Personas en el centro',
-      description:
-        'Cada línea de código parte de la empatía. Valoramos a quienes usan, crean y confían en nuestras soluciones.'
-    },
-    {
-      icon: Handshake,
-      title: 'Compromiso que se cumple',
-      description:
-        'Nos tomamos en serio cada entrega. La responsabilidad es parte del ADN de todo el equipo.'
-    },
-    {
-      icon: ChartNoAxesCombined,
-      title: 'Crecimiento constante',
-      description:
-        'Aprendemos, iteramos, mejoramos. Porque no creemos en lo perfecto, sino en lo que evoluciona.'
-    },
-    {
-      icon: Sparkles,
-      title: 'Calidad sin atajos',
-      description:
-        'Diseñamos con intención. El detalle, la estabilidad y la experiencia del usuario son prioridad.'
-    },
-    {
-      icon: HeartPlus,
-      title: 'Cercanía real',
-      description:
-        'Nos gusta hablar claro, colaborar de forma honesta y construir relaciones duraderas.'
-    }
-  ]
+
+  const iconsPillars = {
+    technologyWithPurpose: Cpu,
+    peopleAtTheCenter: Users,
+    commitmentFulfilled: Handshake,
+    constantGrowth: ChartNoAxesCombined,
+    qualityWithoutShortcuts: Sparkles,
+    realProximity: HeartPlus
+  }
+
+  const pillarsWithIcons: IPillarsAboutUs = {
+    ...pillarsAboutUs[currentLang],
+    items: pillarsAboutUs[currentLang].items.map(pillar => ({
+      ...pillar,
+      icon:
+        iconsPillars[pillar.id as keyof typeof iconsPillars] ||
+        (Cpu as LucideIcon) // Default icon if not found
+    }))
+  }
 
   const logoClients: IAnimatedLogo[] = clients.map(({ logo, name, url }) => ({
     name: name,
@@ -78,10 +68,12 @@ export const useAboutUs = () => {
   }))
 
   return {
-    pillars,
+    pillars: pillarsWithIcons,
     logoClients,
     metrics,
     heroImage: teamYoungBusinessOfficeFocusIsBusinessman.lg.src,
-    historyImage: historyNavike.sm.src
+    historyImage: historyNavike.sm.src,
+    heroSectionText: heroSectionAbout[currentLang],
+    history: historyNavike21[currentLang]
   }
 }

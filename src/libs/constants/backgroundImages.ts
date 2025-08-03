@@ -52,6 +52,9 @@ import sideViewWomanHomeUsingHeadphonesTabletSm from '@Assets/images/backgrounds
 import supermarketWorkerWithFoodLg from '@Assets/images/backgrounds/converted/supermarket-worker-with-food_large.webp'
 import supermarketWorkerWithFoodMd from '@Assets/images/backgrounds/converted/supermarket-worker-with-food_medium.webp'
 import supermarketWorkerWithFoodSm from '@Assets/images/backgrounds/converted/supermarket-worker-with-food_small.webp'
+import teamBusinessPeopleStackingHandsLg from '@Assets/images/backgrounds/converted/team-business-people-stacking-hands_large.webp'
+import teamBusinessPeopleStackingHandsMd from '@Assets/images/backgrounds/converted/team-business-people-stacking-hands_medium.webp'
+import teamBusinessPeopleStackingHandsSm from '@Assets/images/backgrounds/converted/team-business-people-stacking-hands_small.webp'
 import teamYoungBusinessOfficeFocusIsBusinessmanLg from '@Assets/images/backgrounds/converted/team-young-business-office-focus-is-businessman_large.webp'
 import teamYoungBusinessOfficeFocusIsBusinessmanMd from '@Assets/images/backgrounds/converted/team-young-business-office-focus-is-businessman_medium.webp'
 import teamYoungBusinessOfficeFocusIsBusinessmanSm from '@Assets/images/backgrounds/converted/team-young-business-office-focus-is-businessman_small.webp'
@@ -61,6 +64,12 @@ import viewManWorkingDeskSm from '@Assets/images/backgrounds/converted/view-man-
 import womanSittingWorkingLaptopLg from '@Assets/images/backgrounds/converted/woman-sitting-working-laptop_large.webp'
 import womanSittingWorkingLaptopMd from '@Assets/images/backgrounds/converted/woman-sitting-working-laptop_medium.webp'
 import womanSittingWorkingLaptopSm from '@Assets/images/backgrounds/converted/woman-sitting-working-laptop_small.webp'
+import womenWorkingWithPostItsSideViewLg from '@Assets/images/backgrounds/converted/women-working-with-post-its-side-view_large.webp'
+import womenWorkingWithPostItsSideViewMd from '@Assets/images/backgrounds/converted/women-working-with-post-its-side-view_medium.webp'
+import womenWorkingWithPostItsSideViewSm from '@Assets/images/backgrounds/converted/women-working-with-post-its-side-view_small.webp'
+import youngManagerStandingUpRelieveBackPainLg from '@Assets/images/backgrounds/converted/young-manager-standing-up-relieve-back-pain_large.webp'
+import youngManagerStandingUpRelieveBackPainMd from '@Assets/images/backgrounds/converted/young-manager-standing-up-relieve-back-pain_medium.webp'
+import youngManagerStandingUpRelieveBackPainSm from '@Assets/images/backgrounds/converted/young-manager-standing-up-relieve-back-pain_small.webp'
 
 const authenticSmallYouthfulMarketingAgency = {
   lg: authenticSmallYouthfulMarketingAgencyLg,
@@ -170,6 +179,12 @@ const supermarketWorkerWithFood = {
   sm: supermarketWorkerWithFoodSm
 }
 
+const teamBusinessPeopleStackingHands = {
+  lg: teamBusinessPeopleStackingHandsLg,
+  md: teamBusinessPeopleStackingHandsMd,
+  sm: teamBusinessPeopleStackingHandsSm
+}
+
 const teamYoungBusinessOfficeFocusIsBusinessman = {
   lg: teamYoungBusinessOfficeFocusIsBusinessmanLg,
   md: teamYoungBusinessOfficeFocusIsBusinessmanMd,
@@ -186,6 +201,18 @@ const womanSittingWorkingLaptop = {
   lg: womanSittingWorkingLaptopLg,
   md: womanSittingWorkingLaptopMd,
   sm: womanSittingWorkingLaptopSm
+}
+
+const womenWorkingWithPostItsSideView = {
+  lg: womenWorkingWithPostItsSideViewLg,
+  md: womenWorkingWithPostItsSideViewMd,
+  sm: womenWorkingWithPostItsSideViewSm
+}
+
+const youngManagerStandingUpRelieveBackPain = {
+  lg: youngManagerStandingUpRelieveBackPainLg,
+  md: youngManagerStandingUpRelieveBackPainMd,
+  sm: youngManagerStandingUpRelieveBackPainSm
 }
 
 export {
@@ -207,7 +234,10 @@ export {
   searchBar,
   sideViewWomanHomeUsingHeadphonesTablet,
   supermarketWorkerWithFood,
+  teamBusinessPeopleStackingHands,
   teamYoungBusinessOfficeFocusIsBusinessman,
   viewManWorkingDesk,
-  womanSittingWorkingLaptop
+  womanSittingWorkingLaptop,
+  womenWorkingWithPostItsSideView,
+  youngManagerStandingUpRelieveBackPain
 }
