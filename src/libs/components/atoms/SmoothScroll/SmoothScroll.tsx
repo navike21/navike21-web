@@ -14,19 +14,18 @@ export const SmoothScroll = ({ children }: ISmoothScrollProps) => {
   const main = useRef<HTMLDivElement>(null)
   const smoother = useRef<ScrollSmoother | null>(null)
 
-  const isSafari = () => {
-    const ua = navigator.userAgent
+  const isMobileOrTablet = () => {
+    if (typeof window === 'undefined') return false
     return (
-      /Safari/.test(ua) &&
-      !/Chrome/.test(ua) &&
-      /iPad|iPhone|Macintosh|MacIntel/.test(ua)
+      window.matchMedia('(hover: none) and (pointer: coarse)').matches ||
+      window.innerWidth <= 1024
     )
   }
 
   useGSAP(() => {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 
-    if (main.current && !isSafari()) {
+    if (main.current && !isMobileOrTablet()) {
       smoother.current = ScrollSmoother.create({
         wrapper: main.current,
         content: main.current.querySelector('div') as HTMLElement,
@@ -39,7 +38,7 @@ export const SmoothScroll = ({ children }: ISmoothScrollProps) => {
   }, [main])
 
   return (
-    <div ref={main} className="relative">
+    <div ref={main} className="relative h-full">
       <div>{children}</div>
     </div>
   )
