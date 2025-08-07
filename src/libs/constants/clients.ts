@@ -47,6 +47,7 @@ export const clients: IClient[] = [
   {
     id: 'colegio-la-union',
     name: 'Colegio La Unión',
+    best: true,
     url: 'www.launion.edu.pe',
     logo: ColegioLaUnion
   },
