@@ -25,5 +25,8 @@
     "TMUI",
     "vercel",
     "WHATSAPP"
-  ]
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always"
+  }
 }
