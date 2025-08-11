@@ -1,10 +1,13 @@
+'use client'
+
 import { HeroSectionSubPage } from '@Components/molecules'
 import { useProjects } from './useProjects'
 import clsx from 'clsx'
 import { Content } from '@Components/atoms'
+import MotionCardGrid from '@Components/molecules/MotionCardGrid/MotionCardGrid'
 
 export const Projects = () => {
-  const { heroImage } = useProjects()
+  const { heroImage, projects } = useProjects()
   return (
     <>
       <HeroSectionSubPage
@@ -22,7 +25,7 @@ export const Projects = () => {
             'md:items-center md:gap-24 md:justify-between'
           )}
         >
-          Holi
+          <MotionCardGrid data={projects} />
         </Content>
       </div>
     </>

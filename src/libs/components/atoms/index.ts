@@ -1,5 +1,6 @@
 export * from './ArrowButton'
 export * from './BackgroundParallax'
+export * from './Badge'
 export * from './Button'
 export * from './ClientsLogo'
 export * from './Content'

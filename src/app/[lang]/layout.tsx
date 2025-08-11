@@ -1,4 +1,4 @@
-import { SmoothScroll } from '@Components/atoms'
+// import { SmoothScroll } from '@Components/atoms'
 import { Footer, Header } from '@Components/molecules'
 import { SUPPORTED_LANGUAGES } from '@Constants/languages'
 import { notFound } from 'next/navigation'
@@ -24,10 +24,10 @@ export default async function LangLayout({
       <head />
       <body>
         <Header />
-        <SmoothScroll>
-          <main>{children}</main>
-          <Footer />
-        </SmoothScroll>
+        {/* <SmoothScroll> */}
+        <main>{children}</main>
+        <Footer />
+        {/* </SmoothScroll> */}
       </body>
     </html>
   )

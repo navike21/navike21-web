@@ -263,6 +263,36 @@
   @apply to-purple-700;
 }
 
+@layer utilities {
+  .border-gradient-primary {
+    @apply relative;
+    @apply border;
+    @apply border-s-amber-50/0;
+    @apply rounded-md;
+    @apply z-0;
+  }
+
+  .border-gradient-primary::before {
+    @apply content-[''];
+    @apply absolute;
+    @apply inset-0;
+    @apply pointer-events-none;
+    @apply p-px;
+    @apply bg-gradient-to-r;
+    @apply from-sky-400;
+    @apply to-purple-700;
+    @apply z-[-1];
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+
+    @apply mask-exclude;
+  }
+}
+
 @utility button-base {
   @apply cursor-pointer;
   @apply rounded-md;
