@@ -1,3 +1,5 @@
+'use client'
+
 import { motion } from 'motion/react'
 import clsx from 'clsx'
 import { Badge, TBadgeColor } from '@Components/atoms/Badge/Badge'
