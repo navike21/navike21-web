@@ -16,12 +16,12 @@ export type TCardItem = {
   description: string
 }
 
-type CardGridProps = {
+type TCardGridProps = {
   items: TCardItem[]
   onCardClick: (id: string) => void
 }
 
-export function CardGrid({ items, onCardClick }: Readonly<CardGridProps>) {
+export function CardGrid({ items, onCardClick }: Readonly<TCardGridProps>) {
   return (
     <ul
       className={clsx(
