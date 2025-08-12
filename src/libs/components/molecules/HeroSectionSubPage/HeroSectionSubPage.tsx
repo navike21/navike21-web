@@ -58,7 +58,7 @@ export const HeroSectionSubPage = ({
         </h1>
         <p
           className={clsx(
-            'paragraph-xs',
+            'paragraph-xs text-white',
             'sm:w-8/12',
             'md:w-10/12',
             'lg:w-6/12'

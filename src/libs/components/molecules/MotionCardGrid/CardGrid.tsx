@@ -3,6 +3,7 @@
 import { motion } from 'motion/react'
 import clsx from 'clsx'
 import { Badge, TBadgeColor } from '@Components/atoms/Badge/Badge'
+import Image from 'next/image'
 
 export type TCardItem = {
   id: string
@@ -53,14 +54,16 @@ export function CardGrid({ items, onCardClick }: Readonly<CardGridProps>) {
                   'bg-slate-950',
                   {
                     'w-[55vw] left-0': index % 4 === 0 || index % 4 === 3,
-                    'w-[35vw] -left-3/12': !(index % 4 === 0 || index % 4 === 3)
+                    'w-[55vw] -left-5/12': !(index % 4 === 0 || index % 4 === 3)
                   }
                 )}
               >
-                <img
+                <Image
                   className="w-full h-full object-cover object-top"
                   src={image}
                   alt={title}
+                  width={700}
+                  height={420}
                 />
               </motion.div>
               <div className="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-slate-950/60 to-slate-950/0" />
