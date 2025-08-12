@@ -4,7 +4,7 @@ import { motion } from 'motion/react'
 import clsx from 'clsx'
 import { Badge, TBadgeColor } from '@Components/atoms/Badge/Badge'
 
-export type CardItem = {
+export type TCardItem = {
   id: string
   category: {
     title: string
@@ -16,7 +16,7 @@ export type CardItem = {
 }
 
 type CardGridProps = {
-  items: CardItem[]
+  items: TCardItem[]
   onCardClick: (id: string) => void
 }
 
@@ -47,7 +47,15 @@ export function CardGrid({ items, onCardClick }: Readonly<CardGridProps>) {
             >
               <motion.div
                 layoutId={`card-image-container-${id}`}
-                className="absolute top-0 left-0 overflow-hidden h-[400px] w-[70vw]"
+                className={clsx(
+                  'absolute top-0 overflow-hidden h-[300px]',
+                  'md:h-[420px]',
+                  'bg-slate-950',
+                  {
+                    'w-[55vw] left-0': index % 4 === 0 || index % 4 === 3,
+                    'w-[35vw] -left-3/12': !(index % 4 === 0 || index % 4 === 3)
+                  }
+                )}
               >
                 <img
                   className="w-full h-full object-cover object-top"
@@ -55,6 +63,7 @@ export function CardGrid({ items, onCardClick }: Readonly<CardGridProps>) {
                   alt={title}
                 />
               </motion.div>
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-slate-950/60 to-slate-950/0" />
               <motion.div
                 layoutId={`title-container-${id}`}
                 className="absolute top-4 left-4"
@@ -69,7 +78,9 @@ export function CardGrid({ items, onCardClick }: Readonly<CardGridProps>) {
                     />
                   ))}
                 </div>
-                <h2 className="mt-2 title-md max-w-[300px]">{title}</h2>
+                <h2 className="mt-2 title-md max-w-[300px] text-white">
+                  {title}
+                </h2>
               </motion.div>
             </motion.div>
           </div>

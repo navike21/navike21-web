@@ -2,14 +2,14 @@
 
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
-import { CardGrid, CardItem } from './CardGrid'
+import { CardGrid, TCardItem } from './CardGrid'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { Badge } from '@Components/atoms/Badge/Badge'
 import { Title } from '../Title'
 
 export interface IMotionCardGridProps {
-  data: CardItem[]
+  data: TCardItem[]
 }
 
 export default function MotionCardGrid({
@@ -17,7 +17,7 @@ export default function MotionCardGrid({
 }: Readonly<IMotionCardGridProps>) {
   const [selectedId, setSelectedId] = useState<string | null>(null)
 
-  const selectedItem = data.find(item => item.id === selectedId) as CardItem
+  const selectedItem = data.find(item => item.id === selectedId) as TCardItem
 
   useEffect(() => {
     if (selectedId) {
@@ -56,7 +56,7 @@ export default function MotionCardGrid({
                   layoutId={`card-image-container-${selectedId}`}
                   className={clsx(
                     'w-full h-[300px] overflow-hidden',
-                    'md:h-[400px]'
+                    'md:h-[420px]'
                   )}
                 >
                   <Image
