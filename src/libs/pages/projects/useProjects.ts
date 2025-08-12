@@ -1,7 +1,7 @@
 'use client'
 
 import { TBadgeColor } from '@Components/atoms/Badge/Badge'
-import { CardItem } from '@Components/molecules'
+import { TCardItem } from '@Components/molecules'
 import { teamBusinessPeopleStackingHands } from '@Constants/backgroundImages'
 import { ES } from '@Constants/languages'
 import { useGetCurrentLanguage } from '@Hooks/useGetCurrentLanguage'
@@ -36,7 +36,7 @@ const colorCategory: TColorCategory = {
 export const useProjects = () => {
   const currentLang = useGetCurrentLanguage() ?? ES
 
-  const projectsData: CardItem[] = projects[currentLang].map(
+  const projectsData: TCardItem[] = projects[currentLang].map(
     ({ id, title, description, category, gallery }) => {
       const homeKey = Object.keys(gallery).find(key =>
         key.toLowerCase().endsWith('home')
