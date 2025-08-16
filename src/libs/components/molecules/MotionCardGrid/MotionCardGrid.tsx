@@ -59,10 +59,10 @@ export default function MotionCardGrid({
                 )}
               >
                 <Image
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover object-center"
                   src={selectedItem.image}
                   alt={selectedItem.title}
-                  width={700}
+                  width={1200}
                   height={400}
                   quality={100}
                 />

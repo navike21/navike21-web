@@ -38,8 +38,10 @@ export const useProjects = () => {
 
   const projectsData: TCardItem[] = projects[currentLang].map(
     ({ id, title, description, category, gallery }) => {
-      const homeKey = Object.keys(gallery).find(key =>
-        key.toLowerCase().endsWith('home')
+      const homeKey = Object.keys(gallery).find(
+        key =>
+          key.toLowerCase().endsWith('cover') ||
+          key.toLowerCase().endsWith('home')
       )
       let image = ''
       if (homeKey) {

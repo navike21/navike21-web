@@ -62,7 +62,7 @@ export function CardGrid({ items, onCardClick }: Readonly<TCardGridProps>) {
                   className="w-full h-full object-cover object-top"
                   src={image}
                   alt={title}
-                  width={700}
+                  width={1400}
                   height={400}
                   quality={100}
                 />

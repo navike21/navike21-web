@@ -1,3 +1,9 @@
+import ankerPaintsCoverLg from '@Assets/images/projects/anker-paints/converted/cover_large.webp'
+import ankerPaintsCoverMd from '@Assets/images/projects/anker-paints/converted/cover_medium.webp'
+import ankerPaintsCoverSm from '@Assets/images/projects/anker-paints/converted/cover_small.webp'
+import beatsMusicaCoverLg from '@Assets/images/projects/beats-musica/converted/cover_large.webp'
+import beatsMusicaCoverMd from '@Assets/images/projects/beats-musica/converted/cover_medium.webp'
+import beatsMusicaCoverSm from '@Assets/images/projects/beats-musica/converted/cover_small.webp'
 import carbyneSafetyAboutUsMobileLg from '@Assets/images/projects/carbyne-safety/converted/about-us-mobile_large.webp'
 import carbyneSafetyAboutUsMobileMd from '@Assets/images/projects/carbyne-safety/converted/about-us-mobile_medium.webp'
 import carbyneSafetyAboutUsMobileSm from '@Assets/images/projects/carbyne-safety/converted/about-us-mobile_small.webp'
@@ -7,6 +13,9 @@ import carbyneSafetyAboutUsSm from '@Assets/images/projects/carbyne-safety/conve
 import carbyneSafetyContactUsLg from '@Assets/images/projects/carbyne-safety/converted/contact-us_large.webp'
 import carbyneSafetyContactUsMd from '@Assets/images/projects/carbyne-safety/converted/contact-us_medium.webp'
 import carbyneSafetyContactUsSm from '@Assets/images/projects/carbyne-safety/converted/contact-us_small.webp'
+import carbyneSafetyCoverLg from '@Assets/images/projects/carbyne-safety/converted/cover_large.webp'
+import carbyneSafetyCoverMd from '@Assets/images/projects/carbyne-safety/converted/cover_medium.webp'
+import carbyneSafetyCoverSm from '@Assets/images/projects/carbyne-safety/converted/cover_small.webp'
 import carbyneSafetyHomeMobileLg from '@Assets/images/projects/carbyne-safety/converted/home-mobile_large.webp'
 import carbyneSafetyHomeMobileMd from '@Assets/images/projects/carbyne-safety/converted/home-mobile_medium.webp'
 import carbyneSafetyHomeMobileSm from '@Assets/images/projects/carbyne-safety/converted/home-mobile_small.webp'
@@ -25,6 +34,9 @@ import circurelaAboutUsMobileSm from '@Assets/images/projects/circurela/converte
 import circurelaAboutUsLg from '@Assets/images/projects/circurela/converted/about-us_large.webp'
 import circurelaAboutUsMd from '@Assets/images/projects/circurela/converted/about-us_medium.webp'
 import circurelaAboutUsSm from '@Assets/images/projects/circurela/converted/about-us_small.webp'
+import circurelaCoverLg from '@Assets/images/projects/circurela/converted/cover_large.webp'
+import circurelaCoverMd from '@Assets/images/projects/circurela/converted/cover_medium.webp'
+import circurelaCoverSm from '@Assets/images/projects/circurela/converted/cover_small.webp'
 import circurelaEventsLg from '@Assets/images/projects/circurela/converted/events_large.webp'
 import circurelaEventsMd from '@Assets/images/projects/circurela/converted/events_medium.webp'
 import circurelaEventsSm from '@Assets/images/projects/circurela/converted/events_small.webp'
@@ -49,12 +61,24 @@ import circurelaSocialMobileSm from '@Assets/images/projects/circurela/converted
 import colegioLaUnionAboutUsLg from '@Assets/images/projects/colegio-la-union/converted/about-us_large.webp'
 import colegioLaUnionAboutUsMd from '@Assets/images/projects/colegio-la-union/converted/about-us_medium.webp'
 import colegioLaUnionAboutUsSm from '@Assets/images/projects/colegio-la-union/converted/about-us_small.webp'
+import colegioLaUnionCoverLg from '@Assets/images/projects/colegio-la-union/converted/cover_large.webp'
+import colegioLaUnionCoverMd from '@Assets/images/projects/colegio-la-union/converted/cover_medium.webp'
+import colegioLaUnionCoverSm from '@Assets/images/projects/colegio-la-union/converted/cover_small.webp'
 import colegioLaUnionDetailInfoLg from '@Assets/images/projects/colegio-la-union/converted/detail-info_large.webp'
 import colegioLaUnionDetailInfoMd from '@Assets/images/projects/colegio-la-union/converted/detail-info_medium.webp'
 import colegioLaUnionDetailInfoSm from '@Assets/images/projects/colegio-la-union/converted/detail-info_small.webp'
 import colegioLaUnionHomeLg from '@Assets/images/projects/colegio-la-union/converted/home_large.webp'
 import colegioLaUnionHomeMd from '@Assets/images/projects/colegio-la-union/converted/home_medium.webp'
 import colegioLaUnionHomeSm from '@Assets/images/projects/colegio-la-union/converted/home_small.webp'
+import colegioLaUnionIpadLg from '@Assets/images/projects/colegio-la-union/converted/ipad_large.webp'
+import colegioLaUnionIpadMd from '@Assets/images/projects/colegio-la-union/converted/ipad_medium.webp'
+import colegioLaUnionIpadSm from '@Assets/images/projects/colegio-la-union/converted/ipad_small.webp'
+import colegioLaUnionLaptopLg from '@Assets/images/projects/colegio-la-union/converted/laptop_large.webp'
+import colegioLaUnionLaptopMd from '@Assets/images/projects/colegio-la-union/converted/laptop_medium.webp'
+import colegioLaUnionLaptopSm from '@Assets/images/projects/colegio-la-union/converted/laptop_small.webp'
+import colegioLaUnionMobileLg from '@Assets/images/projects/colegio-la-union/converted/mobile_large.webp'
+import colegioLaUnionMobileMd from '@Assets/images/projects/colegio-la-union/converted/mobile_medium.webp'
+import colegioLaUnionMobileSm from '@Assets/images/projects/colegio-la-union/converted/mobile_small.webp'
 import eurogourmetAboutUsMobileLg from '@Assets/images/projects/eurogourmet/converted/about-us-mobile_large.webp'
 import eurogourmetAboutUsMobileMd from '@Assets/images/projects/eurogourmet/converted/about-us-mobile_medium.webp'
 import eurogourmetAboutUsMobileSm from '@Assets/images/projects/eurogourmet/converted/about-us-mobile_small.webp'
@@ -64,6 +88,9 @@ import eurogourmetAboutUsSm from '@Assets/images/projects/eurogourmet/converted/
 import eurogourmetBlogLg from '@Assets/images/projects/eurogourmet/converted/blog_large.webp'
 import eurogourmetBlogMd from '@Assets/images/projects/eurogourmet/converted/blog_medium.webp'
 import eurogourmetBlogSm from '@Assets/images/projects/eurogourmet/converted/blog_small.webp'
+import eurogourmetCoverLg from '@Assets/images/projects/eurogourmet/converted/cover_large.webp'
+import eurogourmetCoverMd from '@Assets/images/projects/eurogourmet/converted/cover_medium.webp'
+import eurogourmetCoverSm from '@Assets/images/projects/eurogourmet/converted/cover_small.webp'
 import eurogourmetEcommerceLg from '@Assets/images/projects/eurogourmet/converted/ecommerce_large.webp'
 import eurogourmetEcommerceMd from '@Assets/images/projects/eurogourmet/converted/ecommerce_medium.webp'
 import eurogourmetEcommerceSm from '@Assets/images/projects/eurogourmet/converted/ecommerce_small.webp'
@@ -88,6 +115,9 @@ import rkPowerAboutUsSm from '@Assets/images/projects/rk-power/converted/about-u
 import rkPowerContactUsLg from '@Assets/images/projects/rk-power/converted/contact-us_large.webp'
 import rkPowerContactUsMd from '@Assets/images/projects/rk-power/converted/contact-us_medium.webp'
 import rkPowerContactUsSm from '@Assets/images/projects/rk-power/converted/contact-us_small.webp'
+import rkPowerCoverLg from '@Assets/images/projects/rk-power/converted/cover_large.webp'
+import rkPowerCoverMd from '@Assets/images/projects/rk-power/converted/cover_medium.webp'
+import rkPowerCoverSm from '@Assets/images/projects/rk-power/converted/cover_small.webp'
 import rkPowerHomeMobileLg from '@Assets/images/projects/rk-power/converted/home-mobile_large.webp'
 import rkPowerHomeMobileMd from '@Assets/images/projects/rk-power/converted/home-mobile_medium.webp'
 import rkPowerHomeMobileSm from '@Assets/images/projects/rk-power/converted/home-mobile_small.webp'
@@ -97,6 +127,9 @@ import rkPowerHomeSm from '@Assets/images/projects/rk-power/converted/home_small
 import rkPowerInfoDetailLg from '@Assets/images/projects/rk-power/converted/info-detail_large.webp'
 import rkPowerInfoDetailMd from '@Assets/images/projects/rk-power/converted/info-detail_medium.webp'
 import rkPowerInfoDetailSm from '@Assets/images/projects/rk-power/converted/info-detail_small.webp'
+import tentacionesGourmetCoverLg from '@Assets/images/projects/tentaciones-gourmet/converted/cover_large.webp'
+import tentacionesGourmetCoverMd from '@Assets/images/projects/tentaciones-gourmet/converted/cover_medium.webp'
+import tentacionesGourmetCoverSm from '@Assets/images/projects/tentaciones-gourmet/converted/cover_small.webp'
 import tentacionesGourmetHomeMobileLg from '@Assets/images/projects/tentaciones-gourmet/converted/home-mobile_large.webp'
 import tentacionesGourmetHomeMobileMd from '@Assets/images/projects/tentaciones-gourmet/converted/home-mobile_medium.webp'
 import tentacionesGourmetHomeMobileSm from '@Assets/images/projects/tentaciones-gourmet/converted/home-mobile_small.webp'
@@ -113,6 +146,22 @@ import tentacionesGourmetStoreLg from '@Assets/images/projects/tentaciones-gourm
 import tentacionesGourmetStoreMd from '@Assets/images/projects/tentaciones-gourmet/converted/store_medium.webp'
 import tentacionesGourmetStoreSm from '@Assets/images/projects/tentaciones-gourmet/converted/store_small.webp'
 
+const ankerPaints = {
+  ankerPaintsCover: {
+    lg: ankerPaintsCoverLg,
+    md: ankerPaintsCoverMd,
+    sm: ankerPaintsCoverSm
+  }
+}
+
+const beatsMusica = {
+  beatsMusicaCover: {
+    lg: beatsMusicaCoverLg,
+    md: beatsMusicaCoverMd,
+    sm: beatsMusicaCoverSm
+  }
+}
+
 const carbyneSafety = {
   carbyneSafetyAboutUsMobile: {
     lg: carbyneSafetyAboutUsMobileLg,
@@ -128,6 +177,11 @@ const carbyneSafety = {
     lg: carbyneSafetyContactUsLg,
     md: carbyneSafetyContactUsMd,
     sm: carbyneSafetyContactUsSm
+  },
+  carbyneSafetyCover: {
+    lg: carbyneSafetyCoverLg,
+    md: carbyneSafetyCoverMd,
+    sm: carbyneSafetyCoverSm
   },
   carbyneSafetyHomeMobile: {
     lg: carbyneSafetyHomeMobileLg,
@@ -161,6 +215,11 @@ const circurela = {
     lg: circurelaAboutUsLg,
     md: circurelaAboutUsMd,
     sm: circurelaAboutUsSm
+  },
+  circurelaCover: {
+    lg: circurelaCoverLg,
+    md: circurelaCoverMd,
+    sm: circurelaCoverSm
   },
   circurelaEvents: {
     lg: circurelaEventsLg,
@@ -205,6 +264,11 @@ const colegioLaUnion = {
     md: colegioLaUnionAboutUsMd,
     sm: colegioLaUnionAboutUsSm
   },
+  colegioLaUnionCover: {
+    lg: colegioLaUnionCoverLg,
+    md: colegioLaUnionCoverMd,
+    sm: colegioLaUnionCoverSm
+  },
   colegioLaUnionDetailInfo: {
     lg: colegioLaUnionDetailInfoLg,
     md: colegioLaUnionDetailInfoMd,
@@ -214,6 +278,21 @@ const colegioLaUnion = {
     lg: colegioLaUnionHomeLg,
     md: colegioLaUnionHomeMd,
     sm: colegioLaUnionHomeSm
+  },
+  colegioLaUnionIpad: {
+    lg: colegioLaUnionIpadLg,
+    md: colegioLaUnionIpadMd,
+    sm: colegioLaUnionIpadSm
+  },
+  colegioLaUnionLaptop: {
+    lg: colegioLaUnionLaptopLg,
+    md: colegioLaUnionLaptopMd,
+    sm: colegioLaUnionLaptopSm
+  },
+  colegioLaUnionMobile: {
+    lg: colegioLaUnionMobileLg,
+    md: colegioLaUnionMobileMd,
+    sm: colegioLaUnionMobileSm
   }
 }
 
@@ -232,6 +311,11 @@ const eurogourmet = {
     lg: eurogourmetBlogLg,
     md: eurogourmetBlogMd,
     sm: eurogourmetBlogSm
+  },
+  eurogourmetCover: {
+    lg: eurogourmetCoverLg,
+    md: eurogourmetCoverMd,
+    sm: eurogourmetCoverSm
   },
   eurogourmetEcommerce: {
     lg: eurogourmetEcommerceLg,
@@ -276,6 +360,11 @@ const rkPower = {
     md: rkPowerContactUsMd,
     sm: rkPowerContactUsSm
   },
+  rkPowerCover: {
+    lg: rkPowerCoverLg,
+    md: rkPowerCoverMd,
+    sm: rkPowerCoverSm
+  },
   rkPowerHomeMobile: {
     lg: rkPowerHomeMobileLg,
     md: rkPowerHomeMobileMd,
@@ -294,6 +383,11 @@ const rkPower = {
 }
 
 const tentacionesGourmet = {
+  tentacionesGourmetCover: {
+    lg: tentacionesGourmetCoverLg,
+    md: tentacionesGourmetCoverMd,
+    sm: tentacionesGourmetCoverSm
+  },
   tentacionesGourmetHomeMobile: {
     lg: tentacionesGourmetHomeMobileLg,
     md: tentacionesGourmetHomeMobileMd,
@@ -322,6 +416,8 @@ const tentacionesGourmet = {
 }
 
 export {
+  ankerPaints,
+  beatsMusica,
   carbyneSafety,
   circurela,
   colegioLaUnion,
