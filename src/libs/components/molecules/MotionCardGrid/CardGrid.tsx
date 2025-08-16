@@ -34,7 +34,7 @@ export function CardGrid({ items, onCardClick }: Readonly<TCardGridProps>) {
           key={id}
           className={clsx(
             'relative h-[300px] w-full max-w-full p-0',
-            'md:h-[420px]',
+            'md:h-[400px]',
             {
               'md:col-span-2': index % 4 === 0 || index % 4 === 3,
               'md:col-span-1': !(index % 4 === 0 || index % 4 === 3)
@@ -49,12 +49,12 @@ export function CardGrid({ items, onCardClick }: Readonly<TCardGridProps>) {
               <motion.div
                 layoutId={`card-image-container-${id}`}
                 className={clsx(
-                  'absolute top-0 overflow-hidden h-[300px]',
-                  'md:h-[420px]',
+                  'absolute top-0 overflow-hidden h-[300px] w-[150vw]',
+                  'md:h-[400px] md:w-[1000px]',
                   'bg-slate-950',
                   {
-                    'w-[55vw] left-0': index % 4 === 0 || index % 4 === 3,
-                    'w-[55vw] -left-5/12': !(index % 4 === 0 || index % 4 === 3)
+                    'left-0': index % 4 === 0 || index % 4 === 3,
+                    '-left-5/12': !(index % 4 === 0 || index % 4 === 3)
                   }
                 )}
               >
@@ -63,7 +63,8 @@ export function CardGrid({ items, onCardClick }: Readonly<TCardGridProps>) {
                   src={image}
                   alt={title}
                   width={700}
-                  height={420}
+                  height={400}
+                  quality={100}
                 />
               </motion.div>
               <div className="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-slate-950/60 to-slate-950/0" />
@@ -71,16 +72,19 @@ export function CardGrid({ items, onCardClick }: Readonly<TCardGridProps>) {
                 layoutId={`title-container-${id}`}
                 className="absolute top-4 left-4"
               >
-                <div className="flex flex-row gap-2 w-full">
+                <motion.div
+                  layoutId={`badge-container-${id}`}
+                  className="flex flex-row gap-2 w-full flex-wrap"
+                >
                   {category.map(cat => (
                     <Badge
                       key={cat.title}
                       text={cat.title}
                       color={cat.color}
-                      className="w-fit"
+                      className="w-fit whitespace-nowrap"
                     />
                   ))}
-                </div>
+                </motion.div>
                 <h2 className="mt-2 title-md max-w-[300px] text-white">
                   {title}
                 </h2>

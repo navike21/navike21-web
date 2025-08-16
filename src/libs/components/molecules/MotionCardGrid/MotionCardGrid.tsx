@@ -33,79 +33,81 @@ export default function MotionCardGrid({
 
       <AnimatePresence>
         {selectedId && selectedItem && (
-          <>
-            {/* Modal */}
-            <div className="fixed inset-0 flex items-start justify-center z-50 overflow-y-auto">
-              {/* Overlay */}
+          <div className="fixed inset-0 flex items-start justify-center z-50 overflow-y-auto">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2, delay: 0.1 }}
+              className="fixed inset-0 bg-slate-950/80 z-40"
+              onClick={() => setSelectedId(null)}
+            />
+            <motion.div
+              layoutId={`card-container-${selectedId}`}
+              className={clsx(
+                'bg-slate-900 rounded-2xl overflow-hidden w-[90%] max-w-[1200px] pointer-events-auto relative z-50 my-[5vw]',
+                'md:w-[70%]',
+                'lg:my-[2%] lg:w-[80%]'
+              )}
+            >
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.2, delay: 0.1 }}
-                className="fixed inset-0 bg-slate-950/80 z-40"
-                onClick={() => setSelectedId(null)}
-              />
-              <motion.div
-                layoutId={`card-container-${selectedId}`}
+                layoutId={`card-image-container-${selectedId}`}
                 className={clsx(
-                  'bg-slate-900 rounded-2xl overflow-hidden w-9/12 max-w-[800px] pointer-events-auto relative z-50 my-[15vw]',
-                  'lg:my-[6%]'
+                  'w-full h-[200px] overflow-hidden',
+                  'md:h-[300px]',
+                  'lg:h-[400px]'
                 )}
               >
+                <Image
+                  className="w-full h-full object-cover object-top"
+                  src={selectedItem.image}
+                  alt={selectedItem.title}
+                  width={700}
+                  height={400}
+                  quality={100}
+                />
+              </motion.div>
+              <div
+                className={clsx('flex flex-col gap-4 p-9', 'md:gap-5 md:p-12')}
+              >
                 <motion.div
-                  layoutId={`card-image-container-${selectedId}`}
+                  layoutId={`title-container-${selectedId}`}
                   className={clsx(
-                    'w-full h-[300px] overflow-hidden',
-                    'md:h-[420px]'
-                  )}
-                >
-                  <Image
-                    className="w-full h-full object-cover object-top"
-                    src={selectedItem.image}
-                    alt={selectedItem.title}
-                    width={700}
-                    height={420}
-                  />
-                </motion.div>
-                <div
-                  className={clsx(
-                    'flex flex-col gap-4 p-9',
-                    'md:gap-5 md:p-12'
+                    'flex flex-col gap-4 items-start',
+                    'md:items-start md:gap-3'
                   )}
                 >
                   <motion.div
-                    layoutId={`title-container-${selectedId}`}
+                    layoutId={`badge-container-${selectedId}`}
                     className={clsx(
-                      'flex flex-col gap-4 items-center',
-                      'md:items-start md:gap-3'
+                      'flex flex-row gap-2 w-full flex-nowrap items-center justify-center',
+                      'md:justify-start'
                     )}
                   >
-                    <div className="flex flex-row gap-2 w-full">
-                      {selectedItem.category.map(cat => (
-                        <Badge
-                          key={cat.title}
-                          text={cat.title}
-                          color={cat.color}
-                          className="w-fit"
-                        />
-                      ))}
-                    </div>
-                    <Title
-                      title={selectedItem.title}
-                      className={clsx('w-9/12')}
-                    />
+                    {selectedItem.category.map(cat => (
+                      <Badge
+                        key={cat.title}
+                        text={cat.title}
+                        color={cat.color}
+                        className="w-fit whitespace-nowrap"
+                      />
+                    ))}
                   </motion.div>
-                  <motion.div
-                    className={clsx('leading-relaxed')}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                  >
-                    {selectedItem.description}
-                  </motion.div>
-                </div>
-              </motion.div>
-            </div>
-          </>
+                  <Title
+                    title={selectedItem.title}
+                    className={clsx('md:w-9/12')}
+                  />
+                </motion.div>
+                <motion.div
+                  className={clsx('leading-relaxed')}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                >
+                  {selectedItem.description}
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
         )}
       </AnimatePresence>
     </div>

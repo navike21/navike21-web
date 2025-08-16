@@ -29,7 +29,7 @@ export const Title = ({
       )}
       <h2
         className={clsx(
-          'title-lg text-center text-white w-full',
+          'title-md text-center text-white w-full',
           'lg:sm:title-xl',
           {
             'sm:text-left': align === 'left',
