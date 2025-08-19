@@ -3,7 +3,7 @@
 import { motion } from 'motion/react'
 import clsx from 'clsx'
 import { Badge, TBadgeColor } from '@Components/atoms/Badge/Badge'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 
 export type TCardItem = {
   id: string
@@ -14,6 +14,7 @@ export type TCardItem = {
   title: string
   image: string
   description: string
+  gallery: StaticImageData[]
 }
 
 type TCardGridProps = {

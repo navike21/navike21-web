@@ -7,6 +7,7 @@ import Image from 'next/image'
 import clsx from 'clsx'
 import { Badge } from '@Components/atoms/Badge/Badge'
 import { Title } from '../Title'
+import { uuidV7 } from '@Utils/generateKeys'
 
 export interface IMotionCardGridProps {
   data: TCardItem[]
@@ -46,7 +47,7 @@ export default function MotionCardGrid({
               layoutId={`card-container-${selectedId}`}
               className={clsx(
                 'bg-slate-900 rounded-2xl overflow-hidden w-[90%] max-w-[1200px] pointer-events-auto relative z-50 my-[5vw]',
-                'md:w-[70%]',
+                'md:w-[90%]',
                 'lg:my-[2%] lg:w-[80%]'
               )}
             >
@@ -76,6 +77,7 @@ export default function MotionCardGrid({
                     'flex flex-col gap-4 items-start',
                     'md:items-start md:gap-3'
                   )}
+                  animate={{ opacity: 1, position: 'sticky', top: 40 }}
                 >
                   <motion.div
                     layoutId={`badge-container-${selectedId}`}
@@ -104,6 +106,19 @@ export default function MotionCardGrid({
                   animate={{ opacity: 1 }}
                 >
                   {selectedItem.description}
+                  <div className={clsx('flex flex-col mt-9 gap-6')}>
+                    {selectedItem.gallery.map(img => (
+                      <Image
+                        key={uuidV7()}
+                        className="w-full h-full object-cover object-center"
+                        src={img}
+                        alt={selectedItem.title}
+                        width={1200}
+                        height={400}
+                        quality={100}
+                      />
+                    ))}
+                  </div>
                 </motion.div>
               </div>
             </motion.div>

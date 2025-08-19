@@ -13,13 +13,6 @@ import {
 import { ISvgProps } from '@Types/svg'
 import { StaticImageData } from 'next/image'
 import { ReactNode } from 'react'
-import {
-  carbyneSafety,
-  circurela,
-  eurogourmet,
-  rkPower,
-  tentacionesGourmet
-} from './projectsImages'
 
 interface IClientImage {
   mobile: StaticImageData[]
@@ -39,10 +32,7 @@ export const clients: IClient[] = [
     name: 'Tentaciones Gourmet',
     best: true,
     url: 'tentaciones-gourmet.pe',
-    logo: TentacionesGourmet,
-    images: {
-      mobile: [tentacionesGourmet.tentacionesGourmetHomeMobile.md]
-    }
+    logo: TentacionesGourmet
   },
   {
     id: 'colegio-la-union',
@@ -73,28 +63,19 @@ export const clients: IClient[] = [
     id: 'carbyne',
     name: 'Carbyne',
     url: 'carbyne-safety.com',
-    logo: Carbyne,
-    images: {
-      mobile: [carbyneSafety.carbyneSafetyHomeMobile.md]
-    }
+    logo: Carbyne
   },
   {
     id: 'circurela',
     name: 'Circurela',
     url: 'circurela.com',
-    logo: Circurela,
-    images: {
-      mobile: [circurela.circurelaHomeMobile.md]
-    }
+    logo: Circurela
   },
   {
     id: 'eurogourmet',
     name: 'Eurogourmet',
     url: 'eurogourmet.com.pe',
-    logo: EuroGourmet,
-    images: {
-      mobile: [eurogourmet.eurogourmetHomeMobile.md]
-    }
+    logo: EuroGourmet
   },
   {
     id: 'hammer-blocs',
@@ -106,9 +87,6 @@ export const clients: IClient[] = [
     id: 'rk-power',
     name: 'RK Power',
     url: 'rkpower.com',
-    logo: RkPower,
-    images: {
-      mobile: [rkPower.rkPowerHomeMobile.md]
-    }
+    logo: RkPower
   }
 ]

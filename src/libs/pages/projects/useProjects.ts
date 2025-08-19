@@ -38,14 +38,20 @@ export const useProjects = () => {
 
   const projectsData: TCardItem[] = projects[currentLang].map(
     ({ id, title, description, category, gallery }) => {
-      const homeKey = Object.keys(gallery).find(
-        key =>
-          key.toLowerCase().endsWith('cover') ||
-          key.toLowerCase().endsWith('home')
+      const coverKey = Object.keys(gallery).find(key =>
+        key.toLowerCase().endsWith('cover')
       )
+
+      const galleryProject = Object.keys(gallery)
+        .filter(key => !key.toLowerCase().endsWith('cover'))
+        .map(key => {
+          return gallery[key].lg
+        })
+
       let image = ''
-      if (homeKey) {
-        const img = gallery[homeKey].lg
+
+      if (coverKey) {
+        const img = gallery[coverKey].lg
         image = typeof img === 'string' ? img : img.src
       }
 
@@ -61,13 +67,14 @@ export const useProjects = () => {
         })),
         title,
         description,
-        image
+        image,
+        gallery: galleryProject
       }
     }
   )
 
   return {
     heroImage: teamBusinessPeopleStackingHands.lg.src,
-    projects: projectsData
+    projects: projectsData.toReversed()
   }
 }

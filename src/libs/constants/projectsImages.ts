@@ -1,156 +1,159 @@
+import ankerPaintsAboutAnkerPaintsLg from '@Assets/images/projects/anker-paints/converted/about-anker-paints_large.webp'
+import ankerPaintsAboutAnkerPaintsMd from '@Assets/images/projects/anker-paints/converted/about-anker-paints_medium.webp'
+import ankerPaintsAboutAnkerPaintsSm from '@Assets/images/projects/anker-paints/converted/about-anker-paints_small.webp'
 import ankerPaintsCoverLg from '@Assets/images/projects/anker-paints/converted/cover_large.webp'
 import ankerPaintsCoverMd from '@Assets/images/projects/anker-paints/converted/cover_medium.webp'
 import ankerPaintsCoverSm from '@Assets/images/projects/anker-paints/converted/cover_small.webp'
+import ankerPaintsHistoryPhoneAnkerPaintsLg from '@Assets/images/projects/anker-paints/converted/history-phone-anker-paints_large.webp'
+import ankerPaintsHistoryPhoneAnkerPaintsMd from '@Assets/images/projects/anker-paints/converted/history-phone-anker-paints_medium.webp'
+import ankerPaintsHistoryPhoneAnkerPaintsSm from '@Assets/images/projects/anker-paints/converted/history-phone-anker-paints_small.webp'
+import ankerPaintsHomeTabletAnkerPaintsLg from '@Assets/images/projects/anker-paints/converted/home-tablet-anker-paints_large.webp'
+import ankerPaintsHomeTabletAnkerPaintsMd from '@Assets/images/projects/anker-paints/converted/home-tablet-anker-paints_medium.webp'
+import ankerPaintsHomeTabletAnkerPaintsSm from '@Assets/images/projects/anker-paints/converted/home-tablet-anker-paints_small.webp'
 import beatsMusicaCoverLg from '@Assets/images/projects/beats-musica/converted/cover_large.webp'
 import beatsMusicaCoverMd from '@Assets/images/projects/beats-musica/converted/cover_medium.webp'
 import beatsMusicaCoverSm from '@Assets/images/projects/beats-musica/converted/cover_small.webp'
-import carbyneSafetyAboutUsMobileLg from '@Assets/images/projects/carbyne-safety/converted/about-us-mobile_large.webp'
-import carbyneSafetyAboutUsMobileMd from '@Assets/images/projects/carbyne-safety/converted/about-us-mobile_medium.webp'
-import carbyneSafetyAboutUsMobileSm from '@Assets/images/projects/carbyne-safety/converted/about-us-mobile_small.webp'
-import carbyneSafetyAboutUsLg from '@Assets/images/projects/carbyne-safety/converted/about-us_large.webp'
-import carbyneSafetyAboutUsMd from '@Assets/images/projects/carbyne-safety/converted/about-us_medium.webp'
-import carbyneSafetyAboutUsSm from '@Assets/images/projects/carbyne-safety/converted/about-us_small.webp'
-import carbyneSafetyContactUsLg from '@Assets/images/projects/carbyne-safety/converted/contact-us_large.webp'
-import carbyneSafetyContactUsMd from '@Assets/images/projects/carbyne-safety/converted/contact-us_medium.webp'
-import carbyneSafetyContactUsSm from '@Assets/images/projects/carbyne-safety/converted/contact-us_small.webp'
+import beatsMusicaHomeDesktopBeatsMusicaLg from '@Assets/images/projects/beats-musica/converted/home-desktop-beats-musica_large.webp'
+import beatsMusicaHomeDesktopBeatsMusicaMd from '@Assets/images/projects/beats-musica/converted/home-desktop-beats-musica_medium.webp'
+import beatsMusicaHomeDesktopBeatsMusicaSm from '@Assets/images/projects/beats-musica/converted/home-desktop-beats-musica_small.webp'
+import beatsMusicaPhoneBeatsMusicaLg from '@Assets/images/projects/beats-musica/converted/phone-beats-musica_large.webp'
+import beatsMusicaPhoneBeatsMusicaMd from '@Assets/images/projects/beats-musica/converted/phone-beats-musica_medium.webp'
+import beatsMusicaPhoneBeatsMusicaSm from '@Assets/images/projects/beats-musica/converted/phone-beats-musica_small.webp'
+import beatsMusicaPhoneTabletBeatsMusicaLg from '@Assets/images/projects/beats-musica/converted/phone-tablet-beats-musica_large.webp'
+import beatsMusicaPhoneTabletBeatsMusicaMd from '@Assets/images/projects/beats-musica/converted/phone-tablet-beats-musica_medium.webp'
+import beatsMusicaPhoneTabletBeatsMusicaSm from '@Assets/images/projects/beats-musica/converted/phone-tablet-beats-musica_small.webp'
+import beatsMusicaPriceDesktopBeatsMusicaLg from '@Assets/images/projects/beats-musica/converted/price-desktop-beats-musica_large.webp'
+import beatsMusicaPriceDesktopBeatsMusicaMd from '@Assets/images/projects/beats-musica/converted/price-desktop-beats-musica_medium.webp'
+import beatsMusicaPriceDesktopBeatsMusicaSm from '@Assets/images/projects/beats-musica/converted/price-desktop-beats-musica_small.webp'
+import carbyneSafetyAboutUsDesktopCarbyneLg from '@Assets/images/projects/carbyne-safety/converted/about-us-desktop-carbyne_large.webp'
+import carbyneSafetyAboutUsDesktopCarbyneMd from '@Assets/images/projects/carbyne-safety/converted/about-us-desktop-carbyne_medium.webp'
+import carbyneSafetyAboutUsDesktopCarbyneSm from '@Assets/images/projects/carbyne-safety/converted/about-us-desktop-carbyne_small.webp'
 import carbyneSafetyCoverLg from '@Assets/images/projects/carbyne-safety/converted/cover_large.webp'
 import carbyneSafetyCoverMd from '@Assets/images/projects/carbyne-safety/converted/cover_medium.webp'
 import carbyneSafetyCoverSm from '@Assets/images/projects/carbyne-safety/converted/cover_small.webp'
-import carbyneSafetyHomeMobileLg from '@Assets/images/projects/carbyne-safety/converted/home-mobile_large.webp'
-import carbyneSafetyHomeMobileMd from '@Assets/images/projects/carbyne-safety/converted/home-mobile_medium.webp'
-import carbyneSafetyHomeMobileSm from '@Assets/images/projects/carbyne-safety/converted/home-mobile_small.webp'
-import carbyneSafetyHomeLg from '@Assets/images/projects/carbyne-safety/converted/home_large.webp'
-import carbyneSafetyHomeMd from '@Assets/images/projects/carbyne-safety/converted/home_medium.webp'
-import carbyneSafetyHomeSm from '@Assets/images/projects/carbyne-safety/converted/home_small.webp'
-import carbyneSafetyProductsMobileLg from '@Assets/images/projects/carbyne-safety/converted/products-mobile_large.webp'
-import carbyneSafetyProductsMobileMd from '@Assets/images/projects/carbyne-safety/converted/products-mobile_medium.webp'
-import carbyneSafetyProductsMobileSm from '@Assets/images/projects/carbyne-safety/converted/products-mobile_small.webp'
-import carbyneSafetyProductsLg from '@Assets/images/projects/carbyne-safety/converted/products_large.webp'
-import carbyneSafetyProductsMd from '@Assets/images/projects/carbyne-safety/converted/products_medium.webp'
-import carbyneSafetyProductsSm from '@Assets/images/projects/carbyne-safety/converted/products_small.webp'
-import circurelaAboutUsMobileLg from '@Assets/images/projects/circurela/converted/about-us-mobile_large.webp'
-import circurelaAboutUsMobileMd from '@Assets/images/projects/circurela/converted/about-us-mobile_medium.webp'
-import circurelaAboutUsMobileSm from '@Assets/images/projects/circurela/converted/about-us-mobile_small.webp'
-import circurelaAboutUsLg from '@Assets/images/projects/circurela/converted/about-us_large.webp'
-import circurelaAboutUsMd from '@Assets/images/projects/circurela/converted/about-us_medium.webp'
-import circurelaAboutUsSm from '@Assets/images/projects/circurela/converted/about-us_small.webp'
+import carbyneSafetyHomeDesktopCarbyneSafetyLg from '@Assets/images/projects/carbyne-safety/converted/home-desktop-carbyne-safety_large.webp'
+import carbyneSafetyHomeDesktopCarbyneSafetyMd from '@Assets/images/projects/carbyne-safety/converted/home-desktop-carbyne-safety_medium.webp'
+import carbyneSafetyHomeDesktopCarbyneSafetySm from '@Assets/images/projects/carbyne-safety/converted/home-desktop-carbyne-safety_small.webp'
+import carbyneSafetyHomePhoneCarbyneSafetyLg from '@Assets/images/projects/carbyne-safety/converted/home-phone-carbyne-safety_large.webp'
+import carbyneSafetyHomePhoneCarbyneSafetyMd from '@Assets/images/projects/carbyne-safety/converted/home-phone-carbyne-safety_medium.webp'
+import carbyneSafetyHomePhoneCarbyneSafetySm from '@Assets/images/projects/carbyne-safety/converted/home-phone-carbyne-safety_small.webp'
+import carbyneSafetyHomeProductsPhoneCarbyneLg from '@Assets/images/projects/carbyne-safety/converted/home-products-phone-carbyne_large.webp'
+import carbyneSafetyHomeProductsPhoneCarbyneMd from '@Assets/images/projects/carbyne-safety/converted/home-products-phone-carbyne_medium.webp'
+import carbyneSafetyHomeProductsPhoneCarbyneSm from '@Assets/images/projects/carbyne-safety/converted/home-products-phone-carbyne_small.webp'
+import carbyneSafetyProductsDesktopCarbyneLg from '@Assets/images/projects/carbyne-safety/converted/products-desktop-carbyne_large.webp'
+import carbyneSafetyProductsDesktopCarbyneMd from '@Assets/images/projects/carbyne-safety/converted/products-desktop-carbyne_medium.webp'
+import carbyneSafetyProductsDesktopCarbyneSm from '@Assets/images/projects/carbyne-safety/converted/products-desktop-carbyne_small.webp'
 import circurelaCoverLg from '@Assets/images/projects/circurela/converted/cover_large.webp'
 import circurelaCoverMd from '@Assets/images/projects/circurela/converted/cover_medium.webp'
 import circurelaCoverSm from '@Assets/images/projects/circurela/converted/cover_small.webp'
-import circurelaEventsLg from '@Assets/images/projects/circurela/converted/events_large.webp'
-import circurelaEventsMd from '@Assets/images/projects/circurela/converted/events_medium.webp'
-import circurelaEventsSm from '@Assets/images/projects/circurela/converted/events_small.webp'
-import circurelaHomeMobileLg from '@Assets/images/projects/circurela/converted/home-mobile_large.webp'
-import circurelaHomeMobileMd from '@Assets/images/projects/circurela/converted/home-mobile_medium.webp'
-import circurelaHomeMobileSm from '@Assets/images/projects/circurela/converted/home-mobile_small.webp'
-import circurelaHomeLg from '@Assets/images/projects/circurela/converted/home_large.webp'
-import circurelaHomeMd from '@Assets/images/projects/circurela/converted/home_medium.webp'
-import circurelaHomeSm from '@Assets/images/projects/circurela/converted/home_small.webp'
-import circurelaInformationLg from '@Assets/images/projects/circurela/converted/information_large.webp'
-import circurelaInformationMd from '@Assets/images/projects/circurela/converted/information_medium.webp'
-import circurelaInformationSm from '@Assets/images/projects/circurela/converted/information_small.webp'
-import circurelaMenuMobileLg from '@Assets/images/projects/circurela/converted/menu-mobile_large.webp'
-import circurelaMenuMobileMd from '@Assets/images/projects/circurela/converted/menu-mobile_medium.webp'
-import circurelaMenuMobileSm from '@Assets/images/projects/circurela/converted/menu-mobile_small.webp'
-import circurelaMenuLg from '@Assets/images/projects/circurela/converted/menu_large.webp'
-import circurelaMenuMd from '@Assets/images/projects/circurela/converted/menu_medium.webp'
-import circurelaMenuSm from '@Assets/images/projects/circurela/converted/menu_small.webp'
-import circurelaSocialMobileLg from '@Assets/images/projects/circurela/converted/social-mobile_large.webp'
-import circurelaSocialMobileMd from '@Assets/images/projects/circurela/converted/social-mobile_medium.webp'
-import circurelaSocialMobileSm from '@Assets/images/projects/circurela/converted/social-mobile_small.webp'
-import colegioLaUnionAboutUsLg from '@Assets/images/projects/colegio-la-union/converted/about-us_large.webp'
-import colegioLaUnionAboutUsMd from '@Assets/images/projects/colegio-la-union/converted/about-us_medium.webp'
-import colegioLaUnionAboutUsSm from '@Assets/images/projects/colegio-la-union/converted/about-us_small.webp'
+import circurelaEventsCircurelaLg from '@Assets/images/projects/circurela/converted/events-circurela_large.webp'
+import circurelaEventsCircurelaMd from '@Assets/images/projects/circurela/converted/events-circurela_medium.webp'
+import circurelaEventsCircurelaSm from '@Assets/images/projects/circurela/converted/events-circurela_small.webp'
+import circurelaHomeAndMenuCircurelaLg from '@Assets/images/projects/circurela/converted/home-and-menu-circurela_large.webp'
+import circurelaHomeAndMenuCircurelaMd from '@Assets/images/projects/circurela/converted/home-and-menu-circurela_medium.webp'
+import circurelaHomeAndMenuCircurelaSm from '@Assets/images/projects/circurela/converted/home-and-menu-circurela_small.webp'
+import circurelaHomePhoneCircurelaLg from '@Assets/images/projects/circurela/converted/home-phone-circurela_large.webp'
+import circurelaHomePhoneCircurelaMd from '@Assets/images/projects/circurela/converted/home-phone-circurela_medium.webp'
+import circurelaHomePhoneCircurelaSm from '@Assets/images/projects/circurela/converted/home-phone-circurela_small.webp'
+import circurelaMenuPhoneCircurelaLg from '@Assets/images/projects/circurela/converted/menu-phone-circurela_large.webp'
+import circurelaMenuPhoneCircurelaMd from '@Assets/images/projects/circurela/converted/menu-phone-circurela_medium.webp'
+import circurelaMenuPhoneCircurelaSm from '@Assets/images/projects/circurela/converted/menu-phone-circurela_small.webp'
+import circurelaPhoneCircurelaLg from '@Assets/images/projects/circurela/converted/phone-circurela_large.webp'
+import circurelaPhoneCircurelaMd from '@Assets/images/projects/circurela/converted/phone-circurela_medium.webp'
+import circurelaPhoneCircurelaSm from '@Assets/images/projects/circurela/converted/phone-circurela_small.webp'
+import colegioLaUnionAboutDesktopColegioLaUnionLg from '@Assets/images/projects/colegio-la-union/converted/about-desktop-colegio-la-union_large.webp'
+import colegioLaUnionAboutDesktopColegioLaUnionMd from '@Assets/images/projects/colegio-la-union/converted/about-desktop-colegio-la-union_medium.webp'
+import colegioLaUnionAboutDesktopColegioLaUnionSm from '@Assets/images/projects/colegio-la-union/converted/about-desktop-colegio-la-union_small.webp'
 import colegioLaUnionCoverLg from '@Assets/images/projects/colegio-la-union/converted/cover_large.webp'
 import colegioLaUnionCoverMd from '@Assets/images/projects/colegio-la-union/converted/cover_medium.webp'
 import colegioLaUnionCoverSm from '@Assets/images/projects/colegio-la-union/converted/cover_small.webp'
-import colegioLaUnionDetailInfoLg from '@Assets/images/projects/colegio-la-union/converted/detail-info_large.webp'
-import colegioLaUnionDetailInfoMd from '@Assets/images/projects/colegio-la-union/converted/detail-info_medium.webp'
-import colegioLaUnionDetailInfoSm from '@Assets/images/projects/colegio-la-union/converted/detail-info_small.webp'
-import colegioLaUnionHomeLg from '@Assets/images/projects/colegio-la-union/converted/home_large.webp'
-import colegioLaUnionHomeMd from '@Assets/images/projects/colegio-la-union/converted/home_medium.webp'
-import colegioLaUnionHomeSm from '@Assets/images/projects/colegio-la-union/converted/home_small.webp'
-import colegioLaUnionIpadLg from '@Assets/images/projects/colegio-la-union/converted/ipad_large.webp'
-import colegioLaUnionIpadMd from '@Assets/images/projects/colegio-la-union/converted/ipad_medium.webp'
-import colegioLaUnionIpadSm from '@Assets/images/projects/colegio-la-union/converted/ipad_small.webp'
-import colegioLaUnionLaptopLg from '@Assets/images/projects/colegio-la-union/converted/laptop_large.webp'
-import colegioLaUnionLaptopMd from '@Assets/images/projects/colegio-la-union/converted/laptop_medium.webp'
-import colegioLaUnionLaptopSm from '@Assets/images/projects/colegio-la-union/converted/laptop_small.webp'
-import colegioLaUnionMobileLg from '@Assets/images/projects/colegio-la-union/converted/mobile_large.webp'
-import colegioLaUnionMobileMd from '@Assets/images/projects/colegio-la-union/converted/mobile_medium.webp'
-import colegioLaUnionMobileSm from '@Assets/images/projects/colegio-la-union/converted/mobile_small.webp'
-import eurogourmetAboutUsMobileLg from '@Assets/images/projects/eurogourmet/converted/about-us-mobile_large.webp'
-import eurogourmetAboutUsMobileMd from '@Assets/images/projects/eurogourmet/converted/about-us-mobile_medium.webp'
-import eurogourmetAboutUsMobileSm from '@Assets/images/projects/eurogourmet/converted/about-us-mobile_small.webp'
-import eurogourmetAboutUsLg from '@Assets/images/projects/eurogourmet/converted/about-us_large.webp'
-import eurogourmetAboutUsMd from '@Assets/images/projects/eurogourmet/converted/about-us_medium.webp'
-import eurogourmetAboutUsSm from '@Assets/images/projects/eurogourmet/converted/about-us_small.webp'
-import eurogourmetBlogLg from '@Assets/images/projects/eurogourmet/converted/blog_large.webp'
-import eurogourmetBlogMd from '@Assets/images/projects/eurogourmet/converted/blog_medium.webp'
-import eurogourmetBlogSm from '@Assets/images/projects/eurogourmet/converted/blog_small.webp'
+import colegioLaUnionHomeDesktopColegioLaUnionLg from '@Assets/images/projects/colegio-la-union/converted/home-desktop-colegio-la-union_large.webp'
+import colegioLaUnionHomeDesktopColegioLaUnionMd from '@Assets/images/projects/colegio-la-union/converted/home-desktop-colegio-la-union_medium.webp'
+import colegioLaUnionHomeDesktopColegioLaUnionSm from '@Assets/images/projects/colegio-la-union/converted/home-desktop-colegio-la-union_small.webp'
+import colegioLaUnionHomePhoneColegioLaUnionLg from '@Assets/images/projects/colegio-la-union/converted/home-phone-colegio-la-union_large.webp'
+import colegioLaUnionHomePhoneColegioLaUnionMd from '@Assets/images/projects/colegio-la-union/converted/home-phone-colegio-la-union_medium.webp'
+import colegioLaUnionHomePhoneColegioLaUnionSm from '@Assets/images/projects/colegio-la-union/converted/home-phone-colegio-la-union_small.webp'
+import colegioLaUnionServicesDesktopColegioLaUnionLg from '@Assets/images/projects/colegio-la-union/converted/services-desktop-colegio-la-union_large.webp'
+import colegioLaUnionServicesDesktopColegioLaUnionMd from '@Assets/images/projects/colegio-la-union/converted/services-desktop-colegio-la-union_medium.webp'
+import colegioLaUnionServicesDesktopColegioLaUnionSm from '@Assets/images/projects/colegio-la-union/converted/services-desktop-colegio-la-union_small.webp'
+import eurogourmetAbouUsPhoneEurogourmetLg from '@Assets/images/projects/eurogourmet/converted/abou-us-phone-eurogourmet_large.webp'
+import eurogourmetAbouUsPhoneEurogourmetMd from '@Assets/images/projects/eurogourmet/converted/abou-us-phone-eurogourmet_medium.webp'
+import eurogourmetAbouUsPhoneEurogourmetSm from '@Assets/images/projects/eurogourmet/converted/abou-us-phone-eurogourmet_small.webp'
+import eurogourmetBlogDesktopEurogourmetLg from '@Assets/images/projects/eurogourmet/converted/blog-desktop-eurogourmet_large.webp'
+import eurogourmetBlogDesktopEurogourmetMd from '@Assets/images/projects/eurogourmet/converted/blog-desktop-eurogourmet_medium.webp'
+import eurogourmetBlogDesktopEurogourmetSm from '@Assets/images/projects/eurogourmet/converted/blog-desktop-eurogourmet_small.webp'
 import eurogourmetCoverLg from '@Assets/images/projects/eurogourmet/converted/cover_large.webp'
 import eurogourmetCoverMd from '@Assets/images/projects/eurogourmet/converted/cover_medium.webp'
 import eurogourmetCoverSm from '@Assets/images/projects/eurogourmet/converted/cover_small.webp'
-import eurogourmetEcommerceLg from '@Assets/images/projects/eurogourmet/converted/ecommerce_large.webp'
-import eurogourmetEcommerceMd from '@Assets/images/projects/eurogourmet/converted/ecommerce_medium.webp'
-import eurogourmetEcommerceSm from '@Assets/images/projects/eurogourmet/converted/ecommerce_small.webp'
-import eurogourmetHomeMobileLg from '@Assets/images/projects/eurogourmet/converted/home-mobile_large.webp'
-import eurogourmetHomeMobileMd from '@Assets/images/projects/eurogourmet/converted/home-mobile_medium.webp'
-import eurogourmetHomeMobileSm from '@Assets/images/projects/eurogourmet/converted/home-mobile_small.webp'
-import eurogourmetHomeLg from '@Assets/images/projects/eurogourmet/converted/home_large.webp'
-import eurogourmetHomeMd from '@Assets/images/projects/eurogourmet/converted/home_medium.webp'
-import eurogourmetHomeSm from '@Assets/images/projects/eurogourmet/converted/home_small.webp'
-import eurogourmetProductDetailMobileLg from '@Assets/images/projects/eurogourmet/converted/product-detail-mobile_large.webp'
-import eurogourmetProductDetailMobileMd from '@Assets/images/projects/eurogourmet/converted/product-detail-mobile_medium.webp'
-import eurogourmetProductDetailMobileSm from '@Assets/images/projects/eurogourmet/converted/product-detail-mobile_small.webp'
-import eurogourmetProductPreviewLg from '@Assets/images/projects/eurogourmet/converted/product-preview_large.webp'
-import eurogourmetProductPreviewMd from '@Assets/images/projects/eurogourmet/converted/product-preview_medium.webp'
-import eurogourmetProductPreviewSm from '@Assets/images/projects/eurogourmet/converted/product-preview_small.webp'
-import rkPowerAboutUsMobileLg from '@Assets/images/projects/rk-power/converted/about-us-mobile_large.webp'
-import rkPowerAboutUsMobileMd from '@Assets/images/projects/rk-power/converted/about-us-mobile_medium.webp'
-import rkPowerAboutUsMobileSm from '@Assets/images/projects/rk-power/converted/about-us-mobile_small.webp'
-import rkPowerAboutUsLg from '@Assets/images/projects/rk-power/converted/about-us_large.webp'
-import rkPowerAboutUsMd from '@Assets/images/projects/rk-power/converted/about-us_medium.webp'
-import rkPowerAboutUsSm from '@Assets/images/projects/rk-power/converted/about-us_small.webp'
-import rkPowerContactUsLg from '@Assets/images/projects/rk-power/converted/contact-us_large.webp'
-import rkPowerContactUsMd from '@Assets/images/projects/rk-power/converted/contact-us_medium.webp'
-import rkPowerContactUsSm from '@Assets/images/projects/rk-power/converted/contact-us_small.webp'
+import eurogourmetHomeDesktopEurogourmetLg from '@Assets/images/projects/eurogourmet/converted/home-desktop-eurogourmet_large.webp'
+import eurogourmetHomeDesktopEurogourmetMd from '@Assets/images/projects/eurogourmet/converted/home-desktop-eurogourmet_medium.webp'
+import eurogourmetHomeDesktopEurogourmetSm from '@Assets/images/projects/eurogourmet/converted/home-desktop-eurogourmet_small.webp'
+import eurogourmetProductPreviewDesktopLg from '@Assets/images/projects/eurogourmet/converted/product-preview-desktop_large.webp'
+import eurogourmetProductPreviewDesktopMd from '@Assets/images/projects/eurogourmet/converted/product-preview-desktop_medium.webp'
+import eurogourmetProductPreviewDesktopSm from '@Assets/images/projects/eurogourmet/converted/product-preview-desktop_small.webp'
+import eurogourmetProductsAndHomePhoneEurogourmetLg from '@Assets/images/projects/eurogourmet/converted/products-and-home-phone-eurogourmet_large.webp'
+import eurogourmetProductsAndHomePhoneEurogourmetMd from '@Assets/images/projects/eurogourmet/converted/products-and-home-phone-eurogourmet_medium.webp'
+import eurogourmetProductsAndHomePhoneEurogourmetSm from '@Assets/images/projects/eurogourmet/converted/products-and-home-phone-eurogourmet_small.webp'
+import rkPowerAboutDesktopRkPowerLg from '@Assets/images/projects/rk-power/converted/about-desktop-rk-power_large.webp'
+import rkPowerAboutDesktopRkPowerMd from '@Assets/images/projects/rk-power/converted/about-desktop-rk-power_medium.webp'
+import rkPowerAboutDesktopRkPowerSm from '@Assets/images/projects/rk-power/converted/about-desktop-rk-power_small.webp'
+import rkPowerAboutUsPhoneRkPowerLg from '@Assets/images/projects/rk-power/converted/about-us-phone-rk-power_large.webp'
+import rkPowerAboutUsPhoneRkPowerMd from '@Assets/images/projects/rk-power/converted/about-us-phone-rk-power_medium.webp'
+import rkPowerAboutUsPhoneRkPowerSm from '@Assets/images/projects/rk-power/converted/about-us-phone-rk-power_small.webp'
 import rkPowerCoverLg from '@Assets/images/projects/rk-power/converted/cover_large.webp'
 import rkPowerCoverMd from '@Assets/images/projects/rk-power/converted/cover_medium.webp'
 import rkPowerCoverSm from '@Assets/images/projects/rk-power/converted/cover_small.webp'
-import rkPowerHomeMobileLg from '@Assets/images/projects/rk-power/converted/home-mobile_large.webp'
-import rkPowerHomeMobileMd from '@Assets/images/projects/rk-power/converted/home-mobile_medium.webp'
-import rkPowerHomeMobileSm from '@Assets/images/projects/rk-power/converted/home-mobile_small.webp'
-import rkPowerHomeLg from '@Assets/images/projects/rk-power/converted/home_large.webp'
-import rkPowerHomeMd from '@Assets/images/projects/rk-power/converted/home_medium.webp'
-import rkPowerHomeSm from '@Assets/images/projects/rk-power/converted/home_small.webp'
-import rkPowerInfoDetailLg from '@Assets/images/projects/rk-power/converted/info-detail_large.webp'
-import rkPowerInfoDetailMd from '@Assets/images/projects/rk-power/converted/info-detail_medium.webp'
-import rkPowerInfoDetailSm from '@Assets/images/projects/rk-power/converted/info-detail_small.webp'
+import rkPowerHomeDesktopAboutUsPhoneRkPowerLg from '@Assets/images/projects/rk-power/converted/home-desktop-about-us-phone-rk-power_large.webp'
+import rkPowerHomeDesktopAboutUsPhoneRkPowerMd from '@Assets/images/projects/rk-power/converted/home-desktop-about-us-phone-rk-power_medium.webp'
+import rkPowerHomeDesktopAboutUsPhoneRkPowerSm from '@Assets/images/projects/rk-power/converted/home-desktop-about-us-phone-rk-power_small.webp'
+import rkPowerHomePhoneRkPowerLg from '@Assets/images/projects/rk-power/converted/home-phone-rk-power_large.webp'
+import rkPowerHomePhoneRkPowerMd from '@Assets/images/projects/rk-power/converted/home-phone-rk-power_medium.webp'
+import rkPowerHomePhoneRkPowerSm from '@Assets/images/projects/rk-power/converted/home-phone-rk-power_small.webp'
+import rkPowerInfoProductDesktopRkPowerLg from '@Assets/images/projects/rk-power/converted/info-product-desktop-rk-power_large.webp'
+import rkPowerInfoProductDesktopRkPowerMd from '@Assets/images/projects/rk-power/converted/info-product-desktop-rk-power_medium.webp'
+import rkPowerInfoProductDesktopRkPowerSm from '@Assets/images/projects/rk-power/converted/info-product-desktop-rk-power_small.webp'
 import tentacionesGourmetCoverLg from '@Assets/images/projects/tentaciones-gourmet/converted/cover_large.webp'
 import tentacionesGourmetCoverMd from '@Assets/images/projects/tentaciones-gourmet/converted/cover_medium.webp'
 import tentacionesGourmetCoverSm from '@Assets/images/projects/tentaciones-gourmet/converted/cover_small.webp'
-import tentacionesGourmetHomeMobileLg from '@Assets/images/projects/tentaciones-gourmet/converted/home-mobile_large.webp'
-import tentacionesGourmetHomeMobileMd from '@Assets/images/projects/tentaciones-gourmet/converted/home-mobile_medium.webp'
-import tentacionesGourmetHomeMobileSm from '@Assets/images/projects/tentaciones-gourmet/converted/home-mobile_small.webp'
-import tentacionesGourmetHomeLg from '@Assets/images/projects/tentaciones-gourmet/converted/home_large.webp'
-import tentacionesGourmetHomeMd from '@Assets/images/projects/tentaciones-gourmet/converted/home_medium.webp'
-import tentacionesGourmetHomeSm from '@Assets/images/projects/tentaciones-gourmet/converted/home_small.webp'
-import tentacionesGourmetLocalesLg from '@Assets/images/projects/tentaciones-gourmet/converted/locales_large.webp'
-import tentacionesGourmetLocalesMd from '@Assets/images/projects/tentaciones-gourmet/converted/locales_medium.webp'
-import tentacionesGourmetLocalesSm from '@Assets/images/projects/tentaciones-gourmet/converted/locales_small.webp'
-import tentacionesGourmetProductDetailLg from '@Assets/images/projects/tentaciones-gourmet/converted/product-detail_large.webp'
-import tentacionesGourmetProductDetailMd from '@Assets/images/projects/tentaciones-gourmet/converted/product-detail_medium.webp'
-import tentacionesGourmetProductDetailSm from '@Assets/images/projects/tentaciones-gourmet/converted/product-detail_small.webp'
-import tentacionesGourmetStoreLg from '@Assets/images/projects/tentaciones-gourmet/converted/store_large.webp'
-import tentacionesGourmetStoreMd from '@Assets/images/projects/tentaciones-gourmet/converted/store_medium.webp'
-import tentacionesGourmetStoreSm from '@Assets/images/projects/tentaciones-gourmet/converted/store_small.webp'
+import tentacionesGourmetDeliverPhoneTentacionesGourmetLg from '@Assets/images/projects/tentaciones-gourmet/converted/deliver-phone-tentaciones-gourmet_large.webp'
+import tentacionesGourmetDeliverPhoneTentacionesGourmetMd from '@Assets/images/projects/tentaciones-gourmet/converted/deliver-phone-tentaciones-gourmet_medium.webp'
+import tentacionesGourmetDeliverPhoneTentacionesGourmetSm from '@Assets/images/projects/tentaciones-gourmet/converted/deliver-phone-tentaciones-gourmet_small.webp'
+import tentacionesGourmetHomeDesktopTentacionesGourmetLg from '@Assets/images/projects/tentaciones-gourmet/converted/home-desktop-tentaciones-gourmet_large.webp'
+import tentacionesGourmetHomeDesktopTentacionesGourmetMd from '@Assets/images/projects/tentaciones-gourmet/converted/home-desktop-tentaciones-gourmet_medium.webp'
+import tentacionesGourmetHomeDesktopTentacionesGourmetSm from '@Assets/images/projects/tentaciones-gourmet/converted/home-desktop-tentaciones-gourmet_small.webp'
+import tentacionesGourmetPhoneTentacionesGourmetLg from '@Assets/images/projects/tentaciones-gourmet/converted/phone-tentaciones-gourmet_large.webp'
+import tentacionesGourmetPhoneTentacionesGourmetMd from '@Assets/images/projects/tentaciones-gourmet/converted/phone-tentaciones-gourmet_medium.webp'
+import tentacionesGourmetPhoneTentacionesGourmetSm from '@Assets/images/projects/tentaciones-gourmet/converted/phone-tentaciones-gourmet_small.webp'
+import tentacionesGourmetPreviewProductDesktopTentacionesGourmetLg from '@Assets/images/projects/tentaciones-gourmet/converted/preview-product-desktop-tentaciones-gourmet_large.webp'
+import tentacionesGourmetPreviewProductDesktopTentacionesGourmetMd from '@Assets/images/projects/tentaciones-gourmet/converted/preview-product-desktop-tentaciones-gourmet_medium.webp'
+import tentacionesGourmetPreviewProductDesktopTentacionesGourmetSm from '@Assets/images/projects/tentaciones-gourmet/converted/preview-product-desktop-tentaciones-gourmet_small.webp'
+import tentacionesGourmetStoreDesktopPhoneTentacionesGourmetLg from '@Assets/images/projects/tentaciones-gourmet/converted/store-desktop-phone-tentaciones-gourmet_large.webp'
+import tentacionesGourmetStoreDesktopPhoneTentacionesGourmetMd from '@Assets/images/projects/tentaciones-gourmet/converted/store-desktop-phone-tentaciones-gourmet_medium.webp'
+import tentacionesGourmetStoreDesktopPhoneTentacionesGourmetSm from '@Assets/images/projects/tentaciones-gourmet/converted/store-desktop-phone-tentaciones-gourmet_small.webp'
+import tentacionesGourmetStorePhoneTentacionesGourmetLg from '@Assets/images/projects/tentaciones-gourmet/converted/store-phone-tentaciones-gourmet_large.webp'
+import tentacionesGourmetStorePhoneTentacionesGourmetMd from '@Assets/images/projects/tentaciones-gourmet/converted/store-phone-tentaciones-gourmet_medium.webp'
+import tentacionesGourmetStorePhoneTentacionesGourmetSm from '@Assets/images/projects/tentaciones-gourmet/converted/store-phone-tentaciones-gourmet_small.webp'
 
 const ankerPaints = {
+  ankerPaintsAboutAnkerPaints: {
+    lg: ankerPaintsAboutAnkerPaintsLg,
+    md: ankerPaintsAboutAnkerPaintsMd,
+    sm: ankerPaintsAboutAnkerPaintsSm
+  },
   ankerPaintsCover: {
     lg: ankerPaintsCoverLg,
     md: ankerPaintsCoverMd,
     sm: ankerPaintsCoverSm
+  },
+  ankerPaintsHistoryPhoneAnkerPaints: {
+    lg: ankerPaintsHistoryPhoneAnkerPaintsLg,
+    md: ankerPaintsHistoryPhoneAnkerPaintsMd,
+    sm: ankerPaintsHistoryPhoneAnkerPaintsSm
+  },
+  ankerPaintsHomeTabletAnkerPaints: {
+    lg: ankerPaintsHomeTabletAnkerPaintsLg,
+    md: ankerPaintsHomeTabletAnkerPaintsMd,
+    sm: ankerPaintsHomeTabletAnkerPaintsSm
   }
 }
 
@@ -159,226 +162,186 @@ const beatsMusica = {
     lg: beatsMusicaCoverLg,
     md: beatsMusicaCoverMd,
     sm: beatsMusicaCoverSm
+  },
+  beatsMusicaHomeDesktopBeatsMusica: {
+    lg: beatsMusicaHomeDesktopBeatsMusicaLg,
+    md: beatsMusicaHomeDesktopBeatsMusicaMd,
+    sm: beatsMusicaHomeDesktopBeatsMusicaSm
+  },
+  beatsMusicaPhoneBeatsMusica: {
+    lg: beatsMusicaPhoneBeatsMusicaLg,
+    md: beatsMusicaPhoneBeatsMusicaMd,
+    sm: beatsMusicaPhoneBeatsMusicaSm
+  },
+  beatsMusicaPhoneTabletBeatsMusica: {
+    lg: beatsMusicaPhoneTabletBeatsMusicaLg,
+    md: beatsMusicaPhoneTabletBeatsMusicaMd,
+    sm: beatsMusicaPhoneTabletBeatsMusicaSm
+  },
+  beatsMusicaPriceDesktopBeatsMusica: {
+    lg: beatsMusicaPriceDesktopBeatsMusicaLg,
+    md: beatsMusicaPriceDesktopBeatsMusicaMd,
+    sm: beatsMusicaPriceDesktopBeatsMusicaSm
   }
 }
 
 const carbyneSafety = {
-  carbyneSafetyAboutUsMobile: {
-    lg: carbyneSafetyAboutUsMobileLg,
-    md: carbyneSafetyAboutUsMobileMd,
-    sm: carbyneSafetyAboutUsMobileSm
-  },
-  carbyneSafetyAboutUs: {
-    lg: carbyneSafetyAboutUsLg,
-    md: carbyneSafetyAboutUsMd,
-    sm: carbyneSafetyAboutUsSm
-  },
-  carbyneSafetyContactUs: {
-    lg: carbyneSafetyContactUsLg,
-    md: carbyneSafetyContactUsMd,
-    sm: carbyneSafetyContactUsSm
+  carbyneSafetyAboutUsDesktopCarbyne: {
+    lg: carbyneSafetyAboutUsDesktopCarbyneLg,
+    md: carbyneSafetyAboutUsDesktopCarbyneMd,
+    sm: carbyneSafetyAboutUsDesktopCarbyneSm
   },
   carbyneSafetyCover: {
     lg: carbyneSafetyCoverLg,
     md: carbyneSafetyCoverMd,
     sm: carbyneSafetyCoverSm
   },
-  carbyneSafetyHomeMobile: {
-    lg: carbyneSafetyHomeMobileLg,
-    md: carbyneSafetyHomeMobileMd,
-    sm: carbyneSafetyHomeMobileSm
+  carbyneSafetyHomeDesktopCarbyneSafety: {
+    lg: carbyneSafetyHomeDesktopCarbyneSafetyLg,
+    md: carbyneSafetyHomeDesktopCarbyneSafetyMd,
+    sm: carbyneSafetyHomeDesktopCarbyneSafetySm
   },
-  carbyneSafetyHome: {
-    lg: carbyneSafetyHomeLg,
-    md: carbyneSafetyHomeMd,
-    sm: carbyneSafetyHomeSm
+  carbyneSafetyHomePhoneCarbyneSafety: {
+    lg: carbyneSafetyHomePhoneCarbyneSafetyLg,
+    md: carbyneSafetyHomePhoneCarbyneSafetyMd,
+    sm: carbyneSafetyHomePhoneCarbyneSafetySm
   },
-  carbyneSafetyProductsMobile: {
-    lg: carbyneSafetyProductsMobileLg,
-    md: carbyneSafetyProductsMobileMd,
-    sm: carbyneSafetyProductsMobileSm
+  carbyneSafetyHomeProductsPhoneCarbyne: {
+    lg: carbyneSafetyHomeProductsPhoneCarbyneLg,
+    md: carbyneSafetyHomeProductsPhoneCarbyneMd,
+    sm: carbyneSafetyHomeProductsPhoneCarbyneSm
   },
-  carbyneSafetyProducts: {
-    lg: carbyneSafetyProductsLg,
-    md: carbyneSafetyProductsMd,
-    sm: carbyneSafetyProductsSm
+  carbyneSafetyProductsDesktopCarbyne: {
+    lg: carbyneSafetyProductsDesktopCarbyneLg,
+    md: carbyneSafetyProductsDesktopCarbyneMd,
+    sm: carbyneSafetyProductsDesktopCarbyneSm
   }
 }
 
 const circurela = {
-  circurelaAboutUsMobile: {
-    lg: circurelaAboutUsMobileLg,
-    md: circurelaAboutUsMobileMd,
-    sm: circurelaAboutUsMobileSm
-  },
-  circurelaAboutUs: {
-    lg: circurelaAboutUsLg,
-    md: circurelaAboutUsMd,
-    sm: circurelaAboutUsSm
-  },
   circurelaCover: {
     lg: circurelaCoverLg,
     md: circurelaCoverMd,
     sm: circurelaCoverSm
   },
-  circurelaEvents: {
-    lg: circurelaEventsLg,
-    md: circurelaEventsMd,
-    sm: circurelaEventsSm
+  circurelaEventsCircurela: {
+    lg: circurelaEventsCircurelaLg,
+    md: circurelaEventsCircurelaMd,
+    sm: circurelaEventsCircurelaSm
   },
-  circurelaHomeMobile: {
-    lg: circurelaHomeMobileLg,
-    md: circurelaHomeMobileMd,
-    sm: circurelaHomeMobileSm
+  circurelaHomeAndMenuCircurela: {
+    lg: circurelaHomeAndMenuCircurelaLg,
+    md: circurelaHomeAndMenuCircurelaMd,
+    sm: circurelaHomeAndMenuCircurelaSm
   },
-  circurelaHome: {
-    lg: circurelaHomeLg,
-    md: circurelaHomeMd,
-    sm: circurelaHomeSm
+  circurelaHomePhoneCircurela: {
+    lg: circurelaHomePhoneCircurelaLg,
+    md: circurelaHomePhoneCircurelaMd,
+    sm: circurelaHomePhoneCircurelaSm
   },
-  circurelaInformation: {
-    lg: circurelaInformationLg,
-    md: circurelaInformationMd,
-    sm: circurelaInformationSm
+  circurelaMenuPhoneCircurela: {
+    lg: circurelaMenuPhoneCircurelaLg,
+    md: circurelaMenuPhoneCircurelaMd,
+    sm: circurelaMenuPhoneCircurelaSm
   },
-  circurelaMenuMobile: {
-    lg: circurelaMenuMobileLg,
-    md: circurelaMenuMobileMd,
-    sm: circurelaMenuMobileSm
-  },
-  circurelaMenu: {
-    lg: circurelaMenuLg,
-    md: circurelaMenuMd,
-    sm: circurelaMenuSm
-  },
-  circurelaSocialMobile: {
-    lg: circurelaSocialMobileLg,
-    md: circurelaSocialMobileMd,
-    sm: circurelaSocialMobileSm
+  circurelaPhoneCircurela: {
+    lg: circurelaPhoneCircurelaLg,
+    md: circurelaPhoneCircurelaMd,
+    sm: circurelaPhoneCircurelaSm
   }
 }
 
 const colegioLaUnion = {
-  colegioLaUnionAboutUs: {
-    lg: colegioLaUnionAboutUsLg,
-    md: colegioLaUnionAboutUsMd,
-    sm: colegioLaUnionAboutUsSm
+  colegioLaUnionAboutDesktopColegioLaUnion: {
+    lg: colegioLaUnionAboutDesktopColegioLaUnionLg,
+    md: colegioLaUnionAboutDesktopColegioLaUnionMd,
+    sm: colegioLaUnionAboutDesktopColegioLaUnionSm
   },
   colegioLaUnionCover: {
     lg: colegioLaUnionCoverLg,
     md: colegioLaUnionCoverMd,
     sm: colegioLaUnionCoverSm
   },
-  colegioLaUnionDetailInfo: {
-    lg: colegioLaUnionDetailInfoLg,
-    md: colegioLaUnionDetailInfoMd,
-    sm: colegioLaUnionDetailInfoSm
+  colegioLaUnionHomeDesktopColegioLaUnion: {
+    lg: colegioLaUnionHomeDesktopColegioLaUnionLg,
+    md: colegioLaUnionHomeDesktopColegioLaUnionMd,
+    sm: colegioLaUnionHomeDesktopColegioLaUnionSm
   },
-  colegioLaUnionHome: {
-    lg: colegioLaUnionHomeLg,
-    md: colegioLaUnionHomeMd,
-    sm: colegioLaUnionHomeSm
+  colegioLaUnionHomePhoneColegioLaUnion: {
+    lg: colegioLaUnionHomePhoneColegioLaUnionLg,
+    md: colegioLaUnionHomePhoneColegioLaUnionMd,
+    sm: colegioLaUnionHomePhoneColegioLaUnionSm
   },
-  colegioLaUnionIpad: {
-    lg: colegioLaUnionIpadLg,
-    md: colegioLaUnionIpadMd,
-    sm: colegioLaUnionIpadSm
-  },
-  colegioLaUnionLaptop: {
-    lg: colegioLaUnionLaptopLg,
-    md: colegioLaUnionLaptopMd,
-    sm: colegioLaUnionLaptopSm
-  },
-  colegioLaUnionMobile: {
-    lg: colegioLaUnionMobileLg,
-    md: colegioLaUnionMobileMd,
-    sm: colegioLaUnionMobileSm
+  colegioLaUnionServicesDesktopColegioLaUnion: {
+    lg: colegioLaUnionServicesDesktopColegioLaUnionLg,
+    md: colegioLaUnionServicesDesktopColegioLaUnionMd,
+    sm: colegioLaUnionServicesDesktopColegioLaUnionSm
   }
 }
 
 const eurogourmet = {
-  eurogourmetAboutUsMobile: {
-    lg: eurogourmetAboutUsMobileLg,
-    md: eurogourmetAboutUsMobileMd,
-    sm: eurogourmetAboutUsMobileSm
+  eurogourmetAbouUsPhoneEurogourmet: {
+    lg: eurogourmetAbouUsPhoneEurogourmetLg,
+    md: eurogourmetAbouUsPhoneEurogourmetMd,
+    sm: eurogourmetAbouUsPhoneEurogourmetSm
   },
-  eurogourmetAboutUs: {
-    lg: eurogourmetAboutUsLg,
-    md: eurogourmetAboutUsMd,
-    sm: eurogourmetAboutUsSm
-  },
-  eurogourmetBlog: {
-    lg: eurogourmetBlogLg,
-    md: eurogourmetBlogMd,
-    sm: eurogourmetBlogSm
+  eurogourmetBlogDesktopEurogourmet: {
+    lg: eurogourmetBlogDesktopEurogourmetLg,
+    md: eurogourmetBlogDesktopEurogourmetMd,
+    sm: eurogourmetBlogDesktopEurogourmetSm
   },
   eurogourmetCover: {
     lg: eurogourmetCoverLg,
     md: eurogourmetCoverMd,
     sm: eurogourmetCoverSm
   },
-  eurogourmetEcommerce: {
-    lg: eurogourmetEcommerceLg,
-    md: eurogourmetEcommerceMd,
-    sm: eurogourmetEcommerceSm
+  eurogourmetHomeDesktopEurogourmet: {
+    lg: eurogourmetHomeDesktopEurogourmetLg,
+    md: eurogourmetHomeDesktopEurogourmetMd,
+    sm: eurogourmetHomeDesktopEurogourmetSm
   },
-  eurogourmetHomeMobile: {
-    lg: eurogourmetHomeMobileLg,
-    md: eurogourmetHomeMobileMd,
-    sm: eurogourmetHomeMobileSm
+  eurogourmetProductPreviewDesktop: {
+    lg: eurogourmetProductPreviewDesktopLg,
+    md: eurogourmetProductPreviewDesktopMd,
+    sm: eurogourmetProductPreviewDesktopSm
   },
-  eurogourmetHome: {
-    lg: eurogourmetHomeLg,
-    md: eurogourmetHomeMd,
-    sm: eurogourmetHomeSm
-  },
-  eurogourmetProductDetailMobile: {
-    lg: eurogourmetProductDetailMobileLg,
-    md: eurogourmetProductDetailMobileMd,
-    sm: eurogourmetProductDetailMobileSm
-  },
-  eurogourmetProductPreview: {
-    lg: eurogourmetProductPreviewLg,
-    md: eurogourmetProductPreviewMd,
-    sm: eurogourmetProductPreviewSm
+  eurogourmetProductsAndHomePhoneEurogourmet: {
+    lg: eurogourmetProductsAndHomePhoneEurogourmetLg,
+    md: eurogourmetProductsAndHomePhoneEurogourmetMd,
+    sm: eurogourmetProductsAndHomePhoneEurogourmetSm
   }
 }
 
 const rkPower = {
-  rkPowerAboutUsMobile: {
-    lg: rkPowerAboutUsMobileLg,
-    md: rkPowerAboutUsMobileMd,
-    sm: rkPowerAboutUsMobileSm
+  rkPowerAboutDesktopRkPower: {
+    lg: rkPowerAboutDesktopRkPowerLg,
+    md: rkPowerAboutDesktopRkPowerMd,
+    sm: rkPowerAboutDesktopRkPowerSm
   },
-  rkPowerAboutUs: {
-    lg: rkPowerAboutUsLg,
-    md: rkPowerAboutUsMd,
-    sm: rkPowerAboutUsSm
-  },
-  rkPowerContactUs: {
-    lg: rkPowerContactUsLg,
-    md: rkPowerContactUsMd,
-    sm: rkPowerContactUsSm
+  rkPowerAboutUsPhoneRkPower: {
+    lg: rkPowerAboutUsPhoneRkPowerLg,
+    md: rkPowerAboutUsPhoneRkPowerMd,
+    sm: rkPowerAboutUsPhoneRkPowerSm
   },
   rkPowerCover: {
     lg: rkPowerCoverLg,
     md: rkPowerCoverMd,
     sm: rkPowerCoverSm
   },
-  rkPowerHomeMobile: {
-    lg: rkPowerHomeMobileLg,
-    md: rkPowerHomeMobileMd,
-    sm: rkPowerHomeMobileSm
+  rkPowerHomeDesktopAboutUsPhoneRkPower: {
+    lg: rkPowerHomeDesktopAboutUsPhoneRkPowerLg,
+    md: rkPowerHomeDesktopAboutUsPhoneRkPowerMd,
+    sm: rkPowerHomeDesktopAboutUsPhoneRkPowerSm
   },
-  rkPowerHome: {
-    lg: rkPowerHomeLg,
-    md: rkPowerHomeMd,
-    sm: rkPowerHomeSm
+  rkPowerHomePhoneRkPower: {
+    lg: rkPowerHomePhoneRkPowerLg,
+    md: rkPowerHomePhoneRkPowerMd,
+    sm: rkPowerHomePhoneRkPowerSm
   },
-  rkPowerInfoDetail: {
-    lg: rkPowerInfoDetailLg,
-    md: rkPowerInfoDetailMd,
-    sm: rkPowerInfoDetailSm
+  rkPowerInfoProductDesktopRkPower: {
+    lg: rkPowerInfoProductDesktopRkPowerLg,
+    md: rkPowerInfoProductDesktopRkPowerMd,
+    sm: rkPowerInfoProductDesktopRkPowerSm
   }
 }
 
@@ -388,30 +351,35 @@ const tentacionesGourmet = {
     md: tentacionesGourmetCoverMd,
     sm: tentacionesGourmetCoverSm
   },
-  tentacionesGourmetHomeMobile: {
-    lg: tentacionesGourmetHomeMobileLg,
-    md: tentacionesGourmetHomeMobileMd,
-    sm: tentacionesGourmetHomeMobileSm
+  tentacionesGourmetDeliverPhoneTentacionesGourmet: {
+    lg: tentacionesGourmetDeliverPhoneTentacionesGourmetLg,
+    md: tentacionesGourmetDeliverPhoneTentacionesGourmetMd,
+    sm: tentacionesGourmetDeliverPhoneTentacionesGourmetSm
   },
-  tentacionesGourmetHome: {
-    lg: tentacionesGourmetHomeLg,
-    md: tentacionesGourmetHomeMd,
-    sm: tentacionesGourmetHomeSm
+  tentacionesGourmetHomeDesktopTentacionesGourmet: {
+    lg: tentacionesGourmetHomeDesktopTentacionesGourmetLg,
+    md: tentacionesGourmetHomeDesktopTentacionesGourmetMd,
+    sm: tentacionesGourmetHomeDesktopTentacionesGourmetSm
   },
-  tentacionesGourmetLocales: {
-    lg: tentacionesGourmetLocalesLg,
-    md: tentacionesGourmetLocalesMd,
-    sm: tentacionesGourmetLocalesSm
+  tentacionesGourmetPhoneTentacionesGourmet: {
+    lg: tentacionesGourmetPhoneTentacionesGourmetLg,
+    md: tentacionesGourmetPhoneTentacionesGourmetMd,
+    sm: tentacionesGourmetPhoneTentacionesGourmetSm
   },
-  tentacionesGourmetProductDetail: {
-    lg: tentacionesGourmetProductDetailLg,
-    md: tentacionesGourmetProductDetailMd,
-    sm: tentacionesGourmetProductDetailSm
+  tentacionesGourmetPreviewProductDesktopTentacionesGourmet: {
+    lg: tentacionesGourmetPreviewProductDesktopTentacionesGourmetLg,
+    md: tentacionesGourmetPreviewProductDesktopTentacionesGourmetMd,
+    sm: tentacionesGourmetPreviewProductDesktopTentacionesGourmetSm
   },
-  tentacionesGourmetStore: {
-    lg: tentacionesGourmetStoreLg,
-    md: tentacionesGourmetStoreMd,
-    sm: tentacionesGourmetStoreSm
+  tentacionesGourmetStoreDesktopPhoneTentacionesGourmet: {
+    lg: tentacionesGourmetStoreDesktopPhoneTentacionesGourmetLg,
+    md: tentacionesGourmetStoreDesktopPhoneTentacionesGourmetMd,
+    sm: tentacionesGourmetStoreDesktopPhoneTentacionesGourmetSm
+  },
+  tentacionesGourmetStorePhoneTentacionesGourmet: {
+    lg: tentacionesGourmetStorePhoneTentacionesGourmetLg,
+    md: tentacionesGourmetStorePhoneTentacionesGourmetMd,
+    sm: tentacionesGourmetStorePhoneTentacionesGourmetSm
   }
 }
 
