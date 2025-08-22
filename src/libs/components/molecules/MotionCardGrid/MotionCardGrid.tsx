@@ -6,7 +6,6 @@ import { CardGrid, TCardItem } from './CardGrid'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { Badge } from '@Components/atoms/Badge/Badge'
-import { Title } from '../Title'
 import { uuidV7 } from '@Utils/generateKeys'
 
 export interface IMotionCardGridProps {
@@ -34,7 +33,7 @@ export default function MotionCardGrid({
 
       <AnimatePresence>
         {selectedId && selectedItem && (
-          <div className="fixed inset-0 flex items-start justify-center z-50 overflow-y-auto">
+          <div className="fixed inset-0 flex items-center justify-center z-50 ">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -46,9 +45,9 @@ export default function MotionCardGrid({
             <motion.div
               layoutId={`card-container-${selectedId}`}
               className={clsx(
-                'bg-slate-900 rounded-2xl overflow-hidden w-[90%] max-w-[1200px] pointer-events-auto relative z-50 my-[5vw]',
+                'bg-slate-900 overflow-y-auto w-[90%] max-w-[1200px] pointer-events-auto relative z-50 h-[90dvh]',
                 'md:w-[90%]',
-                'lg:my-[2%] lg:w-[80%]'
+                'lg:w-[80%]'
               )}
             >
               <motion.div
@@ -69,15 +68,16 @@ export default function MotionCardGrid({
                 />
               </motion.div>
               <div
-                className={clsx('flex flex-col gap-4 p-9', 'md:gap-5 md:p-12')}
+                className={clsx(
+                  'flex flex-col gap-4 px-9 pb-9',
+                  'md:px-12 md:pb-12'
+                )}
               >
-                <motion.div
-                  layoutId={`title-container-${selectedId}`}
+                <div
                   className={clsx(
-                    'flex flex-col gap-4 items-start',
+                    'flex flex-col gap-4 items-start sticky top-0 z-30 backdrop-blur-2xl bg-slate-900/80 py-8',
                     'md:items-start md:gap-3'
                   )}
-                  animate={{ opacity: 1, position: 'sticky', top: 40 }}
                 >
                   <motion.div
                     layoutId={`badge-container-${selectedId}`}
@@ -95,11 +95,19 @@ export default function MotionCardGrid({
                       />
                     ))}
                   </motion.div>
-                  <Title
-                    title={selectedItem.title}
-                    className={clsx('md:w-9/12')}
-                  />
-                </motion.div>
+                  <motion.div
+                    layoutId={`title-container-${selectedId}`}
+                    className="w-full"
+                  >
+                    {/* <Title
+                      title={selectedItem.title}
+                      className={clsx('md:w-9/12')}
+                    /> */}
+                    <h2 className={clsx('title-md', 'md:w-10/12 md:title-lg')}>
+                      {selectedItem.title}
+                    </h2>
+                  </motion.div>
+                </div>
                 <motion.div
                   className={clsx('leading-relaxed')}
                   initial={{ opacity: 0 }}

@@ -68,7 +68,9 @@ export function CardGrid({ items, onCardClick }: Readonly<TCardGridProps>) {
                   quality={100}
                 />
               </motion.div>
+
               <div className="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-slate-950/60 to-slate-950/0" />
+
               <motion.div
                 layoutId={`title-container-${id}`}
                 className="absolute top-4 left-4"
@@ -92,6 +94,7 @@ export function CardGrid({ items, onCardClick }: Readonly<TCardGridProps>) {
               </motion.div>
             </motion.div>
           </div>
+
           <button
             onClick={() => onCardClick(id)}
             className="absolute inset-0 cursor-pointer"
