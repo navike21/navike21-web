@@ -69,11 +69,11 @@ export function CardGrid({ items, onCardClick }: Readonly<TCardGridProps>) {
                 />
               </motion.div>
 
-              <div className="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-slate-950/60 to-slate-950/0" />
+              <div className="absolute inset-0 bg-gradient-to-br from-slate-950/90 via-slate-950/50 to-slate-950/0" />
 
               <motion.div
                 layoutId={`title-container-${id}`}
-                className="absolute top-4 left-4"
+                className="absolute top-4 left-4 right-4"
               >
                 <motion.div
                   layoutId={`badge-container-${id}`}

@@ -39,13 +39,14 @@ export default function MotionCardGrid({
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2, delay: 0.1 }}
-              className="fixed inset-0 bg-slate-950/80 z-40"
+              className="fixed inset-0 bg-slate-900/70 z-40 backdrop-blur-sm"
               onClick={() => setSelectedId(null)}
             />
+
             <motion.div
               layoutId={`card-container-${selectedId}`}
               className={clsx(
-                'bg-slate-900 overflow-y-auto w-[90%] max-w-[1200px] pointer-events-auto relative z-50 h-[90dvh]',
+                'overflow-y-auto w-[90%] max-w-[1200px] pointer-events-auto relative z-50 h-[85dvh] rounded-xl',
                 'md:w-[90%]',
                 'lg:w-[80%]'
               )}
@@ -69,13 +70,14 @@ export default function MotionCardGrid({
               </motion.div>
               <div
                 className={clsx(
-                  'flex flex-col gap-4 px-9 pb-9',
+                  'flex flex-col gap-4 px-9 bg-slate-900 relative',
                   'md:px-12 md:pb-12'
                 )}
               >
                 <div
                   className={clsx(
-                    'flex flex-col gap-4 items-start sticky top-0 z-30 backdrop-blur-2xl bg-slate-900/80 py-8',
+                    'flex flex-col gap-4 items-start sticky -top-px z-30 w-[101%] py-8 -ml-px -mr-px',
+                    'bg-slate-900',
                     'md:items-start md:gap-3'
                   )}
                 >
@@ -99,11 +101,7 @@ export default function MotionCardGrid({
                     layoutId={`title-container-${selectedId}`}
                     className="w-full"
                   >
-                    {/* <Title
-                      title={selectedItem.title}
-                      className={clsx('md:w-9/12')}
-                    /> */}
-                    <h2 className={clsx('title-md', 'md:w-10/12 md:title-lg')}>
+                    <h2 className={clsx('title-sm', 'md:w-10/12 md:title-md')}>
                       {selectedItem.title}
                     </h2>
                   </motion.div>
@@ -114,11 +112,25 @@ export default function MotionCardGrid({
                   animate={{ opacity: 1 }}
                 >
                   {selectedItem.description}
-                  <div className={clsx('flex flex-col mt-9 gap-6')}>
-                    {selectedItem.gallery.map(img => (
+                  <div
+                    className={clsx(
+                      'grid grid-cols-1 mt-10 gap-6',
+                      'md:grid-cols-2'
+                    )}
+                  >
+                    {selectedItem.gallery.map((img, index) => (
                       <Image
                         key={uuidV7()}
-                        className="w-full h-full object-cover object-center"
+                        className={clsx(
+                          'w-full h-full object-cover object-center aspect-[13/9] rounded-3xl',
+                          {
+                            'md:col-span-1':
+                              selectedItem.gallery.length % 2 === 0,
+                            'md:col-span-2':
+                              selectedItem.gallery.length % 2 === 1 &&
+                              index === selectedItem.gallery.length - 1
+                          }
+                        )}
                         src={img}
                         alt={selectedItem.title}
                         width={1200}
@@ -127,6 +139,7 @@ export default function MotionCardGrid({
                       />
                     ))}
                   </div>
+                  <div className="bg-slate-900 w-[101%] -bottom-px h-9 z-[51] sticky -ml-px -mr-px" />
                 </motion.div>
               </div>
             </motion.div>
