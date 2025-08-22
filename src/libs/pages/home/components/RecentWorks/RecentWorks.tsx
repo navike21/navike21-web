@@ -1,11 +1,9 @@
 'use client'
 
 import { Content } from '@Components/atoms'
-import {
-  SliderMobileDevice,
-  SplitSectionWithImage
-} from '@Components/molecules'
+import { SplitSectionWithImage } from '@Components/molecules'
 import { useRecentWorks } from './RecentWorks.hooks'
+import Image from 'next/image'
 
 export const RecentWorks = () => {
   const {
@@ -22,9 +20,13 @@ export const RecentWorks = () => {
       <Content className="sectionContent">
         <SplitSectionWithImage
           image={
-            <SliderMobileDevice
-              className="w-7/12 z-10"
-              images={imagesDeviceProject}
+            <Image
+              src={imagesDeviceProject}
+              alt={title}
+              layout="responsive"
+              width={500}
+              height={300}
+              className="rounded-2xl object-cover relative z-10"
             />
           }
           title={title}

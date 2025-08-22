@@ -1,10 +1,10 @@
 'use client'
 
-import { IImageMobileDevice } from '@Components/molecules'
 import { clients } from '@Constants/clients'
 import { ES } from '@Constants/languages'
 import { PROJECTS } from '@Constants/pages'
 import { useGetCurrentLanguage } from '@Hooks/useGetCurrentLanguage'
+import { projects } from '@Translations/common'
 import { recentWorks } from '@Translations/pages'
 import { getInfoPage } from '@Utils/getInfoPage'
 
@@ -14,15 +14,21 @@ export const useRecentWorks = () => {
   const { title, description, controlActionText, subtitle } =
     recentWorks[currentLang]
 
-  const imagesDeviceProject: IImageMobileDevice[] = clients
-    .filter(({ images: { mobile = [] } = {} }) => mobile.length > 0)
-    .slice(0, 4)
-    .map(({ images: { mobile = [] } = {}, id }) => {
-      return {
-        image: mobile[0],
-        alt: id
+  const imagesDeviceProject = clients.map(({ id }) => {
+    const galleryProject = projects[currentLang].find(
+      ({ clientId }) => clientId === id
+    )?.gallery
+
+    if (galleryProject) {
+      const galleryCover = Object.keys(galleryProject).find(
+        key => !key.toLowerCase().endsWith('cover')
+      )
+
+      if (galleryCover) {
+        return galleryProject[galleryCover].lg.src
       }
-    })
+    }
+  })
 
   const controlActionLink = getInfoPage({
     key: PROJECTS,
@@ -35,6 +41,8 @@ export const useRecentWorks = () => {
     controlActionLink,
     controlActionText,
     subtitle,
-    imagesDeviceProject
+    imagesDeviceProject: imagesDeviceProject.filter(
+      item => item !== undefined
+    )[0]
   }
 }

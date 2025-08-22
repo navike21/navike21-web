@@ -11,19 +11,14 @@ import {
   TentacionesGourmet
 } from '@Components/atoms'
 import { ISvgProps } from '@Types/svg'
-import { StaticImageData } from 'next/image'
 import { ReactNode } from 'react'
 
-interface IClientImage {
-  mobile: StaticImageData[]
-}
 interface IClient {
   id: string
   name: string
   best?: boolean
   url: string
   logo: (params: ISvgProps) => ReactNode
-  images?: IClientImage
 }
 
 export const clients: IClient[] = [
