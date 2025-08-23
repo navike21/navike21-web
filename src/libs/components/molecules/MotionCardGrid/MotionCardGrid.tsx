@@ -49,7 +49,8 @@ export default function MotionCardGrid({
               className={clsx(
                 'w-[90%] max-w-[1200px] pointer-events-auto relative z-10',
                 'md:w-[80%]',
-                'lg:w-[60%]'
+                'lg:w-[75%]',
+                'xl:w-[60%] xl:min-w-[1000px]'
               )}
             >
               <motion.button
