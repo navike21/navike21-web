@@ -42,7 +42,10 @@ export function CardGrid({ items, onCardClick }: Readonly<TCardGridProps>) {
             }
           )}
         >
-          <div className="w-full h-full relative block pointer-events-none">
+          <button
+            className="group w-full h-full relative block cursor-pointer"
+            onClick={() => onCardClick(id)}
+          >
             <motion.div
               layoutId={`card-container-${id}`}
               className="pointer-events-auto relative rounded-2xl bg-neutral-900 overflow-hidden w-full h-full m-auto"
@@ -60,7 +63,11 @@ export function CardGrid({ items, onCardClick }: Readonly<TCardGridProps>) {
                 )}
               >
                 <Image
-                  className="w-full h-full object-cover object-top"
+                  className={clsx(
+                    'w-full h-full object-cover object-top scale-3d scale-105',
+                    'transform transition-all duration-700 ease-out',
+                    'group-hover:scale-100'
+                  )}
                   src={image}
                   alt={title}
                   fill
@@ -88,17 +95,17 @@ export function CardGrid({ items, onCardClick }: Readonly<TCardGridProps>) {
                     />
                   ))}
                 </motion.div>
-                <h2 className="mt-2 title-md max-w-[300px] text-white">
+                <h2 className="mt-2 title-md max-w-[300px] text-white text-left">
                   {title}
                 </h2>
               </motion.div>
             </motion.div>
-          </div>
+          </button>
 
-          <button
+          {/* <button
             onClick={() => onCardClick(id)}
             className="absolute inset-0 cursor-pointer"
-          />
+          /> */}
         </li>
       ))}
     </ul>
