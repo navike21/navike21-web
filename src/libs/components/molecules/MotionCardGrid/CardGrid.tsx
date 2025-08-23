@@ -63,8 +63,8 @@ export function CardGrid({ items, onCardClick }: Readonly<TCardGridProps>) {
                   className="w-full h-full object-cover object-top"
                   src={image}
                   alt={title}
-                  width={1400}
-                  height={400}
+                  fill
+                  sizes="(max-width: 768px) 150vw, (max-width: 1200px) 1000px, 1200px"
                   quality={100}
                 />
               </motion.div>
