@@ -49,21 +49,26 @@ export default function MotionCardGrid({
               className={clsx(
                 'w-[90%] max-w-[1200px] pointer-events-auto relative z-10',
                 'md:w-[80%]',
-                'lg:w-[75%]'
+                'lg:w-[60%]'
               )}
             >
               <motion.button
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 onClick={() => setSelectedId(null)}
-                className="absolute z-30 -right-12 rounded-full cursor-pointer"
+                className={clsx(
+                  'absolute z-30 rounded-full cursor-pointer right-0 left-0 m-auto -top-6 bg-gradient-primary flex items-center justify-center w-11 h-11',
+                  'md:left-auto md:m-0 md:right-4 md:top-4',
+                  'lg:-right-14 lg:top-2 lg:bg-none lg:w-fit lg:h-fit'
+                )}
               >
-                <X size={40} />
+                <X className={clsx('w-9', 'lg:w-11 lg:h-11')} />
               </motion.button>
               <div
                 className={clsx(
-                  'overflow-y-auto overflow-x-hidden w-full h-[90dvh] rounded-2xl',
-                  'md:h-[85dvh]'
+                  'overflow-y-auto overflow-x-hidden w-full h-[80dvh] rounded-2xl',
+                  'md:h-[85dvh]',
+                  'md:h-[90dvh]'
                 )}
               >
                 <motion.div
@@ -85,7 +90,7 @@ export default function MotionCardGrid({
                 </motion.div>
                 <div
                   className={clsx(
-                    'flex flex-col gap-4 px-9 bg-slate-900 relative z-[11]',
+                    'flex flex-col px-9 bg-slate-900 relative z-[11]',
                     'md:px-12'
                   )}
                 >
@@ -117,7 +122,11 @@ export default function MotionCardGrid({
                       className="w-full"
                     >
                       <h2
-                        className={clsx('title-sm', 'md:w-10/12 md:title-md')}
+                        className={clsx(
+                          'title-sm',
+                          'md:w-10/12 md:title-md',
+                          'lg:title-lg'
+                        )}
                       >
                         {selectedItem.title}
                       </h2>
