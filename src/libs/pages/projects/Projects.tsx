@@ -5,6 +5,7 @@ import { useProjects } from './useProjects'
 import clsx from 'clsx'
 import { Content } from '@Components/atoms'
 import MotionCardGrid from '@Components/molecules/MotionCardGrid/MotionCardGrid'
+import { ContactSectionBanner } from '@Components/bannerSections'
 
 export const Projects = () => {
   const { heroImage, projects } = useProjects()
@@ -28,6 +29,7 @@ export const Projects = () => {
           <MotionCardGrid data={projects} />
         </Content>
       </div>
+      <ContactSectionBanner />
     </>
   )
 }

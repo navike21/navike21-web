@@ -1,14 +1,10 @@
 'use client'
 
-import {
-  womenWorkingWithPostItsSideView,
-  youngManagerStandingUpRelieveBackPain
-} from '@Constants/backgroundImages'
+import { womenWorkingWithPostItsSideView } from '@Constants/backgroundImages'
 import { ES } from '@Constants/languages'
-import { CONTACT, SERVICES } from '@Constants/pages'
+import { SERVICES } from '@Constants/pages'
 import { useGetCurrentLanguage } from '@Hooks/useGetCurrentLanguage'
 import {
-  contactUsServices,
   heroSectionServices,
   services,
   servicesList
@@ -38,9 +34,6 @@ export const useServices = () => {
     heroSectionText: heroSectionServices[currentLang],
     servicesList: servicesList[currentLang],
     currentLang,
-    services: servicesData,
-    contactLink: getInfoPage({ lang: currentLang, key: CONTACT }),
-    contactUs: contactUsServices[currentLang],
-    imageContact: youngManagerStandingUpRelieveBackPain.lg.src
+    services: servicesData
   }
 }

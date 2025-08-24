@@ -1,21 +1,14 @@
 'use client'
 
-import { BackgroundParallax, Content, LinkButton } from '@Components/atoms'
+import { Content } from '@Components/atoms'
 import { Card, HeroSectionSubPage, Title } from '@Components/molecules'
 import clsx from 'clsx'
 import { useServices } from './useServices'
+import { ContactSectionBanner } from '@Components/bannerSections'
 
 export const Services = () => {
-  const {
-    heroImage,
-    currentLang,
-    services,
-    contactLink,
-    imageContact,
-    heroSectionText,
-    servicesList,
-    contactUs
-  } = useServices()
+  const { heroImage, currentLang, services, heroSectionText, servicesList } =
+    useServices()
   return (
     <>
       <HeroSectionSubPage
@@ -59,36 +52,7 @@ export const Services = () => {
           </div>
         </Content>
       </div>
-      <div className="relative">
-        <BackgroundParallax
-          backgroundImage={imageContact}
-          className={clsx('absolute inset-0 w-full h-full z-0 top-0 bottom-0')}
-          startPosition="center"
-          overlay
-        />
-        <Content
-          className={clsx(
-            'sectionContent flex-col flex gap-16 relative z-10',
-            'md:items-center md:gap-24 md:justify-between '
-          )}
-        >
-          <div
-            className={clsx(
-              'w-full pt-60',
-              'md:grid md:grid-cols-2 md:gap-12 md:pt-0'
-            )}
-          >
-            <section className="flex flex-col gap-4">
-              <Title title={contactUs.title} align="left" />
-              <p>{contactUs.description}</p>
-              <LinkButton href={contactLink.href} className="mt-4">
-                {contactLink.text}
-              </LinkButton>
-            </section>
-            <span />
-          </div>
-        </Content>
-      </div>
+      <ContactSectionBanner />
     </>
   )
 }
