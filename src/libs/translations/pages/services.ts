@@ -12,6 +12,16 @@ import {
 import { TLanguageKey } from '@Types/languages'
 import { StaticImageData } from 'next/image'
 import { IMetaData } from '@Types/metaData'
+import {
+  DIGITAL_MARKETING,
+  ECOMMERCE,
+  EMAIL_MARKETING,
+  MOBILE_APPS,
+  SEO,
+  SOFTWARE_DEVELOPMENT,
+  UI_UX,
+  WEB_DESIGN
+} from '@Constants/services'
 
 export type TLanguageServiceValue = {
   title: string
@@ -32,7 +42,7 @@ export interface IService {
 
 export const services: IService[] = [
   {
-    id: 'web-design',
+    id: WEB_DESIGN,
     image: homepageLaptop.md,
     language: {
       [ES]: {
@@ -232,7 +242,7 @@ export const services: IService[] = [
     }
   },
   {
-    id: 'eCommerce',
+    id: ECOMMERCE,
     image: handHoldingCardLaptop.md,
     language: {
       [ES]: {
@@ -434,7 +444,7 @@ export const services: IService[] = [
     }
   },
   {
-    id: 'software-development',
+    id: SOFTWARE_DEVELOPMENT,
     image: programmingWithPerson.md,
     language: {
       [ES]: {
@@ -647,7 +657,7 @@ export const services: IService[] = [
     }
   },
   {
-    id: 'mobile-apps',
+    id: MOBILE_APPS,
     image: nutritionalCounterApp.md,
     language: {
       [ES]: {
@@ -855,7 +865,7 @@ export const services: IService[] = [
     }
   },
   {
-    id: 'marketing-digital',
+    id: DIGITAL_MARKETING,
     image: businessPersonLookingFinanceGraphs.md,
     language: {
       [ES]: {
@@ -1074,7 +1084,7 @@ export const services: IService[] = [
     }
   },
   {
-    id: 'seo',
+    id: SEO,
     image: searchBar.md,
     language: {
       [ES]: {
@@ -1287,7 +1297,7 @@ export const services: IService[] = [
     }
   },
   {
-    id: 'ux-ui-design',
+    id: UI_UX,
     image: viewManWorkingDesk.md,
     language: {
       [ES]: {
@@ -1513,7 +1523,7 @@ export const services: IService[] = [
     }
   },
   {
-    id: 'email-marketing',
+    id: EMAIL_MARKETING,
     image: manCheckingHisEmailLaptop.md,
     language: {
       [ES]: {
