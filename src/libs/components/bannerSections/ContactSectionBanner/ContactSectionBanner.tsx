@@ -1,4 +1,4 @@
-import { BackgroundParallax, Content, LinkButton } from '@Components/atoms'
+import { Content, LinkButton, ParallaxImage } from '@Components/atoms'
 import { Title } from '@Components/molecules'
 import clsx from 'clsx'
 import React from 'react'
@@ -8,10 +8,10 @@ export const ContactSectionBanner = () => {
   const { contactUs, contactLink, imageContact } = useContactSectionBanner()
   return (
     <div className="relative">
-      <BackgroundParallax
-        backgroundImage={imageContact}
+      <ParallaxImage
+        src={imageContact}
         className={clsx('absolute inset-0 w-full h-full z-0 top-0 bottom-0')}
-        startPosition="center"
+        startPositionImage="center"
         overlay
       />
       <Content

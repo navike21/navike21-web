@@ -30,7 +30,7 @@ export const SmoothScroll = ({ children }: ISmoothScrollProps) => {
         wrapper: main.current,
         content: main.current.querySelector('div') as HTMLElement,
         smooth: 2,
-        effects: true,
+        effects: true, // 👈 en esta opción NO usamos data-speed
         smoothTouch: 0.2,
         ignoreMobileResize: true
       })

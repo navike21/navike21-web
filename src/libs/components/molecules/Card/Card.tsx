@@ -1,4 +1,4 @@
-import { BackgroundParallax } from '@Components/atoms'
+import { ParallaxImage } from '@Components/atoms'
 import clsx from 'clsx'
 import { StaticImageData } from 'next/image'
 import Link from 'next/link'
@@ -51,14 +51,14 @@ export const Card = ({
     >
       {image && (
         <>
-          <BackgroundParallax
-            backgroundImage={image.src}
+          <ParallaxImage
+            blurDataURL={image.blurDataURL}
+            src={image.src}
             className={clsx(
               'absolute inset-0 w-full h-full object-cover rounded-lg z-0',
               'transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1)]',
               'group-hover:scale-110'
             )}
-            startPosition="center"
           />
           <div
             className={clsx(

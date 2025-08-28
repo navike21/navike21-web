@@ -53,8 +53,9 @@ export function CardGrid({ items, onCardClick }: Readonly<TCardGridProps>) {
               <motion.div
                 layoutId={`card-image-container-${id}`}
                 className={clsx(
-                  'absolute top-0 overflow-hidden h-[300px] w-[150vw]',
-                  'md:h-[400px] md:w-[1000px]',
+                  'absolute top-0 overflow-hidden h-[200px] w-[150vw]',
+                  'md:h-[300px] md:w-[1000px]',
+                  'lg:h-[400px]',
                   'bg-slate-950',
                   {
                     'left-0': index % 4 === 0 || index % 4 === 3,
@@ -64,9 +65,9 @@ export function CardGrid({ items, onCardClick }: Readonly<TCardGridProps>) {
               >
                 <Image
                   className={clsx(
-                    'w-full h-full object-cover object-top scale-3d scale-105',
+                    'w-full h-full object-cover object-top scale-3d',
                     'transform transition-all duration-700 ease-out',
-                    'group-hover:scale-100'
+                    'group-hover:scale-[1.03]'
                   )}
                   src={image}
                   alt={title}

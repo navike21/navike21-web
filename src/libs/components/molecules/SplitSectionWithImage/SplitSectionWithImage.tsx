@@ -1,14 +1,11 @@
 import clsx from 'clsx'
 import { Title } from '../Title'
-import {
-  BackgroundParallax,
-  GradientDivider,
-  LinkButton
-} from '@Components/atoms'
+import { GradientDivider, LinkButton, ParallaxImage } from '@Components/atoms'
 import { ReactNode } from 'react'
 
 interface ISplitSectionProps {
   image: string | ReactNode
+  blurDataURL?: string
   isGrayScale?: boolean
   title?: string
   subtitle?: string
@@ -25,6 +22,7 @@ interface ISplitSectionProps {
 
 export const SplitSectionWithImage = ({
   image,
+  blurDataURL,
   isGrayScale = false,
   title,
   subtitle,
@@ -56,21 +54,18 @@ export const SplitSectionWithImage = ({
         {typeof image === 'string' ? (
           <div
             className={clsx(
-              'aspect-3/2 rounded-lg shadow-lg w-full',
+              'aspect-3/2 rounded-lg shadow-lg w-full relative',
               'sm:items-start sm:aspect-2/4',
               'md:aspect-1/2 md:max-h-96',
               'lg:col-span-3 lg:max-h-none lg:aspect-4/3'
             )}
           >
-            <BackgroundParallax
-              backgroundImage={image}
-              className={clsx(
-                'w-full h-full object-cover object-center rounded-lg relative z-10',
-                {
-                  grayscale: isGrayScale
-                }
-              )}
-              startPosition="center"
+            <ParallaxImage
+              src={image}
+              blurDataURL={blurDataURL}
+              className={clsx('rounded-lg relative z-10', {
+                grayscale: isGrayScale
+              })}
             />
           </div>
         ) : (

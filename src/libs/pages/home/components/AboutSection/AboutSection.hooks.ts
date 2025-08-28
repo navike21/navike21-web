@@ -29,6 +29,6 @@ export const useAboutSection = () => {
     controlActionText,
     controlActionLink,
     metrics,
-    imageAbout: teamYoungBusinessOfficeFocusIsBusinessman.md
+    imageAbout: teamYoungBusinessOfficeFocusIsBusinessman.lg
   }
 }

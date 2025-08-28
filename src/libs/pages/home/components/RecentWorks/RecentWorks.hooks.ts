@@ -25,7 +25,7 @@ export const useRecentWorks = () => {
       )
 
       if (galleryCover) {
-        return galleryProject[galleryCover].lg.src
+        return galleryProject[galleryCover].lg
       }
     }
   })

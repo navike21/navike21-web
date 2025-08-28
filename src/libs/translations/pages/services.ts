@@ -33,7 +33,7 @@ export interface IService {
 export const services: IService[] = [
   {
     id: 'web-design',
-    image: homepageLaptop.sm,
+    image: homepageLaptop.md,
     language: {
       [ES]: {
         title: 'Desarrollo de páginas web',
@@ -233,7 +233,7 @@ export const services: IService[] = [
   },
   {
     id: 'eCommerce',
-    image: handHoldingCardLaptop.sm,
+    image: handHoldingCardLaptop.md,
     language: {
       [ES]: {
         title: 'Ecommerce web',
@@ -435,7 +435,7 @@ export const services: IService[] = [
   },
   {
     id: 'software-development',
-    image: programmingWithPerson.sm,
+    image: programmingWithPerson.md,
     language: {
       [ES]: {
         title: 'Desarrollo de Software',
@@ -648,7 +648,7 @@ export const services: IService[] = [
   },
   {
     id: 'mobile-apps',
-    image: nutritionalCounterApp.sm,
+    image: nutritionalCounterApp.md,
     language: {
       [ES]: {
         title: 'Aplicaciones móviles',
@@ -856,7 +856,7 @@ export const services: IService[] = [
   },
   {
     id: 'marketing-digital',
-    image: businessPersonLookingFinanceGraphs.sm,
+    image: businessPersonLookingFinanceGraphs.md,
     language: {
       [ES]: {
         title: 'Marketing Digital',
@@ -1075,7 +1075,7 @@ export const services: IService[] = [
   },
   {
     id: 'seo',
-    image: searchBar.sm,
+    image: searchBar.md,
     language: {
       [ES]: {
         title: 'SEO',
@@ -1288,7 +1288,7 @@ export const services: IService[] = [
   },
   {
     id: 'ux-ui-design',
-    image: viewManWorkingDesk.sm,
+    image: viewManWorkingDesk.md,
     language: {
       [ES]: {
         title: 'Diseño UX/UI',
@@ -1514,7 +1514,7 @@ export const services: IService[] = [
   },
   {
     id: 'email-marketing',
-    image: manCheckingHisEmailLaptop.sm,
+    image: manCheckingHisEmailLaptop.md,
     language: {
       [ES]: {
         title: 'Email marketing',

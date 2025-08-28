@@ -1,10 +1,10 @@
 'use client'
 
 import {
-  BackgroundParallax,
   LinkButton,
   Content,
-  TextRotate
+  TextRotate,
+  ParallaxImage
 } from '@Components/atoms'
 import { manWorkingNight } from '@Constants/backgroundImages'
 
@@ -28,10 +28,10 @@ export const HeroSection = () => {
         'lg:aspect-4/2 lg:h-auto'
       )}
     >
-      <BackgroundParallax
-        backgroundImage={manWorkingNight.lg.src}
+      <ParallaxImage
+        src={manWorkingNight.lg.src}
         className="absolute left-0 right-0 top-0 bottom-0"
-        startPosition="top"
+        startPositionImage="top"
         overlay
       />
       <Content
