@@ -13,8 +13,9 @@ export const Logo = ({ className }: ILogoProps) => (
   >
     <defs>
       <linearGradient id="gradient" x1="0%" y1="50%" x2="100%" y2="0%">
-        <stop offset="0%" stopColor="#00bcff" /> {/* cyan-400 */}
-        <stop offset="100%" stopColor="#8200db" /> {/* blue-800 */}
+        <stop offset="0%" stopColor="var(--color-sky-400)" /> {/* cyan-400 */}
+        <stop offset="100%" stopColor="var(--color-purple-800)" />
+        {/* blue-800 */}
       </linearGradient>
     </defs>
     <path d="M40 42H185V176H40V42Z" className="fill-white" />

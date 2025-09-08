@@ -13,11 +13,12 @@ import {
 } from '@Constants/pages'
 import { TLanguageKey } from '@Types/languages'
 import { IMetaData } from '@Types/metaData'
+import { TItemPage } from '@Types/pages'
 
 export type TLanguagePageValue = {
   title: string
   slug: string
-  subPages?: { title: string; slug: string; metaData: IMetaData; id: string }[]
+  subPages?: TItemPage[]
   metaData: IMetaData
 }
 

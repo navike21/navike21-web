@@ -11,27 +11,22 @@ import {
 } from '@Constants/backgroundImages'
 import { TLanguageKey } from '@Types/languages'
 import { StaticImageData } from 'next/image'
-import { IMetaData } from '@Types/metaData'
 import {
-  DIGITAL_MARKETING,
-  ECOMMERCE,
-  EMAIL_MARKETING,
-  MOBILE_APPS,
-  SEO,
-  SOFTWARE_DEVELOPMENT,
-  UI_UX,
-  WEB_DESIGN
+  DIGITAL_MARKETING_SERVICES,
+  ECOMMERCE_SERVICES,
+  EMAIL_MARKETING_SERVICES,
+  MOBILE_APPS_SERVICES,
+  SEO_SERVICES,
+  SOFTWARE_DEVELOPMENT_SERVICES,
+  UI_UX_SERVICES,
+  WEB_DESIGN_SERVICES
 } from '@Constants/services'
-
-export type TLanguageServiceValue = {
-  title: string
-  slug: string
-  description: string
-  metaData: IMetaData
-}
+import { TItemPage } from '@Types/pages'
 
 export type TLanguageService = {
-  [key in TLanguageKey]: TLanguageServiceValue
+  [key in TLanguageKey]: TItemPage & {
+    description: string
+  }
 }
 
 export interface IService {
@@ -42,7 +37,7 @@ export interface IService {
 
 export const services: IService[] = [
   {
-    id: WEB_DESIGN,
+    id: WEB_DESIGN_SERVICES,
     image: homepageLaptop.md,
     language: {
       [ES]: {
@@ -242,7 +237,7 @@ export const services: IService[] = [
     }
   },
   {
-    id: ECOMMERCE,
+    id: ECOMMERCE_SERVICES,
     image: handHoldingCardLaptop.md,
     language: {
       [ES]: {
@@ -444,7 +439,7 @@ export const services: IService[] = [
     }
   },
   {
-    id: SOFTWARE_DEVELOPMENT,
+    id: SOFTWARE_DEVELOPMENT_SERVICES,
     image: programmingWithPerson.md,
     language: {
       [ES]: {
@@ -657,7 +652,7 @@ export const services: IService[] = [
     }
   },
   {
-    id: MOBILE_APPS,
+    id: MOBILE_APPS_SERVICES,
     image: nutritionalCounterApp.md,
     language: {
       [ES]: {
@@ -865,7 +860,7 @@ export const services: IService[] = [
     }
   },
   {
-    id: DIGITAL_MARKETING,
+    id: DIGITAL_MARKETING_SERVICES,
     image: businessPersonLookingFinanceGraphs.md,
     language: {
       [ES]: {
@@ -1084,7 +1079,7 @@ export const services: IService[] = [
     }
   },
   {
-    id: SEO,
+    id: SEO_SERVICES,
     image: searchBar.md,
     language: {
       [ES]: {
@@ -1297,7 +1292,7 @@ export const services: IService[] = [
     }
   },
   {
-    id: UI_UX,
+    id: UI_UX_SERVICES,
     image: viewManWorkingDesk.md,
     language: {
       [ES]: {
@@ -1523,7 +1518,7 @@ export const services: IService[] = [
     }
   },
   {
-    id: EMAIL_MARKETING,
+    id: EMAIL_MARKETING_SERVICES,
     image: manCheckingHisEmailLaptop.md,
     language: {
       [ES]: {

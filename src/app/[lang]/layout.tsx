@@ -25,8 +25,8 @@ export default async function LangLayout({
       <body>
         <Header />
         {/* <SmoothScroll> */}
-        <main>{children}</main>
-        <Footer />
+          <main>{children}</main>
+          <Footer />
         {/* </SmoothScroll> */}
       </body>
     </html>

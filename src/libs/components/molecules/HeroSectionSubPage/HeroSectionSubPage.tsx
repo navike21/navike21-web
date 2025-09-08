@@ -29,13 +29,12 @@ export const HeroSectionSubPage = ({
       <div
         className={clsx(
           'absolute left-0 right-0 top-0 -bottom-7 z-10',
-          'bg-gradient-to-b from-slate-950/0 via-slate-950/90 via-80% to-slate-950'
+          'bg-gradient-to-b from-slate-950/20 via-slate-950/90 via-80% to-slate-950'
         )}
       />
       <ParallaxImage
         src={backgroundImage}
         className="absolute left-0 right-0 top-0 bottom-0 z-0"
-        overlay
         startPositionImage={startPositionImage}
       />
       <Content

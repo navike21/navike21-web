@@ -5,6 +5,10 @@ import { buildMetadata } from '@Seo/buildMetadata'
 import { Metadata } from 'next'
 import { IMetaData } from '@Types/metaData'
 import { TLanguageKey } from '@Types/languages'
+import { TItemPage } from '@Types/pages'
+import { TSubPageMap, TSubPages } from './types'
+import { WebDesignServices } from '@Pages/services/pages'
+import { WEB_DESIGN_SERVICES } from '@Constants/services'
 
 interface IParams {
   params: Promise<{
@@ -59,26 +63,41 @@ export default async function SubPages({ params }: Readonly<IParams>) {
   const matchedService = findMatchedService(lang, slug)
 
   if (!matchedSubPage && !matchedService) {
-    notFound()
+    return notFound()
   }
 
-  const subPageData = matchedSubPage?.language[lang]?.subPages?.find(
-    p => p.slug === slug
-  )
-  const serviceData = matchedService?.language[lang]
+  let dataPage: TItemPage | undefined
+
+  if (matchedSubPage) {
+    const { language: languageSubPage } = matchedSubPage
+    dataPage = languageSubPage[lang].subPages?.find(
+      ({ slug: subPageSlug }) => subPageSlug === slug
+    ) as TItemPage
+  }
+
+  if (matchedService) {
+    const { language: languageService, id: idService } = matchedService
+    dataPage = {
+      ...languageService[lang],
+      id: idService
+    }
+  }
+
+  if (!dataPage) {
+    return notFound()
+  }
+
+  const { id = '' } = dataPage
+
+  const servicesPagesMap: TSubPageMap = {
+    [WEB_DESIGN_SERVICES]: <WebDesignServices />
+  }
 
   return (
-    <div>
-      {subPageData && (
-        <>
-          {subPageData.title} {subPageData?.id}
-        </>
-      )}
-      {serviceData && (
-        <>
-          {serviceData.title} {matchedService?.id}
-        </>
-      )}
-    </div>
+    <>
+      {Object.hasOwn(servicesPagesMap, id)
+        ? servicesPagesMap[id as TSubPages]
+        : notFound()}
+    </>
   )
 }

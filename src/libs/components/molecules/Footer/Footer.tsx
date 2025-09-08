@@ -19,7 +19,7 @@ export const Footer = () => {
             'gap-10 grid grid-cols-1 items-start',
             'sm:grid-cols-2',
             'md:grid-cols-3',
-            'lg:grid-cols-5 lg:gap-7'
+            'lg:grid-cols-9 lg:gap-4'
           )}
         >
           <section
@@ -27,7 +27,7 @@ export const Footer = () => {
               'flex flex-col gap-4 items-center justify-center w-full',
               'sm:col-span-2',
               'md:col-span-3',
-              'lg:col-span-2'
+              'lg:col-span-3'
             )}
           >
             <div
@@ -44,7 +44,7 @@ export const Footer = () => {
           {footerMenuStructure.map(({ items, title }) => {
             return (
               <section
-                className="flex flex-col gap-4 items-center justify-center w-full"
+                className="flex flex-col gap-4 items-center justify-center w-full col-span-2"
                 key={title}
               >
                 <div className="title-xs w-full text-white uppercase">

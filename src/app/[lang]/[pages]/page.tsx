@@ -3,22 +3,26 @@ import { pages } from '@Translations/pages'
 import { ABOUT_US, HOME, PROJECTS, SERVICES } from '@Constants/pages'
 import { Metadata } from 'next'
 import { buildMetadata } from '@Seo/buildMetadata'
-import { IMetaData } from '@Types/metaData'
 import { AboutUs } from '@Pages/aboutUs'
 import { IMetadataProps, IParams, TPageMap, TPages } from './types'
 import { Services } from '@Pages/services'
 import { Projects } from '@Pages/projects'
+import { TLanguage } from '@Types/languages'
+
+function findMatchPage(slug: string, lang: TLanguage) {
+  return pages.find(({ language }) => language[lang].slug === slug)
+}
 
 export async function generateMetadata({
   params
 }: IMetadataProps): Promise<Metadata> {
   const { lang, pages: slug } = await params
 
-  const page = pages.find(({ language }) => language[lang].slug === slug)
-  const { metaData } = page?.language[lang] ?? {}
+  const { language } = findMatchPage(slug, lang) ?? pages[0]
+  const { metaData } = language[lang] ?? {}
 
   return buildMetadata({
-    ...(metaData as IMetaData),
+    ...metaData,
     lang
   })
 }
@@ -26,16 +30,14 @@ export async function generateMetadata({
 export default async function Pages({ params }: Readonly<IParams>) {
   const { lang, pages: slug } = await params
 
-  const matchedPage = pages.find(
-    ({ language }) => language[lang]?.slug === slug
-  )
+  const matchedPage = findMatchPage(slug, lang)
 
   if (!matchedPage) {
-    notFound()
+    return notFound()
   }
 
   if (matchedPage.id === HOME) {
-    redirect(`/${lang}/`)
+    return redirect(`/${lang}/`)
   }
 
   const { id } = matchedPage

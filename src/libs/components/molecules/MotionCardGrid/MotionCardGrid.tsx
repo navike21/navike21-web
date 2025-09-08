@@ -34,7 +34,7 @@ export default function MotionCardGrid({
 
       <AnimatePresence>
         {selectedId && selectedItem && (
-          <div className="fixed inset-0 flex items-center justify-center z-50 ">
+          <div className="fixed inset-0 flex items-center justify-center z-50 top-0 bottom-0 h-dvw m-auto">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
