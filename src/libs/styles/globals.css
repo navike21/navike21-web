@@ -1,8 +1,8 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --font-sans: "Poppins", sans-serif;
-  --font-mono: "Fira Code", monospace;
+  --font-sans: 'Poppins', sans-serif;
+  --font-mono: 'Fira Code', monospace;
 }
 
 @layer base {
