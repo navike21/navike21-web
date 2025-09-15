@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
-import { firaCode, poppins } from '@sourcesfonts'
+import { firaCode, poppins } from '@sources/fonts'
 import '@styles/globals.css'
+import { LayoutScroll } from '@components/molecules/LayoutScroll'
+import { Header } from '@components/molecules'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,7 +17,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} ${firaCode.variable} antialiased`}>
-        {children}
+        <Header />
+        <LayoutScroll>{children}</LayoutScroll>
       </body>
     </html>
   )

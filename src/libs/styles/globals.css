@@ -3,6 +3,9 @@
 @theme {
   --font-sans: 'Poppins', sans-serif;
   --font-mono: 'Fira Code', monospace;
+
+  --text-tiny: 0.625rem; /* 10px */
+  --text-tiny--line-height: 0.75rem; /* 12px */
 }
 
 @layer base {
