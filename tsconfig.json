@@ -21,6 +21,7 @@
     "paths": {
       "@components/*": ["./src/libs/components/*"],
       "@constants/*": ["./src/libs/constants/*"],
+      "@context/*": ["./src/libs/context/*"],
       "@hooks/*": ["./src/libs/hooks/*"],
       "@language/*": ["./src/libs/language/*"],
       "@sources/*": ["./src/libs/sources/*"],

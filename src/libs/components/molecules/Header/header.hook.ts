@@ -1,13 +1,14 @@
+import { useHeaderContext } from '@context/HeaderContext'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 
 gsap.registerPlugin(ScrollTrigger)
 
 export const useHeader = () => {
   const headerRef = useRef<HTMLElement | null>(null)
-  const [isSolid, setIsSolid] = useState(false)
+  const { isSolid, toggleMenu, setIsSolid, setToggleMenu } = useHeaderContext()
 
   useGSAP(() => {
     const el = headerRef.current
@@ -21,7 +22,7 @@ export const useHeader = () => {
       scroller: scrollerEl,
       trigger: document.body,
       start: 'top top',
-      end: '+=120',
+      end: '+=20',
       scrub: true,
       onUpdate: self => {
         const solid = self.progress > 0.5
@@ -42,5 +43,10 @@ export const useHeader = () => {
     }
   }, [])
 
-  return { headerRef, isSolid }
+  return {
+    isSolid,
+    toggleMenu,
+    headerRef,
+    setToggleMenu
+  }
 }

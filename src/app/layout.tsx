@@ -3,6 +3,7 @@ import { firaCode, poppins } from '@sources/fonts'
 import '@styles/globals.css'
 import { LayoutScroll } from '@components/molecules/LayoutScroll'
 import { Header } from '@components/molecules'
+import { HeaderProvider } from '@context/HeaderContext'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,8 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable} ${firaCode.variable} antialiased`}>
-        <Header />
-        <LayoutScroll>{children}</LayoutScroll>
+        <HeaderProvider>
+          <Header />
+          <LayoutScroll>{children}</LayoutScroll>
+        </HeaderProvider>
       </body>
     </html>
   )
