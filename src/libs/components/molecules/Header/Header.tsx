@@ -1,6 +1,6 @@
 'use client'
 
-import { Container, Logo } from '@components/atoms'
+import { Container, Logo, MenuIcon } from '@components/atoms'
 import { useHeader } from './header.hook'
 import clsx from 'clsx'
 
@@ -17,17 +17,8 @@ export const Header = () => {
     >
       <Container className="flex items-center">
         <Logo showText textColor={isSolid ? 'black' : 'white'} />
-
-        <button
-          type="button"
-          className={clsx(
-            'ml-auto p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500',
-            isSolid ? 'text-black' : 'text-white'
-          )}
-          aria-label="Toggle menu"
-          onClick={() => setToggleMenu(!toggleMenu)}
-        >
-          {toggleMenu ? 'Close menu' : 'Open menu'}
+        <button onClick={() => setToggleMenu(!toggleMenu)}>
+          <MenuIcon className={clsx('w-10 h-10')} />
         </button>
       </Container>
     </header>
