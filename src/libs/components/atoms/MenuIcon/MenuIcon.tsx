@@ -1,13 +1,16 @@
 'use client'
 
-import { useMenuIcon } from './menuIcon.hook'
+import { useHeaderContext } from '@context/HeaderContext'
+import { motion, Transition } from 'motion/react'
 
 interface IMenuIconProps {
   className?: string
 }
 
 export const MenuIcon = ({ className }: IMenuIconProps) => {
-  const { topLine, middleLine, bottomLine } = useMenuIcon()
+  const { toggleMenu } = useHeaderContext()
+
+  const transition: Transition = { duration: 0.3, ease: 'easeInOut' }
 
   return (
     <svg
@@ -16,32 +19,43 @@ export const MenuIcon = ({ className }: IMenuIconProps) => {
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      <line
-        ref={topLine}
+      <motion.line
         x1="8"
         y1="12"
         x2="32"
         y2="12"
         stroke="black"
         strokeWidth="2"
+        animate={
+          toggleMenu
+            ? { y: 8, rotate: 45, transformOrigin: '50% 50%' }
+            : { y: 0, rotate: 0 }
+        }
+        transition={transition}
       />
-      <line
-        ref={middleLine}
+      <motion.line
         x1="8"
         y1="20"
         x2="32"
         y2="20"
         stroke="black"
         strokeWidth="2"
+        animate={toggleMenu ? { opacity: 0 } : { opacity: 1 }}
+        transition={transition}
       />
-      <line
-        ref={bottomLine}
+      <motion.line
         x1="8"
         y1="28"
         x2="32"
         y2="28"
         stroke="black"
         strokeWidth="2"
+        animate={
+          toggleMenu
+            ? { y: -8, rotate: -45, transformOrigin: '50% 50%' }
+            : { y: 0, rotate: 0 }
+        }
+        transition={transition}
       />
     </svg>
   )

@@ -1,56 +1,30 @@
-// components/LayoutScroll.tsx
 'use client'
 
-import { useRef } from 'react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ScrollSmoother } from 'gsap/ScrollSmoother'
-import { useGSAP } from '@gsap/react'
 import { ReactLenis } from 'lenis/react'
+import type { LenisRef } from 'lenis/react'
+import { cancelFrame, frame } from 'motion'
+import { ReactNode, useEffect, useRef } from 'react'
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
-
-/** Tipo mínimo que usamos del ScrollSmoother (evita usar `any`) */
-interface IGSAPScrollSmoother {
-  wrapper: HTMLElement
-  content: HTMLElement
-  kill(): void
+interface ILayoutScrollProps {
+  children: ReactNode
 }
 
-declare global {
-  interface Window {
-    /** Exponemos una versión tipada y mínima del smoother para que otros componentes la lean */
-    __gsap_smoother?: IGSAPScrollSmoother
-  }
-}
+export function LayoutScroll({ children }: Readonly<ILayoutScrollProps>) {
+  const lenisRef = useRef<LenisRef>(null)
 
-export const LayoutScroll = ({ children }: { children: React.ReactNode }) => {
-  interface ILenisRef {
-    lenis: {
-      raf: (time: number) => void
-    }
-  }
-
-  const lenisRef = useRef<ILenisRef>(null)
-
-  useGSAP(() => {
-    function update(time: number) {
-      lenisRef.current?.lenis?.raf(time * 1000)
+  useEffect(() => {
+    function update(data: { timestamp: number }) {
+      const time = data.timestamp
+      lenisRef.current?.lenis?.raf(time)
     }
 
-    gsap.ticker.add(update)
+    frame.update(update, true)
 
-    return () => gsap.ticker.remove(update)
+    return () => cancelFrame(update)
   }, [])
 
   return (
-    <ReactLenis
-      root
-      options={{ autoRaf: true, lerp: 0.09, autoResize: true }}
-      ref={r => {
-        lenisRef.current = r as unknown as ILenisRef | null
-      }}
-    >
+    <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
       {children}
     </ReactLenis>
   )
