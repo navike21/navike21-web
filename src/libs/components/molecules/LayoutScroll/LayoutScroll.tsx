@@ -6,6 +6,7 @@ import { cancelFrame, frame } from 'motion'
 import { ReactNode, useEffect, useRef } from 'react'
 import { useHeaderContext } from '@context/HeaderContext' // 👈 tu contexto existente
 import clsx from 'clsx'
+import { BgHeader } from '../Header'
 
 interface ILayoutScrollProps {
   children: ReactNode
@@ -13,7 +14,7 @@ interface ILayoutScrollProps {
 
 export function LayoutScroll({ children }: Readonly<ILayoutScrollProps>) {
   const lenisRef = useRef<LenisRef>(null)
-  const { toggleMenu, isSolid } = useHeaderContext()
+  const { toggleMenu } = useHeaderContext()
 
   useEffect(() => {
     function update(data: { timestamp: number }) {
@@ -43,12 +44,7 @@ export function LayoutScroll({ children }: Readonly<ILayoutScrollProps>) {
           'pt-[100dvh]': toggleMenu
         })}
       >
-        <div
-          className={clsx('bg-header fixed inset-0', {
-            'bg-white h-20': isSolid && !toggleMenu,
-            'bg-transparent h-28': !isSolid || toggleMenu
-          })}
-        />
+        <BgHeader />
         {children}
       </div>
     </ReactLenis>

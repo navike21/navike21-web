@@ -45,3 +45,15 @@ export const Header = () => {
     </header>
   )
 }
+
+export const BgHeader = () => {
+  const { isSolid, toggleMenu } = useHeader()
+  return (
+    <div
+      className={clsx('bg-header fixed inset-0 z-30', {
+        'bg-white h-20': isSolid && !toggleMenu,
+        'bg-white/0 h-28': !isSolid || toggleMenu
+      })}
+    />
+  )
+}
