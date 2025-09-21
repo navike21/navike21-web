@@ -3,30 +3,45 @@
 import { Container, Logo, MenuIcon } from '@components/atoms'
 import { useHeader } from './header.hook'
 import clsx from 'clsx'
-import { motion } from 'motion/react'
 
 export const Header = () => {
   const { headerRef, isSolid, toggleMenu, setToggleMenu } = useHeader()
 
   return (
-    <motion.header
+    <header
       ref={headerRef}
-      initial={false}
-      animate={{
-        backgroundColor: isSolid ? '#ffffff' : 'rgba(255,255,255,0)'
-      }}
-      transition={{ duration: 0.3, ease: 'easeInOut' }}
       className={clsx(
         'fixed top-0 left-0 w-full z-50 flex justify-center transition-all duration-500',
-        isSolid ? 'h-20 shadow-xl' : 'h-28 bg-transparent shadow-none'
+        {
+          'shadow-xl h-20': isSolid && !toggleMenu,
+          'shadow-none h-28': !isSolid || toggleMenu
+        }
       )}
     >
       <Container className="flex items-center justify-between">
-        <Logo showText textColor={isSolid ? 'black' : 'white'} />
-        <button onClick={() => setToggleMenu(!toggleMenu)}>
-          <MenuIcon className="w-10 h-10" />
+        <Logo
+          showText
+          textColor={
+            (isSolid && !toggleMenu && 'black') ||
+            ((!isSolid || toggleMenu) && 'white') ||
+            'black'
+          }
+        />
+        <button
+          className="rounded-full cursor-pointer"
+          onClick={() => setToggleMenu(!toggleMenu)}
+        >
+          <MenuIcon
+            className={clsx(
+              'w-12 h-12 transition-all ease-in-out duration-500',
+              {
+                'stroke-slate-950': isSolid && !toggleMenu,
+                'stroke-white': !isSolid || toggleMenu
+              }
+            )}
+          />
         </button>
       </Container>
-    </motion.header>
+    </header>
   )
 }

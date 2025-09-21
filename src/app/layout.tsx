@@ -1,8 +1,7 @@
 import type { Metadata } from 'next'
 import { firaCode, poppins } from '@sources/fonts'
 import '@styles/globals.css'
-import { LayoutScroll } from '@components/molecules/LayoutScroll'
-import { Header } from '@components/molecules'
+import { Header, LayoutScroll, Menu } from '@components/molecules'
 import { HeaderProvider } from '@context/HeaderContext'
 import { ReactNode } from 'react'
 
@@ -21,6 +20,7 @@ export default function RootLayout({ children }: Readonly<IRootLayoutProps>) {
       <body className={`${poppins.variable} ${firaCode.variable} antialiased`}>
         <HeaderProvider>
           <Header />
+          <Menu />
           <LayoutScroll>{children}</LayoutScroll>
         </HeaderProvider>
       </body>

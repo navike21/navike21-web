@@ -10,12 +10,11 @@ interface IMenuIconProps {
 export const MenuIcon = ({ className }: IMenuIconProps) => {
   const { toggleMenu } = useHeaderContext()
 
-  const transition: Transition = { duration: 0.3, ease: 'easeInOut' }
+  const transition: Transition = { duration: 0.5, ease: 'easeInOut' }
 
   return (
     <svg
       viewBox="0 0 40 40"
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
@@ -24,7 +23,7 @@ export const MenuIcon = ({ className }: IMenuIconProps) => {
         y1="12"
         x2="32"
         y2="12"
-        stroke="black"
+        stroke="inherit"
         strokeWidth="2"
         animate={
           toggleMenu
@@ -38,7 +37,7 @@ export const MenuIcon = ({ className }: IMenuIconProps) => {
         y1="20"
         x2="32"
         y2="20"
-        stroke="black"
+        stroke="inherit"
         strokeWidth="2"
         animate={toggleMenu ? { opacity: 0 } : { opacity: 1 }}
         transition={transition}
@@ -48,7 +47,7 @@ export const MenuIcon = ({ className }: IMenuIconProps) => {
         y1="28"
         x2="32"
         y2="28"
-        stroke="black"
+        stroke="inherit"
         strokeWidth="2"
         animate={
           toggleMenu
