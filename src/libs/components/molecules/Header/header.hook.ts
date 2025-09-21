@@ -22,7 +22,7 @@ export const useHeader = () => {
       scroller: scrollerEl,
       trigger: document.body,
       start: 'top top',
-      end: '+=10',
+      end: '+=2',
       scrub: true,
       onUpdate: self => {
         const solid = self.progress > 0.5

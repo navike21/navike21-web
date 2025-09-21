@@ -6,6 +6,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
 import { useGSAP } from '@gsap/react'
+import { ReactLenis } from 'lenis/react'
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 
@@ -24,44 +25,33 @@ declare global {
 }
 
 export const LayoutScroll = ({ children }: { children: React.ReactNode }) => {
-  const wrapperRef = useRef<HTMLDivElement | null>(null)
-  const contentRef = useRef<HTMLDivElement | null>(null)
-  const smootherRef = useRef<IGSAPScrollSmoother | null>(null)
-
-  // useGSAP gestiona mount/cleanup sin useEffect
-  useGSAP(() => {
-    if (!wrapperRef.current || !contentRef.current) return
-
-    // crea el smoother (ScrollSmoother es un plugin pro — asegúrate de tenerlo)
-    const smoother = ScrollSmoother.create({
-      wrapper: wrapperRef.current,
-      content: contentRef.current,
-      smooth: 1.2,
-      effects: true
-    }) as unknown as IGSAPScrollSmoother
-
-    smootherRef.current = smoother
-    window.__gsap_smoother = smoother
-
-    // notificamos que el smoother está listo (puede usarse si quieres)
-    window.dispatchEvent(
-      new CustomEvent('gsap:smoother-ready', { detail: { smoother } })
-    )
-
-    // cleanup automático al desmontar
-    return () => {
-      smootherRef.current?.kill()
-      smootherRef.current = null
-      delete window.__gsap_smoother
-      window.dispatchEvent(new CustomEvent('gsap:smoother-killed'))
+  interface ILenisRef {
+    lenis: {
+      raf: (time: number) => void
     }
+  }
+
+  const lenisRef = useRef<ILenisRef>(null)
+
+  useGSAP(() => {
+    function update(time: number) {
+      lenisRef.current?.lenis?.raf(time * 1000)
+    }
+
+    gsap.ticker.add(update)
+
+    return () => gsap.ticker.remove(update)
   }, [])
 
   return (
-    <div ref={wrapperRef} id="smooth-wrapper" className="min-h-screen">
-      <div ref={contentRef} id="smooth-content">
-        <div>{children}</div>
-      </div>
-    </div>
+    <ReactLenis
+      root
+      options={{ autoRaf: true, lerp: 0.09, autoResize: true }}
+      ref={r => {
+        lenisRef.current = r as unknown as ILenisRef | null
+      }}
+    >
+      {children}
+    </ReactLenis>
   )
 }
