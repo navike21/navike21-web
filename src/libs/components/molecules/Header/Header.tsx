@@ -37,7 +37,7 @@ export const Header = () => {
         >
           <MenuIcon
             className={clsx(
-              'w-12 h-12 transition-all ease-in-out duration-500',
+              'w-10 h-10 transition-all ease-in-out duration-500',
               {
                 'stroke-slate-950': isSolid && !toggleMenu,
                 'stroke-white': !isSolid || toggleMenu
