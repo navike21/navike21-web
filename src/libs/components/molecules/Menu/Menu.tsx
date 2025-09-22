@@ -54,40 +54,20 @@ export const Menu = () => {
             <div
               className={clsx(
                 'w-[80%] h-dvh flex flex-col justify-center items-start text-white z-10 relative gap-2 transition-all ease-in-out duration-500',
-                'landscape:flex-row landscape:flex-wrap landscape:items-center landscape:justify-start landscape:content-center landscape:pt-20',
-                'landscape:md:flex-col landscape:items-center landscape:md:justify-center landscape:md:content-center landscape:md:pt-0 landscape:md:w-1/2',
+                'landscape:grid landscape:grid-cols-3 landscape:pt-20 landscape:justify-between landscape:items-center landscape:gap-3 landscape:content-center',
+                'landscape:md:flex landscape:md:flex-col landscape:items-center landscape:md:justify-center landscape:md:content-center landscape:md:pt-0 landscape:md:w-1/2',
                 'md:w-1/2 md:items-center md:gap-6'
               )}
             >
               <motion.h2
-                className="text-2xl min-w-[40%]"
+                className={clsx(
+                  'text-xl w-full text-center',
+                  'md:text-2xl md:w-[80%]',
+                  'landscape:text-left'
+                )}
                 variants={itemMenuVariants}
               >
                 Inicio
-              </motion.h2>
-              <motion.h2
-                className="text-2xl min-w-[40%]"
-                variants={itemMenuVariants}
-              >
-                Nosotros
-              </motion.h2>
-              <motion.h2
-                className="text-2xl min-w-[40%]"
-                variants={itemMenuVariants}
-              >
-                Servicios
-              </motion.h2>
-              <motion.h2
-                className="text-2xl min-w-[40%]"
-                variants={itemMenuVariants}
-              >
-                Portafolio
-              </motion.h2>
-              <motion.h2
-                className="text-2xl min-w-[40%]"
-                variants={itemMenuVariants}
-              >
-                Contacto
               </motion.h2>
             </div>
           </div>
