@@ -19,6 +19,7 @@
       }
     ],
     "paths": {
+      "@assets/*": ["./src/libs/assets/*"],
       "@components/*": ["./src/libs/components/*"],
       "@constants/*": ["./src/libs/constants/*"],
       "@context/*": ["./src/libs/context/*"],

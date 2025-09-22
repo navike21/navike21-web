@@ -7,7 +7,7 @@ interface IContainer {
 }
 
 export const Container = ({ children, className }: IContainer) => (
-  <div className={clsx('container max-w-7xl mx-auto w-11/12', className)}>
+  <div className={clsx('container max-w-7xl mx-auto w-[85%]', className)}>
     {children}
   </div>
 )

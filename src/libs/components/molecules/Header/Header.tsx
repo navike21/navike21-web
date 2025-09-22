@@ -3,6 +3,7 @@
 import { Container, Logo, MenuIcon } from '@components/atoms'
 import { useHeader } from './header.hook'
 import clsx from 'clsx'
+import Link from 'next/link'
 
 export const Header = () => {
   const { headerRef, isSolid, toggleMenu, setToggleMenu } = useHeader()
@@ -19,14 +20,17 @@ export const Header = () => {
       )}
     >
       <Container className="flex items-center justify-between">
-        <Logo
-          showText
-          textColor={
-            (isSolid && !toggleMenu && 'black') ||
-            ((!isSolid || toggleMenu) && 'white') ||
-            'black'
-          }
-        />
+        <Link href="/">
+          <Logo
+            logoColor={(isSolid && !toggleMenu && 'black') || 'white'}
+            showText
+            textColor={
+              (isSolid && !toggleMenu && 'black') ||
+              ((!isSolid || toggleMenu) && 'white') ||
+              'black'
+            }
+          />
+        </Link>
         <button
           className="rounded-full cursor-pointer"
           onClick={() => setToggleMenu(!toggleMenu)}

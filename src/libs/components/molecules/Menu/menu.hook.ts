@@ -1,0 +1,61 @@
+import { useHeaderContext } from '@context/HeaderContext'
+import { Variants } from 'motion'
+
+export const useMenu = () => {
+  const { toggleMenu } = useHeaderContext()
+
+  const menuVariants: Variants = {
+    initial: { height: 0 },
+    animate: {
+      height: '100dvh',
+      transition: {
+        duration: 0.5,
+        ease: 'easeInOut',
+        when: 'beforeChildren',
+        staggerChildren: 0.2
+      }
+    },
+    exit: {
+      height: 0,
+      transition: {
+        duration: 0.5,
+        ease: 'easeInOut'
+      }
+    }
+  }
+
+  const imageVariants: Variants = {
+    initial: { opacity: 0, scale: 1.1 },
+    animate: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.5, ease: 'easeInOut' }
+    },
+    exit: {
+      opacity: 0,
+      scale: 1.1,
+      transition: { duration: 0.5, ease: 'easeInOut' }
+    }
+  }
+
+  const itemMenuVariants: Variants = {
+    initial: { opacity: 0, y: -10 },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.3, ease: 'easeInOut' }
+    },
+    exit: {
+      opacity: 0,
+      y: -10,
+      transition: { duration: 0.3, ease: 'easeInOut' }
+    }
+  }
+
+  return {
+    toggleMenu,
+    menuVariants,
+    imageVariants,
+    itemMenuVariants
+  }
+}
