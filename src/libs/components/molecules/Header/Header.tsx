@@ -22,7 +22,7 @@ export const Header = () => {
       <Container className="flex items-center justify-between">
         <Link href="/">
           <Logo
-            logoColor={(isSolid && !toggleMenu && 'black') || 'white'}
+            logoColor="gradient"
             showText
             textColor={
               (isSolid && !toggleMenu && 'black') ||

@@ -29,17 +29,16 @@ export const Logo = ({
       })}
     >
       <defs>
-        <linearGradient id="gradient" x1="0%" y1="100%" x2="100%" y2="80%">
-          <stop offset="0%" stopColor="#17CADD" />
-          <stop offset="100%" stopColor="#4A45DA" />
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="50%" y2="80%">
+          <stop offset="10%" stopColor="#17CADD" />
+          <stop offset="100%" stopColor="#4a45da" />
         </linearGradient>
       </defs>
       <path
         d="M40 42H185V176H40V42Z"
         className={clsx('transition-all duration-500', {
-          'fill-gradient': logoColor === 'white',
           'fill-black': logoColor === 'white',
-          'fill-white': logoColor === 'black'
+          'fill-white': logoColor === 'black' || logoColor === 'gradient'
         })}
       />
       <path
@@ -51,7 +50,7 @@ export const Logo = ({
           'url(#gradient)'
         }
         className={clsx('transition-all duration-500', {
-          'fill-gradient': logoColor === 'gradient',
+          // 'fill-gradient': logoColor === 'gradient',
           'fill-black': logoColor === 'black',
           'fill-white': logoColor === 'white'
         })}
