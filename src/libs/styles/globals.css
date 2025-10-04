@@ -1,5 +1,4 @@
 @import 'lenis/dist/lenis.css';
-
 @import 'tailwindcss';
 
 @theme {
@@ -14,5 +13,11 @@
   :root,
   :host {
     @apply font-sans antialiased font-normal;
+  }
+}
+
+@layer utilities {
+  .clip-diagonal {
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
   }
 }

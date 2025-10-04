@@ -17,7 +17,9 @@ interface IRootLayoutProps {
 export default function RootLayout({ children }: Readonly<IRootLayoutProps>) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable} ${firaCode.variable} antialiased`}>
+      <body
+        className={`${poppins.variable} ${firaCode.variable} antialiased transition-all ease-in-out duration-500 relative`}
+      >
         <HeaderProvider>
           <Header />
           <Menu />

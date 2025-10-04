@@ -28,7 +28,8 @@
       "@sources/*": ["./src/libs/sources/*"],
       "@styles/*": ["./src/libs/styles/*"],
       "@types/*": ["./src/libs/types/*"],
-      "@helpers/*": ["./src/libs/helpers/*"]
+      "@helpers/*": ["./src/libs/helpers/*"],
+      "@pages/*": ["./src/libs/pages/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

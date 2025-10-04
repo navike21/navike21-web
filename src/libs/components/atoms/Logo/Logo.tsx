@@ -31,7 +31,7 @@ export const Logo = ({
       <defs>
         <linearGradient id="gradient" x1="0%" y1="0%" x2="50%" y2="80%">
           <stop offset="10%" stopColor="#17CADD" />
-          <stop offset="100%" stopColor="#4a45da" />
+          <stop offset="100%" stopColor="#332eb9ff" />
         </linearGradient>
       </defs>
       <path

@@ -38,12 +38,23 @@ export function LayoutScroll({ children }: Readonly<ILayoutScrollProps>) {
   }, [toggleMenu])
 
   return (
-    <ReactLenis root options={{ autoRaf: false }} ref={lenisRef}>
-      <div
-        className={clsx('transition-all duration-500 ease-in-out', {
-          'pt-[100dvh]': toggleMenu
-        })}
-      >
+    <ReactLenis
+      root
+      options={{
+        autoRaf: false,
+        duration: 1,
+        autoResize: true,
+        lerp: 0.1,
+        // easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        allowNestedScroll: true,
+        touchMultiplier: 1.5,
+        infinite: false,
+        smoothWheel: true
+      }}
+      ref={lenisRef}
+    >
+      <div className={clsx('transition-all duration-500 ease-in-out relative')}>
         <BgHeader />
         {children}
       </div>

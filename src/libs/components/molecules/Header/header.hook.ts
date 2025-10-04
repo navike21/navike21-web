@@ -11,7 +11,7 @@ export const useHeader = () => {
   const { scrollY } = useScroll()
 
   useMotionValueEvent(scrollY, 'change', latestY => {
-    const threshold = 100 // píxeles desde arriba
+    const threshold = 10 // píxeles desde arriba
     const solid = latestY > threshold
     if (solid !== isSolid) {
       setIsSolid(solid)
