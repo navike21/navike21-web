@@ -1,61 +1,68 @@
-import { Container, LinkButton, ParallaxImage } from '@Components/atoms'
-import clsx from 'clsx'
 import heroImage from '@Assets/images/technology-expert-developing-userfriendly-software-by-understanding-requirements-endusers.jpg'
+import { Container, IconComponent } from '@Components/atoms'
+import { ItemHeroSection } from '@Components/molecules'
+import clsx from 'clsx'
 
 export const Home = () => {
   return (
     <>
-      <div className={clsx('bg-slate-950 relative', 'md:bg-gray-100')}>
-        <Container
-          className={clsx(
-            'flex items-center justify-between flex-wrap content-center z-10 relative',
-            'h-dvh max-h-[900px]',
-            'md:gap-8 md:flex-nowrap',
-            'lg:gap-20'
-          )}
-        >
-          <section
-            className={clsx('w-full flex flex-col gap-4', 'md:w-6/12 md:gap-6')}
+      <ItemHeroSection
+        heroImage={heroImage}
+        title="Transformamos tus ideas en realidad digital"
+        description="Somos expertos en desarrollo de software, diseño UX/UI y marketing digital. Creamos soluciones innovadoras que impulsan tu negocio al siguiente nivel."
+        controlActions={[
+          {
+            href: '/',
+            icon: 'ArrowRight',
+            children: 'Comenzar proyecto'
+          },
+          {
+            href: '/',
+            icon: 'BriefcaseBusiness',
+            variant: 'secondary',
+            children: 'Ver portafolio'
+          }
+        ]}
+      />
+      <section className="bg-gray-200">
+        <Container className="py-20 flex flex-col gap-20">
+          <div className={clsx('title-area flex flex-col gap-4')}>
+            <h2 className={clsx('text-center text-4xl font-semibold')}>
+              Nuestros Servicios
+            </h2>
+            <p className={clsx('text-center')}>
+              Ofrecemos soluciones completas para todas tus necesidades
+              digitales
+            </p>
+          </div>
+          <div
+            className={clsx(
+              'services-area grid grid-cols-1 gap-10',
+              'md:grid-cols-2 md:gap-16',
+              'lg:grid-cols-4 lg:gap-8'
+            )}
           >
-            <h2
+            <div
               className={clsx(
-                'text-2xl font-semibold leading-tight text-white',
-                'md:text-3xl md:text-black md:w-11/12',
-                'lg:text-4xl',
-                'xl:text-5xl'
+                'bg-white',
+                'service-item flex flex-col items-center gap-6',
+                'shadow-md px-6 pt-7 rounded-lg'
               )}
             >
-              Transformamos tus ideas en realidad digital
-            </h2>
-            <p
-              className={clsx('w-full text-white', 'md:w-11/12 md:text-black')}
-            >
-              Somos expertos en desarrollo de software, diseño UX/UI y marketing
-              digital. Creamos soluciones innovadoras que impulsan tu negocio al
-              siguiente nivel.
-            </p>
-            <div
-              className={clsx('flex flex-col gap-4', 'sm:flex-row sm:gap-5')}
-            >
-              <LinkButton href="/" icon="ArrowRight">
-                Comenzar proyecto
-              </LinkButton>
-              <LinkButton href="/" icon="BriefcaseBusiness" variant="secondary">
-                Ver portafolio
-              </LinkButton>
+              <div className="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full p-3">
+                <IconComponent icon="Code" />
+              </div>
+              <h3 className="text-lg font-medium text-center">
+                Desarrollo de software
+              </h3>
+              <p className="text-center text-sm pb-4">
+                Soluciones personalizadas que impulsan tu negocio
+              </p>
+              <div className="w-28 h-0.5 bg-blue-500" />
             </div>
-          </section>
+          </div>
         </Container>
-        <ParallaxImage
-          img={heroImage}
-          className={clsx(
-            'absolute top-0 right-0 h-full z-0 w-12/12 opacity-50 clip-diagonal',
-            'md:w-6/12 md:opacity-100'
-          )}
-          alt="Abstract shiny blue presentation background"
-        />
-      </div>
-      <div className="h-dvh">Holi</div>
+      </section>
     </>
   )
 }

@@ -13,6 +13,7 @@
   :root,
   :host {
     @apply font-sans antialiased font-normal;
+    @apply leading-[1.4];
   }
 }
 
