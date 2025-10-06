@@ -19,17 +19,17 @@
       }
     ],
     "paths": {
-      "@assets/*": ["./src/libs/assets/*"],
-      "@components/*": ["./src/libs/components/*"],
-      "@constants/*": ["./src/libs/constants/*"],
-      "@context/*": ["./src/libs/context/*"],
-      "@hooks/*": ["./src/libs/hooks/*"],
-      "@language/*": ["./src/libs/language/*"],
-      "@sources/*": ["./src/libs/sources/*"],
-      "@styles/*": ["./src/libs/styles/*"],
-      "@types/*": ["./src/libs/types/*"],
-      "@helpers/*": ["./src/libs/helpers/*"],
-      "@pages/*": ["./src/libs/pages/*"]
+      "@Assets/*": ["./src/libs/assets/*"],
+      "@Components/*": ["./src/libs/components/*"],
+      "@Constants/*": ["./src/libs/constants/*"],
+      "@Context/*": ["./src/libs/context/*"],
+      "@Hooks/*": ["./src/libs/hooks/*"],
+      "@Language/*": ["./src/libs/language/*"],
+      "@Sources/*": ["./src/libs/sources/*"],
+      "@Styles/*": ["./src/libs/styles/*"],
+      "@Types/*": ["./src/libs/types/*"],
+      "@Helpers/*": ["./src/libs/helpers/*"],
+      "@Pages/*": ["./src/libs/pages/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

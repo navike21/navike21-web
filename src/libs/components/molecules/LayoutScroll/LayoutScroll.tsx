@@ -4,7 +4,7 @@ import { ReactLenis } from 'lenis/react'
 import type { LenisRef } from 'lenis/react'
 import { cancelFrame, frame } from 'motion'
 import { ReactNode, useEffect, useRef } from 'react'
-import { useHeaderContext } from '@context/HeaderContext' // 👈 tu contexto existente
+import { useHeaderContext } from '@Context/HeaderContext' // 👈 tu contexto existente
 import clsx from 'clsx'
 import { BgHeader } from '../Header'
 

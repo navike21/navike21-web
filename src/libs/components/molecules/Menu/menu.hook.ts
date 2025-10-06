@@ -1,4 +1,4 @@
-import { useHeaderContext } from '@context/HeaderContext'
+import { useHeaderContext } from '@Context/HeaderContext'
 import { Variants } from 'motion'
 
 export const useMenu = () => {

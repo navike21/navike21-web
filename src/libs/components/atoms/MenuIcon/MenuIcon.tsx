@@ -1,6 +1,6 @@
 'use client'
 
-import { useHeaderContext } from '@context/HeaderContext'
+import { useHeaderContext } from '@Context/HeaderContext'
 import { motion, Transition } from 'motion/react'
 
 interface IMenuIconProps {

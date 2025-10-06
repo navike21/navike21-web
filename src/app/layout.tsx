@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
-import { firaCode, poppins } from '@sources/fonts'
-import '@styles/globals.css'
-import { Header, LayoutScroll, Menu } from '@components/molecules'
-import { HeaderProvider } from '@context/HeaderContext'
+import { firaCode, poppins } from '@Sources/fonts'
+import '@Styles/globals.css'
+import { Header, LayoutScroll, Menu } from '@Components/molecules'
+import { HeaderProvider } from '@Context/HeaderContext'
 import { ReactNode } from 'react'
 
 export const metadata: Metadata = {
