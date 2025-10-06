@@ -1,4 +1,4 @@
-import { Button, Container, ParallaxImage } from '@Components/atoms'
+import { Container, LinkButton, ParallaxImage } from '@Components/atoms'
 import clsx from 'clsx'
 import heroImage from '@Assets/images/technology-expert-developing-userfriendly-software-by-understanding-requirements-endusers.jpg'
 
@@ -37,10 +37,12 @@ export const Home = () => {
             <div
               className={clsx('flex flex-col gap-4', 'sm:flex-row sm:gap-5')}
             >
-              <Button icon="ArrowRight">Comenzar proyecto</Button>
-              <Button icon="BriefcaseBusiness" variant="secondary">
+              <LinkButton href="/" icon="ArrowRight">
+                Comenzar proyecto
+              </LinkButton>
+              <LinkButton href="/" icon="BriefcaseBusiness" variant="secondary">
                 Ver portafolio
-              </Button>
+              </LinkButton>
             </div>
           </section>
         </Container>

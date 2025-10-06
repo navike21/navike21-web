@@ -1,6 +1,7 @@
 export * from './Button'
 export * from './Container'
 export * from './IconComponent'
+export * from './LinkButton'
 export * from './Logo'
 export * from './MenuIcon'
 export * from './ParallaxImage'

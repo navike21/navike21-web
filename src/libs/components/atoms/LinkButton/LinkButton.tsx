@@ -1,17 +1,18 @@
 import clsx from 'clsx'
 import { IconComponent } from '../IconComponent'
-import { IButtonProps } from '@Types/buttonProps'
+import Link from 'next/link'
+import { ILinkButtonProps } from '@Types/buttonProps'
 
-export const Button = ({
+export const LinkButton = ({
   variant = 'primary',
   className = '',
   children,
   size = 'medium',
   icon,
   ...props
-}: Readonly<IButtonProps>) => {
+}: Readonly<ILinkButtonProps>) => {
   return (
-    <button
+    <Link
       className={clsx(
         className,
         'cursor-pointer duration-500 ease-in-out font-medium rounded-md shadow-black/30 shadow-md transition-all w-full',
@@ -47,6 +48,6 @@ export const Button = ({
           })}
         />
       )}
-    </button>
+    </Link>
   )
 }
