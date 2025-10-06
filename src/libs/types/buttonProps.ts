@@ -1,5 +1,6 @@
-import { ButtonHTMLAttributes } from 'react'
+import { ButtonHTMLAttributes, LinkHTMLAttributes, ReactNode } from 'react'
 import { TIconName } from './iconsLucide'
+import { LinkProps } from 'next/link'
 
 export interface IButtonBaseProps {
   variant?: 'primary' | 'secondary'
@@ -10,11 +11,13 @@ export interface IButtonBaseProps {
 export interface IButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     IButtonBaseProps {
-  className?: string
+  children: ReactNode
 }
 export interface ILinkButtonProps
-  extends ButtonHTMLAttributes<HTMLAnchorElement>,
-    IButtonBaseProps {
-  className?: string
+  extends Omit<LinkProps, 'as'>,
+    IButtonBaseProps,
+    Omit<LinkHTMLAttributes<HTMLAnchorElement>, 'as'> {
   href: string
+  children: ReactNode
+  className?: string
 }
