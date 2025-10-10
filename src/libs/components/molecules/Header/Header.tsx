@@ -32,6 +32,7 @@ export const Header = () => {
         <button
           className="rounded-full cursor-pointer"
           onClick={() => setToggleMenu(!toggleMenu)}
+          aria-label="Toggle Menu"
         >
           <MenuIcon
             className={clsx(
