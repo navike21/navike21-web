@@ -53,10 +53,12 @@ export function LayoutScroll({ children }: Readonly<ILayoutScrollProps>) {
       }}
       ref={lenisRef}
     >
-      <div className={clsx('transition-all duration-500 ease-in-out relative')}>
+      <main
+        className={clsx('transition-all duration-500 ease-in-out relative')}
+      >
         <BgHeader />
         {children}
-      </div>
+      </main>
     </ReactLenis>
   )
 }
