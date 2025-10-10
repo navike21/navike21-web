@@ -1,0 +1,33 @@
+@theme {
+  --font-sans: 'Poppins', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+
+  --text-tiny: 0.625rem; /* 10px */
+  --text-tiny--line-height: 0.75rem; /* 12px */
+
+  --color-primary-50: #e0fcff;
+  --color-primary-100: #b3f6ff;
+  --color-primary-200: #80edff;
+  --color-primary-300: #4ae1ff;
+  --color-primary-400: #17cadd;
+  --color-primary-500: #00b2c8;
+  --color-primary-600: #0094a7;
+  --color-primary-700: #007786;
+  --color-primary-800: #005b66;
+  --color-primary-900: #00424b;
+  --color-primary-950: #002e36;
+
+  --color-secondary-50: #f1eeff;
+  --color-secondary-100: #d8d3ff;
+  --color-secondary-200: #beb6ff;
+  --color-secondary-300: #a396ff;
+  --color-secondary-400: #8573ff;
+  --color-secondary-500: #664dff;
+  --color-secondary-600: #4e38e6;
+  --color-secondary-700: #3929b3;
+  --color-secondary-800: #281d80;
+  --color-secondary-900: #1a1459;
+  --color-secondary-950: #110d3d;
+
+  --color-primary-text: #000000;
+}

@@ -1,13 +1,6 @@
 @import 'lenis/dist/lenis.css';
 @import 'tailwindcss';
-
-@theme {
-  --font-sans: 'Poppins', sans-serif;
-  --font-mono: 'Fira Code', monospace;
-
-  --text-tiny: 0.625rem; /* 10px */
-  --text-tiny--line-height: 0.75rem; /* 12px */
-}
+@import './theme.css';
 
 @layer base {
   :root,
@@ -17,8 +10,22 @@
   }
 }
 
-@layer utilities {
-  .clip-diagonal {
-    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
-  }
+@utility clip-diagonal {
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+@utility bg-gradient-horizontal {
+  @apply bg-gradient-to-r from-primary-400 to-secondary-700 via-secondary-700 via-80%;
+}
+
+@utility bg-gradient-vertical {
+  @apply bg-gradient-to-b from-primary-400 to-secondary-700 via-secondary-700 via-80%;
+}
+
+@utility bg-gradient-diagonal {
+  @apply bg-gradient-to-br from-primary-400 to-secondary-700 via-secondary-700 via-80%;
+}
+
+@utility text-gradient {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-700 via-secondary-700 via-80%;
 }

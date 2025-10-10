@@ -1,7 +1,6 @@
-import * as LucideIcons from 'lucide-react'
+import * as RemixIcons from '@remixicon/react'
 
-export type TIconName = keyof typeof LucideIcons
-
+export type TIconName = keyof typeof RemixIcons
 export interface IIconProps {
   icon: TIconName
   className?: string

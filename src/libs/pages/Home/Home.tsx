@@ -1,5 +1,5 @@
 import heroImage from '@Assets/images/technology-expert-developing-userfriendly-software-by-understanding-requirements-endusers.jpg'
-import { Container, IconComponent } from '@Components/atoms'
+import { Container, ItemLinkCard, LinkButton } from '@Components/atoms'
 import { ItemHeroSection } from '@Components/molecules'
 import clsx from 'clsx'
 
@@ -13,18 +13,18 @@ export const Home = () => {
         controlActions={[
           {
             href: '/',
-            icon: 'ArrowRight',
+            icon: 'RiArrowRightLine',
             children: 'Comenzar proyecto'
           },
           {
             href: '/',
-            icon: 'BriefcaseBusiness',
+            icon: 'RiBriefcase3Fill',
             variant: 'secondary',
             children: 'Ver portafolio'
           }
         ]}
       />
-      <section className="bg-gray-200">
+      <section className="bg-gray-100">
         <Container className="py-20 flex flex-col gap-20">
           <div className={clsx('title-area flex flex-col gap-4')}>
             <h2 className={clsx('text-center text-4xl font-semibold')}>
@@ -37,30 +37,64 @@ export const Home = () => {
           </div>
           <div
             className={clsx(
-              'services-area grid grid-cols-1 gap-10',
-              'md:grid-cols-2 md:gap-16',
-              'lg:grid-cols-4 lg:gap-8'
+              'services-area grid grid-cols-1 gap-6',
+              'sm:grid-cols-2 sm:gap-10',
+              'lg:grid-cols-3 lg:gap-4',
+              'xl:grid-cols-4 xl:gap-5'
             )}
           >
-            <div
-              className={clsx(
-                'bg-white',
-                'service-item flex flex-col items-center gap-6',
-                'shadow-md px-6 pt-7 rounded-lg'
-              )}
-            >
-              <div className="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full p-3">
-                <IconComponent icon="Code" />
-              </div>
-              <h3 className="text-lg font-medium text-center">
-                Desarrollo de software
-              </h3>
-              <p className="text-center text-sm pb-4">
-                Soluciones personalizadas que impulsan tu negocio
-              </p>
-              <div className="w-28 h-0.5 bg-blue-500" />
-            </div>
+            <ItemLinkCard
+              href="/"
+              title="Desarrollo de software"
+              description="Soluciones personalizadas que impulsan tu negocio"
+              icon="RiCodeFill"
+            />
+            <ItemLinkCard
+              href="/"
+              title="E-commerce"
+              description="Tiendas online optimizadas para conversión"
+              icon="RiShoppingCartLine"
+            />
+            <ItemLinkCard
+              href="/"
+              title="Apps Móviles"
+              description="Aplicaciones nativas y multiplataforma"
+              icon="RiSmartphoneLine"
+            />
+            <ItemLinkCard
+              href="/"
+              title="Marketing Digital"
+              description="Estrategias que generan resultados"
+              icon="RiMegaphoneLine"
+            />
+            <ItemLinkCard
+              href="/"
+              title="Diseño UX/UI"
+              description="Diseños intuitivos y atractivos"
+              icon="RiPaletteLine"
+            />
+            <ItemLinkCard
+              href="/"
+              title="SEO"
+              description="Posicionamiento web efectivo"
+              icon="RiSearchLine"
+            />
+            <ItemLinkCard
+              href="/"
+              title="Email Marketing"
+              description="Campañas que conectan con tu audiencia"
+              icon="RiMailLine"
+            />
+            <ItemLinkCard
+              href="/"
+              title="Consultoría"
+              description="Asesoría estratégica para tu transformación digital"
+              icon="RiBriefcase3Line"
+            />
           </div>
+          <LinkButton href="/" className="mx-auto" icon="RiArrowRightLine">
+            Ver todos los servicios
+          </LinkButton>
         </Container>
       </section>
     </>

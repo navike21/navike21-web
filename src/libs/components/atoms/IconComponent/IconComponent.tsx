@@ -1,10 +1,9 @@
 import { IIconProps } from '@Types/iconsLucide'
 import clsx from 'clsx'
-import * as LucideIcons from 'lucide-react'
-import { LucideIcon } from 'lucide-react'
+import * as RemixIcons from '@remixicon/react'
 
 export const IconComponent = ({ icon, className }: IIconProps) => {
-  const LucideIconComponent = LucideIcons[icon] as LucideIcon
+  const LucideIconComponent = RemixIcons[icon]
 
   return <LucideIconComponent className={clsx(className)} />
 }

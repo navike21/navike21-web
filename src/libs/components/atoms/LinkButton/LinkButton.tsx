@@ -22,7 +22,7 @@ export const LinkButton = ({
         'active:scale-95',
         {
           'bg-black text-white': variant === 'primary',
-          'bg-white text-black ring-1 ring-black ring-inset':
+          'bg-white text-primary-text ring-1 ring-black ring-inset':
             variant === 'secondary'
         },
         {

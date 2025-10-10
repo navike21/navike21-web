@@ -38,7 +38,7 @@ export const ItemHeroSection = ({
           <h2
             className={clsx(
               'text-2xl font-semibold leading-tight text-white',
-              'md:text-3xl md:text-black md:w-11/12',
+              'md:text-3xl md:text-primary-text md:w-11/12',
               'lg:text-4xl',
               'xl:text-5xl'
             )}
@@ -48,7 +48,7 @@ export const ItemHeroSection = ({
           <p
             className={clsx(
               'w-full text-white',
-              'md:w-11/12 md:text-black',
+              'md:w-11/12 md:text-primary-text',
               'lg:w-10/12'
             )}
           >
