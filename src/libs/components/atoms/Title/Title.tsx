@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import React from 'react'
 
-interface TitleProps {
+export interface TitleProps {
   title: string
   subTitle?: string
   className?: string

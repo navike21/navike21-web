@@ -11,3 +11,8 @@ export interface IServicesSection {
   description: string
   controlAction: ILinkButtonProps
 }
+
+export interface IMetricsSection {
+  title: string
+  description: string
+}

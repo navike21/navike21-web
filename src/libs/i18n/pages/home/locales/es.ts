@@ -1,4 +1,4 @@
-import { IHeroSection, IServicesSection } from '../types'
+import { IHeroSection, IMetricsSection, IServicesSection } from '../types'
 
 export const heroSectionEs: IHeroSection[] = [
   {
@@ -30,4 +30,10 @@ export const servicesSectionEs: IServicesSection = {
     icon: 'RiArrowRightLine',
     children: 'Ver todos los servicios'
   }
+}
+
+export const metricsSectionEs: IMetricsSection = {
+  title: 'Resultados que hablan por sí mismos',
+  description:
+    'Nuestra trayectoria está respaldada por números que demuestran nuestro compromiso con la excelencia y la satisfacción del cliente.'
 }
