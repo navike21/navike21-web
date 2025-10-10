@@ -1,4 +1,4 @@
-import { TIconName } from '@Types/iconsLucide'
+import { TIconName } from '@Types/icons'
 import clsx from 'clsx'
 import { ReactNode } from 'react'
 import { IconComponent } from '../IconComponent'

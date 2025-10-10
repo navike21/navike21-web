@@ -1,4 +1,4 @@
-import { IIconProps } from '@Types/iconsLucide'
+import { IIconProps } from '@Types/icons'
 import clsx from 'clsx'
 import * as RemixIcons from '@remixicon/react'
 

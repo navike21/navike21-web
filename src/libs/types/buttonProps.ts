@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, LinkHTMLAttributes, ReactNode } from 'react'
-import { TIconName } from './iconsLucide'
+import { TIconName } from './icons'
 import { LinkProps } from 'next/link'
 
 export interface IButtonBaseProps {
