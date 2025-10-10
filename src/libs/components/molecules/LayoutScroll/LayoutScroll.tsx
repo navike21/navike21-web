@@ -4,7 +4,7 @@ import { ReactLenis } from 'lenis/react'
 import type { LenisRef } from 'lenis/react'
 import { cancelFrame, frame } from 'motion'
 import { ReactNode, useEffect, useRef } from 'react'
-import { useHeaderContext } from '@Context/HeaderContext' // 👈 tu contexto existente
+import { useHeaderContext } from '@Context/HeaderContext'
 import clsx from 'clsx'
 import { BgHeader } from '../Header'
 
@@ -45,7 +45,6 @@ export function LayoutScroll({ children }: Readonly<ILayoutScrollProps>) {
         duration: 1,
         autoResize: true,
         lerp: 0.1,
-        // easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         orientation: 'vertical',
         allowNestedScroll: true,
         touchMultiplier: 1.5,

@@ -59,6 +59,7 @@ export const BgHeader = () => {
           'bg-white/0 h-28': !isSolid || toggleMenu
         }
       )}
+      data-aria-hidden="true"
     />
   )
 }

@@ -28,7 +28,8 @@ export const Menu = () => {
           <div
             className={clsx(
               'w-full h-dvh flex flex-col justify-center items-center overflow-x-hidden transition-all ease-in-out duration-500',
-              'md:flex-row relative overflow-hidden'
+              'relative overflow-hidden',
+              'md:flex-row'
             )}
           >
             <motion.div
