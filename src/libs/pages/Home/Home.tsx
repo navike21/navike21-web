@@ -1,5 +1,5 @@
 import heroImage from '@Assets/images/technology-expert-developing-userfriendly-software-by-understanding-requirements-endusers.jpg'
-import { Container, ItemLinkCard, LinkButton } from '@Components/atoms'
+import { Container, ItemLinkCard, LinkButton, Title } from '@Components/atoms'
 import { ItemHeroSection } from '@Components/molecules'
 import clsx from 'clsx'
 import { useHome } from './home.hooks'
@@ -33,12 +33,7 @@ export const Home = () => {
       ))}
       <section className="bg-gray-100">
         <Container className="py-20 flex flex-col gap-20">
-          <div className={clsx('title-area flex flex-col gap-4')}>
-            <h2 className={clsx('text-center text-4xl font-semibold')}>
-              {servicesTitle}
-            </h2>
-            <p className={clsx('text-center')}>{servicesDescription}</p>
-          </div>
+          <Title title={servicesTitle} subTitle={servicesDescription} />
           <div
             className={clsx(
               'services-area grid grid-cols-1 gap-6',
