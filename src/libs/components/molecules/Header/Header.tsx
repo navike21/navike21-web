@@ -6,8 +6,14 @@ import clsx from 'clsx'
 import Link from 'next/link'
 
 export const Header = () => {
-  const { headerRef, isSolid, toggleMenu, socialMedia, setToggleMenu } =
-    useHeader()
+  const {
+    breakpoint,
+    headerRef,
+    isSolid,
+    toggleMenu,
+    socialMedia,
+    setToggleMenu
+  } = useHeader()
 
   return (
     <header
@@ -26,7 +32,14 @@ export const Header = () => {
             logoColor="gradient"
             showText
             textColor={
-              (!toggleMenu && 'black') || (toggleMenu && 'white') || 'black'
+              (!toggleMenu &&
+                !isSolid &&
+                (breakpoint === 'mobile' || breakpoint === 'tablet') &&
+                'white') ||
+              (!toggleMenu && 'black') ||
+              (isSolid && breakpoint === 'mobile' && 'black') ||
+              (toggleMenu && 'white') ||
+              'black'
             }
           />
         </Link>
