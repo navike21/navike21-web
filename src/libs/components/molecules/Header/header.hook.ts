@@ -1,5 +1,6 @@
 'use client'
 
+import { SOCIAL_MEDIA } from '@Constants/socialMedia'
 import { useHeaderContext } from '@Context/HeaderContext'
 import { useScroll, useMotionValueEvent } from 'motion/react'
 import { useRef } from 'react'
@@ -7,7 +8,6 @@ import { useRef } from 'react'
 export const useHeader = () => {
   const headerRef = useRef<HTMLElement | null>(null)
   const { isSolid, setIsSolid, toggleMenu, setToggleMenu } = useHeaderContext()
-
   const { scrollY } = useScroll()
 
   useMotionValueEvent(scrollY, 'change', latestY => {
@@ -22,6 +22,7 @@ export const useHeader = () => {
     headerRef,
     isSolid,
     toggleMenu,
+    socialMedia: SOCIAL_MEDIA.filter(({ active }) => active),
     setToggleMenu
   }
 }

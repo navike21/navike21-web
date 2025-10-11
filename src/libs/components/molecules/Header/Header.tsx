@@ -1,12 +1,13 @@
 'use client'
 
-import { Container, Logo, MenuIcon } from '@Components/atoms'
+import { Container, IconComponent, Logo, MenuIcon } from '@Components/atoms'
 import { useHeader } from './header.hook'
 import clsx from 'clsx'
 import Link from 'next/link'
 
 export const Header = () => {
-  const { headerRef, isSolid, toggleMenu, setToggleMenu } = useHeader()
+  const { headerRef, isSolid, toggleMenu, socialMedia, setToggleMenu } =
+    useHeader()
 
   return (
     <header
@@ -29,21 +30,45 @@ export const Header = () => {
             }
           />
         </Link>
-        <button
-          className="rounded-full cursor-pointer"
-          onClick={() => setToggleMenu(!toggleMenu)}
-          aria-label="Toggle Menu"
-        >
-          <MenuIcon
-            className={clsx(
-              'w-10 h-10 transition-all ease-in-out duration-500',
-              {
-                'stroke-slate-950': isSolid && !toggleMenu,
-                'stroke-white': !isSolid || toggleMenu
-              }
-            )}
-          />
-        </button>
+        <div className="flex items-center gap-4">
+          <aside className="flex items-center gap-2">
+            {socialMedia.map(({ icon, name, url }) => (
+              <Link
+                key={name}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <IconComponent
+                  icon={icon}
+                  className={clsx(
+                    'w-auto h-5 transition-all ease-in-out duration-500',
+                    {
+                      'text-slate-950': isSolid && !toggleMenu,
+                      'text-white': !isSolid || toggleMenu
+                    }
+                  )}
+                />
+              </Link>
+            ))}
+          </aside>
+
+          <button
+            className="rounded-full cursor-pointer"
+            onClick={() => setToggleMenu(!toggleMenu)}
+            aria-label="Toggle Menu"
+          >
+            <MenuIcon
+              className={clsx(
+                'w-10 h-10 transition-all ease-in-out duration-500',
+                {
+                  'stroke-slate-950': isSolid && !toggleMenu,
+                  'stroke-white': !isSolid || toggleMenu
+                }
+              )}
+            />
+          </button>
+        </div>
       </Container>
     </header>
   )
