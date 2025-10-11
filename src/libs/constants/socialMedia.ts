@@ -21,7 +21,7 @@ export const SOCIAL_MEDIA: ISocialMedia[] = [
     url: 'https://www.instagram.com/navike21'
   },
   {
-    active: true,
+    active: false,
     icon: 'RiYoutubeFill',
     name: 'YouTube',
     url: 'https://www.youtube.com/@navike21'

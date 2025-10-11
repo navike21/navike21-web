@@ -6,14 +6,8 @@ import clsx from 'clsx'
 import Link from 'next/link'
 
 export const Header = () => {
-  const {
-    breakpoint,
-    headerRef,
-    isSolid,
-    toggleMenu,
-    socialMedia,
-    setToggleMenu
-  } = useHeader()
+  const { headerRef, isSolid, toggleMenu, socialMedia, setToggleMenu } =
+    useHeader()
 
   return (
     <header
@@ -31,16 +25,10 @@ export const Header = () => {
           <Logo
             logoColor="gradient"
             showText
-            textColor={
-              (!toggleMenu &&
-                !isSolid &&
-                (breakpoint === 'mobile' || breakpoint === 'tablet') &&
-                'white') ||
-              (!toggleMenu && 'black') ||
-              (isSolid && breakpoint === 'mobile' && 'black') ||
-              (toggleMenu && 'white') ||
-              'black'
-            }
+            classNameTextColor={clsx({
+              'text-white': !isSolid || toggleMenu,
+              'md:text-primary-text': !isSolid && !toggleMenu
+            })}
           />
         </Link>
         <div className="flex items-center gap-4">
