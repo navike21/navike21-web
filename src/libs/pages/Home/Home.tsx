@@ -18,7 +18,12 @@ export const Home = () => {
         children: servicesChildren,
         variant: servicesVariant
       }
-    }
+    },
+    metricsSectionCurrent: {
+      title: metricsTitle,
+      description: metricsDescription
+    },
+    companyMetricsCurrent
   } = useHome()
   return (
     <>
@@ -62,6 +67,32 @@ export const Home = () => {
           >
             {servicesChildren}
           </LinkButton>
+        </Container>
+      </section>
+      <section className="bg-black">
+        <Container className="py-20 flex flex-col gap-20 text-white">
+          <Title title={metricsTitle} subTitle={metricsDescription} />
+          <div
+            className={clsx(
+              'services-area grid grid-cols-2 gap-6',
+              'sm:grid-cols-2 sm:gap-10',
+              'lg:grid-cols-4 lg:gap-0'
+            )}
+          >
+            {companyMetricsCurrent.map(({ id, label, value, suffix }) => (
+              <div key={id} className="flex flex-col items-center gap-2">
+                <h3 className={clsx('text-4xl font-semibold flex items-start')}>
+                  {value}
+                  <span className="text-3xl font-semibold text-gradient">
+                    {suffix}
+                  </span>
+                </h3>
+                <p className="text-center w-10/12 text-balance text-md">
+                  {label}
+                </p>
+              </div>
+            ))}
+          </div>
         </Container>
       </section>
     </>

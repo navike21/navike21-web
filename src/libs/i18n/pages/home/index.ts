@@ -1,5 +1,9 @@
 import { ESP } from '@Constants/languages'
-import { heroSectionEs, servicesSectionEs } from './locales/es'
+import {
+  heroSectionEs,
+  metricsSectionEs,
+  servicesSectionEs
+} from './locales/es'
 
 export const heroSection = {
   [ESP]: heroSectionEs
@@ -7,4 +11,8 @@ export const heroSection = {
 
 export const servicesSection = {
   [ESP]: servicesSectionEs
+}
+
+export const metricsSection = {
+  [ESP]: metricsSectionEs
 }

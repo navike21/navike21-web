@@ -37,8 +37,8 @@ export const ItemHeroSection = ({
         >
           <h2
             className={clsx(
-              'text-2xl font-semibold leading-tight text-white',
-              'md:text-3xl md:text-primary-text md:w-11/12',
+              'text-3xl font-semibold leading-tight text-white',
+              'md:text-primary-text md:w-11/12',
               'lg:text-4xl',
               'xl:text-5xl'
             )}

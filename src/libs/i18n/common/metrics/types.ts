@@ -1,5 +1,5 @@
 export interface ICompanyMetric {
-  idMetric: string
+  id: string
   label: string
   suffix: string
   value: number
