@@ -4,7 +4,7 @@ import clsx from 'clsx'
 
 export type TLogoColor = 'white' | 'black' | 'gradient'
 
-export interface LogoProps {
+export interface ILogoProps {
   showText?: boolean
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
   textColor?: TLogoColor
@@ -18,7 +18,7 @@ export const Logo = ({
   textColor = 'black',
   logoColor = 'gradient',
   classNameTextColor
-}: LogoProps) => (
+}: ILogoProps) => (
   <div className={clsx('flex items-center gap-2 logo-navike21')}>
     <svg
       xmlns="http://www.w3.org/2000/svg"

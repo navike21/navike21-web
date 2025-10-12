@@ -43,7 +43,6 @@ export const ItemCard = ({
   title,
   description,
   icon,
-  children,
   className,
   ...props
 }: IItemCardProps) => (
@@ -82,11 +81,7 @@ interface IItemLinkCardProps extends IItemCardProps {
   href: string
 }
 
-export const ItemLinkCard = ({
-  href,
-  children,
-  ...props
-}: IItemLinkCardProps) => (
+export const ItemLinkCard = ({ href, ...props }: IItemLinkCardProps) => (
   <Link href={href} className="w-full">
     <ItemCard {...props} />
   </Link>
