@@ -21,7 +21,7 @@ export const TestimonialItem = ({
   avatar,
   starRating
 }: ITestimonialItemProps) => (
-  <Card className="aspect-9/9 max-w-80 w-11/12">
+  <Card className="max-w-80 w-11/12">
     <div className="flex flex-col gap-6">
       <div className="flex justify-between items-center w-full">
         <IconComponent
