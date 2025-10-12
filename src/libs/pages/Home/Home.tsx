@@ -1,6 +1,6 @@
 import heroImage from '@Assets/images/technology-expert-developing-userfriendly-software-by-understanding-requirements-endusers.jpg'
 import { Container, ItemLinkCard, LinkButton, Title } from '@Components/atoms'
-import { ItemHeroSection } from '@Components/molecules'
+import { ItemHeroSection, Testimonial } from '@Components/molecules'
 import clsx from 'clsx'
 import { useHome } from './home.hooks'
 import { randomUUID } from 'crypto'
@@ -93,6 +93,15 @@ export const Home = () => {
               </div>
             ))}
           </div>
+        </Container>
+      </section>
+      <section>
+        <Container className="py-20 flex flex-col gap-10">
+          <Title
+            title="Lo que dicen nuetsros clientes"
+            subTitle="La confianza de nuestros clientes es nuestro mayor logro"
+          />
+          <Testimonial />
         </Container>
       </section>
     </>

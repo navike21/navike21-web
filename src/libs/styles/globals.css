@@ -29,3 +29,60 @@
 @utility text-gradient {
   @apply text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-700 via-secondary-700 via-80%;
 }
+
+@layer utilities {
+  /* Ripple para online */
+  @keyframes avatar-ripple {
+    0% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+
+  /* Pulso corto para busy */
+  @keyframes avatar-pulse-busy {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+
+  /* Pulso lento para away */
+  @keyframes avatar-pulse-away {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.9;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.6;
+    }
+  }
+
+  /* Utilidades */
+  .avatar-online-ripple {
+    @apply before:absolute before:inset-0 before:rounded-full before:bg-green-500 before:opacity-60 before:animate-[avatar-ripple_1.5s_ease-out_infinite];
+  }
+
+  .avatar-busy-pulse {
+    @apply before:absolute before:inset-0 before:rounded-full before:bg-red-500 before:animate-[avatar-pulse-busy_1s_ease-in-out_infinite];
+  }
+
+  .avatar-away-pulse {
+    @apply before:absolute before:inset-0 before:rounded-full before:bg-yellow-500 before:animate-[avatar-pulse-away_2s_ease-in-out_infinite];
+  }
+
+  .avatar-offline {
+    @apply before:absolute before:inset-0 before:rounded-full before:bg-gray-400;
+  }
+}
