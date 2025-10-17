@@ -1,5 +1,5 @@
-import { useHeaderContext } from '@Context/HeaderContext'
-import { Variants } from 'motion'
+import { useHeaderContext } from '@Context/headerContext.hook'
+import { type Variants } from 'motion'
 
 export const useMenu = () => {
   const { toggleMenu } = useHeaderContext()

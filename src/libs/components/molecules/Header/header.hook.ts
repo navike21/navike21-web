@@ -1,7 +1,7 @@
 'use client'
 
 import { SOCIAL_MEDIA } from '@Constants/socialMedia'
-import { useHeaderContext } from '@Context/HeaderContext'
+import { useHeaderContext } from '@Context/headerContext.hook'
 import { useScroll, useMotionValueEvent } from 'motion/react'
 import { useRef } from 'react'
 

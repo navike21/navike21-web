@@ -1,36 +1,45 @@
 {
-  "cSpell.words": [
-    "almazen",
-    "Almazen",
-    "anker",
-    "ankerpaints",
-    "autoplay",
-    "beatsmusica",
-    "carbyne",
-    "Carbyne",
-    "circurela",
-    "Circurela",
-    "esnext",
-    "gsap",
-    "hammerblocs",
-    "launion",
-    "Linkedin",
-    "LINKEDIN",
-    "Melly",
-    "microinteracciones",
-    "microinteractions",
-    "nikkei",
-    "quicksand",
-    "Quicksand",
-    "remixicon",
-    "rkpower",
-    "TIKTOK",
-    "TMUI",
-    "vercel",
-    "Whatsapp",
-    "WHATSAPP"
+  // === FORMATEO AUTOMÁTICO ===
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  // === ESLINT INTEGRADO ===
+  "eslint.enable": true,
+  "eslint.run": "onSave",
+  "eslint.alwaysShowStatus": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
   ],
+  // === ARREGLA AUTO ===
   "editor.codeActionsOnSave": {
-    "source.fixAll": "always"
-  }
+    "source.fixAll": "explicit",
+    "source.fixAll.eslint": "explicit"
+  },
+  // === PRETTIER CONFIG ===
+  "prettier.requireConfig": true,
+  "prettier.configPath": "./prettier.config.json",
+  // === IGNORA FORMATOS DE NEXT ===
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // === TAILWIND & TYPESCRIPT ===
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "tailwindCSS.experimental.classRegex": [
+    [
+      "clsx\\(([^)]*)\\)",
+      "[\"'`]([^\"'`]*).*?[\"'`]"
+    ]
+  ],
+  "eslint.useFlatConfig": true,
+  "eslint.options": {
+    "overrideConfigFile": "eslint.config.mjs"
+  },
 }

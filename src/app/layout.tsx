@@ -1,9 +1,9 @@
-import type { Metadata } from 'next'
-import { firaCode, poppins } from '@Sources/fonts'
-import '@Styles/globals.css'
 import { Header, LayoutScroll, Menu } from '@Components/molecules'
 import { HeaderProvider } from '@Context/HeaderContext'
-import { ReactNode } from 'react'
+import { firaCode, poppins } from '@Sources/fonts'
+import '@Styles/globals.css'
+import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 
 export const metadata: Metadata = {
   title: 'Create Next App',

@@ -3,8 +3,8 @@
 import { ReactLenis } from 'lenis/react'
 import type { LenisRef } from 'lenis/react'
 import { cancelFrame, frame } from 'motion'
-import { ReactNode, useEffect, useRef } from 'react'
-import { useHeaderContext } from '@Context/HeaderContext'
+import { type ReactNode, useEffect, useRef } from 'react'
+import { useHeaderContext } from '@Context/headerContext.hook'
 import clsx from 'clsx'
 import { BgHeader } from '../Header'
 
