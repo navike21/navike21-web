@@ -1,4 +1,4 @@
-import { ILinkButtonProps } from '@Types/buttonProps'
+import { type ILinkButtonProps } from '@Types/buttonProps'
 
 export interface IHeroSection {
   title: string
