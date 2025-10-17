@@ -1,4 +1,4 @@
-import { IHeroSection, IMetricsSection, IServicesSection } from '../types'
+import type { IHeroSection, IMetricsSection, IServicesSection } from '../types'
 
 export const heroSectionEs: IHeroSection[] = [
   {
