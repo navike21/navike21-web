@@ -1,6 +1,6 @@
-import { TIconName } from '@Types/icons'
+import { type TIconName } from '@Types/icons'
 import clsx from 'clsx'
-import { ReactNode } from 'react'
+import { type ReactNode } from 'react'
 import { IconComponent } from '../IconComponent'
 import Link from 'next/link'
 

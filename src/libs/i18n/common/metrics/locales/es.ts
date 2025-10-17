@@ -1,4 +1,4 @@
-import { ICompanyMetric } from '../types'
+import { type ICompanyMetric } from '../types'
 
 export const companyMetricsEs: ICompanyMetric[] = [
   {

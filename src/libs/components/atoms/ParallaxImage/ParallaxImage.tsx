@@ -2,7 +2,7 @@
 
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'motion/react'
-import Image, { StaticImageData } from 'next/image'
+import Image, { type StaticImageData } from 'next/image'
 import clsx from 'clsx'
 
 interface IParallaxImageProps {

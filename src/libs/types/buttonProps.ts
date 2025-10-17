@@ -1,11 +1,15 @@
-import { ButtonHTMLAttributes, LinkHTMLAttributes, ReactNode } from 'react'
-import { TIconName } from './icons'
-import { LinkProps } from 'next/link'
+import type {
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  ReactNode
+} from 'react'
+import { type TIconName } from './icons'
+import { type LinkProps } from 'next/link'
 
 export interface IButtonBaseProps {
-  variant?: 'primary' | 'secondary'
-  size?: 'small' | 'medium' | 'large'
-  icon: TIconName
+  variant?: 'primary' | 'secondary' | undefined
+  size?: 'small' | 'medium' | 'large' | undefined
+  icon?: TIconName | undefined
 }
 
 export interface IButtonProps
@@ -13,10 +17,11 @@ export interface IButtonProps
     IButtonBaseProps {
   children: ReactNode
 }
+
 export interface ILinkButtonProps
-  extends Omit<LinkProps, 'as'>,
-    IButtonBaseProps,
-    Omit<LinkHTMLAttributes<HTMLAnchorElement>, 'as'> {
+  extends IButtonBaseProps,
+    Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps>,
+    LinkProps {
   href: string
   children: ReactNode
   className?: string

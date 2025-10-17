@@ -3,7 +3,7 @@ import { Container, ItemLinkCard, LinkButton, Title } from '@Components/atoms'
 import { ItemHeroSection, Testimonial } from '@Components/molecules'
 import clsx from 'clsx'
 import { useHome } from './home.hooks'
-import { randomUUID } from 'crypto'
+import { randomUUID } from 'node:crypto'
 
 export const Home = () => {
   const {

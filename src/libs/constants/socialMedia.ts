@@ -1,4 +1,4 @@
-import { TIconName } from '@Types/icons'
+import { type TIconName } from '@Types/icons'
 
 interface ISocialMedia {
   active?: boolean

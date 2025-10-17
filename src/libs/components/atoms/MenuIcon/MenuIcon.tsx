@@ -9,7 +9,6 @@ interface IMenuIconProps {
 
 export const MenuIcon = ({ className }: IMenuIconProps) => {
   const { toggleMenu } = useHeaderContext()
-
   const transition: Transition = { duration: 0.5, ease: 'easeInOut' }
 
   return (

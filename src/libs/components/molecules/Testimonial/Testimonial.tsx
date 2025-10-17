@@ -1,9 +1,9 @@
 import { Avatar, Card, Divider, IconComponent } from '@Components/atoms'
-import { randomUUID } from 'crypto'
+import { randomUUID } from 'node:crypto'
 import React from 'react'
 
 import imageTest from '@Assets/images/technology-expert-developing-userfriendly-software-by-understanding-requirements-endusers.jpg'
-import { StaticImageData } from 'next/image'
+import { type StaticImageData } from 'next/image'
 import clsx from 'clsx'
 
 interface ITestimonialItemProps {
@@ -29,18 +29,16 @@ export const TestimonialItem = ({
           className="w-10 h-10 text-gray-300"
         />
         <div className="flex gap-0.5">
-          {Array(5)
-            .fill(0)
-            .map((_, index) => (
-              <IconComponent
-                key={randomUUID()}
-                icon="RiStarFill"
-                className={clsx('w-5 h-5', {
-                  'text-yellow-400': starRating && starRating > index,
-                  'text-gray-300': !starRating || starRating <= index
-                })}
-              />
-            ))}
+          {new Array(5).fill(0).map((_, index) => (
+            <IconComponent
+              key={randomUUID()}
+              icon="RiStarFill"
+              className={clsx('w-5 h-5', {
+                'text-yellow-400': starRating && starRating > index,
+                'text-gray-300': !starRating || starRating <= index
+              })}
+            />
+          ))}
         </div>
       </div>
       <p>{content}</p>

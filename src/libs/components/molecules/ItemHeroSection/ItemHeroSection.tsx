@@ -1,8 +1,8 @@
 import { Container, LinkButton, ParallaxImage } from '@Components/atoms'
-import { ILinkButtonProps } from '@Types/buttonProps'
+import { type ILinkButtonProps } from '@Types/buttonProps'
 import clsx from 'clsx'
-import { randomUUID } from 'crypto'
-import { StaticImageData } from 'next/image'
+import { randomUUID } from 'node:crypto'
+import { type StaticImageData } from 'next/image'
 
 interface IItemHeroSectionProps {
   heroImage: StaticImageData

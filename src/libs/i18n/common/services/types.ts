@@ -1,4 +1,4 @@
-import { TIconName } from '@Types/icons'
+import { type TIconName } from '@Types/icons'
 
 export interface IService {
   id: string
