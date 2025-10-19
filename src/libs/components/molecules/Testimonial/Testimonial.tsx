@@ -1,10 +1,12 @@
 import { Avatar, Card, Divider, IconComponent } from '@Components/atoms'
-import { randomUUID } from 'node:crypto'
 import React from 'react'
 
 import imageTest from '@Assets/images/technology-expert-developing-userfriendly-software-by-understanding-requirements-endusers.jpg'
 import { type StaticImageData } from 'next/image'
 import clsx from 'clsx'
+import { Slider } from '../Slider'
+import type { EmblaOptionsType } from 'embla-carousel'
+import { uuid } from '@Helpers/uuid'
 
 interface ITestimonialItemProps {
   author: string
@@ -31,7 +33,7 @@ export const TestimonialItem = ({
         <div className="flex gap-0.5">
           {new Array(5).fill(0).map((_, index) => (
             <IconComponent
-              key={randomUUID()}
+              key={uuid()}
               icon="RiStarFill"
               className={clsx('w-5 h-5', {
                 'text-yellow-400': starRating && starRating > index,
@@ -57,8 +59,20 @@ export const TestimonialItem = ({
 )
 
 export const Testimonial = () => {
+  const OPTIONS: EmblaOptionsType = { loop: true }
+  const SLIDE_COUNT = 5
+  const SLIDES = Array.from(new Array(SLIDE_COUNT).keys())
+
   return (
     <div className="flex items-center justify-center gap-6 flex-wrap">
+      <Slider slides={SLIDES} options={OPTIONS} />
+      <TestimonialItem
+        author="John Doe"
+        role="CEO, Company Inc."
+        content="navike21 transformó nuestra presencia en línea. Su equipo es profesional y dedicado."
+        avatar={imageTest}
+        starRating={5}
+      />
       <TestimonialItem
         author="John Doe"
         role="CEO, Company Inc."

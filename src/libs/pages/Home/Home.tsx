@@ -3,7 +3,7 @@ import { Container, ItemLinkCard, LinkButton, Title } from '@Components/atoms'
 import { ItemHeroSection, Testimonial } from '@Components/molecules'
 import clsx from 'clsx'
 import { useHome } from './home.hooks'
-import { randomUUID } from 'node:crypto'
+import { uuid } from '@Helpers/uuid'
 
 export const Home = () => {
   const {
@@ -29,7 +29,7 @@ export const Home = () => {
     <>
       {heroSectionCurrent.map(({ title, description, controlActions }) => (
         <ItemHeroSection
-          key={randomUUID()}
+          key={uuid()}
           heroImage={heroImage}
           title={title}
           description={description}

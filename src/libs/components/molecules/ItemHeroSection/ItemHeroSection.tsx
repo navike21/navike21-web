@@ -1,7 +1,7 @@
 import { Container, LinkButton, ParallaxImage } from '@Components/atoms'
+import { uuid } from '@Helpers/uuid'
 import { type ILinkButtonProps } from '@Types/buttonProps'
 import clsx from 'clsx'
-import { randomUUID } from 'node:crypto'
 import { type StaticImageData } from 'next/image'
 
 interface IItemHeroSectionProps {
@@ -55,7 +55,7 @@ export const ItemHeroSection = ({
         {controlActions.length > 0 && (
           <div className={clsx('flex flex-col gap-4', 'sm:flex-row sm:gap-5')}>
             {controlActions.map(({ ...props }) => (
-              <LinkButton key={randomUUID()} {...props} />
+              <LinkButton key={uuid()} {...props} />
             ))}
           </div>
         )}

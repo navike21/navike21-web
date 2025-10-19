@@ -43,6 +43,8 @@
     "overrideConfigFile": "eslint.config.mjs"
   },
   "cSpell.words": [
+    "embla",
+    "Embla",
     "poppins",
     "remixicon"
   ],
