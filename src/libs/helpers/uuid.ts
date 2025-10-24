@@ -1,3 +1,3 @@
-import { v4 as randomUUID } from 'uuid'
+import { v4 as uuIdv4 } from 'uuid'
 
-export const uuid = () => randomUUID()
+export const uuid = () => uuIdv4()

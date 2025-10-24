@@ -15,7 +15,7 @@ export const Card = ({ children, showLine, className }: ICardProps) => (
     className={clsx(
       'bg-white transition-all duration-500 group h-full',
       'flex flex-col items-center gap-6 justify-between',
-      'shadow-md shadow-gray-900/20 px-8 py-8 rounded-lg',
+      'shadow-md shadow-gray-900/20 p-8 rounded-lg',
       'hover:shadow-xl',
       className
     )}

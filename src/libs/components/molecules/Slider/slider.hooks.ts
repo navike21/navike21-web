@@ -1,98 +1,87 @@
-import type { EmblaCarouselType } from 'embla-carousel'
-import type { TUseDotButtonType, TUsePrevNextButtonsType } from './slider.types'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import type { ISliderOptions } from './slider.types'
+import Autoplay from 'embla-carousel-autoplay'
+import AutoHeight from 'embla-carousel-auto-height'
+import useEmblaCarousel from 'embla-carousel-react'
 
-export const usePrevNextButtons = (
-  emblaApi: EmblaCarouselType | undefined,
-  onButtonClick?: (emblaApi: EmblaCarouselType) => void
-): TUsePrevNextButtonsType => {
-  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true)
-  const [nextBtnDisabled, setNextBtnDisabled] = useState(true)
+export const useSlider = (options: ISliderOptions) => {
+  const {
+    autoplay = false,
+    interval = 4000,
+    loop = true,
+    fade = false,
+    dots = true,
+    arrows = true,
+    slidesToShow: defaultSlidesToShow = 1,
+    responsive = []
+  } = options
 
-  const onPrevButtonClick = useCallback(() => {
-    if (!emblaApi) return
-    emblaApi.scrollPrev()
-    if (onButtonClick) onButtonClick(emblaApi)
-  }, [emblaApi, onButtonClick])
+  // Embla Plugins
+  const plugins = useMemo(() => {
+    const list = []
+    if (autoplay)
+      list.push(Autoplay({ delay: interval, stopOnInteraction: true }))
+    list.push(AutoHeight())
+    return list
+  }, [autoplay, interval])
 
-  const onNextButtonClick = useCallback(() => {
-    if (!emblaApi) return
-    emblaApi.scrollNext()
-    if (onButtonClick) onButtonClick(emblaApi)
-  }, [emblaApi, onButtonClick])
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop }, plugins)
 
-  const handleOnSelect = useCallback((emblaApi: EmblaCarouselType) => {
-    setPrevBtnDisabled(!emblaApi.canScrollPrev())
-    setNextBtnDisabled(!emblaApi.canScrollNext())
-  }, [])
-
-  useEffect(() => {
-    if (!emblaApi) return
-
-    const api = emblaApi
-    // call the handler asynchronously to avoid synchronous setState in the effect body
-    const rafId = requestAnimationFrame(() => handleOnSelect(api))
-    api.on('reInit', handleOnSelect).on('select', handleOnSelect)
-
-    return () => {
-      cancelAnimationFrame(rafId)
-      api.off('reInit', handleOnSelect).off('select', handleOnSelect)
-    }
-  }, [emblaApi, handleOnSelect])
-
-  return {
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick
-  }
-}
-
-export const useDotButton = (
-  emblaApi: EmblaCarouselType | undefined,
-  onButtonClick?: (emblaApi: EmblaCarouselType) => void
-): TUseDotButtonType => {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const [scrollSnaps, setScrollSnaps] = useState<number[]>([])
+  const [mounted, setMounted] = useState(false)
 
-  const onDotButtonClick = useCallback(
-    (index: number) => {
-      if (!emblaApi) return
-      emblaApi.scrollTo(index)
-      if (onButtonClick) onButtonClick(emblaApi)
-    },
-    [emblaApi, onButtonClick]
-  )
-
-  const onInit = useCallback((emblaApi: EmblaCarouselType) => {
-    setScrollSnaps(emblaApi.scrollSnapList())
-  }, [])
-
-  const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return
     setSelectedIndex(emblaApi.selectedScrollSnap())
-  }, [])
+  }, [emblaApi])
 
   useEffect(() => {
     if (!emblaApi) return
+    onSelect()
+    setScrollSnaps(emblaApi.scrollSnapList())
+    emblaApi.on('select', onSelect)
+  }, [emblaApi, onSelect])
 
-    const api = emblaApi
-    // call the handlers asynchronously to avoid synchronous setState in the effect body
-    const rafId = requestAnimationFrame(() => {
-      onInit(api)
-      onSelect(api)
-    })
-
-    api.on('reInit', onInit).on('reInit', onSelect).on('select', onSelect)
-
-    return () => {
-      cancelAnimationFrame(rafId)
-      api.off('reInit', onInit).off('reInit', onSelect).off('select', onSelect)
+  // Calcular slidesToShow dinámico (solo en cliente)
+  const getActiveSlidesToShow = useCallback(() => {
+    if (typeof window === 'undefined') return defaultSlidesToShow
+    const width = window.innerWidth
+    const sorted = [...responsive].sort((a, b) => a.breakpoint - b.breakpoint)
+    let active = defaultSlidesToShow
+    for (const r of sorted) {
+      if (width >= r.breakpoint) {
+        const v = r.settings?.slidesToShow
+        if (typeof v === 'number') active = v
+      }
     }
-  }, [emblaApi, onInit, onSelect])
+    return active
+  }, [defaultSlidesToShow, responsive])
+
+  const [slidesToShow, setSlidesToShow] = useState(defaultSlidesToShow)
+
+  useEffect(() => {
+    setMounted(true)
+    const handleResize = () => setSlidesToShow(getActiveSlidesToShow())
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [getActiveSlidesToShow])
+
+  // Si el componente aún no está montado en cliente, no variar estilos dinámicos
+  const slideBasis = mounted
+    ? `${100 / Math.max(1, slidesToShow)}%`
+    : `${100 / defaultSlidesToShow}%`
 
   return {
+    emblaRef,
+    emblaApi,
     selectedIndex,
     scrollSnaps,
-    onDotButtonClick
+    slideBasis,
+    mounted,
+    fade,
+    dots,
+    arrows
   }
 }

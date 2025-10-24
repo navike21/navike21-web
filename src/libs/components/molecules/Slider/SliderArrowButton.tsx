@@ -1,6 +1,6 @@
 import clsx from 'clsx'
-import type { TPropType } from './slider.types'
 import { IconComponent } from '@Components/atoms'
+import type { TPropType } from './slider.types'
 
 export const PrevButton = ({
   children,

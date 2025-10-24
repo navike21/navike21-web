@@ -18,9 +18,9 @@ interface IAvatarProps {
 }
 
 const sizeMap = {
-  sm: 'w-8 h-8 text-sm',
-  md: 'w-12 h-12 text-base',
-  lg: 'w-16 h-16 text-lg'
+  sm: 'min-w-8 h-8 text-sm',
+  md: 'min-w-12 h-12 text-base',
+  lg: 'min-w-16 h-16 text-lg'
 } as const
 
 const statusColorMap = {
