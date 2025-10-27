@@ -4,8 +4,9 @@ import React from 'react'
 import imageTest from '@Assets/images/technology-expert-developing-userfriendly-software-by-understanding-requirements-endusers.jpg'
 import { type StaticImageData } from 'next/image'
 import clsx from 'clsx'
-import { Slider, type ISliderOptions } from '../Slider'
+import { Slider } from '../Slider'
 import { uuid } from '@Helpers/uuid'
+import type { SplideProps } from '@splidejs/react-splide'
 
 interface ITestimonialItemProps {
   author: string
@@ -26,10 +27,7 @@ export const TestimonialItem = ({
     <Card className="max-w-80 w-[98%] h-full">
       <div className="flex flex-col gap-6">
         <div className="flex justify-between items-center w-full">
-          <IconComponent
-            icon="RiDoubleQuotesR"
-            className="w-10 h-10 text-gray-300"
-          />
+          <IconComponent icon="RiDoubleQuotesR" className="w-10 h-10 text-gray-300" />
           <div className="flex gap-0.5">
             {new Array(5).fill(0).map((_, index) => (
               <IconComponent
@@ -60,28 +58,22 @@ export const TestimonialItem = ({
 )
 
 export const Testimonial = () => {
-  const OPTIONS: ISliderOptions = {
-    arrows: true,
-    dots: true,
-    autoHeight: true,
-    responsive: [
-      {
-        breakpoint: 480,
-        settings: { slidesToShow: 1 } // número, no string
+  const OPTIONS: SplideProps['options'] = {
+    perPage: 4,
+    width: '100%',
+    focus: 'center',
+    type: 'loop',
+    breakpoints: {
+      800: {
+        perPage: 1
       },
-      {
-        breakpoint: 768,
-        settings: { slidesToShow: 2 } // número, no string
+      1150: {
+        perPage: 2
       },
-      {
-        breakpoint: 1024,
-        settings: { slidesToShow: 3 }
-      },
-      {
-        breakpoint: 1480,
-        settings: { slidesToShow: 4 }
+      1600: {
+        perPage: 3
       }
-    ]
+    }
   }
 
   return (
@@ -96,24 +88,31 @@ export const Testimonial = () => {
         />
         <TestimonialItem
           author="Jane Smith"
-          role="CTO, Tech Solutions"
-          content="Gracias a navike21, aumentamos nuestras ventas en un 30%. ¡Altamente recomendado!"
+          role="Marketing Manager, Business Co."
+          content="Gracias a navike21, nuestras ventas en línea se dispararon. ¡Altamente recomendado!"
           avatar={imageTest}
           starRating={4}
         />
         <TestimonialItem
           author="Alice Johnson"
-          role="Marketing Head, Creative Agency"
-          content="El equipo de navike21 es increíblemente talentoso y fácil de trabajar. ¡Nos encantó el resultado!"
+          role="Freelancer"
+          content="El equipo de navike21 es increíblemente talentoso y fácil de trabajar. ¡Mi sitio web nunca se vio mejor!"
           avatar={imageTest}
           starRating={5}
         />
         <TestimonialItem
           author="Bob Brown"
-          role="Founder, Startup Hub"
-          content="navike21 superó nuestras expectativas en cada paso del camino. Su enfoque innovador es impresionante."
+          role="Entrepreneur"
+          content="navike21 superó mis expectativas en cada paso del camino. Su atención al detalle es insuperable."
           avatar={imageTest}
           starRating={5}
+        />
+        <TestimonialItem
+          author="Emily Davis"
+          role="Small Business Owner"
+          content="Estoy encantada con el trabajo de navike21. Mi negocio ha crecido gracias a su experiencia en desarrollo web."
+          avatar={imageTest}
+          starRating={4}
         />
       </Slider>
     </div>
