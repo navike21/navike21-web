@@ -19,10 +19,7 @@ export const Home = () => {
         variant: servicesVariant
       }
     },
-    metricsSectionCurrent: {
-      title: metricsTitle,
-      description: metricsDescription
-    },
+    metricsSectionCurrent: { title: metricsTitle, description: metricsDescription },
     companyMetricsCurrent
   } = useHome()
   return (
@@ -47,17 +44,15 @@ export const Home = () => {
               'xl:grid-cols-4 xl:gap-7'
             )}
           >
-            {servicesListCurrent.map(
-              ({ id, title, shortDescription, icon }) => (
-                <ItemLinkCard
-                  key={id}
-                  href="/"
-                  title={title}
-                  description={shortDescription}
-                  icon={icon}
-                />
-              )
-            )}
+            {servicesListCurrent.map(({ id, title, shortDescription, icon }) => (
+              <ItemLinkCard
+                key={id}
+                href="/"
+                title={title}
+                description={shortDescription}
+                icon={icon}
+              />
+            ))}
           </div>
           <LinkButton
             className="mx-auto"
@@ -83,13 +78,9 @@ export const Home = () => {
               <div key={id} className="flex flex-col items-center gap-2">
                 <h3 className={clsx('text-4xl font-semibold flex items-start')}>
                   {value}
-                  <span className="text-3xl font-semibold text-gradient">
-                    {suffix}
-                  </span>
+                  <span className="text-3xl font-semibold text-gradient">{suffix}</span>
                 </h3>
-                <p className="text-center w-10/12 text-balance text-md">
-                  {label}
-                </p>
+                <p className="text-center w-10/12 text-balance text-md">{label}</p>
               </div>
             ))}
           </div>

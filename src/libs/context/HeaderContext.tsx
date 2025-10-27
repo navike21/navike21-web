@@ -19,8 +19,7 @@ export const HeaderProvider = ({ children }: IHeaderProviderProps) => {
   )
 
   const setToggleMenu = useCallback(
-    (value: boolean) =>
-      setHeaderState(prev => ({ ...prev, toggleMenu: value })),
+    (value: boolean) => setHeaderState(prev => ({ ...prev, toggleMenu: value })),
     []
   )
 
@@ -34,7 +33,5 @@ export const HeaderProvider = ({ children }: IHeaderProviderProps) => {
     [headerState.isSolid, headerState.toggleMenu, setIsSolid, setToggleMenu]
   )
 
-  return (
-    <HeaderContext.Provider value={value}>{children}</HeaderContext.Provider>
-  )
+  return <HeaderContext.Provider value={value}>{children}</HeaderContext.Provider>
 }

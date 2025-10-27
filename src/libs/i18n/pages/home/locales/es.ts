@@ -23,8 +23,7 @@ export const heroSectionEs: IHeroSection[] = [
 
 export const servicesSectionEs: IServicesSection = {
   title: 'Nuestros Servicios',
-  description:
-    'Ofrecemos soluciones completas para todas tus necesidades digitales.',
+  description: 'Ofrecemos soluciones completas para todas tus necesidades digitales.',
   controlAction: {
     href: '/',
     icon: 'RiArrowRightLine',

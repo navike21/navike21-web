@@ -7,9 +7,7 @@ interface IHeaderContext {
   setToggleMenu: (value: boolean) => void
 }
 
-export const HeaderContext = createContext<IHeaderContext | undefined>(
-  undefined
-)
+export const HeaderContext = createContext<IHeaderContext | undefined>(undefined)
 
 export const useHeaderContext = () => {
   const context = useContext(HeaderContext)

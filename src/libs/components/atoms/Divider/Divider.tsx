@@ -29,10 +29,7 @@ export const Divider = ({
     >
       <div
         aria-hidden="true"
-        className={clsx(
-          'bg-gray-300',
-          isHorizontal ? 'h-px flex-1' : 'w-px flex-1'
-        )}
+        className={clsx('bg-gray-300', isHorizontal ? 'h-px flex-1' : 'w-px flex-1')}
       />
 
       {children && (
@@ -49,10 +46,7 @@ export const Divider = ({
 
       <div
         aria-hidden="true"
-        className={clsx(
-          'bg-gray-300',
-          isHorizontal ? 'h-px flex-1' : 'w-px flex-1'
-        )}
+        className={clsx('bg-gray-300', isHorizontal ? 'h-px flex-1' : 'w-px flex-1')}
       />
     </div>
   )

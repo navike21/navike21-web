@@ -12,11 +12,7 @@ export const MenuIcon = ({ className }: IMenuIconProps) => {
   const transition: Transition = { duration: 0.5, ease: 'easeInOut' }
 
   return (
-    <svg
-      viewBox="0 0 40 40"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-    >
+    <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" className={className}>
       <motion.line
         x1="8"
         y1="12"

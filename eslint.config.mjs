@@ -1,105 +1,97 @@
 // eslint.config.mjs
-import { FlatCompat } from '@eslint/eslintrc'
+import eslintPluginReact from 'eslint-plugin-react'
+import eslintPluginReactHooks from 'eslint-plugin-react-hooks'
 import eslintPluginReactRefresh from 'eslint-plugin-react-refresh'
-import { dirname } from 'node:path'
-import { fileURLToPath } from 'node:url'
-
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname
-})
+import eslintPluginJsxA11y from 'eslint-plugin-jsx-a11y'
+import eslintPluginPrettier from 'eslint-plugin-prettier'
+import nextPlugin from '@next/eslint-plugin-next'
+import tseslint from '@typescript-eslint/eslint-plugin'
+import tsParser from '@typescript-eslint/parser'
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
-const eslintConfig = [
-  // === Base configs ===
-  ...compat.extends(
-    'next/core-web-vitals',
-    'next/typescript',
-    'plugin:prettier/recommended'
-  ),
-
-  // === Ignored paths ===
+export default [
   {
+    files: ['**/*.{ts,tsx,js,jsx}'],
     ignores: [
       'node_modules',
       '.next',
       'dist',
-      'public',
-      '.pnp.*',
+      'build',
       'coverage',
-      'coverage/**',
-      '*.config.js',
+      'public',
       '.vscode',
-      '.env',
-      '.env.*',
-      '**/*.d.ts'
-    ]
-  },
-
-  // === Exception for Next.js layouts & pages ===
-  {
-    files: ['src/app/**/layout.{ts,tsx}', 'src/app/**/page.{ts,tsx}'],
-    rules: {
-      'react-refresh/only-export-components': 'off'
-    }
-  },
-
-  // === Global rules ===
-  {
+      '**/*.d.ts' // 👈 ya puedes agregar esta línea si prefieres ignorarlos directamente
+    ],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        project: ['./tsconfig.json'],
+        sourceType: 'module',
+        ecmaVersion: 'latest'
+      },
+      globals: {
+        React: 'readonly',
+        JSX: 'readonly'
+      }
+    },
     plugins: {
-      'react-refresh': eslintPluginReactRefresh
+      '@typescript-eslint': tseslint,
+      react: eslintPluginReact,
+      'react-hooks': eslintPluginReactHooks,
+      'react-refresh': eslintPluginReactRefresh,
+      'jsx-a11y': eslintPluginJsxA11y,
+      prettier: eslintPluginPrettier,
+      next: nextPlugin
+    },
+    settings: {
+      react: {
+        version: 'detect'
+      }
     },
     rules: {
-      // === Formatting ===
       'prettier/prettier': [
         'error',
         {
-          singleQuote: true,
           semi: false,
+          singleQuote: true,
           trailingComma: 'none',
+          printWidth: 90,
           arrowParens: 'avoid',
-          printWidth: 80,
-          endOfLine: 'auto'
+          endOfLine: 'lf'
         }
       ],
-      'linebreak-style': 'off',
-
-      // === Syntax ===
-      semi: ['error', 'never'],
-      quotes: ['error', 'single', { avoidEscape: true, allowTemplateLiterals: true }],
-      'no-unused-vars': 'off',
       '@typescript-eslint/no-unused-vars': [
         'error',
         { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }
       ],
-
-      // === Naming conventions ===
-      '@typescript-eslint/naming-convention': [
-        'error',
-        { selector: 'interface', format: ['PascalCase'], prefix: ['I'] },
-        { selector: 'typeAlias', format: ['PascalCase'], prefix: ['T'] },
-        { selector: 'enum', format: ['PascalCase'], prefix: ['E'] },
-        { selector: 'typeParameter', format: ['PascalCase'], prefix: ['T'] },
-        {
-          selector: 'variable',
-          format: ['camelCase', 'UPPER_CASE', 'PascalCase']
-        },
-        { selector: 'function', format: ['camelCase', 'PascalCase'] }
-      ],
-
-      // === Code clarity ===
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
       'react/self-closing-comp': ['error', { component: true, html: true }],
       'react/jsx-boolean-value': ['error', 'never'],
       'react/jsx-curly-brace-presence': ['error', 'never'],
-      'react/jsx-handler-names': 'off',
+      'next/no-img-element': 'off',
+      'next/no-html-link-for-pages': 'off',
+      'jsx-a11y/alt-text': 'warn',
+      semi: ['error', 'never'],
+      quotes: ['error', 'single', { avoidEscape: true }],
+      'no-console': 'warn',
+      'no-debugger': 'error'
+    }
+  },
 
-      // === React 19 + Compiler safe ===
-      'react-hooks/exhaustive-deps': 'warn',
-      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }]
+  // 👇 Nuevo bloque específico para declaraciones .d.ts
+  {
+    files: ['**/*.d.ts'],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        sourceType: 'module',
+        ecmaVersion: 'latest'
+      }
+    },
+    rules: {
+      'prettier/prettier': 'off',
+      '@typescript-eslint/no-unused-vars': 'off'
     }
   }
 ]
-
-export default eslintConfig

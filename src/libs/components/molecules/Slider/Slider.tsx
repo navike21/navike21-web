@@ -31,11 +31,9 @@ export const Slider = ({ children, options }: ISliderProps) => {
             <PrevButton className="splide__arrow splide__arrow--prev" />
             <NextButton className="splide__arrow splide__arrow--next" />
           </div>
-          <ul className="splide__pagination"></ul>
+          <ul className="splide__pagination" />
         </div>
       </div>
     </Splide>
   )
 }
-
-
