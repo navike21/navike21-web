@@ -25,7 +25,10 @@ export const TestimonialsItem = ({
     <Card className="max-w-80 w-[98%] h-full">
       <div className="flex flex-col gap-6">
         <div className="flex justify-between items-center w-full">
-          <IconComponent icon="RiDoubleQuotesR" className="w-10 h-10 text-gray-300" />
+          <IconComponent
+            icon="RiDoubleQuotesR"
+            className="w-10 h-10 text-gray-300"
+          />
           <div className="flex gap-0.5">
             {new Array(5).fill(0).map((_, index) => (
               <IconComponent

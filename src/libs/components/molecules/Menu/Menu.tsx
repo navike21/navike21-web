@@ -7,7 +7,8 @@ import imageLeft from '@Assets/background/minimalist-hallways-background.jpg'
 import { useMenu } from './menu.hook'
 
 export const Menu = () => {
-  const { toggleMenu, menuVariants, imageVariants, itemMenuVariants } = useMenu()
+  const { toggleMenu, menuVariants, imageVariants, itemMenuVariants } =
+    useMenu()
 
   return (
     <AnimatePresence>

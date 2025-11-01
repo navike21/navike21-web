@@ -55,7 +55,7 @@ export default [
           semi: false,
           singleQuote: true,
           trailingComma: 'none',
-          printWidth: 90,
+          printWidth: 80,
           arrowParens: 'avoid',
           endOfLine: 'lf'
         }

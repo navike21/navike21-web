@@ -6,7 +6,9 @@ export interface ITitleProps {
   className?: string
 }
 export const Title = ({ title, subTitle, className }: ITitleProps) => (
-  <div className={clsx('title-area flex flex-col gap-5 items-center', className)}>
+  <div
+    className={clsx('title-area flex flex-col gap-5 items-center', className)}
+  >
     <h2
       className={clsx(
         'text-center text-3xl font-medium w-full',
@@ -16,6 +18,8 @@ export const Title = ({ title, subTitle, className }: ITitleProps) => (
     >
       {title}
     </h2>
-    {subTitle && <p className={clsx('text-center', 'md:w-10/12  ')}>{subTitle}</p>}
+    {subTitle && (
+      <p className={clsx('text-center', 'md:w-10/12  ')}>{subTitle}</p>
+    )}
   </div>
 )

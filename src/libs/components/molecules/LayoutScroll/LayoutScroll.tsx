@@ -53,7 +53,9 @@ export function LayoutScroll({ children }: Readonly<ILayoutScrollProps>) {
       }}
       ref={lenisRef}
     >
-      <main className={clsx('transition-all duration-500 ease-in-out relative')}>
+      <main
+        className={clsx('transition-all duration-500 ease-in-out relative')}
+      >
         <BgHeader />
         {children}
       </main>
