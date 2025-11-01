@@ -1,6 +1,12 @@
 import { companyMetrics } from '@I18n/common/metrics'
 import { servicesList } from '@I18n/common/services'
-import { heroSection, metricsSection, servicesSection } from '@I18n/pages/home'
+import { testimonialsList } from '@I18n/common/testimonials'
+import {
+  heroSection,
+  metricsSection,
+  servicesSection,
+  testimonialsSection
+} from '@I18n/pages/home'
 
 export const useHome = () => {
   const heroSectionCurrent = heroSection['es']
@@ -8,12 +14,16 @@ export const useHome = () => {
   const servicesListCurrent = servicesList['es']
   const metricsSectionCurrent = metricsSection['es']
   const companyMetricsCurrent = companyMetrics['es']
+  const testimonialsSectionCurrent = testimonialsSection['es']
+  const areThereTestimonials = testimonialsList['es'].length > 0
 
   return {
     heroSectionCurrent,
     servicesSectionCurrent,
     servicesListCurrent,
     metricsSectionCurrent,
-    companyMetricsCurrent
+    companyMetricsCurrent,
+    testimonialsSectionCurrent,
+    areThereTestimonials
   }
 }

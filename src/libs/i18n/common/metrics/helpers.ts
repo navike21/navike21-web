@@ -1,4 +1,4 @@
-import { suffixCompanyMetrics, valuesCompanyMetrics } from './consts'
+import { suffixCompanyMetrics, valuesCompanyMetrics } from './constants'
 import type { ICompanyMetric, ICompanyMetricsItem } from './types'
 
 export const formatCompanyMetrics = (

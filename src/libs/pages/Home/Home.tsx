@@ -23,7 +23,12 @@ export const Home = () => {
       title: metricsTitle,
       description: metricsDescription
     },
-    companyMetricsCurrent
+    testimonialsSectionCurrent: {
+      title: testimonialsTitle,
+      description: testimonialsDescription
+    },
+    companyMetricsCurrent,
+    areThereTestimonials
   } = useHome()
   return (
     <>
@@ -95,15 +100,17 @@ export const Home = () => {
           </div>
         </Container>
       </section>
-      <section>
-        <Container className="py-20 flex flex-col gap-10">
-          <Title
-            title="Lo que dicen nuetsros clientes"
-            subTitle="La confianza de nuestros clientes es nuestro mayor logro"
-          />
-          <Testimonials />
-        </Container>
-      </section>
+      {areThereTestimonials && (
+        <section>
+          <Container className="py-20 flex flex-col gap-10">
+            <Title
+              title={testimonialsTitle}
+              subTitle={testimonialsDescription}
+            />
+            <Testimonials />
+          </Container>
+        </section>
+      )}
     </>
   )
 }

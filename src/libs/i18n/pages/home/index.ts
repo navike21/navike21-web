@@ -2,17 +2,23 @@ import { ESP } from '@Constants/languages'
 import {
   heroSectionEs,
   metricsSectionEs,
-  servicesSectionEs
+  servicesSectionEs,
+  testimonialsEs
 } from './locales/es'
+import { formatHeroSection, formatServicesSection } from './utils'
 
 export const heroSection = {
-  [ESP]: heroSectionEs
+  [ESP]: formatHeroSection(heroSectionEs)
 }
 
 export const servicesSection = {
-  [ESP]: servicesSectionEs
+  [ESP]: formatServicesSection(servicesSectionEs)
 }
 
 export const metricsSection = {
   [ESP]: metricsSectionEs
+}
+
+export const testimonialsSection = {
+  [ESP]: testimonialsEs
 }

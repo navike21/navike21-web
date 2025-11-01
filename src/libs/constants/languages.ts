@@ -1,3 +1,5 @@
+import type { TLanguage } from '@Types/languages'
+
 export const ESP = 'es'
 export const ENG = 'en'
 export const DEU = 'de'
@@ -21,8 +23,6 @@ export const SUPPORTED_LANGUAGES = [
   CHI,
   RUS
 ] as const
-
-export type TLanguage = (typeof SUPPORTED_LANGUAGES)[number]
 
 export const LANGUAGE_LABELS: Record<TLanguage, string> = {
   [ESP]: 'Español',
