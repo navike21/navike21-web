@@ -1,6 +1,7 @@
 export * from './Avatar'
 export * from './Button'
 export * from './Card'
+export * from './clientsLogo'
 export * from './Container'
 export * from './Divider'
 export * from './IconComponent'
