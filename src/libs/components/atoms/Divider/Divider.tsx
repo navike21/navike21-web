@@ -1,59 +1,34 @@
-import { type ReactNode } from 'react'
 import clsx from 'clsx'
-
-type TDividerOrientation = 'horizontal' | 'vertical'
-type TDividerAlign = 'start' | 'center' | 'end'
-
-interface IDividerProps {
-  orientation?: TDividerOrientation
-  align?: TDividerAlign
-  children?: ReactNode
-  className?: string
-}
+import { useDivider } from './divider.hook'
+import type { DividerProps } from './divider.type'
 
 export const Divider = ({
   orientation = 'horizontal',
-  align = 'center',
   children,
-  className
-}: Readonly<IDividerProps>) => {
-  const isHorizontal = orientation === 'horizontal'
+  className,
+  ...props
+}: Readonly<DividerProps>) => {
+  const { isHorizontal, lineClass, containerClass, textClass } =
+    useDivider(props)
 
   return (
     <div
-      className={clsx(
-        'flex items-center',
-        isHorizontal ? 'w-full' : 'h-full flex-col',
-        className
-      )}
+      role="separator"
+      aria-orientation={orientation}
+      className={clsx(containerClass, className)}
     >
-      <div
-        aria-hidden="true"
-        className={clsx(
-          'bg-gray-300',
-          isHorizontal ? 'h-px flex-1' : 'w-px flex-1'
-        )}
-      />
-
-      {children && (
-        <span
-          className={clsx('mx-2 text-gray-500 text-sm select-none', {
-            'self-start': align === 'start',
-            'self-center': align === 'center',
-            'self-end': align === 'end'
-          })}
-        >
-          {children}
-        </span>
+      {!children ? (
+        <div
+          aria-hidden="true"
+          className={clsx(lineClass, isHorizontal ? 'w-full' : 'h-full')}
+        />
+      ) : (
+        <>
+          <div aria-hidden="true" className={lineClass} />
+          <span className={textClass}>{children}</span>
+          <div aria-hidden="true" className={lineClass} />
+        </>
       )}
-
-      <div
-        aria-hidden="true"
-        className={clsx(
-          'bg-gray-300',
-          isHorizontal ? 'h-px flex-1' : 'w-px flex-1'
-        )}
-      />
     </div>
   )
 }
