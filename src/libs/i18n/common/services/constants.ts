@@ -1,6 +1,6 @@
 import { EServiceIds, type TIconServices } from './types'
 
-export const iconServices: TIconServices = {
+export const ICON_SERVICES: TIconServices = {
   [EServiceIds.WEB_PAGES_DEVELOPMENT]: 'RiGlobalLine',
   [EServiceIds.SOFTWARE_DEVELOPMENT]: 'RiCodeFill',
   [EServiceIds.E_COMMERCE]: 'RiShoppingCartLine',
