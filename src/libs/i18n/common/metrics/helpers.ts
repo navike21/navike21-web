@@ -3,10 +3,9 @@ import type { ICompanyMetric, ICompanyMetricsItem } from './types'
 
 export const formatCompanyMetrics = (
   metrics: ICompanyMetric[]
-): ICompanyMetricsItem[] => {
-  return metrics.map(metric => ({
+): ICompanyMetricsItem[] =>
+  metrics.map(metric => ({
     ...metric,
     suffix: SUFFIX_COMPANY_METRICS[metric.id],
     value: VALUES_COMPANY_METRICS[metric.id]
   }))
-}
