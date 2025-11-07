@@ -1,4 +1,4 @@
-import { Header, LayoutScroll, Menu } from '@Components/molecules'
+import { Footer, Header, LayoutScroll, Menu } from '@Components/molecules'
 import { HeaderProvider } from '@Context/HeaderContext'
 import { firaCode, poppins } from '@Sources/fonts'
 import '@Styles/globals.css'
@@ -25,6 +25,7 @@ export default function RootLayout({ children }: Readonly<IRootLayoutProps>) {
           <Menu />
           <LayoutScroll>{children}</LayoutScroll>
         </HeaderProvider>
+        <Footer />
       </body>
     </html>
   )

@@ -1,3 +1,4 @@
+export * from './Footer'
 export * from './Header'
 export * from './ItemHeroSection'
 export * from './LayoutScroll'
