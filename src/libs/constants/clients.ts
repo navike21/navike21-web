@@ -21,7 +21,7 @@ interface IClient {
   logo: (params: ISvgProps) => ReactNode
 }
 
-export const clients: IClient[] = [
+export const CLIENTS: IClient[] = [
   {
     id: 'tentaciones-gourmet',
     name: 'Tentaciones Gourmet',
