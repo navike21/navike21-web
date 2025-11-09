@@ -1,3 +1,3 @@
-import { v4 as uuIdv4 } from 'uuid'
+import { randomUUID } from 'node:crypto'
 
-export const uuid = () => uuIdv4()
+export const uuid = () => randomUUID()
