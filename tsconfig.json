@@ -50,7 +50,7 @@
         "./src/libs/i18n/*"
       ],
       "@Pages/*": [
-        "./src/libs/pages/*"
+        "./src/pages/*"
       ],
       "@Sources/*": [
         "./src/libs/sources/*"
