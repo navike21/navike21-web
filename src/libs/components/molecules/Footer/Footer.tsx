@@ -4,7 +4,16 @@ import { useFooter } from './footer.hook'
 import { ItemFooter, LinkFooter } from './ItemFooter'
 
 export const Footer = () => {
-  const { services, legalArea, contactInfo, socialMedia } = useFooter()
+  const {
+    structure: {
+      textFooter,
+      servicesTitle,
+      legalAreaTitle,
+      contactTitle,
+      rightsReserved
+    },
+    itemsInformation: { services, legalArea, contactInfo, socialMedia }
+  } = useFooter()
   return (
     <footer className="bg-black flex flex-col gap-10 text-white">
       <Divider color="gradient" />
@@ -17,12 +26,9 @@ export const Footer = () => {
       >
         <ItemFooter className={clsx('md:col-span-3', 'lg:col-span-2')}>
           <Logo logoColor="gradient" showText textColor="white" size="sm" />
-          <p className="text-sm">
-            Somos una empresa dedicada a la creación de software con un enfoque
-            en la calidad.
-          </p>
+          <p className="text-sm">{textFooter}</p>
         </ItemFooter>
-        <ItemFooter title="Servicios">
+        <ItemFooter title={servicesTitle}>
           <ul className={clsx('flex flex-col gap-3')}>
             {services.map(({ id, title, slug }) => (
               <li key={id} className="text-sm">
@@ -31,7 +37,7 @@ export const Footer = () => {
             ))}
           </ul>
         </ItemFooter>
-        <ItemFooter title="Área Legal">
+        <ItemFooter title={legalAreaTitle}>
           <ul className={clsx('flex flex-col gap-3')}>
             {legalArea.map(({ slug, title }) => (
               <li key={slug} className="text-sm">
@@ -40,7 +46,7 @@ export const Footer = () => {
             ))}
           </ul>
         </ItemFooter>
-        <ItemFooter title="Conversemos">
+        <ItemFooter title={contactTitle}>
           <ul className={clsx('flex flex-col gap-3')}>
             {contactInfo.map(({ key, value, href }) => (
               <li key={key} className="text-sm">
@@ -75,8 +81,7 @@ export const Footer = () => {
           ))}
         </aside>
         <p className="text-sm text-center">
-          &copy; {new Date().getFullYear()} navike21. Todos los derechos
-          reservados.
+          &copy; {new Date().getFullYear()} navike21 - {rightsReserved}
         </p>
       </Container>
     </footer>
