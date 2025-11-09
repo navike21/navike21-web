@@ -1,2 +1,2 @@
 export * from './HeaderContext'
-export * from './headerContext.hook'
+export * from './headerContext.hooks'

@@ -1,6 +1,6 @@
 import { Container, Divider, IconComponent, Logo } from '@Components/atoms'
 import clsx from 'clsx'
-import { useFooter } from './footer.hook'
+import { useFooter } from './footer.hooks'
 import { ItemFooter, LinkFooter } from './ItemFooter'
 
 export const Footer = () => {

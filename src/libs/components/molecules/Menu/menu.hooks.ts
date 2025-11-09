@@ -1,4 +1,4 @@
-import { useHeaderContext } from '@Context/headerContext.hook'
+import { useHeaderContext } from '@Context/headerContext.hooks'
 import { type Variants } from 'motion'
 
 export const useMenu = () => {

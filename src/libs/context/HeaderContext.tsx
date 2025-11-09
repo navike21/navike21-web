@@ -1,7 +1,7 @@
 'use client'
 
 import { type ReactNode, useCallback, useMemo, useState } from 'react'
-import { HeaderContext } from './headerContext.hook'
+import { HeaderContext } from './headerContext.hooks'
 
 interface IHeaderProviderProps {
   children: ReactNode

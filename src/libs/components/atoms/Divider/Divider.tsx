@@ -1,6 +1,6 @@
 import clsx from 'clsx'
-import { useDivider } from './divider.hook'
-import type { DividerProps } from './divider.type'
+import { useDivider } from './divider.hooks'
+import type { DividerProps } from './divider.types'
 
 export const Divider = ({
   orientation = 'horizontal',
