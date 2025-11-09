@@ -1,10 +1,19 @@
 import clsx from 'clsx'
-import type { ReactNode } from 'react'
+import Link from 'next/link'
+import type { HTMLAttributeAnchorTarget, ReactNode } from 'react'
 
 interface ItemFooterProps {
   title?: string
   children: ReactNode
   className?: string
+}
+
+interface ILinkFooterProps {
+  children: ReactNode
+  className?: string
+  href?: string
+  rel?: string
+  target?: HTMLAttributeAnchorTarget
 }
 
 export const ItemFooter = ({ title, children, className }: ItemFooterProps) => (
@@ -16,8 +25,29 @@ export const ItemFooter = ({ title, children, className }: ItemFooterProps) => (
     )}
   >
     {title && (
-      <h2 className="text-md uppercase font-bold tracking-wide">{title}</h2>
+      <h2 className="text-md uppercase font-semibold tracking-wide">{title}</h2>
     )}
     <>{children}</>
   </section>
+)
+
+export const LinkFooter = ({
+  children,
+  className,
+  href,
+  rel,
+  target
+}: ILinkFooterProps) => (
+  <Link
+    target={target}
+    rel={rel}
+    href={href || ''}
+    className={clsx(
+      'text-sm text-white/80 decoration-0 transition-all ease-in-out duration-500',
+      'hover:text-white',
+      className
+    )}
+  >
+    {children}
+  </Link>
 )

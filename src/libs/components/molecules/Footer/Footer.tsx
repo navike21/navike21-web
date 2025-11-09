@@ -1,8 +1,7 @@
 import { Container, Divider, IconComponent, Logo } from '@Components/atoms'
 import clsx from 'clsx'
-import Link from 'next/link'
 import { useFooter } from './footer.hook'
-import { ItemFooter } from './ItemFooter'
+import { ItemFooter, LinkFooter } from './ItemFooter'
 
 export const Footer = () => {
   const { services, legalArea, contactInfo, socialMedia } = useFooter()
@@ -17,35 +16,35 @@ export const Footer = () => {
         )}
       >
         <ItemFooter className={clsx('md:col-span-3', 'lg:col-span-2')}>
-          <Logo logoColor="white" showText textColor="white" size="sm" />
+          <Logo logoColor="gradient" showText textColor="white" size="sm" />
           <p className="text-sm">
             Somos una empresa dedicada a la creación de software con un enfoque
             en la calidad.
           </p>
         </ItemFooter>
         <ItemFooter title="Servicios">
-          <ul className={clsx('flex flex-col gap-2')}>
-            {services.map(service => (
-              <li key={service.id} className="text-sm">
-                {service.title}
+          <ul className={clsx('flex flex-col gap-3')}>
+            {services.map(({ id, title, slug }) => (
+              <li key={id} className="text-sm">
+                <LinkFooter href={slug}>{title}</LinkFooter>
               </li>
             ))}
           </ul>
         </ItemFooter>
         <ItemFooter title="Área Legal">
-          <ul className={clsx('flex flex-col gap-2')}>
-            {legalArea.map(page => (
-              <li key={page.slug} className="text-sm">
-                {page.title}
+          <ul className={clsx('flex flex-col gap-3')}>
+            {legalArea.map(({ slug, title }) => (
+              <li key={slug} className="text-sm">
+                <LinkFooter href={slug}>{title}</LinkFooter>
               </li>
             ))}
           </ul>
         </ItemFooter>
         <ItemFooter title="Conversemos">
-          <ul className={clsx('flex flex-col gap-2')}>
-            {contactInfo.map(([key, value]) => (
+          <ul className={clsx('flex flex-col gap-3')}>
+            {contactInfo.map(({ key, value, href }) => (
               <li key={key} className="text-sm">
-                {value}
+                <LinkFooter href={href}>{value}</LinkFooter>
               </li>
             ))}
           </ul>
@@ -60,7 +59,7 @@ export const Footer = () => {
       >
         <aside className="flex items-center gap-2">
           {socialMedia.map(({ icon, name, url }) => (
-            <Link
+            <LinkFooter
               key={name}
               href={url}
               target="_blank"
@@ -72,7 +71,7 @@ export const Footer = () => {
                   'w-auto h-5 transition-all ease-in-out duration-500 text-white'
                 )}
               />
-            </Link>
+            </LinkFooter>
           ))}
         </aside>
         <p className="text-sm text-center">

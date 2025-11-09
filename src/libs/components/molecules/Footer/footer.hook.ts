@@ -7,7 +7,7 @@ export const useFooter = () => {
   return {
     services: servicesList['es'],
     legalArea: legalArea['es'].filter(page => page.showInFooter),
-    contactInfo: Object.entries(CONTACT_INFO),
+    contactInfo: CONTACT_INFO,
     socialMedia: SOCIAL_MEDIA.filter(({ active }) => active)
   }
 }
