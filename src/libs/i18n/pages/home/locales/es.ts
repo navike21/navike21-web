@@ -1,3 +1,4 @@
+import { EPages, type IInformationPage } from '@Types/pages'
 import {
   EHeroSectionId,
   type IHeroSection,
@@ -5,6 +6,12 @@ import {
   type IServicesSection,
   type ITestimonialsSection
 } from '../types'
+
+export const informationPageEs: IInformationPage = {
+  id: EPages.HOME,
+  name: 'Inicio',
+  slug: '/'
+}
 
 export const heroSectionEs: IHeroSection[] = [
   {

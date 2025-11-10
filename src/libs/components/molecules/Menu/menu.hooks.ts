@@ -1,4 +1,6 @@
+import { PAGES_INFORMATION } from '@Constants/pages'
 import { useHeaderContext } from '@Context/headerContext.hooks'
+import type { IInformationPage } from '@Types/pages'
 import { type Variants } from 'motion'
 
 export const useMenu = () => {
@@ -52,7 +54,12 @@ export const useMenu = () => {
     }
   }
 
+  const menuList: IInformationPage[] = Object.values(PAGES_INFORMATION).map(
+    page => page.es
+  )
+
   return {
+    menuList,
     toggleMenu,
     menuVariants,
     imageVariants,

@@ -1,6 +1,7 @@
 import { ESP } from '@Constants/languages'
 import {
   heroSectionEs,
+  informationPageEs,
   metricsSectionEs,
   servicesSectionEs,
   testimonialsEs
@@ -21,4 +22,8 @@ export const metricsSection = {
 
 export const testimonialsSection = {
   [ESP]: testimonialsEs
+}
+
+export const informationPage = {
+  [ESP]: informationPageEs
 }

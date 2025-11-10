@@ -5,10 +5,16 @@ import { AnimatePresence, motion } from 'motion/react'
 import Image from 'next/image'
 import imageLeft from '@Assets/background/minimalist-hallways-background.jpg'
 import { useMenu } from './menu.hooks'
+import Link from 'next/link'
 
 export const Menu = () => {
-  const { toggleMenu, menuVariants, imageVariants, itemMenuVariants } =
-    useMenu()
+  const {
+    imageVariants,
+    itemMenuVariants,
+    menuList,
+    menuVariants,
+    toggleMenu
+  } = useMenu()
 
   return (
     <AnimatePresence>
@@ -60,16 +66,21 @@ export const Menu = () => {
                 'md:w-1/2 md:items-center md:gap-6'
               )}
             >
-              <motion.h2
-                className={clsx(
-                  'text-xl w-full text-center',
-                  'md:text-2xl md:w-[80%]',
-                  'landscape:text-left'
-                )}
-                variants={itemMenuVariants}
-              >
-                Inicio
-              </motion.h2>
+              {menuList.map(({ id, name, slug }) => (
+                <motion.h2
+                  key={id}
+                  className={clsx(
+                    'text-xl w-full text-center',
+                    'md:text-2xl md:w-[80%]',
+                    'landscape:text-left'
+                  )}
+                  variants={itemMenuVariants}
+                >
+                  <Link className="text-white" href={slug}>
+                    {name}
+                  </Link>
+                </motion.h2>
+              ))}
             </div>
           </div>
         </motion.div>
