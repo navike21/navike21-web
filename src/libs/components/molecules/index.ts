@@ -1,3 +1,4 @@
+export * from './Clients'
 export * from './Footer'
 export * from './Header'
 export * from './ItemHeroSection'

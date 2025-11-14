@@ -1,6 +1,6 @@
 import heroImage from '@Assets/images/technology-expert-developing-userfriendly-software-by-understanding-requirements-endusers.jpg'
 import { Container, ItemLinkCard, LinkButton, Title } from '@Components/atoms'
-import { ItemHeroSection, Testimonials } from '@Components/molecules'
+import { Clients, ItemHeroSection, Testimonials } from '@Components/molecules'
 import clsx from 'clsx'
 import { useHome } from './home.hooks'
 import { uuid } from '@Helpers/uuid'
@@ -98,6 +98,11 @@ export const Home = () => {
               </div>
             ))}
           </div>
+        </Container>
+      </section>
+      <section>
+        <Container className="py-20">
+          <Clients />
         </Container>
       </section>
       {areThereTestimonials && (
