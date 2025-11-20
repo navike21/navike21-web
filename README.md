@@ -1,4 +1,3 @@
-
 # Navike21 Web
 
 ## Overview
@@ -18,7 +17,7 @@ Navike21 Web is a modern web application built with Next.js, using the App Route
 ## Project Architecture
 
 - **Framework:** Next.js (App Router, see `src/app/`)
-+- **Component Structure:**
+  +- **Component Structure:**
   - Atoms, molecules, and reusable UI in `src/libs/components/`
   - Pages and views in `src/views/pages/`
   - Constants, helpers, and types in `src/libs/constants/`, `src/libs/helpers/`, `src/libs/types/`
