@@ -9,13 +9,15 @@
   },
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "pnpm run typecheck && next build",
+    "build:ci": "next build",
     "start": "next start",
     "lint": "eslint src --ext .ts,.tsx --max-warnings=0",
     "lint:fix": "eslint src --ext .ts,.tsx --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit",
+    "validate": "pnpm run typecheck && pnpm run lint",
     "clean": "rm -rf .next out node_modules/.cache"
   },
   "dependencies": {
