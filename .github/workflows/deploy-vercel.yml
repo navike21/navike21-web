@@ -50,39 +50,3 @@ jobs:
           vercel-args: ${{ github.ref == 'refs/heads/main' && '--prod' || '' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
           scope: ${{ secrets.VERCEL_ORG_ID }}
-
-      - name: 💬 Comment PR with deployment URL
-        if: github.event_name == 'pull_request'
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const deploymentUrl = '${{ steps.vercel-deploy.outputs.preview-url }}';
-            const targetBranch = context.payload.pull_request.base.ref;
-
-            let environment = '🔵 Preview';
-            if (targetBranch === 'release') {
-              environment = '🟡 Staging';
-            } else if (targetBranch === 'main') {
-              environment = '🟢 Production';
-            }
-
-            const comment = `## ${environment} Deployment Ready! 🚀
-
-            **Deployment URL:** ${deploymentUrl}
-
-            **Target Branch:** \`${targetBranch}\`
-            **Commit:** ${context.sha.substring(0, 7)}
-
-            ---
-
-            ### ✅ Deployment successful!
-            Click the link above to preview your changes.
-            `;
-
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: comment
-            });
