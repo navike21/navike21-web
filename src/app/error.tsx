@@ -20,12 +20,12 @@ export default function Error({ error, reset }: ErrorProps) {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-6 px-4">
       <div className="text-center">
-        <h2 className="mb-2 text-3xl font-bold">Algo salió mal</h2>
+        <h2 className="mb-2 text-3xl font-bold">Something went wrong</h2>
         <p className="text-gray-600">
-          Ha ocurrido un error inesperado. Por favor, intenta de nuevo.
+          An unexpected error occurred. Please try again.
         </p>
       </div>
-      <Button onClick={reset}>Intentar de nuevo</Button>
+      <Button onClick={reset}>Try again</Button>
     </div>
   )
 }

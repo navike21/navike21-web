@@ -20,7 +20,7 @@ export default [
       'coverage',
       'public',
       '.vscode',
-      '**/*.d.ts' // 👈 ya puedes agregar esta línea si prefieres ignorarlos directamente
+      '**/*.d.ts' // Type declaration files can be ignored directly if preferred
     ],
     languageOptions: {
       parser: tsParser,
@@ -79,7 +79,7 @@ export default [
     }
   },
 
-  // 👇 Nuevo bloque específico para declaraciones .d.ts
+  // Specific block for .d.ts declaration files
   {
     files: ['**/*.d.ts'],
     languageOptions: {
