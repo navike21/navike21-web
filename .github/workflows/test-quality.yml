@@ -1,20 +1,16 @@
-name: 🔍 Code Quality Checks
+name: 🧪 Test Quality Checks
 
 on:
   pull_request:
     branches:
-      - develop
       - release
-      - main
   push:
     branches:
-      - develop
       - release
-      - main
 
 jobs:
-  quality:
-    name: TypeScript & ESLint
+  test-quality:
+    name: Test Suite & Quality Gates
     runs-on: ubuntu-latest
 
     steps:
@@ -49,3 +45,16 @@ jobs:
 
       - name: 💅 Prettier check
         run: pnpm run format:check
+
+      - name: 🏗️ Build check
+        run: pnpm run build:ci
+
+      # Placeholder for future test suites
+      # - name: 🧪 Unit tests
+      #   run: pnpm run test:unit
+
+      # - name: 🎭 Integration tests
+      #   run: pnpm run test:integration
+
+      # - name: 📊 Coverage report
+      #   run: pnpm run test:coverage
