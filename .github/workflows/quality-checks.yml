@@ -32,6 +32,12 @@ jobs:
       - name: 📥 Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: 🔍 Verify TypeScript version
+        run: |
+          echo "Expected TypeScript version: 5.9.3"
+          pnpm list typescript --depth=0
+          pnpm exec tsc --version
+
       - name: 🔍 TypeScript check
         run: pnpm run typecheck
 
