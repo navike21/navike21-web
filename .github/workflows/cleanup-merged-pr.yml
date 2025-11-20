@@ -1,0 +1,96 @@
+name: 🧹 Cleanup Merged PR
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - develop
+      - release
+      - main
+
+jobs:
+  cleanup:
+    name: Delete Branch and Preview Deployment
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+
+    permissions:
+      contents: write
+      deployments: write
+      pull-requests: write
+
+    steps:
+      - name: 🗑️ Delete merged branch
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const branchName = context.payload.pull_request.head.ref;
+            const isFromSameRepo = !context.payload.pull_request.head.repo.fork;
+
+            if (isFromSameRepo) {
+              try {
+                await github.rest.git.deleteRef({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  ref: `heads/${branchName}`
+                });
+                console.log(`✅ Branch '${branchName}' deleted successfully`);
+              } catch (error) {
+                console.log(`⚠️ Could not delete branch '${branchName}': ${error.message}`);
+              }
+            } else {
+              console.log(`ℹ️ Skipping branch deletion - PR is from a fork`);
+            }
+
+      - name: 🔧 Setup Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: 🗑️ Delete Vercel preview deployment
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+        run: |
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          ALIAS="navike21-pr-${PR_NUMBER}"
+
+          echo "🔍 Looking for deployments with alias: ${ALIAS}.vercel.app"
+
+          # Get all deployments for the project
+          DEPLOYMENTS=$(vercel list --token=$VERCEL_TOKEN --scope=$VERCEL_ORG_ID 2>/dev/null || echo "")
+
+          if [ -n "$DEPLOYMENTS" ]; then
+            echo "✅ Found deployments, proceeding with cleanup"
+
+            # Try to remove the alias
+            vercel alias rm "${ALIAS}.vercel.app" --token=$VERCEL_TOKEN --scope=$VERCEL_ORG_ID --yes 2>/dev/null || echo "ℹ️ Alias not found or already removed"
+
+            echo "✅ Preview deployment cleanup completed"
+          else
+            echo "ℹ️ No deployments found"
+          fi
+
+      - name: 💬 Comment PR cleanup status
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const branchName = context.payload.pull_request.head.ref;
+            const previewUrl = `navike21-pr-${prNumber}.vercel.app`;
+
+            const comment = `## 🧹 PR Merged - Cleanup Completed
+
+            ✅ Branch \`${branchName}\` has been deleted
+            ✅ Preview deployment \`${previewUrl}\` has been removed
+
+            Thank you for your contribution! 🎉`;
+
+            github.rest.issues.createComment({
+              issue_number: prNumber,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
