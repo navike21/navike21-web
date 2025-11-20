@@ -6,14 +6,19 @@ export const formatHeroSection = (
 ): IHeroSection[] =>
   heroSection.map(section => ({
     ...section,
-    controlActions: section.controlActions.map((action, index) => ({
-      ...action,
-      icon:
-        index === 0
-          ? heroSectionIcons[section.id].firstControlIcon
-          : heroSectionIcons[section.id].secondControlIcon,
-      variant: index === 1 ? 'secondary' : undefined
-    }))
+    controlActions: section.controlActions.map((action, index) => {
+      const baseAction = {
+        ...action,
+        icon:
+          index === 0
+            ? heroSectionIcons[section.id].firstControlIcon
+            : heroSectionIcons[section.id].secondControlIcon
+      }
+      // Only add variant if it's the second action (index 1)
+      return index === 1
+        ? { ...baseAction, variant: 'secondary' as const }
+        : baseAction
+    })
   }))
 
 export const formatServicesSection = (

@@ -35,6 +35,13 @@ export function LayoutScroll({ children }: Readonly<ILayoutScrollProps>) {
     } else {
       lenis.start()
     }
+
+    // Cleanup: ensure scroll is enabled when component unmounts
+    return () => {
+      if (toggleMenu && lenis) {
+        lenis.start()
+      }
+    }
   }, [toggleMenu])
 
   return (

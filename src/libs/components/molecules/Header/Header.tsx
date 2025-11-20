@@ -39,6 +39,7 @@ export const Header = () => {
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`Visitar ${name}`}
               >
                 <IconComponent
                   icon={icon}
@@ -57,7 +58,9 @@ export const Header = () => {
           <button
             className="rounded-full cursor-pointer"
             onClick={() => setToggleMenu(!toggleMenu)}
-            aria-label="Toggle Menu"
+            aria-label={toggleMenu ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={toggleMenu}
+            aria-controls="main-menu"
           >
             <MenuIcon
               className={clsx(

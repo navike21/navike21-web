@@ -20,6 +20,7 @@ export const Menu = () => {
     <AnimatePresence>
       {toggleMenu && (
         <motion.div
+          id="main-menu"
           key="modal"
           className={clsx(
             'fixed top-0 left-0 w-full bg-black z-40 overflow-y-auto',
@@ -30,6 +31,8 @@ export const Menu = () => {
           initial="initial"
           animate="animate"
           exit="exit"
+          role="dialog"
+          aria-modal="true"
         >
           <div
             className={clsx(
