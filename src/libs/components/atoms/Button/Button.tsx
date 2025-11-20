@@ -1,34 +1,52 @@
-import { IButtonBaseProps } from '@Types/buttonBase'
 import clsx from 'clsx'
-import { ButtonHTMLAttributes } from 'react'
-
-type TButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & IButtonBaseProps
+import { IconComponent } from '../IconComponent'
+import { type IButtonProps } from '@Types/buttonProps'
 
 export const Button = ({
-  appearance = 'default',
+  variant = 'primary',
+  className = '',
   children,
-  className,
-  gradient,
-  size = 'small',
+  size = 'medium',
+  icon,
   ...props
-}: TButtonProps) => {
+}: Readonly<IButtonProps>) => {
   return (
     <button
-      className={clsx(className, 'button-base group/button', {
-        'bg-primary-500 text-slate-800 hover:bg-primary-400':
-          appearance === 'default',
-        'animate-buttonHeartBeat': appearance === 'pulse',
-        'bg-gradient-primary text-white': gradient,
-        'button-small': size === 'small',
-        'button-medium': size === 'medium',
-        'button-large': size === 'large'
-      })}
+      className={clsx(
+        className,
+        'cursor-pointer duration-500 ease-in-out font-medium rounded-md shadow-black/30 shadow-md transition-all w-full',
+        'flex gap-2 justify-center items-center',
+        'sm:w-fit',
+        'hover:shadow-lg',
+        'active:scale-95',
+        {
+          'bg-black text-white': variant === 'primary',
+          'bg-white text-primary-text ring-1 ring-black ring-inset':
+            variant === 'secondary'
+        },
+        {
+          'hover:bg-gray-800': variant === 'primary',
+          'hover:bg-gray-100 hover:ring-2': variant === 'secondary'
+        },
+        {
+          'px-6 py-3 text-xs': size === 'small',
+          'px-8 py-3.5 text-sm': size === 'medium',
+          'px-10 py-4 text-md': size === 'large'
+        }
+      )}
       {...props}
     >
       {children}
-      <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-13deg)_translateX(-100%)] group-hover/button:duration-1000 group-hover/button:[transform:skew(-13deg)_translateX(100%)]">
-        <div className="relative h-full w-8 bg-white/20" />
-      </div>
+      {icon && (
+        <IconComponent
+          icon={icon}
+          className={clsx({
+            'w-4 h-4': size === 'small',
+            'w-5 h-5': size === 'medium',
+            'w-6 h-6': size === 'large'
+          })}
+        />
+      )}
     </button>
   )
 }

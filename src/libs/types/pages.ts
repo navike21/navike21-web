@@ -1,9 +1,14 @@
-import { IMetaData } from './metaData'
+export enum EPages {
+  HOME = 'home',
+  ABOUT = 'about',
+  SERVICES = 'services',
+  PROJECTS = 'projects',
+  BLOG = 'blog',
+  CONTACT = 'contact'
+}
 
-export type TItemPage = {
-  title: string
+export interface IInformationPage {
+  id: EPages
+  name: string
   slug: string
-  metaData: IMetaData
-  id?: string
-  description?: string
 }

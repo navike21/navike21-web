@@ -1,8 +1,0 @@
-export const WEB_DESIGN_SERVICES = 'web-design'
-export const ECOMMERCE_SERVICES = 'ecommerce'
-export const SOFTWARE_DEVELOPMENT_SERVICES = 'software-development'
-export const MOBILE_APPS_SERVICES = 'mobile-apps'
-export const DIGITAL_MARKETING_SERVICES = 'digital-marketing'
-export const SEO_SERVICES = 'seo'
-export const UI_UX_SERVICES = 'ui-ux'
-export const EMAIL_MARKETING_SERVICES = 'email-marketing'

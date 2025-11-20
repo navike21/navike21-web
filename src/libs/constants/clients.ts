@@ -10,8 +10,8 @@ import {
   RkPower,
   TentacionesGourmet
 } from '@Components/atoms'
-import { ISvgProps } from '@Types/svg'
-import { ReactNode } from 'react'
+import { type ISvgProps } from '@Types/svg'
+import { type ReactNode } from 'react'
 
 interface IClient {
   id: string
@@ -21,7 +21,7 @@ interface IClient {
   logo: (params: ISvgProps) => ReactNode
 }
 
-export const clients: IClient[] = [
+export const CLIENTS: IClient[] = [
   {
     id: 'tentaciones-gourmet',
     name: 'Tentaciones Gourmet',

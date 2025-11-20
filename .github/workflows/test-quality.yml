@@ -1,0 +1,60 @@
+name: 🧪 Test Quality Checks
+
+on:
+  pull_request:
+    branches:
+      - release
+  push:
+    branches:
+      - release
+
+jobs:
+  test-quality:
+    name: Test Suite & Quality Gates
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.0
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: 📥 Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: 🔍 Verify TypeScript version
+        run: |
+          echo "Expected TypeScript version: 5.9.3"
+          pnpm list typescript --depth=0
+          pnpm exec tsc --version
+
+      - name: 🔍 TypeScript check
+        run: pnpm run typecheck
+
+      - name: 🧹 ESLint check
+        run: pnpm run lint
+
+      - name: 💅 Prettier check
+        run: pnpm run format:check
+
+      - name: 🏗️ Build check
+        run: pnpm run build:ci
+
+      # Placeholder for future test suites
+      # - name: 🧪 Unit tests
+      #   run: pnpm run test:unit
+
+      # - name: 🎭 Integration tests
+      #   run: pnpm run test:integration
+
+      # - name: 📊 Coverage report
+      #   run: pnpm run test:coverage

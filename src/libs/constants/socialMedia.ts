@@ -1,69 +1,59 @@
-import {
-  Facebook,
-  GitHub,
-  Instagram,
-  LinkedIn,
-  Telegram,
-  TikTok,
-  WhatsApp,
-  X,
-  Youtube
-} from '@Components/atoms'
-import { ESocialMedia, TSocialMediaList } from '@Types/socialMedia'
+import { type TIconName } from '@Types/icons'
 
-export const SOCIAL_MEDIA: TSocialMediaList = {
-  [ESocialMedia.FACEBOOK]: {
+interface ISocialMedia {
+  active?: boolean
+  icon: TIconName
+  name: string
+  url: string
+}
+
+export const SOCIAL_MEDIA: ISocialMedia[] = [
+  {
     active: true,
-    icon: Facebook,
+    icon: 'RiFacebookFill',
     name: 'Facebook',
     url: 'https://www.facebook.com/navike21'
   },
-  [ESocialMedia.INSTAGRAM]: {
+  {
     active: true,
-    icon: Instagram,
+    icon: 'RiInstagramLine',
     name: 'Instagram',
     url: 'https://www.instagram.com/navike21'
   },
-  [ESocialMedia.LINKEDIN]: {
+  {
     active: false,
-    icon: LinkedIn,
-    name: 'LinkedIn',
-    url: 'https://www.linkedin.com/company/navike21'
-  },
-  [ESocialMedia.X]: {
-    active: true,
-    icon: X,
-    name: 'X',
-    url: 'https://x.com/navike21'
-  },
-  [ESocialMedia.WHATSAPP]: {
-    active: true,
-    icon: WhatsApp,
-    name: 'WhatsApp',
-    url: 'https://wa.me/51989505027'
-  },
-  [ESocialMedia.YOUTUBE]: {
-    active: false,
-    icon: Youtube,
+    icon: 'RiYoutubeFill',
     name: 'YouTube',
     url: 'https://www.youtube.com/@navike21'
   },
-  [ESocialMedia.TIKTOK]: {
+  {
+    active: true,
+    icon: 'RiWhatsappFill',
+    name: 'WhatsApp',
+    url: 'https://wa.me/573013553344'
+  },
+  {
     active: false,
-    icon: TikTok,
+    icon: 'RiTiktokFill',
     name: 'TikTok',
     url: 'https://www.tiktok.com/@navike21'
   },
-  [ESocialMedia.TELEGRAM]: {
+  {
     active: false,
-    icon: Telegram,
-    name: 'Telegram',
-    url: 'https://t.me/navike21'
+    icon: 'RiLinkedinFill',
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/company/navike21'
   },
-  [ESocialMedia.GITHUB]: {
+  {
     active: true,
-    icon: GitHub,
+    icon: 'RiTwitterXFill',
+    name: 'X',
+    url: 'https://x.com/navike21'
+  },
+  {
+    active: false,
+    icon: 'RiGithubFill',
     name: 'GitHub',
     url: 'https://github.com/navike21'
   }
-}
+]

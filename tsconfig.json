@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
+    "target": "ES2022",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
+    "allowJs": false,
     "skipLibCheck": true,
     "strict": true,
     "noEmit": true,
@@ -11,8 +11,16 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowImportingTsExtensions": false,
+    "verbatimModuleSyntax": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "useUnknownInCatchVariables": true,
     "plugins": [
       {
         "name": "next"
@@ -22,15 +30,22 @@
       "@Assets/*": ["./src/libs/assets/*"],
       "@Components/*": ["./src/libs/components/*"],
       "@Constants/*": ["./src/libs/constants/*"],
+      "@Context/*": ["./src/libs/context/*"],
       "@Hooks/*": ["./src/libs/hooks/*"],
+      "@I18n/*": ["./src/libs/i18n/*"],
+      "@Pages/*": ["./src/views/pages/*"],
+      "@Sources/*": ["./src/libs/sources/*"],
       "@Styles/*": ["./src/libs/styles/*"],
-      "@Translations/*": ["./src/libs/translations/*"],
       "@Types/*": ["./src/libs/types/*"],
-      "@Utils/*": ["./src/libs/utils/*"],
-      "@Seo/*": ["./src/libs/seo/*"],
-      "@Pages/*": ["./src/libs/pages/*"]
+      "@Helpers/*": ["./src/libs/helpers/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "src/types/**/*.d.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules", ".next", "out"]
 }
