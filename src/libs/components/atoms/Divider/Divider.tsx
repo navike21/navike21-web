@@ -8,8 +8,10 @@ export const Divider = ({
   className,
   ...props
 }: Readonly<DividerProps>) => {
-  const { isHorizontal, lineClass, containerClass, textClass } =
-    useDivider(props)
+  const { isHorizontal, lineClass, containerClass, textClass } = useDivider({
+    orientation,
+    ...props
+  })
 
   return (
     <div

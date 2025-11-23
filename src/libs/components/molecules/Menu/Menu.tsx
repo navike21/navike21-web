@@ -57,7 +57,6 @@ export const Menu = () => {
                   'object-cover object-center h-dvh opacity-20 blur-sm transition-all ease-in-out duration-500',
                   'md:opacity-100 md:blur-none'
                 )}
-                priority
               />
             </motion.div>
 

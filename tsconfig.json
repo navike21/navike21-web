@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": false,
     "skipLibCheck": true,
     "strict": true,
@@ -27,17 +31,39 @@
       }
     ],
     "paths": {
-      "@Assets/*": ["./src/libs/assets/*"],
-      "@Components/*": ["./src/libs/components/*"],
-      "@Constants/*": ["./src/libs/constants/*"],
-      "@Context/*": ["./src/libs/context/*"],
-      "@Hooks/*": ["./src/libs/hooks/*"],
-      "@I18n/*": ["./src/libs/i18n/*"],
-      "@Pages/*": ["./src/views/pages/*"],
-      "@Sources/*": ["./src/libs/sources/*"],
-      "@Styles/*": ["./src/libs/styles/*"],
-      "@Types/*": ["./src/libs/types/*"],
-      "@Helpers/*": ["./src/libs/helpers/*"]
+      "@Assets/*": [
+        "./src/libs/assets/*"
+      ],
+      "@Components/*": [
+        "./src/libs/components/*"
+      ],
+      "@Constants/*": [
+        "./src/libs/constants/*"
+      ],
+      "@Context/*": [
+        "./src/libs/context/*"
+      ],
+      "@Hooks/*": [
+        "./src/libs/hooks/*"
+      ],
+      "@I18n/*": [
+        "./src/libs/i18n/*"
+      ],
+      "@Pages/*": [
+        "./src/views/pages/*"
+      ],
+      "@Sources/*": [
+        "./src/libs/sources/*"
+      ],
+      "@Styles/*": [
+        "./src/libs/styles/*"
+      ],
+      "@Types/*": [
+        "./src/libs/types/*"
+      ],
+      "@Helpers/*": [
+        "./src/libs/helpers/*"
+      ]
     }
   },
   "include": [
@@ -45,7 +71,14 @@
     "src/types/**/*.d.ts",
     "src/**/*.ts",
     "src/**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "vitest.config.ts",
+    "vitest.setup.ts",
+    ".next/dev/types/**/*.ts"
   ],
-  "exclude": ["node_modules", ".next", "out"]
+  "exclude": [
+    "node_modules",
+    ".next",
+    "out"
+  ]
 }
