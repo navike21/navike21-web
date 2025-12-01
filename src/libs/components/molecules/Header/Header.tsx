@@ -83,13 +83,13 @@ export const BgHeader = () => {
   return (
     <div
       className={clsx(
-        'bg-header fixed inset-0 z-30 transition-all duration-500 ease-in-out',
+        'bg-header pointer-events-none fixed top-0 left-0 right-0 z-30 transition-all duration-500 ease-in-out',
         {
           'bg-white h-20': isSolid && !toggleMenu,
           'bg-white/0 h-28': !isSolid || toggleMenu
         }
       )}
-      data-aria-hidden="true"
+      aria-hidden="true"
     />
   )
 }

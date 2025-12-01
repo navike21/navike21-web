@@ -15,7 +15,7 @@ export function LayoutScroll({ children }: Readonly<ILayoutScrollProps>) {
 
   return (
     <ReactLenis
-      root="asChild"
+      root
       options={{
         autoRaf: false,
         duration: 1,

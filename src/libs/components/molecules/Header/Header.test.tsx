@@ -302,7 +302,10 @@ describe('BgHeader component', () => {
       const bgDiv = container.querySelector('.bg-header')
       expect(bgDiv).toHaveClass(
         'fixed',
-        'inset-0',
+        'top-0',
+        'left-0',
+        'right-0',
+        'pointer-events-none',
         'z-30',
         'transition-all',
         'duration-500',
@@ -313,7 +316,7 @@ describe('BgHeader component', () => {
     it('should have aria-hidden attribute', () => {
       const { container } = renderWithProvider(<BgHeader />)
       const bgDiv = container.querySelector('.bg-header')
-      expect(bgDiv).toHaveAttribute('data-aria-hidden', 'true')
+      expect(bgDiv).toHaveAttribute('aria-hidden', 'true')
     })
   })
 
