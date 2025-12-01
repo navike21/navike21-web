@@ -13,13 +13,13 @@ export interface IButtonBaseProps {
 }
 
 export interface IButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement>,
-    IButtonBaseProps {
+  extends ButtonHTMLAttributes<HTMLButtonElement>, IButtonBaseProps {
   children: ReactNode
 }
 
 export interface ILinkButtonProps
-  extends IButtonBaseProps,
+  extends
+    IButtonBaseProps,
     Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps>,
     LinkProps {
   href: string
