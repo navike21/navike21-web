@@ -1,3 +1,4 @@
+import { ESP } from '@Constants/languages'
 import { companyMetrics } from '@I18n/common/metrics'
 import { servicesList } from '@I18n/common/services'
 import { testimonialsList } from '@I18n/common/testimonials'
@@ -9,13 +10,13 @@ import {
 } from '@I18n/pages/home'
 
 export const useHome = () => {
-  const heroSectionCurrent = heroSection['es']
-  const servicesSectionCurrent = servicesSection['es']
-  const servicesListCurrent = servicesList['es']
-  const metricsSectionCurrent = metricsSection['es']
-  const companyMetricsCurrent = companyMetrics['es']
-  const testimonialsSectionCurrent = testimonialsSection['es']
-  const areThereTestimonials = testimonialsList['es'].length > 0
+  const heroSectionCurrent = heroSection[ESP]
+  const servicesSectionCurrent = servicesSection[ESP]
+  const servicesListCurrent = servicesList[ESP]
+  const metricsSectionCurrent = metricsSection[ESP]
+  const companyMetricsCurrent = companyMetrics[ESP]
+  const testimonialsSectionCurrent = testimonialsSection[ESP]
+  const areThereTestimonials = testimonialsList[ESP].length > 0
 
   return {
     heroSectionCurrent,

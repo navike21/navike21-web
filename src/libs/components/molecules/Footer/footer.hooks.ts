@@ -1,4 +1,5 @@
 import { CONTACT_INFO } from '@Constants/contact'
+import { ESP } from '@Constants/languages'
 import { SOCIAL_MEDIA } from '@Constants/socialMedia'
 import { footerInformation } from '@I18n/common/footer'
 import { legalArea } from '@I18n/common/legalArea'
@@ -11,7 +12,7 @@ export const useFooter = () => {
     legalAreaTitle,
     contactTitle,
     rightsReserved
-  } = footerInformation['es']
+  } = footerInformation[ESP]
   return {
     structure: {
       textFooter,
@@ -21,8 +22,8 @@ export const useFooter = () => {
       rightsReserved
     },
     itemsInformation: {
-      services: servicesList['es'],
-      legalArea: legalArea['es'].filter(page => page.showInFooter),
+      services: servicesList[ESP],
+      legalArea: legalArea[ESP].filter(page => page.showInFooter),
       contactInfo: CONTACT_INFO,
       socialMedia: SOCIAL_MEDIA.filter(({ active }) => active)
     }

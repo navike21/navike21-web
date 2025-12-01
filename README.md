@@ -36,6 +36,84 @@ Navike21 Web is a modern web application built with Next.js, using the App Route
 - **Format:** `pnpm format` (Prettier)
 - **Type checking:** `pnpm typecheck`
 
+### Testing
+
+The project uses **Vitest** for unit testing with full TypeScript and React support.
+
+#### Available Test Commands
+
+- **Run all tests:** `pnpm test`
+- **Run tests in watch mode:** `pnpm test:watch`
+- **Run tests with UI:** `pnpm test:ui`
+- **Generate coverage report:** `pnpm test:coverage`
+
+#### Test File Conventions
+
+- Test files should be named `*.test.ts` or `*.test.tsx`
+- Place test files next to the components/functions they test
+- Example: `Button.tsx` → `Button.test.tsx`
+
+#### Writing Tests
+
+**Example: Testing a utility function**
+
+```typescript
+import { describe, it, expect } from 'vitest'
+import { uuid } from './uuid'
+
+describe('uuid helper', () => {
+  it('should generate a valid UUID v4', () => {
+    const generatedUuid = uuid()
+    expect(generatedUuid).toMatch(
+      /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i
+    )
+  })
+})
+```
+
+**Example: Testing a React component**
+
+```typescript
+import { render, screen } from '@testing-library/react';
+import { describe, it, expect } from 'vitest';
+import userEvent from '@testing-library/user-event';
+import { Button } from './Button';
+
+describe('Button component', () => {
+  it('should render children correctly', () => {
+    render(<Button>Click me</Button>);
+    expect(screen.getByRole('button', { name: /click me/i })).toBeInTheDocument();
+  });
+
+  it('should handle click events', async () => {
+    const handleClick = vi.fn();
+    const user = userEvent.setup();
+
+    render(<Button onClick={handleClick}>Click me</Button>);
+    await user.click(screen.getByRole('button'));
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+});
+```
+
+#### Test Coverage
+
+Coverage reports are generated in the `coverage/` directory and include:
+
+- Line coverage
+- Function coverage
+- Branch coverage
+- Statement coverage
+
+Current thresholds: 70% for all metrics.
+
+#### Testing Libraries
+
+- **Vitest:** Fast unit test framework
+- **@testing-library/react:** React component testing utilities
+- **@testing-library/user-event:** User interaction simulation
+- **@testing-library/jest-dom:** Custom Jest DOM matchers
+
 ## Formatting & Linting Convergence
 
 - ESLint y Prettier están homologados: el formateo automático al guardar (`Ctrl + S`), `pnpm run lint:fix` y `pnpm run format` producen el mismo resultado.

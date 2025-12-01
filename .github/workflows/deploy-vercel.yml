@@ -53,33 +53,3 @@ jobs:
           github-comment: false
           alias-domains: |
             ${{ github.event_name == 'pull_request' && format('navike21-pr-{0}.vercel.app', github.event.pull_request.number) || '' }}
-
-      - name: 💬 Comment PR with Preview URL
-        if: github.event_name == 'pull_request'
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const prNumber = context.payload.pull_request.number;
-            const previewUrl = `https://navike21-pr-${prNumber}.vercel.app`;
-            const deploymentUrl = '${{ steps.vercel-deploy.outputs.preview-url }}';
-
-            const comment = `## ✅ Preview Deployment Ready!
-
-            **Preview URL (stable per PR):** ${previewUrl}
-
-            Built with commit **${{ github.event.pull_request.head.sha }}**
-
-            This pull request is being automatically deployed with [vercel-action](https://github.com/amondnet/vercel-action).
-
-            ---
-
-            🔗 **Alternative URLs:**
-            - Deployment URL: ${deploymentUrl}`;
-
-            github.rest.issues.createComment({
-              issue_number: prNumber,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: comment
-            });
