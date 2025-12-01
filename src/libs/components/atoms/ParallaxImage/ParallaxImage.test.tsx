@@ -3,7 +3,6 @@ import { describe, it, expect, vi } from 'vitest'
 import { ParallaxImage } from './ParallaxImage'
 import type { StaticImageData } from 'next/image'
 
-// Mock motion hooks
 vi.mock('motion/react', () => ({
   motion: {
     div: ({ children, ...props }: any) => <div {...props}>{children}</div>
@@ -97,7 +96,6 @@ describe('ParallaxImage component', () => {
     it('should render with Next.js Image component', () => {
       const { container } = render(<ParallaxImage img={mockImage} alt="Test" />)
       const image = container.querySelector('img')
-      // Next.js Image component is present
       expect(image).toBeInTheDocument()
     })
 
@@ -116,7 +114,6 @@ describe('ParallaxImage component', () => {
 
   describe('parallax scroll integration', () => {
     it('should use motion hooks for parallax effect', () => {
-      // The component uses useScroll and useTransform from motion/react
       const { container } = render(<ParallaxImage img={mockImage} alt="Test" />)
       const motionDiv = container.querySelector('.scale-3d')
       expect(motionDiv).toBeInTheDocument()
@@ -133,7 +130,6 @@ describe('ParallaxImage component', () => {
 
     it('should setup ref for scroll tracking', () => {
       const { container } = render(<ParallaxImage img={mockImage} alt="Test" />)
-      // Component uses ref on outer div for scroll tracking
       expect(container.firstChild).toBeInTheDocument()
     })
   })

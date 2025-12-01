@@ -5,16 +5,13 @@ import * as HeaderContext from '@Context/headerContext.hooks'
 import * as motion from 'motion/react'
 import type { MotionValue } from 'motion/react'
 
-// Mock motion/react
 vi.mock('motion/react', () => ({
   useScroll: vi.fn(),
   useMotionValueEvent: vi.fn()
 }))
 
-// Mock HeaderContext
 vi.mock('@Context/headerContext.hooks')
 
-// Mock social media constants
 vi.mock('@Constants/socialMedia', () => ({
   SOCIAL_MEDIA: [
     {

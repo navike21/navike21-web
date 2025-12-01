@@ -5,10 +5,8 @@ import type { LenisRef } from '@Types/lenis-mock'
 import * as HeaderContext from '@Context/headerContext.hooks'
 import * as motion from 'motion'
 
-// Mock HeaderContext
 vi.mock('@Context/headerContext.hooks')
 
-// Mock motion
 vi.mock('motion', () => ({
   frame: {
     update: vi.fn()

@@ -3,7 +3,6 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { MenuIcon } from './MenuIcon'
 import * as HeaderContext from '@Context/headerContext.hooks'
 
-// Mock motion components
 vi.mock('motion/react', () => ({
   motion: {
     line: ({ children, ...props }: any) => <line {...props}>{children}</line>
@@ -44,7 +43,6 @@ describe('MenuIcon component', () => {
       const { container } = render(<MenuIcon />)
       const lines = container.querySelectorAll('line')
 
-      // motion.line components render as line elements
       expect(lines.length).toBe(3)
       lines.forEach(line => {
         expect(line.tagName.toLowerCase()).toBe('line')

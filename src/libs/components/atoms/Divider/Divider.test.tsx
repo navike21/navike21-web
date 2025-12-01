@@ -85,7 +85,7 @@ describe('Divider component', () => {
 
       const { container } = render(<Divider>Text</Divider>)
       const lines = container.querySelectorAll('[aria-hidden="true"]')
-      expect(lines).toHaveLength(2) // Two lines with aria-hidden
+      expect(lines).toHaveLength(2)
     })
 
     it('should apply text class to children span', () => {

@@ -2,7 +2,6 @@ import { render, screen } from '@testing-library/react'
 import { describe, it, expect, vi } from 'vitest'
 import { Clients } from './Clients'
 
-// Mock the clients constants
 vi.mock('@Constants/clients', () => ({
   CLIENTS: [
     {
@@ -195,25 +194,20 @@ describe('Clients component', () => {
     it('should render logos with unique keys', () => {
       const { container } = render(<Clients />)
       const clientDivs = container.querySelectorAll('section:last-child > div')
-      // Keys are used internally by React for reconciliation, not as DOM attributes
-      // We verify that each client div is rendered (one per client)
       expect(clientDivs.length).toBe(3)
     })
   })
 
   describe('data integration', () => {
     it('should use CLIENTS constant from imports', () => {
-      // The component imports and uses CLIENTS directly
       render(<Clients />)
       const logos = screen.getAllByTestId(/logo-/)
-      // If CLIENTS is being used, we should have logos rendered
       expect(logos.length).toBeGreaterThan(0)
     })
 
     it('should map over all clients from CLIENTS array', () => {
       render(<Clients />)
       const logos = screen.getAllByTestId(/logo-/)
-      // Verify we have the expected number of clients from the mock
       expect(logos.length).toBe(3)
     })
   })

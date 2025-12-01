@@ -2,7 +2,6 @@ import { render, screen } from '@testing-library/react'
 import { describe, it, expect, vi } from 'vitest'
 import { ItemFooter, LinkFooter } from './ItemFooter'
 
-// Mock Next.js Link
 vi.mock('next/link', () => ({
   default: ({
     children,

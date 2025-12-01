@@ -74,7 +74,6 @@ describe('Button component', () => {
     render(<Button icon="RiHomeLine">With Icon</Button>)
     const button = screen.getByRole('button')
     expect(button).toBeInTheDocument()
-    // Icon component should be rendered, but we're not testing IconComponent internals here
   })
 
   it('should have base button classes', () => {

@@ -5,7 +5,6 @@ import * as headerHooks from './header.hooks'
 import { HeaderProvider } from '@Context/HeaderContext'
 import type { TIconName } from '@Types/icons'
 
-// Mock Next.js Link
 vi.mock('next/link', () => ({
   default: ({
     children,
@@ -21,10 +20,8 @@ vi.mock('next/link', () => ({
   )
 }))
 
-// Mock header hook
 vi.mock('./header.hooks')
 
-// Helper function to render with HeaderProvider
 const renderWithProvider = (ui: React.ReactElement) => {
   return render(<HeaderProvider>{ui}</HeaderProvider>)
 }

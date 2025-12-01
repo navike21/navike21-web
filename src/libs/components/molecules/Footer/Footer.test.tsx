@@ -6,10 +6,8 @@ import { EServiceIds } from '@I18n/common/services/types'
 import { ELegalPageSlugs } from '@I18n/common/legalArea/types'
 import type { TIconName } from '@Types/icons'
 
-// Mock the footer hook
 vi.mock('./footer.hooks')
 
-// Mock Next.js Link
 vi.mock('next/link', () => ({
   default: ({
     children,
@@ -281,7 +279,6 @@ describe('Footer component', () => {
   describe('responsive behavior', () => {
     it('should apply responsive classes to bottom container', () => {
       const { container } = render(<Footer />)
-      // Find the bottom container with md:flex-row-reverse class (copyright section)
       const bottomContainer = container.querySelector(
         'footer .flex.flex-col.items-center.md\\:flex-row-reverse'
       )

@@ -3,7 +3,6 @@ import { describe, it, expect, vi } from 'vitest'
 import { ItemHeroSection } from './ItemHeroSection'
 import type { StaticImageData } from 'next/image'
 
-// Mock Next.js Image
 vi.mock('next/image', () => ({
   default: ({
     src,
@@ -17,11 +16,6 @@ vi.mock('next/image', () => ({
     <img src={typeof src === 'string' ? src : src.src} alt={alt} {...props} />
   )
 }))
-
-// // Mock uuid helper
-// vi.mock('@Helpers/uuid', () => ({
-//   uuid: () => 'test-uuid-123'
-// }))
 
 const mockImage: StaticImageData = {
   src: '/test-hero-image.jpg',
@@ -160,7 +154,6 @@ describe('ItemHeroSection component', () => {
         <ItemHeroSection {...defaultProps} controlActions={controlActions} />
       )
       const section = container.querySelector('section')
-      // The section element contains flex, flex-col, gap-4 classes and responsive variants
       expect(section).toHaveClass('flex', 'flex-col', 'gap-4')
     })
   })
@@ -318,7 +311,7 @@ describe('ItemHeroSection component', () => {
       render(
         <ItemHeroSection {...defaultProps} description={longDescription} />
       )
-      // Use partial matcher as whitespace/formatting may differ
+
       expect(
         screen.getByText((content, element) => {
           return (

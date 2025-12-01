@@ -4,7 +4,6 @@ import { LayoutScroll } from './LayoutScroll'
 import * as HeaderContext from '@Context/headerContext.hooks'
 import * as motion from 'motion'
 
-// Mock lenis/react
 vi.mock('lenis/react', () => ({
   ReactLenis: vi.fn(
     ({
@@ -18,7 +17,6 @@ vi.mock('lenis/react', () => ({
   )
 }))
 
-// Mock motion
 vi.mock('motion', () => ({
   frame: {
     update: vi.fn()
@@ -26,12 +24,10 @@ vi.mock('motion', () => ({
   cancelFrame: vi.fn()
 }))
 
-// Mock BgHeader component
 vi.mock('../Header', () => ({
   BgHeader: () => <div data-testid="bg-header">BgHeader</div>
 }))
 
-// Mock HeaderContext
 vi.mock('@Context/headerContext.hooks')
 
 describe('LayoutScroll component', () => {
