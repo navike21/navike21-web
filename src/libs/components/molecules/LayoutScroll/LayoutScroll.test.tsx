@@ -3,17 +3,25 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { LayoutScroll } from './LayoutScroll'
 import * as HeaderContext from '@Context/headerContext.hooks'
 import * as motion from 'motion'
+import { ReactLenis } from 'lenis/react'
+import type { PropsWithChildren } from 'react'
 
 vi.mock('lenis/react', () => ({
   ReactLenis: vi.fn(
     ({
       children,
+      root: _root,
+      options: _options,
       ...props
-    }: React.PropsWithChildren<Record<string, unknown>>) => (
-      <div data-testid="react-lenis" {...props}>
-        {children}
-      </div>
-    )
+    }: PropsWithChildren<Record<string, unknown>>) => {
+      void _root
+      void _options
+      return (
+        <div data-testid="react-lenis" {...props}>
+          {children}
+        </div>
+      )
+    }
   )
 }))
 
@@ -92,18 +100,29 @@ describe('LayoutScroll component', () => {
         </LayoutScroll>
       )
       const lenis = getByTestId('react-lenis')
-      // Root is a boolean prop passed to ReactLenis, not an HTML attribute
       expect(lenis).toBeInTheDocument()
+      const propsPassed = vi.mocked(ReactLenis).mock.calls[0]?.[0]
+      expect(propsPassed?.root).toBe(true)
     })
 
     it('should configure options correctly', () => {
-      const { getByTestId } = render(
+      render(
         <LayoutScroll>
           <div>Content</div>
         </LayoutScroll>
       )
-      const lenis = getByTestId('react-lenis')
-      expect(lenis).toHaveAttribute('options')
+      const propsPassed = vi.mocked(ReactLenis).mock.calls[0]?.[0]
+      expect(propsPassed?.options).toMatchObject({
+        autoRaf: false,
+        duration: 1,
+        autoResize: true,
+        lerp: 0.1,
+        orientation: 'vertical',
+        allowNestedScroll: true,
+        touchMultiplier: 1.5,
+        infinite: false,
+        smoothWheel: true
+      })
     })
   })
 
