@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react'
 import { describe, it, expect, vi } from 'vitest'
 import { TestimonialsItem } from './TestimonialsItem'
 import { Testimonials } from './Testimonials'
+import { testimonialsList } from '@I18n/common/testimonials'
 import type { StaticImageData } from 'next/image'
 
 vi.mock('next/image', () => ({
@@ -325,15 +326,16 @@ describe('Testimonials component', () => {
 
   describe('empty state', () => {
     it('should render nothing when testimonials list is empty', () => {
-      // This test uses the mocked data which has testimonials
-      // To test empty state, we verify the component renders with data
-      render(<Testimonials />)
-      expect(screen.getByTestId('slider')).toBeInTheDocument()
+      const originalTestimonials = testimonialsList.es
+      testimonialsList.es = []
+
+      const { container } = render(<Testimonials />)
+      expect(container).toBeEmptyDOMElement()
+
+      testimonialsList.es = originalTestimonials
     })
 
-    it('should return null if no testimonials available', () => {
-      // Component returns null when testimonialsList[ESP] is empty or undefined
-      // This is covered by the conditional check in the component
+    it('should render slider when testimonials exist', () => {
       const { container } = render(<Testimonials />)
       expect(
         container.querySelector('[data-testid="slider"]')

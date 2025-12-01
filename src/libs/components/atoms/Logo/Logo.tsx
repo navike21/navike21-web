@@ -72,7 +72,7 @@ export const Logo = ({
             'text-5xl': size === 'xl'
           },
           {
-            'bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-600':
+            'bg-clip-text text-transparent bg-linear-to-r from-cyan-400 to-purple-600':
               textColor === 'gradient',
             'text-primary-text': textColor === 'black',
             'text-white': textColor === 'white'

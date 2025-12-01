@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react'
 import { describe, it, expect } from 'vitest'
 import { Logo } from './Logo'
+import type { TLogoColor } from './Logo'
 
 describe('Logo component', () => {
   describe('basic rendering', () => {
@@ -125,6 +126,14 @@ describe('Logo component', () => {
       const paths = container.querySelectorAll('path')
       const mainPath = paths[1]
       expect(mainPath).toHaveAttribute('fill', '#FFFFFF')
+    })
+
+    it('should fallback to gradient for unknown color', () => {
+      const invalidColor = 'unknown' as TLogoColor
+      const { container } = render(<Logo logoColor={invalidColor} />)
+      const paths = container.querySelectorAll('path')
+      const mainPath = paths[1]
+      expect(mainPath).toHaveAttribute('fill', 'url(#gradient)')
     })
   })
 

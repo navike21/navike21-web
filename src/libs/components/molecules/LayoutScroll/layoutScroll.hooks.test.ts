@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { renderHook, act } from '@testing-library/react'
+import { renderHook, act, waitFor } from '@testing-library/react'
 import { useLayoutScroll } from './layoutScroll.hooks'
 import type { LenisRef } from '@Types/lenis-mock'
 import * as HeaderContext from '@Context/headerContext.hooks'
@@ -155,5 +155,73 @@ describe('useLayoutScroll', () => {
     // No debe lanzar error ni llamar a stop/start
     unmount()
     // No hay expect directo, pero si no hay error y coverage sube, está cubierto
+  })
+
+  it('should automatically start lenis when menu is closed', async () => {
+    const toggleState = { value: false }
+    vi.mocked(HeaderContext.useHeaderContext).mockImplementation(() => ({
+      toggleMenu: toggleState.value,
+      setToggleMenu: vi.fn(),
+      isSolid: false,
+      setIsSolid: vi.fn()
+    }))
+
+    const mockStart = vi.fn()
+    const mockStop = vi.fn()
+
+    function useLayoutScrollWithLenis() {
+      const hook = useLayoutScroll()
+      hook.lenisRef.current = {
+        lenis: { raf: vi.fn(), stop: mockStop, start: mockStart },
+        wrapper: null,
+        content: null
+      } as unknown as LenisRef
+      return hook
+    }
+
+    renderHook(() => useLayoutScrollWithLenis())
+
+    await waitFor(() => {
+      expect(mockStart).toHaveBeenCalledTimes(1)
+    })
+    expect(mockStop).not.toHaveBeenCalled()
+  })
+
+  it('should automatically stop lenis when menu opens', async () => {
+    const toggleState = { value: false }
+    vi.mocked(HeaderContext.useHeaderContext).mockImplementation(() => ({
+      toggleMenu: toggleState.value,
+      setToggleMenu: vi.fn(),
+      isSolid: false,
+      setIsSolid: vi.fn()
+    }))
+
+    const mockStart = vi.fn()
+    const mockStop = vi.fn()
+
+    function useLayoutScrollWithLenis() {
+      const hook = useLayoutScroll()
+      hook.lenisRef.current = {
+        lenis: { raf: vi.fn(), stop: mockStop, start: mockStart },
+        wrapper: null,
+        content: null
+      } as unknown as LenisRef
+      return hook
+    }
+
+    const { rerender } = renderHook(() => useLayoutScrollWithLenis())
+
+    await waitFor(() => {
+      expect(mockStart).toHaveBeenCalledTimes(1)
+    })
+
+    act(() => {
+      toggleState.value = true
+      rerender()
+    })
+
+    await waitFor(() => {
+      expect(mockStop).toHaveBeenCalledTimes(1)
+    })
   })
 })
