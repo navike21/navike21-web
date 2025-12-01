@@ -1,5 +1,5 @@
 import { render, screen, renderHook, act } from '@testing-library/react'
-import { describe, it, expect } from 'vitest'
+import { describe, it, expect, vi } from 'vitest'
 import { HeaderProvider } from './HeaderContext'
 import { useHeaderContext } from './headerContext.hooks'
 import type { ReactNode } from 'react'
@@ -228,9 +228,7 @@ describe('HeaderContext', () => {
 
   describe('useHeaderContext', () => {
     it('should throw error when used outside HeaderProvider', () => {
-      // Suppress console.error for this test
-      const originalError = console.error
-      console.error = () => {}
+      const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {})
 
       const TestComponent = () => {
         useHeaderContext()
@@ -241,7 +239,7 @@ describe('HeaderContext', () => {
         'useHeaderContext must be used within a HeaderProvider'
       )
 
-      console.error = originalError
+      errorSpy.mockRestore()
     })
 
     it('should return context value when used inside HeaderProvider', () => {

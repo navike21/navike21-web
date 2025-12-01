@@ -5,12 +5,9 @@ import * as menuHooks from './menu.hooks'
 import { HeaderProvider } from '@Context/HeaderContext'
 import { EPages } from '@Types/pages'
 
-// Helper function to render with HeaderProvider
-const renderWithProvider = (ui: React.ReactElement) => {
-  return render(<HeaderProvider>{ui}</HeaderProvider>)
-}
+const renderWithProvider = (ui: React.ReactElement) =>
+  render(<HeaderProvider>{ui}</HeaderProvider>)
 
-// Mock Next.js components
 vi.mock('next/link', () => ({
   default: ({
     children,
@@ -37,7 +34,6 @@ vi.mock('next/image', () => ({
   )
 }))
 
-// Mock motion/react
 vi.mock('motion/react', () => ({
   default: {},
   AnimatePresence: ({ children }: React.PropsWithChildren) => (
@@ -55,7 +51,6 @@ vi.mock('motion/react', () => ({
   }
 }))
 
-// Mock menu hooks
 vi.mock('./menu.hooks')
 
 const mockMenuData = {
@@ -239,9 +234,7 @@ describe('Menu component', () => {
     it('should have priority loading', () => {
       renderWithProvider(<Menu />)
       const image = screen.getByAltText('Menu Image')
-      // Priority prop exists in real Next.js Image but is handled differently in mock
       expect(image).toBeInTheDocument()
-      // Mock doesn't set src as attribute, but image element exists
       expect(image.tagName).toBe('IMG')
     })
 

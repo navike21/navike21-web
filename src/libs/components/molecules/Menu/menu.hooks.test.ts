@@ -3,10 +3,8 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { useMenu } from './menu.hooks'
 import * as HeaderContext from '@Context/headerContext.hooks'
 
-// Mock HeaderContext
 vi.mock('@Context/headerContext.hooks')
 
-// Mock pages constants
 vi.mock('@Constants/pages', () => ({
   PAGES_INFORMATION: {
     home: { es: { id: 1, name: 'Inicio', slug: '/' } },

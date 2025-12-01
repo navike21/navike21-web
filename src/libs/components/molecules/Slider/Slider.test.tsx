@@ -2,12 +2,10 @@ import { render, screen } from '@testing-library/react'
 import { describe, it, expect, vi } from 'vitest'
 import { Slider } from './Slider'
 
-// Mock uuid helper
 vi.mock('@Helpers/uuid', () => ({
   uuid: () => 'test-uuid-' + Math.random()
 }))
 
-// Mock Splide components
 vi.mock('@splidejs/react-splide', () => ({
   Splide: ({
     children,

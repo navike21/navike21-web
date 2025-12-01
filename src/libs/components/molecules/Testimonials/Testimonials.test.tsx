@@ -4,7 +4,6 @@ import { TestimonialsItem } from './TestimonialsItem'
 import { Testimonials } from './Testimonials'
 import type { StaticImageData } from 'next/image'
 
-// Mock Next.js Image
 vi.mock('next/image', () => ({
   default: ({
     src,
@@ -19,19 +18,16 @@ vi.mock('next/image', () => ({
   )
 }))
 
-// Mock uuid helper
 vi.mock('@Helpers/uuid', () => ({
   uuid: () => 'test-uuid-' + Math.random()
 }))
 
-// Mock Slider component
 vi.mock('../Slider', () => ({
   Slider: ({ children }: React.PropsWithChildren) => (
     <div data-testid="slider">{children}</div>
   )
 }))
 
-// Mock testimonials hook
 vi.mock('./testimonials.hooks', () => ({
   useTestimonials: () => ({
     OPTIONS: {
@@ -48,12 +44,10 @@ vi.mock('./testimonials.hooks', () => ({
   })
 }))
 
-// Mock constants to ensure ESP = 'es'
 vi.mock('@Constants/languages', () => ({
   ESP: 'es'
 }))
 
-// Mock testimonials data - use 'es' literal key to match runtime access
 vi.mock('@I18n/common/testimonials', () => ({
   testimonialsList: {
     es: [
@@ -75,7 +69,6 @@ vi.mock('@I18n/common/testimonials', () => ({
   }
 }))
 
-// Mock Avatar component
 vi.mock('../../atoms/Avatar', () => ({
   Avatar: ({ src, alt }: { src: string | StaticImageData; alt: string }) => (
     <img
@@ -86,7 +79,6 @@ vi.mock('../../atoms/Avatar', () => ({
   )
 }))
 
-// Mock Card component
 vi.mock('../../atoms/Card', () => ({
   Card: ({
     children,
@@ -96,7 +88,6 @@ vi.mock('../../atoms/Card', () => ({
   )
 }))
 
-// Mock Divider component
 vi.mock('../../atoms/Divider', () => ({
   Divider: () => <hr role="separator" />
 }))
@@ -272,14 +263,12 @@ describe('TestimonialsItem component', () => {
     it('should handle long content', () => {
       const longContent = 'Lorem ipsum dolor sit amet. '.repeat(20)
       render(<TestimonialsItem {...defaultProps} content={longContent} />)
-      // Use partial match since text might have whitespace differences
       expect(
         screen.getByText(content => content.includes('Lorem ipsum'))
       ).toBeInTheDocument()
     })
 
     it('should handle missing starRating', () => {
-      // Test without starRating prop - it's optional
       const propsWithoutRating = {
         author: defaultProps.author,
         role: defaultProps.role,
