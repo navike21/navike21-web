@@ -1,11 +1,12 @@
 import { render, screen } from '@testing-library/react'
-import { describe, it, expect, vi } from 'vitest'
+import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { Clients } from './Clients'
 
 vi.mock('@Constants/clients', () => ({
   CLIENTS: [
     {
       id: 'client-1',
+      name: 'Client 1',
       logo: ({ className }: { className?: string }) => (
         <svg className={className} data-testid="logo-1">
           Logo 1
@@ -14,16 +15,18 @@ vi.mock('@Constants/clients', () => ({
       url: 'https://client1.com'
     },
     {
-      id: 'client-2',
+      id: 'beats',
+      name: 'Beats',
       logo: ({ className }: { className?: string }) => (
-        <svg className={className} data-testid="logo-2">
-          Logo 2
+        <svg className={className} data-testid="logo-beats">
+          Beats Logo
         </svg>
       ),
-      url: 'https://client2.com'
+      url: 'https://beatsmusica.com'
     },
     {
       id: 'client-3',
+      name: 'Client 3',
       logo: ({ className }: { className?: string }) => (
         <svg className={className} data-testid="logo-3">
           Logo 3
@@ -33,6 +36,21 @@ vi.mock('@Constants/clients', () => ({
     }
   ]
 }))
+
+const mockClients = [
+  {
+    id: 'client-1',
+    name: 'Client 1'
+  },
+  {
+    id: 'beats',
+    name: 'Beats'
+  },
+  {
+    id: 'client-3',
+    name: 'Client 3'
+  }
+]
 
 describe('Clients component', () => {
   describe('rendering', () => {
@@ -58,11 +76,12 @@ describe('Clients component', () => {
       const { container } = render(<Clients />)
       const clientsArea = container.querySelector('.clients-area')
       expect(clientsArea).toHaveClass(
+        'clients-area',
         'flex',
         'flex-col',
         'items-center',
         'gap-10',
-        'md:flex-row',
+        'lg:flex-row',
         'md:gap-20',
         'md:justify-center'
       )
@@ -78,8 +97,8 @@ describe('Clients component', () => {
         'text-3xl',
         'font-semibold',
         'w-full',
-        'md:text-left',
-        'lg:text-4xl'
+        'lg:text-4xl',
+        'lg:text-left'
       )
     })
 
@@ -103,7 +122,7 @@ describe('Clients component', () => {
     it('should render all client logos', () => {
       render(<Clients />)
       expect(screen.getByTestId('logo-1')).toBeInTheDocument()
-      expect(screen.getByTestId('logo-2')).toBeInTheDocument()
+      expect(screen.getByTestId('logo-beats')).toBeInTheDocument()
       expect(screen.getByTestId('logo-3')).toBeInTheDocument()
     })
 
@@ -116,8 +135,9 @@ describe('Clients component', () => {
         'gap-6',
         'w-full',
         'sm:grid-cols-3',
-        'md:grid-cols-5',
-        'lg:grid-cols-6'
+        'md:grid-cols-4',
+        'lg:gap-4',
+        'xl:grid-cols-5'
       )
     })
 
@@ -127,57 +147,84 @@ describe('Clients component', () => {
       expect(clientDivs).toHaveLength(3)
     })
 
-    it('should render each client logo wrapper with correct classes', () => {
+    it('should render each client logo wrapper with correct base classes', () => {
       const { container } = render(<Clients />)
       const firstClientDiv = container.querySelector('section:last-child > div')
       expect(firstClientDiv).toHaveClass(
-        'max-w-32',
         'w-full',
-        'aspect-square',
-        'col-span-1',
+        'aspect-3/2',
         'm-auto',
-        'lg:max-w-28'
+        'shadow-md',
+        'h-full',
+        'rounded-md',
+        'flex',
+        'items-center',
+        'justify-center'
       )
+    })
+
+    it('should apply special classes to "beats" client', () => {
+      const { container } = render(<Clients />)
+      const clientDivs = container.querySelectorAll('section:last-child > div')
+      const beatsDiv = clientDivs[1] // beats is the second client
+      expect(beatsDiv).toHaveClass(
+        'row-span-2',
+        'xl:row-span-2',
+        'xl:col-span-2'
+      )
+    })
+
+    it('should not apply special classes to non-beats clients', () => {
+      const { container } = render(<Clients />)
+      const clientDivs = container.querySelectorAll('section:last-child > div')
+      const firstDiv = clientDivs[0] // client-1
+      expect(firstDiv).not.toHaveClass('row-span-2')
+      expect(firstDiv).not.toHaveClass('xl:row-span-2')
+      expect(firstDiv).not.toHaveClass('xl:col-span-2')
     })
   })
 
-  describe('client links', () => {
-    it('should render all client links with correct URLs', () => {
-      render(<Clients />)
-      const links = screen.getAllByRole('link')
-      expect(links).toHaveLength(3)
-      expect(links[0]).toHaveAttribute('href', 'https://client1.com')
-      expect(links[1]).toHaveAttribute('href', 'https://client2.com')
-      expect(links[2]).toHaveAttribute('href', 'https://client3.com')
-    })
-
-    it('should render links with target="_blank"', () => {
-      render(<Clients />)
-      const links = screen.getAllByRole('link')
-      links.forEach(link => {
-        expect(link).toHaveAttribute('target', '_blank')
-      })
-    })
-
-    it('should render links with rel="noopener noreferrer"', () => {
-      render(<Clients />)
-      const links = screen.getAllByRole('link')
-      links.forEach(link => {
-        expect(link).toHaveAttribute('rel', 'noopener noreferrer')
-      })
-    })
-
-    it('should apply correct classes to link containers', () => {
-      render(<Clients />)
-      const links = screen.getAllByRole('link')
-      links.forEach(link => {
-        expect(link).toHaveClass(
-          'w-full',
-          'h-full',
+  describe('client logo containers', () => {
+    it('should render logo containers with base classes', () => {
+      const { container } = render(<Clients />)
+      const logoContainers = container.querySelectorAll(
+        'section:last-child > div > div'
+      )
+      logoContainers.forEach(logoContainer => {
+        expect(logoContainer).toHaveClass(
           'flex',
           'items-center',
-          'justify-center'
+          'justify-center',
+          'p-6'
         )
+      })
+    })
+
+    it('should apply w-full and h-full classes to non-beats clients', () => {
+      const { container } = render(<Clients />)
+      const logoContainers = container.querySelectorAll(
+        'section:last-child > div > div'
+      )
+      const firstContainer = logoContainers[0] // client-1
+      expect(firstContainer).toHaveClass('w-full', 'h-full')
+    })
+
+    it('should apply special size classes to beats client', () => {
+      const { container } = render(<Clients />)
+      const logoContainers = container.querySelectorAll(
+        'section:last-child > div > div'
+      )
+      const beatsContainer = logoContainers[1] // beats
+      expect(beatsContainer).toHaveClass('h-10/12', 'w-10/12')
+    })
+
+    it('should render rel="noopener noreferrer" attribute on containers', () => {
+      const { container } = render(<Clients />)
+      const logoContainers = container.querySelectorAll(
+        'section:last-child > div > div'
+      )
+      logoContainers.forEach(logoContainer => {
+        expect(logoContainer).toHaveAttribute('rel', 'noopener noreferrer')
       })
     })
   })
@@ -209,6 +256,75 @@ describe('Clients component', () => {
       render(<Clients />)
       const logos = screen.getAllByTestId(/logo-/)
       expect(logos.length).toBe(3)
+    })
+  })
+
+  describe('accessibility', () => {
+    it('should render semantic HTML with proper heading hierarchy', () => {
+      render(<Clients />)
+      const headings = screen.getAllByRole('heading', { level: 2 })
+      expect(headings).toHaveLength(2)
+      expect(headings[0]).toHaveTextContent('¿Te sumas?')
+      expect(headings[1]).toHaveTextContent(
+        'Así como ellos que confían en nosotros'
+      )
+    })
+
+    it('should have proper structure with sections', () => {
+      const { container } = render(<Clients />)
+      const sections = container.querySelectorAll('section')
+      expect(sections).toHaveLength(2)
+    })
+
+    it('should render all logos as SVG elements', () => {
+      render(<Clients />)
+      const logos = screen.getAllByTestId(/logo-/)
+      logos.forEach(logo => {
+        expect(logo.tagName).toBe('svg')
+      })
+    })
+  })
+
+  describe('snapshot', () => {
+    it('should match snapshot', () => {
+      const { container } = render(<Clients />)
+      expect(container.firstChild).toMatchSnapshot()
+    })
+  })
+
+  describe('integration with real data structure', () => {
+    beforeEach(() => {
+      vi.clearAllMocks()
+    })
+
+    it('should handle the expected data structure from CLIENTS constant', () => {
+      render(<Clients />)
+      const { container } = render(<Clients />)
+      const clientDivs = container.querySelectorAll('section:last-child > div')
+
+      // Verify that each client follows the expected structure
+      mockClients.forEach((client, index) => {
+        const clientDiv = clientDivs[index]
+        expect(clientDiv).toBeInTheDocument()
+
+        // Verify special handling for beats
+        if (client.id === 'beats') {
+          expect(clientDiv).toHaveClass('row-span-2')
+        }
+      })
+    })
+
+    it('should render without errors when CLIENTS array is not empty', () => {
+      expect(() => render(<Clients />)).not.toThrow()
+    })
+
+    it('should apply correct className prop to all logo components', () => {
+      render(<Clients />)
+      const logos = screen.getAllByTestId(/logo-/)
+
+      logos.forEach(logo => {
+        expect(logo).toHaveClass('w-auto', 'h-full')
+      })
     })
   })
 })

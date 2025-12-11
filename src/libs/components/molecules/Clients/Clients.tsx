@@ -8,15 +8,14 @@ export const Clients = ({}: IClientsProps) => {
     <div
       className={clsx(
         'clients-area flex flex-col items-center gap-10',
-        'md:flex-row md:gap-20 md:justify-center'
+        'lg:flex-row md:gap-20 md:justify-center'
       )}
     >
       <section>
         <h2
           className={clsx(
             'text-center text-3xl font-semibold w-full',
-            'md:text-left',
-            'lg:text-4xl'
+            'lg:text-4xl lg:text-left'
           )}
         >
           ¿Te sumas?
@@ -35,30 +34,33 @@ export const Clients = ({}: IClientsProps) => {
         className={clsx(
           'grid grid-cols-2 gap-6 w-full',
           'sm:grid-cols-3',
-          'md:grid-cols-5',
-          'lg:grid-cols-6'
+          'md:grid-cols-4',
+          'lg:gap-4',
+          'xl:grid-cols-5'
         )}
       >
-        {CLIENTS.map(({ logo: Logo, id, url }) => {
-          return (
+        {CLIENTS.map(({ logo: Logo, id }) => (
+          <div
+            key={id}
+            className={clsx(
+              'w-full aspect-3/2 m-auto shadow-md h-full rounded-md flex items-center justify-center',
+              {
+                'row-span-2': id === 'beats',
+                'xl:row-span-2 xl:col-span-2': id === 'beats'
+              }
+            )}
+          >
             <div
-              key={id}
-              className={clsx(
-                'max-w-32 w-full aspect-square col-span-1 m-auto',
-                'lg:max-w-28'
-              )}
+              rel="noopener noreferrer"
+              className={clsx('flex items-center justify-center p-6', {
+                'w-full h-full': id !== 'beats',
+                'h-10/12 w-10/12': id === 'beats'
+              })}
             >
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full h-full flex items-center justify-center"
-              >
-                <Logo className="w-auto h-full" />
-              </a>
+              <Logo className="w-auto h-full" />
             </div>
-          )
-        })}
+          </div>
+        ))}
       </section>
     </div>
   )
