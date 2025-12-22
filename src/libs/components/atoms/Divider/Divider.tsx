@@ -13,24 +13,25 @@ export const Divider = ({
     ...props
   })
 
+  // Use <hr> for simple dividers without text, use <div> with proper role for dividers with text
+  if (!children) {
+    return (
+      <hr
+        aria-orientation={orientation}
+        className={clsx(
+          containerClass,
+          className,
+          isHorizontal ? 'w-full' : 'h-full'
+        )}
+      />
+    )
+  }
+
   return (
-    <div
-      role="separator"
-      aria-orientation={orientation}
-      className={clsx(containerClass, className)}
-    >
-      {!children ? (
-        <div
-          aria-hidden="true"
-          className={clsx(lineClass, isHorizontal ? 'w-full' : 'h-full')}
-        />
-      ) : (
-        <>
-          <div aria-hidden="true" className={lineClass} />
-          <span className={textClass}>{children}</span>
-          <div aria-hidden="true" className={lineClass} />
-        </>
-      )}
+    <div className={clsx(containerClass, className)}>
+      <hr aria-hidden="true" className={lineClass} />
+      <span className={textClass}>{children}</span>
+      <hr aria-hidden="true" className={lineClass} />
     </div>
   )
 }

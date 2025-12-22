@@ -8,7 +8,7 @@ interface ErrorProps {
   reset: () => void
 }
 
-export default function Error({ error, reset }: ErrorProps) {
+export default function ErrorBoundary({ error, reset }: Readonly<ErrorProps>) {
   useEffect(() => {
     // Log error to console in development
     if (process.env.NODE_ENV === 'development') {
