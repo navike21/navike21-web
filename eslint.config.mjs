@@ -20,7 +20,8 @@ export default [
       'coverage',
       'public',
       '.vscode',
-      '**/*.d.ts'
+      '**/*.d.ts',
+      '/.github/workflows/*'
     ],
     languageOptions: {
       parser: tsParser,
