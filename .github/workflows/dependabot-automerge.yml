@@ -1,0 +1,67 @@
+name: 🤖 Dependabot Auto-merge
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+      - labeled
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  enable-automerge:
+    name: Enable auto-merge
+    runs-on: ubuntu-latest
+    if: github.actor == 'dependabot[bot]' && github.event.pull_request.draft == false
+
+    steps:
+      - name: Enable auto-merge for minor/patch updates
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const pr = context.payload.pull_request;
+            const labels = (pr.labels || []).map((l) => l.name);
+
+            if (!labels.includes('github_actions')) {
+              core.info('Skipping: not a github_actions Dependabot PR');
+              return;
+            }
+
+            const title = pr.title || '';
+            const match = title.match(/from\s+(\d+)\.(\d+)\.(\d+)\s+to\s+(\d+)\.(\d+)\.(\d+)/i);
+            if (!match) {
+              core.info('Skipping: cannot parse semver from PR title');
+              return;
+            }
+
+            const fromMajor = Number(match[1]);
+            const toMajor = Number(match[4]);
+
+            if (fromMajor !== toMajor) {
+              core.info('Skipping: major update (manual review required)');
+              return;
+            }
+
+            const mutation = `
+              mutation EnableAutoMerge($pullRequestId: ID!, $mergeMethod: PullRequestMergeMethod!) {
+                enablePullRequestAutoMerge(input: { pullRequestId: $pullRequestId, mergeMethod: $mergeMethod }) {
+                  pullRequest { number }
+                }
+              }
+            `;
+
+            try {
+              await github.graphql(mutation, {
+                pullRequestId: pr.node_id,
+                mergeMethod: 'SQUASH',
+              });
+              core.info(`Enabled auto-merge for #${pr.number}`);
+            } catch (error) {
+              core.warning(`Could not enable auto-merge for #${pr.number}: ${error.message}`);
+            }
