@@ -12,3 +12,4 @@
 
 # Catch-all for other root-level config files
 /*.config.*
+/github/workflows/*
