@@ -13,7 +13,6 @@ export const Divider = ({
     ...props
   })
 
-  // Use <hr> for simple dividers without text, use <div> with proper role for dividers with text
   if (!children) {
     return (
       <hr

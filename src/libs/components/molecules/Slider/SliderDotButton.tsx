@@ -13,8 +13,8 @@ export const DotButton = ({ isSelected, ...restProps }: TDotButtonPropType) => (
     <IconComponent
       icon={isSelected ? 'RiCircleFill' : 'RiCircleLine'}
       className={clsx('w-4 h-4', {
-        'text-[color:var(--text-body)]': isSelected,
-        'text-[color:var(--detail-medium-contrast)]': !isSelected
+        'text-(--text-body)': isSelected,
+        'text-(--detail-medium-contrast)': !isSelected
       })}
     />
   </button>

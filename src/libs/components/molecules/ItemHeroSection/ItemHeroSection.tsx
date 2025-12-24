@@ -21,7 +21,7 @@ export const ItemHeroSection = ({
     <Container
       className={clsx(
         'flex items-center justify-between flex-wrap content-center z-10 relative',
-        'h-dvh max-h-[1000px]',
+        'h-dvh max-h-250',
         'md:gap-8 md:flex-nowrap',
         'lg:gap-20'
       )}

@@ -54,7 +54,6 @@ export const Logo = ({
           'url(#gradient)'
         }
         className={clsx('transition-all duration-500', {
-          // 'fill-gradient': logoColor === 'gradient',
           'fill-black': logoColor === 'black',
           'fill-white': logoColor === 'white'
         })}
