@@ -12,7 +12,7 @@ export const TestimonialsItem = ({
   starRating
 }: ITestimonialsItemProps) => (
   <div className="w-full py-5 px-3 flex flex-col items-center">
-    <Card className="max-w-80 w-[98%] h-full min-w-[300px]">
+    <Card className="max-w-80 w-[98%] h-full min-w-75">
       <div className="flex flex-col gap-6">
         <div className="flex justify-between items-center w-full">
           <IconComponent

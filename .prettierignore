@@ -12,3 +12,6 @@
 
 # Catch-all for other root-level config files
 /*.config.*
+
+# GitHub Actions workflows (avoid formatting CI definitions)
+/.github/workflows/**

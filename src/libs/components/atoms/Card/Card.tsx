@@ -1,14 +1,11 @@
-import { type TIconName } from '@Types/icons'
 import clsx from 'clsx'
-import { type ReactNode } from 'react'
 import { IconComponent } from '../IconComponent'
 import Link from 'next/link'
-
-interface ICardProps {
-  children?: ReactNode
-  showLine?: boolean
-  className?: string
-}
+import type {
+  ICardProps,
+  IItemCardProps,
+  IItemLinkCardProps
+} from './Card.types'
 
 export const Card = ({ children, showLine, className }: ICardProps) => (
   <div
@@ -31,13 +28,6 @@ export const Card = ({ children, showLine, className }: ICardProps) => (
     )}
   </div>
 )
-
-interface IItemCardProps extends ICardProps {
-  description?: string
-  title?: string
-  icon?: TIconName
-  className?: string
-}
 
 export const ItemCard = ({
   title,
@@ -76,10 +66,6 @@ export const ItemCard = ({
     </div>
   </Card>
 )
-
-interface IItemLinkCardProps extends IItemCardProps {
-  href: string
-}
 
 export const ItemLinkCard = ({ href, ...props }: IItemLinkCardProps) => (
   <Link href={href} className="w-full">

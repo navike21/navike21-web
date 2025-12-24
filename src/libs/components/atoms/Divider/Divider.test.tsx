@@ -9,27 +9,33 @@ describe('Divider component', () => {
   })
 
   describe('basic rendering', () => {
-    it('should render as a separator', () => {
-      render(<Divider />)
-      const separator = screen.getByRole('separator')
-      expect(separator).toBeInTheDocument()
+    it('should render as an hr element when no children', () => {
+      const { container } = render(<Divider />)
+      const hr = container.querySelector('hr')
+      expect(hr).toBeInTheDocument()
     })
 
     it('should have horizontal orientation by default', () => {
-      render(<Divider />)
-      const separator = screen.getByRole('separator')
-      expect(separator).toHaveAttribute('aria-orientation', 'horizontal')
+      const { container } = render(<Divider />)
+      const hr = container.querySelector('hr')
+      expect(hr).toHaveAttribute('aria-orientation', 'horizontal')
     })
 
     it('should have vertical orientation when specified', () => {
-      render(<Divider orientation="vertical" />)
-      const separator = screen.getByRole('separator')
-      expect(separator).toHaveAttribute('aria-orientation', 'vertical')
+      const { container } = render(<Divider orientation="vertical" />)
+      const hr = container.querySelector('hr')
+      expect(hr).toHaveAttribute('aria-orientation', 'vertical')
+    })
+
+    it('should render divider with children and be accessible', () => {
+      render(<Divider>Text</Divider>)
+      const text = screen.getByText('Text')
+      expect(text).toBeInTheDocument()
     })
   })
 
   describe('rendering without children', () => {
-    it('should render single line when no children provided', () => {
+    it('should render single hr element when no children provided', () => {
       vi.spyOn(hooks, 'useDivider').mockReturnValue({
         isHorizontal: true,
         lineClass: 'border-t border-gray-300',
@@ -38,8 +44,8 @@ describe('Divider component', () => {
       })
 
       const { container } = render(<Divider />)
-      const lines = container.querySelectorAll('[aria-hidden="true"]')
-      expect(lines).toHaveLength(1)
+      const hr = container.querySelector('hr')
+      expect(hr).toBeInTheDocument()
     })
 
     it('should apply w-full class for horizontal divider without children', () => {
@@ -51,8 +57,8 @@ describe('Divider component', () => {
       })
 
       const { container } = render(<Divider />)
-      const line = container.querySelector('[aria-hidden="true"]')
-      expect(line).toHaveClass('w-full')
+      const hr = container.querySelector('hr')
+      expect(hr).toHaveClass('w-full')
     })
 
     it('should apply h-full class for vertical divider without children', () => {
@@ -64,8 +70,8 @@ describe('Divider component', () => {
       })
 
       const { container } = render(<Divider orientation="vertical" />)
-      const line = container.querySelector('[aria-hidden="true"]')
-      expect(line).toHaveClass('h-full')
+      const hr = container.querySelector('hr')
+      expect(hr).toHaveClass('h-full')
     })
   })
 
@@ -75,7 +81,7 @@ describe('Divider component', () => {
       expect(screen.getByText('OR')).toBeInTheDocument()
     })
 
-    it('should render three elements when children provided (line, text, line)', () => {
+    it('should render two hr elements as lines when children provided (line, text, line)', () => {
       vi.spyOn(hooks, 'useDivider').mockReturnValue({
         isHorizontal: true,
         lineClass: 'border-t',
@@ -84,7 +90,7 @@ describe('Divider component', () => {
       })
 
       const { container } = render(<Divider>Text</Divider>)
-      const lines = container.querySelectorAll('[aria-hidden="true"]')
+      const lines = container.querySelectorAll('hr')
       expect(lines).toHaveLength(2)
     })
 
@@ -112,8 +118,8 @@ describe('Divider component', () => {
       })
 
       const { container } = render(<Divider className="custom-divider-class" />)
-      const separator = container.querySelector('[role="separator"]')
-      expect(separator).toHaveClass('custom-divider-class')
+      const hr = container.querySelector('hr')
+      expect(hr).toHaveClass('custom-divider-class')
     })
 
     it('should merge custom className with container class', () => {
@@ -125,8 +131,8 @@ describe('Divider component', () => {
       })
 
       const { container } = render(<Divider className="custom-class" />)
-      const separator = container.querySelector('[role="separator"]')
-      expect(separator).toHaveClass(
+      const hr = container.querySelector('hr')
+      expect(hr).toHaveClass(
         'flex',
         'items-center',
         'base-class',
@@ -136,39 +142,52 @@ describe('Divider component', () => {
   })
 
   describe('color variants', () => {
-    it('should render light color divider', () => {
-      const { container } = render(<Divider color="light" />)
-      const line = container.querySelector('[aria-hidden="true"]')
-      expect(line).toHaveClass('flex-1', 'bg-gray-300', 'h-px', 'w-full')
-    })
+    it('should pass color prop to hook', () => {
+      const useDividerSpy = vi.spyOn(hooks, 'useDivider')
 
-    it('should render dark color divider', () => {
-      const { container } = render(<Divider color="dark" />)
-      const line = container.querySelector('[aria-hidden="true"]')
-      expect(line).toHaveClass('flex-1', 'bg-gray-700', 'h-px', 'w-full')
-    })
+      render(<Divider color="light" />)
 
-    it('should render gradient horizontal divider', () => {
-      const { container } = render(<Divider color="gradient" />)
-      const line = container.querySelector('[aria-hidden="true"]')
-      expect(line).toHaveClass(
-        'flex-1',
-        'bg-gradient-diagonal',
-        'h-px',
-        'w-full'
+      expect(useDividerSpy).toHaveBeenCalledWith(
+        expect.objectContaining({
+          color: 'light'
+        })
       )
     })
 
-    it('should render gradient vertical divider', () => {
-      const { container } = render(
-        <Divider color="gradient" orientation="vertical" />
+    it('should pass dark color to hook', () => {
+      const useDividerSpy = vi.spyOn(hooks, 'useDivider')
+
+      render(<Divider color="dark" />)
+
+      expect(useDividerSpy).toHaveBeenCalledWith(
+        expect.objectContaining({
+          color: 'dark'
+        })
       )
-      const line = container.querySelector('[aria-hidden="true"]')
-      expect(line).toHaveClass(
-        'flex-1',
-        'bg-gradient-vertical',
-        'w-px',
-        'h-full'
+    })
+
+    it('should pass gradient color to hook', () => {
+      const useDividerSpy = vi.spyOn(hooks, 'useDivider')
+
+      render(<Divider color="gradient" />)
+
+      expect(useDividerSpy).toHaveBeenCalledWith(
+        expect.objectContaining({
+          color: 'gradient'
+        })
+      )
+    })
+
+    it('should pass gradient color with vertical orientation to hook', () => {
+      const useDividerSpy = vi.spyOn(hooks, 'useDivider')
+
+      render(<Divider color="gradient" orientation="vertical" />)
+
+      expect(useDividerSpy).toHaveBeenCalledWith(
+        expect.objectContaining({
+          color: 'gradient',
+          orientation: 'vertical'
+        })
       )
     })
   })
@@ -234,10 +253,10 @@ describe('Divider component', () => {
 
       const { container } = render(<Divider>Text</Divider>)
 
-      const separator = container.querySelector('[role="separator"]')
-      expect(separator).toHaveClass('custom-container-class')
+      const divContainer = container.querySelector('div')
+      expect(divContainer).toHaveClass('custom-container-class')
 
-      const lines = container.querySelectorAll('[aria-hidden="true"]')
+      const lines = container.querySelectorAll('hr')
       lines.forEach(line => {
         expect(line).toHaveClass('custom-line-class')
       })

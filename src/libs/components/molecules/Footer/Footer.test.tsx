@@ -203,14 +203,14 @@ describe('Footer component', () => {
 
   describe('dividers', () => {
     it('should render gradient divider at top', () => {
-      const { container } = render(<Footer />)
-      const dividers = container.querySelectorAll('[role="separator"]')
+      render(<Footer />)
+      const dividers = screen.getAllByRole('separator')
       expect(dividers.length).toBeGreaterThanOrEqual(2)
     })
 
     it('should render light divider in middle', () => {
-      const { container } = render(<Footer />)
-      const dividers = container.querySelectorAll('[role="separator"]')
+      render(<Footer />)
+      const dividers = screen.getAllByRole('separator')
       expect(dividers.length).toBeGreaterThanOrEqual(2)
     })
   })
@@ -280,7 +280,7 @@ describe('Footer component', () => {
     it('should apply responsive classes to bottom container', () => {
       const { container } = render(<Footer />)
       const bottomContainer = container.querySelector(
-        'footer .flex.flex-col.items-center.md\\:flex-row-reverse'
+        String.raw`footer .flex.flex-col.items-center.md\:flex-row-reverse`
       )
       expect(bottomContainer).toBeInTheDocument()
       expect(bottomContainer).toHaveClass(

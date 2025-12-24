@@ -27,7 +27,7 @@ export const ItemFooter = ({ title, children, className }: ItemFooterProps) => (
     {title && (
       <h2 className="text-md uppercase font-semibold tracking-wide">{title}</h2>
     )}
-    <>{children}</>
+    {children}
   </section>
 )
 
