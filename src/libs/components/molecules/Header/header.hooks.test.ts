@@ -185,6 +185,8 @@ describe('useHeader hook', () => {
       // Simulate scroll above threshold when already solid
       scrollCallback(15)
       // Should not call setIsSolid because isSolid is already true
+
+      expect(mockSetIsSolid).not.toHaveBeenCalled()
     })
 
     it('should update to solid when scrolling past threshold', () => {

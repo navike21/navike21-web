@@ -14,6 +14,24 @@ vi.mock('motion', () => ({
   cancelFrame: vi.fn()
 }))
 
+function useLayoutScrollWithNullLenis() {
+  const hook = useLayoutScroll()
+  hook.lenisRef.current = {
+    lenis: undefined,
+    wrapper: null,
+    content: null
+  } as unknown as LenisRef
+  return hook
+}
+
+function renderLayoutScrollWithLenisRef(lenisRefValue: LenisRef) {
+  return renderHook(() => {
+    const hook = useLayoutScroll()
+    hook.lenisRef.current = lenisRefValue
+    return hook
+  })
+}
+
 describe('useLayoutScroll', () => {
   beforeEach(() => {
     vi.mocked(HeaderContext.useHeaderContext).mockReturnValue({
@@ -57,8 +75,7 @@ describe('useLayoutScroll', () => {
     // Obtener callback registrado
     const updateCallback = vi.mocked(motion.frame.update).mock.calls[0]?.[0]
     act(() => {
-      updateCallback &&
-        updateCallback({ timestamp: 123, delta: 0, isProcessing: false })
+      updateCallback?.({ timestamp: 123, delta: 0, isProcessing: false })
     })
     expect(mockRaf).toHaveBeenCalledWith(123)
   })
@@ -119,17 +136,11 @@ describe('useLayoutScroll', () => {
       isSolid: false,
       setIsSolid: vi.fn()
     })
-    // Custom hook para setear el ref antes del efecto
-    function useLayoutScrollWithRef() {
-      const hook = useLayoutScroll()
-      hook.lenisRef.current = {
-        lenis: { raf: vi.fn(), stop: mockStop, start: mockStart },
-        wrapper: null,
-        content: null
-      } as unknown as LenisRef
-      return hook
-    }
-    const { unmount } = renderHook(() => useLayoutScrollWithRef())
+    const { unmount } = renderLayoutScrollWithLenisRef({
+      lenis: { raf: vi.fn(), stop: mockStop, start: mockStart },
+      wrapper: null,
+      content: null
+    } as unknown as LenisRef)
     unmount()
     expect(mockStart).toHaveBeenCalled()
   })
@@ -141,20 +152,16 @@ describe('useLayoutScroll', () => {
       isSolid: false,
       setIsSolid: vi.fn()
     })
-    // Custom hook para setear el ref sin lenis
-    function useLayoutScrollWithNullLenis() {
-      const hook = useLayoutScroll()
-      hook.lenisRef.current = {
-        lenis: undefined,
-        wrapper: null,
-        content: null
-      } as unknown as LenisRef
-      return hook
-    }
     const { unmount } = renderHook(() => useLayoutScrollWithNullLenis())
-    // No debe lanzar error ni llamar a stop/start
-    unmount()
-    // No hay expect directo, pero si no hay error y coverage sube, está cubierto
+
+    const updateCallback = vi.mocked(motion.frame.update).mock.calls[0]?.[0]
+    expect(updateCallback).toEqual(expect.any(Function))
+    expect(() => {
+      updateCallback?.({ timestamp: 123, delta: 0, isProcessing: false })
+    }).not.toThrow()
+
+    // No debe lanzar error
+    expect(() => unmount()).not.toThrow()
   })
 
   it('should automatically start lenis when menu is closed', async () => {
@@ -169,17 +176,11 @@ describe('useLayoutScroll', () => {
     const mockStart = vi.fn()
     const mockStop = vi.fn()
 
-    function useLayoutScrollWithLenis() {
-      const hook = useLayoutScroll()
-      hook.lenisRef.current = {
-        lenis: { raf: vi.fn(), stop: mockStop, start: mockStart },
-        wrapper: null,
-        content: null
-      } as unknown as LenisRef
-      return hook
-    }
-
-    renderHook(() => useLayoutScrollWithLenis())
+    renderLayoutScrollWithLenisRef({
+      lenis: { raf: vi.fn(), stop: mockStop, start: mockStart },
+      wrapper: null,
+      content: null
+    } as unknown as LenisRef)
 
     await waitFor(() => {
       expect(mockStart).toHaveBeenCalledTimes(1)
@@ -199,17 +200,11 @@ describe('useLayoutScroll', () => {
     const mockStart = vi.fn()
     const mockStop = vi.fn()
 
-    function useLayoutScrollWithLenis() {
-      const hook = useLayoutScroll()
-      hook.lenisRef.current = {
-        lenis: { raf: vi.fn(), stop: mockStop, start: mockStart },
-        wrapper: null,
-        content: null
-      } as unknown as LenisRef
-      return hook
-    }
-
-    const { rerender } = renderHook(() => useLayoutScrollWithLenis())
+    const { rerender } = renderLayoutScrollWithLenisRef({
+      lenis: { raf: vi.fn(), stop: mockStop, start: mockStart },
+      wrapper: null,
+      content: null
+    } as unknown as LenisRef)
 
     await waitFor(() => {
       expect(mockStart).toHaveBeenCalledTimes(1)
