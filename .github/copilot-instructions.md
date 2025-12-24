@@ -1,67 +1,25 @@
-# Copilot Instructions for Navike21 Web
+# Copilot Instructions (Navike21 Web)
 
-## Project Architecture
+## Big picture
+- Next.js App Router: route files in `src/app/**` are thin wrappers that render view modules from `src/views/pages/**` (example: `src/app/page.tsx` → `src/views/pages/Home/Home.tsx`).
+- UI follows atomic design: reusable atoms/molecules live in `src/libs/components/**` and are re-exported via per-folder `index.ts` (see `src/libs/components/README.md`).
+- Global shell is composed in `src/app/layout.tsx`: `HeaderProvider` → `Header` + `Menu` + `LayoutScroll`; `Footer` is outside the provider.
 
-- **Framework:** Next.js (App Router, see `src/app/`)
-- **Component Structure:**
-  - Atoms, molecules, and reusable UI in `src/libs/components/`
-  - Pages and views in `src/views/pages/`
-  - Constants, helpers, and types in `src/libs/constants/`, `src/libs/helpers/`, `src/libs/types/`
-- **Styling:** Tailwind CSS, with global styles in `src/styles/`
-- **State Management:** React Context (see `src/libs/context/`)
-- **Assets:** Images and backgrounds in `src/libs/assets/`
+## Imports & paths
+- Prefer TS path aliases from `tsconfig.json`: `@Components`, `@Pages`, `@Context`, `@I18n`, `@Helpers`, `@Styles`, etc.
+- Global styles are under `src/libs/styles/**` and imported via `@Styles/globals.css` in `src/app/layout.tsx`.
 
-## Developer Workflows
+## State + cross-component behavior
+- Header/menu state is centralized in `src/libs/context/HeaderContext.tsx` and consumed via `useHeaderContext` (`src/libs/context/headerContext.hooks.ts`).
+- Smooth scrolling is implemented by `LayoutScroll` (`src/libs/components/molecules/LayoutScroll/**`) using `lenis` + `motion` frame loop; it stops scroll when `toggleMenu` is true.
+- Menu overlay animation uses `motion/react` variants (see `src/libs/components/molecules/Menu/menu.hooks.ts`).
 
-- **Install dependencies:** `pnpm install`
-- **Run development server:** `pnpm dev`
-- **Build for production:** `pnpm build`
-- **Start production server:** `pnpm start`
-- **Lint:** `pnpm lint` (uses ESLint, config in `eslint.config.mjs`)
-- **Type checking:** `pnpm typecheck`
+## i18n pattern
+- i18n content is plain TS objects grouped by domain under `src/libs/i18n/**`, indexed by language constants (e.g., `ESP` from `src/libs/constants/languages.ts`).
+- Page hooks typically select the current language explicitly (example: `src/views/pages/Home/home.hooks.ts`).
 
-## Formatting & Linting Convergence
-
-- **Homologación ESLint + Prettier:**
-  - El proyecto está configurado para que ESLint y Prettier trabajen juntos, usando `eslint-plugin-prettier` y reglas alineadas en `.prettierrc` y `eslint.config.mjs`.
-  - El formateo automático al guardar (`Ctrl + S`) y los comandos `pnpm run lint:fix` y `pnpm run format` producen el mismo resultado.
-  - No hay conflicto ni "ping-pong" de cambios entre ambos sistemas.
-- **Flujo recomendado:**
-  - Usa `pnpm run lint` para validar código y formato.
-  - Usa `pnpm run lint:fix` para corregir ambos (ESLint y Prettier).
-  - Usa `pnpm run format` para formatear todo el proyecto con Prettier.
-  - Al guardar archivos en VSCode, se aplican automáticamente las reglas de ESLint y Prettier.
-- **Configuración relevante:**
-  - `.vscode/settings.json` fuerza el uso de Prettier y ESLint al guardar.
-  - `.editorconfig` y `.prettierrc` están alineados para evitar inconsistencias.
-  - Si algún archivo se comporta diferente, revisa que esté incluido en `eslint.validate` y no esté en la lista de ignores.
-
-## Project Conventions
-
-- **Component Pattern:** Follows atomic design (atoms, molecules, etc.)
-- **Exports:** Each component folder has an `index.ts` for re-exports
-- **Hooks:** Custom hooks in `src/libs/hooks/` and per-component hooks (e.g., `divider.hooks.ts`)
-- **i18n:** Organized by domain in `src/libs/i18n/`
-- **Constants:** Centralized in `src/libs/constants/`
-- **Types:** All shared types in `src/libs/types/`
-- **Context:** Shared React context in `src/libs/context/`
-
-## Integration & Patterns
-
-- **API Integration:** Use Next.js API routes or external APIs as needed
-- **Cross-component communication:** Use React Context or props drilling
-- **Assets:** Import images/fonts from `src/libs/assets/` and `src/libs/sources/fonts.ts`
-
-## Examples
-
-- To add a new atom: create a folder in `src/libs/components/atoms/`, add your component, and export via `index.ts`
-- To add a new page: add a folder in `src/views/pages/`, implement the page, and update routing if needed
-
-## References
-
-- See `README.md` for high-level overview
-- See `eslint.config.mjs` and `tsconfig.json` for linting and TypeScript setup
-
----
-
-For any unclear conventions or missing documentation, ask for clarification or check similar patterns in the codebase.
+## Dev workflows (local + CI)
+- Local: `pnpm dev` (Turbopack), `pnpm build`, `pnpm start`, `pnpm validate` (typecheck+lint), `pnpm format`.
+- Tests: Vitest + Testing Library (`pnpm test`, `pnpm test:coverage`). Environment/mocks live in `vitest.setup.ts` (e.g., `IntersectionObserver`, `ResizeObserver`, `matchMedia`).
+- Coverage: thresholds are 70% and several directories are excluded (see `vitest.config.ts`).
+- CI (GitHub Actions) runs `typecheck`, `lint`, `format:check`; release also runs `build:ci` (see `.github/workflows/*.yml`).

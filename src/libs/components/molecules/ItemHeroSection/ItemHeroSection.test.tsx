@@ -191,7 +191,7 @@ describe('ItemHeroSection component', () => {
         'z-10',
         'relative',
         'h-dvh',
-        'max-h-[1000px]',
+        'max-h-250',
         'md:gap-8',
         'md:flex-nowrap',
         'lg:gap-20'
