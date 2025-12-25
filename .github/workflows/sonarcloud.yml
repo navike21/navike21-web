@@ -1,11 +1,6 @@
 name: 🔎 SonarCloud (with Coverage)
 
 on:
-  pull_request:
-    branches:
-      - develop
-      - release
-      - main
   push:
     branches:
       - develop
