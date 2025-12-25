@@ -1,0 +1,28 @@
+'use client'
+
+import { SOCIAL_MEDIA } from '@Constants/socialMedia'
+import { useHeaderContext } from '@Context/headerContext.hooks'
+import { useScroll, useMotionValueEvent } from 'motion/react'
+import { useRef } from 'react'
+
+export const useHeader = () => {
+  const headerRef = useRef<HTMLElement | null>(null)
+  const { isSolid, setIsSolid, toggleMenu, setToggleMenu } = useHeaderContext()
+  const { scrollY } = useScroll()
+
+  useMotionValueEvent(scrollY, 'change', latestY => {
+    const threshold = 10 // píxeles desde arriba
+    const solid = latestY > threshold
+    if (solid !== isSolid) {
+      setIsSolid(solid)
+    }
+  })
+
+  return {
+    headerRef,
+    isSolid,
+    socialMedia: SOCIAL_MEDIA.filter(({ active }) => active),
+    toggleMenu,
+    setToggleMenu
+  }
+}

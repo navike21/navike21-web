@@ -1,6 +1,0 @@
-export * from './backgroundImages'
-export * from './clients'
-export * from './languages'
-export * from './pages'
-export * from './projectsImages'
-export * from './socialMedia'

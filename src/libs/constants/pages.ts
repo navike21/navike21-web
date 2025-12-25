@@ -1,10 +1,6 @@
-export const HOME = 'home'
-export const ABOUT_US = 'about-us'
-export const SERVICES = 'services'
-export const PROJECTS = 'projects'
-export const BLOG = 'blog'
-export const CONTACT = 'contact'
-export const LEGAL = 'legal'
-export const TERMS_AND_CONDITIONS = 'terms-and-conditions'
-export const PRIVACY_POLICY = 'privacy-policy'
-export const COMPLAINTS_BOOK = 'complaints-book'
+import { informationPage } from '@I18n/pages/home'
+import { EPages } from '@Types/pages'
+
+export const PAGES_INFORMATION = {
+  [EPages.HOME]: informationPage
+}

@@ -40,8 +40,16 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# turbopack
+.turbo
+
 package-lock.json
 /.idea/
 yarn.lock
-pnpm-lock.yaml
-pnpm-workspace.yaml
+
+# Editor
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+
+.vercel
