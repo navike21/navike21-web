@@ -1,11 +1,6 @@
 name: 🔍 Code Quality Checks
 
 on:
-  pull_request:
-    branches:
-      - develop
-      - release
-      - main
   push:
     branches:
       - develop

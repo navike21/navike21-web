@@ -4,6 +4,132 @@ import { HeaderProvider } from './HeaderContext'
 import { useHeaderContext } from './headerContext.hooks'
 import type { ReactNode } from 'react'
 
+const headerProviderWrapper = ({ children }: { children: ReactNode }) => (
+  <HeaderProvider>{children}</HeaderProvider>
+)
+
+const DefaultValuesConsumer = () => {
+  const { isSolid, toggleMenu } = useHeaderContext()
+  return (
+    <div>
+      <span data-testid="is-solid">{String(isSolid)}</span>
+      <span data-testid="toggle-menu">{String(toggleMenu)}</span>
+    </div>
+  )
+}
+
+const IsSolidUpdateConsumer = () => {
+  const { isSolid, setIsSolid } = useHeaderContext()
+  const handleSetSolid = () => setIsSolid(true)
+  return (
+    <div>
+      <span data-testid="is-solid">{String(isSolid)}</span>
+      <button onClick={handleSetSolid}>Set Solid</button>
+    </div>
+  )
+}
+
+const ToggleMenuUpdateConsumer = () => {
+  const { toggleMenu, setToggleMenu } = useHeaderContext()
+  const handleToggleMenu = () => setToggleMenu(true)
+  return (
+    <div>
+      <span data-testid="toggle-menu">{String(toggleMenu)}</span>
+      <button onClick={handleToggleMenu}>Toggle Menu</button>
+    </div>
+  )
+}
+
+const IsSolidTrueFalseConsumer = () => {
+  const { isSolid, setIsSolid } = useHeaderContext()
+  const handleSetTrue = () => setIsSolid(true)
+  const handleSetFalse = () => setIsSolid(false)
+  return (
+    <div>
+      <span data-testid="is-solid">{String(isSolid)}</span>
+      <button onClick={handleSetTrue}>Set True</button>
+      <button onClick={handleSetFalse}>Set False</button>
+    </div>
+  )
+}
+
+const ToggleMenuTrueFalseConsumer = () => {
+  const { toggleMenu, setToggleMenu } = useHeaderContext()
+  const handleOpenMenu = () => setToggleMenu(true)
+  const handleCloseMenu = () => setToggleMenu(false)
+  return (
+    <div>
+      <span data-testid="toggle-menu">{String(toggleMenu)}</span>
+      <button onClick={handleOpenMenu}>Open Menu</button>
+      <button onClick={handleCloseMenu}>Close Menu</button>
+    </div>
+  )
+}
+
+const IndependentStateConsumer = () => {
+  const { isSolid, toggleMenu, setIsSolid, setToggleMenu } = useHeaderContext()
+  const handleSetSolid = () => setIsSolid(true)
+  const handleOpenMenu = () => setToggleMenu(true)
+  return (
+    <div>
+      <span data-testid="is-solid">{String(isSolid)}</span>
+      <span data-testid="toggle-menu">{String(toggleMenu)}</span>
+      <button onClick={handleSetSolid}>Set Solid</button>
+      <button onClick={handleOpenMenu}>Open Menu</button>
+    </div>
+  )
+}
+
+const MultipleUpdatesConsumer = () => {
+  const { isSolid, toggleMenu, setIsSolid, setToggleMenu } = useHeaderContext()
+  const handleToggleSolid = () => setIsSolid(!isSolid)
+  const handleToggleMenu = () => setToggleMenu(!toggleMenu)
+  return (
+    <div>
+      <span data-testid="is-solid">{String(isSolid)}</span>
+      <span data-testid="toggle-menu">{String(toggleMenu)}</span>
+      <button onClick={handleToggleSolid}>Toggle Solid</button>
+      <button onClick={handleToggleMenu}>Toggle Menu</button>
+    </div>
+  )
+}
+
+const OutsideProviderConsumer = () => {
+  useHeaderContext()
+  return <div>Test</div>
+}
+
+const Consumer1SolidSetter = () => {
+  const { isSolid, setIsSolid } = useHeaderContext()
+  const handleSetSolid = () => setIsSolid(true)
+  return (
+    <div>
+      <span data-testid="consumer1-solid">{String(isSolid)}</span>
+      <button onClick={handleSetSolid}>Set Solid</button>
+    </div>
+  )
+}
+
+const Consumer2SolidReader = () => {
+  const { isSolid } = useHeaderContext()
+  return <span data-testid="consumer2-solid">{String(isSolid)}</span>
+}
+
+const ConcurrentUpdateConsumer = () => {
+  const { isSolid, toggleMenu, setIsSolid, setToggleMenu } = useHeaderContext()
+  const handleUpdateBoth = () => {
+    setIsSolid(true)
+    setToggleMenu(true)
+  }
+  return (
+    <div>
+      <span data-testid="is-solid">{String(isSolid)}</span>
+      <span data-testid="toggle-menu">{String(toggleMenu)}</span>
+      <button onClick={handleUpdateBoth}>Update Both</button>
+    </div>
+  )
+}
+
 describe('HeaderContext', () => {
   describe('HeaderProvider', () => {
     it('should render children', () => {
@@ -16,19 +142,9 @@ describe('HeaderContext', () => {
     })
 
     it('should provide default values', () => {
-      const TestComponent = () => {
-        const { isSolid, toggleMenu } = useHeaderContext()
-        return (
-          <div>
-            <span data-testid="is-solid">{String(isSolid)}</span>
-            <span data-testid="toggle-menu">{String(toggleMenu)}</span>
-          </div>
-        )
-      }
-
       render(
         <HeaderProvider>
-          <TestComponent />
+          <DefaultValuesConsumer />
         </HeaderProvider>
       )
 
@@ -37,19 +153,9 @@ describe('HeaderContext', () => {
     })
 
     it('should update isSolid state', () => {
-      const TestComponent = () => {
-        const { isSolid, setIsSolid } = useHeaderContext()
-        return (
-          <div>
-            <span data-testid="is-solid">{String(isSolid)}</span>
-            <button onClick={() => setIsSolid(true)}>Set Solid</button>
-          </div>
-        )
-      }
-
       render(
         <HeaderProvider>
-          <TestComponent />
+          <IsSolidUpdateConsumer />
         </HeaderProvider>
       )
 
@@ -63,19 +169,9 @@ describe('HeaderContext', () => {
     })
 
     it('should update toggleMenu state', () => {
-      const TestComponent = () => {
-        const { toggleMenu, setToggleMenu } = useHeaderContext()
-        return (
-          <div>
-            <span data-testid="toggle-menu">{String(toggleMenu)}</span>
-            <button onClick={() => setToggleMenu(true)}>Toggle Menu</button>
-          </div>
-        )
-      }
-
       render(
         <HeaderProvider>
-          <TestComponent />
+          <ToggleMenuUpdateConsumer />
         </HeaderProvider>
       )
 
@@ -89,20 +185,9 @@ describe('HeaderContext', () => {
     })
 
     it('should update isSolid to false', () => {
-      const TestComponent = () => {
-        const { isSolid, setIsSolid } = useHeaderContext()
-        return (
-          <div>
-            <span data-testid="is-solid">{String(isSolid)}</span>
-            <button onClick={() => setIsSolid(true)}>Set True</button>
-            <button onClick={() => setIsSolid(false)}>Set False</button>
-          </div>
-        )
-      }
-
       render(
         <HeaderProvider>
-          <TestComponent />
+          <IsSolidTrueFalseConsumer />
         </HeaderProvider>
       )
 
@@ -118,20 +203,9 @@ describe('HeaderContext', () => {
     })
 
     it('should update toggleMenu to false', () => {
-      const TestComponent = () => {
-        const { toggleMenu, setToggleMenu } = useHeaderContext()
-        return (
-          <div>
-            <span data-testid="toggle-menu">{String(toggleMenu)}</span>
-            <button onClick={() => setToggleMenu(true)}>Open Menu</button>
-            <button onClick={() => setToggleMenu(false)}>Close Menu</button>
-          </div>
-        )
-      }
-
       render(
         <HeaderProvider>
-          <TestComponent />
+          <ToggleMenuTrueFalseConsumer />
         </HeaderProvider>
       )
 
@@ -147,22 +221,9 @@ describe('HeaderContext', () => {
     })
 
     it('should maintain independent state for isSolid and toggleMenu', () => {
-      const TestComponent = () => {
-        const { isSolid, toggleMenu, setIsSolid, setToggleMenu } =
-          useHeaderContext()
-        return (
-          <div>
-            <span data-testid="is-solid">{String(isSolid)}</span>
-            <span data-testid="toggle-menu">{String(toggleMenu)}</span>
-            <button onClick={() => setIsSolid(true)}>Set Solid</button>
-            <button onClick={() => setToggleMenu(true)}>Open Menu</button>
-          </div>
-        )
-      }
-
       render(
         <HeaderProvider>
-          <TestComponent />
+          <IndependentStateConsumer />
         </HeaderProvider>
       )
 
@@ -180,24 +241,9 @@ describe('HeaderContext', () => {
     })
 
     it('should handle multiple state updates', () => {
-      const TestComponent = () => {
-        const { isSolid, toggleMenu, setIsSolid, setToggleMenu } =
-          useHeaderContext()
-        return (
-          <div>
-            <span data-testid="is-solid">{String(isSolid)}</span>
-            <span data-testid="toggle-menu">{String(toggleMenu)}</span>
-            <button onClick={() => setIsSolid(!isSolid)}>Toggle Solid</button>
-            <button onClick={() => setToggleMenu(!toggleMenu)}>
-              Toggle Menu
-            </button>
-          </div>
-        )
-      }
-
       render(
         <HeaderProvider>
-          <TestComponent />
+          <MultipleUpdatesConsumer />
         </HeaderProvider>
       )
 
@@ -230,12 +276,7 @@ describe('HeaderContext', () => {
     it('should throw error when used outside HeaderProvider', () => {
       const errorSpy = vi.spyOn(console, 'error').mockImplementation(() => {})
 
-      const TestComponent = () => {
-        useHeaderContext()
-        return <div>Test</div>
-      }
-
-      expect(() => render(<TestComponent />)).toThrow(
+      expect(() => render(<OutsideProviderConsumer />)).toThrow(
         'useHeaderContext must be used within a HeaderProvider'
       )
 
@@ -243,11 +284,9 @@ describe('HeaderContext', () => {
     })
 
     it('should return context value when used inside HeaderProvider', () => {
-      const wrapper = ({ children }: { children: ReactNode }) => (
-        <HeaderProvider>{children}</HeaderProvider>
-      )
-
-      const { result } = renderHook(() => useHeaderContext(), { wrapper })
+      const { result } = renderHook(() => useHeaderContext(), {
+        wrapper: headerProviderWrapper
+      })
 
       expect(result.current).toHaveProperty('isSolid')
       expect(result.current).toHaveProperty('toggleMenu')
@@ -256,31 +295,25 @@ describe('HeaderContext', () => {
     })
 
     it('should have isSolid as false by default', () => {
-      const wrapper = ({ children }: { children: ReactNode }) => (
-        <HeaderProvider>{children}</HeaderProvider>
-      )
-
-      const { result } = renderHook(() => useHeaderContext(), { wrapper })
+      const { result } = renderHook(() => useHeaderContext(), {
+        wrapper: headerProviderWrapper
+      })
 
       expect(result.current.isSolid).toBe(false)
     })
 
     it('should have toggleMenu as false by default', () => {
-      const wrapper = ({ children }: { children: ReactNode }) => (
-        <HeaderProvider>{children}</HeaderProvider>
-      )
-
-      const { result } = renderHook(() => useHeaderContext(), { wrapper })
+      const { result } = renderHook(() => useHeaderContext(), {
+        wrapper: headerProviderWrapper
+      })
 
       expect(result.current.toggleMenu).toBe(false)
     })
 
     it('should update isSolid with setIsSolid', () => {
-      const wrapper = ({ children }: { children: ReactNode }) => (
-        <HeaderProvider>{children}</HeaderProvider>
-      )
-
-      const { result } = renderHook(() => useHeaderContext(), { wrapper })
+      const { result } = renderHook(() => useHeaderContext(), {
+        wrapper: headerProviderWrapper
+      })
 
       act(() => {
         result.current.setIsSolid(true)
@@ -290,11 +323,9 @@ describe('HeaderContext', () => {
     })
 
     it('should update toggleMenu with setToggleMenu', () => {
-      const wrapper = ({ children }: { children: ReactNode }) => (
-        <HeaderProvider>{children}</HeaderProvider>
-      )
-
-      const { result } = renderHook(() => useHeaderContext(), { wrapper })
+      const { result } = renderHook(() => useHeaderContext(), {
+        wrapper: headerProviderWrapper
+      })
 
       act(() => {
         result.current.setToggleMenu(true)
@@ -304,12 +335,8 @@ describe('HeaderContext', () => {
     })
 
     it('should maintain referential equality for setter functions', () => {
-      const wrapper = ({ children }: { children: ReactNode }) => (
-        <HeaderProvider>{children}</HeaderProvider>
-      )
-
       const { result, rerender } = renderHook(() => useHeaderContext(), {
-        wrapper
+        wrapper: headerProviderWrapper
       })
 
       const firstSetIsSolid = result.current.setIsSolid
@@ -326,11 +353,9 @@ describe('HeaderContext', () => {
     })
 
     it('should update state independently', () => {
-      const wrapper = ({ children }: { children: ReactNode }) => (
-        <HeaderProvider>{children}</HeaderProvider>
-      )
-
-      const { result } = renderHook(() => useHeaderContext(), { wrapper })
+      const { result } = renderHook(() => useHeaderContext(), {
+        wrapper: headerProviderWrapper
+      })
 
       act(() => {
         result.current.setIsSolid(true)
@@ -350,25 +375,10 @@ describe('HeaderContext', () => {
 
   describe('integration tests', () => {
     it('should share state between multiple consumers', () => {
-      const Consumer1 = () => {
-        const { isSolid, setIsSolid } = useHeaderContext()
-        return (
-          <div>
-            <span data-testid="consumer1-solid">{String(isSolid)}</span>
-            <button onClick={() => setIsSolid(true)}>Set Solid</button>
-          </div>
-        )
-      }
-
-      const Consumer2 = () => {
-        const { isSolid } = useHeaderContext()
-        return <span data-testid="consumer2-solid">{String(isSolid)}</span>
-      }
-
       render(
         <HeaderProvider>
-          <Consumer1 />
-          <Consumer2 />
+          <Consumer1SolidSetter />
+          <Consumer2SolidReader />
         </HeaderProvider>
       )
 
@@ -384,28 +394,9 @@ describe('HeaderContext', () => {
     })
 
     it('should handle concurrent state updates', () => {
-      const TestComponent = () => {
-        const { isSolid, toggleMenu, setIsSolid, setToggleMenu } =
-          useHeaderContext()
-        return (
-          <div>
-            <span data-testid="is-solid">{String(isSolid)}</span>
-            <span data-testid="toggle-menu">{String(toggleMenu)}</span>
-            <button
-              onClick={() => {
-                setIsSolid(true)
-                setToggleMenu(true)
-              }}
-            >
-              Update Both
-            </button>
-          </div>
-        )
-      }
-
       render(
         <HeaderProvider>
-          <TestComponent />
+          <ConcurrentUpdateConsumer />
         </HeaderProvider>
       )
 

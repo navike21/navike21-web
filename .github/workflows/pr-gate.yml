@@ -1,0 +1,94 @@
+name: ✅ PR Gate (Quality → Sonar → Vercel)
+
+on:
+  pull_request:
+    branches:
+      - develop
+      - release
+      - main
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+
+permissions:
+  contents: read
+  pull-requests: write
+  checks: write
+  deployments: write
+
+concurrency:
+  group: pr-gate-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  pr-gate:
+    name: PR Gate
+    runs-on: ubuntu-latest
+
+    env:
+      BASE_BRANCH: ${{ github.event.pull_request.base.ref }}
+
+    steps:
+      - name: 📥 Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          fetch-depth: 0
+
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4
+        with:
+          version: 9.15.0
+
+      - name: 🟢 Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: 📥 Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: 🔍 TypeScript check
+        if: ${{ env.BASE_BRANCH != 'main' }}
+        run: pnpm run typecheck
+
+      - name: 🧹 ESLint check
+        run: pnpm run lint
+
+      - name: 💅 Prettier check
+        run: pnpm run format:check
+
+      - name: 🧪 Tests (no coverage)
+        if: ${{ env.BASE_BRANCH == 'release' }}
+        run: pnpm run test
+
+      - name: 🧪 Tests with coverage (lcov)
+        if: ${{ env.BASE_BRANCH == 'develop' }}
+        run: pnpm run test:coverage
+
+      - name: 🔎 SonarCloud Scan (wait quality gate)
+        if: ${{ env.BASE_BRANCH == 'develop' }}
+        uses: SonarSource/sonarcloud-github-action@383f7e52eae3ab0510c3cb0e7d9d150bbaeab838 # v3
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: >
+            -Dsonar.qualitygate.wait=true
+            -Dsonar.qualitygate.timeout=300
+
+      - name: 🚀 Deploy Preview to Vercel (comment PR)
+        if: ${{ env.BASE_BRANCH == 'develop' }}
+        uses: amondnet/vercel-action@16e87c0a08142b0d0d33b76aeaf20823c381b9b9 # v25
+        id: vercel-deploy
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          scope: ${{ secrets.VERCEL_ORG_ID }}
+          github-comment: true
+          alias-domains: |
+            ${{ format('navike21-pr-{0}.vercel.app', github.event.pull_request.number) }}

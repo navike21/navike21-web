@@ -35,8 +35,10 @@
     ["clsx\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
   ],
   "cSpell.words": [
+    "adipiscing",
     "almazen",
     "Almazen",
+    "amet",
     "anker",
     "ankerpaints",
     "beatsmusica",
@@ -44,6 +46,7 @@
     "Carbyne",
     "circurela",
     "Circurela",
+    "elit",
     "embla",
     "Embla",
     "esnext",
@@ -52,12 +55,16 @@
     "hrefs",
     "launion",
     "lerp",
+    "Linkedin",
     "poppins",
     "remixicon",
     "rkpower",
     "splide",
     "Splide",
     "splidejs",
-    "uuidv"
+    "userfriendly",
+    "uuidv",
+    "vercel",
+    "Whatsapp"
   ]
 }

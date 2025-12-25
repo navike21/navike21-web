@@ -325,7 +325,7 @@ describe('Menu component', () => {
 
     it('should apply correct base classes', () => {
       const { container } = renderWithProvider(<Menu />)
-      const itemsContainer = container.querySelector('.w-\\[80\\%\\]')
+      const itemsContainer = container.querySelector(String.raw`.w-\[80\%\]`)
       expect(itemsContainer).toHaveClass(
         'w-[80%]',
         'h-dvh',
@@ -345,7 +345,7 @@ describe('Menu component', () => {
 
     it('should apply landscape classes', () => {
       const { container } = renderWithProvider(<Menu />)
-      const itemsContainer = container.querySelector('.w-\\[80\\%\\]')
+      const itemsContainer = container.querySelector(String.raw`.w-\[80\%\]`)
       expect(itemsContainer).toHaveClass(
         'landscape:grid',
         'landscape:grid-cols-3',
@@ -359,7 +359,7 @@ describe('Menu component', () => {
 
     it('should apply md landscape classes', () => {
       const { container } = renderWithProvider(<Menu />)
-      const itemsContainer = container.querySelector('.w-\\[80\\%\\]')
+      const itemsContainer = container.querySelector(String.raw`.w-\[80\%\]`)
       expect(itemsContainer).toHaveClass(
         'landscape:md:flex',
         'landscape:md:flex-col',
@@ -373,7 +373,7 @@ describe('Menu component', () => {
 
     it('should apply md classes', () => {
       const { container } = renderWithProvider(<Menu />)
-      const itemsContainer = container.querySelector('.w-\\[80\\%\\]')
+      const itemsContainer = container.querySelector(String.raw`.w-\[80\%\]`)
       expect(itemsContainer).toHaveClass(
         'md:w-1/2',
         'md:items-center',
