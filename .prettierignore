@@ -15,3 +15,6 @@
 
 # GitHub Actions workflows (avoid formatting CI definitions)
 /.github/workflows/**
+
+# Dependabot config
+/.github/dependabot.yml
