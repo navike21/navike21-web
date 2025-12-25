@@ -46,5 +46,4 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           scope: ${{ secrets.VERCEL_ORG_ID }}
           github-comment: false
-          alias-domains: |
-            ${{ github.event_name == 'pull_request' && format('navike21-pr-{0}.vercel.app', github.event.pull_request.number) || '' }}
+

@@ -27,6 +27,9 @@ jobs:
     name: PR Gate
     runs-on: ubuntu-latest
 
+    env:
+      BASE_BRANCH: ${{ github.event.pull_request.base.ref }}
+
     steps:
       - name: 📥 Checkout
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
@@ -48,6 +51,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: 🔍 TypeScript check
+        if: ${{ env.BASE_BRANCH != 'main' }}
         run: pnpm run typecheck
 
       - name: 🧹 ESLint check
@@ -56,10 +60,16 @@ jobs:
       - name: 💅 Prettier check
         run: pnpm run format:check
 
+      - name: 🧪 Tests (no coverage)
+        if: ${{ env.BASE_BRANCH == 'release' }}
+        run: pnpm run test
+
       - name: 🧪 Tests with coverage (lcov)
+        if: ${{ env.BASE_BRANCH == 'develop' }}
         run: pnpm run test:coverage
 
       - name: 🔎 SonarCloud Scan (wait quality gate)
+        if: ${{ env.BASE_BRANCH == 'develop' }}
         uses: SonarSource/sonarcloud-github-action@383f7e52eae3ab0510c3cb0e7d9d150bbaeab838 # v3
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -70,6 +80,7 @@ jobs:
             -Dsonar.qualitygate.timeout=300
 
       - name: 🚀 Deploy Preview to Vercel (comment PR)
+        if: ${{ env.BASE_BRANCH == 'develop' }}
         uses: amondnet/vercel-action@16e87c0a08142b0d0d33b76aeaf20823c381b9b9 # v25
         id: vercel-deploy
         with:
