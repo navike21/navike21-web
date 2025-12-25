@@ -41,7 +41,7 @@ export const LinkFooter = ({
   <Link
     target={target}
     rel={rel}
-    href={href || ''}
+    href={href ?? ''}
     className={clsx(
       'text-sm text-white/80 decoration-0 transition-all ease-in-out duration-500',
       'hover:text-white',

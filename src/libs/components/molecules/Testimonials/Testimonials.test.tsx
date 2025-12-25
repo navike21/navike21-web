@@ -90,7 +90,7 @@ vi.mock('../../atoms/Card', () => ({
 }))
 
 vi.mock('../../atoms/Divider', () => ({
-  Divider: () => <hr role="separator" />
+  Divider: () => <hr />
 }))
 
 const mockAvatar: StaticImageData = {
@@ -202,7 +202,7 @@ describe('TestimonialsItem component', () => {
 
     it('should render divider', () => {
       const { container } = render(<TestimonialsItem {...defaultProps} />)
-      const divider = container.querySelector('[role="separator"]')
+      const divider = container.querySelector('hr')
       expect(divider).toBeInTheDocument()
     })
 

@@ -109,18 +109,20 @@ describe('Header component', () => {
 
     it('should render social media links with target="_blank"', () => {
       renderWithProvider(<Header />)
-      const socialLinks = screen
+      const facebookLink = screen
         .getAllByRole('link')
-        .filter(link => link.getAttribute('href')?.includes('facebook.com'))
-      expect(socialLinks[0]).toHaveAttribute('target', '_blank')
+        .find(link => link.getAttribute('href')?.includes('facebook.com'))
+      expect(facebookLink).toBeDefined()
+      expect(facebookLink!).toHaveAttribute('target', '_blank')
     })
 
     it('should render social media links with rel="noopener noreferrer"', () => {
       renderWithProvider(<Header />)
-      const socialLinks = screen
+      const facebookLink = screen
         .getAllByRole('link')
-        .filter(link => link.getAttribute('href')?.includes('facebook.com'))
-      expect(socialLinks[0]).toHaveAttribute('rel', 'noopener noreferrer')
+        .find(link => link.getAttribute('href')?.includes('facebook.com'))
+      expect(facebookLink).toBeDefined()
+      expect(facebookLink!).toHaveAttribute('rel', 'noopener noreferrer')
     })
 
     it('should render social media links with aria-label', () => {

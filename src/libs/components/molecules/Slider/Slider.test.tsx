@@ -116,7 +116,7 @@ describe('Slider component', () => {
         </Slider>
       )
       const splide = screen.getByTestId('splide')
-      const options = JSON.parse(splide.getAttribute('data-options') || '{}')
+      const options = JSON.parse(splide.dataset['options'] || '{}')
       expect(options.perPage).toBe(3)
       expect(options.gap).toBe('1rem')
     })
@@ -128,7 +128,7 @@ describe('Slider component', () => {
         </Slider>
       )
       const splide = screen.getByTestId('splide')
-      const options = JSON.parse(splide.getAttribute('data-options') || '{}')
+      const options = JSON.parse(splide.dataset['options'] || '{}')
       expect(options.classes.pagination).toBe(
         'splide__pagination flex gap-2 mt-4 justify-center'
       )
@@ -146,7 +146,7 @@ describe('Slider component', () => {
         </Slider>
       )
       const splide = screen.getByTestId('splide')
-      const options = JSON.parse(splide.getAttribute('data-options') || '{}')
+      const options = JSON.parse(splide.dataset['options'] || '{}')
       expect(options.classes.pagination).toBe('custom-pagination-class')
     })
 
@@ -287,7 +287,7 @@ describe('Slider component', () => {
         </Slider>
       )
       const splide = screen.getByTestId('splide')
-      const options = JSON.parse(splide.getAttribute('data-options') || '{}')
+      const options = JSON.parse(splide.dataset['options'] || '{}')
       expect(options.breakpoints).toBeDefined()
       expect(options.breakpoints['640']).toEqual({ perPage: 1 })
     })

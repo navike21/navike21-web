@@ -14,8 +14,6 @@ vi.mock('lenis/react', () => ({
       options: _options,
       ...props
     }: PropsWithChildren<Record<string, unknown>>) => {
-      void _root
-      void _options
       return (
         <div data-testid="react-lenis" {...props}>
           {children}
@@ -184,7 +182,7 @@ describe('LayoutScroll component', () => {
       )
       const main = container.querySelector('main')
       const firstChild = main?.firstChild as HTMLElement
-      expect(firstChild.getAttribute('data-testid')).toBe('bg-header')
+      expect(firstChild.dataset['testid']).toBe('bg-header')
     })
 
     it('should maintain proper DOM hierarchy', () => {
@@ -350,15 +348,11 @@ describe('LayoutScroll component', () => {
 
       // Get the update callback that was passed to frame.update
       const updateCallback = vi.mocked(motion.frame.update).mock.calls[0]?.[0]
-      expect(updateCallback).toBeDefined()
+      expect(updateCallback).toEqual(expect.any(Function))
 
-      // Call the update function with a mock FrameData object
-      if (updateCallback) {
-        updateCallback({ timestamp: 1000, delta: 16, isProcessing: false })
-      }
-
-      // The function should process the timestamp
-      expect(updateCallback).toBeInstanceOf(Function)
+      expect(() => {
+        updateCallback?.({ timestamp: 1000, delta: 16, isProcessing: false })
+      }).not.toThrow()
     })
 
     it('should cleanup frame update on unmount', () => {
