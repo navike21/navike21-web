@@ -1,0 +1,20 @@
+# Generated lockfiles
+/pnpm-lock.yaml
+
+# Workspace and build config in repo root
+/pnpm-workspace.yaml
+/postcss.config.mjs
+/next.config.ts
+/vitest.config.ts
+/tsconfig.json
+/tsconfig.tsbuildinfo
+/vercel.json
+
+# Catch-all for other root-level config files
+/*.config.*
+
+# GitHub Actions workflows (avoid formatting CI definitions)
+/.github/workflows/**
+
+# Dependabot config
+/.github/dependabot.yml

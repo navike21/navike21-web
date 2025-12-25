@@ -1,432 +1,92 @@
-@import 'slick-carousel/slick/slick.css';
-@import 'slick-carousel/slick/slick-theme.css';
+@import 'lenis/dist/lenis.css';
+
+@import '@splidejs/react-splide/css/core';
+
 @import 'tailwindcss';
+@import './theme.css';
+@import './splide.css';
 
 @layer base {
-  body {
-    @apply bg-slate-900 text-slate-100;
-    @apply font-light;
-    @apply paragraph-xs;
+  :root,
+  :host {
+    @apply font-sans antialiased font-normal;
+    @apply leading-[1.4];
   }
 }
 
-@font-face {
-  font-family: 'Poppins';
-  src: url('../assets/fonts/poppins-thin.woff2') format('truetype');
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
+@utility clip-diagonal {
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
 }
 
-@font-face {
-  font-family: 'Poppins';
-  src: url('../assets/fonts/poppins-extraLight.woff2') format('truetype');
-  font-weight: 200;
-  font-style: normal;
-  font-display: swap;
+@utility bg-gradient-horizontal {
+  @apply bg-linear-to-r from-primary-400 to-secondary-700 via-secondary-700 via-80%;
 }
 
-@font-face {
-  font-family: 'Poppins';
-  src: url('../assets/fonts/poppins-light.woff2') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+@utility bg-gradient-vertical {
+  @apply bg-linear-to-b from-primary-400 to-secondary-700 via-secondary-700 via-80%;
 }
 
-@font-face {
-  font-family: 'Poppins';
-  src: url('../assets/fonts/poppins-regular.woff2') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+@utility bg-gradient-diagonal {
+  @apply bg-linear-to-br from-primary-400 to-secondary-700 via-secondary-700 via-80%;
 }
 
-@font-face {
-  font-family: 'Poppins';
-  src: url('../assets/fonts/poppins-medium.woff2') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+@utility text-gradient {
+  @apply text-transparent bg-clip-text bg-linear-to-r from-primary-400 to-secondary-700 via-secondary-700 via-80%;
 }
 
-@font-face {
-  font-family: 'Poppins';
-  src: url('../assets/fonts/poppins-semiBold.woff2') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('../assets/fonts/poppins-bold.woff2') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('../assets/fonts/poppins-black.woff2') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@theme {
-  --font-sans: 'Poppins', sans-serif;
-  --breakpoint-xs: 24rem;
-  --text-6xl--line-height: 1.2;
-  --text-5xl--line-height: 1.2;
-
-  --color-primary-50: #effaff;
-  --color-primary-100: #def4ff;
-  --color-primary-200: #b6eaff;
-  --color-primary-300: #75ddff;
-  --color-primary-400: #2cccff;
-  --color-primary-500: #00bcff;
-  --color-primary-600: #0092d4;
-  --color-primary-700: #0074ab;
-  --color-primary-800: #00628d;
-  --color-primary-900: #065174;
-  --color-primary-950: #04334d;
-}
-
-@theme {
-  --animate-buttonHeartBeat: buttonHeartBeat 2s infinite ease-in-out;
-
-  @keyframes buttonHeartBeat {
+@layer utilities {
+  /* Ripple para online */
+  @keyframes avatar-ripple {
     0% {
-      box-shadow: 0 0 0 0 theme(colors.purple.500);
       transform: scale(1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+
+  /* Pulso corto para busy */
+  @keyframes avatar-pulse-busy {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 1;
     }
     50% {
-      box-shadow: 0 0 0 7px theme(colors.primary.500 / 0);
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+
+  /* Pulso lento para away */
+  @keyframes avatar-pulse-away {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.9;
+    }
+    50% {
       transform: scale(1.05);
-    }
-    100% {
-      box-shadow: 0 0 0 0 theme(colors.purple.500 / 0);
-      transform: scale(1);
+      opacity: 0.6;
     }
   }
 
-  --animate-gradient: gradient 5s ease-in-out infinite;
-
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-}
-
-@theme {
-  --animate-logo-cloud: logo-cloud 30s linear infinite;
-
-  @keyframes logo-cloud {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(calc(-100% - 4rem));
-    }
-  }
-}
-
-@utility max-content {
-  max-width: 1260px;
-  @apply px-8;
-  @apply box-border;
-  @apply w-full;
-  @apply mx-auto;
-
-  @apply xs:px-10;
-  @apply sm:px-15;
-  @apply lg:px-12;
-  @apply xl:px-3;
-}
-
-@utility sectionContent {
-  @apply py-20;
-  @apply lg:px-20;
-  @apply 2xl:px-6;
-}
-
-@utility title-xs {
-  @apply text-sm;
-  @apply font-semibold;
-  @apply tracking-wider;
-}
-
-@utility title-sm {
-  @apply text-lg;
-  @apply font-semibold;
-  @apply tracking-wider;
-}
-
-@utility title-md {
-  @apply text-xl;
-  @apply font-semibold;
-  @apply tracking-wider;
-}
-
-@utility title-lg {
-  @apply text-2xl;
-  @apply font-semibold;
-  @apply tracking-wider;
-}
-
-@utility title-xl {
-  @apply text-3xl;
-  @apply font-semibold;
-  @apply tracking-wider;
-}
-
-@utility title-2xl {
-  @apply text-4xl;
-  @apply font-semibold;
-  @apply tracking-wider;
-}
-
-@utility title-3xl {
-  @apply text-5xl;
-  @apply font-semibold;
-  @apply tracking-wider;
-}
-
-@utility title-4xl {
-  @apply text-6xl;
-  @apply font-semibold;
-  @apply tracking-wider;
-}
-
-@utility paragraph-xxs {
-  @apply text-xs;
-  @apply tracking-wider;
-  @apply leading-6;
-}
-@utility paragraph-xs {
-  @apply text-sm;
-  @apply tracking-wider;
-  @apply leading-6;
-}
-@utility paragraph-sm {
-  @apply text-base;
-  @apply tracking-wider;
-  @apply leading-6;
-}
-@utility paragraph-md {
-  @apply text-lg;
-  @apply tracking-wider;
-  @apply leading-6;
-}
-@utility paragraph-lg {
-  @apply text-xl;
-  @apply tracking-wider;
-  @apply leading-6;
-}
-@utility paragraph-xl {
-  @apply text-2xl;
-  @apply tracking-wider;
-  @apply leading-6;
-}
-
-@utility bg-gradient-primary {
-  @apply bg-gradient-to-r;
-  @apply from-sky-400;
-  @apply to-purple-700;
-}
-
-@utility bg-gradient-primary-vertical {
-  @apply bg-gradient-to-b;
-  @apply from-sky-400;
-  @apply to-purple-700;
-}
-
-@utility bg-gradient-primary-diagonal {
-  @apply bg-gradient-to-br;
-  @apply from-sky-400;
-  @apply to-purple-700;
-}
-
-@utility text-gradient-primary {
-  @apply bg-clip-text;
-  @apply text-transparent;
-  @apply bg-gradient-to-r;
-  @apply from-sky-400;
-  @apply to-purple-700;
-}
-
-@layer utilities {
-  .border-gradient-primary {
-    @apply relative;
-    @apply border;
-    @apply border-s-amber-50/0;
-    @apply rounded-md;
-    @apply z-0;
+  /* Utilidades */
+  .avatar-online-ripple {
+    @apply before:absolute before:inset-0 before:rounded-full before:bg-green-500 before:opacity-60 before:animate-[avatar-ripple_1.5s_ease-out_infinite];
   }
 
-  .border-gradient-primary::before {
-    @apply content-[''];
-    @apply absolute;
-    @apply inset-0;
-    @apply pointer-events-none;
-    @apply p-px;
-    @apply bg-gradient-to-r;
-    @apply from-sky-400;
-    @apply to-purple-700;
-    @apply z-[-1];
-    -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-
-    @apply mask-exclude;
-  }
-}
-
-@utility button-base {
-  @apply cursor-pointer;
-  @apply rounded-md;
-  @apply transition-all;
-  @apply tracking-wide;
-  @apply font-medium;
-  @apply relative;
-  @apply overflow-hidden;
-  @apply flex;
-  @apply items-center;
-  @apply justify-center;
-  @apply w-fit;
-
-  @apply active:scale-95;
-}
-
-@utility button-small {
-  @apply text-xs;
-  @apply px-6;
-  @apply py-2;
-}
-
-@utility button-medium {
-  @apply text-sm;
-  @apply px-6;
-  @apply py-2.5;
-}
-
-@utility button-large {
-  @apply text-xl;
-  @apply px-8;
-  @apply py-3;
-}
-
-@layer utilities {
-  .bg-size-300 {
-    background-size: 300% 100%;
-  }
-  .bg-size-200 {
-    background-size: 200% 100%;
-  }
-  .bg-size-150 {
-    background-size: 150% 100%;
-  }
-  .bg-size-100 {
-    background-size: 100% 100%;
-  }
-  .bg-size-50 {
-    background-size: 50% 100%;
-  }
-  .bg-size-25 {
-    background-size: 25% 100%;
-  }
-}
-
-@layer utilities {
-  .mask-fade-vertical {
-    mask-image: linear-gradient(
-      to bottom,
-      transparent 0%,
-      black 20%,
-      black 80%,
-      transparent 100%
-    );
+  .avatar-busy-pulse {
+    @apply before:absolute before:inset-0 before:rounded-full before:bg-red-500 before:animate-[avatar-pulse-busy_1s_ease-in-out_infinite];
   }
 
-  .mask-fade-horizontal {
-    mask-image: linear-gradient(
-      to right,
-      transparent 0%,
-      black 20%,
-      black 80%,
-      transparent 100%
-    );
-  }
-}
-
-@layer base {
-  ::-webkit-scrollbar {
-    @apply w-1;
-    @apply h-1;
+  .avatar-away-pulse {
+    @apply before:absolute before:inset-0 before:rounded-full before:bg-yellow-500 before:animate-[avatar-pulse-away_2s_ease-in-out_infinite];
   }
 
-  ::-webkit-scrollbar-track {
-    @apply bg-slate-950;
-    @apply rounded-md;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-gradient-to-b from-sky-400 to-purple-700;
-    @apply rounded-md;
-    @apply transition-all;
-    @apply ease-in-out;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-gradient-to-b from-sky-400 to-purple-700;
-    @apply transition-all;
-    @apply w-1.5;
-    @apply h-1.5;
-  }
-}
-
-@layer utilities {
-  .bg-glow-effect {
-    @apply relative z-10;
-    @apply before:content-[''];
-    @apply before:absolute;
-    @apply before:inset-0;
-    @apply before:bg-radial;
-    @apply before:bg-gradient-to-br;
-    @apply before:from-sky-400;
-    @apply before:to-sky-400/0;
-    @apply before:rounded-full;
-    @apply before:blur-3xl;
-    @apply before:z-0;
-    @apply before:top-0;
-    @apply before:left-0;
-    @apply before:right-2/12;
-    @apply before:bottom-2/12;
-
-    @apply after:content-[''];
-    @apply after:absolute;
-    @apply after:inset-0;
-    @apply after:bg-radial;
-    @apply after:bg-gradient-to-br;
-    @apply after:from-purple-700/0;
-    @apply after:to-purple-700;
-    @apply after:rounded-full;
-    @apply after:blur-3xl;
-    @apply after:z-0;
-    @apply after:top-2/12;
-    @apply after:left-2/12;
-    @apply after:right-0;
-    @apply after:bottom-0;
+  .avatar-offline {
+    @apply before:absolute before:inset-0 before:rounded-full before:bg-gray-400;
   }
 }

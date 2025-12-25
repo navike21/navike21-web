@@ -1,90 +1,43 @@
 'use client'
 
 import { useRef } from 'react'
-import Image from 'next/image'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useGSAP } from '@gsap/react'
+import { motion, useScroll, useTransform } from 'motion/react'
+import Image, { type StaticImageData } from 'next/image'
 import clsx from 'clsx'
-import { TPosition } from '../BackgroundParallax/BackgroundParallax.types'
 
-gsap.registerPlugin(ScrollTrigger, useGSAP)
-
-interface ParallaxImageProps {
-  src: string
-  blurDataURL?: string
-  alt?: string
+interface IParallaxImageProps {
+  img: StaticImageData
+  alt: string
   className?: string
-  parallaxSpeed?: number
-  overlay?: boolean
-  startPositionImage?: TPosition
 }
 
-export function ParallaxImage({
-  blurDataURL,
-  src,
-  alt = '',
-  className = '',
-  parallaxSpeed = 0.3,
-  overlay = false,
-  startPositionImage = 'center'
-}: Readonly<ParallaxImageProps>) {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const imageRef = useRef<HTMLDivElement>(null)
+export const ParallaxImage = ({
+  img,
+  alt,
+  className = 'relative'
+}: IParallaxImageProps) => {
+  const ref = useRef<HTMLDivElement>(null)
 
-  useGSAP(
-    () => {
-      if (!containerRef.current || !imageRef.current) return
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start']
+  })
 
-      const container = containerRef.current
-      const image = imageRef.current
-
-      const scale = 1 + parallaxSpeed * 0.5
-      gsap.set(image, { scale })
-
-      gsap.fromTo(
-        image,
-        { yPercent: parallaxSpeed * 50 },
-        {
-          yPercent: -parallaxSpeed * 50,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: container,
-            scrub: 0.4
-          }
-        }
-      )
-    },
-    { scope: containerRef, dependencies: [parallaxSpeed] }
-  )
+  const translateY = useTransform(scrollYProgress, [0, 1], ['10%', '-10%'])
 
   return (
-    <div
-      ref={containerRef}
-      className={clsx('overflow-hidden w-full h-full', className)}
-    >
-      <div
-        ref={imageRef}
-        className="absolute -top-10 -bottom-10 left-0 w-full will-change-transform"
+    <div ref={ref} className={clsx('overflow-hidden', className)}>
+      <motion.div
+        className="overflow-hidden h-full scale-3d scale-125 relative"
+        style={{ translateY }}
       >
         <Image
-          blurDataURL={blurDataURL}
-          src={src}
+          src={img}
           alt={alt}
-          fill
-          sizes="(max-width: 768px) 450px, (max-width: 1200px) 850px, 1400px"
-          className={clsx('object-cover min-h-[500px] absolute w-full h-full', {
-            'object-top': startPositionImage === 'top',
-            'object-center': startPositionImage === 'center',
-            'object-bottom': startPositionImage === 'bottom'
-          })}
-          priority
-          quality={100}
+          quality={75}
+          className="object-cover object-center h-full"
         />
-        {overlay && (
-          <div className="absolute top-0 left-0 w-full h-full bg-slate-950/50" />
-        )}
-      </div>
+      </motion.div>
     </div>
   )
 }

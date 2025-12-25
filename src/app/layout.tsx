@@ -1,10 +1,33 @@
-import { ReactNode } from 'react'
+import { Footer, Header, LayoutScroll, Menu } from '@Components/molecules'
+import { HeaderProvider } from '@Context/HeaderContext'
+import { firaCode, poppins } from '@Sources/fonts'
 import '@Styles/globals.css'
+import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 
-export default function RootLayout({
-  children
-}: Readonly<{
+export const metadata: Metadata = {
+  title: 'Navike21 - Digital Solutions & Web Development',
+  description:
+    'Navike21 delivers modern web applications, custom software, and innovative digital solutions to boost your business with cutting-edge technology.'
+}
+
+interface IRootLayoutProps {
   children: ReactNode
-}>) {
-  return <>{children}</>
+}
+
+export default function RootLayout({ children }: Readonly<IRootLayoutProps>) {
+  return (
+    <html lang="es">
+      <body
+        className={`${poppins.variable} ${firaCode.variable} antialiased transition-all ease-in-out duration-500 relative`}
+      >
+        <HeaderProvider>
+          <Header />
+          <Menu />
+          <LayoutScroll>{children}</LayoutScroll>
+        </HeaderProvider>
+        <Footer />
+      </body>
+    </html>
+  )
 }

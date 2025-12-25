@@ -1,33 +1,38 @@
-export const DE = 'de'
-export const EN = 'en'
-export const ES = 'es'
-export const FR = 'fr'
-export const IT = 'it'
-export const JA = 'ja'
-export const KO = 'ko'
-export const PT = 'pt'
-export const ZH = 'zh'
+import type { TLanguage } from '@Types/languages'
 
-export const SUPPORTED_LANGUAGES = {
-  de: DE,
-  en: EN,
-  es: ES,
-  fr: FR,
-  it: IT,
-  ja: JA,
-  ko: KO,
-  pt: PT,
-  zh: ZH
-} as const
+export const ESP = 'es'
+export const ENG = 'en'
+export const DEU = 'de'
+export const FRA = 'fr'
+export const ITA = 'it'
+export const JPN = 'ja'
+export const KOR = 'ko'
+export const POR = 'pt'
+export const CHI = 'zh'
+export const RUS = 'ru'
 
-export const localeToLanguage = {
-  [ES]: 'es-PE',
-  [EN]: 'en-US',
-  [DE]: 'de-DE',
-  [FR]: 'fr-FR',
-  [IT]: 'it-IT',
-  [JA]: 'ja-JP',
-  [KO]: 'ko-KR',
-  [PT]: 'pt-BR',
-  [ZH]: 'zh-CN'
-} as const
+export const SUPPORTED_LANGUAGES = [
+  ESP,
+  ENG,
+  DEU,
+  FRA,
+  ITA,
+  JPN,
+  KOR,
+  POR,
+  CHI,
+  RUS
+] as const
+
+export const LANGUAGE_LABELS: Record<TLanguage, string> = {
+  [ESP]: 'Español',
+  [ENG]: 'English',
+  [DEU]: 'Deutsch',
+  [FRA]: 'Français',
+  [ITA]: 'Italiano',
+  [JPN]: '日本語',
+  [KOR]: '한국어',
+  [POR]: 'Português',
+  [CHI]: '中文',
+  [RUS]: 'Русский'
+}

@@ -1,0 +1,69 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Clients component > snapshot > should match snapshot 1`] = `
+<div
+  class="clients-area flex flex-col items-center gap-10 lg:flex-row md:gap-20 md:justify-center"
+>
+  <section>
+    <h2
+      class="text-center text-3xl font-semibold w-full lg:text-4xl lg:text-left"
+    >
+      ¿Te sumas?
+    </h2>
+    <h2
+      class="text-center text-xl font-medium w-full md:text-left lg:text-2xl"
+    >
+      Así como ellos que confían en nosotros
+    </h2>
+  </section>
+  <section
+    class="grid grid-cols-2 gap-6 w-full sm:grid-cols-3 md:grid-cols-4 lg:gap-4 xl:grid-cols-5"
+  >
+    <div
+      class="w-full aspect-3/2 m-auto shadow-md h-full rounded-md flex items-center justify-center"
+    >
+      <div
+        class="flex items-center justify-center p-6 w-full h-full"
+        rel="noopener noreferrer"
+      >
+        <svg
+          class="w-auto h-full"
+          data-testid="logo-1"
+        >
+          Logo 1
+        </svg>
+      </div>
+    </div>
+    <div
+      class="w-full aspect-3/2 m-auto shadow-md h-full rounded-md flex items-center justify-center row-span-2 xl:row-span-2 xl:col-span-2"
+    >
+      <div
+        class="flex items-center justify-center p-6 h-10/12 w-10/12"
+        rel="noopener noreferrer"
+      >
+        <svg
+          class="w-auto h-full"
+          data-testid="logo-beats"
+        >
+          Beats Logo
+        </svg>
+      </div>
+    </div>
+    <div
+      class="w-full aspect-3/2 m-auto shadow-md h-full rounded-md flex items-center justify-center"
+    >
+      <div
+        class="flex items-center justify-center p-6 w-full h-full"
+        rel="noopener noreferrer"
+      >
+        <svg
+          class="w-auto h-full"
+          data-testid="logo-3"
+        >
+          Logo 3
+        </svg>
+      </div>
+    </div>
+  </section>
+</div>
+`;
