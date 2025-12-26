@@ -1,147 +1,131 @@
 # Navike21 Web
 
-## Overview
+## 👋 Overview
 
-Navike21 Web is a modern web application built with Next.js, using the App Router and atomic design principles. It features a modular, scalable architecture for rapid development and maintainability.
+Navike21 Web es una aplicación web moderna con **Next.js (App Router)**, arquitectura modular y UI basada en **atomic design**. El objetivo del repo es mantener una base sólida (calidad, CI, tests, i18n, estilos) para iterar rápido sin perder mantenibilidad.
 
-## Features
+## 🧰 Tech Stack (actual)
 
-- Server-side rendering (SSR) and static generation with Next.js
-- Atomic design: Atoms, molecules, and reusable UI components
-- Responsive, modern UI with Tailwind CSS
-- Centralized state management using React Context
-- Internationalization (i18n) by domain
-- SEO optimized and fast page loading
-- API routes and external API integration
+| Área | Stack |
+| --- | --- |
+| Framework | Next.js 16 (App Router) |
+| UI | React 19 + Tailwind CSS (`src/libs/styles/`) |
+| Animación/scroll | `motion` + `lenis` (LayoutScroll) |
+| Testing | Vitest + Testing Library |
+| Tooling | TypeScript + ESLint + Prettier + pnpm |
 
-## Project Architecture
+## 📦 Qué contiene el proyecto (detalle)
 
-- **Framework:** Next.js (App Router, see `src/app/`)
-  +- **Component Structure:**
-  - Atoms, molecules, and reusable UI in `src/libs/components/`
-  - Pages and views in `src/views/pages/`
-  - Constants, helpers, and types in `src/libs/constants/`, `src/libs/helpers/`, `src/libs/types/`
-- **Styling:** Tailwind CSS, with global styles in `src/libs/styles/`
-- **State Management:** React Context (see `src/libs/context/`)
-- **Assets:** Images and backgrounds in `src/libs/assets/`
+### Estructura (high level)
 
-## Developer Workflows
-
-- **Install dependencies:** `pnpm install`
-- **Run development server:** `pnpm dev`
-- **Build for production:** `pnpm build`
-- **Start production server:** `pnpm start`
-- **Lint:** `pnpm lint` (ESLint + Prettier)
-- **Lint & fix:** `pnpm lint:fix`
-- **Format:** `pnpm format` (Prettier)
-- **Type checking:** `pnpm typecheck`
-
-### Testing
-
-The project uses **Vitest** for unit testing with full TypeScript and React support.
-
-#### Available Test Commands
-
-- **Run all tests:** `pnpm test`
-- **Run tests in watch mode:** `pnpm test:watch`
-- **Run tests with UI:** `pnpm test:ui`
-- **Generate coverage report:** `pnpm test:coverage`
-
-#### Test File Conventions
-
-- Test files should be named `*.test.ts` or `*.test.tsx`
-- Place test files next to the components/functions they test
-- Example: `Button.tsx` → `Button.test.tsx`
-
-#### Writing Tests
-
-**Example: Testing a utility function**
-
-```typescript
-import { describe, it, expect } from 'vitest'
-import { uuid } from './uuid'
-
-describe('uuid helper', () => {
-  it('should generate a valid UUID v4', () => {
-    const generatedUuid = uuid()
-    expect(generatedUuid).toMatch(
-      /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i
-    )
-  })
-})
+```text
+src/
+  app/                 # App Router (wrappers de rutas)
+  views/pages/          # Vistas/páginas (módulos)
+  libs/
+    components/         # UI (atomic design)
+      atoms/
+      molecules/
+    context/            # Estado compartido (Header/Menu)
+    i18n/               # i18n por dominio
+    constants/          # Constantes
+    helpers/            # Utilidades
+    types/              # Tipos compartidos
+    styles/             # CSS global / theme
+    assets/             # Imágenes, backgrounds, fuentes
 ```
 
-**Example: Testing a React component**
+### 🧱 Arquitectura de carpetas
 
-```typescript
-import { render, screen } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
-import userEvent from '@testing-library/user-event';
-import { Button } from './Button';
+- `src/app/**`: routing App Router. Estas rutas son “thin wrappers” que renderizan módulos de vista.
+- `src/views/pages/**`: páginas/vistas (ej: Home) separadas del routing.
+- `src/libs/components/**`: librería de UI bajo atomic design.
+  - `atoms/**`: piezas reusables pequeñas (Button, Card, Logo, etc.).
+  - `molecules/**`: composiciones (Header, Menu, Footer, Clients, Slider, LayoutScroll, Testimonials, etc.).
+  - Re-exports por carpeta vía `index.ts`.
+- `src/libs/context/**`: estado compartido (ej. header/menu) y hooks de acceso.
+- `src/libs/i18n/**`: i18n por dominio en objetos TS (selección explícita por idioma).
+- `src/libs/constants/**`, `src/libs/helpers/**`, `src/libs/types/**`: constantes, utilidades y tipos compartidos.
+- `src/libs/assets/**`: imágenes, backgrounds y recursos.
 
-describe('Button component', () => {
-  it('should render children correctly', () => {
-    render(<Button>Click me</Button>);
-    expect(screen.getByRole('button', { name: /click me/i })).toBeInTheDocument();
-  });
+### 🧩 UI / Módulos funcionales incluidos
 
-  it('should handle click events', async () => {
-    const handleClick = vi.fn();
-    const user = userEvent.setup();
+- Shell global con Header/Menu/LayoutScroll/Footer.
+- Landing/Home compuesta desde atoms/molecules.
+- Soporte de i18n por dominio.
+- Base de estilos y componentes reutilizables.
 
-    render(<Button onClick={handleClick}>Click me</Button>);
-    await user.click(screen.getByRole('button'));
-    expect(handleClick).toHaveBeenCalledTimes(1);
-  });
-});
+### Componentes (orientativo)
+
+- **Atoms:** Avatar, Button, Card, Container, Divider, IconComponent, LinkButton, Logo, MenuIcon, ParallaxImage, Title, clientsLogo.
+- **Molecules:** Clients, Footer, Header, ItemHeroSection, LayoutScroll, Menu, Slider, Testimonials.
+
+## ⚙️ Workflows de desarrollo
+
+### Quickstart
+
+```bash
+pnpm install
+pnpm dev
 ```
 
-#### Test Coverage
+### Scripts
 
-Coverage reports are generated in the `coverage/` directory and include:
+| Acción | Comando |
+| --- | --- |
+| Instalar dependencias | `pnpm install` |
+| Levantar dev server | `pnpm dev` |
+| Build producción | `pnpm build` |
+| Start producción | `pnpm start` |
+| Typecheck | `pnpm typecheck` |
+| Lint | `pnpm lint` |
+| Format | `pnpm format` |
 
-- Line coverage
-- Function coverage
-- Branch coverage
-- Statement coverage
+## 🧪 Testing
 
-Current thresholds: 70% for all metrics.
+| Acción | Comando |
+| --- | --- |
+| Tests | `pnpm test` |
+| Coverage | `pnpm test:coverage` |
 
-#### Testing Libraries
+Notas:
 
-- **Vitest:** Fast unit test framework
-- **@testing-library/react:** React component testing utilities
-- **@testing-library/user-event:** User interaction simulation
-- **@testing-library/jest-dom:** Custom Jest DOM matchers
+- Setup/mocks de entorno: `vitest.setup.ts`
+- Umbral de coverage: 70%
 
-## Formatting & Linting Convergence
+## 🧱 CI/CD (visión general)
 
-- ESLint y Prettier están homologados: el formateo automático al guardar (`Ctrl + S`), `pnpm run lint:fix` y `pnpm run format` producen el mismo resultado.
-- `.vscode/settings.json` fuerza el uso de Prettier y ESLint al guardar.
-- `.editorconfig` y `.prettierrc` están alineados para evitar inconsistencias.
+### PR Gate (qué corre según la base)
 
-## Project Conventions
+| Base del PR | Checks |
+| --- | --- |
+| `develop` | typecheck · lint · prettier · tests (coverage) · SonarCloud (quality gate) · Vercel preview/comment |
+| `release` | typecheck · lint · prettier · tests (sin coverage) |
+| `main` | lint · format:check |
 
-- **Component Pattern:** Atomic design (atoms, molecules, etc.)
-- **Exports:** Cada carpeta de componentes tiene un `index.ts` para re-exportar
-- **Hooks:** Custom hooks en `src/libs/hooks/` y hooks por componente
-- **i18n:** Por dominio en `src/libs/i18n/`
-- **Constants:** Centralizadas en `src/libs/constants/`
-- **Types:** Tipos compartidos en `src/libs/types/`
-- **Context:** React context compartido en `src/libs/context/`
+### Supply chain & deps
 
-## Integration & Patterns
+- 🔒 Acciones de GitHub pinneadas por SHA.
+- 🤖 Dependabot con updates agrupados (menos ruido).
 
-- **API Integration:** Next.js API routes o APIs externas
-- **Cross-component communication:** React Context o props drilling
-- **Assets:** Importa imágenes y fuentes desde `src/libs/assets/` y `src/libs/sources/fonts.ts`
+## 🚀 Releases (GitHub)
 
-## Examples
+Este repo usa el apartado oficial de GitHub Releases para las notas de versión:
+[https://github.com/navike21/navike21-web/releases](https://github.com/navike21/navike21-web/releases)
 
-- Para agregar un nuevo átomo: crea una carpeta en `src/libs/components/atoms/`, agrega tu componente y expórtalo vía `index.ts`
-- Para agregar una nueva página: crea una carpeta en `src/views/pages/`, implementa la página y actualiza el routing si es necesario
+Convención recomendada para próximos releases:
 
-## References
+1. Promoción: PR `develop` → `release`.
+2. Validación en `release` (checks intermedios).
+3. Pase a producción: PR `release` → `main`.
+4. Publicar/actualizar la Release en GitHub (tag `vX.Y.Z`) con:
+   - Highlights
+   - Cambios de arquitectura
+   - Componentes/módulos incluidos
+   - Cambios de CI/CD y calidad
+   - Cómo correr el proyecto (pnpm)
 
-- Ver `eslint.config.mjs` y `tsconfig.json` para configuración de linting y TypeScript
-- Ver `.github/copilot-instructions.md` para instrucciones detalladas para agentes AI y desarrolladores
+## 🔎 Referencias
+
+- Configuración ESLint/Prettier/TS: `eslint.config.mjs`, `.prettierrc`, `tsconfig.json`
+- Instrucciones internas: `.github/copilot-instructions.md`
