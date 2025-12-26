@@ -1,14 +1,14 @@
 import type { StaticImageData } from 'next/image'
 
-export type TAvatarSize = 'sm' | 'md' | 'lg'
-export type TAvatarStatus = 'online' | 'offline' | 'busy' | 'away' | 'none'
+export type AvatarSize = 'sm' | 'md' | 'lg'
+export type AvatarStatus = 'online' | 'offline' | 'busy' | 'away' | 'none'
 
-export interface IAvatarProps {
+export interface AvatarProps {
   src?: string | StaticImageData
   alt?: string
   name?: string
-  size?: TAvatarSize
-  status?: TAvatarStatus
+  size?: AvatarSize
+  status?: AvatarStatus
   className?: string
   title?: string
 }

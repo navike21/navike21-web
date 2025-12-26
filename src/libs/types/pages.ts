@@ -1,4 +1,4 @@
-export enum EPages {
+export enum Pages {
   HOME = 'home',
   ABOUT = 'about',
   SERVICES = 'services',
@@ -7,8 +7,8 @@ export enum EPages {
   CONTACT = 'contact'
 }
 
-export interface IInformationPage {
-  id: EPages
+export interface InformationPage {
+  id: Pages
   name: string
   slug: string
 }

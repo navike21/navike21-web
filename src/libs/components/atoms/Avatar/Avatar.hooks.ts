@@ -1,4 +1,4 @@
-import type { IAvatarProps } from './Avatar.types'
+import type { AvatarProps } from './Avatar.types'
 
 const SIZE_MAP = {
   sm: 'min-w-8 h-8 text-sm ',
@@ -26,12 +26,12 @@ const STATUS_SIZE_MAP = {
   lg: 'w-4 h-4'
 } as const
 
-export const useAvatar = ({ name, alt }: IAvatarProps) => {
+export const useAvatar = ({ name, alt }: Pick<AvatarProps, 'name' | 'alt'>) => {
   const initials = name
     ? name
         .trim()
         .split(/\s+/)
-        .map(n => n[0]?.toUpperCase())
+        .map((word: string) => word[0]?.toUpperCase())
         .slice(0, 2)
         .join('')
     : '?'

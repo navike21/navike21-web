@@ -1,19 +1,19 @@
-import type { TIconName } from '@Types/icons'
+import type { IconName } from '@Types/icons'
 import type { ReactNode } from 'react'
 
-export interface ICardProps {
+export interface CardProps {
   children?: ReactNode
   showLine?: boolean
   className?: string
 }
 
-export interface IItemCardProps extends ICardProps {
+export interface ItemCardProps extends CardProps {
   description?: string
   title?: string
-  icon?: TIconName
+  icon?: IconName
   className?: string
 }
 
-export interface IItemLinkCardProps extends IItemCardProps {
+export interface ItemLinkCardProps extends ItemCardProps {
   href: string
 }

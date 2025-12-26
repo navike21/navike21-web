@@ -3,7 +3,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { Menu } from './Menu'
 import * as menuHooks from './menu.hooks'
 import { HeaderProvider } from '@Context/HeaderContext'
-import { EPages } from '@Types/pages'
+import { Pages } from '@Types/pages'
 
 const renderWithProvider = (ui: React.ReactElement) =>
   render(<HeaderProvider>{ui}</HeaderProvider>)
@@ -56,14 +56,14 @@ vi.mock('./menu.hooks')
 const mockMenuData = {
   toggleMenu: false,
   menuList: [
-    { id: EPages.HOME, name: 'Home', slug: '/' },
+    { id: Pages.HOME, name: 'Home', slug: '/' },
     {
-      id: EPages.SERVICES,
+      id: Pages.SERVICES,
       name: 'Services',
       slug: '/services'
     },
     {
-      id: EPages.ABOUT,
+      id: Pages.ABOUT,
       name: 'About',
       slug: '/about'
     }

@@ -1,6 +1,6 @@
 import type { StaticImageData } from 'next/image'
 
-export interface ITestimonialsItemProps {
+export interface TestimonialsItemProps {
   author: string
   role: string
   content: string

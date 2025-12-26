@@ -2,9 +2,9 @@ import { render, screen } from '@testing-library/react'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { Footer } from './Footer'
 import * as footerHooks from './footer.hooks'
-import { EServiceIds } from '@I18n/common/services/types'
-import { ELegalPageSlugs } from '@I18n/common/legalArea/types'
-import type { TIconName } from '@Types/icons'
+import { ServiceIds } from '@I18n/common/services/types'
+import { LegalPageSlugs } from '@I18n/common/legalArea/types'
+import type { IconName } from '@Types/icons'
 
 vi.mock('./footer.hooks')
 
@@ -34,25 +34,25 @@ const mockFooterData = {
   itemsInformation: {
     services: [
       {
-        id: EServiceIds.WEB_PAGES_DEVELOPMENT,
+        id: ServiceIds.WEB_PAGES_DEVELOPMENT,
         title: 'Web Development',
         slug: '/services/web',
-        icon: 'RiCodeSSlashLine' as TIconName,
+        icon: 'RiCodeSSlashLine' as IconName,
         shortDescription: 'Web development services',
         description: 'Full web development description'
       },
       {
-        id: EServiceIds.MOBILE_APPS,
+        id: ServiceIds.MOBILE_APPS,
         title: 'Mobile Apps',
         slug: '/services/mobile',
-        icon: 'RiSmartphoneLine' as TIconName,
+        icon: 'RiSmartphoneLine' as IconName,
         shortDescription: 'Mobile app services',
         description: 'Full mobile app description'
       }
     ],
     legalArea: [
       {
-        id: ELegalPageSlugs.PRIVACY_POLICY,
+        id: LegalPageSlugs.PRIVACY_POLICY,
         slug: '/privacy',
         title: 'Privacy Policy',
         shortDescription: 'Privacy policy description',
@@ -61,7 +61,7 @@ const mockFooterData = {
         showInFooter: true
       },
       {
-        id: ELegalPageSlugs.TERMS_AND_CONDITIONS,
+        id: LegalPageSlugs.TERMS_AND_CONDITIONS,
         slug: '/terms',
         title: 'Terms of Service',
         shortDescription: 'Terms description',
@@ -80,13 +80,13 @@ const mockFooterData = {
     ],
     socialMedia: [
       {
-        icon: 'RiFacebookFill' as TIconName,
+        icon: 'RiFacebookFill' as IconName,
         name: 'Facebook',
         url: 'https://facebook.com',
         active: true
       },
       {
-        icon: 'RiTwitterFill' as TIconName,
+        icon: 'RiTwitterFill' as IconName,
         name: 'Twitter',
         url: 'https://twitter.com',
         active: true

@@ -1,18 +1,18 @@
-import { type TIconName } from '@Types/icons'
+import { type IconName } from '@Types/icons'
 
-export interface IService {
-  id: EServiceIds
+export interface Service {
+  id: ServiceIds
   title: string
   slug: string
   shortDescription: string
   description: string
 }
 
-export interface IServiceItem extends IService {
-  icon: TIconName
+export interface ServiceItem extends Service {
+  icon: IconName
 }
 
-export enum EServiceIds {
+export enum ServiceIds {
   WEB_PAGES_DEVELOPMENT = 'web-pages-development',
   SOFTWARE_DEVELOPMENT = 'software-development',
   E_COMMERCE = 'e-commerce',
@@ -23,6 +23,6 @@ export enum EServiceIds {
   EMAIL_MARKETING = 'email-marketing'
 }
 
-export type TIconServices = {
-  [key in EServiceIds]: TIconName
+export type IconServices = {
+  [key in ServiceIds]: IconName
 }

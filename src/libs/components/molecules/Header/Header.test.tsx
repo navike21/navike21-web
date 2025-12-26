@@ -3,7 +3,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { Header, BgHeader } from './Header'
 import * as headerHooks from './header.hooks'
 import { HeaderProvider } from '@Context/HeaderContext'
-import type { TIconName } from '@Types/icons'
+import type { IconName } from '@Types/icons'
 
 vi.mock('next/link', () => ({
   default: ({
@@ -31,13 +31,13 @@ const mockHeaderData = {
   isSolid: false,
   socialMedia: [
     {
-      icon: 'RiFacebookFill' as TIconName,
+      icon: 'RiFacebookFill' as IconName,
       name: 'Facebook',
       url: 'https://facebook.com',
       active: true
     },
     {
-      icon: 'RiTwitterFill' as TIconName,
+      icon: 'RiTwitterFill' as IconName,
       name: 'Twitter',
       url: 'https://twitter.com',
       active: true

@@ -1,11 +1,11 @@
-export type TRange<
+export type Range<
   Start extends number,
   End extends number,
   Result extends unknown[] = [],
   Acc extends number = never
 > = Result['length'] extends End
   ? Acc | End
-  : TRange<
+  : Range<
       Start,
       End,
       [...Result, unknown],

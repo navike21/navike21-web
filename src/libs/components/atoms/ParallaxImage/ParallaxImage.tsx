@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from 'motion/react'
 import Image, { type StaticImageData } from 'next/image'
 import clsx from 'clsx'
 
-interface IParallaxImageProps {
+interface ParallaxImageProps {
   img: StaticImageData
   alt: string
   className?: string
@@ -15,7 +15,7 @@ export const ParallaxImage = ({
   img,
   alt,
   className = 'relative'
-}: IParallaxImageProps) => {
+}: ParallaxImageProps) => {
   const ref = useRef<HTMLDivElement>(null)
 
   const { scrollYProgress } = useScroll({

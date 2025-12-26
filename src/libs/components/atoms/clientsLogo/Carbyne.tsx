@@ -1,6 +1,6 @@
-import { type ISvgProps } from '@Types/svg'
+import { type SvgProps } from '@Types/svg'
 
-export const Carbyne = ({ isColor, ...props }: ISvgProps) => (
+export const Carbyne = ({ isColor, ...props }: SvgProps) => (
   <svg
     viewBox="0 0 736 126"
     fill="none"

@@ -1,14 +1,14 @@
-export interface ICompanyMetric {
-  id: ECompanyMetricId
+export interface CompanyMetric {
+  id: CompanyMetricId
   label: string
 }
 
-export interface ICompanyMetricsItem extends ICompanyMetric {
+export interface CompanyMetricsItem extends CompanyMetric {
   value: number
   suffix: string
 }
 
-export enum ECompanyMetricId {
+export enum CompanyMetricId {
   YEARS_EXPERIENCE = 'yearsExperience',
   PROJECTS_COMPLETED = 'projectsCompleted',
   SATISFIED_CLIENTS = 'satisfiedClients',

@@ -1,17 +1,17 @@
-export interface ILegalPage {
-  id: ELegalPageSlugs
+export interface LegalPage {
+  id: LegalPageSlugs
   title: string
   slug: string
   shortDescription: string
   description: string
 }
 
-export interface ILegalPageItem extends ILegalPage {
+export interface LegalPageItem extends LegalPage {
   lastUpdated: string
   showInFooter: boolean
 }
 
-export enum ELegalPageSlugs {
+export enum LegalPageSlugs {
   ACCESSIBILITY_STATEMENT = 'accessibility-statement',
   COMPLAINTS_BOOK = 'complaints-book',
   COOKIES_POLICY = 'cookies-policy',

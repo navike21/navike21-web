@@ -1,8 +1,8 @@
 import { ESP } from '@Constants/languages'
-import { ETestimonialIds, type TTestimonialsInformation } from './types'
+import { TestimonialIds, type TestimonialsInformation } from './types'
 
-export const TESTIMONIALS_INFORMATION: TTestimonialsInformation = {
-  [ETestimonialIds.JOHN_DOE]: {
+export const TESTIMONIALS_INFORMATION: TestimonialsInformation = {
+  [TestimonialIds.JOHN_DOE]: {
     avatar: '/images/testimonials/john_doe.jpg',
     score: 2,
     originalLanguage: ESP
