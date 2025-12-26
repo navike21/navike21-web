@@ -65,6 +65,7 @@ export default [
         'error',
         { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }
       ],
+      '@typescript-eslint/use-unknown-in-catch-callback-variable': 'error',
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
       'react/self-closing-comp': ['error', { component: true, html: true }],
@@ -75,8 +76,9 @@ export default [
       'jsx-a11y/alt-text': 'warn',
       semi: ['error', 'never'],
       quotes: ['error', 'single', { avoidEscape: true }],
-      'no-console': 'warn',
-      'no-debugger': 'error'
+      'no-console': 'error',
+      'no-debugger': 'error',
+      'no-empty': ['error', { allowEmptyCatch: false }]
     }
   },
   {

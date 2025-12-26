@@ -1,9 +1,9 @@
 import { TESTIMONIALS_INFORMATION } from './constants'
-import type { ITestimony, TTestimonyItem } from './types'
+import type { Testimony, TestimonyItem } from './types'
 
 export const formatTestimonials = (
-  testimonials: ITestimony[]
-): TTestimonyItem[] =>
+  testimonials: Testimony[]
+): TestimonyItem[] =>
   testimonials.map(testimonial => {
     const localizedInfo = TESTIMONIALS_INFORMATION[testimonial.name]
 

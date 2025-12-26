@@ -1,5 +1,5 @@
 import React from 'react'
-import type { ITestimonialsItemProps } from './testimonials.types'
+import type { TestimonialsItemProps } from './testimonials.types'
 import { Avatar, Card, Divider, IconComponent } from '@Components/atoms'
 import { uuid } from '@Helpers/uuid'
 import clsx from 'clsx'
@@ -10,7 +10,7 @@ export const TestimonialsItem = ({
   content,
   avatar,
   starRating
-}: ITestimonialsItemProps) => (
+}: TestimonialsItemProps) => (
   <div className="w-full py-5 px-3 flex flex-col items-center">
     <Card className="max-w-80 w-[98%] h-full min-w-75">
       <div className="flex flex-col gap-6">

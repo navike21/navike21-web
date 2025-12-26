@@ -1,6 +1,6 @@
-import { type ITestimony } from '../types'
+import { type Testimony } from '../types'
 
-export const testimonialsEs: ITestimony[] = [
+export const testimonialsEs: Testimony[] = [
   // {
   //   name: ETestimonialIds.JOHN_DOE,
   //   position: 'CEO de Tech Solutions',

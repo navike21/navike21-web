@@ -1,13 +1,9 @@
 import clsx from 'clsx'
 import { IconComponent } from '../IconComponent'
 import Link from 'next/link'
-import type {
-  ICardProps,
-  IItemCardProps,
-  IItemLinkCardProps
-} from './Card.types'
+import type { CardProps, ItemCardProps, ItemLinkCardProps } from './Card.types'
 
-export const Card = ({ children, showLine, className }: ICardProps) => (
+export const Card = ({ children, showLine, className }: CardProps) => (
   <div
     className={clsx(
       'bg-white transition-all duration-500 group h-full',
@@ -35,7 +31,7 @@ export const ItemCard = ({
   icon,
   className,
   ...props
-}: IItemCardProps) => (
+}: ItemCardProps) => (
   <Card className={clsx('group aspect-auto', className)} showLine {...props}>
     <div className={clsx('flex flex-col items-center gap-5 h-full')}>
       {icon && (
@@ -67,7 +63,7 @@ export const ItemCard = ({
   </Card>
 )
 
-export const ItemLinkCard = ({ href, ...props }: IItemLinkCardProps) => (
+export const ItemLinkCard = ({ href, ...props }: ItemLinkCardProps) => (
   <Link href={href} className="w-full">
     <ItemCard {...props} />
   </Link>

@@ -3,23 +3,23 @@ import type {
   ButtonHTMLAttributes,
   ReactNode
 } from 'react'
-import { type TIconName } from './icons'
+import { type IconName } from './icons'
 import { type LinkProps } from 'next/link'
 
-export interface IButtonBaseProps {
+export interface ButtonBaseProps {
   variant?: 'primary' | 'secondary' | undefined
   size?: 'small' | 'medium' | 'large' | undefined
-  icon?: TIconName | undefined
+  icon?: IconName | undefined
 }
 
-export interface IButtonProps
-  extends ButtonHTMLAttributes<HTMLButtonElement>, IButtonBaseProps {
+export interface ButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement>, ButtonBaseProps {
   children: ReactNode
 }
 
-export interface ILinkButtonProps
+export interface LinkButtonProps
   extends
-    IButtonBaseProps,
+    ButtonBaseProps,
     Omit<AnchorHTMLAttributes<HTMLAnchorElement>, keyof LinkProps>,
     LinkProps {
   href: string

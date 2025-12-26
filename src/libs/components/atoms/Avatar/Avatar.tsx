@@ -2,7 +2,7 @@
 
 import clsx from 'clsx'
 import { memo } from 'react'
-import type { IAvatarProps } from './Avatar.types'
+import type { AvatarProps } from './Avatar.types'
 import Image from 'next/image'
 import { useAvatar } from './Avatar.hooks'
 
@@ -14,7 +14,7 @@ export const Avatar = memo(function Avatar({
   className,
   title,
   ...props
-}: Readonly<IAvatarProps>) {
+}: Readonly<AvatarProps>) {
   const {
     sizeMap,
     statusColorMap,

@@ -1,9 +1,9 @@
 import { SUFFIX_COMPANY_METRICS, VALUES_COMPANY_METRICS } from './constants'
-import type { ICompanyMetric, ICompanyMetricsItem } from './types'
+import type { CompanyMetric, CompanyMetricsItem } from './types'
 
 export const formatCompanyMetrics = (
-  metrics: ICompanyMetric[]
-): ICompanyMetricsItem[] =>
+  metrics: CompanyMetric[]
+): CompanyMetricsItem[] =>
   metrics.map(metric => ({
     ...metric,
     suffix: SUFFIX_COMPANY_METRICS[metric.id],

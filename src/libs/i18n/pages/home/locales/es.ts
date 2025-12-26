@@ -1,19 +1,19 @@
-import { EPages, type IInformationPage } from '@Types/pages'
+import { Pages, type InformationPage } from '@Types/pages'
 import {
   EHeroSectionId,
-  type IHeroSection,
-  type IMetricsSection,
-  type IServicesSection,
-  type ITestimonialsSection
+  type HeroSection,
+  type MetricsSection,
+  type ServicesSection,
+  type TestimonialsSection
 } from '../types'
 
-export const informationPageEs: IInformationPage = {
-  id: EPages.HOME,
+export const informationPageEs: InformationPage = {
+  id: Pages.HOME,
   name: 'Inicio',
   slug: '/'
 }
 
-export const heroSectionEs: IHeroSection[] = [
+export const heroSectionEs: HeroSection[] = [
   {
     id: EHeroSectionId.PROJECTS_SLIDE,
     title: 'Transformamos tus ideas en realidad digital',
@@ -32,7 +32,7 @@ export const heroSectionEs: IHeroSection[] = [
   }
 ]
 
-export const servicesSectionEs: IServicesSection = {
+export const servicesSectionEs: ServicesSection = {
   title: 'Nuestros Servicios',
   description:
     'Ofrecemos soluciones completas para todas tus necesidades digitales.',
@@ -42,13 +42,13 @@ export const servicesSectionEs: IServicesSection = {
   }
 }
 
-export const metricsSectionEs: IMetricsSection = {
+export const metricsSectionEs: MetricsSection = {
   title: 'Resultados que hablan por sí mismos',
   description:
     'Nuestra trayectoria está respaldada por números que demuestran nuestro compromiso con la excelencia y la satisfacción del cliente.'
 }
 
-export const testimonialsEs: ITestimonialsSection = {
+export const testimonialsEs: TestimonialsSection = {
   title: 'Lo que dicen nuestros clientes',
   description: 'La confianza de nuestros clientes es nuestro mayor logro.'
 }

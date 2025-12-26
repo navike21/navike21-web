@@ -1,24 +1,24 @@
-import type { TLanguage } from '@Types/languages'
-import type { TRange } from '@Types/range'
+import type { Language } from '@Types/languages'
+import type { Range } from '@Types/range'
 
-export interface ITestimony {
-  name: ETestimonialIds
+export interface Testimony {
+  name: TestimonialIds
   position: string
   testimonial: string
 }
 
-export interface ITestimonyLocalized {
+export interface TestimonyLocalized {
   avatar?: string
-  score: TRange<1, 5>
-  originalLanguage: TLanguage
+  score: Range<1, 5>
+  originalLanguage: Language
 }
 
-export type TTestimonyItem = ITestimony & ITestimonyLocalized
+export type TestimonyItem = Testimony & TestimonyLocalized
 
-export enum ETestimonialIds {
+export enum TestimonialIds {
   JOHN_DOE = 'John Doe'
 }
 
-export type TTestimonialsInformation = {
-  [key in ETestimonialIds]: ITestimonyLocalized
+export type TestimonialsInformation = {
+  [key in TestimonialIds]: TestimonyLocalized
 }

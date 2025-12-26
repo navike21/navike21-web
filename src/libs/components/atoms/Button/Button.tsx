@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import { IconComponent } from '../IconComponent'
-import { type IButtonProps } from '@Types/buttonProps'
+import { type ButtonProps } from '@Types/buttonProps'
 
 export const Button = ({
   variant = 'primary',
@@ -9,7 +9,7 @@ export const Button = ({
   size = 'medium',
   icon,
   ...props
-}: Readonly<IButtonProps>) => {
+}: Readonly<ButtonProps>) => {
   return (
     <button
       className={clsx(

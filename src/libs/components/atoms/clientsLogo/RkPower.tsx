@@ -1,6 +1,6 @@
-import { type ISvgProps } from '@Types/svg'
+import { type SvgProps } from '@Types/svg'
 
-export const RkPower = ({ isColor, ...props }: ISvgProps) => {
+export const RkPower = ({ isColor, ...props }: SvgProps) => {
   const fillColor = isColor ? '#12110C' : 'currentColor'
   return (
     <svg

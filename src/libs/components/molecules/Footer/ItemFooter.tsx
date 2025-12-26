@@ -8,7 +8,7 @@ interface ItemFooterProps {
   className?: string
 }
 
-interface ILinkFooterProps {
+interface LinkFooterProps {
   children: ReactNode
   className?: string
   href?: string
@@ -37,7 +37,7 @@ export const LinkFooter = ({
   href,
   rel,
   target
-}: ILinkFooterProps) => (
+}: LinkFooterProps) => (
   <Link
     target={target}
     rel={rel}
