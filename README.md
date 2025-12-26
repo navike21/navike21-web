@@ -6,13 +6,13 @@ Navike21 Web es una aplicación web moderna con **Next.js (App Router)**, arquit
 
 ## 🧰 Tech Stack (actual)
 
-| Área | Stack |
-| --- | --- |
-| Framework | Next.js 16 (App Router) |
-| UI | React 19 + Tailwind CSS (`src/libs/styles/`) |
-| Animación/scroll | `motion` + `lenis` (LayoutScroll) |
-| Testing | Vitest + Testing Library |
-| Tooling | TypeScript + ESLint + Prettier + pnpm |
+| Área             | Stack                                        |
+| ---------------- | -------------------------------------------- |
+| Framework        | Next.js 16 (App Router)                      |
+| UI               | React 19 + Tailwind CSS (`src/libs/styles/`) |
+| Animación/scroll | `motion` + `lenis` (LayoutScroll)            |
+| Testing          | Vitest + Testing Library                     |
+| Tooling          | TypeScript + ESLint + Prettier + pnpm        |
 
 ## 📦 Qué contiene el proyecto (detalle)
 
@@ -71,21 +71,21 @@ pnpm dev
 
 ### Scripts
 
-| Acción | Comando |
-| --- | --- |
-| Instalar dependencias | `pnpm install` |
-| Levantar dev server | `pnpm dev` |
-| Build producción | `pnpm build` |
-| Start producción | `pnpm start` |
-| Typecheck | `pnpm typecheck` |
-| Lint | `pnpm lint` |
-| Format | `pnpm format` |
+| Acción                | Comando          |
+| --------------------- | ---------------- |
+| Instalar dependencias | `pnpm install`   |
+| Levantar dev server   | `pnpm dev`       |
+| Build producción      | `pnpm build`     |
+| Start producción      | `pnpm start`     |
+| Typecheck             | `pnpm typecheck` |
+| Lint                  | `pnpm lint`      |
+| Format                | `pnpm format`    |
 
 ## 🧪 Testing
 
-| Acción | Comando |
-| --- | --- |
-| Tests | `pnpm test` |
+| Acción   | Comando              |
+| -------- | -------------------- |
+| Tests    | `pnpm test`          |
 | Coverage | `pnpm test:coverage` |
 
 Notas:
@@ -97,11 +97,11 @@ Notas:
 
 ### PR Gate (qué corre según la base)
 
-| Base del PR | Checks |
-| --- | --- |
-| `develop` | typecheck · lint · prettier · tests (coverage) · SonarCloud (quality gate) · Vercel preview/comment |
-| `release` | typecheck · lint · prettier · tests (sin coverage) |
-| `main` | lint · format:check |
+| Base del PR | Checks                                                                                              |
+| ----------- | --------------------------------------------------------------------------------------------------- |
+| `develop`   | typecheck · lint · prettier · tests (coverage) · SonarCloud (quality gate) · Vercel preview/comment |
+| `release`   | typecheck · lint · prettier · tests (sin coverage)                                                  |
+| `main`      | lint · format:check                                                                                 |
 
 ### Supply chain & deps
 

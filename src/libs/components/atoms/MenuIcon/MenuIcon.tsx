@@ -3,11 +3,11 @@
 import { useHeaderContext } from '@Context/headerContext.hooks'
 import { motion, type Transition } from 'motion/react'
 
-interface IMenuIconProps {
+interface MenuIconProps {
   className?: string
 }
 
-export const MenuIcon = ({ className }: IMenuIconProps) => {
+export const MenuIcon = ({ className }: MenuIconProps) => {
   const { toggleMenu } = useHeaderContext()
   const transition: Transition = { duration: 0.5, ease: 'easeInOut' }
 

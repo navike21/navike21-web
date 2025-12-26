@@ -1,20 +1,20 @@
-import { ECompanyMetricId, type ICompanyMetric } from '../types'
+import { CompanyMetricId, type CompanyMetric } from '../types'
 
-export const companyMetricsEs: ICompanyMetric[] = [
+export const companyMetricsEs: CompanyMetric[] = [
   {
-    id: ECompanyMetricId.YEARS_EXPERIENCE,
+    id: CompanyMetricId.YEARS_EXPERIENCE,
     label: 'Años de experiencia'
   },
   {
-    id: ECompanyMetricId.PROJECTS_COMPLETED,
+    id: CompanyMetricId.PROJECTS_COMPLETED,
     label: 'Proyectos completados'
   },
   {
-    id: ECompanyMetricId.SATISFIED_CLIENTS,
+    id: CompanyMetricId.SATISFIED_CLIENTS,
     label: 'Clientes satisfechos'
   },
   {
-    id: ECompanyMetricId.COMMITMENT_TO_QUALITY,
+    id: CompanyMetricId.COMMITMENT_TO_QUALITY,
     label: 'Compromiso con la calidad'
   }
 ]

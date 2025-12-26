@@ -1,9 +1,7 @@
 import { heroSectionIcons } from './constants'
-import type { IHeroSection, IServicesSection } from './types'
+import type { HeroSection, ServicesSection } from './types'
 
-export const formatHeroSection = (
-  heroSection: IHeroSection[]
-): IHeroSection[] =>
+export const formatHeroSection = (heroSection: HeroSection[]): HeroSection[] =>
   heroSection.map(section => ({
     ...section,
     controlActions: section.controlActions.map((action, index) => {
@@ -22,12 +20,12 @@ export const formatHeroSection = (
   }))
 
 export const formatServicesSection = (
-  ServicesSection: IServicesSection
-): IServicesSection => {
+  servicesSection: ServicesSection
+): ServicesSection => {
   return {
-    ...ServicesSection,
+    ...servicesSection,
     controlAction: {
-      ...ServicesSection.controlAction,
+      ...servicesSection.controlAction,
       icon: 'RiArrowRightLine'
     }
   }

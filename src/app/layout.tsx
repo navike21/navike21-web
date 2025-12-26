@@ -11,11 +11,11 @@ export const metadata: Metadata = {
     'Navike21 delivers modern web applications, custom software, and innovative digital solutions to boost your business with cutting-edge technology.'
 }
 
-interface IRootLayoutProps {
+interface RootLayoutProps {
   children: ReactNode
 }
 
-export default function RootLayout({ children }: Readonly<IRootLayoutProps>) {
+export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
     <html lang="es">
       <body

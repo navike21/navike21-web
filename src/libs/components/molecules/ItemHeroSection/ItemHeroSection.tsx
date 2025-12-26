@@ -1,14 +1,14 @@
 import { Container, LinkButton, ParallaxImage } from '@Components/atoms'
 import { uuid } from '@Helpers/uuid'
-import { type ILinkButtonProps } from '@Types/buttonProps'
+import { type LinkButtonProps } from '@Types/buttonProps'
 import clsx from 'clsx'
 import { type StaticImageData } from 'next/image'
 
-interface IItemHeroSectionProps {
+interface ItemHeroSectionProps {
   heroImage: StaticImageData
   title: string
   description: string
-  controlActions?: ILinkButtonProps[]
+  controlActions?: LinkButtonProps[]
 }
 
 export const ItemHeroSection = ({
@@ -16,7 +16,7 @@ export const ItemHeroSection = ({
   title,
   description,
   controlActions = []
-}: IItemHeroSectionProps) => (
+}: ItemHeroSectionProps) => (
   <div className={clsx('bg-slate-950 relative', 'md:bg-white')}>
     <Container
       className={clsx(

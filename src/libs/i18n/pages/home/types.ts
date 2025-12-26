@@ -1,25 +1,25 @@
-import { type ILinkButtonProps } from '@Types/buttonProps'
-import type { TIconName } from '@Types/icons'
+import { type LinkButtonProps } from '@Types/buttonProps'
+import type { IconName } from '@Types/icons'
 
-export interface IHeroSection {
+export interface HeroSection {
   id: EHeroSectionId
   title: string
   description: string
-  controlActions: ILinkButtonProps[]
+  controlActions: LinkButtonProps[]
 }
 
-export interface IServicesSection {
+export interface ServicesSection {
   title: string
   description: string
-  controlAction: ILinkButtonProps
+  controlAction: LinkButtonProps
 }
 
-export interface IMetricsSection {
+export interface MetricsSection {
   title: string
   description: string
 }
 
-export interface ITestimonialsSection {
+export interface TestimonialsSection {
   title: string
   description: string
 }
@@ -28,9 +28,9 @@ export enum EHeroSectionId {
   PROJECTS_SLIDE = 'PROJECTS_SLIDE'
 }
 
-export type THeroSectionIcons = {
+export type HeroSectionIcons = {
   [key in EHeroSectionId]: {
-    firstControlIcon?: TIconName
-    secondControlIcon?: TIconName
+    firstControlIcon?: IconName
+    secondControlIcon?: IconName
   }
 }

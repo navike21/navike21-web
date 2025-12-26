@@ -6,9 +6,9 @@ import { cookiesPolicyEs } from './cookiesPolicy'
 import { legalNoticeEs } from './legalNotice'
 import { accessibilityStatementEs } from './accessibilityStatement'
 
-import type { ILegalPage } from '../../types'
+import type { LegalPage } from '../../types'
 
-export const legalPagesEs: ILegalPage[] = [
+export const legalPagesEs: LegalPage[] = [
   complaintsBookEs,
   termsAndConditionsEs,
   privacyPolicyEs,
