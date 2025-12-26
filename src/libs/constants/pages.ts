@@ -1,6 +1,6 @@
 import { informationPage } from '@I18n/pages/home'
-import { EPages } from '@Types/pages'
+import { Pages } from '@Types/pages'
 
 export const PAGES_INFORMATION = {
-  [EPages.HOME]: informationPage
+  [Pages.HOME]: informationPage
 }

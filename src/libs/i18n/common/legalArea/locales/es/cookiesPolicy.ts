@@ -1,7 +1,7 @@
-import { ELegalPageSlugs, type ILegalPage } from '../../types'
+import { LegalPageSlugs, type LegalPage } from '../../types'
 
-export const cookiesPolicyEs: ILegalPage = {
-  id: ELegalPageSlugs.COOKIES_POLICY,
+export const cookiesPolicyEs: LegalPage = {
+  id: LegalPageSlugs.COOKIES_POLICY,
   title: 'Política de Cookies',
   slug: 'politica-de-cookies',
   shortDescription: 'Conoce nuestra política de uso de cookies',

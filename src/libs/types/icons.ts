@@ -1,7 +1,8 @@
 import * as RemixIcons from '@remixicon/react'
 
-export type TIconName = keyof typeof RemixIcons
-export interface IIconProps {
-  icon: TIconName
+export type IconName = keyof typeof RemixIcons
+
+export interface IconProps {
+  icon: IconName
   className?: string
 }

@@ -1,7 +1,7 @@
-import { ELegalPageSlugs, type ILegalPage } from '../../types'
+import { LegalPageSlugs, type LegalPage } from '../../types'
 
-export const dataProtectionEs: ILegalPage = {
-  id: ELegalPageSlugs.DATA_PROTECTION,
+export const dataProtectionEs: LegalPage = {
+  id: LegalPageSlugs.DATA_PROTECTION,
   title: 'Protección de Datos',
   slug: 'proteccion-de-datos',
   shortDescription: 'Información sobre la protección de datos',

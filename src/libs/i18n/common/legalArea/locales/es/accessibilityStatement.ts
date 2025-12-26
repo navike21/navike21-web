@@ -1,7 +1,7 @@
-import { ELegalPageSlugs, type ILegalPage } from '../../types'
+import { LegalPageSlugs, type LegalPage } from '../../types'
 
-export const accessibilityStatementEs: ILegalPage = {
-  id: ELegalPageSlugs.ACCESSIBILITY_STATEMENT,
+export const accessibilityStatementEs: LegalPage = {
+  id: LegalPageSlugs.ACCESSIBILITY_STATEMENT,
   title: 'Declaración de Accesibilidad',
   slug: 'accesibilidad',
   shortDescription: 'Compromiso con la accesibilidad web',

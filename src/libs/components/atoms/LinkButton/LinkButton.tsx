@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { IconComponent } from '../IconComponent'
 import Link from 'next/link'
-import { type ILinkButtonProps } from '@Types/buttonProps'
+import { type LinkButtonProps } from '@Types/buttonProps'
 
 export const LinkButton = ({
   variant = 'primary',
@@ -10,7 +10,7 @@ export const LinkButton = ({
   size = 'medium',
   icon,
   ...props
-}: Readonly<ILinkButtonProps>) => {
+}: Readonly<LinkButtonProps>) => {
   return (
     <Link
       className={clsx(

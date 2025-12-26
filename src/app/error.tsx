@@ -1,6 +1,5 @@
 'use client'
 
-import { useEffect } from 'react'
 import { Button } from '@Components/atoms'
 
 interface ErrorProps {
@@ -8,15 +7,7 @@ interface ErrorProps {
   reset: () => void
 }
 
-export default function ErrorBoundary({ error, reset }: Readonly<ErrorProps>) {
-  useEffect(() => {
-    // Log error to console in development
-    if (process.env.NODE_ENV === 'development') {
-      // eslint-disable-next-line no-console
-      console.error('Application error:', error)
-    }
-  }, [error])
-
+export default function ErrorBoundary({ reset }: Readonly<ErrorProps>) {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center gap-6 px-4">
       <div className="text-center">

@@ -1,13 +1,13 @@
 'use client'
 
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
-import type { ISliderProps } from './slider.types'
+import type { SliderProps } from './slider.types'
 import { uuid } from '@Helpers/uuid'
 import { NextButton, PrevButton } from './SliderArrowButton'
 import clsx from 'clsx'
 import type { SplideProps } from '@splidejs/react-splide'
 
-export const Slider = ({ children, options }: ISliderProps) => {
+export const Slider = ({ children, options }: SliderProps) => {
   const optionsWithDefaults: SplideProps['options'] = {
     classes: {
       pagination: 'splide__pagination flex gap-2 mt-4 justify-center'

@@ -1,12 +1,8 @@
 import clsx from 'clsx'
 import { IconComponent } from '@Components/atoms'
-import type { TPropType } from './slider.types'
+import type { PropType } from './slider.types'
 
-export const PrevButton = ({
-  children,
-  className,
-  ...restProps
-}: TPropType) => (
+export const PrevButton = ({ children, className, ...restProps }: PropType) => (
   <button
     type="button"
     {...restProps}
@@ -20,11 +16,7 @@ export const PrevButton = ({
   </button>
 )
 
-export const NextButton = ({
-  children,
-  className,
-  ...restProps
-}: TPropType) => (
+export const NextButton = ({ children, className, ...restProps }: PropType) => (
   <button
     type="button"
     {...restProps}

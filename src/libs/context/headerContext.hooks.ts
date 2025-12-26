@@ -1,13 +1,13 @@
 import { createContext, useContext } from 'react'
 
-interface IHeaderContext {
+interface HeaderContextValue {
   isSolid: boolean
   toggleMenu: boolean
   setIsSolid: (value: boolean) => void
   setToggleMenu: (value: boolean) => void
 }
 
-export const HeaderContext = createContext<IHeaderContext | undefined>(
+export const HeaderContext = createContext<HeaderContextValue | undefined>(
   undefined
 )
 

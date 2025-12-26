@@ -6,11 +6,11 @@ import clsx from 'clsx'
 import { BgHeader } from '../Header'
 import { useLayoutScroll } from './layoutScroll.hooks'
 
-interface ILayoutScrollProps {
+interface LayoutScrollProps {
   children: ReactNode
 }
 
-export function LayoutScroll({ children }: Readonly<ILayoutScrollProps>) {
+export function LayoutScroll({ children }: Readonly<LayoutScrollProps>) {
   const { lenisRef } = useLayoutScroll()
 
   return (

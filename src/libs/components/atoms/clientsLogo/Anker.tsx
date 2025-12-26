@@ -1,6 +1,6 @@
-import { type ISvgProps } from '@Types/svg'
+import { type SvgProps } from '@Types/svg'
 
-export const Anker = ({ isColor, ...props }: ISvgProps) => (
+export const Anker = ({ isColor, ...props }: SvgProps) => (
   <svg
     viewBox="0 0 507 250"
     fill="none"

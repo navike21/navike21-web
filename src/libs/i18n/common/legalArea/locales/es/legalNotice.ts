@@ -1,7 +1,7 @@
-import { ELegalPageSlugs, type ILegalPage } from '../../types'
+import { LegalPageSlugs, type LegalPage } from '../../types'
 
-export const legalNoticeEs: ILegalPage = {
-  id: ELegalPageSlugs.LEGAL_NOTICE,
+export const legalNoticeEs: LegalPage = {
+  id: LegalPageSlugs.LEGAL_NOTICE,
   title: 'Aviso Legal',
   slug: 'aviso-legal',
   shortDescription: 'Información legal y de propiedad del sitio',

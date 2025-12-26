@@ -1,13 +1,13 @@
-import { type TIconName } from '@Types/icons'
+import { type IconName } from '@Types/icons'
 
-interface ISocialMedia {
+interface SocialMedia {
   active?: boolean
-  icon: TIconName
+  icon: IconName
   name: string
   url: string
 }
 
-export const SOCIAL_MEDIA: ISocialMedia[] = [
+export const SOCIAL_MEDIA: SocialMedia[] = [
   {
     active: true,
     icon: 'RiFacebookFill',

@@ -1,7 +1,7 @@
-import { ELegalPageSlugs, type ILegalPage } from '../../types'
+import { LegalPageSlugs, type LegalPage } from '../../types'
 
-export const termsAndConditionsEs: ILegalPage = {
-  id: ELegalPageSlugs.TERMS_AND_CONDITIONS,
+export const termsAndConditionsEs: LegalPage = {
+  id: LegalPageSlugs.TERMS_AND_CONDITIONS,
   title: 'Términos y Condiciones',
   slug: 'terminos-y-condiciones',
   shortDescription: 'Consulta nuestros términos y condiciones',

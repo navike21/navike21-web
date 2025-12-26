@@ -1,12 +1,12 @@
-import { EServiceIds, type TIconServices } from './types'
+import { ServiceIds, type IconServices } from './types'
 
-export const ICON_SERVICES: TIconServices = {
-  [EServiceIds.WEB_PAGES_DEVELOPMENT]: 'RiGlobalLine',
-  [EServiceIds.SOFTWARE_DEVELOPMENT]: 'RiCodeFill',
-  [EServiceIds.E_COMMERCE]: 'RiShoppingCartLine',
-  [EServiceIds.MOBILE_APPS]: 'RiSmartphoneLine',
-  [EServiceIds.DIGITAL_MARKETING]: 'RiMegaphoneLine',
-  [EServiceIds.UX_UI_DESIGN]: 'RiPaletteLine',
-  [EServiceIds.SEO]: 'RiSearchLine',
-  [EServiceIds.EMAIL_MARKETING]: 'RiMailLine'
+export const ICON_SERVICES: IconServices = {
+  [ServiceIds.WEB_PAGES_DEVELOPMENT]: 'RiGlobalLine',
+  [ServiceIds.SOFTWARE_DEVELOPMENT]: 'RiCodeFill',
+  [ServiceIds.E_COMMERCE]: 'RiShoppingCartLine',
+  [ServiceIds.MOBILE_APPS]: 'RiSmartphoneLine',
+  [ServiceIds.DIGITAL_MARKETING]: 'RiMegaphoneLine',
+  [ServiceIds.UX_UI_DESIGN]: 'RiPaletteLine',
+  [ServiceIds.SEO]: 'RiSearchLine',
+  [ServiceIds.EMAIL_MARKETING]: 'RiMailLine'
 }

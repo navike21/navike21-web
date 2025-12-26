@@ -3,11 +3,11 @@
 import { type ReactNode, useCallback, useMemo, useState } from 'react'
 import { HeaderContext } from './headerContext.hooks'
 
-interface IHeaderProviderProps {
+interface HeaderProviderProps {
   children: ReactNode
 }
 
-export const HeaderProvider = ({ children }: IHeaderProviderProps) => {
+export const HeaderProvider = ({ children }: HeaderProviderProps) => {
   const [headerState, setHeaderState] = useState({
     isSolid: false,
     toggleMenu: false

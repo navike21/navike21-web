@@ -1,11 +1,11 @@
 import clsx from 'clsx'
 
-export interface ITitleProps {
+export interface TitleProps {
   title: string
   subTitle?: string
   className?: string
 }
-export const Title = ({ title, subTitle, className }: ITitleProps) => (
+export const Title = ({ title, subTitle, className }: TitleProps) => (
   <div
     className={clsx('title-area flex flex-col gap-5 items-center', className)}
   >

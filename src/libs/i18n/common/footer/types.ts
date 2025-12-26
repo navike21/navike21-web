@@ -1,4 +1,4 @@
-export interface IFooterStructure {
+export interface FooterStructure {
   textFooter: string
   servicesTitle: string
   legalAreaTitle: string

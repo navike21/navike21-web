@@ -1,7 +1,7 @@
-import { ELegalPageSlugs, type ILegalPage } from '../../types'
+import { LegalPageSlugs, type LegalPage } from '../../types'
 
-export const privacyPolicyEs: ILegalPage = {
-  id: ELegalPageSlugs.PRIVACY_POLICY,
+export const privacyPolicyEs: LegalPage = {
+  id: LegalPageSlugs.PRIVACY_POLICY,
   title: 'Política de Privacidad',
   slug: 'politica-de-privacidad',
   shortDescription: 'Conoce nuestra política de privacidad',
