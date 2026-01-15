@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { MenuIcon } from './MenuIcon'
+import { MenuIcon } from '.'
 import * as HeaderContext from '@Context/headerContext.hooks'
 
 vi.mock('motion/react', () => ({

@@ -27,7 +27,7 @@ export const Avatar = memo(function Avatar({
   return (
     <figure
       className={clsx(
-        'relative inline-flex overflow-hidden rounded-full',
+        'relative inline-flex rounded-full',
         sizeMap[size],
         className
       )}
@@ -43,7 +43,7 @@ export const Avatar = memo(function Avatar({
           className="object-cover rounded-full"
         />
       ) : (
-        <span className="flex items-center justify-center w-full h-full rounded-full bg-gray-200 text-gray-600 font-medium uppercase select-none">
+        <span className="flex items-center justify-center w-full h-full rounded-full bg-gray-200 text-gray-600 font-bold uppercase select-none">
           {initials}
         </span>
       )}

@@ -19,6 +19,8 @@ export default defineConfig({
         'coverage/',
         '**/*.d.ts',
         '**/*.config.*',
+        '**/*.stories.{ts,tsx}',
+        '**/*.types.{ts,tsx}',
         '**/mockData',
         '**/*.test.{ts,tsx}',
         '**/*.spec.{ts,tsx}',
@@ -27,14 +29,18 @@ export default defineConfig({
         'src/libs/sources/**',
         'src/libs/i18n/**',
         'src/libs/constants/**',
-        'src/types/**'
+        'src/types/**',
+        'src/views/**',
+        'src/libs/types/**',
+        'src/libs/components/**/index.ts',
+        'src/libs/context/index.ts'
       ],
       include: ['src/**/*.{ts,tsx}'],
       thresholds: {
-        lines: 90,
-        functions: 90,
-        branches: 90,
-        statements: 90
+        lines: 100,
+        functions: 100,
+        branches: 100,
+        statements: 100
       }
     },
     include: ['**/*.{test,spec}.{ts,tsx}'],

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { Divider } from './Divider'
+import { Divider } from '.'
 import * as hooks from './divider.hooks'
 
 describe('Divider component', () => {

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect, vi } from 'vitest'
 import { TestimonialsItem } from './TestimonialsItem'
-import { Testimonials } from './Testimonials'
+import { Testimonials } from '.'
 import { testimonialsList } from '@I18n/common/testimonials'
 import type { StaticImageData } from 'next/image'
 
