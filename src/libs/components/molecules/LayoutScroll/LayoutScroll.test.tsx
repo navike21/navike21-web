@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { LayoutScroll } from './LayoutScroll'
+import { LayoutScroll } from '.'
 import * as HeaderContext from '@Context/headerContext.hooks'
 import * as motion from 'motion'
 import { ReactLenis } from 'lenis/react'

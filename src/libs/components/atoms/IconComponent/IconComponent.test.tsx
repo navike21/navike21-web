@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 import { describe, it, expect } from 'vitest'
-import { IconComponent } from './IconComponent'
+import { IconComponent } from '.'
 
 describe('IconComponent', () => {
   it('should render RemixIcon component', () => {

@@ -7,7 +7,7 @@ import {
   Carbyne,
   Circurela,
   ColegioLaUnion,
-  EuroGourmet,
+  Eurogourmet,
   HammerBlocs,
   RkPower,
   TentacionesGourmet
@@ -21,7 +21,7 @@ describe('ClientsLogo components', () => {
     { name: 'Carbyne', Component: Carbyne },
     { name: 'Circurela', Component: Circurela },
     { name: 'ColegioLaUnion', Component: ColegioLaUnion },
-    { name: 'EuroGourmet', Component: EuroGourmet },
+    { name: 'Eurogourmet', Component: Eurogourmet },
     { name: 'HammerBlocs', Component: HammerBlocs },
     { name: 'RkPower', Component: RkPower },
     { name: 'TentacionesGourmet', Component: TentacionesGourmet }

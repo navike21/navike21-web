@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect, vi } from 'vitest'
-import { Slider } from './Slider'
+import { Slider } from '.'
 
 vi.mock('@Helpers/uuid', () => ({
   uuid: () => 'test-uuid-' + Math.random()

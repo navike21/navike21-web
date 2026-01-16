@@ -1,8 +1,8 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { Header, BgHeader } from './Header'
+import { Header, BgHeader } from '.'
 import * as headerHooks from './header.hooks'
-import { HeaderProvider } from '@Context/HeaderContext'
+import { HeaderProvider } from '@Context/index'
 import type { IconName } from '@Types/icons'
 
 vi.mock('next/link', () => ({

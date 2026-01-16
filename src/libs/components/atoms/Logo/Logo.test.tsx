@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react'
 import { describe, it, expect } from 'vitest'
-import { Logo } from './Logo'
-import type { LogoColor } from './Logo'
+import { Logo } from '.'
+import type { LogoColor } from '.'
 
 describe('Logo component', () => {
   describe('basic rendering', () => {

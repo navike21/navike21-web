@@ -1,11 +1,22 @@
-# Componentes UI Navike21
+# Componentes UI Navike21 ✨
 
-Este directorio contiene los componentes reutilizables del sistema de diseño Navike21, organizados bajo el patrón atomic design.
+Este directorio contiene los componentes reutilizables del sistema de diseño Navike21, organizados bajo el patrón Atomic Design. Hecho con cariño :D
 
 ## Estructura
 
-- **atoms/**: Componentes básicos y fundamentales (botones, íconos, avatares, etc.)
-- **molecules/**: Combinaciones de átomos que forman bloques funcionales (headers, footers, sliders, etc.)
+- `atoms/`: Componentes básicos y fundamentales (botones, íconos, avatares, etc.)
+- `molecules/`: Combinaciones de átomos que forman bloques funcionales (header, footer, sliders, etc.)
+
+Cada componente vive en su propia carpeta y exporta su API pública desde un `index.ts`.
+
+## Imports recomendados
+
+Se recomienda importar desde los barrels de cada capa (aprovechando el alias `@Components/*` definido en `tsconfig.json`):
+
+```ts
+import { Button, Title } from '@Components/atoms'
+import { Footer, Header } from '@Components/molecules'
+```
 
 ---
 
@@ -13,53 +24,152 @@ Este directorio contiene los componentes reutilizables del sistema de diseño Na
 
 ### Avatar
 
-- `Avatar.tsx`: Componente de avatar de usuario.
+- Propósito: avatar de usuario.
+- Archivos:
+
+```text
+Avatar.tsx
+Avatar.hooks.ts
+Avatar.types.ts
+Avatar.test.tsx
+index.ts
+```
 
 ### Button
 
-- `Button.tsx`: Botón reutilizable con variantes.
+- Propósito: botón reutilizable.
+- Archivos:
+
+```text
+Button.tsx
+Button.test.tsx
+index.ts
+```
 
 ### Card
 
-- `Card.tsx`: Tarjeta básica para mostrar contenido.
+- Propósito: tarjeta base para mostrar contenido.
+- Archivos:
+
+```text
+Card.tsx
+Card.types.ts
+Card.test.tsx
+index.ts
+```
 
 ### clientsLogo
 
-- Logos de clientes (varios archivos `.tsx`), centralizados en `index.ts`.
+- Propósito: set de logos de clientes.
+- Archivos:
+
+```text
+# logos
+Almazen.tsx
+Anker.tsx
+Beats.tsx
+Carbyne.tsx
+Circurela.tsx
+ColegioLaUnion.tsx
+Eurogourmet.tsx
+HammerBlocs.tsx
+RkPower.tsx
+TentacionesGourmet.tsx
+
+# tests / exports
+clientsLogo.test.tsx
+index.ts
+```
 
 ### Container
 
-- `Container.tsx`: Contenedor con padding y breakpoints responsivos.
+- Propósito: contenedor con padding y breakpoints.
+- Archivos:
+
+```text
+Container.tsx
+Container.test.tsx
+index.ts
+```
 
 ### Divider
 
-- `Divider.tsx`: Separador visual.
-- `divider.hooks.ts`: Hooks relacionados.
-- `divider.types.ts`: Tipos del Divider.
+- Propósito: separador visual.
+- Archivos:
+
+```text
+Divider.tsx
+divider.hooks.ts
+divider.types.ts
+Divider.test.tsx
+index.ts
+```
 
 ### IconComponent
 
-- `IconComponent.tsx`: Renderiza íconos SVG.
+- Propósito: renderizar íconos SVG.
+- Archivos:
+
+```text
+IconComponent.tsx
+IconComponent.test.tsx
+index.ts
+```
 
 ### LinkButton
 
-- `LinkButton.tsx`: Botón que actúa como enlace.
+- Propósito: botón que actúa como enlace.
+- Archivos:
+
+```text
+LinkButton.tsx
+LinkButton.test.tsx
+index.ts
+```
 
 ### Logo
 
-- `Logo.tsx`: Logo principal de la marca.
+- Propósito: logo principal de la marca.
+- Archivos:
+
+```text
+Logo.tsx
+Logo.test.tsx
+index.ts
+```
 
 ### MenuIcon
 
-- `MenuIcon.tsx`: Ícono para menús desplegables.
+- Propósito: ícono para menús (hamburger / toggle).
+- Archivos:
+
+```text
+MenuIcon.tsx
+MenuIcon.test.tsx
+index.ts
+```
 
 ### ParallaxImage
 
-- `ParallaxImage.tsx`: Imagen con efecto parallax.
+- Propósito: imagen con efecto parallax.
+- Archivos:
+
+```text
+ParallaxImage.tsx
+ParallaxImage.test.tsx
+index.ts
+```
 
 ### Title
 
-- `Title.tsx`: Título de sección con subtítulo.
+- Propósito: título de sección (título + subtítulo).
+- Archivos:
+
+```text
+Title.tsx
+Title.test.tsx
+index.ts
+```
 
 ---
 
@@ -67,45 +177,198 @@ Este directorio contiene los componentes reutilizables del sistema de diseño Na
 
 ### Clients
 
-- `Clients.tsx`: Muestra logos de clientes.
+- Propósito: sección de clientes (incluye render de logos).
+- Archivos:
+
+```text
+Clients.tsx
+Clients.test.tsx
+__snapshots__/
+index.ts
+```
 
 ### Footer
 
-- `Footer.tsx`: Pie de página.
-- `footer.hooks.ts`: Hooks del footer.
-- `ItemFooter.tsx`: Ítem individual del footer.
+- Propósito: pie de página.
+- Archivos:
+
+```text
+Footer.tsx
+footer.hooks.ts
+ItemFooter.tsx
+
+Footer.test.tsx
+ItemFooter.test.tsx
+footer.hooks.test.ts
+
+index.ts
+```
 
 ### Header
 
-- `Header.tsx`: Encabezado principal.
-- `header.hooks.ts`: Hooks del header.
+- Propósito: encabezado principal.
+- Archivos:
+
+```text
+Header.tsx
+header.hooks.ts
+
+Header.test.tsx
+header.hooks.test.ts
+
+index.ts
+```
 
 ### ItemHeroSection
 
-- `ItemHeroSection.tsx`: Sección principal del hero.
+- Propósito: item/parte de la sección Hero.
+- Archivos:
+
+```text
+ItemHeroSection.tsx
+ItemHeroSection.test.tsx
+index.ts
+```
 
 ### LayoutScroll
 
-- `LayoutScroll.tsx`: Layout con scroll animado.
+- Propósito: layout con scroll animado.
+- Archivos:
+
+```text
+LayoutScroll.tsx
+layoutScroll.hooks.ts
+
+LayoutScroll.test.tsx
+layoutScroll.hooks.test.ts
+
+index.ts
+```
 
 ### Menu
 
-- `Menu.tsx`: Menú de navegación.
-- `menu.hooks.ts`: Hooks del menú.
+- Propósito: menú de navegación.
+- Archivos:
+
+```text
+Menu.tsx
+menu.hooks.ts
+
+Menu.test.tsx
+menu.hooks.test.ts
+
+index.ts
+```
 
 ### Slider
 
-- `Slider.tsx`: Carrusel de elementos.
-- `slider.types.ts`: Tipos del slider.
-- `SliderArrowButton.tsx`: Botón de flecha para slider.
-- `SliderDotButton.tsx`: Botón de punto para slider.
+- Propósito: carrusel/slider.
+- Archivos:
+
+```text
+Slider.tsx
+SliderArrowButton.tsx
+SliderDotButton.tsx
+slider.types.ts
+
+Slider.test.tsx
+SliderButtons.test.tsx
+
+index.ts
+```
 
 ### Testimonials
 
-- `Testimonials.tsx`: Testimonios de clientes.
+- Propósito: sección de testimonios.
+- Archivos:
+
+```text
+Testimonials.tsx
+TestimonialsItem.tsx
+testimonials.hooks.ts
+testimonials.types.ts
+
+Testimonials.test.tsx
+testimonials.hooks.test.ts
+
+index.ts
+```
 
 ---
 
-Cada carpeta incluye un `index.ts` para facilitar los imports.
+## Notas
 
-> Para detalles de props y ejemplos de uso, consulta la documentación de cada componente o revisa los archivos `.tsx` correspondientes.
+- Tests: la mayoría de componentes incluyen `*.test.tsx` (y algunos hooks `*.test.ts`).
+- API pública: importa siempre desde el `index.ts` de cada carpeta para evitar dependencias internas.
+
+---
+
+## Cómo agregar un componente nuevo
+
+Esta guía describe el flujo que se usa actualmente en este repo para mantener imports consistentes.
+
+### 1) Elige la capa correcta
+
+- `atoms/`: piezas simples y reutilizables (sin lógica compleja de composición).
+- `molecules/`: combinaciones de átomos (secciones/bloques completos).
+
+### 2) Crea la carpeta del componente
+
+- Crea una carpeta con el nombre del componente en PascalCase:
+
+```text
+src/libs/components/atoms/MyComponent/
+# o
+src/libs/components/molecules/MyComponent/
+```
+
+### 3) Agrega el/los archivos del componente
+
+Patrones usados en el repo (elige lo que aplique):
+
+```text
+MyComponent.tsx
+MyComponent.test.tsx
+MyComponent.types.ts
+MyComponent.hooks.ts
+index.ts
+```
+
+Notas:
+
+- No todos los componentes tienen `hooks` o `types` (se agregan cuando aportan valor).
+- En algunos componentes existentes los archivos de hooks/types usan nombres en minúscula (ej. `divider.hooks.ts`). Si estás extendiendo un componente existente, sigue su convención.
+
+### 4) Exporta desde el `index.ts` del componente
+
+Dentro de la carpeta del componente, expón solo lo público. Ejemplo típico:
+
+```ts
+export * from './MyComponent'
+export * from './MyComponent.types'
+```
+
+### 5) Exporta desde el barrel del nivel (atoms/molecules)
+
+Para que se pueda importar desde `@Components/atoms` o `@Components/molecules`, agrega el export en:
+
+```text
+src/libs/components/atoms/index.ts
+src/libs/components/molecules/index.ts
+```
+
+Ejemplo:
+
+```ts
+export * from './MyComponent'
+```
+
+### 6) Usa el alias de paths en los imports
+
+Preferir:
+
+```ts
+import { MyComponent } from '@Components/atoms'
+```
+
+Evitar imports internos (rutas profundas) cuando no sea necesario.
