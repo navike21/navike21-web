@@ -20,6 +20,9 @@
 # production
 /build
 
+# storybook
+/storybook-static
+
 # misc
 .DS_Store
 *.pem
@@ -53,3 +56,4 @@ yarn.lock
 !.vscode/extensions.json
 
 .vercel
+.scannerwork

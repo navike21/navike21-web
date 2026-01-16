@@ -5,7 +5,7 @@ import {
   Carbyne,
   Circurela,
   ColegioLaUnion,
-  EuroGourmet,
+  Eurogourmet,
   HammerBlocs,
   RkPower,
   TentacionesGourmet
@@ -70,7 +70,7 @@ export const CLIENTS: Client[] = [
     id: 'eurogourmet',
     name: 'Eurogourmet',
     url: 'https://eurogourmet.com.pe',
-    logo: EuroGourmet
+    logo: Eurogourmet
   },
   {
     id: 'hammer-blocs',

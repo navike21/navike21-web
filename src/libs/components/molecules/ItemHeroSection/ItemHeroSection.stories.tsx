@@ -1,0 +1,47 @@
+import type { Meta, StoryObj } from '@storybook/react'
+
+import heroImage from '@Assets/background/abstract-shiny-blue-presentation-background_1017-18747.jpg'
+
+import { ItemHeroSection } from '.'
+
+const meta = {
+  title: 'Molecules/ItemHeroSection',
+  component: ItemHeroSection,
+  tags: ['autodocs'],
+  args: {
+    heroImage,
+    title: 'Build products faster',
+    description:
+      'A hero section item with a parallax image and optional call-to-action links.',
+    controlActions: [
+      {
+        href: '/',
+        children: 'Get started',
+        variant: 'primary',
+        size: 'medium'
+      },
+      {
+        href: '/',
+        children: 'Learn more',
+        variant: 'secondary',
+        size: 'medium'
+      }
+    ]
+  },
+  argTypes: {
+    title: { control: { type: 'text' } },
+    description: { control: { type: 'text' } }
+  }
+} satisfies Meta<typeof ItemHeroSection>
+
+export default meta
+
+type Story = StoryObj<typeof meta>
+
+export const Default: Story = {}
+
+export const NoActions: Story = {
+  args: {
+    controlActions: []
+  }
+}

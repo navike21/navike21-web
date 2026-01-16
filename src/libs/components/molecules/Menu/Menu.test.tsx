@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { Menu } from './Menu'
+import { Menu } from '.'
 import * as menuHooks from './menu.hooks'
-import { HeaderProvider } from '@Context/HeaderContext'
+import { HeaderProvider } from '@Context/index'
 import { Pages } from '@Types/pages'
 
 const renderWithProvider = (ui: React.ReactElement) =>
