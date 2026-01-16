@@ -56,7 +56,7 @@ export const Footer = () => {
           </ul>
         </ItemFooter>
       </Container>
-      <Divider color="light" />
+      <Divider color="gradient" />
       <Container
         className={clsx(
           'flex flex-col items-center justify-center gap-4 pb-10',

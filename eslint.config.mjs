@@ -21,7 +21,9 @@ export default [
       'public',
       '.vscode',
       '**/*.d.ts',
-      '/.github/workflows/*'
+      '/.github/workflows/*',
+      '.scannerwork',
+      'next.config.ts'
     ],
     languageOptions: {
       parser: tsParser,

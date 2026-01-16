@@ -8,7 +8,7 @@ export const Divider = ({
   className,
   ...props
 }: Readonly<DividerProps>) => {
-  const { isHorizontal, lineClass, containerClass, textClass } = useDivider({
+  const { lineClass, containerClass, textClass } = useDivider({
     orientation,
     ...props
   })
@@ -17,11 +17,7 @@ export const Divider = ({
     return (
       <hr
         aria-orientation={orientation}
-        className={clsx(
-          containerClass,
-          className,
-          isHorizontal ? 'w-full' : 'h-full'
-        )}
+        className={clsx(containerClass, className)}
       />
     )
   }

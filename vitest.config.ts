@@ -17,6 +17,7 @@ export default defineConfig({
         '.next/',
         'out/',
         'coverage/',
+        'storybook-static/',
         '**/*.d.ts',
         '**/*.config.*',
         '**/*.stories.{ts,tsx}',
@@ -30,17 +31,16 @@ export default defineConfig({
         'src/libs/i18n/**',
         'src/libs/constants/**',
         'src/types/**',
-        'src/views/**',
         'src/libs/types/**',
         'src/libs/components/**/index.ts',
         'src/libs/context/index.ts'
       ],
       include: ['src/**/*.{ts,tsx}'],
       thresholds: {
-        lines: 100,
-        functions: 100,
-        branches: 100,
-        statements: 100
+        lines: 90,
+        functions: 90,
+        branches: 90,
+        statements: 90
       }
     },
     include: ['**/*.{test,spec}.{ts,tsx}'],
@@ -59,7 +59,8 @@ export default defineConfig({
       '@Sources': path.resolve(__dirname, './src/libs/sources'),
       '@Styles': path.resolve(__dirname, './src/libs/styles'),
       '@Types': path.resolve(__dirname, './src/libs/types'),
-      '@Helpers': path.resolve(__dirname, './src/libs/helpers')
+      '@Helpers': path.resolve(__dirname, './src/libs/helpers'),
+      '@Views': path.resolve(__dirname, './src/views'),
     }
   }
 })

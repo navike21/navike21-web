@@ -37,7 +37,12 @@
       "@Sources/*": ["./src/libs/sources/*"],
       "@Styles/*": ["./src/libs/styles/*"],
       "@Types/*": ["./src/libs/types/*"],
-      "@Helpers/*": ["./src/libs/helpers/*"]
+      "@Helpers/*": [
+        "./src/libs/helpers/*"
+      ],
+      "@Views/*": [
+        "./src/views/*"
+      ]
     }
   },
   "include": [

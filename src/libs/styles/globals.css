@@ -1,5 +1,4 @@
 @import 'lenis/dist/lenis.css';
-
 @import '@splidejs/react-splide/css/core';
 
 @import 'tailwindcss';
@@ -14,28 +13,39 @@
   }
 }
 
-@utility clip-diagonal {
-  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
-}
-
-@utility bg-gradient-horizontal {
-  @apply bg-linear-to-r from-primary-400 to-secondary-700 via-secondary-700 via-80%;
-}
-
-@utility bg-gradient-vertical {
-  @apply bg-linear-to-b from-primary-400 to-secondary-700 via-secondary-700 via-80%;
-}
-
-@utility bg-gradient-diagonal {
-  @apply bg-linear-to-br from-primary-400 to-secondary-700 via-secondary-700 via-80%;
-}
-
-@utility text-gradient {
-  @apply text-transparent bg-clip-text bg-linear-to-r from-primary-400 to-secondary-700 via-secondary-700 via-80%;
-}
-
 @layer utilities {
-  /* Ripple para online */
+  .clip-diagonal {
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+
+  .bg-gradient-horizontal {
+    @apply bg-linear-to-r from-primary-400 to-secondary-700 via-secondary-700 via-80%;
+  }
+
+  .bg-gradient-vertical {
+    @apply bg-linear-to-b from-primary-400 to-secondary-700 via-secondary-700 via-80%;
+  }
+
+  .bg-gradient-diagonal {
+    @apply bg-linear-to-br from-primary-400 to-secondary-700 via-secondary-700 via-80%;
+  }
+
+  .border-gradient-base {
+    @apply relative rounded-xl border border-solid border-transparent;
+    background:
+      linear-gradient(#0000, #0000) padding-box,
+      linear-gradient(
+          to bottom right,
+          var(--color-primary-400),
+          var(--color-secondary-700)
+        )
+        border-box;
+  }
+
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-linear-to-r from-primary-400 to-secondary-700 via-secondary-700 via-80%;
+  }
+
   @keyframes avatar-ripple {
     0% {
       transform: scale(1);
@@ -47,7 +57,6 @@
     }
   }
 
-  /* Pulso corto para busy */
   @keyframes avatar-pulse-busy {
     0%,
     100% {
@@ -60,7 +69,6 @@
     }
   }
 
-  /* Pulso lento para away */
   @keyframes avatar-pulse-away {
     0%,
     100% {
@@ -73,7 +81,6 @@
     }
   }
 
-  /* Utilidades */
   .avatar-online-ripple {
     @apply before:absolute before:inset-0 before:rounded-full before:bg-green-500 before:opacity-60 before:animate-[avatar-ripple_1.5s_ease-out_infinite];
   }

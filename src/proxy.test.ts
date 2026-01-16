@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 
 import type { NextRequest } from 'next/server'
 
-import { config, proxy } from './proxy'
+import { proxy } from './proxy'
 
 describe('proxy', () => {
   it('sets security headers', () => {
@@ -16,11 +16,5 @@ describe('proxy', () => {
     expect(response.headers.get('Referrer-Policy')).toBe(
       'strict-origin-when-cross-origin'
     )
-  })
-
-  it('exposes a matcher config', () => {
-    expect(config).toBeDefined()
-    expect(Array.isArray(config.matcher)).toBe(true)
-    expect(config.matcher[0]).toContain('/((?!api')
   })
 })

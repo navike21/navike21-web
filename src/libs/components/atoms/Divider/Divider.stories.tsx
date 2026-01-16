@@ -57,3 +57,15 @@ export const Vertical: Story = {
     </div>
   )
 }
+
+export const color: Story = {
+  args: {
+    color: 'gradient',
+    children: 'OR'
+  },
+  render: args => (
+    <div className="h-40">
+      <Divider {...args} />
+    </div>
+  )
+}

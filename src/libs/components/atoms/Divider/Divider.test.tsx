@@ -52,7 +52,7 @@ describe('Divider component', () => {
       vi.spyOn(hooks, 'useDivider').mockReturnValue({
         isHorizontal: true,
         lineClass: 'border-t',
-        containerClass: 'flex items-center',
+        containerClass: 'flex items-center w-full',
         textClass: 'px-3'
       })
 
@@ -65,7 +65,7 @@ describe('Divider component', () => {
       vi.spyOn(hooks, 'useDivider').mockReturnValue({
         isHorizontal: false,
         lineClass: 'border-l',
-        containerClass: 'flex',
+        containerClass: 'flex items-center h-full',
         textClass: 'py-3'
       })
 
@@ -283,6 +283,53 @@ describe('Divider component', () => {
           align: 'center'
         })
       )
+    })
+  })
+
+  describe('sonar coverage branches', () => {
+    it('explicitly renders with horizontal orientation', () => {
+      const { container } = render(<Divider orientation="horizontal" />)
+      const hr = container.querySelector('hr')
+
+      expect(hr).toBeInTheDocument()
+      expect(hr).toHaveAttribute('aria-orientation', 'horizontal')
+    })
+
+    it('passes multiple props through spread to useDivider', () => {
+      const useDividerSpy = vi.spyOn(hooks, 'useDivider')
+
+      render(<Divider orientation="horizontal" color="dark" align="end" />)
+
+      expect(useDividerSpy).toHaveBeenCalledWith(
+        expect.objectContaining({
+          orientation: 'horizontal',
+          color: 'dark',
+          align: 'end'
+        })
+      )
+    })
+
+    it('renders hr when children is null', () => {
+      const { container } = render(<Divider>{null}</Divider>)
+      const hr = container.querySelector('hr')
+
+      expect(hr).toBeInTheDocument()
+    })
+
+    it('handles missing className correctly', () => {
+      const { container } = render(<Divider />)
+      const hr = container.querySelector('hr')
+
+      expect(hr).toBeInTheDocument()
+    })
+
+    it('renders both hr elements explicitly when children are provided', () => {
+      const { container } = render(<Divider>Text</Divider>)
+      const hrs = container.querySelectorAll('hr')
+
+      expect(hrs).toHaveLength(2)
+      expect(hrs[0]).toBeInTheDocument()
+      expect(hrs[1]).toBeInTheDocument()
     })
   })
 })

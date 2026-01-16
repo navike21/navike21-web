@@ -1,10 +1,10 @@
 import imageTest from '@Assets/images/technology-expert-developing-userfriendly-software-by-understanding-requirements-endusers.jpg'
-import { Slider } from '../Slider'
 import { uuid } from '@Helpers/uuid'
 import { testimonialsList } from '@I18n/common/testimonials'
 import { ESP } from '@Constants/languages'
 import { TestimonialsItem } from './TestimonialsItem'
 import { useTestimonials } from './testimonials.hooks'
+import { Slider } from '@Components/molecules'
 
 export const Testimonials = () => {
   const { OPTIONS } = useTestimonials()

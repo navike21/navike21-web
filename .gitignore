@@ -56,3 +56,4 @@ yarn.lock
 !.vscode/extensions.json
 
 .vercel
+.scannerwork

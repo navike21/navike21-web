@@ -4,6 +4,7 @@ import { TestimonialsItem } from './TestimonialsItem'
 import { Testimonials } from '.'
 import { testimonialsList } from '@I18n/common/testimonials'
 import type { StaticImageData } from 'next/image'
+import type { TestimonyItem } from '@I18n/common/testimonials/types'
 
 vi.mock('next/image', () => ({
   default: ({
@@ -23,7 +24,7 @@ vi.mock('@Helpers/uuid', () => ({
   uuid: () => 'test-uuid-' + Math.random()
 }))
 
-vi.mock('../Slider', () => ({
+vi.mock('@Components/molecules', () => ({
   Slider: ({ children }: React.PropsWithChildren) => (
     <div data-testid="slider">{children}</div>
   )
@@ -66,7 +67,7 @@ vi.mock('@I18n/common/testimonials', () => ({
         avatar: null,
         score: 4
       }
-    ]
+    ] as TestimonyItem[]
   }
 }))
 
@@ -328,6 +329,16 @@ describe('Testimonials component', () => {
     it('should render nothing when testimonials list is empty', () => {
       const originalTestimonials = testimonialsList.es
       testimonialsList.es = []
+
+      const { container } = render(<Testimonials />)
+      expect(container).toBeEmptyDOMElement()
+
+      testimonialsList.es = originalTestimonials
+    })
+
+    it('should render nothing when testimonials list is undefined', () => {
+      const originalTestimonials = testimonialsList.es
+      testimonialsList.es = undefined as unknown as TestimonyItem[]
 
       const { container } = render(<Testimonials />)
       expect(container).toBeEmptyDOMElement()

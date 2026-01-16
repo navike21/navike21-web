@@ -1,4 +1,3 @@
-import React from 'react'
 import type { TestimonialsItemProps } from './testimonials.types'
 import { Avatar, Card, Divider, IconComponent } from '@Components/atoms'
 import { uuid } from '@Helpers/uuid'
