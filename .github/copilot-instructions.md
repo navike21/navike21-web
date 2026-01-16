@@ -2,6 +2,11 @@
 
 ## Commit & PR conventions (Conventional Commits)
 
+Language policy:
+
+- Commit messages MUST be written in English.
+- Pull Request title and description MUST be written in English.
+
 When creating commits and PRs for this repository, follow this format:
 
 Recommended format (when an issue exists):
@@ -175,3 +180,22 @@ Try/catch policy:
 - Tests: Vitest + Testing Library (`pnpm test`, `pnpm test:coverage`). Environment/mocks live in `vitest.setup.ts` (e.g., `IntersectionObserver`, `ResizeObserver`, `matchMedia`).
 - Coverage: minimum thresholds are 90% (target 100% when feasible) and several directories are excluded (see `vitest.config.ts`).
 - CI (GitHub Actions) runs `typecheck`, `lint`, `format:check`; release also runs `build:ci` (see `.github/workflows/*.yml`).
+
+## VS Code Git workflow (GitLens-first)
+
+When operating from VS Code, prefer GitLens for Git actions whenever possible.
+
+- Commits: use GitLens/VS Code Source Control for staging + committing.
+- Pull Requests: try GitLens PR/remote integration first (when the provider is configured and the UI exposes “Create Pull Request” / PR actions).
+- Fallback: if GitLens cannot create/manage PRs in the current environment, use the official VS Code extension `GitHub Pull Requests and Issues` (`GitHub.vscode-pull-request-github`) for creating and managing PRs.
+
+Language reminder: keep commit messages and PR titles/descriptions in English.
+
+Note: If the user explicitly asks for CLI Git, follow the request; otherwise keep the default preference above.
+
+## Releases (SemVer + Release Please)
+
+- Versioning: SemVer (`1.0.1` → `1.0.2`), tags must be `vX.Y.Z`.
+- Automation: Release Please runs on the `release` branch and opens a Release PR that updates `CHANGELOG.md` + `package.json` version.
+- After merging the Release PR, Release Please creates the git tag and GitHub Release.
+- Language reminder: PR title/description must be written in English.

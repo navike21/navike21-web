@@ -37,7 +37,12 @@
       "@Sources/*": ["./src/libs/sources/*"],
       "@Styles/*": ["./src/libs/styles/*"],
       "@Types/*": ["./src/libs/types/*"],
-      "@Helpers/*": ["./src/libs/helpers/*"]
+      "@Helpers/*": [
+        "./src/libs/helpers/*"
+      ],
+      "@Views/*": [
+        "./src/views/*"
+      ]
     }
   },
   "include": [
@@ -45,6 +50,8 @@
     "src/types/**/*.d.ts",
     "src/**/*.ts",
     "src/**/*.tsx",
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx",
     ".next/types/**/*.ts",
     "vitest.config.ts",
     "vitest.setup.ts",

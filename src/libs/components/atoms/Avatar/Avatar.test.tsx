@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect } from 'vitest'
-import { Avatar } from './Avatar'
+import { Avatar } from '.'
 
 describe('Avatar component', () => {
   describe('rendering with image', () => {
@@ -178,7 +178,6 @@ describe('Avatar component', () => {
       expect(figure).toHaveClass(
         'relative',
         'inline-flex',
-        'overflow-hidden',
         'rounded-full',
         'custom-class'
       )

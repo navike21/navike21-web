@@ -1,5 +1,5 @@
 import { Footer, Header, LayoutScroll, Menu } from '@Components/molecules'
-import { HeaderProvider } from '@Context/HeaderContext'
+import { HeaderProvider } from '@Context/index'
 import { firaCode, poppins } from '@Sources/fonts'
 import '@Styles/globals.css'
 import type { Metadata } from 'next'

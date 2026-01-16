@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect, vi } from 'vitest'
 import userEvent from '@testing-library/user-event'
-import { Button } from './Button'
+import { Button } from '.'
 
 describe('Button component', () => {
   it('should render children correctly', () => {
@@ -58,6 +58,7 @@ describe('Button component', () => {
     render(<Button disabled>Disabled Button</Button>)
     const button = screen.getByRole('button')
     expect(button).toBeDisabled()
+    expect(button).toHaveClass('cursor-not-allowed', 'opacity-50')
   })
 
   it('should pass through additional props', () => {

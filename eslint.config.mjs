@@ -21,12 +21,14 @@ export default [
       'public',
       '.vscode',
       '**/*.d.ts',
-      '/.github/workflows/*'
+      '/.github/workflows/*',
+      '.scannerwork',
+      'next.config.ts'
     ],
     languageOptions: {
       parser: tsParser,
       parserOptions: {
-        project: ['./tsconfig.json'],
+        project: ['./tsconfig.eslint.json'],
         sourceType: 'module',
         ecmaVersion: 'latest'
       },

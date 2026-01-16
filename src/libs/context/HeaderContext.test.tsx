@@ -1,6 +1,6 @@
 import { render, screen, renderHook, act } from '@testing-library/react'
 import { describe, it, expect, vi } from 'vitest'
-import { HeaderProvider } from './HeaderContext'
+import { HeaderProvider } from '.'
 import { useHeaderContext } from './headerContext.hooks'
 import type { ReactNode } from 'react'
 

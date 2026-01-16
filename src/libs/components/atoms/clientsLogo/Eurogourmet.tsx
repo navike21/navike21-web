@@ -1,6 +1,6 @@
 import { type SvgProps } from '@Types/svg'
 
-export const EuroGourmet = ({ isColor, ...props }: SvgProps) => {
+export const Eurogourmet = ({ isColor, ...props }: SvgProps) => {
   const fillColor = isColor ? '#ffffff' : 'currentColor'
   return (
     <svg
