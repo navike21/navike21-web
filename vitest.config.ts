@@ -44,7 +44,19 @@ export default defineConfig({
       }
     },
     include: ['**/*.{test,spec}.{ts,tsx}'],
-    exclude: ['node_modules', '.next', 'out', 'coverage']
+    exclude: [
+      'node_modules',
+      '.next',
+      'out',
+      'coverage',
+      'storybook-static',
+      'src/app/**',
+      'src/types/**',
+      'src/libs/types/**',
+      'src/libs/assets/**',
+      'src/libs/sources/**',
+      'src/libs/i18n/**'
+    ]
   },
   resolve: {
     alias: {

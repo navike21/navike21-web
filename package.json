@@ -1,6 +1,6 @@
 {
   "name": "navike21-web",
-  "version": "1.1.0",
+  "version": "1.0.3",
   "private": true,
   "packageManager": "pnpm@9.15.0",
   "engines": {
@@ -30,6 +30,7 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.2.2",
     "@remixicon/react": "^4.7.0",
     "@splidejs/react-splide": "^0.7.12",
     "@splidejs/splide": "^4.1.4",
@@ -40,7 +41,9 @@
     "next": "16.1.2",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "uuid": "^13.0.0"
+    "react-hook-form": "^7.71.1",
+    "uuid": "^13.0.0",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@commitlint/cli": "^20.3.1",
@@ -49,6 +52,7 @@
     "@next/eslint-plugin-next": "^16.0.10",
     "@storybook/addon-a11y": "10.1.11",
     "@storybook/addon-docs": "10.1.11",
+    "@storybook/addon-vitest": "10.1.11",
     "@storybook/nextjs-vite": "10.1.11",
     "@storybook/react": "10.1.11",
     "@tailwindcss/postcss": "^4.1.18",
@@ -61,7 +65,7 @@
     "@typescript-eslint/eslint-plugin": "^8.50.0",
     "@typescript-eslint/parser": "^8.50.0",
     "@vitejs/plugin-react": "^5.1.2",
-    "@vitest/coverage-v8": "4.0.16",
+    "@vitest/coverage-v8": "^4.0.16",
     "@vitest/ui": "^4.0.16",
     "baseline-browser-mapping": "^2.9.15",
     "eslint": "^9.39.2",
@@ -82,6 +86,8 @@
     "typescript": "^5.9.3",
     "vite": "^7.3.0",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^4.0.16"
+    "vitest": "^4.0.16",
+    "playwright": "^1.57.0",
+    "@vitest/browser-playwright": "^4.0.16"
   }
 }
