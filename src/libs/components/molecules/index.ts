@@ -1,5 +1,7 @@
+export * from './Checkbox'
 export * from './Footer'
 export * from './Header'
+export * from './InputField'
 export * from './ItemHeroSection'
 export * from './LayoutScroll'
 export * from './Menu'
