@@ -1,7 +1,7 @@
 'use client'
 
 import { Container, IconComponent, Logo, MenuIcon } from '@Components/atoms'
-import { useHeader } from './header.hooks'
+import { useHeader } from './Header.hooks'
 import clsx from 'clsx'
 import Link from 'next/link'
 

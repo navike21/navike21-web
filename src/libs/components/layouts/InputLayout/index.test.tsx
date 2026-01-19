@@ -2,9 +2,13 @@ import { render, screen } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
 import { InputLayout } from './index'
 
-vi.mock('@Helpers/uuid', () => ({
-  uuid: vi.fn(() => 'test-uuid')
-}))
+vi.mock('react', async () => {
+  const actual = await vi.importActual('react')
+  return {
+    ...actual,
+    useId: vi.fn(() => 'test-uuid')
+  }
+})
 
 vi.mock('@Components/atoms', () => ({
   HelperText: ({ children, variant, idField, ...props }: any) => (

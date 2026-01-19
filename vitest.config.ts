@@ -33,7 +33,7 @@ export default defineConfig({
         'src/types/**',
         'src/libs/types/**',
         'src/libs/components/**/index.ts',
-        'src/libs/context/index.ts'
+        'src/libs/context/index.ts',
       ],
       include: ['src/**/*.{ts,tsx}'],
       thresholds: {

@@ -1,7 +1,7 @@
 'use client'
 
 import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide'
-import type { SliderProps } from './slider.types'
+import type { SliderProps } from './Slider.types'
 import { uuid } from '@Helpers/uuid'
 import { NextButton, PrevButton } from './SliderArrowButton'
 import clsx from 'clsx'

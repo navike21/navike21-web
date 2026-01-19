@@ -1,12 +1,12 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { Footer } from '.'
-import * as footerHooks from './footer.hooks'
+import * as footerHooks from './Footer.hooks'
 import { ServiceIds } from '@I18n/common/services/types'
 import { LegalPageSlugs } from '@I18n/common/legalArea/types'
 import type { IconName } from '@Types/icons'
 
-vi.mock('./footer.hooks')
+vi.mock('./Footer.hooks')
 
 vi.mock('next/link', () => ({
   default: ({

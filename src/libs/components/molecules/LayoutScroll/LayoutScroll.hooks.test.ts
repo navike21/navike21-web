@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { renderHook, act, waitFor } from '@testing-library/react'
-import { useLayoutScroll } from './layoutScroll.hooks'
+import { useLayoutScroll } from './LayoutScroll.hooks'
 import type { LenisRef } from '@Types/lenis-mock'
 import * as HeaderContext from '@Context/headerContext.hooks'
 import * as motion from 'motion'

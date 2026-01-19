@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { useDivider } from './divider.hooks'
+import { useDivider } from './Divider.hooks'
 import type { DividerProps } from './divider.types'
 
 export const Divider = ({

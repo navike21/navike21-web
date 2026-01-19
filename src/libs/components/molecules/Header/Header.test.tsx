@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { Header, BgHeader } from '.'
-import * as headerHooks from './header.hooks'
+import * as headerHooks from './Header.hooks'
 import { HeaderProvider } from '@Context/index'
 import type { IconName } from '@Types/icons'
 
@@ -20,7 +20,7 @@ vi.mock('next/link', () => ({
   )
 }))
 
-vi.mock('./header.hooks')
+vi.mock('./Header.hooks')
 
 const renderWithProvider = (ui: React.ReactElement) => {
   return render(<HeaderProvider>{ui}</HeaderProvider>)

@@ -4,7 +4,7 @@ import { ReactLenis } from 'lenis/react'
 import { type ReactNode } from 'react'
 import clsx from 'clsx'
 import { BgHeader } from '../Header'
-import { useLayoutScroll } from './layoutScroll.hooks'
+import { useLayoutScroll } from './LayoutScroll.hooks'
 
 interface LayoutScrollProps {
   children: ReactNode

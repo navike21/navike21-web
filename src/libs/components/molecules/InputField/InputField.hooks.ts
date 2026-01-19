@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import { useCallback, useId, useState } from 'react'
-import type { InputFieldProps, TypeInput } from './inputField.types'
+import type { InputFieldProps, TypeInput } from './InputField.types'
 
 export const useInputField = ({ type = 'text' }: InputFieldProps) => {
   const ID_FIELD = useId()

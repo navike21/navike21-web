@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { useMenu } from './menu.hooks'
+import { useMenu } from './Menu.hooks'
 import * as HeaderContext from '@Context/headerContext.hooks'
 
 vi.mock('@Context/headerContext.hooks')

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { Menu } from '.'
-import * as menuHooks from './menu.hooks'
+import * as menuHooks from './Menu.hooks'
 import { HeaderProvider } from '@Context/index'
 import { Pages } from '@Types/pages'
 
@@ -51,7 +51,7 @@ vi.mock('motion/react', () => ({
   }
 }))
 
-vi.mock('./menu.hooks')
+vi.mock('./Menu.hooks')
 
 const mockMenuData = {
   toggleMenu: false,

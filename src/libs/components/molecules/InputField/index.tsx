@@ -1,8 +1,8 @@
 import { IconComponent } from '@Components/atoms'
 import clsx from 'clsx'
 import { forwardRef } from 'react'
-import type { InputFieldProps } from './inputField.types'
-import { useInputField } from './inputField.hooks'
+import type { InputFieldProps } from './InputField.types'
+import { useInputField } from './InputField.hooks'
 import { InputLayout } from '@Components/layouts/InputLayout'
 
 export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(

@@ -1,4 +1,4 @@
-import { useFooter } from './footer.hooks'
+import { useFooter } from './Footer.hooks'
 import { describe, it, expect } from 'vitest'
 import { renderHook } from '@testing-library/react'
 

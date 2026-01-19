@@ -1,6 +1,6 @@
 import { renderHook, act } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
-import { useInputField } from './inputField.hooks'
+import { useInputField } from './InputField.hooks'
 
 describe('useInputField', () => {
   it('returns default values for text type', () => {

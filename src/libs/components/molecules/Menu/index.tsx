@@ -4,7 +4,7 @@ import clsx from 'clsx'
 import { AnimatePresence, motion } from 'motion/react'
 import Image from 'next/image'
 import imageLeft from '@Assets/background/minimalist-hallways-background.jpg'
-import { useMenu } from './menu.hooks'
+import { useMenu } from './Menu.hooks'
 import Link from 'next/link'
 
 export const Menu = () => {

@@ -82,8 +82,9 @@ describe('InputField', () => {
   it('renders with label', () => {
     render(<InputField label="Test Label" placeholder="Enter text" />)
     const label = screen.getByText('Test Label')
+    const input = screen.getByPlaceholderText('Enter text')
     expect(label).toBeInTheDocument()
-    expect(label).toHaveAttribute('for', 'test-id')
+    expect(label).toHaveAttribute('for', input.id)
   })
 
   it('renders with helper text', () => {
@@ -235,7 +236,7 @@ describe('InputField', () => {
   it('adds aria-describedby when helperText is provided', () => {
     render(<InputField helperText="Helper text" placeholder="Test" />)
     const input = screen.getByPlaceholderText('Test')
-    expect(input).toHaveAttribute('aria-describedby', 'test-id-helper')
+    expect(input).toHaveAttribute('aria-describedby', `${input.id}-helper`)
   })
 
   it('adds role alert and aria-live to helperText when variant is error', () => {

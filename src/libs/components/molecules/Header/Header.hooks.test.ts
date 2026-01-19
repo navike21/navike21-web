@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { useHeader } from './header.hooks'
+import { useHeader } from './Header.hooks'
 import * as HeaderContext from '@Context/headerContext.hooks'
 import * as motion from 'motion/react'
 import type { MotionValue } from 'motion/react'
