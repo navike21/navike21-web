@@ -7,10 +7,10 @@ interface InputLayoutProps {
   classInput?: string
   children?: ReactNode
   disabled?: boolean
-  errorMessage?: string
+  errorMessage?: ReactNode
   helperText?: ReactNode
   id?: string
-  label?: string
+  label?: ReactNode
   loading?: boolean
   variant?: 'default' | 'success' | 'error' | 'warning'
 }

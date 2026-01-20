@@ -1,7 +1,7 @@
 import { useForm, type SubmitHandler } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { newsletterFormSchema } from './newsletterForm.schema'
-import type { NewsletterFormData } from './newsletterForm.types'
+import { newsletterFormSchema } from './NewsletterForm.schema'
+import type { NewsletterFormData } from './NewsletterForm.types'
 
 export const useNewsletterForm = () => {
   const {

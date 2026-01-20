@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import type { DividerProps } from './divider.types'
+import type { DividerProps } from './Divider.types'
 
 export const useDivider = ({
   orientation = 'horizontal',

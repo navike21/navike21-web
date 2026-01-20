@@ -6,7 +6,7 @@ import {
   LETTERS_ONLY,
   TERMS_REQUIRED,
   EMAIL_REGEX
-} from './newsletterForm.constants'
+} from './NewsletterForm.constants'
 
 export const newsletterFormSchema = z.object({
   firstName: z

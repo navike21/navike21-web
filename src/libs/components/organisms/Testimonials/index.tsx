@@ -3,7 +3,7 @@ import { uuid } from '@Helpers/uuid'
 import { testimonialsList } from '@I18n/common/testimonials'
 import { ESP } from '@Constants/languages'
 import { TestimonialsItem } from './TestimonialsItem'
-import { useTestimonials } from './testimonials.hooks'
+import { useTestimonials } from './Testimonials.hooks'
 import { Slider } from '@Components/molecules'
 
 export const Testimonials = () => {

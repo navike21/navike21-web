@@ -1,3 +1,5 @@
+'use client'
+
 import { IconComponent } from '@Components/atoms'
 import clsx from 'clsx'
 import { forwardRef } from 'react'

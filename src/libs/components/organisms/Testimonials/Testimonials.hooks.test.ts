@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { renderHook } from '@testing-library/react'
-import { useTestimonials } from './testimonials.hooks'
+import { useTestimonials } from './Testimonials.hooks'
 
 describe('useTestimonials', () => {
   it('should expose base slider options', () => {
