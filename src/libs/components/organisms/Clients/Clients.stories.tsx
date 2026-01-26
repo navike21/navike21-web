@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { Clients } from '.'
 
 const meta = {
-  title: 'Molecules/Clients',
+  title: 'Organisms/Clients',
   component: Clients,
   tags: ['autodocs']
 } satisfies Meta<typeof Clients>

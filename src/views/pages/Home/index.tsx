@@ -4,7 +4,7 @@ import { ItemHeroSection } from '@Components/molecules'
 import clsx from 'clsx'
 import { useHome } from './home.hooks'
 import { uuid } from '@Helpers/uuid'
-import { Clients, Testimonials } from '@Components/organisms'
+import { Clients, NewsletterForm, Testimonials } from '@Components/organisms'
 
 export const Home = () => {
   const {
@@ -17,7 +17,7 @@ export const Home = () => {
         href: servicesHref,
         icon: servicesIcon,
         children: servicesChildren,
-        variant: servicesVariant
+        variant: servicesVariant = 'primary'
       }
     },
     metricsSectionCurrent: {
@@ -68,7 +68,7 @@ export const Home = () => {
           <LinkButton
             className="mx-auto"
             href={servicesHref}
-            icon={servicesIcon}
+            {...(servicesIcon && { icon: servicesIcon })}
             variant={servicesVariant}
           >
             {servicesChildren}
@@ -117,6 +117,7 @@ export const Home = () => {
           </Container>
         </section>
       )}
+      <NewsletterForm />
     </>
   )
 }

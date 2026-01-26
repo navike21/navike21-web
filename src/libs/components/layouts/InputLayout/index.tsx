@@ -29,10 +29,11 @@ export const InputLayout = ({
 }: InputLayoutProps) => {
   const generatedId = useId()
   const idField = id ?? generatedId
+
   return (
     <div
       className={clsx(
-        'flex flex-col gap-1',
+        'flex flex-col gap-1 relative',
         {
           'cursor-not-allowed': disabled,
           'pointer-events-none': loading
@@ -53,7 +54,7 @@ export const InputLayout = ({
           'focus-within:ring-2',
           {
             'bg-slate-400/50': disabled,
-            'ring-1 ring-inset': !disabled,
+            'bg-white ring-1 ring-inset': !disabled,
             'ring-slate-300': variant === 'default' && !disabled,
             'ring-emerald-500': variant === 'success' && !disabled,
             'ring-red-500': variant === 'error' && !disabled,
@@ -88,12 +89,20 @@ export const InputLayout = ({
         )}
       </div>
       {errorMessage && variant === 'error' && (
-        <HelperText idField={idField} variant="error">
+        <HelperText
+          idField={idField}
+          variant="error"
+          className="absolute left-0 -bottom-5"
+        >
           {errorMessage}
         </HelperText>
       )}
       {helperText && variant !== 'error' && (
-        <HelperText idField={idField} variant={variant}>
+        <HelperText
+          idField={idField}
+          variant={variant}
+          className="absolute left-0 top-[calc(100%+4px)]"
+        >
           {helperText}
         </HelperText>
       )}

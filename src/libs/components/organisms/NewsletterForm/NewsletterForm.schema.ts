@@ -5,7 +5,8 @@ import {
   LAST_NAME_MIN_LENGTH,
   LETTERS_ONLY,
   TERMS_REQUIRED,
-  EMAIL_REGEX
+  EMAIL_REGEX,
+  EMAIL_REQUIRED
 } from './NewsletterForm.constants'
 
 export const newsletterFormSchema = z.object({
@@ -19,7 +20,10 @@ export const newsletterFormSchema = z.object({
     .min(3, LAST_NAME_MIN_LENGTH)
     .regex(/^\p{L}+$/u, LETTERS_ONLY),
 
-  email: z.string().refine(value => EMAIL_REGEX.test(value), INVALID_EMAIL),
+  email: z
+    .string()
+    .min(1, EMAIL_REQUIRED)
+    .refine(value => EMAIL_REGEX.test(value), INVALID_EMAIL),
 
   termsAccepted: z.boolean().refine(val => val === true, TERMS_REQUIRED)
 })

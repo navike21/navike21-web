@@ -34,7 +34,8 @@ vi.mock('@Components/molecules', () => ({
 
 vi.mock('@Components/organisms', () => ({
   Clients: () => <div data-testid="clients">Clients</div>,
-  Testimonials: () => <div data-testid="testimonials">Testimonials</div>
+  Testimonials: () => <div data-testid="testimonials">Testimonials</div>,
+  NewsletterForm: () => <div data-testid="newsletter-form">NewsletterForm</div>
 }))
 
 vi.mock('./home.hooks', () => ({

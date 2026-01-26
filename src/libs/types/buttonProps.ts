@@ -7,9 +7,9 @@ import { type IconName } from './icons'
 import { type LinkProps } from 'next/link'
 
 export interface ButtonBaseProps {
-  variant?: 'primary' | 'secondary' | undefined
-  size?: 'small' | 'medium' | 'large' | undefined
-  icon?: IconName | undefined
+  variant?: 'primary' | 'secondary' | 'text'
+  size?: 'small' | 'medium' | 'large'
+  icon?: IconName
 }
 
 export interface ButtonProps

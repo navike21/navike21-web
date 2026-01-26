@@ -20,13 +20,18 @@ export const useNewsletterForm = () => {
     reset()
   }
 
+  const inputError = {
+    isError: Boolean(errors.email),
+    errorMessage: errors.email?.message
+  }
+
   return {
-    register,
-    handleSubmit: handleSubmit(onSubmit),
-    errors,
+    error: inputError,
     isSubmitting,
     isSubmitSuccessful,
-    trigger,
-    setValue
+    handleSubmit: handleSubmit(onSubmit),
+    register,
+    setValue,
+    trigger
   }
 }

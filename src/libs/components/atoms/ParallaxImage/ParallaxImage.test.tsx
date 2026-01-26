@@ -99,10 +99,15 @@ describe('ParallaxImage component', () => {
       expect(image).toBeInTheDocument()
     })
 
-    it('should have object-cover class', () => {
+    it('should have object-cover, object-center, h-auto, w-auto classes', () => {
       const { container } = render(<ParallaxImage img={mockImage} alt="Test" />)
       const image = container.querySelector('img')
-      expect(image).toHaveClass('object-cover', 'object-center', 'h-full')
+      expect(image).toHaveClass(
+        'object-cover',
+        'object-center',
+        'h-auto',
+        'w-auto'
+      )
     })
 
     it('should render with correct src from StaticImageData', () => {

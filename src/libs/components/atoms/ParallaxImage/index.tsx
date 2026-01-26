@@ -35,7 +35,8 @@ export const ParallaxImage = ({
           src={img}
           alt={alt}
           quality={75}
-          className="object-cover object-center h-full"
+          fill
+          className="object-cover object-center h-auto w-auto"
         />
       </motion.div>
     </div>
