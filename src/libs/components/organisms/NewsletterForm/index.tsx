@@ -16,10 +16,16 @@ export const NewsletterForm = () => {
   const {
     handleSubmit,
     register,
-    error: { isError, errorMessage }
+    error: { isError, errorMessage },
+    formText: {
+      form: { email, submitButton, termsAccepted },
+      subTitle,
+      title
+    }
   } = useNewsletterForm()
+
   return (
-    <section className="bg-gray-50 relative">
+    <section className="bg-gray-100 relative">
       <Container
         className={clsx(
           'flex items-center justify-between flex-wrap content-center z-10 relative py-20',
@@ -34,11 +40,7 @@ export const NewsletterForm = () => {
             'lg:w-7/12 lg:gap-6'
           )}
         >
-          <Title
-            align="left"
-            title="Suscríbete a nuestro newsletter"
-            subTitle="Entérate de todas las novedades"
-          />
+          <Title align="left" title={title} subTitle={subTitle} />
           <form
             onSubmit={handleSubmit}
             className={clsx(
@@ -48,23 +50,23 @@ export const NewsletterForm = () => {
           >
             <InputField
               type="email"
-              label="Correo electrónico:"
+              label={email.label}
               errorMessage={errorMessage}
               variant={isError ? 'error' : 'default'}
               className="w-full"
               helperText={
                 <div className="gap-1">
-                  Al suscribirte aceptas, nuestra{' '}
+                  {termsAccepted.disclaimer}{' '}
                   <LinkButton
                     variant="text"
                     size="small"
                     href="/privacy-policy"
                   >
-                    política de privacidad.
+                    {termsAccepted.textPolicy}
                   </LinkButton>
                 </div>
               }
-              {...register('email')}
+              {...register(email.fieldName)}
             />
             <Button
               type="submit"
@@ -72,7 +74,7 @@ export const NewsletterForm = () => {
               size="medium"
               className="mt-6"
             >
-              Suscríbete
+              {submitButton}
             </Button>
           </form>
         </section>
