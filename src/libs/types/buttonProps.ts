@@ -10,6 +10,7 @@ export interface ButtonBaseProps {
   variant?: 'primary' | 'secondary' | 'text'
   size?: 'small' | 'medium' | 'large'
   icon?: IconName
+  loading?: boolean
 }
 
 export interface ButtonProps

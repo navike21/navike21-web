@@ -13,15 +13,18 @@ const meta = {
   },
   argTypes: {
     variant: {
-      control: { type: 'radio' },
-      options: ['primary', 'secondary']
+      control: { type: 'select' },
+      options: ['primary', 'secondary', 'text']
     },
     size: {
-      control: { type: 'radio' },
+      control: { type: 'select' },
       options: ['small', 'medium', 'large']
     },
     icon: {
       control: { type: 'text' }
+    },
+    loading: {
+      control: { type: 'boolean' }
     }
   }
 } satisfies Meta<typeof Button>
@@ -65,5 +68,39 @@ export const Disabled: Story = {
   args: {
     disabled: true,
     children: 'Disabled'
+  }
+}
+
+export const Loading: Story = {
+  args: {
+    loading: true,
+    children: 'Loading'
+  }
+}
+
+export const LoadingWithIcon: Story = {
+  tags: ['important'],
+  decorators: [
+    Story => (
+      <div className="flex flex-col gap-4">
+        <Story />
+        <span className="text-xs text-gray-700">
+          (Icon is hidden when loading is true to avoid confusion)
+        </span>
+      </div>
+    )
+  ],
+  args: {
+    loading: true,
+    icon: 'RiHomeLine',
+    children: 'Loading with icon'
+  },
+  render: args => <Button {...args}>Loading with icon</Button>
+}
+
+export const TextVariant: Story = {
+  args: {
+    variant: 'text',
+    children: 'Text Button'
   }
 }

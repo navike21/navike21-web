@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { useId, useMemo } from 'react'
 
-interface SpinnerProps {
+export interface SpinnerProps {
   size?: 'small' | 'medium' | 'large'
   variant?: 'default' | 'white' | 'gradient'
 }
