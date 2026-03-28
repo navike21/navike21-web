@@ -236,7 +236,7 @@ describe('InputField', () => {
   it('adds aria-describedby when helperText is provided', () => {
     render(<InputField helperText="Helper text" placeholder="Test" />)
     const input = screen.getByPlaceholderText('Test')
-    expect(input).toHaveAttribute('aria-describedby', `${input.id}-helper`)
+    expect(input).toHaveAttribute('aria-describedby', `${input.id}-helper-text`)
   })
 
   it('adds role alert and aria-live to helperText when variant is error', () => {

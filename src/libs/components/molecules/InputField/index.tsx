@@ -87,7 +87,7 @@ export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
           )}
           disabled={disabled || loading}
           type={typeField}
-          aria-describedby={helperText ? `${idField}-helper` : undefined}
+          aria-describedby={helperText ? `${idField}-helper-text` : undefined}
         />
         {type === 'password' && (
           <button

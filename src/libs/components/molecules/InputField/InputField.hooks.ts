@@ -2,8 +2,9 @@ import clsx from 'clsx'
 import { useCallback, useId, useState } from 'react'
 import type { InputFieldProps, TypeInput } from './InputField.types'
 
-export const useInputField = ({ type = 'text' }: InputFieldProps) => {
-  const ID_FIELD = useId()
+export const useInputField = ({ type = 'text', name }: InputFieldProps) => {
+  const generatedId = useId()
+  const ID_FIELD = name || generatedId
 
   const [showPassword, setShowPassword] = useState(false)
 

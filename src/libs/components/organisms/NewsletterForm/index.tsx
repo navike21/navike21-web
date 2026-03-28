@@ -1,6 +1,6 @@
 'use client'
 
-import imageNewsletter from '@Assets/background/top-view-it-developers-discussing-with-point-website-coding-system-infobahn_31965-591515.jpg'
+import imageNewsletter from '@Assets/background/colorful-abstract-wave-lines-flowing-horizontally-white-background-ideal-technology-music-science-digital-world-ai-generative_974206-292.jpg'
 import {
   Button,
   Container,
