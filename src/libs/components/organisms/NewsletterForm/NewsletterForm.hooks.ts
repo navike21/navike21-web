@@ -4,6 +4,7 @@ import { newsletterFormSchema } from './NewsletterForm.schema'
 import type { NewsletterFormData } from './NewsletterForm.types'
 import { newsletterForm } from '@I18n/common/newsletterForm'
 import { ESP } from '@Constants/languages'
+import { subscriberService } from '@Services/subscriber.service'
 
 export const useNewsletterForm = () => {
   const {
@@ -19,9 +20,20 @@ export const useNewsletterForm = () => {
 
   const { form, subTitle, title } = newsletterForm[ESP]
 
-  const onSubmit: SubmitHandler<NewsletterFormData> = async () => {
-    await new Promise(resolve => setTimeout(resolve, 10000))
-    reset()
+  const onSubmit: SubmitHandler<NewsletterFormData> = async ({
+    firstName,
+    lastName,
+    email
+  }) => {
+    const response = await subscriberService.subscribe({
+      firstName,
+      lastName,
+      contactInformation: { email }
+    })
+
+    if (response.success) {
+      reset()
+    }
   }
 
   const ERROR_EMAIL_MESSAGES = errors[form.email.fieldName]?.message

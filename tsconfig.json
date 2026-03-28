@@ -42,6 +42,12 @@
       ],
       "@Views/*": [
         "./src/views/*"
+      ],
+      "@Config/*": [
+        "./src/libs/config/*"
+      ],
+      "@Services/*": [
+        "./src/libs/services/*"
       ]
     }
   },

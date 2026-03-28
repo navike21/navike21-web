@@ -73,6 +73,8 @@ export default defineConfig({
       '@Types': path.resolve(__dirname, './src/libs/types'),
       '@Helpers': path.resolve(__dirname, './src/libs/helpers'),
       '@Views': path.resolve(__dirname, './src/views'),
+      '@Config': path.resolve(__dirname, './src/libs/config'),
+      '@Services': path.resolve(__dirname, './src/libs/services'),
     }
   }
 })
