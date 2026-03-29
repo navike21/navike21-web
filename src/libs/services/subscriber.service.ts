@@ -1,4 +1,4 @@
-import { API_BASE_URL, SERVER_API_BASE_URL, API_ENDPOINTS } from '@Config/api'
+import { SERVER_API_BASE_URL, API_ENDPOINTS } from '@Config/api'
 import type {
   ApiResponse,
   SubscriberRequest,
@@ -8,12 +8,12 @@ import type {
 export const subscriberService = {
   /**
    * Subscribe a new user to the newsletter.
-   * Uses NEXT_PUBLIC_API_URL — safe to call from Client Components.
+   * Calls the local Next.js proxy route to avoid CORS — safe from Client Components.
    */
   async subscribe(
     data: SubscriberRequest
   ): Promise<ApiResponse<SubscriberSchema>> {
-    const response = await fetch(`${API_BASE_URL}${API_ENDPOINTS.SUBSCRIBER}`, {
+    const response = await fetch(`/api${API_ENDPOINTS.SUBSCRIBER_REGISTER}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)

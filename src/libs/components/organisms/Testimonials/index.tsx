@@ -1,4 +1,4 @@
-import imageTest from '@Assets/images/technology-expert-developing-userfriendly-software-by-understanding-requirements-endusers.jpg'
+import imageTest from '@Assets/background/technology-expert-developing-userfriendly-software-by-understanding-requirements-endusers.jpg'
 import { uuid } from '@Helpers/uuid'
 import { testimonialsList } from '@I18n/common/testimonials'
 import { ESP } from '@Constants/languages'

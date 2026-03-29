@@ -1,4 +1,4 @@
-import heroImage from '@Assets/images/technology-expert-developing-userfriendly-software-by-understanding-requirements-endusers.jpg'
+import heroImage from '@Assets/background/technology-expert-developing-userfriendly-software-by-understanding-requirements-endusers.jpg'
 import { Container, ItemLinkCard, LinkButton, Title } from '@Components/atoms'
 import { ItemHeroSection } from '@Components/molecules'
 import clsx from 'clsx'

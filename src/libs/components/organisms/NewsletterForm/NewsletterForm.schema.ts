@@ -25,5 +25,8 @@ export const newsletterFormSchema = z.object({
     .min(1, EMAIL_REQUIRED)
     .refine(value => EMAIL_REGEX.test(value), EMAIL_INVALID),
 
-  termsAccepted: z.boolean().refine(val => val === true, TERMS_REQUIRED)
+  termsAccepted: z
+    .boolean()
+    .refine(val => val === true, TERMS_REQUIRED)
+    .optional()
 })

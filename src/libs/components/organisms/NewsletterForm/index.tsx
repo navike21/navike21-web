@@ -1,6 +1,6 @@
 'use client'
 
-import imageNewsletter from '@Assets/background/colorful-abstract-wave-lines-flowing-horizontally-white-background-ideal-technology-music-science-digital-world-ai-generative_974206-292.jpg'
+import imageNewsletter from '@Assets/background/man-using-laptop-night-top-view-web-banner-with-copy-space.jpg'
 import {
   Button,
   Container,
