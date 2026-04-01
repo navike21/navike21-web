@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import heroImage from '@Assets/background/abstract-shiny-blue-presentation-background_1017-18747.jpg'
+import heroImage from '@Assets/background/modern-office-meeting-room-with-collaborative-atmosphere_1294860-39186.jpg'
 
 import { ItemHeroSection } from '.'
 
