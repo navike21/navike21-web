@@ -1,5 +1,6 @@
 export * from './Avatar'
 export * from './Button'
+export * from './Chip'
 export * from './Card'
 export * from './clientsLogo'
 export * from './Container'
