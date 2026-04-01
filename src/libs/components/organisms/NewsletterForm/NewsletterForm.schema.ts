@@ -13,12 +13,14 @@ export const newsletterFormSchema = z.object({
   firstName: z
     .string()
     .min(3, FIRST_NAME_MIN_LENGTH)
-    .regex(/^\p{L}+$/u, LETTERS_ONLY),
+    .regex(/^\p{L}+$/u, LETTERS_ONLY)
+    .optional(),
 
   lastName: z
     .string()
     .min(2, LAST_NAME_MIN_LENGTH)
-    .regex(/^\p{L}+$/u, LETTERS_ONLY),
+    .regex(/^\p{L}+$/u, LETTERS_ONLY)
+    .optional(),
 
   email: z
     .string()
