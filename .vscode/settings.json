@@ -30,10 +30,7 @@
   //   "editor.defaultFormatter": "esbenp.prettier-vscode"
   // },
   "tailwindCSS.experimental.classRegex": [
-    [
-      "clsx\\(([^)]*)\\)",
-      "[\"'`]([^\"'`]*).*?[\"'`]"
-    ]
+    ["clsx\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]
   ],
   "cSpell.words": [
     "adipiscing",
