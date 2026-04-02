@@ -29,7 +29,7 @@ describe('useLenisScrollLock', () => {
     }
 
     vi.mocked(lenisReact.useLenis).mockReturnValue(
-      lenis as ReturnType<typeof lenisReact.useLenis>
+      lenis as unknown as ReturnType<typeof lenisReact.useLenis>
     )
 
     const { rerender } = renderHook(
@@ -56,7 +56,7 @@ describe('useLenisScrollLock', () => {
     }
 
     vi.mocked(lenisReact.useLenis).mockReturnValue(
-      lenis as ReturnType<typeof lenisReact.useLenis>
+      lenis as unknown as ReturnType<typeof lenisReact.useLenis>
     )
 
     const firstLock = renderHook(

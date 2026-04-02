@@ -26,14 +26,6 @@ function useLayoutScrollWithNullLenis() {
   return hook
 }
 
-function renderLayoutScrollWithLenisRef(lenisRefValue: LenisRef) {
-  return renderHook(() => {
-    const hook = useLayoutScroll()
-    hook.lenisRef.current = lenisRefValue
-    return hook
-  })
-}
-
 describe('useLayoutScroll', () => {
   beforeEach(() => {
     vi.mocked(HeaderContext.useHeaderContext).mockReturnValue({
