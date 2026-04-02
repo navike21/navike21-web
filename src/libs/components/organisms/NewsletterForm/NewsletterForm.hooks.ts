@@ -1,10 +1,9 @@
-import { useForm, type SubmitHandler } from 'react-hook-form'
+import { useForm, useWatch, type SubmitHandler } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { newsletterFormSchema } from './NewsletterForm.schema'
 import type { NewsletterFormData } from './NewsletterForm.types'
 import { newsletterForm } from '@I18n/common/newsletterForm'
 import { ESP } from '@Constants/languages'
-import { subscriberService } from '@Services/subscriber.service'
 import { useState } from 'react'
 
 export const useNewsletterForm = () => {
@@ -14,7 +13,8 @@ export const useNewsletterForm = () => {
     formState: { errors, isSubmitting, isSubmitSuccessful },
     reset,
     trigger,
-    setValue
+    setValue,
+    control
   } = useForm<NewsletterFormData>({
     resolver: zodResolver(newsletterFormSchema)
   })
@@ -23,24 +23,13 @@ export const useNewsletterForm = () => {
 
   const { form, subTitle, title } = newsletterForm[ESP]
 
-  const onSubmit: SubmitHandler<NewsletterFormData> = async ({
-    firstName = '',
-    lastName = '',
-    email
-  }) => {
-    setIsOpenModal(true)
-    const response = await subscriberService.subscribe({
-      firstName,
-      lastName,
-      contactInformation: { email }
-    })
-
-    if (response.success) {
-      reset()
-    }
-  }
-
   const ERROR_EMAIL_MESSAGES = errors[form.email.fieldName]?.message
+
+  const emailValue = useWatch({ control, name: form.email.fieldName })
+
+  const onSubmit: SubmitHandler<NewsletterFormData> = async () => {
+    setIsOpenModal(true)
+  }
 
   const inputError = {
     isError: Boolean(errors[form.email.fieldName]),
@@ -49,6 +38,7 @@ export const useNewsletterForm = () => {
 
   const handleCloseModal = () => {
     setIsOpenModal(false)
+    reset()
   }
 
   return {
@@ -57,6 +47,7 @@ export const useNewsletterForm = () => {
     isSubmitting,
     isSubmitSuccessful,
     isOpenModal,
+    emailValue,
     handleSubmit: handleSubmit(onSubmit),
     handleCloseModal,
     register,

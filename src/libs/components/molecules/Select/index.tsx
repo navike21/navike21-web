@@ -576,7 +576,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
         ref={containerRef}
         tabIndex={-1}
         className={clsx(
-          'flex flex-col gap-1 border-0 p-0 m-0 min-w-0',
+          'relative flex flex-col gap-1 border-0 p-0 m-0 min-w-0',
           { 'cursor-not-allowed': disabled, 'pointer-events-none': loading },
           className
         )}

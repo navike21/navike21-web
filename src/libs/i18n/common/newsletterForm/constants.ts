@@ -12,6 +12,9 @@ export const EMAIL_FIELD = 'email'
 export const EMAIL_REQUIRED = 'EMAIL_REQUIRED'
 export const EMAIL_INVALID = 'EMAIL_INVALID'
 
+export const SEX_FIELD = 'sex'
+export const SEX_REQUIRED = 'SEX_REQUIRED'
+
 export const TERMS_ACCEPTED_FIELD = 'termsAccepted'
 export const TERMS_REQUIRED = 'TERMS_REQUIRED'
 

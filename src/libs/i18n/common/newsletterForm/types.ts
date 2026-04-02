@@ -12,6 +12,8 @@ import type {
   LAST_NAME_MIN_LENGTH,
   LAST_NAME_REQUIRED,
   LETTERS_ONLY,
+  SEX_FIELD,
+  SEX_REQUIRED,
   TERMS_ACCEPTED_FIELD
 } from './constants'
 
@@ -32,6 +34,8 @@ export type NewsletterFormFields = {
     typeof EMAIL_FIELD,
     typeof EMAIL_REQUIRED | typeof EMAIL_INVALID
   >
+  [SEX_FIELD]: BaseFormField<typeof SEX_FIELD, typeof SEX_REQUIRED>
+
   [TERMS_ACCEPTED_FIELD]: {
     fieldName: typeof TERMS_ACCEPTED_FIELD
     disclaimer: string

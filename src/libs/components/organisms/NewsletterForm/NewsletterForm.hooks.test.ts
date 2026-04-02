@@ -2,12 +2,6 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 import { renderHook, act } from '@testing-library/react'
 import { useNewsletterForm } from './NewsletterForm.hooks'
 
-vi.mock('@Services/subscriber.service', () => ({
-  subscriberService: {
-    subscribe: vi.fn()
-  }
-}))
-
 vi.mock('@Constants/languages', () => ({
   ESP: 'es'
 }))
@@ -52,21 +46,13 @@ describe('useNewsletterForm', () => {
     expect(result.current.formText.title).toBe('Newsletter Title')
   })
 
-  it('calls subscriberService.subscribe with correct payload on submit', async () => {
-    const { subscriberService } = await import('@Services/subscriber.service')
-    vi.mocked(subscriberService.subscribe).mockResolvedValue({
-      success: true,
-      statusCode: 201,
-      message: 'OK'
-    })
-
+  it('opens the modal on submit', async () => {
     const { result } = renderHook(() => useNewsletterForm())
 
     await act(async () => {
       result.current.setValue('firstName', 'María')
       result.current.setValue('lastName', 'Gonzales')
       result.current.setValue('email', 'maria@example.com')
-      result.current.setValue('termsAccepted', true)
     })
 
     await act(async () => {
@@ -75,31 +61,6 @@ describe('useNewsletterForm', () => {
       } as unknown as React.FormEvent)
     })
 
-    expect(subscriberService.subscribe).toHaveBeenCalledWith({
-      firstName: 'María',
-      lastName: 'Gonzales',
-      contactInformation: { email: 'maria@example.com' }
-    })
-  })
-
-  it('does not reset the form when the API returns success: false', async () => {
-    const { subscriberService } = await import('@Services/subscriber.service')
-    vi.mocked(subscriberService.subscribe).mockResolvedValue({
-      success: false,
-      statusCode: 400,
-      message: 'Bad Request'
-    })
-
-    const { result } = renderHook(() => useNewsletterForm())
-
-    await act(async () => {
-      result.current.setValue('firstName', 'María')
-      result.current.setValue('lastName', 'Gonzales')
-      result.current.setValue('email', 'maria@example.com')
-      result.current.setValue('termsAccepted', true)
-    })
-
-    // isSubmitSuccessful remains false when success: false
-    expect(result.current.isSubmitSuccessful).toBe(false)
+    expect(result.current.isOpenModal).toBe(true)
   })
 })

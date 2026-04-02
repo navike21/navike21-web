@@ -12,6 +12,8 @@ import {
   LAST_NAME_MIN_LENGTH,
   LAST_NAME_REQUIRED,
   LETTERS_ONLY,
+  SEX_FIELD,
+  SEX_REQUIRED,
   TERMS_ACCEPTED_FIELD
 } from '../constants'
 import type { BaseFormSchema, NewsletterFormFields } from '../types'
@@ -42,6 +44,12 @@ export const newsletterFormEs = {
       fieldName: EMAIL_FIELD,
       [EMAIL_REQUIRED]: 'El correo electrónico es obligatorio',
       [EMAIL_INVALID]: 'El correo electrónico es inválido'
+    },
+    [SEX_FIELD]: {
+      label: 'Sexo:',
+      placeholder: 'Selecciona tu sexo',
+      fieldName: SEX_FIELD,
+      [SEX_REQUIRED]: 'Debe seleccionar un sexo'
     },
     [TERMS_ACCEPTED_FIELD]: {
       fieldName: TERMS_ACCEPTED_FIELD,

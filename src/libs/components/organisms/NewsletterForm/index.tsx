@@ -1,6 +1,5 @@
 'use client'
 
-import imageNewsletter from '@Assets/background/man-using-laptop-night-top-view-web-banner-with-copy-space.jpg'
 import {
   Button,
   Container,
@@ -8,9 +7,11 @@ import {
   ParallaxImage,
   Title
 } from '@Components/atoms'
+import imageNewsletter from '@Assets/background/man-using-laptop-night-top-view-web-banner-with-copy-space.jpg'
 import { useNewsletterForm } from './NewsletterForm.hooks'
-import { InputField, Modal, Select } from '@Components/molecules'
+import { InputField } from '@Components/molecules'
 import clsx from 'clsx'
+import { MoreDataModal } from './components/MoreDataModal'
 
 export const NewsletterForm = () => {
   const {
@@ -23,55 +24,12 @@ export const NewsletterForm = () => {
       title
     },
     isOpenModal,
+    emailValue,
     handleCloseModal
   } = useNewsletterForm()
 
   return (
     <>
-      <Modal
-        isOpen={isOpenModal}
-        onClose={handleCloseModal}
-        title="Queremos conocerte un poco más."
-        image={imageNewsletter}
-        size="large"
-        animation="slide"
-      >
-        <div className="flex flex-col gap-6">
-          <p className={clsx('text-gray-700 text-xs leading-relaxed')}>
-            Para ofrecerte contenido relevante y personalizado, nos encantaría
-            conocer un poco más sobre ti.
-          </p>
-          <div className={clsx('w-full grid col-span-1 gap-3')}>
-            <InputField label="Nombres:" />
-            <InputField label="Apellidos:" />
-            <InputField label="Correo electrónico:" type="email" />
-            <Select
-              label="Sexo:"
-              options={[
-                {
-                  label: 'Masculino',
-                  value: 'male'
-                },
-                {
-                  label: 'Femenino',
-                  value: 'female'
-                }
-              ]}
-              placeholder="Selecciona un sexo"
-            />
-          </div>
-          <div className={clsx('w-full flex justify-end')}>
-            <Button
-              variant="primary"
-              size="medium"
-              type="submit"
-              icon="RiArrowRightLine"
-            >
-              Suscribirme
-            </Button>
-          </div>
-        </div>
-      </Modal>
       <section className="bg-gray-100 relative">
         <Container
           className={clsx(
@@ -138,6 +96,11 @@ export const NewsletterForm = () => {
           alt="Newsletter background image"
         />
       </section>
+      <MoreDataModal
+        isOpenModal={isOpenModal}
+        emailValue={emailValue}
+        handleCloseModal={handleCloseModal}
+      />
     </>
   )
 }
