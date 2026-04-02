@@ -394,6 +394,7 @@ export const Modal = ({
               <button
                 type="button"
                 onClick={handleClose}
+                aria-label="Cerrar modal"
                 className={clsx(
                   'absolute cursor-pointer top-3 right-3 text-slate-500 transition-all ease-in-out z-20',
                   'hover:text-slate-700 hover:bg-slate-100 outline-none ',

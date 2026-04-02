@@ -4,28 +4,24 @@ import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { Modal, type Animation } from '.'
 import * as lenisLockHook from '@Hooks/useLenisScrollLock'
 
+type MockMotionProps = Record<string, unknown> & {
+  className?: string
+  role?: string
+  'aria-label'?: string
+  children?: React.ReactNode
+}
+
 const { animatePresenceMock, motionButtonMock, motionDivMock } = vi.hoisted(
   () => ({
     animatePresenceMock: vi.fn(
-      ({ children }: React.PropsWithChildren<Record<string, unknown>>) =>
-        children ?? null
+      ({ children }: MockMotionProps) => children ?? null
     ),
-    motionButtonMock: vi.fn(
-      ({
-        children,
-        ...props
-      }: React.PropsWithChildren<Record<string, unknown>>) => (
-        <button {...props}>{children ?? null}</button>
-      )
-    ),
-    motionDivMock: vi.fn(
-      ({
-        children,
-        ...props
-      }: React.PropsWithChildren<Record<string, unknown>>) => (
-        <div {...props}>{children ?? null}</div>
-      )
-    )
+    motionButtonMock: vi.fn(({ children, ...props }: MockMotionProps) => (
+      <button {...props}>{children ?? null}</button>
+    )),
+    motionDivMock: vi.fn(({ children, ...props }: MockMotionProps) => (
+      <div {...props}>{children ?? null}</div>
+    ))
   })
 )
 
@@ -45,8 +41,8 @@ describe('Modal', () => {
   const getContainerProps = () =>
     motionDivMock.mock.calls.find(
       ([props]) =>
-        typeof props.className === 'string' &&
-        props.className.includes('fixed inset-0 z-50 flex')
+        typeof props['className'] === 'string' &&
+        props['className'].includes('fixed inset-0 z-50 flex')
     )?.[0] as {
       variants?: {
         exit?: {
@@ -59,7 +55,7 @@ describe('Modal', () => {
 
   const getPanelProps = () =>
     motionDivMock.mock.calls.find(
-      ([props]) => props.role === 'dialog'
+      ([props]) => props['role'] === 'dialog'
     )?.[0] as {
       variants?: {
         hidden?: {
