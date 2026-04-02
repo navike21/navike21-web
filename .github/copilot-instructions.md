@@ -178,8 +178,15 @@ Try/catch policy:
 
 - Local: `pnpm dev` (Turbopack), `pnpm build`, `pnpm start`, `pnpm validate` (typecheck+lint), `pnpm format`.
 - Tests: Vitest + Testing Library (`pnpm test`, `pnpm test:coverage`). Environment/mocks live in `vitest.setup.ts` (e.g., `IntersectionObserver`, `ResizeObserver`, `matchMedia`).
-- Coverage: minimum thresholds are 90% (target 100% when feasible) and several directories are excluded (see `vitest.config.ts`).
+- Coverage: minimum thresholds are 90% at project level (target 100% when feasible) and several directories are excluded (see `vitest.config.ts`).
 - CI (GitHub Actions) runs `typecheck`, `lint`, `format:check`; release also runs `build:ci` (see `.github/workflows/*.yml`).
+
+## Storybook patterns
+
+- Story files should use `Meta` + `StoryObj` with `satisfies Meta<typeof Component>` when possible.
+- Prefer `args` for default values and `render` only when the story needs local state or custom layout.
+- When a story has multiple variants that should show different source snippets, set `parameters.docs.source.code` per story so Docs displays the correct JSX.
+- Keep story titles grouped by layer, for example `Atoms/Button`, `Molecules/Modal`, `Organisms/NewsletterForm`.
 
 ## VS Code Git workflow (GitLens-first)
 
