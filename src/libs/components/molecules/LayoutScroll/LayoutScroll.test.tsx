@@ -7,6 +7,7 @@ import { ReactLenis } from 'lenis/react'
 import type { PropsWithChildren } from 'react'
 
 vi.mock('lenis/react', () => ({
+  useLenis: vi.fn(),
   ReactLenis: vi.fn(
     ({
       children,
