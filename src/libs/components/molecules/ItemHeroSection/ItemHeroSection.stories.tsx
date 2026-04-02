@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 import heroImage from '@Assets/background/modern-office-meeting-room-with-collaborative-atmosphere_1294860-39186.jpg'
 

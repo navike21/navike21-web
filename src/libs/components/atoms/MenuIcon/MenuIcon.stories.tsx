@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
 import { HeaderProvider } from '@Context/index'
 import { useHeaderContext } from '@Context/headerContext.hooks'
