@@ -5,7 +5,7 @@ import {
   EMAIL_REGEX,
   NAME_REGEX
 } from '@Components/organisms/NewsletterForm/NewsletterForm.constants'
-import { subscriberService } from '@Services/subscriber.service'
+import { subscriberService } from '@Services/subscriber/subscriber.service'
 import clsx from 'clsx'
 import { useEffect } from 'react'
 import { useForm, type SubmitHandler } from 'react-hook-form'

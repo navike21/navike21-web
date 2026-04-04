@@ -152,6 +152,7 @@ export const useSelectHook = (
 
   const fireNativeChange = useCallback(() => {
     const select = internalRef.current
+    /* v8 ignore next */
     if (!select) return
     select.dispatchEvent(new Event('change', { bubbles: true }))
   }, [])
