@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { Clients } from '.'
+
+import { Clients } from './Clients'
 
 vi.mock('@Constants/clients', () => ({
   CLIENTS: [
@@ -68,7 +69,7 @@ describe('Clients component', () => {
     it('should render the subtitle', () => {
       render(<Clients />)
       expect(
-        screen.getByText('Así como ellos que confían en nosotros')
+        screen.getByText('Así como ellos confían en nosotros')
       ).toBeInTheDocument()
     })
 
@@ -104,9 +105,7 @@ describe('Clients component', () => {
 
     it('should render subtitle with correct classes', () => {
       render(<Clients />)
-      const subtitle = screen.getByText(
-        'Así como ellos que confían en nosotros'
-      )
+      const subtitle = screen.getByText('Así como ellos confían en nosotros')
       expect(subtitle).toHaveClass(
         'text-center',
         'text-xl',
@@ -266,7 +265,7 @@ describe('Clients component', () => {
       expect(headings).toHaveLength(2)
       expect(headings[0]).toHaveTextContent('¿Te sumas?')
       expect(headings[1]).toHaveTextContent(
-        'Así como ellos que confían en nosotros'
+        'Así como ellos confían en nosotros'
       )
     })
 

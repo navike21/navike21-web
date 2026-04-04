@@ -1,12 +1,15 @@
 import { render } from '@testing-library/react'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { LayoutScroll } from '.'
+
+import { LayoutScroll } from './LayoutScroll'
+
 import * as HeaderContext from '@Context/headerContext.hooks'
 import * as motion from 'motion'
 import { ReactLenis } from 'lenis/react'
 import type { PropsWithChildren } from 'react'
 
 vi.mock('lenis/react', () => ({
+  useLenis: vi.fn(),
   ReactLenis: vi.fn(
     ({
       children,

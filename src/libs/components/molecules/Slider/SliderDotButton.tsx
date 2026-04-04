@@ -1,6 +1,6 @@
-import { IconComponent } from '@Components/atoms'
+import { IconComponent } from '@Components/atoms/IconComponent/IconComponent'
 import clsx from 'clsx'
-import type { DotButtonPropType } from './slider.types'
+import type { DotButtonPropType } from './Slider.types'
 
 export const DotButton = ({ isSelected, ...restProps }: DotButtonPropType) => (
   <button

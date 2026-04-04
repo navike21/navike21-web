@@ -1,5 +1,8 @@
 {
   "compilerOptions": {
+    "types": [
+      "node"
+    ],
     "target": "ES2022",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": false,
@@ -42,6 +45,12 @@
       ],
       "@Views/*": [
         "./src/views/*"
+      ],
+      "@Config/*": [
+        "./src/libs/config/*"
+      ],
+      "@Services/*": [
+        "./src/libs/services/*"
       ]
     }
   },

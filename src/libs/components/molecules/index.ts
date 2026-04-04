@@ -1,6 +1,0 @@
-export * from './Footer'
-export * from './Header'
-export * from './ItemHeroSection'
-export * from './LayoutScroll'
-export * from './Menu'
-export * from './Slider'
