@@ -1,7 +1,9 @@
-import { render, screen, fireEvent } from '@testing-library/react'
+import { render, screen, fireEvent, renderHook } from '@testing-library/react'
 import { createRef, useState } from 'react'
+import type { RefObject } from 'react'
 import { describe, it, expect, vi } from 'vitest'
 import { Checkbox } from './index'
+import { useCheckbox } from './Checkbox.hooks'
 
 describe('Checkbox', () => {
   const onChange = vi.fn()
@@ -111,5 +113,23 @@ describe('Checkbox', () => {
     render(<Checkbox error />)
     const button = screen.getByRole('button')
     expect(button).toHaveClass('ring-red-500')
+  })
+
+  it('should not throw when ref current is null (defensive guard branch)', () => {
+    // Arrange: a ref never attached to a DOM element so current stays null
+    const nullRef = { current: null } as RefObject<HTMLInputElement>
+
+    const { result, rerender } = renderHook(
+      ({ indeterminate }: { indeterminate?: boolean }) =>
+        useCheckbox({ indeterminate }, nullRef),
+      { initialProps: { indeterminate: false } }
+    )
+
+    // Act: trigger useEffect with indeterminate=true while current is null
+    rerender({ indeterminate: true })
+
+    // Assert: hook still returns the expected shape — no error thrown
+    expect(result.current.idField).toBeDefined()
+    expect(result.current.resolvedRef).toBe(nullRef)
   })
 })

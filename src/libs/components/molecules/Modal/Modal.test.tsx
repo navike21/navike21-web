@@ -3,6 +3,13 @@ import { renderToString } from 'react-dom/server'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { Modal, type Animation } from '.'
 import * as lenisLockHook from '@Hooks/useLenisScrollLock'
+import {
+  getAlignmentClasses,
+  getSizeClasses,
+  getDirectionalOffset,
+  getPanelVariants
+} from './useModal'
+import type { Position, Size } from './Modal.types'
 
 type MockMotionProps = Record<string, unknown> & {
   className?: string
@@ -345,5 +352,71 @@ describe('Modal', () => {
     })
 
     expect(lenisLockHook.useLenisScrollLock).toHaveBeenLastCalledWith(false)
+  })
+})
+
+describe('useModal utility functions', () => {
+  describe('getAlignmentClasses', () => {
+    it.each([
+      ['top', 'items-start justify-center'],
+      ['bottom', 'items-end justify-center'],
+      ['left', 'items-center justify-start'],
+      ['right', 'items-center justify-end']
+    ] as [Position, string][])(
+      'should return correct alignment classes for position %s',
+      (position, expected) => {
+        // Arrange / Act / Assert
+        expect(getAlignmentClasses(position)).toBe(expected)
+      }
+    )
+  })
+
+  describe('getSizeClasses', () => {
+    it.each([
+      ['small', 'max-w-sm'],
+      ['large', 'max-w-5xl']
+    ] as [Size, string][])(
+      'should return correct size class for size %s',
+      (size, expected) => {
+        // Arrange / Act / Assert
+        expect(getSizeClasses(size)).toBe(expected)
+      }
+    )
+
+    it('should return full-screen classes for full size', () => {
+      // Arrange / Act / Assert
+      expect(getSizeClasses('full')).toBe(
+        'max-w-none w-full h-full max-h-none rounded-[2rem]'
+      )
+    })
+  })
+
+  describe('getDirectionalOffset', () => {
+    it.each([
+      ['top', { x: 0, y: -32 }],
+      ['bottom', { x: 0, y: 32 }],
+      ['left', { x: -32, y: 0 }],
+      ['right', { x: 32, y: 0 }]
+    ] as [Position, { x: number; y: number }][])(
+      'should return correct directional offset for position %s',
+      (position, expected) => {
+        // Arrange / Act / Assert
+        expect(getDirectionalOffset(position)).toEqual(expected)
+      }
+    )
+  })
+
+  describe('getPanelVariants', () => {
+    it('should return slide-up variants for an unrecognised animation type (fallback branch)', () => {
+      // Arrange: cast to Animation to reach the default fallthrough in getPanelVariants
+      const unknownAnimation = 'unknown' as Animation
+
+      // Act
+      const variants = getPanelVariants(unknownAnimation, 'center')
+
+      // Assert
+      expect(variants.hidden).toMatchObject({ opacity: 0, y: 12 })
+      expect(variants.visible).toMatchObject({ opacity: 1, y: 0 })
+    })
   })
 })

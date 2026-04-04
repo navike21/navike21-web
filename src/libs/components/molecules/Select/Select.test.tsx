@@ -1,7 +1,15 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react'
+import {
+  render,
+  screen,
+  fireEvent,
+  waitFor,
+  renderHook,
+  act
+} from '@testing-library/react'
 import React, { createRef } from 'react'
 import { describe, it, expect, vi } from 'vitest'
 import { Select } from './index'
+import { useSelectHook } from './Select.hooks'
 import type { SelectOptionItem } from './Select.types'
 
 // Mock atoms to keep tests focused on Select behavior
@@ -27,10 +35,7 @@ vi.mock('@Components/atoms', () => ({
   }: {
     children: React.ReactNode
     variant?: string
-  }) => <div role={variant === 'error' ? 'alert' : undefined}>{children}</div>
-}))
-
-vi.mock('@Components/atoms/Chip', () => ({
+  }) => <div role={variant === 'error' ? 'alert' : undefined}>{children}</div>,
   Chip: ({
     children,
     icon,
@@ -650,5 +655,48 @@ describe('Select', () => {
       target: { value: 'zzz' }
     })
     expect(screen.getByText('No options found')).toBeInTheDocument()
+  })
+
+  it('should navigate to previous option on ArrowUp when dropdown is open (prev > 0 branch)', async () => {
+    // Arrange
+    const threeOptions = options.slice(0, 3)
+    render(<Select options={threeOptions} />)
+
+    // Open dropdown and flush state before firing keyboard events
+    await act(async () => {
+      fireEvent.click(screen.getByRole('combobox'))
+    })
+
+    const combobox = screen.getByRole('combobox')
+
+    // Move down twice so focusedOptionIndex reaches 1 (> 0)
+    // Functional setState ensures correct prev chaining even within a single act
+    await act(async () => {
+      fireEvent.keyDown(combobox, { key: 'ArrowDown' })
+      fireEvent.keyDown(combobox, { key: 'ArrowDown' })
+    })
+
+    // Act: ArrowUp from index 1 → 0 (covers the prev > 0 ? prev - 1 branch)
+    await act(async () => {
+      fireEvent.keyDown(combobox, { key: 'ArrowUp' })
+    })
+
+    // Assert: dropdown remains open
+    expect(screen.getByRole('listbox')).toBeInTheDocument()
+  })
+})
+
+describe('useSelectHook', () => {
+  it('should handle undefined multiple prop via nullish coalescing fallback', () => {
+    // Arrange: call hook directly with multiple=undefined to exercise the ?? branch
+    const { result } = renderHook(() =>
+      useSelectHook({ options, multiple: undefined }, null)
+    )
+
+    // Assert: isMultipleWithChips is false when multiple is undefined (falls back to false)
+    expect(result.current.isMultipleWithChips).toBe(false)
+    // Assert: singleOption is undefined when no values are selected
+    expect(result.current.singleOption).toBeUndefined()
+    expect(result.current.singleLabel).toBe('')
   })
 })

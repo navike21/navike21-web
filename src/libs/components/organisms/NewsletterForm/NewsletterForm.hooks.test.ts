@@ -63,4 +63,32 @@ describe('useNewsletterForm', () => {
 
     expect(result.current.isOpenModal).toBe(true)
   })
+
+  it('should close the modal and reset the form when handleCloseModal is called', async () => {
+    // Arrange
+    const { result } = renderHook(() => useNewsletterForm())
+
+    await act(async () => {
+      result.current.setValue('firstName', 'María')
+      result.current.setValue('lastName', 'Gonzales')
+      result.current.setValue('email', 'maria@example.com')
+    })
+
+    await act(async () => {
+      await result.current.handleSubmit({
+        preventDefault: vi.fn()
+      } as unknown as React.FormEvent)
+    })
+
+    expect(result.current.isOpenModal).toBe(true)
+
+    // Act
+    await act(async () => {
+      result.current.handleCloseModal()
+    })
+
+    // Assert
+    expect(result.current.isOpenModal).toBe(false)
+    expect(result.current.emailValue ?? '').toBe('')
+  })
 })
