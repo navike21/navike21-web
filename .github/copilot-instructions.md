@@ -1,5 +1,11 @@
 # Copilot Instructions (Navike21 Web)
 
+> Additional scoped instructions live in `.github/instructions/`:
+>
+> - `typescript.instructions.md` — TypeScript standards & error handling (applied to `*.ts`, `*.tsx`)
+> - `testing.instructions.md` — Testing standards with Vitest & Testing Library (applied to `*.test.*`, `*.spec.*`)
+> - `storybook.instructions.md` — Storybook patterns (applied to `*.stories.*`)
+
 ## Commit & PR conventions (Conventional Commits)
 
 Language policy:
@@ -117,52 +123,6 @@ When multiple teams are working:
 - Prefer TS path aliases from `tsconfig.json`: `@Components`, `@Pages`, `@Context`, `@I18n`, `@Helpers`, `@Styles`, etc.
 - Global styles are under `src/libs/styles/**` and imported via `@Styles/globals.css` in `src/app/layout.tsx`.
 
-## TypeScript standards (no `any`)
-
-This is a Next.js + TypeScript + Tailwind project. Code must follow modern TS best practices.
-
-Hard rules:
-
-- Do NOT introduce `any` (including `any[]`, `Record<string, any>`, and `as any`).
-- Do NOT suggest or add `// @ts-ignore` or `// @ts-nocheck`.
-- Do NOT disable lint rules to allow unsafe typing.
-
-Preferred alternatives:
-
-- Use `unknown` instead of `any`, then narrow via type guards.
-- Prefer generics, discriminated unions, and `satisfies` for safer inference.
-- When dealing with untyped data (API/JSON), parse + validate and return typed results.
-- Use `type` imports (`import type { ... }`) where applicable.
-
-React/Next.js typing guidance:
-
-- Prefer explicit component prop types and avoid implicit `any` in callbacks.
-- When interacting with DOM APIs, type the element refs and events properly.
-- Keep server/client boundaries clear (App Router): avoid leaking server-only types into client components.
-
-Tailwind guidance:
-
-- Prefer Tailwind utility classes and existing tokens; avoid introducing ad-hoc styles.
-- Keep `className` composition typed and readable (e.g., `clsx`).
-
-## Logging & error handling
-
-Logging policy:
-
-- Do NOT leave `console.*` or `debugger` statements in committed code.
-- If you need diagnostics, prefer:
-  - returning a typed error result (or a safe fallback) and letting the UI render a friendly message, or
-  - throwing and relying on Next.js error boundaries where appropriate.
-
-Try/catch policy:
-
-- Avoid `try/catch` unless you can _meaningfully_ handle the error (recover, fallback, translate to user-safe message, or rethrow with context).
-- Never swallow errors silently: no empty `catch {}` blocks.
-- Treat caught errors as `unknown` and narrow before using:
-  - `catch (err: unknown) { ... }` (preferred), then narrow via type guards.
-  - For Promise chains, `.catch((err: unknown) => { ... })`.
-- If you cannot recover, rethrow (optionally wrap) and let a higher-level boundary handle it.
-
 ## State + cross-component behavior
 
 - Header/menu state is centralized in `src/libs/context/HeaderContext.tsx` and consumed via `useHeaderContext` (`src/libs/context/headerContext.hooks.ts`).
@@ -181,20 +141,16 @@ Try/catch policy:
 - Coverage: minimum thresholds are 90% at project level (target 100% when feasible) and several directories are excluded (see `vitest.config.ts`).
 - CI (GitHub Actions) runs `typecheck`, `lint`, `format:check`; release also runs `build:ci` (see `.github/workflows/*.yml`).
 
-## Storybook patterns
+## VS Code Git workflow (GitKraken-first)
 
-- Story files should use `Meta` + `StoryObj` with `satisfies Meta<typeof Component>` when possible.
-- Prefer `args` for default values and `render` only when the story needs local state or custom layout.
-- When a story has multiple variants that should show different source snippets, set `parameters.docs.source.code` per story so Docs displays the correct JSX.
-- Keep story titles grouped by layer, for example `Atoms/Button`, `Molecules/Modal`, `Organisms/NewsletterForm`.
+When operating from VS Code, prefer GitKraken MCP tools for all Git actions.
 
-## VS Code Git workflow (GitLens-first)
-
-When operating from VS Code, prefer GitLens for Git actions whenever possible.
-
-- Commits: use GitLens/VS Code Source Control for staging + committing.
-- Pull Requests: try GitLens PR/remote integration first (when the provider is configured and the UI exposes “Create Pull Request” / PR actions).
-- Fallback: if GitLens cannot create/manage PRs in the current environment, use the official VS Code extension `GitHub Pull Requests and Issues` (`GitHub.vscode-pull-request-github`) for creating and managing PRs.
+- Commits: use `mcp_gitkraken_git_add_or_commit` for staging and committing. Always follow Conventional Commits format defined above.
+- Branches: use `mcp_gitkraken_git_branch` and `mcp_gitkraken_git_checkout`.
+- Push: use `mcp_gitkraken_git_push`.
+- Status/diff: use `mcp_gitkraken_git_status` and `mcp_gitkraken_git_log_or_diff`.
+- Pull Requests: use `mcp_gitkraken_pull_request_create` (GitKraken MCP) first. If not available, fall back to the `GitHub Pull Requests and Issues` VS Code extension (`GitHub.vscode-pull-request-github`).
+- GitLens: use only as a secondary option if GitKraken MCP is unavailable.
 
 Language reminder: keep commit messages and PR titles/descriptions in English.
 
