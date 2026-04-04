@@ -13,7 +13,7 @@ exports[`Clients component > snapshot > should match snapshot 1`] = `
     <h2
       class="text-center text-xl font-medium w-full md:text-left lg:text-2xl"
     >
-      Así como ellos que confían en nosotros
+      Así como ellos confían en nosotros
     </h2>
   </section>
   <section

@@ -1,15 +1,13 @@
-import {
-  Almazen,
-  Anker,
-  Beats,
-  Carbyne,
-  Circurela,
-  ColegioLaUnion,
-  Eurogourmet,
-  HammerBlocs,
-  RkPower,
-  TentacionesGourmet
-} from '@Components/atoms'
+import { Almazen } from '@Components/atoms/clientsLogo/Almazen'
+import { Anker } from '@Components/atoms/clientsLogo/Anker'
+import { Beats } from '@Components/atoms/clientsLogo/Beats'
+import { Carbyne } from '@Components/atoms/clientsLogo/Carbyne'
+import { Circurela } from '@Components/atoms/clientsLogo/Circurela'
+import { ColegioLaUnion } from '@Components/atoms/clientsLogo/ColegioLaUnion'
+import { Eurogourmet } from '@Components/atoms/clientsLogo/Eurogourmet'
+import { HammerBlocs } from '@Components/atoms/clientsLogo/HammerBlocs'
+import { RkPower } from '@Components/atoms/clientsLogo/RkPower'
+import { TentacionesGourmet } from '@Components/atoms/clientsLogo/TentacionesGourmet'
 import { type SvgProps } from '@Types/svg'
 import { type ReactNode } from 'react'
 

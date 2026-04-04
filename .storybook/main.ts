@@ -3,7 +3,11 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.stories.@(ts|tsx|mdx)'],
-  addons: ['@storybook/addon-a11y', '@storybook/addon-docs'],
+  addons: [
+    '@storybook/addon-a11y',
+    '@storybook/addon-docs'
+    // ❌ quitamos addon-vitest
+  ],
   framework: {
     name: '@storybook/nextjs-vite',
     options: {}

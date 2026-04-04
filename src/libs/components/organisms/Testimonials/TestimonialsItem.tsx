@@ -1,5 +1,8 @@
-import type { TestimonialsItemProps } from './testimonials.types'
-import { Avatar, Card, Divider, IconComponent } from '@Components/atoms'
+import type { TestimonialsItemProps } from './Testimonials.types'
+import { Avatar } from '@Components/atoms/Avatar/Avatar'
+import { Card } from '@Components/atoms/Card/Card'
+import { Divider } from '@Components/atoms/Divider/Divider'
+import { IconComponent } from '@Components/atoms/IconComponent/IconComponent'
 import { uuid } from '@Helpers/uuid'
 import clsx from 'clsx'
 

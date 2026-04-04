@@ -1,9 +1,9 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
-import { Clients } from '.'
+import { Clients } from './Clients'
 
 const meta = {
-  title: 'Molecules/Clients',
+  title: 'Organisms/Clients',
   component: Clients,
   tags: ['autodocs']
 } satisfies Meta<typeof Clients>
