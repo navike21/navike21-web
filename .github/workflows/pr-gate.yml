@@ -70,10 +70,10 @@ jobs:
 
       - name: 🔎 SonarCloud Scan (wait quality gate)
         if: ${{ env.BASE_BRANCH == 'develop' }}
-        uses: SonarSource/sonarcloud-github-action@ffc3010689be73b8e5ae0c57ce35968afd7909e8 # v3
+        uses: SonarSource/sonarqube-scan-action@v5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_HOST_URL: https://sonarcloud.io
         with:
           args: >
             -Dsonar.qualitygate.wait=true
