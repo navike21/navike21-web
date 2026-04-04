@@ -1,17 +1,15 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
-import {
-  Almazen,
-  Anker,
-  Beats,
-  Carbyne,
-  Circurela,
-  ColegioLaUnion,
-  Eurogourmet,
-  HammerBlocs,
-  RkPower,
-  TentacionesGourmet
-} from './index'
+import { Almazen } from './Almazen'
+import { Anker } from './Anker'
+import { Beats } from './Beats'
+import { Carbyne } from './Carbyne'
+import { Circurela } from './Circurela'
+import { ColegioLaUnion } from './ColegioLaUnion'
+import { Eurogourmet } from './Eurogourmet'
+import { HammerBlocs } from './HammerBlocs'
+import { RkPower } from './RkPower'
+import { TentacionesGourmet } from './TentacionesGourmet'
 
 const meta = {
   title: 'Atoms/clientsLogo',

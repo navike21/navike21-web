@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
-import { ParallaxImage } from '.'
+import { ParallaxImage } from './ParallaxImage'
 
-import sampleImage from '@Assets/images/technology-expert-developing-userfriendly-software-by-understanding-requirements-endusers.jpg'
+import sampleImage from '@Assets/background/man-using-laptop-night-top-view-web-banner-with-copy-space.jpg'
 
 const meta = {
   title: 'Atoms/ParallaxImage',

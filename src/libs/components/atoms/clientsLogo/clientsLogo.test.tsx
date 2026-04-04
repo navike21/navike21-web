@@ -1,17 +1,15 @@
 import { render } from '@testing-library/react'
 import { describe, it, expect } from 'vitest'
-import {
-  Almazen,
-  Anker,
-  Beats,
-  Carbyne,
-  Circurela,
-  ColegioLaUnion,
-  Eurogourmet,
-  HammerBlocs,
-  RkPower,
-  TentacionesGourmet
-} from './index'
+import { Almazen } from './Almazen'
+import { Anker } from './Anker'
+import { Beats } from './Beats'
+import { Carbyne } from './Carbyne'
+import { Circurela } from './Circurela'
+import { ColegioLaUnion } from './ColegioLaUnion'
+import { Eurogourmet } from './Eurogourmet'
+import { HammerBlocs } from './HammerBlocs'
+import { RkPower } from './RkPower'
+import { TentacionesGourmet } from './TentacionesGourmet'
 
 describe('ClientsLogo components', () => {
   const logos = [

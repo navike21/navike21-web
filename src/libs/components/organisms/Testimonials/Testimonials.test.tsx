@@ -1,9 +1,12 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect, vi } from 'vitest'
 import { TestimonialsItem } from './TestimonialsItem'
-import { Testimonials } from '.'
+
+import { Testimonials } from './Testimonials'
+
 import { testimonialsList } from '@I18n/common/testimonials'
 import type { StaticImageData } from 'next/image'
+import type { ReactNode } from 'react'
 import type { TestimonyItem } from '@I18n/common/testimonials/types'
 
 vi.mock('next/image', () => ({
@@ -24,8 +27,8 @@ vi.mock('@Helpers/uuid', () => ({
   uuid: () => 'test-uuid-' + Math.random()
 }))
 
-vi.mock('@Components/molecules', () => ({
-  Slider: ({ children }: React.PropsWithChildren) => (
+vi.mock('@Components/molecules/Slider/Slider', () => ({
+  Slider: ({ children }: { children?: ReactNode }) => (
     <div data-testid="slider">{children}</div>
   )
 }))
@@ -85,9 +88,10 @@ vi.mock('../../atoms/Card', () => ({
   Card: ({
     children,
     className
-  }: React.PropsWithChildren<{ className?: string }>) => (
-    <div className={className}>{children}</div>
-  )
+  }: {
+    children?: ReactNode
+    className?: string
+  }) => <div className={className}>{children}</div>
 }))
 
 vi.mock('../../atoms/Divider', () => ({

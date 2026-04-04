@@ -1,18 +1,18 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect, vi } from 'vitest'
-import { ItemHeroSection } from '.'
+
+import { ItemHeroSection } from './ItemHeroSection'
+
 import type { StaticImageData } from 'next/image'
 
+type NextImageProps = {
+  src: string | StaticImageData
+  alt: string
+  fill?: boolean
+} & React.ImgHTMLAttributes<HTMLImageElement>
+
 vi.mock('next/image', () => ({
-  default: ({
-    src,
-    alt,
-    ...props
-  }: {
-    src: string | StaticImageData
-    alt: string
-    [key: string]: unknown
-  }) => (
+  default: ({ src, alt, fill: _fill, ...props }: NextImageProps) => (
     <img src={typeof src === 'string' ? src : src.src} alt={alt} {...props} />
   )
 }))
