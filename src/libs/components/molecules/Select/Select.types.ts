@@ -1,5 +1,6 @@
 import type { ReactNode, SelectHTMLAttributes } from 'react'
 import type { IconName } from '@Types/icons'
+import type { Language } from '@Types/languages'
 
 export interface SelectOptionItem {
   label: string
@@ -10,6 +11,14 @@ export interface SelectOptionItem {
 }
 
 export type SelectVariant = 'default' | 'success' | 'error' | 'warning'
+
+export interface SelectTexts {
+  noOptionsFound: string
+  searchPlaceholder: string
+  searchAriaLabel: string
+  openOptionsAriaLabel: string
+  closeOptionsAriaLabel: string
+}
 
 export interface SelectProps extends Omit<
   SelectHTMLAttributes<HTMLSelectElement>,
@@ -26,6 +35,8 @@ export interface SelectProps extends Omit<
   multiple?: boolean
   search?: boolean
   placeholder?: string
+  lang?: Language
+  texts?: Partial<SelectTexts>
   leftSlot?: ReactNode
   rightSlot?: ReactNode
 }

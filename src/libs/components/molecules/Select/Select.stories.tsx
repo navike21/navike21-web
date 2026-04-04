@@ -4,6 +4,7 @@ import { userEvent, within } from 'storybook/test'
 import { Select } from './index'
 import type { SelectOptionItem } from './Select.types'
 import { IconComponent } from '@Components/atoms'
+import { SELECT_TEXTS_BY_LANG } from './Select.texts'
 
 const basicOptions: SelectOptionItem[] = [
   { label: 'Option 1', value: '1' },
@@ -44,6 +45,23 @@ const meta: Meta<typeof Select> = {
     variant: {
       control: { type: 'select' },
       options: ['default', 'success', 'error', 'warning']
+    },
+    lang: {
+      control: { type: 'select' },
+      options: [
+        undefined,
+        'es',
+        'en',
+        'de',
+        'fr',
+        'it',
+        'ja',
+        'ko',
+        'pt',
+        'zh',
+        'ru'
+      ],
+      description: 'Idioma del preset de textos internos del componente'
     },
     disabled: { control: 'boolean' },
     loading: { control: 'boolean' },
@@ -287,5 +305,248 @@ export const DropdownOpenAbove: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement)
     await userEvent.click(canvas.getByRole('combobox'))
+  }
+}
+
+// ─── i18n ────────────────────────────────────────────────────────────────────
+
+const countryOptions: SelectOptionItem[] = [
+  { label: 'Argentina', value: 'ar' },
+  { label: 'Brasil', value: 'br' },
+  { label: 'Chile', value: 'cl' },
+  { label: 'Colombia', value: 'co' },
+  { label: 'México', value: 'mx' },
+  { label: 'Perú', value: 'pe' },
+  { label: 'Uruguay', value: 'uy' },
+  { label: 'Venezuela', value: 've' }
+]
+
+export const LangSpanish: Story = {
+  name: '🌐 lang — Español (es)',
+  args: {
+    label: 'País:',
+    options: countryOptions,
+    search: true,
+    lang: 'es',
+    placeholder: 'Selecciona un país'
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: '<Select options={countryOptions} search lang="es" placeholder="Selecciona un país" />'
+      }
+    }
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    await userEvent.click(canvas.getByRole('combobox'))
+  }
+}
+
+export const LangEnglish: Story = {
+  name: '🌐 lang — English (en)',
+  args: {
+    label: 'Country:',
+    options: countryOptions,
+    search: true,
+    lang: 'en',
+    placeholder: 'Select a country'
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: '<Select options={countryOptions} search lang="en" placeholder="Select a country" />'
+      }
+    }
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    await userEvent.click(canvas.getByRole('combobox'))
+  }
+}
+
+export const LangJapanese: Story = {
+  name: '🌐 lang — 日本語 (ja)',
+  args: {
+    label: '国:',
+    options: countryOptions,
+    search: true,
+    lang: 'ja',
+    placeholder: '国を選択'
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: '<Select options={countryOptions} search lang="ja" placeholder="国を選択" />'
+      }
+    }
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    await userEvent.click(canvas.getByRole('combobox'))
+  }
+}
+
+export const LangKorean: Story = {
+  name: '🌐 lang — 한국어 (ko)',
+  args: {
+    label: '국가:',
+    options: countryOptions,
+    search: true,
+    lang: 'ko',
+    placeholder: '국가 선택'
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: '<Select options={countryOptions} search lang="ko" placeholder="국가 선택" />'
+      }
+    }
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    await userEvent.click(canvas.getByRole('combobox'))
+  }
+}
+
+export const LangChinese: Story = {
+  name: '🌐 lang — 中文 (zh)',
+  args: {
+    label: '国家:',
+    options: countryOptions,
+    search: true,
+    lang: 'zh',
+    placeholder: '选择国家'
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: '<Select options={countryOptions} search lang="zh" placeholder="选择国家" />'
+      }
+    }
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    await userEvent.click(canvas.getByRole('combobox'))
+  }
+}
+
+export const LangOverridePartial: Story = {
+  name: '🌐 lang + texts — override puntual',
+  args: {
+    label: 'País:',
+    options: countryOptions,
+    search: true,
+    lang: 'es',
+    texts: { noOptionsFound: 'País no encontrado' },
+    placeholder: 'Selecciona un país'
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: `// lang aplica el preset de español,
+// texts.noOptionsFound sobreescribe solo ese texto
+<Select
+  options={countryOptions}
+  search
+  lang="es"
+  texts={{ noOptionsFound: 'País no encontrado' }}
+  placeholder="Selecciona un país"
+/>`
+      }
+    }
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    await userEvent.click(canvas.getByRole('combobox'))
+  }
+}
+
+export const LangTextsManual: Story = {
+  name: '🌐 texts — override manual completo (sin lang)',
+  args: {
+    label: 'Elemento:',
+    options: countryOptions,
+    search: true,
+    texts: {
+      noOptionsFound: 'Elemento no encontrado',
+      searchPlaceholder: 'Filtrar elementos...',
+      searchAriaLabel: 'Filtrar elementos',
+      openOptionsAriaLabel: 'Ver elementos',
+      closeOptionsAriaLabel: 'Ocultar elementos'
+    },
+    placeholder: 'Selecciona un elemento'
+  },
+  parameters: {
+    docs: {
+      source: {
+        code: `// Sin lang, todos los textos se sobreescriben manualmente
+<Select
+  options={options}
+  search
+  texts={{
+    noOptionsFound: 'Elemento no encontrado',
+    searchPlaceholder: 'Filtrar elementos...',
+    searchAriaLabel: 'Filtrar elementos',
+    openOptionsAriaLabel: 'Ver elementos',
+    closeOptionsAriaLabel: 'Ocultar elementos'
+  }}
+  placeholder="Selecciona un elemento"
+/>`
+      }
+    }
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement)
+    await userEvent.click(canvas.getByRole('combobox'))
+  }
+}
+
+const I18nPlaygroundStory = () => {
+  const [lang, setLang] = useState<keyof typeof SELECT_TEXTS_BY_LANG>('en')
+
+  const langOptions = Object.keys(SELECT_TEXTS_BY_LANG).map(l => ({
+    label: l,
+    value: l
+  }))
+
+  return (
+    <div className="flex flex-col gap-6 w-80">
+      <Select
+        label="🌐 Cambiar idioma del selector de abajo:"
+        options={langOptions}
+        value={lang}
+        onChange={e =>
+          setLang(
+            (e.target as HTMLSelectElement)
+              .value as keyof typeof SELECT_TEXTS_BY_LANG
+          )
+        }
+        placeholder="Select lang..."
+      />
+      <Select
+        label="País:"
+        options={countryOptions}
+        search
+        lang={lang}
+        placeholder="..."
+      />
+      <div className="text-xs text-slate-500 bg-slate-50 rounded p-2 font-mono">
+        {JSON.stringify(SELECT_TEXTS_BY_LANG[lang], null, 2)}
+      </div>
+    </div>
+  )
+}
+
+export const I18nPlayground: Story = {
+  name: '🌐 i18n Playground — todos los idiomas',
+  render: () => <I18nPlaygroundStory />,
+  parameters: {
+    docs: {
+      source: {
+        code: `// Elige un idioma en el primer Select y el segundo se adapta automáticamente
+<Select options={countryOptions} search lang={currentLang} />`
+      }
+    }
   }
 }

@@ -240,6 +240,34 @@ describe('Select', () => {
     expect(screen.getByText('No options found')).toBeInTheDocument()
   })
 
+  it('supports per-instance text overrides without prop drilling', () => {
+    render(
+      <Select
+        options={options}
+        search
+        texts={{
+          noOptionsFound: 'Pais no encontrado',
+          searchPlaceholder: 'Buscar pais...',
+          searchAriaLabel: 'Buscar pais',
+          openOptionsAriaLabel: 'Abrir opciones',
+          closeOptionsAriaLabel: 'Cerrar opciones'
+        }}
+      />
+    )
+
+    const openBtn = screen.getByRole('button', { name: 'Abrir opciones' })
+    fireEvent.click(openBtn)
+
+    const searchInput = screen.getByLabelText('Buscar pais')
+    expect(searchInput).toHaveAttribute('placeholder', 'Buscar pais...')
+
+    fireEvent.change(searchInput, { target: { value: 'zzzyyyxxx' } })
+    expect(screen.getByText('Pais no encontrado')).toBeInTheDocument()
+
+    const closeBtn = screen.getByRole('button', { name: 'Cerrar opciones' })
+    expect(closeBtn).toBeInTheDocument()
+  })
+
   it('forwards ref to the native select element', () => {
     const ref = createRef<HTMLSelectElement>()
     render(<Select options={options} ref={ref} />)
@@ -568,5 +596,59 @@ describe('Select', () => {
     ]
     render(<Select options={contentOptions} multiple defaultValue={['c']} />)
     expect(screen.getByTestId('chip-content-c')).toBeInTheDocument()
+  })
+
+  it('lang preset: applies correct translations automatically', () => {
+    render(<Select options={options} search lang="es" />)
+    expect(
+      screen.getByRole('button', { name: 'Abrir opciones' })
+    ).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: 'Abrir opciones' }))
+    expect(screen.getByLabelText('Buscar opciones')).toBeInTheDocument()
+    expect(screen.getByLabelText('Buscar opciones')).toHaveAttribute(
+      'placeholder',
+      'Buscar...'
+    )
+  })
+
+  it('lang preset: shows translated noOptionsFound when no results match', () => {
+    render(<Select options={options} search lang="es" />)
+    fireEvent.click(screen.getByRole('combobox'))
+    fireEvent.change(screen.getByLabelText('Buscar opciones'), {
+      target: { value: 'zzz' }
+    })
+    expect(screen.getByText('Sin opciones')).toBeInTheDocument()
+  })
+
+  it('lang preset: texts prop overrides individual keys on top of lang preset', () => {
+    render(
+      <Select
+        options={options}
+        search
+        lang="es"
+        texts={{ noOptionsFound: 'Pais no encontrado' }}
+      />
+    )
+    fireEvent.click(screen.getByRole('combobox'))
+    // lang preset still applies to other keys
+    expect(screen.getByLabelText('Buscar opciones')).toBeInTheDocument()
+    // texts override wins for noOptionsFound
+    fireEvent.change(screen.getByLabelText('Buscar opciones'), {
+      target: { value: 'zzz' }
+    })
+    expect(screen.getByText('Pais no encontrado')).toBeInTheDocument()
+  })
+
+  it('no lang, no texts: falls back to English defaults', () => {
+    render(<Select options={options} search />)
+    expect(
+      screen.getByRole('button', { name: 'Open options' })
+    ).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('combobox'))
+    expect(screen.getByLabelText('Search options')).toBeInTheDocument()
+    fireEvent.change(screen.getByLabelText('Search options'), {
+      target: { value: 'zzz' }
+    })
+    expect(screen.getByText('No options found')).toBeInTheDocument()
   })
 })

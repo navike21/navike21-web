@@ -1,0 +1,46 @@
+import { memo } from 'react'
+import type { SelectOptionItem } from '../../Select.types'
+import { Chip } from '@Components/atoms'
+
+interface SelectedChipsProps {
+  values: string[]
+  options: SelectOptionItem[]
+  disabled: boolean
+  onDeselect: (val: string) => void
+}
+
+export const SelectedChips = memo(function SelectedChips({
+  values,
+  options,
+  disabled,
+  onDeselect
+}: SelectedChipsProps) {
+  return (
+    <>
+      {values.map(val => {
+        const option = options.find(o => o.value === val)
+        if (!option) return null
+        return (
+          <Chip
+            key={val}
+            size="xsmall"
+            {...(option.icon !== undefined && { icon: option.icon })}
+            {...(option.content !== undefined && {
+              iconContent: option.content
+            })}
+            deleteable={!disabled}
+            deleteButtonProps={{
+              onClick: e => {
+                e.stopPropagation()
+                onDeselect(val)
+              },
+              'aria-label': `Remove ${option.label}`
+            }}
+          >
+            {option.label}
+          </Chip>
+        )
+      })}
+    </>
+  )
+})
