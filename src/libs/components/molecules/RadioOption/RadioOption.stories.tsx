@@ -75,7 +75,7 @@ export const DisabledChecked: Story = {
   }
 }
 
-export const Error: Story = {
+export const ErrorVariant: Story = {
   args: {
     label: 'Invalid option',
     error: true,
