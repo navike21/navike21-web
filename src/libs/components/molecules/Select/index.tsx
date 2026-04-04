@@ -82,7 +82,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
     const mergedTexts = useMemo(
       () => ({
         ...DEFAULT_SELECT_TEXTS,
-        ...(lang !== undefined ? SELECT_TEXTS_BY_LANG[lang] : {}),
+        ...(lang === undefined ? {} : SELECT_TEXTS_BY_LANG[lang]),
         ...texts
       }),
       [lang, texts]
