@@ -4,28 +4,30 @@
 
 Navike21 Web es una aplicación web moderna con **Next.js (App Router)**, arquitectura modular y UI basada en **atomic design**. El objetivo del repo es mantener una base sólida (calidad, CI, tests, i18n, estilos) para iterar rápido sin perder mantenibilidad.
 
-## 🧰 Tech Stack (actual)
+## 🧰 Tech Stack
 
-| Área             | Stack                                        |
-| ---------------- | -------------------------------------------- |
-| Framework        | Next.js 16 (App Router)                      |
-| UI               | React 19 + Tailwind CSS (`src/libs/styles/`) |
-| Animación/scroll | `motion` + `lenis` (LayoutScroll)            |
-| Testing          | Vitest + Testing Library                     |
-| Tooling          | TypeScript + ESLint + Prettier + pnpm        |
+| Área             | Stack                                   |
+| ---------------- | --------------------------------------- |
+| Framework        | Next.js 16.1 + App Router               |
+| UI               | React 19 + Tailwind CSS                 |
+| Animación/scroll | `motion` + `lenis` (`LayoutScroll`)     |
+| Storybook        | Storybook 10 + `@storybook/nextjs-vite` |
+| Testing          | Vitest + Testing Library                |
+| Tooling          | TypeScript + ESLint + Prettier + pnpm   |
 
-## 📦 Qué contiene el proyecto (detalle)
+## 📦 Project Structure
 
 ### Estructura (high level)
 
 ```text
 src/
-  app/                 # App Router (wrappers de rutas)
+  app/                  # App Router (thin route wrappers)
   views/pages/          # Vistas/páginas (módulos)
   libs/
-    components/         # UI (atomic design)
+    components/         # UI (atomic design + Storybook)
       atoms/
       molecules/
+      organisms/
     context/            # Estado compartido (Header/Menu)
     i18n/               # i18n por dominio
     constants/          # Constantes
@@ -41,17 +43,25 @@ src/
 - `src/views/pages/**`: páginas/vistas (ej: Home) separadas del routing.
 - `src/libs/components/**`: librería de UI bajo atomic design.
   - `atoms/**`: piezas reusables pequeñas (Button, Card, Logo, etc.).
-  - `molecules/**`: composiciones (Header, Menu, Footer, Clients, Slider, LayoutScroll, Testimonials, etc.).
+  - `molecules/**`: composiciones (Header, Menu, Footer, Clients, Slider, LayoutScroll, Modal, Select, etc.).
+  - `organisms/**`: secciones completas y flujos de negocio (ej. `NewsletterForm`).
   - Re-exports por carpeta vía `index.ts`.
 - `src/libs/context/**`: estado compartido (ej. header/menu) y hooks de acceso.
 - `src/libs/i18n/**`: i18n por dominio en objetos TS (selección explícita por idioma).
 - `src/libs/constants/**`, `src/libs/helpers/**`, `src/libs/types/**`: constantes, utilidades y tipos compartidos.
 - `src/libs/assets/**`: imágenes, backgrounds y recursos.
 
+### 🔌 Current App Entry Points
+
+- `src/app/page.tsx` renderiza `src/views/pages/Home`.
+- `src/app/layout.tsx` compone `HeaderProvider` + `Header` + `Menu` + `LayoutScroll`, y deja `Footer` fuera del provider.
+- `src/libs/components/organisms/NewsletterForm/**` concentra el flujo de suscripción al boletín.
+
 ### 🧩 UI / Módulos funcionales incluidos
 
 - Shell global con Header/Menu/LayoutScroll/Footer.
 - Landing/Home compuesta desde atoms/molecules.
+- Newsletter form con modal de datos adicionales y validación localizada.
 - Soporte de i18n por dominio.
 - Base de estilos y componentes reutilizables.
 
@@ -71,15 +81,18 @@ pnpm dev
 
 ### Scripts
 
-| Acción                | Comando          |
-| --------------------- | ---------------- |
-| Instalar dependencias | `pnpm install`   |
-| Levantar dev server   | `pnpm dev`       |
-| Build producción      | `pnpm build`     |
-| Start producción      | `pnpm start`     |
-| Typecheck             | `pnpm typecheck` |
-| Lint                  | `pnpm lint`      |
-| Format                | `pnpm format`    |
+| Acción                | Comando                |
+| --------------------- | ---------------------- |
+| Instalar dependencias | `pnpm install`         |
+| Levantar dev server   | `pnpm dev`             |
+| Build producción      | `pnpm build`           |
+| Start producción      | `pnpm start`           |
+| Typecheck             | `pnpm typecheck`       |
+| Lint                  | `pnpm lint`            |
+| Format                | `pnpm format`          |
+| Validate              | `pnpm validate`        |
+| Storybook             | `pnpm storybook`       |
+| Build Storybook       | `pnpm build-storybook` |
 
 ## 🧪 Testing
 
@@ -91,17 +104,19 @@ pnpm dev
 Notas:
 
 - Setup/mocks de entorno: `vitest.setup.ts`
-- Umbral de coverage: 70%
+- Umbral de coverage: 90% a nivel de proyecto
+- Los tests usan Vitest + Testing Library y conviven con Storybook para documentación visual
 
 ## 🧱 CI/CD (visión general)
 
-### PR Gate (qué corre según la base)
+### PR Gate
 
-| Base del PR | Checks                                                                                              |
-| ----------- | --------------------------------------------------------------------------------------------------- |
-| `develop`   | typecheck · lint · prettier · tests (coverage) · SonarCloud (quality gate) · Vercel preview/comment |
-| `release`   | typecheck · lint · prettier · tests (sin coverage)                                                  |
-| `main`      | lint · format:check                                                                                 |
+| Base del PR | Checks recomendados                                    |
+| ----------- | ------------------------------------------------------ |
+| `feature/*` | typecheck · lint · format · tests · coverage           |
+| `develop`   | typecheck · lint · format · tests (coverage)           |
+| `release`   | typecheck · lint · format · tests                      |
+| `main`      | checks mínimos + validación final antes de publicación |
 
 ### Supply chain & deps
 
@@ -128,4 +143,5 @@ Convención recomendada para próximos releases:
 ## 🔎 Referencias
 
 - Configuración ESLint/Prettier/TS: `eslint.config.mjs`, `.prettierrc`, `tsconfig.json`
+- Cobertura Vitest: `vitest.config.ts`
 - Instrucciones internas: `.github/copilot-instructions.md`

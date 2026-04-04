@@ -1,6 +1,8 @@
 import { render } from '@testing-library/react'
 import { describe, it, expect, vi } from 'vitest'
-import { ParallaxImage } from '.'
+
+import { ParallaxImage } from './ParallaxImage'
+
 import type { StaticImageData } from 'next/image'
 
 vi.mock('motion/react', () => ({
@@ -99,10 +101,15 @@ describe('ParallaxImage component', () => {
       expect(image).toBeInTheDocument()
     })
 
-    it('should have object-cover class', () => {
+    it('should have object-cover, object-center, h-auto, w-auto classes', () => {
       const { container } = render(<ParallaxImage img={mockImage} alt="Test" />)
       const image = container.querySelector('img')
-      expect(image).toHaveClass('object-cover', 'object-center', 'h-full')
+      expect(image).toHaveClass(
+        'object-cover',
+        'object-center',
+        'h-auto',
+        'w-auto'
+      )
     })
 
     it('should render with correct src from StaticImageData', () => {

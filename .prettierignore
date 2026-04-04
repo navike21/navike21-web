@@ -9,6 +9,7 @@
 /tsconfig.json
 /tsconfig.tsbuildinfo
 /vercel.json
+/.vscode
 
 # Catch-all for other root-level config files
 /*.config.*

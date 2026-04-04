@@ -30,10 +30,11 @@ export default defineConfig({
         'src/libs/sources/**',
         'src/libs/i18n/**',
         'src/libs/constants/**',
-        'src/types/**',
-        'src/libs/types/**',
+        'src/**/types/**',
+        'src/**/constants/**',
+        'src/**/config/**',
         'src/libs/components/**/index.ts',
-        'src/libs/context/index.ts'
+        'src/libs/context/index.ts',
       ],
       include: ['src/**/*.{ts,tsx}'],
       thresholds: {
@@ -44,7 +45,20 @@ export default defineConfig({
       }
     },
     include: ['**/*.{test,spec}.{ts,tsx}'],
-    exclude: ['node_modules', '.next', 'out', 'coverage']
+    exclude: [
+      'node_modules',
+      '.next',
+      'out',
+      'coverage',
+      'storybook-static',
+      'src/app/**',
+      'src/**/types/**',
+      'src/**/constants/**',
+      'src/**/config/**',
+      'src/libs/assets/**',
+      'src/libs/sources/**',
+      'src/libs/i18n/**'
+    ]
   },
   resolve: {
     alias: {
@@ -61,6 +75,8 @@ export default defineConfig({
       '@Types': path.resolve(__dirname, './src/libs/types'),
       '@Helpers': path.resolve(__dirname, './src/libs/helpers'),
       '@Views': path.resolve(__dirname, './src/views'),
+      '@Config': path.resolve(__dirname, './src/libs/config'),
+      '@Services': path.resolve(__dirname, './src/libs/services'),
     }
   }
 })

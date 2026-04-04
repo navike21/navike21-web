@@ -1,6 +1,6 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
-import { Card, ItemCard, ItemLinkCard } from '.'
+import { Card, ItemCard, ItemLinkCard } from './Card'
 
 const meta = {
   title: 'Atoms/Card',

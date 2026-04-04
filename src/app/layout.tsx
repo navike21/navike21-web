@@ -1,4 +1,7 @@
-import { Footer, Header, LayoutScroll, Menu } from '@Components/molecules'
+import { Footer } from '@Components/molecules/Footer/Footer'
+import { Header } from '@Components/molecules/Header/Header'
+import { LayoutScroll } from '@Components/molecules/LayoutScroll/LayoutScroll'
+import { Menu } from '@Components/molecules/Menu/Menu'
 import { HeaderProvider } from '@Context/index'
 import { firaCode, poppins } from '@Sources/fonts'
 import '@Styles/globals.css'
