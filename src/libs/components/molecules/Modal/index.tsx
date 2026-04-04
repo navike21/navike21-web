@@ -2,7 +2,7 @@
 
 import { IconComponent } from '@Components/atoms'
 import { useLenisScrollLock } from '@Hooks/useLenisScrollLock'
-import clsx from 'clsx'
+import clsx, { type ClassValue } from 'clsx'
 import { AnimatePresence, motion, type Variants } from 'motion/react'
 import { createPortal } from 'react-dom'
 import {
@@ -85,10 +85,10 @@ const getAlignmentClasses = (position: Position) => {
   return 'items-center justify-center'
 }
 
-const getSizeClasses = (size: Size) => {
+const getSizeClasses = (size: Size): string | ClassValue => {
   if (size === 'small') return 'max-w-sm'
   if (size === 'medium') return 'max-w-xl'
-  if (size === 'large') return 'max-w-3xl'
+  if (size === 'large') return 'max-w-5xl'
 
   return 'max-w-none w-full h-full max-h-none rounded-[2rem]'
 }
@@ -364,7 +364,7 @@ export const Modal = ({
               'bg-white text-slate-950',
               'relative z-10 pointer-events-auto overflow-y-auto overscroll-contain outline-none',
               'max-h-[calc(100dvh-2rem)] rounded-md sm:max-h-[calc(100dvh-3rem)]',
-              'sm:grid-cols-3 sm:gap-0',
+              'sm:grid-cols-5 sm:gap-0',
               'lg:w-full',
               getSizeClasses(size),
               className
@@ -381,11 +381,10 @@ export const Modal = ({
               <Image
                 src={image}
                 alt="Modal image"
-                width={400}
-                height={400}
+                width={2000}
                 className={clsx(
                   'w-full h-full object-cover hidden object-center',
-                  'sm:col-span-1 sm:block',
+                  'sm:col-span-2 sm:block',
                   imagePosition === 'left' ? 'order-first' : 'order-last'
                 )}
               />
@@ -410,8 +409,9 @@ export const Modal = ({
             )}
             <div
               className={clsx(
-                'flex flex-col gap-4 bg-white py-7 px-10 z-10 col-span-2',
-                'sm:col-span-2'
+                'flex flex-col gap-4 bg-white py-9 px-9 z-10 col-span-2',
+                'sm:col-span-3 sm:px-12',
+                'md:px-16'
               )}
             >
               {title && (
@@ -420,7 +420,8 @@ export const Modal = ({
                     id={titleId}
                     className={clsx(
                       'text-lg font-semibold leading-tight text-slate-950 w-[90%]',
-                      'md:text-2xl md:w-[70%]'
+                      'md:text-2xl md:w-[85%]',
+                      'lg:text-3xl lg:w-[79%]'
                     )}
                   >
                     {title}

@@ -1,4 +1,4 @@
-import imageNewsletter from '@Assets/background/man-using-laptop-night-top-view-web-banner-with-copy-space.jpg'
+import imageNewsletter from '@Assets/background/smiling-girl-student-looking.jpg'
 import { Button } from '@Components/atoms'
 import { InputField, Modal, Select } from '@Components/molecules'
 import {
@@ -110,13 +110,13 @@ export const MoreDataModal = ({
     <Modal
       isOpen={isOpenModal}
       onClose={handleCloseModal}
-      title="Queremos conocerte un poco más."
+      title="Espera, queremos conocerte un poco más."
       image={imageNewsletter}
       size="large"
       animation="slide"
     >
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
-        <p className={clsx('text-gray-700 text-xs leading-relaxed')}>
+        <p className={clsx('text-gray-700 text-sm leading-relaxed')}>
           Para ofrecerte contenido relevante y personalizado, nos encantaría
           conocer un poco más sobre ti.
         </p>
@@ -194,7 +194,7 @@ export const MoreDataModal = ({
             })}
           />
         </div>
-        <div className={clsx('w-full flex justify-end')}>
+        <div className={clsx('w-full flex justify-end mt-3')}>
           <Button
             variant="primary"
             size="medium"
