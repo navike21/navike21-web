@@ -1,7 +1,8 @@
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { renderToString } from 'react-dom/server'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { Modal, type Animation } from '.'
+import { Modal } from '.'
+import type { Animation, Position, Size } from './Modal.types'
 import * as lenisLockHook from '@Hooks/useLenisScrollLock'
 import {
   getAlignmentClasses,
@@ -9,7 +10,6 @@ import {
   getDirectionalOffset,
   getPanelVariants
 } from './useModal'
-import type { Position, Size } from './Modal.types'
 
 type MockMotionProps = Record<string, unknown> & {
   className?: string
@@ -415,8 +415,8 @@ describe('useModal utility functions', () => {
       const variants = getPanelVariants(unknownAnimation, 'center')
 
       // Assert
-      expect(variants.hidden).toMatchObject({ opacity: 0, y: 12 })
-      expect(variants.visible).toMatchObject({ opacity: 1, y: 0 })
+      expect(variants['hidden']).toMatchObject({ opacity: 0, y: 12 })
+      expect(variants['visible']).toMatchObject({ opacity: 1, y: 0 })
     })
   })
 })

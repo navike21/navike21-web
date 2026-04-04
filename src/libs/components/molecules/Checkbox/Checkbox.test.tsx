@@ -1,6 +1,5 @@
 import { render, screen, fireEvent, renderHook } from '@testing-library/react'
 import { createRef, useState } from 'react'
-import type { RefObject } from 'react'
 import { describe, it, expect, vi } from 'vitest'
 import { Checkbox } from './index'
 import { useCheckbox } from './Checkbox.hooks'
@@ -116,11 +115,11 @@ describe('Checkbox', () => {
   })
 
   it('should not throw when ref current is null (defensive guard branch)', () => {
-    // Arrange: a ref never attached to a DOM element so current stays null
-    const nullRef = { current: null } as RefObject<HTMLInputElement>
+    // Arrange: use createRef — current is null before the element mounts
+    const nullRef = createRef<HTMLInputElement>()
 
     const { result, rerender } = renderHook(
-      ({ indeterminate }: { indeterminate?: boolean }) =>
+      ({ indeterminate }: { indeterminate: boolean }) =>
         useCheckbox({ indeterminate }, nullRef),
       { initialProps: { indeterminate: false } }
     )

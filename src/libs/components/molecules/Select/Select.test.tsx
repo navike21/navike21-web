@@ -688,10 +688,8 @@ describe('Select', () => {
 
 describe('useSelectHook', () => {
   it('should handle undefined multiple prop via nullish coalescing fallback', () => {
-    // Arrange: call hook directly with multiple=undefined to exercise the ?? branch
-    const { result } = renderHook(() =>
-      useSelectHook({ options, multiple: undefined }, null)
-    )
+    // Arrange: call hook directly without multiple to exercise the ?? false branch
+    const { result } = renderHook(() => useSelectHook({ options }, null))
 
     // Assert: isMultipleWithChips is false when multiple is undefined (falls back to false)
     expect(result.current.isMultipleWithChips).toBe(false)
