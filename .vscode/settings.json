@@ -67,5 +67,9 @@
     "uuidv",
     "vercel",
     "Whatsapp"
-  ]
+  ],
+  "sonarlint.connectedMode.project": {
+    "connectionId": "navike21",
+    "projectKey": "navike21_navike21-web"
+  }
 }
