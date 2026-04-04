@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
-import { Spinner } from './index'
+import { Spinner } from './Spinner'
 
 const meta = {
   title: 'Atoms/Spinner',

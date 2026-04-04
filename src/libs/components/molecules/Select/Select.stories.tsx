@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { useState } from 'react'
 import { userEvent, within } from 'storybook/test'
-import { Select } from './index'
 import type { SelectOptionItem } from './Select.types'
-import { IconComponent } from '@Components/atoms'
+import { IconComponent } from '@Components/atoms/IconComponent/IconComponent'
 import { SELECT_TEXTS_BY_LANG } from './Select.texts'
+
+import { Select } from './Select'
 
 const basicOptions: SelectOptionItem[] = [
   { label: 'Option 1', value: '1' },

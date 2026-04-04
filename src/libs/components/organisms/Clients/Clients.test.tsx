@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { Clients } from '.'
+
+import { Clients } from './Clients'
 
 vi.mock('@Constants/clients', () => ({
   CLIENTS: [

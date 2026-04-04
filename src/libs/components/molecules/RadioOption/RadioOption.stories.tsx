@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { RadioOption } from './index'
+
+import { RadioOption } from './RadioOption'
 
 const meta: Meta<typeof RadioOption> = {
   title: 'Forms/RadioOption',

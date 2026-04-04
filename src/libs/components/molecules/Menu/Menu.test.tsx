@@ -1,6 +1,8 @@
 import { render, screen } from '@testing-library/react'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { Menu } from '.'
+
+import { Menu } from './Menu'
+
 import * as menuHooks from './Menu.hooks'
 import { HeaderProvider } from '@Context/index'
 import { Pages } from '@Types/pages'

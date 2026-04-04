@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
-import { InputLayout } from './index'
+import { InputLayout } from './InputLayout'
 
 vi.mock('react', async () => {
   const actual = await vi.importActual('react')
@@ -10,7 +10,7 @@ vi.mock('react', async () => {
   }
 })
 
-vi.mock('@Components/atoms', () => ({
+vi.mock('@Components/atoms/HelperText/HelperText', () => ({
   HelperText: ({ children, variant, idField, ...props }: any) => (
     <div
       data-testid="helper-text"
@@ -20,11 +20,20 @@ vi.mock('@Components/atoms', () => ({
     >
       {children}
     </div>
-  ),
+  )
+}))
+
+vi.mock('@Components/atoms/IconComponent/IconComponent', () => ({
   IconComponent: ({ icon, className }: any) => (
     <span data-testid={`icon-${icon}`} className={className} />
-  ),
-  Label: ({ children, ...props }: any) => <label {...props}>{children}</label>,
+  )
+}))
+
+vi.mock('@Components/atoms/Label/Label', () => ({
+  Label: ({ children, ...props }: any) => <label {...props}>{children}</label>
+}))
+
+vi.mock('@Components/atoms/Spinner/Spinner', () => ({
   Spinner: ({ variant, size }: any) => (
     <div data-testid="spinner" data-variant={variant} data-size={size} />
   )

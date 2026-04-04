@@ -1,6 +1,8 @@
 import { render } from '@testing-library/react'
 import { describe, it, expect, vi } from 'vitest'
-import { ParallaxImage } from '.'
+
+import { ParallaxImage } from './ParallaxImage'
+
 import type { StaticImageData } from 'next/image'
 
 vi.mock('motion/react', () => ({

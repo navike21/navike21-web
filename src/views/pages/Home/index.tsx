@@ -1,10 +1,15 @@
 import heroImage from '@Assets/background/technology-expert-developing-userfriendly-software-by-understanding-requirements-endusers.jpg'
-import { Container, ItemLinkCard, LinkButton, Title } from '@Components/atoms'
-import { ItemHeroSection } from '@Components/molecules'
+import { Container } from '@Components/atoms/Container/Container'
+import { ItemLinkCard } from '@Components/atoms/Card/Card'
+import { LinkButton } from '@Components/atoms/LinkButton/LinkButton'
+import { Title } from '@Components/atoms/Title/Title'
+import { ItemHeroSection } from '@Components/molecules/ItemHeroSection/ItemHeroSection'
 import clsx from 'clsx'
 import { useHome } from './home.hooks'
 import { uuid } from '@Helpers/uuid'
-import { Clients, NewsletterForm, Testimonials } from '@Components/organisms'
+import { Clients } from '@Components/organisms/Clients/Clients'
+import { NewsletterForm } from '@Components/organisms/NewsletterForm/NewsletterForm'
+import { Testimonials } from '@Components/organisms/Testimonials/Testimonials'
 
 export const Home = () => {
   const {

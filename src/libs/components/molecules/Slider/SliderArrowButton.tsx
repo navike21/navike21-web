@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { IconComponent } from '@Components/atoms'
+import { IconComponent } from '@Components/atoms/IconComponent/IconComponent'
 import type { PropType } from './Slider.types'
 
 export const PrevButton = ({ children, className, ...restProps }: PropType) => (

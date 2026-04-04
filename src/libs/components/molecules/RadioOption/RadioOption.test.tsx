@@ -1,7 +1,8 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import { createRef, useState } from 'react'
 import { describe, it, expect, vi } from 'vitest'
-import { RadioOption } from './index'
+
+import { RadioOption } from './RadioOption'
 
 describe('RadioOption', () => {
   it('renders without props', () => {

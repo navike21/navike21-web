@@ -1,7 +1,7 @@
 import clsx from 'clsx'
-import { IconComponent } from '../IconComponent'
+import { IconComponent } from '../IconComponent/IconComponent'
 import { type ButtonProps } from '@Types/buttonProps'
-import { Spinner, type SpinnerProps } from '../Spinner'
+import { Spinner, type SpinnerProps } from '../Spinner/Spinner'
 
 type LoadingVariant = {
   [key in NonNullable<ButtonProps['variant']>]: NonNullable<

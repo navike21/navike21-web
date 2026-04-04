@@ -4,7 +4,7 @@ import { testimonialsList } from '@I18n/common/testimonials'
 import { ESP } from '@Constants/languages'
 import { TestimonialsItem } from './TestimonialsItem'
 import { useTestimonials } from './Testimonials.hooks'
-import { Slider } from '@Components/molecules'
+import { Slider } from '@Components/molecules/Slider/Slider'
 
 export const Testimonials = () => {
   const { OPTIONS } = useTestimonials()

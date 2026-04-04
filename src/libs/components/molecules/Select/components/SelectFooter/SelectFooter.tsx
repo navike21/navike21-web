@@ -1,4 +1,4 @@
-import { HelperText } from '@Components/atoms'
+import { HelperText } from '@Components/atoms/HelperText/HelperText'
 import type { SelectVariant } from '../../Select.types'
 
 interface SelectFooterProps {

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
-import { NewsletterForm } from '.'
+import { NewsletterForm } from './NewsletterForm'
 
 const meta = {
   title: 'Organisms/NewsletterForm',

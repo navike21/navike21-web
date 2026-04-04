@@ -1,11 +1,12 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
 
-import { OptionsList } from './index'
+import { OptionsList } from './OptionsList'
+
 import type { SelectOptionItem } from '../../Select.types'
 import { SelectTextsProvider, DEFAULT_SELECT_TEXTS } from '../../Select.texts'
 
-vi.mock('@Components/atoms', () => ({
+vi.mock('@Components/atoms/IconComponent/IconComponent', () => ({
   IconComponent: ({
     icon,
     className

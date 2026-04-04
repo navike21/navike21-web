@@ -1,6 +1,6 @@
 'use client'
 
-import { IconComponent } from '@Components/atoms'
+import { IconComponent } from '@Components/atoms/IconComponent/IconComponent'
 import { useLenisScrollLock } from '@Hooks/useLenisScrollLock'
 import clsx from 'clsx'
 import { AnimatePresence, motion } from 'motion/react'

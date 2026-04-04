@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 import { useState } from 'react'
 
-import { Modal } from './index'
+import { Modal } from './Modal'
 
 const meta = {
   title: 'Molecules/Modal',

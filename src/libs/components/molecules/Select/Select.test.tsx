@@ -8,34 +8,46 @@ import {
 } from '@testing-library/react'
 import React, { createRef } from 'react'
 import { describe, it, expect, vi } from 'vitest'
-import { Select } from './index'
+import { Select } from './Select'
 import { useSelectHook } from './Select.hooks'
 import type { SelectOptionItem } from './Select.types'
 
 // Mock atoms to keep tests focused on Select integration behavior
-vi.mock('@Components/atoms', () => ({
+vi.mock('@Components/atoms/IconComponent/IconComponent', () => ({
   IconComponent: ({
     icon,
     className
   }: {
     icon: string
     className?: string
-  }) => <svg data-testid={`icon-${icon}`} className={className} />,
-  Spinner: () => <div data-testid="spinner" />,
+  }) => <svg data-testid={`icon-${icon}`} className={className} />
+}))
+
+vi.mock('@Components/atoms/Spinner/Spinner', () => ({
+  Spinner: () => <div data-testid="spinner" />
+}))
+
+vi.mock('@Components/atoms/Label/Label', () => ({
   Label: ({
     children,
     htmlFor
   }: {
     children: React.ReactNode
     htmlFor?: string
-  }) => <label htmlFor={htmlFor}>{children}</label>,
+  }) => <label htmlFor={htmlFor}>{children}</label>
+}))
+
+vi.mock('@Components/atoms/HelperText/HelperText', () => ({
   HelperText: ({
     children,
     variant
   }: {
     children: React.ReactNode
     variant?: string
-  }) => <div role={variant === 'error' ? 'alert' : undefined}>{children}</div>,
+  }) => <div role={variant === 'error' ? 'alert' : undefined}>{children}</div>
+}))
+
+vi.mock('@Components/atoms/Chip/Chip', () => ({
   Chip: ({
     children,
     icon,

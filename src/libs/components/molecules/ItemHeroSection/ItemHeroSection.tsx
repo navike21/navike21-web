@@ -1,4 +1,6 @@
-import { Container, LinkButton, ParallaxImage } from '@Components/atoms'
+import { Container } from '@Components/atoms/Container/Container'
+import { LinkButton } from '@Components/atoms/LinkButton/LinkButton'
+import { ParallaxImage } from '@Components/atoms/ParallaxImage/ParallaxImage'
 import { uuid } from '@Helpers/uuid'
 import { type LinkButtonProps } from '@Types/buttonProps'
 import clsx from 'clsx'

@@ -1,17 +1,15 @@
 'use client'
 
-import {
-  Button,
-  Container,
-  LinkButton,
-  ParallaxImage,
-  Title
-} from '@Components/atoms'
+import { Button } from '@Components/atoms/Button/Button'
+import { Container } from '@Components/atoms/Container/Container'
+import { LinkButton } from '@Components/atoms/LinkButton/LinkButton'
+import { ParallaxImage } from '@Components/atoms/ParallaxImage/ParallaxImage'
+import { Title } from '@Components/atoms/Title/Title'
 import imageNewsletter from '@Assets/background/man-using-laptop-night-top-view-web-banner-with-copy-space.jpg'
 import { useNewsletterForm } from './NewsletterForm.hooks'
-import { InputField } from '@Components/molecules'
+import { InputField } from '@Components/molecules/InputField/InputField'
 import clsx from 'clsx'
-import { MoreDataModal } from './components/MoreDataModal'
+import { MoreDataModal } from './components/MoreDataModal/MoreDataModal'
 
 export const NewsletterForm = () => {
   const {

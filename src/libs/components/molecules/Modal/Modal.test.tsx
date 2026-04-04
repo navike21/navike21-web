@@ -1,7 +1,9 @@
 import { act, fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { renderToString } from 'react-dom/server'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
-import { Modal } from '.'
+
+import { Modal } from './Modal'
+
 import type { Animation, Position, Size } from './Modal.types'
 import * as lenisLockHook from '@Hooks/useLenisScrollLock'
 import {

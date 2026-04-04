@@ -1,8 +1,9 @@
 import { render, screen, fireEvent, renderHook } from '@testing-library/react'
 import { createRef, useState } from 'react'
 import { describe, it, expect, vi } from 'vitest'
-import { Checkbox } from './index'
 import { useCheckbox } from './Checkbox.hooks'
+
+import { Checkbox } from './Checkbox'
 
 describe('Checkbox', () => {
   const onChange = vi.fn()

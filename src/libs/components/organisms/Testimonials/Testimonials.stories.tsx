@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
-import { Testimonials } from '.'
+import { Testimonials } from './Testimonials'
 
 const meta = {
   title: 'Organisms/Testimonials',

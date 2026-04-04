@@ -1,4 +1,7 @@
-import { Container, Divider, IconComponent, Logo } from '@Components/atoms'
+import { Container } from '@Components/atoms/Container/Container'
+import { Divider } from '@Components/atoms/Divider/Divider'
+import { IconComponent } from '@Components/atoms/IconComponent/IconComponent'
+import { Logo } from '@Components/atoms/Logo/Logo'
 import clsx from 'clsx'
 import { useFooter } from './Footer.hooks'
 import { ItemFooter, LinkFooter } from './ItemFooter'

@@ -1,6 +1,8 @@
 import imageNewsletter from '@Assets/background/smiling-girl-student-looking.jpg'
-import { Button } from '@Components/atoms'
-import { InputField, Modal, Select } from '@Components/molecules'
+import { Button } from '@Components/atoms/Button/Button'
+import { InputField } from '@Components/molecules/InputField/InputField'
+import { Modal } from '@Components/molecules/Modal/Modal'
+import { Select } from '@Components/molecules/Select/Select'
 import {
   EMAIL_REGEX,
   NAME_REGEX

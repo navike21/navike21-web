@@ -1,6 +1,6 @@
 'use client'
 
-import { ToggleLayout } from '@Components/layouts/ToggleLayout'
+import { ToggleLayout } from '@Components/layouts/ToggleLayout/ToggleLayout'
 import clsx from 'clsx'
 import { forwardRef } from 'react'
 import type { RadioOptionProps } from './RadioOption.types'

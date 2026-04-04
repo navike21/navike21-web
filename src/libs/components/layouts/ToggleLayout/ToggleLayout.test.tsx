@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
-import { ToggleLayout } from './index'
+import { ToggleLayout } from './ToggleLayout'
 
 describe('ToggleLayout', () => {
   it('renders children correctly', () => {

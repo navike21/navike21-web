@@ -1,6 +1,8 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import { describe, it, expect, vi, beforeEach } from 'vitest'
-import { Header, BgHeader } from '.'
+
+import { BgHeader, Header } from './Header'
+
 import * as headerHooks from './Header.hooks'
 import { HeaderProvider } from '@Context/index'
 import type { IconName } from '@Types/icons'

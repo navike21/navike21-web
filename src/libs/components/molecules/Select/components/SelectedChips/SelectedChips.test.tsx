@@ -1,10 +1,11 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
 
-import { SelectedChips } from './index'
+import { SelectedChips } from './SelectedChips'
+
 import type { SelectOptionItem } from '../../Select.types'
 
-vi.mock('@Components/atoms', () => ({
+vi.mock('@Components/atoms/Chip/Chip', () => ({
   Chip: ({
     children,
     icon,

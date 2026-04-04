@@ -1,11 +1,11 @@
 'use client'
 
-import { IconComponent } from '@Components/atoms'
+import { IconComponent } from '@Components/atoms/IconComponent/IconComponent'
 import clsx from 'clsx'
 import { forwardRef } from 'react'
 import type { InputFieldProps } from './InputField.types'
 import { useInputField } from './InputField.hooks'
-import { InputLayout } from '@Components/layouts/InputLayout'
+import { InputLayout } from '@Components/layouts/InputLayout/InputLayout'
 
 export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
   (

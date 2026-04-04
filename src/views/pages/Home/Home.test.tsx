@@ -11,30 +11,45 @@ vi.mock(
   })
 )
 
-vi.mock('@Components/atoms', () => ({
+vi.mock('@Components/atoms/Container/Container', () => ({
   Container: ({ children }: { children: React.ReactNode }) => (
     <div data-testid="container">{children}</div>
-  ),
+  )
+}))
+
+vi.mock('@Components/atoms/Card/Card', () => ({
   ItemLinkCard: ({ title }: { title: string }) => (
     <div data-testid="item-link-card">{title}</div>
-  ),
+  )
+}))
+
+vi.mock('@Components/atoms/LinkButton/LinkButton', () => ({
   LinkButton: ({ children }: { children: React.ReactNode }) => (
     <div data-testid="link-button">{children}</div>
-  ),
+  )
+}))
+
+vi.mock('@Components/atoms/Title/Title', () => ({
   Title: ({ title }: { title: string }) => (
     <div data-testid="title">{title}</div>
   )
 }))
 
-vi.mock('@Components/molecules', () => ({
+vi.mock('@Components/molecules/ItemHeroSection/ItemHeroSection', () => ({
   ItemHeroSection: ({ title }: { title: string }) => (
     <div data-testid="item-hero-section">{title}</div>
   )
 }))
 
-vi.mock('@Components/organisms', () => ({
-  Clients: () => <div data-testid="clients">Clients</div>,
-  Testimonials: () => <div data-testid="testimonials">Testimonials</div>,
+vi.mock('@Components/organisms/Clients/Clients', () => ({
+  Clients: () => <div data-testid="clients">Clients</div>
+}))
+
+vi.mock('@Components/organisms/Testimonials/Testimonials', () => ({
+  Testimonials: () => <div data-testid="testimonials">Testimonials</div>
+}))
+
+vi.mock('@Components/organisms/NewsletterForm/NewsletterForm', () => ({
   NewsletterForm: () => <div data-testid="newsletter-form">NewsletterForm</div>
 }))
 

@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import type { HTMLAttributes, ReactNode } from 'react'
 import { useId } from 'react'
-import { IconComponent } from '../IconComponent'
+import { IconComponent } from '../IconComponent/IconComponent'
 import type { IconName } from '@Types/icons'
 import { hasTextClassColor } from '@Helpers/hasTextClassColor'
 

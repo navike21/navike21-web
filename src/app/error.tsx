@@ -1,6 +1,6 @@
 'use client'
 
-import { Button } from '@Components/atoms'
+import { Button } from '@Components/atoms/Button/Button'
 
 interface ErrorProps {
   error: Error & { digest?: string }

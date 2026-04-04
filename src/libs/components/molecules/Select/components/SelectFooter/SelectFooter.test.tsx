@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
 
-import { SelectFooter } from './index'
+import { SelectFooter } from './SelectFooter'
 
-vi.mock('@Components/atoms', () => ({
+vi.mock('@Components/atoms/HelperText/HelperText', () => ({
   HelperText: ({
     children,
     variant

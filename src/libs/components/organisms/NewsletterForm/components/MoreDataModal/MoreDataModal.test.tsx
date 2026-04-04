@@ -1,7 +1,7 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import { describe, expect, it, vi, beforeEach } from 'vitest'
 
-import { MoreDataModal } from './index'
+import { MoreDataModal } from './MoreDataModal'
 
 const mockSubscribe = vi.fn()
 
@@ -16,7 +16,7 @@ vi.mock('@Assets/background/smiling-girl-student-looking.jpg', () => ({
   default: '/mock-image.jpg'
 }))
 
-vi.mock('@Components/molecules', () => ({
+vi.mock('@Components/molecules/Modal/Modal', () => ({
   Modal: ({
     isOpen,
     onClose,
@@ -36,7 +36,10 @@ vi.mock('@Components/molecules', () => ({
         </button>
         {children}
       </div>
-    ) : null,
+    ) : null
+}))
+
+vi.mock('@Components/molecules/InputField/InputField', () => ({
   InputField: ({
     label,
     errorMessage,
@@ -53,7 +56,10 @@ vi.mock('@Components/molecules', () => ({
       <input id={props.name} {...props} />
       {errorMessage && <span role="alert">{errorMessage}</span>}
     </div>
-  ),
+  )
+}))
+
+vi.mock('@Components/molecules/Select/Select', () => ({
   Select: ({
     label,
     errorMessage,
@@ -79,7 +85,7 @@ vi.mock('@Components/molecules', () => ({
   )
 }))
 
-vi.mock('@Components/atoms', () => ({
+vi.mock('@Components/atoms/Button/Button', () => ({
   Button: ({
     children,
     type,

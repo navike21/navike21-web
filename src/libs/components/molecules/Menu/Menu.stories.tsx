@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
+import { Menu } from './Menu'
+
 import { HeaderProvider } from '@Context/index'
 import { useHeaderContext } from '@Context/headerContext.hooks'
 import { useEffect } from 'react'
-
-import { Menu } from '.'
 
 const SetMenuState = ({ open }: { open: boolean }) => {
   const { setToggleMenu } = useHeaderContext()

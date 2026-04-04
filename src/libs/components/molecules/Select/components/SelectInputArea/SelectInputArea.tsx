@@ -2,13 +2,14 @@ import type { IconName } from '@Types/icons'
 import type { SelectOptionItem, SelectVariant } from '../../Select.types'
 import { getInputAreaClass } from '../../helper/getInputAreaClass'
 import clsx from 'clsx'
-import { SelectedChips } from '../SelectedChips'
-import { TriggerDisplay } from '../TriggerDisplay'
-import { IconComponent, Spinner } from '@Components/atoms'
+import { SelectedChips } from '../SelectedChips/SelectedChips'
+import { TriggerDisplay } from '../TriggerDisplay/TriggerDisplay'
+import { IconComponent } from '@Components/atoms/IconComponent/IconComponent'
+import { Spinner } from '@Components/atoms/Spinner/Spinner'
 import {
   SelectDropdownPortal,
   type SelectDropdownPortalProps
-} from '../SelectDropdownPortal'
+} from '../SelectDropdownPortal/SelectDropdownPortal'
 import { useSelectTexts } from '../../Select.texts'
 
 interface SelectInputAreaProps {

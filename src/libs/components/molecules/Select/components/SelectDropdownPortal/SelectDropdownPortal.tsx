@@ -1,6 +1,6 @@
 import { createPortal } from 'react-dom'
 import type { SelectOptionItem } from '../../Select.types'
-import { OptionsList } from '../OptionsList'
+import { OptionsList } from '../OptionsList/OptionsList'
 import type { RefObject } from 'react'
 import { useSelectTexts } from '../../Select.texts'
 

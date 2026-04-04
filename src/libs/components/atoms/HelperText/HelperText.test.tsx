@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
-import { HelperText } from './index'
+
+import { HelperText } from './HelperText'
 
 describe('HelperText', () => {
   it('renders the helper text', () => {

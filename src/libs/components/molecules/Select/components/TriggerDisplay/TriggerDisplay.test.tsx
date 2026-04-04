@@ -1,10 +1,11 @@
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
 
-import { TriggerDisplay } from './index'
+import { TriggerDisplay } from './TriggerDisplay'
+
 import type { SelectOptionItem } from '../../Select.types'
 
-vi.mock('@Components/atoms', () => ({
+vi.mock('@Components/atoms/IconComponent/IconComponent', () => ({
   IconComponent: ({
     icon,
     className

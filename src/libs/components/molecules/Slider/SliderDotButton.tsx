@@ -1,4 +1,4 @@
-import { IconComponent } from '@Components/atoms'
+import { IconComponent } from '@Components/atoms/IconComponent/IconComponent'
 import clsx from 'clsx'
 import type { DotButtonPropType } from './Slider.types'
 

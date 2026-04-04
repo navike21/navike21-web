@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import type { SelectOptionItem } from '../../Select.types'
 import clsx from 'clsx'
-import { IconComponent } from '@Components/atoms'
+import { IconComponent } from '@Components/atoms/IconComponent/IconComponent'
 import { useSelectTexts } from '../../Select.texts'
 
 interface OptionsListProps {

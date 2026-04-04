@@ -1,7 +1,7 @@
 'use client'
 
-import { IconComponent } from '@Components/atoms'
-import { ToggleLayout } from '@Components/layouts/ToggleLayout'
+import { IconComponent } from '@Components/atoms/IconComponent/IconComponent'
+import { ToggleLayout } from '@Components/layouts/ToggleLayout/ToggleLayout'
 import clsx from 'clsx'
 import { forwardRef } from 'react'
 import type { CheckboxProps } from './Checkbox.types'

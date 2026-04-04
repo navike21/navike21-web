@@ -1,6 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react'
 import { describe, it, expect, vi } from 'vitest'
-import { Chip } from './index'
+
+import { Chip } from './Chip'
 
 describe('Chip', () => {
   it('renders children', () => {

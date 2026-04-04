@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import type { SelectOptionItem } from '../../Select.types'
-import { Chip } from '@Components/atoms'
+import { Chip } from '@Components/atoms/Chip/Chip'
 
 interface SelectedChipsProps {
   values: string[]

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
-import { Slider } from '.'
+import { Slider } from './Slider'
 
 const meta = {
   title: 'Molecules/Slider',

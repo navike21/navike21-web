@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
-import { HelperText } from './index'
+
+import { HelperText } from './HelperText'
 
 const meta: Meta<typeof HelperText> = {
   title: 'Atoms/HelperText',

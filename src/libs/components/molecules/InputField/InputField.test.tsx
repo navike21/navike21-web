@@ -1,20 +1,27 @@
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
 import React from 'react'
-import { InputField } from './index'
+
+import { InputField } from './InputField'
 
 // Mock IconComponent to avoid issues with icons
-vi.mock('@Components/atoms', () => ({
+vi.mock('@Components/atoms/IconComponent/IconComponent', () => ({
   IconComponent: ({
     icon,
     className
   }: {
     icon: string
     className?: string
-  }) => <div data-testid={`icon-${icon}`} className={className} />,
+  }) => <div data-testid={`icon-${icon}`} className={className} />
+}))
+
+vi.mock('@Components/atoms/Spinner/Spinner', () => ({
   Spinner: ({ variant, size }: { variant: string; size: string }) => (
     <div data-testid="spinner" data-variant={variant} data-size={size} />
-  ),
+  )
+}))
+
+vi.mock('@Components/atoms/Label/Label', () => ({
   Label: ({
     children,
     disabled,
@@ -32,7 +39,10 @@ vi.mock('@Components/atoms', () => ({
     >
       {children}
     </label>
-  ),
+  )
+}))
+
+vi.mock('@Components/atoms/HelperText/HelperText', () => ({
   HelperText: ({
     children,
     idField,

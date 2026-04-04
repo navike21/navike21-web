@@ -1,4 +1,7 @@
-import { HelperText, IconComponent, Label, Spinner } from '@Components/atoms'
+import { HelperText } from '@Components/atoms/HelperText/HelperText'
+import { IconComponent } from '@Components/atoms/IconComponent/IconComponent'
+import { Label } from '@Components/atoms/Label/Label'
+import { Spinner } from '@Components/atoms/Spinner/Spinner'
 import clsx from 'clsx'
 import { useId, type ReactNode } from 'react'
 

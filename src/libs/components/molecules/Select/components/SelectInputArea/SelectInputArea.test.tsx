@@ -2,8 +2,8 @@ import { render, screen, fireEvent } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
 import { createRef } from 'react'
 
-import { SelectInputArea } from './index'
-import type { SelectDropdownPortalProps } from '../SelectDropdownPortal'
+import { SelectInputArea } from './SelectInputArea'
+import type { SelectDropdownPortalProps } from '../SelectDropdownPortal/SelectDropdownPortal'
 import type { SelectOptionItem } from '../../Select.types'
 import type { IconName } from '@Types/icons'
 
@@ -21,28 +21,31 @@ vi.mock('../../helper/getInputAreaClass', () => ({
   getInputAreaClass: () => 'mocked-input-area-class'
 }))
 
-vi.mock('@Components/atoms', () => ({
+vi.mock('@Components/atoms/IconComponent/IconComponent', () => ({
   IconComponent: ({ icon }: { icon: string }) => (
     <svg data-testid={`icon-${icon}`} />
-  ),
+  )
+}))
+
+vi.mock('@Components/atoms/Spinner/Spinner', () => ({
   Spinner: ({ size }: { size?: string }) => (
     <div data-testid={`spinner-${size ?? 'medium'}`} />
   )
 }))
 
-vi.mock('../SelectedChips', () => ({
+vi.mock('../SelectedChips/SelectedChips', () => ({
   SelectedChips: ({ values }: { values: string[] }) => (
     <div data-testid="selected-chips">{values.join(',')}</div>
   )
 }))
 
-vi.mock('../TriggerDisplay', () => ({
+vi.mock('../TriggerDisplay/TriggerDisplay', () => ({
   TriggerDisplay: ({ singleLabel }: { singleLabel: string }) => (
     <div data-testid="trigger-display">{singleLabel}</div>
   )
 }))
 
-vi.mock('../SelectDropdownPortal', () => ({
+vi.mock('../SelectDropdownPortal/SelectDropdownPortal', () => ({
   SelectDropdownPortal: () => <div data-testid="dropdown-portal" />
 }))
 

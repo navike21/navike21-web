@@ -1,12 +1,12 @@
 'use client'
 
-import { Label } from '@Components/atoms'
+import { Label } from '@Components/atoms/Label/Label'
 import clsx from 'clsx'
 import { forwardRef, useState, useEffect, useMemo } from 'react'
 import type { SelectProps } from './Select.types'
 import { useSelectHook } from './Select.hooks'
-import { SelectFooter } from './components/SelectFooter'
-import { SelectInputArea } from './components/SelectInputArea'
+import { SelectFooter } from './components/SelectFooter/SelectFooter'
+import { SelectInputArea } from './components/SelectInputArea/SelectInputArea'
 import { VARIANT_ICON_MAP } from './constants/variantIconMap'
 import {
   DEFAULT_SELECT_TEXTS,

@@ -1,5 +1,5 @@
 import clsx from 'clsx'
-import { IconComponent } from '../IconComponent'
+import { IconComponent } from '../IconComponent/IconComponent'
 import Link from 'next/link'
 import { type LinkButtonProps } from '@Types/buttonProps'
 

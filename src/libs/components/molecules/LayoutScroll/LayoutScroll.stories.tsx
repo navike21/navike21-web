@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/nextjs-vite'
 
-import { HeaderProvider } from '@Context/index'
+import { LayoutScroll } from './LayoutScroll'
 
-import { LayoutScroll } from '.'
+import { HeaderProvider } from '@Context/index'
 
 const meta = {
   title: 'Molecules/LayoutScroll',

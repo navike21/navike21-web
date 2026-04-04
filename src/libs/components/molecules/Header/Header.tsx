@@ -1,6 +1,9 @@
 'use client'
 
-import { Container, IconComponent, Logo, MenuIcon } from '@Components/atoms'
+import { Container } from '@Components/atoms/Container/Container'
+import { IconComponent } from '@Components/atoms/IconComponent/IconComponent'
+import { Logo } from '@Components/atoms/Logo/Logo'
+import { MenuIcon } from '@Components/atoms/MenuIcon/MenuIcon'
 import { useHeader } from './Header.hooks'
 import clsx from 'clsx'
 import Link from 'next/link'
@@ -82,6 +85,7 @@ export const BgHeader = () => {
   const { isSolid, toggleMenu } = useHeader()
   return (
     <div
+      data-testid="bg-header"
       className={clsx(
         'bg-header pointer-events-none fixed top-0 left-0 right-0 z-30 transition-all duration-500 ease-in-out',
         {

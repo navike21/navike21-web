@@ -2,12 +2,14 @@ import { render, screen, fireEvent } from '@testing-library/react'
 import { describe, expect, it, vi } from 'vitest'
 import { createRef } from 'react'
 
-import { SelectDropdownPortal } from './index'
-import type { SelectDropdownPortalProps } from './index'
+import {
+  SelectDropdownPortal,
+  type SelectDropdownPortalProps
+} from './SelectDropdownPortal'
 import { SelectTextsProvider, DEFAULT_SELECT_TEXTS } from '../../Select.texts'
 import type { SelectOptionItem } from '../../Select.types'
 
-vi.mock('@Components/atoms', () => ({
+vi.mock('@Components/atoms/IconComponent/IconComponent', () => ({
   IconComponent: ({ icon }: { icon: string }) => (
     <svg data-testid={`icon-${icon}`} />
   )

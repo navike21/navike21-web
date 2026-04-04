@@ -1,4 +1,5 @@
-import { HelperText, Label } from '@Components/atoms'
+import { HelperText } from '@Components/atoms/HelperText/HelperText'
+import { Label } from '@Components/atoms/Label/Label'
 import { useId, type ReactNode } from 'react'
 
 interface ToggleLayoutProps {
