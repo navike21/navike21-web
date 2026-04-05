@@ -258,13 +258,5 @@ describe('createApiClient', () => {
       expect(typeof clientApi.put).toBe('function')
       expect(typeof clientApi.delete).toBe('function')
     })
-
-    it('api should be an alias for serverApi', async () => {
-      // Arrange
-      const { api, serverApi } = await import('./api')
-
-      // Assert
-      expect(api).toBe(serverApi)
-    })
   })
 })

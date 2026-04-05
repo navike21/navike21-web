@@ -108,5 +108,3 @@ export const serverApi = createApiClient(SERVER_API_BASE_URL)
 
 // For Client Components (calls the local Next.js proxy, same-origin — no CORS)
 export const clientApi = createApiClient('/api')
-
-export const api = serverApi

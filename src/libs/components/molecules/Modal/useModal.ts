@@ -6,7 +6,7 @@ import {
 import type { Position, Size, Animation } from './Modal.types'
 import type { ClassValue } from 'clsx'
 
-export const getOverlayExitDelay = (animation: Animation) => {
+const getOverlayExitDelay = (animation: Animation) => {
   if (animation === 'none') return 0
 
   return MODAL_EXIT_DURATION_SECONDS

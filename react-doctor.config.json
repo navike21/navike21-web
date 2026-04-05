@@ -1,0 +1,11 @@
+{
+  "lint": false,
+  "ignore": {
+    "rules": [
+      "knip/exports",
+      "knip/files",
+      "knip/types",
+      "knip/duplicates"
+    ]
+  }
+}
