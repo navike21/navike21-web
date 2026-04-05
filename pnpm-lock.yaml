@@ -51,8 +51,8 @@ importers:
         specifier: ^7.72.1
         version: 7.72.1(react@19.2.3)
       zod:
-        specifier: ^4.3.6
-        version: 4.3.6
+        specifier: 4.1.13
+        version: 4.1.13
     devDependencies:
       '@commitlint/cli':
         specifier: ^20.5.0
@@ -3741,8 +3741,8 @@ packages:
     peerDependencies:
       zod: ^3.25.0 || ^4.0.0
 
-  zod@4.3.6:
-    resolution: {integrity: sha512-rftlrkhHZOcjDwkGlnUtZZkvaPHCsDATp4pGpuOOMDaTdDDXF91wuVDJoWoPsKX/3YPQ5fHuF3STjcYyKr+Qhg==}
+  zod@4.1.13:
+    resolution: {integrity: sha512-AvvthqfqrAhNH9dnfmrfKzX5upOdjUVJYFqNSlkmGf64gRaTzlPwz99IHYnVs28qYAybvAlBV+H7pn0saFY4Ig==}
 
 snapshots:
 
@@ -5709,8 +5709,8 @@ snapshots:
       '@babel/parser': 7.29.2
       eslint: 10.2.0(jiti@2.6.1)
       hermes-parser: 0.25.1
-      zod: 4.3.6
-      zod-validation-error: 4.0.2(zod@4.3.6)
+      zod: 4.1.13
+      zod-validation-error: 4.0.2(zod@4.1.13)
     transitivePeerDependencies:
       - supports-color
 
@@ -7448,8 +7448,8 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  zod-validation-error@4.0.2(zod@4.3.6):
+  zod-validation-error@4.0.2(zod@4.1.13):
     dependencies:
-      zod: 4.3.6
+      zod: 4.1.13
 
-  zod@4.3.6: {}
+  zod@4.1.13: {}
