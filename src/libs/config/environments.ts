@@ -17,4 +17,4 @@ export const API_BASE_URL = normalizeApiUrl(
   process.env['NEXT_PUBLIC_API_URL'] ?? ''
 )
 export const SERVER_API_BASE_URL = normalizeApiUrl(process.env['API_URL'] ?? '')
-export const ENVIRONMENT = process.env['NODE_ENV'] ?? 'development'
+export const ENVIRONMENT = process.env['NODE_ENV'] ?? ''

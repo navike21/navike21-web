@@ -2,6 +2,7 @@ import { Footer } from '@Components/molecules/Footer/Footer'
 import { Header } from '@Components/molecules/Header/Header'
 import { LayoutScroll } from '@Components/molecules/LayoutScroll/LayoutScroll'
 import { MotionConfigProvider } from '@Components/layouts/MotionConfigProvider/MotionConfigProvider'
+import { ReactQueryProvider } from '@Components/layouts/ReactQueryProvider/ReactQueryProvider'
 import { Menu } from '@Components/molecules/Menu/Menu'
 import { HeaderProvider } from '@Context/index'
 import { firaCode, poppins } from '@Sources/fonts'
@@ -25,13 +26,15 @@ export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
       <body
         className={`${poppins.variable} ${firaCode.variable} antialiased transition-all ease-in-out duration-500 relative`}
       >
-        <MotionConfigProvider>
-          <HeaderProvider>
-            <Header />
-            <Menu />
-            <LayoutScroll>{children}</LayoutScroll>
-          </HeaderProvider>
-        </MotionConfigProvider>
+        <ReactQueryProvider>
+          <MotionConfigProvider>
+            <HeaderProvider>
+              <Header />
+              <Menu />
+              <LayoutScroll>{children}</LayoutScroll>
+            </HeaderProvider>
+          </MotionConfigProvider>
+        </ReactQueryProvider>
         <Footer />
       </body>
     </html>
