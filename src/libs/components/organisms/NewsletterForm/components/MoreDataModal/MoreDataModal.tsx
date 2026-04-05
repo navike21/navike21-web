@@ -7,10 +7,9 @@ import {
   EMAIL_REGEX,
   NAME_REGEX
 } from '@Components/organisms/NewsletterForm/NewsletterForm.constants'
-import { subscriberService } from '@Services/subscriber/subscriber.service'
+import { useSubscriberMutation } from '@Services/subscriber/subscriber.hooks'
 import clsx from 'clsx'
-import { useEffect } from 'react'
-import { useForm, type SubmitHandler } from 'react-hook-form'
+import { useForm, useWatch, type SubmitHandler } from 'react-hook-form'
 import type { NewsletterFormData } from '../../NewsletterForm.types'
 import { ESP } from '@Constants/languages'
 import { newsletterForm } from '@I18n/common/newsletterForm'
@@ -36,18 +35,30 @@ type MoreDataModalFormValues = Omit<NewsletterFormData, 'sex'> & {
   sex: NewsletterFormData['sex'] | ''
 }
 
+export const getSubscriberGender = (sex: MoreDataModalFormValues['sex']) =>
+  sex || 'prefer_not_to_say'
+
 export const MoreDataModal = ({
   isOpenModal,
   emailValue,
   handleCloseModal
 }: MoreDataModalProps) => {
+  const handleSuccess = () => {
+    handleCloseModal()
+  }
+
+  const { mutateAsync: subscribe, isPending } = useSubscriberMutation({
+    successCallback: handleSuccess
+  })
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
+    control
   } = useForm<MoreDataModalFormValues>({
-    defaultValues: {
+    values: {
       firstName: '',
       lastName: '',
       sex: '',
@@ -57,15 +68,6 @@ export const MoreDataModal = ({
   const {
     form: { email, firstName, lastName, sex, submitButton }
   } = newsletterForm[ESP]
-
-  useEffect(() => {
-    reset({
-      firstName: '',
-      lastName: '',
-      sex: '',
-      email: emailValue
-    })
-  }, [emailValue, reset])
 
   const getFieldError = (
     field: Record<string, string> & {
@@ -86,15 +88,20 @@ export const MoreDataModal = ({
   const emailError = getFieldError(email, email.fieldName)
   const sexError = getFieldError(sex, sex.fieldName)
 
+  const sexValue = useWatch({
+    control,
+    name: 'sex'
+  })
+
   const onSubmit: SubmitHandler<MoreDataModalFormValues> = async ({
     firstName = '',
     lastName = '',
     email,
     sex
   }) => {
-    const gender = sex === '' || sex === undefined ? 'prefer_not_to_say' : sex
+    const gender = getSubscriberGender(sex)
 
-    const response = await subscriberService.subscribe({
+    const response = await subscribe({
       firstName,
       lastName,
       contactInformation: { email },
@@ -108,10 +115,17 @@ export const MoreDataModal = ({
     }
   }
 
+  const handleCloseModalFunction = () => {
+    if (!isPending) {
+      reset()
+      handleCloseModal()
+    }
+  }
+
   return (
     <Modal
       isOpen={isOpenModal}
-      onClose={handleCloseModal}
+      onClose={handleCloseModalFunction}
       title="Espera, queremos conocerte un poco más."
       image={imageNewsletter}
       size="large"
@@ -190,6 +204,7 @@ export const MoreDataModal = ({
             ]}
             placeholder={sex.placeholder}
             errorMessage={sexError.errorMessage}
+            value={sexValue}
             variant={sexError.isError ? 'error' : 'default'}
             {...register(sex.fieldName, {
               required: SEX_REQUIRED
@@ -202,6 +217,7 @@ export const MoreDataModal = ({
             size="medium"
             type="submit"
             icon="RiArrowRightLine"
+            loading={isPending}
           >
             {submitButton}
           </Button>

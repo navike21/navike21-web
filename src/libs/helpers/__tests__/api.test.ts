@@ -1,6 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 
-import { ApiRequestError, createApiClient } from './api'
+import type { ApiResponse } from '@Types/api'
+import { ApiRequestError, createApiClient } from '@Config/api'
 
 const BASE_URL = 'https://api.example.com'
 
@@ -17,6 +18,22 @@ describe('ApiRequestError', () => {
     expect(error.name).toBe('ApiRequestError')
     expect(error.message).toBe('API POST request failed with status 422')
     expect(error.status).toBe(422)
+  })
+
+  it('should preserve the provided cause', () => {
+    // Arrange
+    const cause = {
+      success: false,
+      statusCode: 422,
+      message: 'validation failed',
+      error: { code: 'VALIDATION_ERROR', details: 'Invalid email' }
+    } satisfies ApiResponse<unknown>
+
+    // Act
+    const error = new ApiRequestError('POST', 422, cause)
+
+    // Assert
+    expect(error.cause).toEqual(cause)
   })
 })
 
@@ -36,10 +53,21 @@ describe('createApiClient', () => {
       json: () => Promise.resolve(data)
     }) as Response
 
-  const makeErrorResponse = (status: number): Response =>
+  const makeErrorResponse = (
+    status: number,
+    errorData?: ApiResponse<unknown>
+  ): Response =>
     ({
       ok: false,
-      status
+      status,
+      json: () =>
+        Promise.resolve(
+          errorData ?? {
+            success: false,
+            statusCode: status,
+            message: 'error'
+          }
+        )
     }) as Response
 
   describe('get', () => {
@@ -86,14 +114,22 @@ describe('createApiClient', () => {
 
     it('should throw ApiRequestError when response is not ok', async () => {
       // Arrange
-      mockFetch.mockResolvedValue(makeErrorResponse(404))
+      const errorData = {
+        success: false,
+        statusCode: 404,
+        message: 'missing item',
+        error: { code: 'NOT_FOUND', details: 'Item not found' }
+      } satisfies ApiResponse<unknown>
+
+      mockFetch.mockResolvedValue(makeErrorResponse(404, errorData))
       const client = createApiClient(BASE_URL)
 
       // Act & Assert
       await expect(client.get({ endpoint: '/missing' })).rejects.toMatchObject({
         name: 'ApiRequestError',
         status: 404,
-        message: 'API GET request failed with status 404'
+        message: 'API GET request failed with status 404',
+        cause: errorData
       })
     })
   })
@@ -139,7 +175,14 @@ describe('createApiClient', () => {
 
     it('should throw ApiRequestError when response is not ok', async () => {
       // Arrange
-      mockFetch.mockResolvedValue(makeErrorResponse(500))
+      const errorData = {
+        success: false,
+        statusCode: 500,
+        message: 'create failed',
+        error: { code: 'SERVER_ERROR', details: 'Server exploded' }
+      } satisfies ApiResponse<unknown>
+
+      mockFetch.mockResolvedValue(makeErrorResponse(500, errorData))
       const client = createApiClient(BASE_URL)
 
       // Act & Assert
@@ -148,7 +191,8 @@ describe('createApiClient', () => {
       ).rejects.toMatchObject({
         name: 'ApiRequestError',
         status: 500,
-        message: 'API POST request failed with status 500'
+        message: 'API POST request failed with status 500',
+        cause: errorData
       })
     })
   })
@@ -173,7 +217,14 @@ describe('createApiClient', () => {
 
     it('should throw ApiRequestError when response is not ok', async () => {
       // Arrange
-      mockFetch.mockResolvedValue(makeErrorResponse(403))
+      const errorData = {
+        success: false,
+        statusCode: 403,
+        message: 'forbidden',
+        error: { code: 'FORBIDDEN', details: 'Access denied' }
+      } satisfies ApiResponse<unknown>
+
+      mockFetch.mockResolvedValue(makeErrorResponse(403, errorData))
       const client = createApiClient(BASE_URL)
 
       // Act & Assert
@@ -182,7 +233,8 @@ describe('createApiClient', () => {
       ).rejects.toMatchObject({
         name: 'ApiRequestError',
         status: 403,
-        message: 'API PUT request failed with status 403'
+        message: 'API PUT request failed with status 403',
+        cause: errorData
       })
     })
   })
@@ -205,14 +257,22 @@ describe('createApiClient', () => {
 
     it('should throw ApiRequestError when response is not ok', async () => {
       // Arrange
-      mockFetch.mockResolvedValue(makeErrorResponse(404))
+      const errorData = {
+        success: false,
+        statusCode: 404,
+        message: 'gone',
+        error: { code: 'NOT_FOUND', details: 'Already deleted' }
+      } satisfies ApiResponse<unknown>
+
+      mockFetch.mockResolvedValue(makeErrorResponse(404, errorData))
       const client = createApiClient(BASE_URL)
 
       // Act & Assert
       await expect(client.delete({ endpoint: '/gone' })).rejects.toMatchObject({
         name: 'ApiRequestError',
         status: 404,
-        message: 'API DELETE request failed with status 404'
+        message: 'API DELETE request failed with status 404',
+        cause: errorData
       })
     })
   })
@@ -237,7 +297,7 @@ describe('createApiClient', () => {
   describe('pre-built clients', () => {
     it('serverApi should be defined and have get, post, put, delete methods', async () => {
       // Arrange
-      const { serverApi } = await import('./api')
+      const { serverApi } = await import('@Config/api')
 
       // Assert
       expect(serverApi).toBeDefined()
@@ -249,7 +309,7 @@ describe('createApiClient', () => {
 
     it('clientApi should be defined and have get, post, put, delete methods', async () => {
       // Arrange
-      const { clientApi } = await import('./api')
+      const { clientApi } = await import('@Config/api')
 
       // Assert
       expect(clientApi).toBeDefined()

@@ -1,15 +1,12 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react'
 import { describe, expect, it, vi, beforeEach } from 'vitest'
 
-import { MoreDataModal } from './MoreDataModal'
+import { getSubscriberGender, MoreDataModal } from './MoreDataModal'
 
-const mockSubscribe = vi.fn()
+const mockMutateAsync = vi.fn()
 
-vi.mock('@Services/subscriber/subscriber.service', () => ({
-  subscriberService: {
-    subscribe: (...args: Parameters<typeof mockSubscribe>) =>
-      mockSubscribe(...args)
-  }
+vi.mock('@Services/subscriber/subscriber.hooks', () => ({
+  useSubscriberMutation: vi.fn()
 }))
 
 vi.mock('@Assets/background/smiling-girl-student-looking.jpg', () => ({
@@ -69,11 +66,12 @@ vi.mock('@Components/molecules/Select/Select', () => ({
     label?: string
     errorMessage?: string
     name?: string
+    value?: string
     options?: Array<{ label: string; value: string; disabled?: boolean }>
   }) => (
     <div>
       {label && <label htmlFor={props.name}>{label}</label>}
-      <select id={props.name} {...props}>
+      <select id={props.name} {...props} value={props.value ?? ''}>
         {selectOptions?.map(opt => (
           <option key={opt.value} value={opt.value} disabled={opt.disabled}>
             {opt.label}
@@ -89,6 +87,7 @@ vi.mock('@Components/atoms/Button/Button', () => ({
   Button: ({
     children,
     type,
+    loading,
     ...props
   }: {
     children: React.ReactNode
@@ -96,21 +95,32 @@ vi.mock('@Components/atoms/Button/Button', () => ({
     variant?: string
     size?: string
     icon?: string
+    loading?: boolean
   }) => (
-    <button type={type} {...props}>
+    <button type={type} data-loading={String(loading ?? false)} {...props}>
       {children}
     </button>
   )
 }))
 
+import { useSubscriberMutation } from '@Services/subscriber/subscriber.hooks'
+
+const mockUseSubscriberMutation = vi.mocked(useSubscriberMutation)
+
 interface SetupOptions {
   isOpenModal?: boolean
   emailValue?: string
   handleCloseModal?: () => void
+  isPending?: boolean
 }
 
 const setup = (overrides: SetupOptions = {}) => {
   const handleCloseModal = overrides.handleCloseModal ?? vi.fn()
+
+  mockUseSubscriberMutation.mockReturnValue({
+    mutateAsync: mockMutateAsync,
+    isPending: overrides.isPending ?? false
+  } as never)
 
   render(
     <MoreDataModal
@@ -125,8 +135,24 @@ const setup = (overrides: SetupOptions = {}) => {
 
 describe('MoreDataModal', () => {
   beforeEach(() => {
-    mockSubscribe.mockReset()
-    mockSubscribe.mockResolvedValue({ success: false })
+    mockMutateAsync.mockReset()
+    mockUseSubscriberMutation.mockReset()
+    mockUseSubscriberMutation.mockReturnValue({
+      mutateAsync: mockMutateAsync,
+      isPending: false
+    } as never)
+    mockMutateAsync.mockResolvedValue({
+      success: false,
+      statusCode: 200,
+      message: 'default'
+    })
+  })
+
+  describe('helper', () => {
+    it('should normalize empty sex values to prefer_not_to_say', () => {
+      expect(getSubscriberGender('')).toBe('prefer_not_to_say')
+      expect(getSubscriberGender('male')).toBe('male')
+    })
   })
 
   describe('visibility', () => {
@@ -157,6 +183,22 @@ describe('MoreDataModal', () => {
       // Assert
       expect(handleCloseModal).toHaveBeenCalledTimes(1)
     })
+
+    it('should wire the mutation success callback to the close handler', () => {
+      // Arrange
+      const handleCloseModal = vi.fn()
+      setup({ handleCloseModal })
+
+      const mutationOptions = mockUseSubscriberMutation.mock.calls[0][0] as {
+        successCallback: () => void
+      }
+
+      // Act
+      mutationOptions.successCallback()
+
+      // Assert
+      expect(handleCloseModal).toHaveBeenCalledTimes(1)
+    })
   })
 
   describe('form fields', () => {
@@ -179,6 +221,14 @@ describe('MoreDataModal', () => {
       expect(screen.getByLabelText<HTMLInputElement>(/correo/i).value).toBe(
         'user@example.com'
       )
+    })
+
+    it('should sync select value with the watched sex field', () => {
+      // Arrange & Act
+      setup()
+
+      // Assert
+      expect(screen.getByLabelText<HTMLSelectElement>(/sexo/i)).toHaveValue('')
     })
 
     it('should render the submit button', () => {
@@ -210,9 +260,13 @@ describe('MoreDataModal', () => {
   })
 
   describe('form submission', () => {
-    it('should call subscriberService.subscribe with correct data on valid submit', async () => {
+    it('should call subscribe with correct data on valid submit', async () => {
       // Arrange
-      mockSubscribe.mockResolvedValue({ success: true })
+      mockMutateAsync.mockResolvedValue({
+        success: true,
+        statusCode: 201,
+        message: 'Subscribed successfully'
+      })
       setup({ emailValue: 'valid@example.com' })
 
       fireEvent.change(screen.getByLabelText(/nombres/i), {
@@ -228,12 +282,16 @@ describe('MoreDataModal', () => {
         target: { value: 'male' }
       })
 
+      expect(screen.getByLabelText<HTMLSelectElement>(/sexo/i)).toHaveValue(
+        'male'
+      )
+
       // Act
       fireEvent.click(screen.getByRole('button', { name: /suscríbete/i }))
 
       // Assert
       await waitFor(() => {
-        expect(mockSubscribe).toHaveBeenCalledWith(
+        expect(mockMutateAsync).toHaveBeenCalledWith(
           expect.objectContaining({
             firstName: 'Juan',
             lastName: 'Perez',
@@ -246,7 +304,11 @@ describe('MoreDataModal', () => {
 
     it('should reset form after successful submission', async () => {
       // Arrange
-      mockSubscribe.mockResolvedValue({ success: true })
+      mockMutateAsync.mockResolvedValue({
+        success: true,
+        statusCode: 201,
+        message: 'Subscribed successfully'
+      })
       setup({ emailValue: 'valid@example.com' })
 
       fireEvent.change(screen.getByLabelText(/nombres/i), {
@@ -267,7 +329,7 @@ describe('MoreDataModal', () => {
 
       // Assert
       await waitFor(() => {
-        expect(mockSubscribe).toHaveBeenCalledTimes(1)
+        expect(mockMutateAsync).toHaveBeenCalledTimes(1)
         expect(screen.getByLabelText<HTMLInputElement>(/nombres/i).value).toBe(
           ''
         )
@@ -276,7 +338,11 @@ describe('MoreDataModal', () => {
 
     it('should not reset form when submission fails', async () => {
       // Arrange
-      mockSubscribe.mockResolvedValue({ success: false })
+      mockMutateAsync.mockResolvedValue({
+        success: false,
+        statusCode: 400,
+        message: 'Failed'
+      })
       setup({ emailValue: 'valid@example.com' })
 
       fireEvent.change(screen.getByLabelText(/nombres/i), {
@@ -297,39 +363,43 @@ describe('MoreDataModal', () => {
 
       // Assert
       await waitFor(() => {
-        expect(mockSubscribe).toHaveBeenCalledTimes(1)
+        expect(mockMutateAsync).toHaveBeenCalledTimes(1)
         expect(screen.getByLabelText<HTMLInputElement>(/nombres/i).value).toBe(
           'Juan'
         )
       })
     })
 
-    it('should use "prefer_not_to_say" when sex is empty on submit', async () => {
+    it('should keep the modal open when close is blocked by a pending mutation', () => {
       // Arrange
-      mockSubscribe.mockResolvedValue({ success: true })
-      setup({ emailValue: 'valid@example.com' })
+      const handleCloseModal = vi.fn()
+      setup({ handleCloseModal, isPending: true })
+
+      // Act
+      fireEvent.click(screen.getByRole('button', { name: 'Close modal' }))
+
+      // Assert
+      expect(handleCloseModal).not.toHaveBeenCalled()
+      expect(
+        screen.getByRole('button', { name: /suscríbete/i })
+      ).toHaveAttribute('data-loading', 'true')
+    })
+
+    it('should reset and close the modal when it is not pending', () => {
+      // Arrange
+      const handleCloseModal = vi.fn()
+      setup({ handleCloseModal })
 
       fireEvent.change(screen.getByLabelText(/nombres/i), {
-        target: { value: 'Ana' }
+        target: { value: 'Juan' }
       })
-      fireEvent.change(screen.getByLabelText(/apellidos/i), {
-        target: { value: 'Lopez' }
-      })
-      fireEvent.change(screen.getByLabelText(/correo/i), {
-        target: { value: 'valid@example.com' }
-      })
-      // Intentionally leave sex empty (use '' value which bypasses required in mock)
 
-      // Act — submit directly bypassing validation by directly invoking onSubmit
-      // We fire submit so react-hook-form processes it; sex required validation
-      // will trigger an error alert, confirming the sex='' branch is reachable via mock
-      fireEvent.click(screen.getByRole('button', { name: /suscríbete/i }))
+      // Act
+      fireEvent.click(screen.getByRole('button', { name: 'Close modal' }))
 
-      // Assert — sex was left empty, so sex required error should be shown
-      await waitFor(() => {
-        const alerts = screen.queryAllByRole('alert')
-        expect(alerts.length).toBeGreaterThanOrEqual(0)
-      })
+      // Assert
+      expect(handleCloseModal).toHaveBeenCalledTimes(1)
+      expect(screen.getByLabelText<HTMLInputElement>(/nombres/i).value).toBe('')
     })
   })
 

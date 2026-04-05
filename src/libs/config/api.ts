@@ -28,8 +28,9 @@ type ApiBodyParams<TBody> = ApiBaseParams & {
 export class ApiRequestError extends Error {
   readonly status: number
 
-  constructor(method: string, status: number) {
+  constructor(method: string, status: number, cause?: ApiResponse<unknown>) {
     super(`API ${method} request failed with status ${status}`)
+    this.cause = cause
     this.name = 'ApiRequestError'
     this.status = status
   }
@@ -62,7 +63,8 @@ export const createApiClient = (baseUrl: string) => {
     })
 
     if (!response.ok) {
-      throw new ApiRequestError(method, response.status)
+      const errorData = (await response.json()) as ApiResponse<unknown>
+      throw new ApiRequestError(method, response.status, errorData)
     }
 
     const json: unknown = await response.json()

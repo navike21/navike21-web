@@ -112,3 +112,7 @@
     @apply before:absolute before:inset-0 before:rounded-full before:bg-gray-400;
   }
 }
+
+[data-sileo-viewport] {
+  z-index: 70 !important;
+}
