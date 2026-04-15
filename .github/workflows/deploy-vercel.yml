@@ -22,12 +22,12 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v4
 
       - name: 📦 Setup pnpm
-        uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v4
+        uses: pnpm/action-setup@08c4be7e2e672a47d11bd04269e27e5f3e8529cb # v4
         with:
           version: 9.15.0
 
       - name: 🟢 Setup Node.js
-        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v4
+        uses: actions/setup-node@53b83947a5a98c8d113130e565377fae1a50d02f # v4
         with:
           node-version: "24"
           cache: "pnpm"
@@ -36,7 +36,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: 🚀 Deploy to Vercel
-        uses: amondnet/vercel-action@c71810f8732de6b8656e41155e63b6303ca3e4bf # v25
+        uses: amondnet/vercel-action@4b810e26f7bb2a331c698af186f890cbf20d5f72 # v25
         id: vercel-deploy
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
